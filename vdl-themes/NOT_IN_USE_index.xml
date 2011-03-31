@@ -1,0 +1,21 @@
+<theme>
+	<title>Default</title>
+	<version>0.1</version>
+	<author>Cristopher Caamana</author>
+	<description>Tema Básico de Vidali</description>
+	<index>default/index.php</index>
+</theme>
+<theme>
+	<title>Default-HTML5</title>
+	<version>0.1</version>
+	<author>Cristopher Caamana</author>
+	<description>Tema Básico de Vidali (HTML5 y CSS3)</description>
+	<index>default-html5/index.php</index>
+</theme>
+<theme>
+	<title>Default-IE</title>
+	<version>0.1</version>
+	<author>Cristopher Caamana</author>
+	<description>Tema Básico de Vidali (Versión Internet Explorer)</description>
+	<index>default-ie/index.php</index>
+</theme>
