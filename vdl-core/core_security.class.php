@@ -53,6 +53,7 @@ class CORE_SECURITY{
 		$pwd = mysql_real_escape_string(sha1(md5(trim($_PASS))));
 		//Buscamos el usuario y seleccionamos la informacion basica de este...
 		$query = sprintf("SELECT 
+								vdl_users.user_id,
 								vdl_users.nickname,
 								vdl_users.name,
 								vdl_users.email
@@ -67,6 +68,7 @@ class CORE_SECURITY{
 		if(mysql_num_rows($result)){ // nos devuelve 1 si encontro el usuario y el password
 			$array=mysql_fetch_array($result);
 			//Agregamos los datos basicos a la sesion y redirigimos a la página principal
+			$_SESSION["user_id"]=$array["user_id"];
 			$_SESSION["nickname"]=$array["nickname"];
 			$_SESSION["nombre"]=$array["name"];
 			$_SESSION["mail"]=$array["email"];

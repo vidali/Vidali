@@ -2,7 +2,7 @@
 //Carga de datos...
 	include("vdl-core/core_user.class.php");
 	$prof = new CORE_USER();
-	$author = $prof->get_profile("demo",$visitor);
+	$author = $prof->get_profile($_SESSION["user_id"],$visitor);
 	foreach ($author as $data){
 		if (isset($data['email']))
 			$email = $data['email'];
@@ -86,12 +86,19 @@
 		include("vdl-core/updates.class.php");
 		$upd_class= new Update(ADMIN);
 		$sql = mysql_query ("SELECT * FROM vdl_updates ORDER BY id DESC");
-		$last_id = mysql_num_rows ($sql);
+		$last_id = @mysql_num_rows($sql);
+		if($last_id > 0)
+		{
 		$last_upd = $upd_class->get_update($last_id);
 		echo '<article id="last-upd">';
 				echo '<section class="upd-msg">'.$last_upd["upd_msg"].'</section><section class="upd-info">'.$last_upd["date"]."</section>";
 		echo '</article>';
 		include ("vdl-profile/vdl-updates/index.php");
+		}
+		else
+		{
+		echo '<br><h2>No has introducido ningun estado en tu perfil</h2>';
+		}
 		/*echo '<section id="up-info">';
 					echo '<form action="vdl-includes/set_update.php" method="post">
 							<input id ="update" name="update" type="text" size="90" placeholder="'.U_ASK.'" >
