@@ -41,12 +41,13 @@ class CORE_USER{
 	public function add_update($_user,$_message){
 		//conectar a base de datos
 		$core= new CORE_SECURITY();
+		$connection= $core->dbconf_func();
 		$connection= $core->bd_connect();
 		date_default_timezone_set('Europe/London');
 		$date = date("Y-m-d G:i:s");
 		$query = ("INSERT INTO vdl_updates (user_id,upd_msg,date) VALUES ('$_user','$_message', '$date')");
 		$publicar = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
-		header("Location:../index.php");
+		//header("Location:../index.php");
 	}
 
 	public function add_media(){

@@ -19,8 +19,9 @@
 	<?php load_mainscripts();
 		include("vdl-themes/default/scripts/script1.html");
 	?>
-<script src="jquery.js" type="text/javascript"></script>
+<script src="js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript"> 
+<!--Jquery animacion//-->
 $(document).ready(function(){ 
 var si = 1;
 	$('#pulsa').click(function() {
@@ -39,6 +40,29 @@ var si = 1;
 		}
 });
 });
+<!--Envio de update por AJAX//-->
+function actualiza(mensaje)
+{
+if (mensaje=="")
+  {
+  alert('Update vacio!');
+  return;
+  } 
+	xmlHttp = new XMLHttpRequest();
+
+    xmlHttp.open("POST", "vdl-includes/set_update.php", true);
+    xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=ISO-8859-1');
+    xmlHttp.send("update="+mensaje);
+    
+    $('#globo').animate({
+			opacity: 0
+			}, 600, function() {location.reload()});
+}
+
+function cuenta()
+{
+document.getElementById('contador').innerHTML = document.getElementById('mensaje').value.length;
+}
 </script>
 </head>
 <body>
@@ -112,8 +136,10 @@ var si = 1;
 
 <div id="globo">
 <span>Actualiza tu estado:</span><br>
-<textarea></textarea><br>
-<input type="button" value="Actualiza!">
+<textarea id="mensaje" style="width:388px;" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea><br>
+<span style="float:right;"><span id="contador"></span>
+<input type="button" value="Actualiza!" OnClick="actualiza(document.getElementById('mensaje').value)">
+</span>
 </div>
 
 <div id=taskbar>

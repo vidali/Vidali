@@ -7,10 +7,20 @@ class CORE_SECURITY{
 
 //===>Constructor
 	public function __construct (){
+		
 	}
 
 	public function load_dbconf (){
 		$config=parse_ini_file('vdl-core/db.ini',true);
+		define ("DBDIR",$config["DB"]["DBDIR"]);
+		define ("DBUSR",$config["DB"]["DBUSR"]);
+		define ("DBPSW",$config["DB"]["DBPSW"]);
+		define ("DBASE",$config["DB"]["DBASE"]);
+	}
+	
+	//He creado esta funcion pero no me parece la mejor manera de resolver el problema, usando una direccion fija en la anterior se solucionaria...
+	public function dbconf_func (){
+		$config=parse_ini_file('../vdl-core/db.ini',true);
 		define ("DBDIR",$config["DB"]["DBDIR"]);
 		define ("DBUSR",$config["DB"]["DBUSR"]);
 		define ("DBPSW",$config["DB"]["DBPSW"]);
