@@ -58,6 +58,11 @@ if (mensaje=="")
 			opacity: 0
 			}, 600, function() {location.reload()});
 }
+
+function cuenta()
+{
+document.getElementById('contador').innerHTML = document.getElementById('mensaje').value.length;
+}
 </script>
 </head>
 <body>
@@ -131,8 +136,10 @@ if (mensaje=="")
 
 <div id="globo">
 <span>Actualiza tu estado:</span><br>
-<textarea id="mensaje"></textarea><br>
+<textarea id="mensaje" style="width:388px;" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea><br>
+<span style="float:right;"><span id="contador"></span>
 <input type="button" value="Actualiza!" OnClick="actualiza(document.getElementById('mensaje').value)">
+</span>
 </div>
 
 <div id=taskbar>
