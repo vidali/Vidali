@@ -19,6 +19,27 @@
 	<?php load_mainscripts();
 		include("vdl-themes/default/scripts/script1.html");
 	?>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){ 
+var si = 1;
+	$('#pulsa').click(function() {
+		if(si){
+			$('#globo').animate({
+			opacity: 1
+			}, 600, function() {});
+			si = 0;
+		}
+		else
+		{
+			$('#globo').animate({
+			opacity: 0
+			}, 600, function() {});
+			si = 1;
+		}
+});
+});
+</script>
 </head>
 <body>
 <header>
@@ -83,15 +104,22 @@
 <footer>
 	<div id="line-footer">
 			<div class="container_16">
-				Vidali Social Network. Cristopher D. Caamana Gómez, 2011.<br/><img src="vdl-media/vdl-images/agpl.png"><img src="vdl-media/vdl-images/html5.png">
+				Vidali Social Network. Cristopher D. Caamana Gómez, 2011.<br/><img src="vdl-media/vdl-images/agpl.png"><img src="vdl-media/vdl-images/html5.png">				
 			</div>
+			
 	</div>
 </footer>
+
+<div id="globo">
+<span>Actualiza tu estado:</span><br>
+<textarea></textarea><br>
+<input type="button" value="Actualiza!">
+</div>
 
 <div id=taskbar>
 	<nav id=buttons>
 		<div class="grid_1">
-			Habla!
+		<span id="pulsa">Habla!</span>
 		</div>
 		<div class="grid_1">
 			Inbox

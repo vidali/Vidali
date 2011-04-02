@@ -42,6 +42,45 @@ body{
 	margin: 0px;
 }
 
+#globo {
+	position:fixed;
+	width: 400px;
+	height: 100px;
+	padding:15px;
+	bottom: 0px;
+	right: 145px;
+	margin:1em 0 3em;
+	border:5px solid #5a8f00;
+	color:#333;
+	background:#fff;
+	opacity: 0; 
+	border-radius:10px;	
+}
+
+#globo:before {
+	content:"";
+	display:block;
+	position:absolute;
+	bottom:-40px; 
+	left:350px;
+	width:0;
+	height:0;
+	border:20px solid transparent;
+	border-top-color:#5a8f00;
+}
+
+#globo:after {
+	content:"";
+	display:block;
+	position:absolute;
+	bottom:-26px; 
+	left:357px;
+	width:0;
+	height:0;
+	border:13px solid transparent;
+	border-top-color:#fff;
+}
+
 #taskbar{
 	padding-top: 5px;
 	position: fixed;
@@ -435,3 +474,9 @@ input[type=submit]{
 	padding: 2px;
 	color: #000;
 }
+
+/*====================ACTUALIZA ESTADO====================*/
+
+
+
+
