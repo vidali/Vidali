@@ -77,12 +77,13 @@ class CORE_SECURITY{
 		}*/
 		if(mysql_num_rows($result)){ // nos devuelve 1 si encontro el usuario y el password
 			$array=mysql_fetch_array($result);
+			
 			//Agregamos los datos basicos a la sesion y redirigimos a la página principal
 			$_SESSION["user_id"]=$array["user_id"];
 			$_SESSION["nickname"]=$array["nickname"];
 			$_SESSION["nombre"]=$array["name"];
 			$_SESSION["mail"]=$array["email"];
-			$_SESSION['loged'] = 1;
+			$_SESSION['loged'] = 1;		 
 			header("Location:../index.php?pg=home");
 		}
 		else

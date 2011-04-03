@@ -1,6 +1,6 @@
 <?php
 //Carga de datos...
-	include("vdl-core/core_user.class.php");
+	include("vdl-core/core_user.class.php");		
 	$prof = new CORE_USER();
 	$author = $prof->get_profile($_SESSION["user_id"],$visitor);
 	foreach ($author as $data){

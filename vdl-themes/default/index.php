@@ -19,7 +19,6 @@
 	<?php load_mainscripts();
 		include("vdl-themes/default/scripts/script1.html");
 	?>
-<script src="js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript"> 
 <!--Jquery animacion//-->
 $(document).ready(function(){ 
@@ -56,7 +55,7 @@ if (mensaje=="")
     
     $('#globo').animate({
 			opacity: 0
-			}, 600, function() {location.reload()});
+			}, 600, function() {location.href = location.href});
 }
 
 function cuenta()
@@ -120,7 +119,7 @@ document.getElementById('contador').innerHTML = document.getElementById('mensaje
 					echo "Home > Archivos </h4> Archivos";
 			?>
 			</div>
-			<?php include("vdl-includes/content.php");?>
+			<span id="recargar"><?php include("vdl-includes/content.php");?></span>
 		</div>
 	</div>
 </section>
