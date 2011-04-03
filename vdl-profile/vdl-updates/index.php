@@ -28,6 +28,8 @@
 		$updates = $upd_class->get_updates($paginas,$desde);
 		foreach ($updates as $update){
 			echo '<article id="upd">';
+				echo '<img src="vdl-media/vdl-images/'. $photo . '_tb2.jpg">';
+				echo '@'.$nickname;
 				echo '<section class="upd-msg">'.$update["upd_msg"].'</section><section class="upd-info">'.$update["date"]."</section>";
 			echo '</article>';
 		}

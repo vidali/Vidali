@@ -89,9 +89,11 @@ class CORE_USER{
 									vdl_users.location,
 									vdl_users.genre,
 									vdl_users.bday,
+									vdl_users.age,
 									vdl_users.bio,
 									vdl_users.email,
-									vdl_users.website
+									vdl_users.website,
+									vdl_users.img_prof
 									FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
 			$result=mysql_query($query,$connection);
 		}

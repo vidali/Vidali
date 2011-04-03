@@ -11,7 +11,7 @@ class CORE_SECURITY{
 	}
 
 	public function load_dbconf (){
-		$config=parse_ini_file('vdl-core/db.ini',true);
+		$config=parse_ini_file('db.ini',true);
 		define ("DBDIR",$config["DB"]["DBDIR"]);
 		define ("DBUSR",$config["DB"]["DBUSR"]);
 		define ("DBPSW",$config["DB"]["DBPSW"]);
@@ -20,7 +20,7 @@ class CORE_SECURITY{
 	
 	//He creado esta funcion pero no me parece la mejor manera de resolver el problema, usando una direccion fija en la anterior se solucionaria...
 	public function dbconf_func (){
-		$config=parse_ini_file('../vdl-core/db.ini',true);
+		$config=parse_ini_file('db.ini',true);
 		define ("DBDIR",$config["DB"]["DBDIR"]);
 		define ("DBUSR",$config["DB"]["DBUSR"]);
 		define ("DBPSW",$config["DB"]["DBPSW"]);

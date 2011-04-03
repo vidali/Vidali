@@ -1,6 +1,6 @@
 <?php
 //Carga de datos...
-	include("vdl-core/core_user.class.php");		
+	include("vdl-includes/vdl-core/core_user.class.php");		
 	$prof = new CORE_USER();
 	$author = $prof->get_profile($_SESSION["user_id"],$visitor);
 	foreach ($author as $data){
@@ -26,11 +26,12 @@
 	else
 		$bday ="";
 	$bio = $data['bio'];
+	$photo = $data['img_prof'];
 ?>
 
 <div class="grid_4">
 	<div class="basic_photo">
-		<img src="vdl-media/vdl-images/prof_def_big.jpg">
+		<?php echo '<img src="vdl-media/vdl-images/'. $photo . '_big.jpg">'; ?>
 	</div> 
 		<div class="basic3">
 			<div class="pr_titles">
@@ -83,7 +84,7 @@
 			Actividad Reciente:
 		</div>
 		<?php
-		include("vdl-core/updates.class.php");
+		include("vdl-includes/vdl-core/updates.class.php");
 		$upd_class= new Update(ADMIN);
 		$sql = mysql_query ("SELECT * FROM vdl_updates ORDER BY id DESC");
 		$last_id = @mysql_num_rows($sql);
@@ -91,6 +92,8 @@
 		{
 		$last_upd = $upd_class->get_update($last_id);
 		echo '<article id="last-upd">';
+				echo '<img src="vdl-media/vdl-images/'. $photo . '_tb.jpg">';
+				echo '@'.$nickname;
 				echo '<section class="upd-msg">'.$last_upd["upd_msg"].'</section><section class="upd-info">'.$last_upd["date"]."</section>";
 		echo '</article>';
 		include ("vdl-profile/vdl-updates/index.php");
@@ -99,12 +102,6 @@
 		{
 		echo '<br><h2>No has introducido ningun estado en tu perfil</h2>';
 		}
-		/*echo '<section id="up-info">';
-					echo '<form action="vdl-includes/set_update.php" method="post">
-							<input id ="update" name="update" type="text" size="90" placeholder="'.U_ASK.'" >
-							<input type="submit" value="Actualiza!">
-						</form>';
-		echo "</section>";*/
 ?>
 		</div> 
 	</div> 
