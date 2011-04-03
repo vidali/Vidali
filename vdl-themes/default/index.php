@@ -143,13 +143,8 @@ document.getElementById('contador').innerHTML = document.getElementById('mensaje
 
 <div id=taskbar>
 	<nav id=buttons>
-		<?php if ($visitor == ADMIN){?>
-			<div class="grid_1">
-					<a href="index.php?pg=admin" title="Panel de Administración">Admin.</a>
-				</div>
-		<?php } ?>
 		<div class="grid_1">
-		<span id="pulsa"><a href="#">Habla!</a></span>
+		<span id="pulsa">Habla!</span>
 		</div>
 		<div class="grid_1">
 			Inbox
@@ -160,6 +155,11 @@ document.getElementById('contador').innerHTML = document.getElementById('mensaje
 		<div class="grid_1">
 			<?php echo'<a href="vdl-includes/log.php?func=logout" title="'.M_LOU.'">Logout</a>';?>
 		</div>
+		<?php if ($visitor == ADMIN){?>
+			<div class="grid_1">
+					<a href="index.php?pg=admin" title="Panel de Administración">Admin.</a>
+				</div>
+		<?php } ?>
 	</nav>
 </div>
 </body>
