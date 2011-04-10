@@ -22,9 +22,15 @@
 		$location ="";
 	$genre = $data['genre'];
 	if (isset($data['bday']))
+	{
 		$bday = $data['bday'];
+		$age = $data['age'];
+	}
 	else
+	{
 		$bday ="";
+		$age = "";
+	}
 	$bio = $data['bio'];
 	$photo = $data['img_prof'];
 ?>
@@ -39,13 +45,13 @@
 			</div>
 			<?php echo '<article id="info-pr">';
 				echo $genre.'<br/>';
-				echo ' 21 '. P_AG2 .' (';
+				echo $age." ". P_AG2 .' (';
 				echo $bday.')<br/>';
 				echo $location.'<br/>';
 				//echo '<img src="' . $grav_url . '" alt="User Gravatar">';
 				echo '<a href="mailto:'.$email.'">'.$email.'</a><br/>';
 				echo '<a href="http://'.$website.'">'.$website.'</a><br/>';
-				echo $bio .'<br/>...Ver perfil completo.';
+				echo $bio;
 		}
 		echo '<div class="clear"></div>';
 	echo "</article>";

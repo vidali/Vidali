@@ -89,7 +89,6 @@ class CORE_USER{
 									vdl_users.location,
 									vdl_users.genre,
 									vdl_users.bday,
-									vdl_users.age,
 									vdl_users.bio,
 									vdl_users.email,
 									vdl_users.website,
@@ -102,11 +101,29 @@ class CORE_USER{
 			 $message .= 'Whole query: ' . $query;
 			 die($message);
 		}
+				
 		///===>mostrar resultado
 		$a_result = array();
 		while ($row = mysql_fetch_assoc($result)){
 			array_push($a_result,$row);
 		}
+		
+		//Calculamos la edad y la fecha del cumpleaños siguiente
+		if ($client){
+		if(substr($a_result[0]['bday'], 5, 2) > date("n")){
+		$a_result[0]['age']= date("Y")-substr($a_result[0]['bday'], 0, 4)-1;
+		$a_result[0]['bday'] = substr($a_result[0]['bday'], 8, 2).'/'.substr($a_result[0]['bday'], 5, 2).'/'.(substr($a_result[0]['bday'], 0, 4)+$a_result[0]['age']+1);
+		}else{
+		if(date("n")==substr($a_result[0]['bday'], 5, 2) AND substr($a_result[0]['bday'], 8, 2)>date("j")){
+		$a_result[0]['age']= date("Y")-substr($a_result[0]['bday'], 0, 4)-1;
+		$a_result[0]['bday'] = substr($a_result[0]['bday'], 8, 2).'/'.substr($a_result[0]['bday'], 5, 2).'/'.(substr($a_result[0]['bday'], 0, 4)+$a_result[0]['age']+1);
+		}else{
+		$a_result[0]['age']= date("Y")-substr($a_result[0]['bday'], 0, 4);
+		$a_result[0]['bday'] = substr($a_result[0]['bday'], 8, 2).'/'.substr($a_result[0]['bday'], 5, 2).'/'.(substr($a_result[0]['bday'], 0, 4)+$a_result[0]['age']+1);
+		}
+		}		
+		}
+		
 		return $a_result;
 	}
 
