@@ -41,7 +41,7 @@
 	</div> 
 		<div class="basic3">
 			<div class="pr_titles">
-				<h1><?php echo $name.'(@'.$nickname.')';?></h1>
+				<h1><?php echo $name.' (@'.$nickname.')';?></h1>
 			</div>
 			<?php echo '<article id="info-pr">';
 				echo $genre.'<br/>';
@@ -51,7 +51,7 @@
 				//echo '<img src="' . $grav_url . '" alt="User Gravatar">';
 				echo '<a href="mailto:'.$email.'">'.$email.'</a><br/>';
 				echo '<a href="http://'.$website.'">'.$website.'</a><br/>';
-				echo $bio;
+				echo $bio . '</br>';
 		}
 		echo '<div class="clear"></div>';
 	echo "</article>";
@@ -60,26 +60,27 @@
 	
 	<div class="basic_tb">
 		<div class="pr_titles">
-			Amigos:
+			Amigos (50)
 		</div>
 		<br/>
 		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
 		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
 		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
 		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
+		<div id="button">Ver todos</div>
 		<br/><br/>
 	</div>
 
 	<div class="basic_tb">
 		<div class="pr_titles">
-			redes:
+			redes (100)
 		</div>
 		<br/>
 		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
 		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
 		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
 		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
-		<h4>Ver todos (100)</h4>
+		<div id="button">Ver todos</div>
 	</div> 
 
 </div>
@@ -94,21 +95,27 @@
 		$upd_class= new Update(ADMIN);
 		$sql = mysql_query ("SELECT * FROM vdl_updates ORDER BY id DESC");
 		$last_id = @mysql_num_rows($sql);
-		if($last_id > 0)
-		{
-		$last_upd = $upd_class->get_update($last_id);
-		echo '<article id="last-upd">';
-				echo '<img src="vdl-media/vdl-images/'. $photo . '_tb.jpg">';
-				echo '@'.$nickname;
-				echo '<section class="upd-msg">'.$last_upd["upd_msg"].'</section><section class="upd-info">'.$last_upd["date"]."</section>";
-		echo '</article>';
-		include ("vdl-profile/vdl-updates/index.php");
+		if($last_id > 0){
+			$last_upd = $upd_class->get_update($last_id);?>
+			<article id="last-upd">
+				<section class ="upd_tb grid_1">
+					<?php echo '<img src="vdl-media/vdl-images/'. $photo . '_tb.jpg">';?>
+				</section>
+				<section class="upd-msg grid_9">
+					<section class="id_sender">
+						<?php echo '@'.$nickname;?>
+						<section class="upd-info">
+							<?php echo $last_upd["date"];?>
+						</section>
+					</section>
+					<?php echo $last_upd["upd_msg"];?>
+				</section>
+			</article>
+			<?php include ("vdl-profile/vdl-updates/index.php");
 		}
 		else
-		{
-		echo '<br><h2>No has introducido ningun estado en tu perfil</h2>';
-		}
-?>
+			echo '<h2>No has introducido ningun estado en tu perfil</h2>';
+		?>
 		</div> 
 	</div> 
 </div> 

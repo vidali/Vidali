@@ -25,7 +25,7 @@
 	define ("P_AG2",htmlentities("Años",ENT_QUOTES,"UTF-8"));
 	define ("P_BIO",htmlentities("Biografía:",ENT_QUOTES,"UTF-8"));
 	define ("U_ASK",htmlentities("¿Qué deseas contar?",ENT_QUOTES,"UTF-8"));
-	define ("U_PPA",htmlentities("Página anterior",ENT_QUOTES,"UTF-8"));
-	define ("U_NPA",htmlentities("Página siguiente",ENT_QUOTES,"UTF-8"));
+	define ("U_PPA",htmlentities("Anterior",ENT_QUOTES,"UTF-8"));
+	define ("U_NPA",htmlentities("Siguiente",ENT_QUOTES,"UTF-8"));
 
 ?>

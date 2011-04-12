@@ -19,6 +19,7 @@
 /*====================TEXT====================*/
 a{ color:<?php echo $COLOR_TEXT_LINK;?>; text-decoration: none}
 header #box1 a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
+#button a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 
 h1{ font-size:18px; margin:0px; }
 h2{ font-size:16px; margin:0px; }
@@ -283,23 +284,21 @@ div.clear {
 	padding-left: 10px;
 }
 
-#last-upd{
-	display: block;
-	float: left;
-	width: 100%;
-	margin: 10px 5px 10px 5px;
-	padding: 5px;
-	min-height: 40px;
-	font-size: 16px;
+.upd_tb{
+	height: 100%;
+}
+
+.id_sender{
+	font-size: 12px;
 	border-bottom:1px solid #DDD;
 }
 
-#last-upd .upd-msg{
+.upd-msg{
 	color: #333;
 	font-size: 20px;
 }
 
-#last-upd .upd-info{
+.upd-info{
 	float: right;
 	color: #A9A9A9;
 	font-size: 12px;
@@ -313,7 +312,7 @@ div.clear {
 	padding: 5px;
 	min-height: 40px;
 	font-size: 16px;
-	border-bottom:1px solid #DDD;
+	background-color: #f5f5f5;
 }
 
 #upd{
@@ -324,19 +323,12 @@ div.clear {
 	max-height: 200px;
 	margin: 10px 5px 10px 5px;
 	padding: 5px;
-	border-bottom:1px solid #DDD;
 }
 
 #upd .upd-msg{
 	color: #444;
 	font-size: 16px;
 }
-
-#upd .upd-info{
-	float: right;
-	color: #A9A9A9;
-}
-
 
 /*=========HOME========*/
 .basic{
@@ -416,6 +408,23 @@ footer{
 	display: block;
 }
 /*====================OTHERS====================*/
+#button{
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border: 1px solid #6B6B6B;
+	background: #333;
+	color: #fff;
+	max-width: 50px;
+	height: 100%;  
+	padding: 2px;
+	font-size: 12px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	float: left;
+	margin: 0px 10px 0px 10px;
+}
 #task-bar{
 	position: fixed;
 	height: 25px;

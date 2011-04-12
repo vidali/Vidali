@@ -26,13 +26,22 @@
 	}
 	else{
 		$updates = $upd_class->get_updates($paginas,$desde);
-		foreach ($updates as $update){
-			echo '<article id="upd">';
-				echo '<img src="vdl-media/vdl-images/'. $photo . '_tb2.jpg">';
-				echo '@'.$nickname;
-				echo '<section class="upd-msg">'.$update["upd_msg"].'</section><section class="upd-info">'.$update["date"]."</section>";
-			echo '</article>';
-		}
+		foreach ($updates as $update){?>
+			<article id="upd">
+				<section class ="upd_tb grid_1">
+					<?php echo '<img src="vdl-media/vdl-images/'. $photo . '_tb.jpg">';?>
+				</section>
+				<section class="upd-msg grid_9">
+					<section class="id_sender">
+						<?php echo '@'.$nickname;?>
+						<section class="upd-info">
+							<?php echo $update["date"];?>
+						</section>
+					</section>
+					<?php echo $update["upd_msg"];?>
+				</section>
+			</article>
+<?php	}
 	}
 	$anterior = true;
 	$siguiente = true;
@@ -48,11 +57,13 @@
 		$anterior = false;
 		$siguiente = true;
 	}
+	echo '<div class="clear"></div>';
+	echo '<div id="buttons" class="grid_9">';
 	if ($anterior) {
-	echo '<a href="?pg=prof&pagina='.($actual-1)."\">&lt; ".U_PPA."</a> | ";
+	echo '<div id="button"><a href="?pg=prof&pagina='.($actual-1)."\">".U_PPA."</a></div>";
 	}
 	if ($siguiente) {
-	echo '<a href="?pg=prof&pagina='.($actual+1)."\">".U_NPA." &gt;</a>";
+	echo '<div id="button"><a href="?pg=prof&pagina='.($actual+1)."\">".U_NPA."</a></div>";
 	}
-
+	echo '</div>';
 ?>
