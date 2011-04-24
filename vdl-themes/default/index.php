@@ -11,6 +11,9 @@
 		echo "Vidali";
 	?>
 	</title>
+	<script type="text/javascript" src="/js/jquery.js" ></script>
+	<script type="text/javascript" src="/js/jformer.js" ></script>
+	<link rel="stylesheet" type="text/css" href="style/jformer.css" ></link>
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/reset.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/text.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
@@ -49,7 +52,7 @@ if (mensaje=="")
   } 
 	xmlHttp = new XMLHttpRequest();
 
-    xmlHttp.open("POST", "vdl-includes/set_update.php", true);
+    xmlHttp.open("POST", "<?php echo "vdl-includes/set_update.php?sender=".$_SESSION["nickname"];  ?>", true);
     xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=ISO-8859-1');
     xmlHttp.send("update="+mensaje);
     
@@ -143,23 +146,23 @@ document.getElementById('contador').innerHTML = document.getElementById('mensaje
 
 <div id=taskbar>
 	<nav id=buttons>
-		<div class="grid_1">
-		<span id="pulsa">Habla!</span>
-		</div>
-		<div class="grid_1">
-			Inbox
-		</div>
-		<div class="grid_1">
-			Not.
-		</div>
-		<div class="grid_1">
-			<?php echo'<a href="vdl-includes/log.php?func=logout" title="'.M_LOU.'">Logout</a>';?>
-		</div>
 		<?php if ($visitor == ADMIN){?>
 			<div class="grid_1">
-					<a href="index.php?pg=admin" title="Panel de Administración">Admin.</a>
+					<a href="index.php?pg=admin" title="Panel de Administración"><img src="style/icons/network.png"></a>
 				</div>
 		<?php } ?>
+		<div class="grid_1">
+		<span id="pulsa"><img src="style/icons/comment.png"></span>
+		</div>
+		<div class="grid_1">
+			<img src="style/icons/mail.png">
+		</div>
+		<div class="grid_1">
+			<img src="style/icons/flag.png">
+		</div>
+		<div class="grid_1">
+			<?php echo'<a href="vdl-includes/log.php?func=logout" title="'.M_LOU.'"><img src="style/icons/lock.png"></a>';?>
+		</div>
 	</nav>
 </div>
 </body>

@@ -61,18 +61,19 @@ header{
 	<?php echo $HEIGHT_HEADER;?>;
 }
 
-#login-form{
-	min-height: 100px;
-}
-
-#login-form ul{
+#vdl-form ul{
 		list-style: none;
 }
-#login-form ul li{
+#vdl-form ul li{
 	margin: 0px 5px 0px 5px;
 	float: left;
+	color: #111;
 }
 
+label{
+	display: block;
+	width: 100px;
+}
 /*====================CONTENT====================*/
 #line-cont{
 background-image: -webkit-gradient(
@@ -90,12 +91,15 @@ background-image: -moz-linear-gradient(
 	min-height:200px;
 	height: auto;
 	width: 100%;
+	background-image: -o-linear-gradient(top, rgb(250,250,250),rgb(158,200,84));
+	background-image: linear-gradient(top, rgb(250,250,250), rgb(158,200,84));
 }
 	
 #info{
 	display: block;
 	text-align: center;
 	padding-top: 50px;
+	height: 465px;
 }
 
 #line-login{
@@ -110,6 +114,8 @@ background-image: -moz-linear-gradient(
 #line-footer{
 	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(0,0,0)), color-stop(1, rgb(61,61,61)));
 	background-image: -moz-linear-gradient( center bottom, rgb(0,0,0) 0%, rgb(61,61,61) 100%);
+	background-image: -o-linear-gradient(top, rgb(0,0,0),rgb(61,61,61));
+	background-image: linear-gradient(top, rgb(0,0,0), rgb(61,61,61));
 	min-height:40px;
 	width: 100%;
 	position: absolute;
@@ -121,57 +127,4 @@ footer{
 	color: #FFF;
 	font-size: 14px;
 	height: 40px;
-}
-/*====================OTHERS====================*/
-
-textarea{
-	border-radius: 7px;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	background-color: #f6f7f9;
-	padding:5px;
-	font-size: 14px;
-	resize: none;
-}
-input[type=text]{
-	border-radius: 7px;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	width:auto;
-	height: 100%;  
-	padding:2px;
-	font-size: 10px;
-	border: 0px;
-}
-
-label{
-	width: 100px;
-	text-align: left;
-}
-input[type=password]{
-	border-radius: 7px;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	height: 100%;  
-	padding:2px;
-	font-size: 10px;
-	border: 0px;
-}
-
-input[type=checkbox]{
-	border: 0px;
-}
-
-
-input[type=submit]{
-	border-radius: 7px;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	border: 1px solid #6B6B6B;
-	background: #333;
-	color: #fff;
-  	width: 100px;
-	height: 100%;  
-	padding: 2px;
-	font-size: 10px;
 }

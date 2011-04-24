@@ -4,5 +4,5 @@
 	$message=htmlspecialchars($_POST['update']);
 	//conectar a base de datos
 	$core= new CORE_USER();
-	$core->add_update(USERID,$message);
+	$core->add_update($_GET['sender'],$message);
 ?>

@@ -60,27 +60,22 @@
 	
 	<div class="basic_tb">
 		<div class="pr_titles">
-			Amigos (50)
+			Amigos (0)
 		</div>
 		<br/>
-		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
-		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
-		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
-		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
-		<div id="button">Ver todos</div>
+		Sin amigos...
+	<?php //	<div id="button">Ver todos</div> ?>
 		<br/><br/>
 	</div>
 
 	<div class="basic_tb">
 		<div class="pr_titles">
-			redes (100)
+			redes (0)
 		</div>
 		<br/>
-		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
-		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
-		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
-		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
-		<div id="button">Ver todos</div>
+		Sin redes...
+<?php /*		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
+		<div id="button">Ver todos</div>*/?>
 	</div> 
 
 </div>

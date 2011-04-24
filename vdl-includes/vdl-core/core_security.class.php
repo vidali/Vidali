@@ -9,6 +9,17 @@ class CORE_SECURITY{
 	public function __construct (){
 		
 	}
+	
+	public function close(){
+		mysql_close($conecction);
+	}
+	
+	public function set_db($_dbdir,$_dbusr,$_dbpsw,$_dbase){
+		$file = fopen("../vdl-includes/vdl-core/db.ini","w");
+		$string="[DB]\nDBDIR=$_dbdir\nDBUSR=$_dbusr\nDBPSW=$_dbpsw\nDBASE=$_dbase";
+		fputs($file,$string);
+		fclose($file);
+	}
 
 	public function load_dbconf (){
 		$config=parse_ini_file('db.ini',true);
@@ -18,15 +29,6 @@ class CORE_SECURITY{
 		define ("DBASE",$config["DB"]["DBASE"]);
 	}
 	
-	//He creado esta funcion pero no me parece la mejor manera de resolver el problema, usando una direccion fija en la anterior se solucionaria...
-	public function dbconf_func (){
-		$config=parse_ini_file('db.ini',true);
-		define ("DBDIR",$config["DB"]["DBDIR"]);
-		define ("DBUSR",$config["DB"]["DBUSR"]);
-		define ("DBPSW",$config["DB"]["DBPSW"]);
-		define ("DBASE",$config["DB"]["DBASE"]);
-	}
-
 	public function bd_connect (){
 		$connection = mysql_connect(DBDIR, DBUSR , DBPSW) or die ("<p class='error'>Epic fail...no conecta al server.</p>");
 		$database = DBASE;
@@ -48,15 +50,26 @@ class CORE_SECURITY{
 	return $result;
 	}
 
+	public function add_user($_user_id,$_passwd,$_nickname,$_name,$_location,$_genre,$_bday,$_email,$_bio){
+
+		$this->load_dbconf();
+		$connection= $this->bd_connect();
+		$query = ("INSERT INTO vdl_users (user_id,passwd,nickname,name,location,genre,bday,email,bio,img_prof) VALUES 
+				 ('$_user_id','$_passwd','$_nickname','$_name','$_location','$_genre','$_bday','$_email','$_bio','prof_def')");
+		$result = mysql_query($query,$connection);
+		if (!$result) {
+				 $message  = 'Invalid query: ' . mysql_error() . "\n";
+				 $message = 'Whole query: ' . $query;
+				 die($message);			 
+		}
+
+	}
+
 	public function login($_USER,$_PASS){
 		//Iniciamos sesion y conectamos a la base de datos
 		session_start();
 		//conectar a base de datos
-		$config=parse_ini_file('db.ini',true);
-		define ("DBDIR",$config["DB"]["DBDIR"]);
-		define ("DBUSR",$config["DB"]["DBUSR"]);
-		define ("DBPSW",$config["DB"]["DBPSW"]);
-		define ("DBASE",$config["DB"]["DBASE"]);
+		$this->load_dbconf();
 		$connection= $this->bd_connect();
 		//Extraemos el user y la pass
 		$usr = mysql_real_escape_string($_USER);

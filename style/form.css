@@ -1,0 +1,58 @@
+#vdl-form{
+	border: 2px solid #cfcfcf;
+background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.1, rgb(245,245,245)),
+    color-stop(0.5, rgb(240,240,240)),
+    color-stop(0.9, rgb(245,245,245))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(245,245,245) 10%,
+    rgb(240,240,240) 50%,
+    rgb(245,245,245) 90%
+);
+	box-shadow: 3px 3px 5px #888;
+	-moz-box-shadow: 3px 3px 5px #888;
+		border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	padding: 20px;
+}
+
+textarea{
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding:5px;
+	font-size: 14px;
+	resize: none;
+	border: 1px solid #afafaf;
+}
+input[type=text]{
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	width:auto;
+	padding:2px;
+	font-size: 14px;
+}
+
+input[type=password]{
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding:2px;
+	font-size: 14px;
+}
+
+input[type=submit]{
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #333;
+	color: #f9f9f9;
+	border: 1px solid #9f9f9f;
+}

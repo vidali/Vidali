@@ -3,7 +3,7 @@
 		echo '<a href="vdl-profile/vdl-notes/add.php" class="boxy" title="Publicar anotación">Nueva nota   </a>';
 		echo '<a href="vdl-profile/vdl-notes/manage.php" class="boxy" title="Organizar">Organizar notas</a>';
 	}
-	include("vdl-core/notes.class.php");
+	include("./vdl-includes/vdl-core/notes.class.php");
 	$note_class= new Notes();
 	$paginas = 5;
 	$sql = mysql_query ("SELECT * FROM vdl_notes ORDER BY id DESC");

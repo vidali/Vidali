@@ -20,12 +20,6 @@ class CORE_USER{
 
 //===>Modify user data
 
-	public function set_config($_title,$_descr,$_user,$_mpg,$_lang){
-		$file = fopen("vdl-config/config.ini","w");
-		$string="[CONFIG]\nTITLE=\"$_lang\"\nDESCR=\"$_descr\"\nUSER=$_user\nMAINPG=$_mpg\nLANG=$_lang";
-		fputs($file,$string);
-		fclose($file);
-	}
 	public function set_profile(){
 	
 	}
@@ -41,7 +35,7 @@ class CORE_USER{
 	public function add_update($_user,$_message){
 		//conectar a base de datos
 		$core= new CORE_SECURITY();
-		$connection= $core->dbconf_func();
+		$connection= $core->load_dbconf();
 		$connection= $core->bd_connect();
 		date_default_timezone_set('Europe/London');
 		$date = date("Y-m-d G:i:s");

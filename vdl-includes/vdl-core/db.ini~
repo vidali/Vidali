@@ -1,0 +1,5 @@
+[DB]
+DBDIR=127.0.0.1
+DBUSR=root
+DBPSW=root
+DBASE=vidali3

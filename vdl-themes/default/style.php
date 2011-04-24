@@ -36,7 +36,7 @@ h6{ font-size:8px; margin:0px; }
 /*====================BODY====================*/
 body{
 	background: <?php echo $COLOR_BACKGROUND;?>;
-	font-family: caviar-dreams,\'Droid Sans\',verdana,arial,sans-serif;
+	font-family: caviar-dreams,Helvetica,arial,sans-serif;
 	font-size: 16px;
 	color:#000;
 	padding: 0px;
@@ -63,7 +63,7 @@ body{
 	display:block;
 	position:absolute;
 	bottom:-40px; 
-	left:350px;
+	left:375px;
 	width:0;
 	height:0;
 	border:20px solid transparent;
@@ -75,7 +75,7 @@ body{
 	display:block;
 	position:absolute;
 	bottom:-26px; 
-	left:357px;
+	left:382px;
 	width:0;
 	height:0;
 	border:13px solid transparent;
@@ -83,10 +83,10 @@ body{
 }
 
 #taskbar{
-	padding-top: 5px;
+/*	padding-top: 5px;*/
 	position: fixed;
-	height: 25px;
-	background: rgba(250,250,250,0.75);
+	height: 35px;
+	background: rgba(158,158,158,0.1);
 	bottom: 0px;
 	right: 0px;
 	margin: 0px;
@@ -182,7 +182,7 @@ header #logo a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 /*====================CONTENT====================*/
 /*--->Contenido dentro del <section>*/
 #container-line{
-	min-height: 780px;
+	min-height: 700px;
 	background: rgb(250,250,250);
 	display: block;
 	padding-top: 10px;
@@ -425,63 +425,10 @@ footer{
 	float: left;
 	margin: 0px 10px 0px 10px;
 }
-#task-bar{
-	position: fixed;
-	height: 25px;
-	min-width:1024;
-	width:100%;
-	background-color: #9A9A9A;
-	bottom:0px;
-	left:0px;
-}
 
-#vdl-form{
-	width: 100%;
-	padding: 20px 5px 20px 5px;
-}
-
-textarea{
-	border-radius: 7px;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	background-color: #f6f7f9;
-	padding:5px;
-	font-size: 14px;
-	resize: none;
-}
-input[type=text]{
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	background-color: #f6f7f9;
-	width:auto;
-	height: 100%;  
-	padding:2px;
-	font-size: 14px;
-	background-color:#DEDEDE
-}
-
-input[type=password]{
-	border-radius: 7px;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	background-color: #f6f7f9;
-	height: 100%;  
-	padding:2px;
-	font-size: 14px;
-}
-
-input[type=submit]{
-	border-radius: 2px;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.45, rgb(222,222,222)), color-stop(1, rgb(255,255,255)));
-	background-image: -moz-linear-gradient( center bottom, rgb(222,222,222) 45%, rgb(255,255,255) 100%);
-	border: 1px solid #6B6B6B;
-  	width: 100px;
-	height: 100%;  
-	padding: 2px;
-	color: #000;
+#info-box{
+	padding: 20px;
+	min-height: 600px;
 }
 
 /*====================ACTUALIZA ESTADO====================*/

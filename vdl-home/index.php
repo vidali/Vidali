@@ -1,13 +1,22 @@
+<?php
+	include("vdl-includes/vdl-core/core_user.class.php");		
+	$prof = new CORE_USER();
+	$author = $prof->get_profile($_SESSION["user_id"],$visitor);
+	foreach ($author as $data){
+		$photo = $data['img_prof'];
+	}
+?>
+
 <div class="grid_5">
 	<div class="basic">
 		<div id="pr_thumb">
-			<img src="vdl-media/vdl-images/prof_def.jpg">
+			<?php echo '<img src="vdl-media/vdl-images/' . $photo . '.jpg">'; ?>
 		</div>
 		<div id="pr_card">
 			Usuario de Muestra<br/>
-			XXXX visitas <br/>
-			YYY Amigos<br/>
-			ZZZ Redes<br/>
+			0 visitas <br/>
+			0 Amigos<br/>
+			0 Redes<br/>
 		</div>
 	</div>			
 </div>
