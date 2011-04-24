@@ -1,4 +1,4 @@
-Vidali - Red Social Open Source, 2010.
+Vidali - Red Social Open Source, 2011.
 Autor: Cristopher Caamana Gomez (cristo.c.mc@gmail.com | www.twitter.com/cristomc | www.vdli.wordpress.com)
 
 Gracias por utilizar Vidali! (ESTADO ACTUAL DEL PROYECTO: Pre-Alpha, se recomienda su uso para el desarollo del proyecto unicamente.)
@@ -26,13 +26,12 @@ principal para el funcionamiento de la red (red descentralizada).
 	2.2 Instalacion:
 		Para instalar Vidali en un servidor (ya sea local o en un dominio privado):
 		-Colocar la carpeta "vidali" en la raíz del servidor (p.ej: http://localhost/vidali).
-		-Accede a /raiz/vidali/install.php y seguir las instrucciones...
-		-Listo!, una vez acabes la instalacion elimina la carpeta install y los archivos install.php y style_install.css, por motivos de seguridad.
+		-Accede a /raiz/vidali/install y seguir las instrucciones...
+		-Listo!, una vez acabes la instalacion elimina la carpeta install por motivos de seguridad.
 
 3- Primeros usos.
 |=======================
-Para comenzar, debes iniciar sesion con tu cuenta de usuario (NOTA: en la version pre-alpha se habilita un usuario de pruebas llamado "demo"
-con contraseña "contra" para probar el sistema). Una vez iniciada la sesion, en "configuracion" puedes ajustar las opciones de la red.
+Para comenzar, debes iniciar sesion con la cuenta que creaste al momento de instalar Vidali. Una vez iniciada la sesion, en "configuracion" puedes ajustar las opciones de la red.
 (NOTA: en la version Pre-alpha aun no está habilitado el menú de configuaracion...)
 
 4- Mejorar el código.
