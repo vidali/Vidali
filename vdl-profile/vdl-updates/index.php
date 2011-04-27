@@ -1,7 +1,8 @@
 <?php
 	$paginas = 4;
+	$sql2 = mysql_query ("SELECT * FROM vdl_updates WHERE user_id='".$_SESSION["user_id"]."'");
 	$sql = mysql_query ("SELECT * FROM vdl_updates ORDER BY id DESC");
-	$total = mysql_num_rows ($sql);
+	$total = mysql_num_rows ($sql2);
 	$data = mysql_fetch_assoc($sql);
 	$ultimo = $data["id"];
 	if (isset($_GET["pagina"]))
@@ -26,7 +27,9 @@
 	}
 	else{
 		$updates = $upd_class->get_updates($paginas,$desde);
-		foreach ($updates as $update){?>
+		foreach ($updates as $update){
+			if($update["user_id"] == $_SESSION["user_id"])
+			{?>
 			<article id="upd">
 				<section class ="upd_tb grid_1">
 					<?php echo '<img src="vdl-media/vdl-images/'. $photo . '_tb.jpg">';?>
@@ -41,7 +44,8 @@
 					<?php echo $update["upd_msg"];?>
 				</section>
 			</article>
-<?php	}
+<?php		}
+	}
 	}
 	$anterior = true;
 	$siguiente = true;

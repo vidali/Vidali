@@ -31,6 +31,25 @@ class CORE_USER{
 	public function add_friend(){
 	
 	}
+	
+	public function exist_user($user){
+		//conectar a base de datos
+		$core= new CORE_SECURITY();
+		$connection= $core->load_dbconf();
+		$connection= $core->bd_connect();
+		$user = htmlspecialchars($user);
+		$query = sprintf("SELECT * FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+		$result=mysql_query($query,$connection);
+		$exist = mysql_num_rows($result);
+		if($exist == 1)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 
 	public function add_update($_user,$_message){
 		//conectar a base de datos

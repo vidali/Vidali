@@ -146,7 +146,7 @@ document.getElementById('contador').innerHTML = document.getElementById('mensaje
 
 <div id=taskbar>
 	<nav id=buttons>
-		<?php if ($visitor == ADMIN){?>
+		<?php if ($visitor == "ADMIN"){?>
 			<div class="grid_1">
 					<a href="index.php?pg=admin" title="Panel de Administración"><img src="style/icons/network.png"></a>
 				</div>
