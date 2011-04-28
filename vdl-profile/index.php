@@ -87,11 +87,13 @@
 		</div>
 		<?php
 		include("vdl-includes/vdl-core/updates.class.php");
-		$upd_class= new Update(ADMIN);
+		$upd_class= new Update("ADMIN");
 		$sql = mysql_query ("SELECT * FROM vdl_updates ORDER BY id DESC");
 		$last_id = @mysql_num_rows($sql);
 		if($last_id > 0){
-			$last_upd = $upd_class->get_update($last_id);?>
+			$last_upd = $upd_class->get_update($last_id);
+			if($last_upd["user_id"] == $_SESSION["user_id"])
+			{?>
 			<article id="last-upd">
 				<section class ="upd_tb grid_1">
 					<?php echo '<img src="vdl-media/vdl-images/'. $photo . '_tb.jpg">';?>
@@ -107,6 +109,7 @@
 				</section>
 			</article>
 			<?php include ("vdl-profile/vdl-updates/index.php");
+		}
 		}
 		else
 			echo '<h2>No has introducido ningun estado en tu perfil</h2>';
