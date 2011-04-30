@@ -50,6 +50,25 @@ class CORE_USER{
 			return 0;
 		}
 	}
+	
+	public function exist_email($email){
+		//conectar a base de datos
+		$core= new CORE_SECURITY();
+		$connection= $core->load_dbconf();
+		$connection= $core->bd_connect();
+		$email = htmlspecialchars($email);
+		$query = sprintf("SELECT * FROM vdl_users WHERE vdl_users.email='%s'", $email);
+		$result=mysql_query($query,$connection);
+		$exist = mysql_num_rows($result);
+		if($exist == 1)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 
 	public function add_update($_user,$_message){
 		//conectar a base de datos
