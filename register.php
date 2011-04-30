@@ -19,7 +19,7 @@
 		if(elque == "pass1" || elque == "pass2")
 		{
 			var Exp = /(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/;
-			if ((document.getElementById('pass1').value.match(Exp)) && (document.getElementById('pass1').value!='')) 
+			if ((document.vdlreg.pass1.value.match(Exp)) && (document.vdlreg.pass1.value!='')) 
 			{  
 				document.getElementById('confirm1').innerHTML = "<img style='padding-left: 5px;' src='style/icons/tick.png' alt='Ok'>"; 
 			}
@@ -29,7 +29,7 @@
 				document.getElementById('confirm2').innerHTML = "";
 			}
 	
-			if ((document.getElementById('pass1').value!='') && (document.getElementById('pass2').value!='') && (document.getElementById('pass2').value==document.getElementById('pass1').value)) 
+			if ((document.vdlreg.pass1.value!='') && (document.vdlreg.pass2.value!='') && (document.vdlreg.pass2.value==document.vdlreg.pass1.value)) 
 			{  
 				document.getElementById('confirm2').innerHTML = "<img style='padding-left: 5px;' src='style/icons/tick.png' alt='Ok'>"; 
 			}
@@ -41,23 +41,110 @@
 		
 		if(elque == "user")
 		{
+			if(document.vdlreg.nick.value != 0)
+			{
 			xmlHttp = new XMLHttpRequest();
 
 			xmlHttp.open("POST", "vdl-includes/register_ajax.php", true);
 			xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=ISO-8859-1');
-			xmlHttp.send("user="+document.getElementById('nick').value);
+			xmlHttp.send("user="+document.vdlreg.nick.value);
 			
-			if(xmlHttp.responseText == 0)
+			xmlHttp.onreadystatechange=function(){
+			if (xmlHttp.readyState==4 && xmlHttp.status==200)
 			{
-				document.getElementById('confirm3').innerHTML = "<img style='padding-left: 5px;' src='style/icons/tick.png' alt='Ok'>";
+				if(xmlHttp.responseText == 0)
+				{
+					document.getElementById('confirm3').innerHTML = "<img style='padding-left: 5px;' src='style/icons/tick.png' alt='Ok'>";
+				}
+				else
+				{
+					document.getElementById('confirm3').innerHTML = "<img style='padding-left: 5px;' src='style/icons/mal.png' alt='Incorrecto'>";
+				}
+			}
+			}
 			}
 			else
 			{
 				document.getElementById('confirm3').innerHTML = "";
 			}
+		
+		}
+		if(elque == "email")
+		{
+			if(document.vdlreg.email.value != 0 && document.vdlreg.email.value.match("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"))
+			{
+			xmlHttp = new XMLHttpRequest();
+
+			xmlHttp.open("POST", "vdl-includes/register_ajax.php", true);
+			xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=ISO-8859-1');
+			xmlHttp.send("email="+document.vdlreg.email.value);
+			
+			xmlHttp.onreadystatechange=function(){
+			if (xmlHttp.readyState==4 && xmlHttp.status==200)
+			{
+				if(xmlHttp.responseText == 0)
+				{
+					document.getElementById('confirm4').innerHTML = "<img style='padding-left: 5px;' src='style/icons/tick.png' alt='Ok'>";
+				}
+				else
+				{
+					document.getElementById('confirm4').innerHTML = "<img style='padding-left: 5px;' src='style/icons/mal.png' alt='Incorrecto'>";
+				}
+			}
+			}
+			}
+			else
+			{
+				document.getElementById('confirm4').innerHTML = "";
+			}
+		}		
+		if(elque == "fecha")
+		{
+			if(document.vdlreg.birthdate.value != 0 && document.vdlreg.birthdate.value.match("[0-9]{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])"))
+			{
+				document.getElementById('confirm5').innerHTML = "<img style='padding-left: 5px;' src='style/icons/tick.png' alt='Ok'>";
+			}
+			else
+			{
+				document.getElementById('confirm5').innerHTML = "";
+			}			
+		}
+		if(elque == "name")
+		{
+			if(document.vdlreg.name.value != 0)
+			{
+				document.getElementById('confirm6').innerHTML = "<img style='padding-left: 5px;' src='style/icons/tick.png' alt='Ok'>";
+			}
+			else
+			{
+				document.getElementById('confirm6').innerHTML = "";
+			}
+		}
+		if(elque == "location")
+		{
+			if(document.vdlreg.location.value != 0)
+			{
+				document.getElementById('confirm7').innerHTML = "<img style='padding-left: 5px;' src='style/icons/tick.png' alt='Ok'>";
+			}
+			else
+			{
+				document.getElementById('confirm7').innerHTML = "";
+			}
+		}
+		if(elque == "sex")
+		{
+			if(document.vdlreg.sex.value != 0)
+			{
+				document.getElementById('confirm8').innerHTML = "<img style='padding-left: 5px;' src='style/icons/tick.png' alt='Ok'>";
+			}
+			else
+			{
+				document.getElementById('confirm8').innerHTML = "";
+			}
 		}
 		
-	}
+		
+}
 	</script>
 </head>
 <body>
@@ -75,26 +162,26 @@
 <section>
 <div id="container-line">
 	<div id="info" class="container_16">
-		<form id="vdl-form" class="grid_4" action="vdl-includes/reg.php" method="post">
+		<form id="vdl-form" name="vdlreg" class="grid_4" action="vdl-includes/reg.php" method="post">
 			Nick:<br/> 
-			<input id="nick" name="nick" type="text" onkeyup="valida('user')"/><span id="confirm3"></span><br/>
+			<input name="nick" type="text" onkeyup="valida('user')"/><span id="confirm3"></span><br/>
 			Password:<br/>
-			<input id="pass1" name="pass1" type="password" onkeyup="valida('pass1')"/><span id="confirm1"></span><br/>
+			<input name="pass1" type="password" onkeyup="valida('pass1')"/><span id="confirm1"></span><br/>
 			Repite Contraseña:<br/>
-			<input id="pass2" name="pass2" type="password" onkeyup="valida('pass2')"/><span id="confirm2"></span><br/><br/>
+			<input name="pass2" type="password" onkeyup="valida('pass2')"/><span id="confirm2"></span><br/><br/>
 			Nombre:<br/>
-			<input id="name" name="name" type="text" /><br/>
+			<input name="name" type="text" onkeyup="valida('name')"/><span id="confirm6"></span><br/>
 			E-mail:<br/>
-			<input name="email" type="email" /><br/>
-			Fecha de Nacimiento (yyyy-mm-dd):<br/>
-			<input id="birthdate" name="birthdate" type="date"><br/>
+			<input name="email" type="email" onkeyup="valida('email')"/><span id="confirm4"></span><br/>
+			Fecha de Nacimiento<br />(yyyy-mm-dd):<br/>
+			<input name="birthdate" type="date" onkeyup="valida('fecha')"><span id="confirm5"></span><br/>
 			Ubicación:<br/>
-			<input id="location" name="location" type="text"><br/>
+			<input name="location" type="text" onkeyup="valida('location')"><span id="confirm7"></span><br/>
 			Sexo:<br/>
-			<input id="sex" name="sex" type="radio" value="1">Male
-			<input id="sex" name="sex" type="radio" value="2"> Female<br/>
+			<input name="sex" type="radio" value="1" onclick="valida('sex')">Male
+			<input name="sex" type="radio" value="2" onclick="valida('sex')"> Female&nbsp;&nbsp;<span id="confirm8"></span><br/>
 			Descripción:<br/>
-			<textarea id="bio" name="bio" rows="5" cols="20" placeholder="Describete!" ></textarea><br/>
+			<textarea name="bio" rows="5" cols="20" placeholder="Describete!" ></textarea><br/>
 			<input type="submit" value="Enviar">
 		</form>
 		<div id="info-box" class="grid_10 prefix_1">
