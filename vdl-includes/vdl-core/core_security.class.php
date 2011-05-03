@@ -75,7 +75,8 @@ class CORE_SECURITY{
 		$usr = mysql_real_escape_string($_USER);
 		$pwd = mysql_real_escape_string(sha1(md5(trim($_PASS))));
 		//Buscamos el usuario y seleccionamos la informacion basica de este...
-		$query = sprintf("SELECT 
+		$query = sprintf("SELECT
+								vdl_users.id,
 								vdl_users.user_id,
 								vdl_users.nickname,
 								vdl_users.name,
@@ -92,6 +93,7 @@ class CORE_SECURITY{
 			$array=mysql_fetch_array($result);
 			
 			//Agregamos los datos basicos a la sesion y redirigimos a la página principal
+			$_SESSION["id"]=$array["id"];
 			$_SESSION["user_id"]=$array["user_id"];
 			$_SESSION["nickname"]=$array["nickname"];
 			$_SESSION["nombre"]=$array["name"];

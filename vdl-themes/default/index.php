@@ -18,6 +18,7 @@
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/text.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
 	<link rel="stylesheet" type="text/css" href="vdl-themes/default/style.php" />
+	<link rel="stylesheet" type="text/css" href="vdl-themes/default/form.css" />
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 	<?php load_mainscripts();
 		include("vdl-themes/default/scripts/script1.html");
@@ -74,7 +75,7 @@ document.getElementById('contador').innerHTML = document.getElementById('mensaje
 			<div id = "logo" class="grid_4">
 					<a href="index.php"><img src="vdl-media/vdl-images/logo.png" border="0">Alfa 0.5</a>
 			</div>
-			<div id="menu" class="grid_5 prefix_7">
+			<div id="menu" class="grid_7 prefix_5">
 				<nav>
 					<ul>
 						<?php $pg=""; if(isset($_GET['pg'])) $pg=$_GET['pg']; ?>
@@ -88,11 +89,16 @@ document.getElementById('contador').innerHTML = document.getElementById('mensaje
 						else
 							echo '<li>';?>
 							<a href="?pg=notes"><?php echo M_NOT; ?></a></li>
-						<?php if($pg == "prof") 
+						<?php if($pg == "n") 
 							echo '<li class="active">';
 						else
 							echo '<li>';?>
-							<a href="?pg=prof"><?php echo M_PRF; ?></a></li>
+							<a href="?pg=n">Redes</a></li>
+						<?php if($pg == "p") 
+							echo '<li class="active">';
+						else
+							echo '<li>';?>							
+							<a href="?pg=p&nick=<?php echo $_SESSION["nickname"] ?>"><?php echo M_PRF; ?></a></li>
 						<?php if($pg == "") 
 							echo '<li class="active">';
 						else
@@ -114,12 +120,14 @@ document.getElementById('contador').innerHTML = document.getElementById('mensaje
 			<?php
 				if (!isset($_GET['pg']))
 					echo "Home </h4> Inicio";
-				else if ($_GET['pg'] == "prof")
+				else if ($_GET['pg'] == "p")
 					echo "Home > Perfil </h4> Perfil";
 				else if ($_GET['pg'] == "notes")
 					echo "Home > Notas </h4> Notas";
 				else if ($_GET['pg'] == "media")
 					echo "Home > Archivos </h4> Archivos";
+				else if ($_GET['pg'] == "n")
+					echo "Home > Redes </h4> Redes";
 			?>
 			</div>
 			<span id="recargar"><?php include("vdl-includes/content.php");?></span>

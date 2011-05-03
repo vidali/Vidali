@@ -9,8 +9,13 @@ else{
 	if ($pg == 'home')
 		include("vdl-home/index.php");
 ///===>Go to Profile page.
-	if ($pg == 'prof')
+	if ($pg == 'p'){
 		include("vdl-profile/index.php");
+}
+///===>Go to Profile page.
+	if ($pg == 'n'){
+		include("vdl-net/index.php");
+}
 ///===>Go to inbox.
 	if ($pg == 'notes')
 		include("vdl-includes/notes.php");

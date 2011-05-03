@@ -109,7 +109,8 @@ class CORE_USER{
 									vdl_users.nickname,
 									vdl_users.genre,
 									vdl_users.bio,
-									vdl_users.website
+									vdl_users.website,
+									vdl_users.prof_nets
 									FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
 			$result=mysql_query($query,$connection);
 		}
@@ -124,7 +125,8 @@ class CORE_USER{
 									vdl_users.bio,
 									vdl_users.email,
 									vdl_users.website,
-									vdl_users.img_prof
+									vdl_users.img_prof,
+									vdl_users.prof_nets
 									FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
 			$result=mysql_query($query,$connection);
 		}
@@ -159,8 +161,33 @@ class CORE_USER{
 		return $a_result;
 	}
 
-	public function get_networks(){
-	
+	public function get_networks($_user,$_visitor){
+		include("core_network.class.php");
+		$core= new CORE_SECURITY();
+		$core_n= new CORE_NETWORK();
+		$connection= $core->bd_connect();
+		$query = ("SELECT id FROM vdl_users WHERE vdl_users.user_id='$_user'");
+		$result = mysql_query($query,$connection);
+		$usid = mysql_fetch_assoc($result);
+		$query = ("SELECT id_net FROM vdl_user_net WHERE vdl_user_net.id_user='".$usid["id"]."'");
+		$result = mysql_query($query,$connection);
+		if (!$result) {
+			 $message  = 'Invalid query: ' . mysql_error() . "\n";
+			 $message .= 'Whole query: ' . $query;
+			 die($message);
+		}
+		$cont=array();
+		while ($row = mysql_fetch_assoc($result)) {
+			array_push($cont,$row);
+		}
+		$arresult=array();
+		foreach ($cont as $row){
+			$data= $core_n->get_network($row["id_net"]);
+			array_push($arresult,$data);
+		}
+		
+		return $arresult;
+
 	}
 
 
@@ -168,8 +195,22 @@ class CORE_USER{
 	
 	}
 
-	public function get_update(){
-	
+	public function get_updates($_user,$_visitor){
+		$core= new CORE_SECURITY();
+		$connection= $core->bd_connect();
+		$query = sprintf("SELECT * FROM vdl_updates WHERE user_id = '%s' ORDER BY id DESC LIMIT 0, 30", $_user);
+		$result=mysql_query($query,$connection);
+		if (!$result) {
+			 $message  = 'Invalid query: ' . mysql_error() . "\n";
+			 $message .= 'Whole query: ' . $query;
+			 die($message);
+		}
+		//mostrar resultado
+		$arresult=array();
+		while ($row = mysql_fetch_array($result)) {
+			array_push($arresult,$row);
+		}
+		return $arresult;
 	}
 
 	public function get_media(){

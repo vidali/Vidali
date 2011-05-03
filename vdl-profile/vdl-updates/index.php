@@ -45,7 +45,7 @@
 				</section>
 			</article>
 <?php		}
-	}
+		}
 	}
 	$anterior = true;
 	$siguiente = true;

@@ -1,8 +1,11 @@
 <?php
 //Carga de datos...
-	include("vdl-includes/vdl-core/core_user.class.php");		
+	include("vdl-includes/vdl-core/core_user.class.php");
 	$prof = new CORE_USER();
-	$author = $prof->get_profile($_SESSION["user_id"],$visitor);
+	if(isset($_GET["nick"]))
+		$author = $prof->get_profile($_GET["nick"],$visitor);
+	else
+		$author = $prof->get_profile($_SESSION["user_id"],$visitor);
 	foreach ($author as $data){
 		if (isset($data['email']))
 			$email = $data['email'];
@@ -33,6 +36,7 @@
 	}
 	$bio = $data['bio'];
 	$photo = $data['img_prof'];
+	$nets =$data['prof_nets'];
 ?>
 
 <div class="grid_4">
@@ -70,10 +74,23 @@
 
 	<div class="basic_tb">
 		<div class="pr_titles">
-			redes (0)
+			redes (<?php echo $nets; ?>)
 		</div>
 		<br/>
-		Sin redes...
+		<?php
+			$prof = new CORE_USER();
+			if(isset($_GET["nick"]))
+				$net = $prof->get_networks($_GET["nick"],$visitor);
+			else
+				$net = $prof->get_networks($_SESSION["user_id"],$visitor);
+			if(empty($net))
+				echo "Sin Redes...";
+			foreach ($net as $n){
+				echo '<img src="vdl-media/vdl-images/'.$n["net_img"].'_tb2.jpg">  ';
+				echo $n["net_name"].': ';
+				echo $n["net_desc"].'</br>';
+			}
+		?>
 <?php /*		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
 		<div id="button">Ver todos</div>*/?>
 	</div> 
@@ -86,15 +103,13 @@
 			Actividad Reciente:
 		</div>
 		<?php
-		include("vdl-includes/vdl-core/updates.class.php");
-		$upd_class= new Update("ADMIN");
-		$sql = mysql_query ("SELECT * FROM vdl_updates ORDER BY id DESC");
-		$last_id = @mysql_num_rows($sql);
-		if($last_id > 0){
-			$last_upd = $upd_class->get_update($last_id);
-			if($last_upd["user_id"] == $_SESSION["user_id"])
-			{?>
-			<article id="last-upd">
+		$updates = $prof -> get_updates($_GET["nick"],$visitor);
+		$upd_cont = count($updates);
+		foreach($updates as $upd){
+			if($upd_cont == count($updates))
+				echo '<article id="last-upd">';
+			else
+				echo '<article id="upd">';?>
 				<section class ="upd_tb grid_1">
 					<?php echo '<img src="vdl-media/vdl-images/'. $photo . '_tb.jpg">';?>
 				</section>
@@ -102,17 +117,14 @@
 					<section class="id_sender">
 						<?php echo '@'.$nickname;?>
 						<section class="upd-info">
-							<?php echo $last_upd["date"];?>
+							<?php echo $upd["date"];?>
 						</section>
 					</section>
-					<?php echo $last_upd["upd_msg"];?>
+					<?php echo $upd["upd_msg"];?>
 				</section>
 			</article>
-			<?php include ("vdl-profile/vdl-updates/index.php");
+		<?php $upd_cont--;
 		}
-		}
-		else
-			echo '<h2>No has introducido ningun estado en tu perfil</h2>';
 		?>
 		</div> 
 	</div> 
