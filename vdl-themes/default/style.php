@@ -241,6 +241,42 @@ div.clear {
   clear: both;
 }
 
+/*=========Network========*/
+
+#net{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#net_photo{
+	float: left;
+}
+
+#net_id{
+	float: left;
+	border-bottom: 1px solid #DADADA;
+	padding-left: 10px;
+	width: 515px;
+}
+
+#net_info{
+	color: #6a6a6a;
+	float: right;
+	width: 515px;
+}
+
+#net_id_p{
+	float: left;
+	border-bottom: 1px solid #DADADA;
+	padding-left: 10px;
+}
+
+#net_info_p{
+	color: #6a6a6a;
+	float: left;
+	min-width: 150px;
+}
+
 /*=========Profile========*/
 
 #info-pr{

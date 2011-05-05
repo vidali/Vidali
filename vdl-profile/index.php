@@ -86,9 +86,13 @@
 			if(empty($net))
 				echo "Sin Redes...";
 			foreach ($net as $n){
-				echo '<img src="vdl-media/vdl-images/'.$n["net_img"].'_tb2.jpg">  ';
-				echo $n["net_name"].': ';
-				echo $n["net_desc"].'</br>';
+				echo '<article id="net">';
+					echo '<a href="?pg=n&name='. $n["net_name"] .'">';
+					echo '<div id="net_photo"><img src="vdl-media/vdl-images/'.$n["net_img"].'_tb.jpg"></div>';
+					echo '<div id="net_id_p">'.$n["net_name"].'</div>';
+					echo '<div id="net_info_p">'.$n["net_sdesc"].'</div></a>';
+					echo '<div class="clear"></div>';
+				echo '</article>';
 			}
 		?>
 <?php /*		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
