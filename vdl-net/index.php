@@ -13,14 +13,19 @@ if(isset($_GET["name"])){
 	echo '</div>';
 	echo '<div class="grid_5 prefix_1">';
 		echo '<h1>Usuarios:</h1>';
+		$joined = false;
 		$users = $core_n->get_users_net($nets["id"]);
 		foreach ($users as $user){
+			if ($user["user_id"] == $_SESSION["nickname"])
+				$joined = true;
 			echo '<div id="user">';
 			echo '<a href=?pg=p&nick='.$user["user_id"].'>';
 			echo '<img src="vdl-media/vdl-images/'.$user["img_prof"].'_tb.jpg">';
 			echo $user["nickname"];
 			echo '</a></div>';
 		}
+		if ($joined == false)
+			echo '<div id="button"><a href="vdl-includes/join_net.php?net='.$nets["id"].'&user='. $_SESSION["id"] .'">Unirse</a></div><br/>';
 	echo '</div>';
 }
 else{

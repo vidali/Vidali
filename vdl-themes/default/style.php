@@ -1,8 +1,17 @@
 <?php
 	header("Content-type: text/css; charset: UTF-8");
+/* 
+ * ¿Como funciona este css?
+ * Este CSS es un CSS dinámico usando PHP, por lo que todos los cambios
+ * que tengan similitudes en varios elementos (como los colores, por ej.)
+ * se podrán aplicar con variables, de manera que el cambio es más rapido
+ * y solo con cambiar la información en la variable correspondiente.
+ * En algunos lados aún hay que aplicar estos cambios, se necesita reducir
+ * sobretodo el uso de elementos repetidos.
+ * */
 	$COLOR_1= "rgb(61,61,61)";
 	$COLOR_2= "rgb(0,0,0)";
-	$COLOR_3= "rgb(0,0,0)";
+	$COLOR_3= "rgb(158,200,84)";
 	$COLOR_BACKGROUND="rgb(0,0,0)";
 	$COLOR_BOX = "rgb(244,244,244)";
 	$COLOR_BORDER = "rgb(67,67,67)";
@@ -83,7 +92,6 @@ body{
 }
 
 #taskbar{
-/*	padding-top: 5px;*/
 	position: fixed;
 	height: 35px;
 	background: rgba(158,158,158,0.1);
@@ -102,7 +110,7 @@ body{
 #line{
 	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(0,0,0)), color-stop(1, rgb(61,61,61)));
 	background-image: -moz-linear-gradient( center bottom, rgb(0,0,0) 0%, rgb(61,61,61) 100%);
-	min-height:40px;
+	min-height:35px;
 	width: 100%;
 }
 
@@ -130,8 +138,6 @@ header #logo a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 #menu ul{
 	margin: 0px;
 	padding: 0px;
-/*	margin:0 5px 0 5px;
-	min-height: 45px;*/
 }
 
 #menu ul li{
@@ -143,30 +149,13 @@ header #logo a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 	margin: 0px;
 	padding: 10px 5px 10px 5px;
 	display:block;
-	background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0, rgb(158,200,84)),
-    color-stop(0.78, rgb(250,250,250))
-	);
-	background-image: -moz-linear-gradient(
-    center bottom,
-    rgb(158,200,84) 0%,
-    rgb(250,250,250) 78%
-	);
-/*	border-radius: 5px 5px 0px 0px;
-	-moz-border-radius: 5px 5px 0px 0px;
-	-webkit-border-radius: 5px 5px 0px 0px;*/
-	}
-
-
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgb(158,200,84)),color-stop(0.78, rgb(250,250,250)));
+	background-image: -moz-linear-gradient(center bottom,rgb(158,200,84) 0%,rgb(250,250,250) 78%);
+}
 
 #menu ul li.active{
 	background: rgb(158,200,84);	
 }
-
-
 
 #menu ul li:hover{
 	text-align: center;
@@ -185,17 +174,63 @@ header #logo a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 	min-height: 700px;
 	background: rgb(250,250,250);
 	display: block;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 20px;
+	padding-bottom: 30px;
 }
 
 #page_name{
 	display: block;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-left: 10px;
 	font-size: 24px;
 }
 
+/*=========HOME========*/
+.basic{
+	height: 100px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.basic2{
+	height: 600px;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	min-height: 400px;
+	border-bottom: 1px solid rgb(158,200,84);
+}
+
+.home_titles{
+	border-bottom: 1px solid rgb(158,200,84);
+	margin: 0px;
+	padding: 0px;
+	padding-left: 10px;
+	min-height: 20px;
+}
+
+#pr_thumb{
+	box-shadow: 3px 3px 5px #888;
+	-moz-box-shadow: 3px 3px 5px #888;
+	margin-left: 10px;
+	padding: 0px;
+	max-width: 100px;
+	max-height: 100px;
+	float: left;
+}
+
+#pr_card{
+	margin: 5px;
+	padding: 5px;
+	max-width: 200px;
+	min-height: 80px;
+	max-height: 80px;
+	float: left;
+	border-left: 1px solid #AFAFAF;
+}
+
+/*=========NOTES========*/
 
 #note{
 	display: block;
@@ -366,65 +401,6 @@ div.clear {
 	font-size: 16px;
 }
 
-/*=========HOME========*/
-.basic{
-	height: 100px;
-	display: block;
-	margin-bottom: 10px;
-}
-
-.basic2{
-	height: 650px;
-	display: block;
-	margin: 0px;
-	padding: 0px;
-	min-height: 400px;
-	border-bottom: 1px solid rgb(158,200,84);
-}
-
-.home_titles{
-	border-bottom: 1px solid rgb(158,200,84);
-	margin: 0px;
-	padding: 0px;
-	padding-left: 10px;
-	min-height: 20px;
-	background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0, rgb(158,200,84)),
-    color-stop(0.78, rgb(250,250,250))
-	);
-	background-image: -moz-linear-gradient(
-    center bottom,
-    rgb(158,200,84) 0%,
-    rgb(250,250,250) 78%
-	);
-	border-radius: 7px 7px 0px 0px;
-	-moz-border-radius: 7px 7px 0px 0px;
-	-webkit-border-radius: 7px 7px 0px 0px;
-
-}
-
-#pr_thumb{
-	box-shadow: 3px 3px 5px #888;
-	-moz-box-shadow: 3px 3px 5px #888;
-	margin-left: 10px;
-	padding: 0px;
-	max-width: 100px;
-	max-height: 100px;
-	float: left;
-}
-
-#pr_card{
-	margin: 5px;
-	padding: 5px;
-	max-width: 200px;
-	min-height: 80px;
-	max-height: 80px;
-	float: left;
-	border-left: 1px solid #AFAFAF;
-}
 
 /*====================FOOTER====================*/
 #line-footer{
@@ -470,5 +446,7 @@ footer{
 /*====================ACTUALIZA ESTADO====================*/
 
 
-
+#pulsa{
+	cursor:pointer;
+}
 

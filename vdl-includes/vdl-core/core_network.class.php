@@ -70,4 +70,20 @@ class CORE_NETWORK{
 		}
 		return $results;
 	}
+	
+	public function join_net($_network,$_user){
+		include("core_security.class.php");
+		$core= new CORE_SECURITY();
+		$connection= $core->load_dbconf();
+		$connection= $core->bd_connect();
+		$query = ("INSERT INTO vdl_user_net (id_user,id_net) VALUES ('$_user','$_network')");
+		$result = mysql_query($query,$connection);
+		if (!$result) {
+				 $message  = 'Invalid query: ' . mysql_error() . "\n";
+				 $message = 'Whole query: ' . $query;
+				 die($message);			 
+		}
+
+		header("Location:../index.php?alert=joined_net");
+	}
 }

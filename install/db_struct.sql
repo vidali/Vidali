@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-04-2011 a las 15:32:35
--- Versión del servidor: 5.5.11
+-- Tiempo de generación: 15-05-2011 a las 12:04:49
+-- Versión del servidor: 5.5.12
 -- Versión de PHP: 5.3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `vdl_config` (
   `config_name` varchar(50) COLLATE utf8_bin NOT NULL,
   `config_value` varchar(255) COLLATE utf8_bin NOT NULL,
   KEY `config_id` (`config_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
 
 --
 -- Volcar la base de datos para la tabla `vdl_config`
@@ -40,6 +40,7 @@ INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES
 (1, 'LANG', 'ES'),
 (2, 'THEME', 'default'),
 (3, 'TITLE', 'Vidali - Red Social Libre');
+
 -- --------------------------------------------------------
 
 --
@@ -66,8 +67,11 @@ CREATE TABLE IF NOT EXISTS `vdl_friends` (
 CREATE TABLE IF NOT EXISTS `vdl_net` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `net_name` varchar(255) NOT NULL,
+  `net_sdesc` varchar(30) NOT NULL,
   `net_desc` varchar(255) NOT NULL,
   `net_admin` int(3) NOT NULL,
+  `net_privacy` int(11) NOT NULL DEFAULT '0',
+  `net_img` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -162,6 +166,9 @@ CREATE TABLE IF NOT EXISTS `vdl_users` (
   `bio` text NOT NULL,
   `group` int(11) NOT NULL,
   `img_prof` varchar(255) NOT NULL,
+  `prof_visits` int(11) NOT NULL,
+  `prof_friends` int(11) NOT NULL,
+  `prof_nets` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -179,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `vdl_users` (
 CREATE TABLE IF NOT EXISTS `vdl_user_net` (
   `id_user` int(11) NOT NULL,
   `id_net` int(11) NOT NULL,
-  PRIMARY KEY (`id_net`)
+  KEY `id_user` (`id_user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --

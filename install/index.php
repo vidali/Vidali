@@ -54,7 +54,7 @@
 				<input id="birthdate" name="birthdate" type="date"><br/>
 				Descripción:<br/><textarea id="bio" name="bio" rows="5" cols="20" placeholder="Describete!" ></textarea><br/>
 <?php	
-/*			<h2>Otra Configuración (NO ACTIVADO DE MOMENTO):</h2>
+/*			<h2>Otra Configuración (NO IMPLEMENTADO DE MOMENTO):</h2>
 				Nivel de privacidad:<input id="priv" name="priv" type="radio" value="low">low
 				<input id="priv" name="priv" type="radio" value="medium"> medium
 				<input id="priv" name="priv" type="radio" value="high"> high<br/>

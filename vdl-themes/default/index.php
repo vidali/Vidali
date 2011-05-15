@@ -31,14 +31,14 @@ var si = 1;
 		if(si){
 			$('#globo').animate({
 			opacity: 1
-			}, 600, function() {});
+			}, 300, function() {});
 			si = 0;
 		}
 		else
 		{
 			$('#globo').animate({
 			opacity: 0
-			}, 600, function() {});
+			}, 300, function() {});
 			si = 1;
 		}
 });
@@ -160,7 +160,7 @@ document.getElementById('contador').innerHTML = document.getElementById('mensaje
 				</div>
 		<?php } ?>
 		<div class="grid_1">
-		<span id="pulsa"><img src="style/icons/comment.png"></span>
+			<span id="pulsa"><img src="style/icons/comment.png"></span>
 		</div>
 		<div class="grid_1">
 			<img src="style/icons/mail.png">

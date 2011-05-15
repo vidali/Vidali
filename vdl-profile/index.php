@@ -1,4 +1,32 @@
 <?php
+/*
+ * ¿Que hay que hacer aqui?
+ * 
+ * -Mostrar la información ampliada de nuestro perfil.
+ * 
+ * -Falta paginar las actualizaciones del perfil (esto implica cambiar
+ *  la función get_updates, donde debería recibir parámetros con el
+ *  número de entradas a mostrar, y la página en la que nos encontramos.
+ * 
+ * -Crear un sistema de comentarios para el perfil, donde nuestras
+ *  "amistades" podrán dejarnos mensajes en nuestro perfil o comentar
+ *  en nuestros estados.
+ * 
+ * -Arreglar el bug por el que el año de la fecha de nacimiento no se
+ *  muestra correctamente.
+ * 
+ * -Implementar las funciones necesarias para mostrar nuestras amistades
+ * 
+ * -Implmentar el botón y las funciones necesarias para agregar como
+ *  "contacto" a un usuario.
+ * 
+ * -Enlazar desde la imagen de perfil a nuestro contenido multimedia para
+ *  cambiar nuestro avatar por otro.
+ * 
+ * -Cambiar la visualización de esta página para personas que no estén
+ *  en nuestra lista de contactos.
+ */
+ 
 //Carga de datos...
 	include("vdl-includes/vdl-core/core_user.class.php");
 	$prof = new CORE_USER();
@@ -47,7 +75,9 @@
 			<div class="pr_titles">
 				<h1><?php echo $name.' (@'.$nickname.')';?></h1>
 			</div>
-			<?php echo '<article id="info-pr">';
+			<?php
+				//mostramos la información de nuestro perfil, falta mostrar información ampliada.
+				echo '<article id="info-pr">';
 				echo $genre.'<br/>';
 				echo $age." ". P_AG2 .' (';
 				echo $bday.')<br/>';
@@ -67,9 +97,11 @@
 			Amigos (0)
 		</div>
 		<br/>
-		Sin amigos...
-	<?php //	<div id="button">Ver todos</div> ?>
-		<br/><br/>
+		Sin amigos...<br/>
+			<?php /*if()
+		echo '<div id="button">Añadir...</div>';*/
+	?>
+		<?php //<div id="button">Ver mas...</div>?>
 	</div>
 
 	<div class="basic_tb">
@@ -78,6 +110,7 @@
 		</div>
 		<br/>
 		<?php
+		//mostramos las redes del usuario, se debería mostrar solo 5 y un boton para mostrar todas las redes.
 			$prof = new CORE_USER();
 			if(isset($_GET["nick"]))
 				$net = $prof->get_networks($_GET["nick"],$visitor);
@@ -107,6 +140,7 @@
 			Actividad Reciente:
 		</div>
 		<?php
+		//mostramos las actualizaciones del usuario
 		$updates = $prof -> get_updates($_GET["nick"],$visitor);
 		$upd_cont = count($updates);
 		foreach($updates as $upd){
