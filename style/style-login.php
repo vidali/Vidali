@@ -19,7 +19,7 @@
 /*====================TEXT====================*/
 a{ color:<?php echo $COLOR_TEXT_LINK;?>; text-decoration: none}
 header .grid_6 a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
-
+#reg_button a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 h1{ font-size:18px; margin:0px; }
 h2{ font-size:16px; margin:0px; }
 h3{ font-size:14px; margin:0px; }
@@ -27,15 +27,10 @@ h4{ font-size:12px; margin:0px; }
 h5{ font-size:10px; margin:0px; }
 h6{ font-size:8px; }
 
-@font-face {
-	font-family: caviar-dreams;	/* required */
-	src: url(caviar-dreams.ttf);	/* source: http://www.dafont.com/caviar-dreams.font?l[]=10&l[]=1 Author: nymphont@yahoo.com*/
-}
-
 /*====================BODY====================*/
 body{
-	background: <?php echo $COLOR_BACKGROUND;?>;
-	font-family: caviar-dreams,\'Droid Sans\',verdana,arial,sans-serif;
+	background: rgb(175,210,100);
+	font-family: verdana,arial,sans-serif;
 	font-size: 16px;
 	color:#000;
 	padding: 0px;
@@ -54,15 +49,16 @@ body{
 	border-bottom: 5px solid #434343;
 }
 
-
 header{
 	color: #FFF;
-	text-shadow: 1px 1px 2px #7A7A7A;
 	<?php echo $HEIGHT_HEADER;?>;
 }
 
 #vdl-form ul{
-		list-style: none;
+	font-size: 12px;
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
 }
 #vdl-form ul li{
 	margin: 0px 5px 0px 5px;
@@ -71,28 +67,13 @@ header{
 }
 
 label{
-	display: block;
-	width: 100px;
+	font-size: 12px;
+	display: inline-block;
+	min-width: 100px;
 }
 /*====================CONTENT====================*/
 #line-cont{
-background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0, rgb(250,250,250)),
-    color-stop(0.78, rgb(158,200,84))
-);
-background-image: -moz-linear-gradient(
-    center bottom,
-    rgb(250,250,250) 0%,
-    rgb(158,200,84) 78%
-);
-	min-height:200px;
-	height: auto;
-	width: 100%;
-	background-image: -o-linear-gradient(top, rgb(250,250,250),rgb(158,200,84));
-	background-image: linear-gradient(top, rgb(250,250,250), rgb(158,200,84));
+background: rgb(175,210,100);
 }
 	
 #info{
@@ -109,6 +90,14 @@ background-image: -moz-linear-gradient(
 	height: 140px;
 }
 
+#reg_button{
+	text-align: center;
+	font_size: 20px;
+	color: #fff;
+	padding: 5px 10px 5px 10px;
+	background: #333;
+	border: 1px solid #666;
+}
 /*====================FOOTER====================*/
 
 #line-footer{
@@ -122,8 +111,11 @@ background-image: -moz-linear-gradient(
 	bottom: 0px;
 }
 
+#about{
+	padding-top: 10px;
+}
+
 footer{
-	text-align: center;
 	color: #FFF;
 	font-size: 14px;
 	height: 40px;

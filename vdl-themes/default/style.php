@@ -12,7 +12,7 @@
 	$COLOR_1= "rgb(61,61,61)";
 	$COLOR_2= "rgb(0,0,0)";
 	$COLOR_3= "rgb(158,200,84)";
-	$COLOR_BACKGROUND="rgb(0,0,0)";
+	$COLOR_BACKGROUND="rgb(250,250,250)";
 	$COLOR_BOX = "rgb(244,244,244)";
 	$COLOR_BORDER = "rgb(67,67,67)";
 	$COLOR_TEXT="rgb(0,0,0)";
@@ -46,7 +46,7 @@ h6{ font-size:8px; margin:0px; }
 body{
 	background: <?php echo $COLOR_BACKGROUND;?>;
 	font-family: caviar-dreams,Helvetica,arial,sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	color:#000;
 	padding: 0px;
 	margin: 0px;
@@ -171,7 +171,7 @@ header #logo a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 /*====================CONTENT====================*/
 /*--->Contenido dentro del <section>*/
 #container-line{
-	min-height: 700px;
+	min-height: 775px;
 	background: rgb(250,250,250);
 	display: block;
 	padding-top: 20px;
@@ -375,6 +375,22 @@ div.clear {
 	font-size: 12px;
 }
 
+.reply{
+	float: right;
+}
+
+.reply a{
+	background-color: #f5f5f5;
+	color: #A9A9A9;
+	font-size: 12px;
+}
+
+.reply a:hover{
+	background-color: #f5f5f5;
+	color: rgb(158,200,84);
+	font-size: 12px;
+}
+
 #last-upd{
 	display: block;
 	float: left;
@@ -403,21 +419,24 @@ div.clear {
 
 
 /*====================FOOTER====================*/
+
 #line-footer{
 	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(0,0,0)), color-stop(1, rgb(61,61,61)));
 	background-image: -moz-linear-gradient( center bottom, rgb(0,0,0) 0%, rgb(61,61,61) 100%);
-	min-height:60px;
+	background-image: -o-linear-gradient(top, rgb(0,0,0),rgb(61,61,61));
+	background-image: linear-gradient(top, rgb(0,0,0), rgb(61,61,61));	min-height:40px;
 	width: 100%;
 	bottom: 0px;
 }
 
+#about{
+	padding-top: 10px;
+}
+
 footer{
-	text-align: center;
-	color: #FFF;
-	font-size: 12px;
-	height: 60px;
-	margin-bottom: 0px;
-	display: block;
+	color: #fff;
+	font-size: 14px;
+	height: 40px;
 }
 /*====================OTHERS====================*/
 #button{

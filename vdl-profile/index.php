@@ -160,6 +160,8 @@
 					</section>
 					<?php echo $upd["upd_msg"];?>
 				</section>
+				<section class="reply grid_2">
+					<a href="#" id="dialog_link">Comentar</a>
 			</article>
 		<?php $upd_cont--;
 		}

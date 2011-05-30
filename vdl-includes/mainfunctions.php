@@ -8,26 +8,7 @@
 //}
 
 function load_mainscripts(){
-echo '	<script type="text/javascript" src="js/jquery.js"></script> <!--JQuery script-->
-	<script type="text/javascript" src="js/boxy.js"></script> <!--Boxy (JQuery plugin) addon-->
-	<link rel="stylesheet" type="text/css" href="style/boxy.css" media="screen" />
-	<script type="text/javascript"> //Boxy quickly configuration
-		$(function() {
-			$(".boxy").boxy();
-		});
-	</script>
-	<script language="javascript"> //Media viewer implementation	
-	$(document).ready(function() {
-		$("#gallery_output img").not(":first").hide();
-			$("#gallery a").click(function() {
-			if ( $("#" + this.rel).is(":hidden") ) {
-				$("#gallery_output img").slideUp();
-				$("#" + this.rel).slideDown();
-			}
-			});
-	});
-	</script> 
-';
+
 }
 
 function load_site_config(){

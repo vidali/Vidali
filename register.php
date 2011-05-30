@@ -4,16 +4,24 @@
 	<title>
 		Vidali - Registro de usuarios
 	</title>
-	<script type="text/javascript" src="/js/jquery.js" ></script>
-	<script type="text/javascript" src="/js/jformer.js" ></script>
-	<link rel="stylesheet" type="text/css" href="style/jformer.css" ></link>
-	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/reset.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/text.css" />
+	<script type="text/javascript" src="js/jquery.js" ></script>
+	<script type="text/javascript" src="js/jquery-ui.js" ></script>
+	<link type="text/css" href="js/css/ui-lightness/jquery-ui-1.8.13.custom.css" rel="stylesheet" />	
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
 	<link rel="stylesheet" type="text/css" href="vdl-themes/default/style.php" />
 	<link rel="stylesheet" type="text/css" href="style/form.css" ></link>
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-	<script type="text/javascript"> 
+<!--Script para el uso de Datepicker de JQquery UI -->	
+	<script>
+	$(function() {
+		$( "#datepicker" ).datepicker({
+			changeYear: true,	
+			
+		});
+	});
+	</script>
+<!--Fin Script -->
+	<script type="text/javascript">
 	function valida(elque)
 	{
 		if(elque == "pass1" || elque == "pass2")
@@ -174,7 +182,7 @@
 			E-mail:<br/>
 			<input name="email" type="email" onkeyup="valida('email')"/><span id="confirm4"></span><br/>
 			Fecha de Nacimiento<br />(yyyy-mm-dd):<br/>
-			<input name="birthdate" type="date" onkeyup="valida('fecha')"><span id="confirm5"></span><br/>
+			<input <?php //id="datepicker"?> name="birthdate" type="date" onkeyup="valida('fecha')"><span id="confirm5"></span><br/>
 			Ubicación:<br/>
 			<input name="location" type="text" onkeyup="valida('location')"><span id="confirm7"></span><br/>
 			Sexo:<br/>
@@ -192,13 +200,9 @@
 	</div>
 </section>
 
-<footer>
-	<div id="line-footer">
-			<div class="container_16">
-				Vidali Social Network. Cristopher D. Caamana Gómez, 2011.<br/><img src="vdl-media/vdl-images/agpl.png"><img src="vdl-media/vdl-images/html5.png">				
-			</div>
-			
-	</div>
-</footer>
+<?php 
+	include_once("vdl-themes/default/footer.php");
+?>
+
 </body>
 </html>

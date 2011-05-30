@@ -11,62 +11,40 @@
 		echo "Vidali";
 	?>
 	</title>
-	<script type="text/javascript" src="/js/jquery.js" ></script>
-	<script type="text/javascript" src="/js/jformer.js" ></script>
-	<link rel="stylesheet" type="text/css" href="style/jformer.css" ></link>
-	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/reset.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/text.css" />
+	<script type="text/javascript" src="js/jquery.js" ></script>
+	<script type="text/javascript" src="js/jquery-ui.js" ></script>
+	<link type="text/css" href="js/css/ui-lightness/jquery-ui-1.8.13.custom.css" rel="stylesheet" />	
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
 	<link rel="stylesheet" type="text/css" href="vdl-themes/default/style.php" />
 	<link rel="stylesheet" type="text/css" href="vdl-themes/default/form.css" />
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 	<?php load_mainscripts();
 		include("vdl-themes/default/scripts/script1.html");
 	?>
-<script type="text/javascript"> 
-<!--Jquery animacion//-->
-$(document).ready(function(){ 
-var si = 1;
-	$('#pulsa').click(function() {
-		if(si){
-			$('#globo').animate({
-			opacity: 1
-			}, 300, function() {});
-			si = 0;
-		}
-		else
-		{
-			$('#globo').animate({
-			opacity: 0
-			}, 300, function() {});
-			si = 1;
-		}
-});
-});
-<!--Envio de update por AJAX//-->
-function actualiza(mensaje)
-{
-if (mensaje=="")
-  {
-  alert('Update vacio!');
-  return;
-  } 
-	xmlHttp = new XMLHttpRequest();
+		<script type="text/javascript">
+			$(function(){
 
-    xmlHttp.open("POST", "<?php echo "vdl-includes/set_update.php?sender=".$_SESSION["nickname"];  ?>", true);
-    xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=ISO-8859-1');
-    xmlHttp.send("update="+mensaje);
-    
-    $('#globo').animate({
-			opacity: 0
-			}, 600, function() {location.href = location.href});
-}
+				// Accordion
+				$("#accordion").accordion({ header: "h3" });
+	
+				// Tabs
+				$('#tabs').tabs();
+	
 
-function cuenta()
-{
-document.getElementById('contador').innerHTML = document.getElementById('mensaje').value.length;
-}
-</script>
+				// Dialog			
+				$('#dialog').dialog({
+					autoOpen: false,
+					width: 680,
+					height: 280,
+					resizable: false,
+				});
+				
+				// Dialog Link
+				$('#dialog_link').click(function(){
+					$('#dialog').dialog('open');
+					return false;
+				});
+			});
+		</script>
 </head>
 <body>
 <header>
@@ -115,34 +93,39 @@ document.getElementById('contador').innerHTML = document.getElementById('mensaje
 <section id="container">
 	<div id="container-line">
 		<div class="container_16">
-		<div id ="page_name" class="grid_16">
-			<h4>
-			<?php
-				if (!isset($_GET['pg']))
-					echo "Home </h4> Inicio";
-				else if ($_GET['pg'] == "p")
-					echo "Home > Perfil </h4> Perfil";
-				else if ($_GET['pg'] == "notes")
-					echo "Home > Notas </h4> Notas";
-				else if ($_GET['pg'] == "media")
-					echo "Home > Archivos </h4> Archivos";
-				else if ($_GET['pg'] == "n")
-					echo "Home > Redes </h4> Redes";
-			?>
+			<div id ="page_name" class="grid_16">
+				<h4>
+				<?php
+					if (!isset($_GET['pg']))
+						echo "Home </h4> Inicio";
+					else if ($_GET['pg'] == "p")
+						echo "Home > Perfil </h4> Perfil";
+					else if ($_GET['pg'] == "notes")
+						echo "Home > Notas </h4> Notas";
+					else if ($_GET['pg'] == "media")
+						echo "Home > Archivos </h4> Archivos";
+					else if ($_GET['pg'] == "n")
+						echo "Home > Redes </h4> Redes";
+				?>
 			</div>
 			<span id="recargar"><?php include("vdl-includes/content.php");?></span>
-		</div>
+		</div>	
 	</div>
 </section>
 
-<footer>
-	<div id="line-footer">
-			<div class="container_16">
-				Vidali Social Network. Cristopher D. Caamana Gómez, 2011.<br/><img src="vdl-media/vdl-images/agpl.png"><img src="vdl-media/vdl-images/html5.png">				
-			</div>
-			
-	</div>
-</footer>
+<?php 
+	include_once("footer.php");
+?>
+
+
+<div id="dialog" title="Comentar">
+		<form id="vdl-form" name="vdlreply" class="grid_8" action="vdl-includes/reply.php" method="post">
+			Comentario:<br/>
+			<textarea name="bio" rows="5" cols="60" placeholder="Escribe tu comentario..." ></textarea><br/>
+			<input type="submit" value="Enviar">
+		</form>
+</div>
+
 
 <div id="globo">
 <span>Actualiza tu estado:</span><br>
@@ -152,26 +135,9 @@ document.getElementById('contador').innerHTML = document.getElementById('mensaje
 </span>
 </div>
 
-<div id=taskbar>
-	<nav id=buttons>
-		<?php if ($visitor == "ADMIN"){?>
-			<div class="grid_1">
-					<a href="index.php?pg=admin" title="Panel de Administración"><img src="style/icons/network.png"></a>
-				</div>
-		<?php } ?>
-		<div class="grid_1">
-			<span id="pulsa"><img src="style/icons/comment.png"></span>
-		</div>
-		<div class="grid_1">
-			<img src="style/icons/mail.png">
-		</div>
-		<div class="grid_1">
-			<img src="style/icons/flag.png">
-		</div>
-		<div class="grid_1">
-			<?php echo'<a href="vdl-includes/log.php?func=logout" title="'.M_LOU.'"><img src="style/icons/lock.png"></a>';?>
-		</div>
-	</nav>
-</div>
+<?php 
+	include_once("taskbar.php");
+?>
+
 </body>
 </html>
