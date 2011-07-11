@@ -92,23 +92,21 @@
 ?>
 		</div>
 	
+	<div class="pr_titles">
+		Amigos (0)
+	</div>
 	<div class="basic_tb">
-		<div class="pr_titles">
-			Amigos (0)
-		</div>
-		<br/>
-		Sin amigos...<br/>
+		No disponible...<br/>
 			<?php /*if()
 		echo '<div id="button">Añadir...</div>';*/
 	?>
 		<?php //<div id="button">Ver mas...</div>?>
 	</div>
 
+	<div class="pr_titles">
+		Redes (<?php echo $nets; ?>)
+	</div>
 	<div class="basic_tb">
-		<div class="pr_titles">
-			redes (<?php echo $nets; ?>)
-		</div>
-		<br/>
 		<?php
 		//mostramos las redes del usuario, se debería mostrar solo 5 y un boton para mostrar todas las redes.
 			$prof = new CORE_USER();
@@ -161,7 +159,7 @@
 					<?php echo $upd["upd_msg"];?>
 				</section>
 				<section class="reply grid_2">
-					<a href="#" id="dialog_link">Comentar</a>
+					<?php echo '<a class="modal" href="vdl-includes/comment.php?idcom='.$upd["id"].'&idsender='.$_SESSION["user_id"].'" title="Comentar">Comentar</a>'; ?>
 			</article>
 		<?php $upd_cont--;
 		}

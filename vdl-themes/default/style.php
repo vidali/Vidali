@@ -30,7 +30,7 @@ a{ color:<?php echo $COLOR_TEXT_LINK;?>; text-decoration: none}
 header #box1 a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 #button a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 
-h1{ font-size:18px; margin:0px; }
+h1{ font-size:18px; margin:0px; color: #222;}
 h2{ font-size:16px; margin:0px; }
 h3{ font-size:14px; margin:0px; }
 h4{ font-size:12px; margin:0px; color: #6a6a6a}
@@ -56,11 +56,11 @@ body{
 	position:fixed;
 	width: 400px;
 	height: 100px;
-	padding:15px;
-	bottom: 0px;
-	right: 145px;
+	padding: 10px;
+	bottom: 10px;
+	left: 330px;
 	margin:1em 0 3em;
-	border:5px solid #5a8f00;
+	border: 3px solid #5a8f00;
 	color:#333;
 	background:#fff;
 	opacity: 0; 
@@ -71,11 +71,11 @@ body{
 	content:"";
 	display:block;
 	position:absolute;
-	bottom:-40px; 
-	left:375px;
+	bottom:-22px; 
+	left:30px;
 	width:0;
 	height:0;
-	border:20px solid transparent;
+	border:10px solid transparent;
 	border-top-color:#5a8f00;
 }
 
@@ -83,14 +83,14 @@ body{
 	content:"";
 	display:block;
 	position:absolute;
-	bottom:-26px; 
-	left:382px;
+	bottom:-20px; 
+	left:27px;
 	width:0;
 	height:0;
 	border:13px solid transparent;
 	border-top-color:#fff;
 }
-
+/*
 #taskbar{
 	position: fixed;
 	height: 35px;
@@ -105,11 +105,14 @@ body{
 	-moz-border-radius: 5px 0px 0px 0px;
 	-webkit-border-radius: 5px 0px 0px 0px;
 }
-
+*/
 /*====================HEADER====================*/
 #line{
-	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(0,0,0)), color-stop(1, rgb(61,61,61)));
-	background-image: -moz-linear-gradient( center bottom, rgb(0,0,0) 0%, rgb(61,61,61) 100%);
+	background-color: #2D2D2D;
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(20,20,20)), color-stop(1, rgb(60,60,60)));
+	background-image: -moz-linear-gradient( center bottom, rgb(20,20,20) 0%, rgb(60,60,60) 100%);
+	background-image: -o-linear-gradient(top, rgb(20,20,20),rgb(60,60,60)));
+	background-image: linear-gradient(top, rgb(20,20,20), rgb(60,60,60));
 	min-height:35px;
 	width: 100%;
 }
@@ -126,8 +129,8 @@ header #logo a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 #logo{
 	padding: 5px 0px 5px 0px;
 	height: 30px;
-	color: #FFF;
-	font-size: 20px;
+	color: #f8f9f9;
+	font-size: 16px;
 }
 
 #box1{
@@ -180,10 +183,9 @@ header #logo a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 
 #page_name{
 	display: block;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 10px;
+	margin: 10px;
 	font-size: 24px;
+	color: #6a6a6a;
 }
 
 /*=========HOME========*/
@@ -323,7 +325,7 @@ div.clear {
 	padding: 0px;
 	min-height: 220px;
 	max-height: 220px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	box-shadow: 3px 3px 5px #888;
 	-moz-box-shadow: 3px 3px 5px #888;
 }
@@ -352,7 +354,6 @@ div.clear {
 	margin: 0px;
 	padding: 0px;
 	min-height: 20px;
-	padding-left: 10px;
 }
 
 .upd_tb{
@@ -360,8 +361,9 @@ div.clear {
 }
 
 .id_sender{
-	font-size: 12px;
-	border-bottom:1px solid #DDD;
+	font-size: 10px;
+	color: #505050;
+/*	border-bottom:1px solid #DDD;*/
 }
 
 .upd-msg{
@@ -372,7 +374,7 @@ div.clear {
 .upd-info{
 	float: right;
 	color: #A9A9A9;
-	font-size: 12px;
+	font-size: 10px;
 }
 
 .reply{
@@ -421,12 +423,14 @@ div.clear {
 /*====================FOOTER====================*/
 
 #line-footer{
-	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(0,0,0)), color-stop(1, rgb(61,61,61)));
-	background-image: -moz-linear-gradient( center bottom, rgb(0,0,0) 0%, rgb(61,61,61) 100%);
-	background-image: -o-linear-gradient(top, rgb(0,0,0),rgb(61,61,61));
-	background-image: linear-gradient(top, rgb(0,0,0), rgb(61,61,61));	min-height:40px;
+	background-color: #2D2D2D;
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(20,20,20)), color-stop(1, rgb(60,60,60)));
+	background-image: -moz-linear-gradient( center bottom, rgb(20,20,20) 0%, rgb(60,60,60) 100%);
+	background-image: -o-linear-gradient(top, rgb(20,20,20),rgb(60,60,60)));
+	background-image: linear-gradient(top, rgb(20,20,20), rgb(60,60,60));
 	width: 100%;
 	bottom: 0px;
+	position: fixed;
 }
 
 #about{
@@ -462,6 +466,14 @@ footer{
 	min-height: 600px;
 }
 
+#reg_button{
+	text-align: center;
+	font_size: 20px;
+	color: #fff;
+	padding: 5px 10px 5px 10px;
+	background: #333;
+	border: 1px solid #666;
+}
 /*====================ACTUALIZA ESTADO====================*/
 
 

@@ -16,7 +16,7 @@
 <div id="line">
 	<div class="container_16">
 		<div class="grid_9 suffix_1">
-			<img src="vdl-media/vdl-images/logo-grande.png">Alfa 0.5
+			<img src="vdl-media/vdl-images/logo-grande.png">
 			<div class="clear"></div>
 		</div>
 		<form id="vdl-form" class="grid_5" action="vdl-includes/session_start.php" method="post">
