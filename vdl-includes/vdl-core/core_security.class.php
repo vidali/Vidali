@@ -1,108 +1,49 @@
 <?php
 class CORE_SECURITY{
-//===>Private vars & functions
-
-
-//===>Public functions
-
-//===>Constructor
+	/*Private*/
+	private $session_key; /*Contains the session_id() of the user. Empty if user is not logged.*/
+	
+	/*Public*/
 	public function __construct (){
+		$this->session_key = session_id();
 		
 	}
-	
-	public function close(){
-		mysql_close($conecction);
-	}
-	
-	public function set_db($_dbdir,$_dbusr,$_dbpsw,$_dbase){
-		$file = fopen("../vdl-includes/vdl-core/db.ini","w");
-		$string="[DB]\nDBDIR=$_dbdir\nDBUSR=$_dbusr\nDBPSW=$_dbpsw\nDBASE=$_dbase";
-		fputs($file,$string);
-		fclose($file);
+
+	public function __destruct(){
+
 	}
 
-	public function load_dbconf (){
-		$config=parse_ini_file('db.ini',true);
-		define ("DBDIR",$config["DB"]["DBDIR"]);
-		define ("DBUSR",$config["DB"]["DBUSR"]);
-		define ("DBPSW",$config["DB"]["DBPSW"]);
-		define ("DBASE",$config["DB"]["DBASE"]);
-	}
-	
-	public function bd_connect (){
-		$connection = mysql_connect(DBDIR, DBUSR , DBPSW) or die ("<p class='error'>Epic fail...no conecta al server.</p>");
-		$database = DBASE;
-		mysql_select_db($database, $connection) or die ("<p class='error'>ootro fail... no conecta a la base de datos.</p>");
-		return $connection;
-	}
-
-	public function load_settings ($_connection){
-		$query = "SELECT * FROM vdl_config ORDER BY config_id";
-		$result = mysql_query($query,$_connection);
-		while($row = mysql_fetch_assoc($result)){
-			define ($row["config_name"],$row["config_value"]);
-		}
-	}
-	
 	public function encrypt($_string){
 		//$result=
+
+		return $result;
+	}
+
+	public function get_key(){
+		return $this->session_key;
+	}
 	
-	return $result;
-	}
-
-	public function add_user($_user_id,$_passwd,$_nickname,$_name,$_location,$_genre,$_bday,$_email,$_bio){
-
-		$this->load_dbconf();
-		$connection= $this->bd_connect();
-		$query = ("INSERT INTO vdl_users (user_id,passwd,nickname,name,location,genre,bday,email,bio,img_prof) VALUES 
-				 ('$_user_id','$_passwd','$_nickname','$_name','$_location','$_genre','$_bday','$_email','$_bio','prof_def')");
-		$result = mysql_query($query,$connection);
-		if (!$result) {
-				 $message  = 'Invalid query: ' . mysql_error() . "\n";
-				 $message = 'Whole query: ' . $query;
-				 die($message);			 
-		}
-
-	}
-
 	public function login($_USER,$_PASS){
 		//Iniciamos sesion y conectamos a la base de datos
 		session_start();
-		//conectar a base de datos
-		$this->load_dbconf();
-		$connection= $this->bd_connect();
 		//Extraemos el user y la pass
 		$usr = mysql_real_escape_string($_USER);
 		$pwd = mysql_real_escape_string(sha1(md5(trim($_PASS))));
-		//Buscamos el usuario y seleccionamos la informacion basica de este...
-		$query = sprintf("SELECT
-								vdl_users.id,
-								vdl_users.user_id,
-								vdl_users.nickname,
-								vdl_users.name,
-								vdl_users.email
-								FROM vdl_users WHERE vdl_users.user_id='%s' && vdl_users.passwd = '%s'", $usr,$pwd);
-		$result=mysql_query($query,$connection);
-		/*DEPURACION
-		if (!$result) {
-			 $message  = 'Invalid query: ' . mysql_error() . "\n";
-			 $message .= 'Whole query: ' . $query;
-			 die($message);
-		}*/
-		if(mysql_num_rows($result)){ // nos devuelve 1 si encontro el usuario y el password
-			$array=mysql_fetch_array($result);
-			
-			//Agregamos los datos basicos a la sesion y redirigimos a la p√°gina principal
+
+		
+		//aqui deberia llamarse a core_user
+		
+			//Agregamos los datos basicos a la sesion y redirigimos a la p·gina principal
 			$_SESSION["id"]=$array["id"];
 			$_SESSION["user_id"]=$array["user_id"];
 			$_SESSION["nickname"]=$array["nickname"];
 			$_SESSION["nombre"]=$array["name"];
 			$_SESSION["mail"]=$array["email"];
-			$_SESSION['loged'] = 1;		 
+			$_SESSION['loged'] = 1;
 			header("Location:../index.php?pg=home");
-		}
-		else
-			header("Location:../index.php?msg=loginf");
+// 		}
+// 		else
+// 		header("Location:../index.php?msg=loginf");
 	}
 
 	public function clear_text($source){
@@ -110,32 +51,69 @@ class CORE_SECURITY{
 							 "WHERE","RENAME","DEFINE","UNDEFINE","PROMPT","AND","+","OR","ACCEPT","VIEW","COUNT","HAVING");
 		$url_words=array('//','www','http:','.com',"MIME-Version:","Content-Transfer-Encoding:","Return-path:","Subject:","From:",
 							 "Envelope-to:","To:","bcc:","cc:");
-							 $script_words=array("<>","SCRIPT","AND","ALERT");
+		$script_words=array("<>","SCRIPT","AND","ALERT");
 		$banned_words=array("polla","marica","mierda","puta","mamon");
 		$aux=htmlentities($source,ENT_QUOTES);
 		$aux=str_ireplace($banned_words,"...",$aux);
 		$aux=str_ireplace($db_words,"...",$aux);
-	return $aux;
+		return $aux;
 	}
 
 	public function email_val($source){
 		if (preg_match
-			('/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/', $source)){
+		('/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/', $source)){
 			$datos = 1;
 		}
 		else
-			$datos= 0;
+		$datos= 0;
 		return $datos;
 	}
 
 	function clear_url_nav(){
-		foreach( $_GET as $variable => $valor ){ 
-			$_GET [ $variable ] = str_replace ( "'" , '\'' , $_GET [ $variable ]); 
-		} 
-		foreach( $_POST as $variable => $valor ){ 
-			$_POST [ $variable ] = str_replace ( "'" , '\'' , $_POST [ $variable ]); 
-		} 
+		foreach( $_GET as $variable => $valor ){
+			$_GET [ $variable ] = str_replace ( "'" , '\'' , $_GET [ $variable ]);
+		}
+		foreach( $_POST as $variable => $valor ){
+			$_POST [ $variable ] = str_replace ( "'" , '\'' , $_POST [ $variable ]);
+		}
 	}
 
+	public function exist_user($user){
+		//conectar a base de datos
+		$core= new CORE_SECURITY();
+		$connection= $core->load_dbconf();
+		$connection= $core->bd_connect();
+		$user = htmlspecialchars($user);
+		$query = sprintf("SELECT * FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+		$result=mysql_query($query,$connection);
+		$exist = mysql_num_rows($result);
+		if($exist == 1)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	
+	public function exist_email($email){
+		//conectar a base de datos
+		$core= new CORE_SECURITY();
+		$connection= $core->load_dbconf();
+		$connection= $core->bd_connect();
+		$email = htmlspecialchars($email);
+		$query = sprintf("SELECT * FROM vdl_users WHERE vdl_users.email='%s'", $email);
+		$result=mysql_query($query,$connection);
+		$exist = mysql_num_rows($result);
+		if($exist == 1)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 }
 ?>

@@ -15,12 +15,13 @@
 	<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 	<script type="text/javascript" src="js/fancybox/jquery.easing-1.4.pack.js"></script>
 	<script type="text/javascript" src="js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="js/jquery.imgareaselect.min.js"></script>
 	<link rel="stylesheet" href="js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
 	<link rel="stylesheet" type="text/css" href="vdl-themes/default/style.php" />
 	<link rel="stylesheet" type="text/css" href="vdl-themes/default/form.css" />
-	<?php load_mainscripts();
-		include("vdl-themes/default/scripts/script1.html");
+	<?php
+		include_once("vdl-themes/default/scripts/script1.html");
 	?>
 <script>
 	$(document).ready(function() {
@@ -142,7 +143,7 @@ reformal_wdg_bimage = "bea4c2c8eb82d05891ddd71584881b56.png";
 	</div>
 </section>
 
-<?php 
+<?php
 	include_once("footer.php");
 ?>
 
@@ -153,7 +154,6 @@ reformal_wdg_bimage = "bea4c2c8eb82d05891ddd71584881b56.png";
 <input type="button" value="Actualiza!" OnClick="actualiza(document.getElementById('mensaje').value)">
 </span>
 </div>
-
 
 <?php 
 	include_once("taskbar.php");
@@ -180,8 +180,8 @@ reformal_wdg_bimage = "bea4c2c8eb82d05891ddd71584881b56.png";
  
 </script>
 
-<script type="text/javascript" language="JavaScript" src="http://idea.informer.com/tab6.js?domain=vidali">
-</script><noscript><a href="http://vidali.idea.informer.com">Vidali feedback </a> 
+<script type="text/javascript" language="JavaScript" src="http://idea.informer.com/tab6.js?domain=vidali"></script>
+<noscript><a href="http://vidali.idea.informer.com">Vidali feedback </a> 
 <a href="http://idea.informer.com">
 <img src="http://widget.idea.informer.com/tmpl/images/widget_logo.jpg" /></a>
 </noscript>

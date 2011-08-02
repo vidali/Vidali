@@ -16,14 +16,15 @@
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 //Cargamos las funciones basicas
-require_once('vdl-includes/mainfunctions.php');
-load_site_config();
+include_once 'vdl-includes/core_main.class.php';
+$MAIN = new CORE_MAIN();
+$MAIN->load();
 //Cargamos las funciones de complementos
 //Proximamente...
 //Cargamos el idioma
-load_lang(LANG);
+$MAIN->load_lang();
 //detectamos compatibilidad html5 en el navegador
-$mode = get_interface();
+$MAIN->get_interface();
 //comprobamos estado de la sesion
 ///===>Start session var and check if we are loged, in other case,we block private info.
 session_start();
@@ -33,7 +34,7 @@ if(isset($_SESSION['loged'])){
 	$loged = $_SESSION['loged'];
 	$visitor = $_SESSION['nickname'];
 }
-//Cargamos p√°gina correspondiente
+//Cargamos p·gina correspondiente
 if ($loged == 0)
 	include("vdl-themes/".THEME."/login.php");
 else
