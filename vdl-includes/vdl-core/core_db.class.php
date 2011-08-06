@@ -1,7 +1,7 @@
 <?php 
 class CORE_DB{
 	/*Private*/
-	private $_conecction; // We store the MySQL connection here 
+	private $_con; // We store the MySQL connection here 
 
 	/*Public*/
 
@@ -10,21 +10,33 @@ class CORE_DB{
 	 * We start to parse "db.ini" that stores the main info to connect to MySQL server. 
 	 */
 	public function __construct (){
+		if( !defined('DBDIR')){
 		$config=parse_ini_file("db.ini",true);
 		define ("DBDIR",$config["DB"]["DBDIR"]);
 		define ("DBUSR",$config["DB"]["DBUSR"]);
 		define ("DBPSW",$config["DB"]["DBPSW"]);
 		define ("DBASE",$config["DB"]["DBASE"]);
+		}
 	}
 
 	/**
 	 * 
-	 * We close MySQL connection here.
+	 * Destruct.
 	 */
 	public function __destruct(){
-		mysql_close($this->_connection);
+		
 	}
 
+	
+	/**
+	*
+	* We close MySQL connection here.
+	*/
+	public function close(){
+		$connection = $this->_con; 
+		mysql_close($connection);
+	}
+	
 	/**
 	 * 
 	 * We start the connection to MySQL server. Return the connection value and also saves in $_connection.
@@ -33,7 +45,7 @@ class CORE_DB{
 		$connection = mysql_connect(DBDIR, DBUSR , DBPSW) or die ("Error: No conecta. Usuario/contraseña erroneo o direccion incorrecta.");
 		$database = DBASE;
 		mysql_select_db($database, $connection) or die ("Error: No conecta a la base de datos.");
-		$this->_conecction = $connection;
+		$this->_con = $connection;
 		return $connection;
 	}
 

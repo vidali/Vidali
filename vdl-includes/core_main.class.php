@@ -3,7 +3,7 @@ include_once 'vdl-core/core_db.class.php';
 
 class CORE_MAIN extends CORE_DB{
 	/*Private*/
-	private $_conecction;
+	private $_conection;
 	private function gbversion(){
 		$Name="";
 		$Version="";
@@ -43,15 +43,13 @@ class CORE_MAIN extends CORE_DB{
 		return $ub;
 	}
 
-	//===>Public functions
-
-	//===>Constructor
+	/*Public*/
 	public function __construct (){
 		parent::__construct();
 	}
 
 	public function __destruct(){
-		parent::__destruct();
+		parent::close();
 		unset($this->_connection);
 	}
 	

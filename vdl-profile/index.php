@@ -28,8 +28,8 @@
  */
  
 //Carga de datos...
-	include("vdl-includes/vdl-core/core_user.class.php");
-	$prof = new CORE_USER();
+	include("vdl-includes/vdl-core/core_profile.class.php");
+	$prof = new CORE_PROFILE();
 	if(isset($_GET["nick"]))
 		$author = $prof->get_profile($_GET["nick"],$visitor);
 	else

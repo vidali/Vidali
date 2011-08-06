@@ -1,6 +1,6 @@
 <?php
-	include("vdl-includes/vdl-core/core_user.class.php");		
-	$prof = new CORE_USER();
+	include("vdl-includes/vdl-core/core_profile.class.php");		
+	$prof = new CORE_PROFILE();
 	$author = $prof->get_profile($_SESSION["user_id"],$visitor);
 	foreach ($author as $data){
 		$photo = $data['img_prof'];
@@ -25,7 +25,7 @@
 		<div class="home_titles">
 			Estadísticas de Perfil
 		</div>
-		<p><center><h1>PROXIMAMENTE...</h1></center></p>
+		<p><h1>PROXIMAMENTE...</h1></p>
 	</div>
 </div>
 <div class="clear"></div>
@@ -34,7 +34,7 @@
 		<div class="home_titles">
 			Actualizaciones amigos
 		</div>
-			<br/><center><h2>Sin amigos todavia... :(</h2></center>
+			<br/><h2>Sin amigos todavia... :(</h2>
 	</div>
 </div>
 <div class="grid_8"> 
@@ -42,8 +42,7 @@
 		<div class="home_titles">
 			Actualizaciones redes
 		</div>
-		<br/><center><h2>Sin redes todavia... :(</h2></center>
+		<br/><h2>Sin redes todavia... :(</h2>
 	</div>
 </div>			
 	<div class="clear"></div>
-</div>
