@@ -46,6 +46,7 @@ class CORE_MAIN extends CORE_DB{
 	/*Public*/
 	public function __construct (){
 		parent::__construct();
+		date_default_timezone_set("Europe/London");
 	}
 
 	public function __destruct(){
