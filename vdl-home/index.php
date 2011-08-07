@@ -1,8 +1,12 @@
 <?php
 	include("vdl-includes/vdl-core/core_profile.class.php");		
 	$prof = new CORE_PROFILE();
-	$author = $prof->get_profile($_SESSION["user_id"],$visitor);
+	$author = $prof->get_home($_SESSION["user_id"]);
 	foreach ($author as $data){
+		$nick = $data['nickname'];
+		$p_visits = $data['prof_visits'];
+		$p_friends = $data['prof_friends'];
+		$p_nets = $data['prof_nets'];
 		$photo = $data['img_prof'];
 	}
 ?>
@@ -13,17 +17,17 @@
 			<?php echo '<img src="vdl-media/vdl-images/' . $photo . '.jpg">'; ?>
 		</div>
 		<div id="pr_card">
-			Usuario de Muestra<br/>
-			0 visitas <br/>
-			0 Amigos<br/>
-			0 Redes<br/>
+			<?php echo $nick;?><br/>
+			<?php echo $p_visits;?> visitas <br/>
+			<?php echo $p_friends;?> Amigos<br/>
+			<?php echo $p_nets;?> Redes<br/>
 		</div>
 	</div>			
 </div>
 <div class="grid_11"> 
 	<div class="basic">
 		<div class="home_titles">
-			Estadísticas de Perfil
+			Cuadro vacio...
 		</div>
 		<p><h1>PROXIMAMENTE...</h1></p>
 	</div>
@@ -34,7 +38,7 @@
 		<div class="home_titles">
 			Actualizaciones amigos
 		</div>
-			<br/><h2>Sin amigos todavia... :(</h2>
+			<br/><h2>No implementado</h2>
 	</div>
 </div>
 <div class="grid_8"> 
@@ -42,7 +46,7 @@
 		<div class="home_titles">
 			Actualizaciones redes
 		</div>
-		<br/><h2>Sin redes todavia... :(</h2>
+		<br/><h2>No implementado</h2>
 	</div>
 </div>			
 	<div class="clear"></div>

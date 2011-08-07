@@ -73,10 +73,29 @@ class CORE_USER extends CORE_MAIN{
 		
 	}
 
+	public function get_home($_user){
+		$connection = parent::connect();
+		$user = htmlspecialchars(trim($_user));
+		$query = sprintf("SELECT
+							vdl_users.nickname,
+							vdl_users.img_prof,
+							vdl_users.prof_visits,
+							vdl_users.prof_friends,
+							vdl_users.prof_nets
+		FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+		$result=mysql_query($query,$connection);
+		$a_result = array();
+		while ($row = mysql_fetch_assoc($result)){
+			array_push($a_result,$row);
+		}
+		return $a_result;
+	}
+	
 	public function get_user($_user1,$_refer){
+		$connection = parent::connect();
 			///===>Comprobar que es amigo
 		$client = htmlspecialchars(trim($_refer));
-		$user = htmlspecialchars(trim($_user));
+		$user = htmlspecialchars(trim($_user1));
 		if (!$client){
 			///===>extraer informacion limitada si no lo es
 			$query = sprintf("SELECT

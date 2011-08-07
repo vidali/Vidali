@@ -27,24 +27,24 @@ class CORE_PROFILE extends CORE_USER{
 	
 	public function get_profile($_user,$_refer){
 		$connection = parent::connect();
-		
 		$a_result1 = parent::get_user($_user, $_refer);
 		
-		
 		//necesitamos la idnet del user
-		$query = sprintf("SELECT vdl_users.id FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+		$query = sprintf("SELECT vdl_users.id FROM vdl_users WHERE vdl_users.user_id='%s'", $_user);
 		$result=mysql_query($query,$connection);
 		$id = mysql_fetch_assoc($result);
-		
 		//falta primero coger las redes de vdl_users_net y luego buscarlas en vdl_nets, pero eso se lo dejo al cristo del
 		//futuro...chocala!!
 		$a_result2 = array();
-		$query = ("SELECT id,net_name,net_sdesc,net_desc,net_img FROM vdl_net WHERE vdl_net.id='$_idnet'");
-		$result = mysql_query($query,$connection);
-		while ($row = mysql_fetch_assoc($result)){
-			array_push($a_result2,$row);
+		$query = sprintf("SELECT vdl_user_net.id_net FROM vdl_user_net WHERE vdl_user_net.id_user='%s'", $id["id"]);
+		$result=mysql_query($query,$connection);
+		while ($rowa = mysql_fetch_assoc($result)){
+			$query = ("SELECT net_name,net_sdesc,net_img FROM vdl_net WHERE vdl_net.id='".$rowa["id_net"]."'");
+			$result = mysql_query($query,$connection);
+			while ($row = mysql_fetch_assoc($result)){
+				array_push($a_result2,$row);
+			}
 		}
-		
 		// 		$a_result3 = array();
 		// 		$query = ("SELECT id,net_name,net_sdesc,net_desc,net_img FROM vdl_net WHERE vdl_net.id='$_idnet'");
 		// 		$result = mysql_query($query,$connection);
@@ -54,7 +54,7 @@ class CORE_PROFILE extends CORE_USER{
 		
 		///===>mostrar resultado
 
-		//Calculamos la edad y la fecha del cumpleaños siguiente
+/*		//Calculamos la edad y la fecha del cumpleaï¿½os siguiente
 		if ($client){
 			if(substr($a_result[0]['bday'], 5, 2) > date("n")){
 				$a_result[0]['age']= date("Y")-substr($a_result[0]['bday'], 0, 4)-1;
@@ -68,11 +68,10 @@ class CORE_PROFILE extends CORE_USER{
 					$a_result[0]['bday'] = substr($a_result[0]['bday'], 8, 2).'/'.substr($a_result[0]['bday'], 5, 2).'/'.(substr($a_result[0]['bday'], 0, 4)+$a_result[0]['age']+1);
 				}
 			}
-		}
-		
+		}*/
 		$result = array();
-		array_push($result,a_result1);
-		array_push($result,a_result2);
+		array_push($result,$a_result1);
+		array_push($result,$a_result2);
 		return $result;
 	}
 	
