@@ -34,37 +34,17 @@
 		$author = $prof->get_profile($_GET["nick"],$visitor);
 	else
 		$author = $prof->get_profile($_SESSION["user_id"],$visitor);
-	foreach ($author as $data){
-		if (isset($data['email']))
-			$email = $data['email'];
-		else
-			$email ="";
-	$nickname = $data["nickname"];
-//	$size = 200;
-//	$grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=".md5( strtolower($email) )."&size=".$size;
-	$website = $data['website'];
-	if (isset($data['name']))
-		$name = $data['name'];
-	else
-		$name ="";
-	if (isset($data['location']))
-		$location = $data['location'];
-	else
-		$location ="";
-	$genre = $data['genre'];
-	if (isset($data['bday']))
-	{
-		$bday = $data['bday'];
-		$age = $data['age'];
-	}
-	else
-	{
-		$bday ="";
-		$age = "";
-	}
-	$bio = $data['bio'];
-	$photo = $data['img_prof'];
-	$nets =$data['prof_nets'];
+	$website = $prof->site();
+	$name = $prof->name();
+	$nickname = $prof->nickname();
+	$location = $prof->location();
+	$genre = $prof->sex();
+	$bday = $prof->bday();
+	$age = $prof->age();
+	$bio = $prof->bio();
+	$photo = $prof->img_prof();
+	$email = $prof->email();
+	$nets = $prof->prof_nets();
 ?>
 
 <div class="grid_4">
@@ -86,7 +66,6 @@
 				echo '<a href="mailto:'.$email.'">'.$email.'</a><br/>';
 				echo '<a href="http://'.$website.'">'.$website.'</a><br/>';
 				echo $bio . '</br>';
-		}
 		echo '<div class="clear"></div>';
 	echo "</article>";
 ?>

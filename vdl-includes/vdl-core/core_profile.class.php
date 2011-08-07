@@ -70,7 +70,7 @@ class CORE_PROFILE extends CORE_USER{
 			}
 		}*/
 		$result = array();
-		array_push($result,$a_result1);
+//		array_push($result,$a_result1);
 		array_push($result,$a_result2);
 		return $result;
 	}
