@@ -27,48 +27,33 @@ class CORE_PROFILE extends CORE_USER{
 	
 	public function get_profile($_user,$_refer){
 		$connection = parent::connect();
-		///===>Comprobar que es amigo
-		$client = htmlspecialchars(trim($_refer));
-		$user = htmlspecialchars(trim($_user));
-		if (!$client){
-			///===>extraer informacion limitada si no lo es
-			$query = sprintf("SELECT
-										vdl_users.nickname,
-										vdl_users.genre,
-										vdl_users.bio,
-										vdl_users.website,
-										vdl_users.prof_nets
-										FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
-			$result=mysql_query($query,$connection);
-		}
-		else{
-			///===>extraer informacion completa si es amigo
-			$query = sprintf("SELECT
-										vdl_users.nickname,
-										vdl_users.name,
-										vdl_users.location,
-										vdl_users.genre,
-										vdl_users.bday,
-										vdl_users.bio,
-										vdl_users.email,
-										vdl_users.website,
-										vdl_users.img_prof,
-										vdl_users.prof_nets
-										FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
-			$result=mysql_query($query,$connection);
-		}
-		if (!$result) {
-			$message  = 'Invalid query: ' . mysql_error() . "\n";
-			$message .= 'Whole query: ' . $query;
-			die($message);
-		}
-	
-		///===>mostrar resultado
-		$a_result = array();
+		
+		$a_result1 = parent::get_user($_user, $_refer);
+		
+		
+		//necesitamos la idnet del user
+		$query = sprintf("SELECT vdl_users.id FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+		$result=mysql_query($query,$connection);
+		$id = mysql_fetch_assoc($result);
+		
+		//falta primero coger las redes de vdl_users_net y luego buscarlas en vdl_nets, pero eso se lo dejo al cristo del
+		//futuro...chocala!!
+		$a_result2 = array();
+		$query = ("SELECT id,net_name,net_sdesc,net_desc,net_img FROM vdl_net WHERE vdl_net.id='$_idnet'");
+		$result = mysql_query($query,$connection);
 		while ($row = mysql_fetch_assoc($result)){
-			array_push($a_result,$row);
+			array_push($a_result2,$row);
 		}
-	
+		
+		// 		$a_result3 = array();
+		// 		$query = ("SELECT id,net_name,net_sdesc,net_desc,net_img FROM vdl_net WHERE vdl_net.id='$_idnet'");
+		// 		$result = mysql_query($query,$connection);
+		// 		while ($row = mysql_fetch_assoc($result)){
+		// 			array_push($a_result2,$row);
+		// 		}
+		
+		///===>mostrar resultado
+
 		//Calculamos la edad y la fecha del cumpleaños siguiente
 		if ($client){
 			if(substr($a_result[0]['bday'], 5, 2) > date("n")){
@@ -84,8 +69,11 @@ class CORE_PROFILE extends CORE_USER{
 				}
 			}
 		}
-	
-		return $a_result;
+		
+		$result = array();
+		array_push($result,a_result1);
+		array_push($result,a_result2);
+		return $result;
 	}
 	
 	public function delete(){

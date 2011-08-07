@@ -73,8 +73,49 @@ class CORE_USER extends CORE_MAIN{
 		
 	}
 
-	public function get_user(){
-	
+	public function get_user($_user1,$_refer){
+			///===>Comprobar que es amigo
+		$client = htmlspecialchars(trim($_refer));
+		$user = htmlspecialchars(trim($_user));
+		if (!$client){
+			///===>extraer informacion limitada si no lo es
+			$query = sprintf("SELECT
+										vdl_users.nickname,
+										vdl_users.genre,
+										vdl_users.bio,
+										vdl_users.website,
+										vdl_users.prof_nets
+										FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+			$result=mysql_query($query,$connection);
+		}
+		else{
+			///===>extraer informacion completa si es amigo
+			$query = sprintf("SELECT
+										vdl_users.nickname,
+										vdl_users.name,
+										vdl_users.location,
+										vdl_users.genre,
+										vdl_users.bday,
+										vdl_users.bio,
+										vdl_users.email,
+										vdl_users.website,
+										vdl_users.img_prof,
+										vdl_users.prof_nets
+										FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+			$result=mysql_query($query,$connection);
+		}
+		if (!$result) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+		}
+
+		$a_result = array();
+		while ($row = mysql_fetch_assoc($result)){
+			array_push($a_result,$row);
+		}
+		
+		return $a_result;
 	}
 	
 	public function add_user($_user_id,$_passwd,$_nickname,$_name,$_location,$_genre,$_bday,$_email,$_bio){
