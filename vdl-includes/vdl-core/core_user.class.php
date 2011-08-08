@@ -1,6 +1,6 @@
 <?php
 class CORE_USER extends CORE_MAIN{
-	//===>Private vars & functions
+	/*Private*/
 	private $_user_user_id;
 	private $_user_password;
 	private $_user_nickname;
@@ -18,7 +18,7 @@ class CORE_USER extends CORE_MAIN{
 	private $_user_prof_nets;
 	private $_user_session_id;
 	
-	//===>Protected
+	/*Protected*/
 	protected function s_password($_value){
 		$this->_user_password = $_value;
 	} 
@@ -87,9 +87,8 @@ class CORE_USER extends CORE_MAIN{
 		$rg = mysql_fetch_assoc($result);
 		return $rg;
 	}
-	//===>Public functions
 
-	//===>Constructor
+	/*Public*/
 	public function __construct (){
 		parent::__construct();
 	}
@@ -147,8 +146,6 @@ class CORE_USER extends CORE_MAIN{
 		return $this->_user_prof_nets;
 	}
 	
-	//===>Modify user data
-
 	public function set_user(){
 		
 	}
@@ -164,45 +161,34 @@ class CORE_USER extends CORE_MAIN{
 							vdl_users.prof_nets
 		FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
 		$result=mysql_query($query,$connection);
-		$a_result = array();
 		while ($row = mysql_fetch_assoc($result)){
-			array_push($a_result,$row);
+			$this->s_nickname($row["nickname"]);
+			$this->s_img_prof($row["img_prof"]);
+			$this->s_prof_visits($row["prof_visits"]);
+			$this->s_prof_friends($row["prof_friends"]);
+			$this->s_prof_nets($row["prof_nets"]);
 		}
-		return $a_result;
+		return true;
 	}
 	
 	public function get_user($_user1,$_refer){
 		$connection = parent::connect();
-			///===>Comprobar que es amigo
 		$client = htmlspecialchars(trim($_refer));
 		$user = htmlspecialchars(trim($_user1));
-// 		if (!$client){
-			//===>extraer informacion limitada si no lo es
-// 			$query = sprintf("SELECT
-// 										vdl_users.nickname,
-// 										vdl_users.genre,
-// 										vdl_users.bio,
-// 										vdl_users.website,
-// 										vdl_users.prof_nets
-// 										FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
-// 			$result=mysql_query($query,$connection);
-// 		}
-// 		else{
-			///===>extraer informacion completa si es amigo
-			$query = sprintf("SELECT
-										vdl_users.nickname,
-										vdl_users.name,
-										vdl_users.location,
-										vdl_users.genre,
-										vdl_users.bday,
-										vdl_users.bio,
-										vdl_users.email,
-										vdl_users.website,
-										vdl_users.img_prof,
-										vdl_users.prof_nets
-										FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
-			$result=mysql_query($query,$connection);
-// 		}
+		$query = sprintf("SELECT
+									vdl_users.nickname,
+									vdl_users.name,
+									vdl_users.location,
+									vdl_users.genre,
+									vdl_users.bday,
+									vdl_users.bio,
+									vdl_users.email,
+									vdl_users.website,
+									vdl_users.img_prof,
+									vdl_users.prof_nets,
+									vdl_users.prof_friends
+						FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+		$result=mysql_query($query,$connection);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message .= 'Whole query: ' . $query;
@@ -219,6 +205,7 @@ class CORE_USER extends CORE_MAIN{
 			$this->s_site($row["website"]);
 			$this->s_img_prof($row["img_prof"]);
 			$this->s_prof_nets($row["prof_nets"]);
+			$this->s_prof_friends($row["prof_friends"]);
 		}
 		
 		return true;
@@ -230,9 +217,9 @@ class CORE_USER extends CORE_MAIN{
 					 ('$_user_id','$_passwd','$_nickname','$_name','$_location','$_genre','$_bday','$_email','$_bio','prof_def')");
 		$result = mysql_query($query,$connection);
 		if (!$result) {
-// 			$message  = 'Invalid query: ' . mysql_error() . "\n";
-// 			$message = 'Whole query: ' . $query;
-// 			die($message);
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message = 'Whole query: ' . $query;
+			die($message);
 			return false;
 		}
 		else

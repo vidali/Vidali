@@ -1,11 +1,8 @@
 <?php
-class CORE_NETWORK{
+class CORE_NETWORK extends CORE_MAIN{
 
 	public function add_net($_netname,$_netsdesc,$_netdesc,$_admin){
-		include("core_security.class.php");
-		$core= new CORE_SECURITY();
-		$connection= $core->load_dbconf();
-		$connection= $core->bd_connect();
+		$connection= parent::connect();
 		$query = ("INSERT INTO vdl_net (net_name,net_sdesc,net_desc,net_admin,net_img) VALUES ('$_netname','$_netsdesc','$_netdesc', '$_admin','prof_def')");
 		$publicar = mysql_query($query,$connection) or die('Ups, algo falla');
 
@@ -29,16 +26,14 @@ class CORE_NETWORK{
 	}
 	
 	public function get_network($_idnet){
-		$core= new CORE_SECURITY();
-		$connection= $core->bd_connect();
+		$connection= parent::connect();
 		$query = ("SELECT id,net_name,net_sdesc,net_desc,net_img FROM vdl_net WHERE vdl_net.id='$_idnet'");
 		$result = mysql_query($query,$connection);
 		return mysql_fetch_assoc($result);
 	}
 	
 	public function list_nets(){
-		$core= new CORE_SECURITY();
-		$connection= $core->bd_connect();
+		$connection= parent::connect();
 		$query = ("SELECT id,net_name,net_sdesc,net_img FROM vdl_net");
 		$result = mysql_query($query,$connection);
 		$results = array();
@@ -49,8 +44,7 @@ class CORE_NETWORK{
 	}
 	
 	public function get_network_page($_name){
-		$core= new CORE_SECURITY();
-		$connection= $core->bd_connect();
+		$connection= parent::connect();
 		//si leo esto es porque me puse a jugar y me olvide de acabar la funcion.
 		$query = ("SELECT id,net_name,net_sdesc,net_desc,net_img FROM vdl_net WHERE vdl_net.net_name='$_name'");
 		$result = mysql_query($query,$connection);
@@ -58,8 +52,7 @@ class CORE_NETWORK{
 	}
 	
 	public function get_users_net($_network){
-		$core= new CORE_SECURITY();
-		$connection= $core->bd_connect();
+		$connection= parent::connect();
 		$query = ("SELECT id_user FROM vdl_user_net WHERE vdl_user_net.id_net='$_network'");
 		$result = mysql_query($query,$connection);
 		$results = array();
@@ -72,10 +65,7 @@ class CORE_NETWORK{
 	}
 	
 	public function join_net($_network,$_user){
-		include("core_security.class.php");
-		$core= new CORE_SECURITY();
-		$connection= $core->load_dbconf();
-		$connection= $core->bd_connect();
+		$connection= parent::connect();
 		$query = ("INSERT INTO vdl_user_net (id_user,id_net) VALUES ('$_user','$_network')");
 		$result = mysql_query($query,$connection);
 		if (!$result) {

@@ -2,13 +2,11 @@
 	include("vdl-includes/vdl-core/core_profile.class.php");		
 	$prof = new CORE_PROFILE();
 	$author = $prof->get_home($_SESSION["user_id"]);
-	foreach ($author as $data){
-		$nick = $data['nickname'];
-		$p_visits = $data['prof_visits'];
-		$p_friends = $data['prof_friends'];
-		$p_nets = $data['prof_nets'];
-		$photo = $data['img_prof'];
-	}
+	$nick = $prof->nickname();
+	$p_visits = $prof->prof_visits();
+	$p_friends = $prof->prof_friends();
+	$p_nets = $prof->prof_nets();
+	$photo = $prof->img_prof();
 ?>
 
 <div class="grid_5">

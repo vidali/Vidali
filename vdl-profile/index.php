@@ -45,7 +45,11 @@
 	$photo = $prof->img_prof();
 	$email = $prof->email();
 	$nets = $prof->prof_nets();
-?>
+	$frs = $prof->prof_friends();
+	$networks = array();
+	$networks = $author[0];
+	$friends = $author[1];
+	?>
 
 <div class="grid_4">
 	<div class="basic_photo">
@@ -72,10 +76,21 @@
 		</div>
 	
 	<div class="pr_titles">
-		Amigos (0)
+		Amigos (<?php echo $frs; ?>)
 	</div>
 	<div class="basic_tb">
-		No disponible...<br/>
+		<?php 
+		if($frs = 0)
+			echo "No has agregado ning�n amigo todavia...";
+		foreach ($friends as $f){
+			echo '<article id="net">';
+				echo '<a href="?pg=p&nick='. $f["nickname"] .'">';
+				echo '<div id="net_photo"><img src="vdl-media/vdl-images/'.$f["img_prof"].'_tb.jpg"></div>';
+				echo '<div id="net_id_p">'.$f["nickname"].'</div>';
+				echo '<div class="clear"></div>';
+			echo '</article>';
+		}
+		?>
 			<?php /*if()
 		echo '<div id="button">Añadir...</div>';*/
 	?>
@@ -88,22 +103,17 @@
 	<div class="basic_tb">
 		<?php
 		//mostramos las redes del usuario, se debería mostrar solo 5 y un boton para mostrar todas las redes.
-			$prof = new CORE_USER();
-			if(isset($_GET["nick"]))
-				$net = $prof->get_networks($_GET["nick"],$visitor);
-			else
-				$net = $prof->get_networks($_SESSION["user_id"],$visitor);
-			if(empty($net))
-				echo "Sin Redes...";
-			foreach ($net as $n){
-				echo '<article id="net">';
-					echo '<a href="?pg=n&name='. $n["net_name"] .'">';
-					echo '<div id="net_photo"><img src="vdl-media/vdl-images/'.$n["net_img"].'_tb.jpg"></div>';
-					echo '<div id="net_id_p">'.$n["net_name"].'</div>';
-					echo '<div id="net_info_p">'.$n["net_sdesc"].'</div></a>';
-					echo '<div class="clear"></div>';
-				echo '</article>';
-			}
+		if($nets = 0)
+			echo "Sin Redes...";
+		foreach ($networks as $n){
+			echo '<article id="net">';
+				echo '<a href="?pg=n&name='. $n["net_name"] .'">';
+				echo '<div id="net_photo"><img src="vdl-media/vdl-images/'.$n["net_img"].'_tb.jpg"></div>';
+				echo '<div id="net_id_p">'.$n["net_name"].'</div>';
+				echo '<div id="net_info_p">'.$n["net_sdesc"].'</div></a>';
+				echo '<div class="clear"></div>';
+			echo '</article>';
+		}
 		?>
 <?php /*		<img src="vdl-media/vdl-images/prof_def_tb.jpg">
 		<div id="button">Ver todos</div>*/?>

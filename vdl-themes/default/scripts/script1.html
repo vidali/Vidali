@@ -30,8 +30,7 @@ if (mensaje=="")
 
     xmlHttp.open("POST", "<?php echo "vdl-includes/set_update.php?sender=".$_SESSION["nickname"];  ?>", true);
     xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=ISO-8859-1');
-    xmlHttp.send("update="+mensaje);
-    
+    xmlHttp.send("update="+mensaje+"&sender=<?php echo $_SESSION["nickname"].'&session_id='.session_id(); ?>");
     $('#globo').animate({
 			opacity: 0
 			}, 600, function() {location.href = location.href});
