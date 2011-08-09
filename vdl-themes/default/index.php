@@ -11,6 +11,7 @@
 		echo "Vidali";
 	?>
 	</title>
+	<link rel="shortcut icon" href="style/favicon.ico" type="image/x-icon" />
 	<script type="text/javascript" src="js/jquery.js" ></script>
 	<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 	<script type="text/javascript" src="js/fancybox/jquery.easing-1.4.pack.js"></script>
@@ -117,7 +118,7 @@
 						echo "Home > Redes";
 				?>
 			</div>
-			<span id="recargar"><?php include("vdl-includes/content.php");?></span>
+			<?php include("vdl-includes/content.php");?>
 		</div>	
 	</div>
 </section>

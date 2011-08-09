@@ -20,15 +20,15 @@
 	$COLOR_TEXT_HEADER="rgb(255,255,255)";
 	$COLOR_TEXT_HEADER_LINK="rgb(255,255,255)";
 	$ELEMENTAL_0 = "margin=0; padding=0;";
-	$HEIGHT_HEADER="height=45px;";
+	$HEIGHT_HEADER="height=50px;";
 	$HEIGHT_CONTENT="min-height=400px;";
 	$HEIGHT_FOOTER="min-height=150px;";
 ?>
 
 /*====================TEXT====================*/
-a{ color:<?php echo $COLOR_TEXT_LINK;?>; text-decoration: none}
-header #box1 a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
-#button a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
+a{ color: #000; text-decoration: none}
+#menu a{ color: #f8f9f9; text-decoration: none}
+a:hover { color: #000; text-decoration: underline}
 
 h1{ font-size:18px; margin:0px; color: #222;}
 h2{ font-size:16px; margin:0px; }
@@ -108,34 +108,30 @@ body{
 */
 /*====================HEADER====================*/
 #line{
-	background-color: #2D2D2D;
-	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(20,20,20)), color-stop(1, rgb(60,60,60)));
-	background-image: -moz-linear-gradient( center bottom, rgb(20,20,20) 0%, rgb(60,60,60) 100%);
-	background-image: -o-linear-gradient(top, rgb(20,20,20),rgb(60,60,60)));
-	background-image: linear-gradient(top, rgb(20,20,20), rgb(60,60,60));
-	min-height:35px;
+	background-color: #94978E;
+	min-height:40px;
 	width: 100%;
 }
 
 
 header{
-	color: #FFF;
-	text-shadow: 1px 1px 2px #7A7A7A;
+	color: #CDCDCD;
+	text-shadow: 1px 1px 0px #333;
 	<?php echo $HEIGHT_HEADER;?>;
-	border-bottom: 5px solid rgb(158,200,84);
+	border-bottom: 2px solid #5A5A5A;
 }
 
 header #logo a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 #logo{
-	padding: 5px 0px 5px 0px;
-	height: 30px;
+	padding: 0px;
+	height: 40px;
 	color: #f8f9f9;
 	font-size: 16px;
 }
 
 #box1{
 	padding: 5px 0px 5px 0px;
-	height: 30px;
+	height: 25px;
 }
 
 #menu ul{
@@ -144,31 +140,31 @@ header #logo a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 }
 
 #menu ul li{
-	background: rgb(138,180,64);
+	background: #2D2D2D;
 	text-align: center;
 	min-width:60px;
-	height: 20px;
+	height: 15px;
 	float:right;
-	margin: 0px;
+	margin-left: 1px;
+	border-top: 5px solid #5A5A5A;	
 	padding: 10px 5px 10px 5px;
 	display:block;
-	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgb(158,200,84)),color-stop(0.78, rgb(250,250,250)));
-	background-image: -moz-linear-gradient(center bottom,rgb(158,200,84) 0%,rgb(250,250,250) 78%);
 }
 
 #menu ul li.active{
-	background: rgb(158,200,84);	
+	border-top: 5px solid #AFD250;	
 }
 
 #menu ul li:hover{
 	text-align: center;
 	min-width:60px;
-	height: 20px;
+	height: 15px;
 	float:right;
 	margin: 0px;
 	padding: 10px 5px 10px 5px;
 	display:block;
-	background: rgb(158,200,84);
+	margin-left: 1px;
+	border-top: 5px solid #AFD250;	
 }
 
 /*====================CONTENT====================*/
@@ -183,7 +179,7 @@ header #logo a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 
 #page_name{
 	display: block;
-	margin: 10px;
+	margin-bottom: 20px;
 	font-size: 24px;
 	color: #6a6a6a;
 }
@@ -195,27 +191,39 @@ header #logo a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 	margin-bottom: 10px;
 }
 
-.basic2{
+.stream{
 	height: 600px;
 	display: block;
-	margin: 0px;
-	padding: 0px;
 	min-height: 400px;
-	border-bottom: 1px solid rgb(158,200,84);
 }
 
-.home_titles{
-	border-bottom: 1px solid rgb(158,200,84);
+#home_titles{
+	border: 1px solid rgb(158,200,84);
 	margin: 0px;
 	padding: 0px;
-	padding-left: 10px;
 	min-height: 20px;
+	border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+}
+
+.home_breadcumbs{
+	border: 1px solid rgb(158,200,84);
+	margin: 0px;
+	padding: 0px;
+	min-height: 20px;
+}
+
+.home_update{
+	border: 1px solid rgb(158,200,84);
+	margin: 0px;
+	padding: 0px;
+	min-height: 100px;
 }
 
 #pr_thumb{
 	box-shadow: 3px 3px 5px #888;
 	-moz-box-shadow: 3px 3px 5px #888;
-	margin-left: 10px;
 	padding: 0px;
 	max-width: 100px;
 	max-height: 100px;
@@ -424,10 +432,6 @@ div.clear {
 
 #line-footer{
 	background-color: #2D2D2D;
-	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(20,20,20)), color-stop(1, rgb(60,60,60)));
-	background-image: -moz-linear-gradient( center bottom, rgb(20,20,20) 0%, rgb(60,60,60) 100%);
-	background-image: -o-linear-gradient(top, rgb(20,20,20),rgb(60,60,60)));
-	background-image: linear-gradient(top, rgb(20,20,20), rgb(60,60,60));
 	width: 100%;
 	bottom: 0px;
 	position: fixed;

@@ -39,11 +39,7 @@ body{
 
 /*====================HEADER====================*/
 #line{
-	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(0,0,0)), color-stop(1, rgb(61,61,61)));
-	background-image: gradient( linear, left bottom, left top, color-stop(0, rgb(0,0,0)), color-stop(1, rgb(61,61,61)));
-	background-image: -moz-linear-gradient( center bottom, rgb(0,0,0) 0%, rgb(61,61,61) 100%);
-	background-image: -o-linear-gradient(top, rgb(0,0,0), rgb(61,61,61));
-	background-image: linear-gradient(top, rgb(0,0,0), rgb(61,61,61));
+	background-color: #2D2D2D;
 	min-height:100px;
 	width: 100%;
 	border-bottom: 5px solid #434343;
@@ -101,10 +97,7 @@ background: rgb(175,210,100);
 /*====================FOOTER====================*/
 
 #line-footer{
-	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(0,0,0)), color-stop(1, rgb(61,61,61)));
-	background-image: -moz-linear-gradient( center bottom, rgb(0,0,0) 0%, rgb(61,61,61) 100%);
-	background-image: -o-linear-gradient(top, rgb(0,0,0),rgb(61,61,61));
-	background-image: linear-gradient(top, rgb(0,0,0), rgb(61,61,61));
+	background-color: #2D2D2D;
 	min-height:40px;
 	width: 100%;
 	position: absolute;

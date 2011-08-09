@@ -9,7 +9,7 @@
 	$photo = $prof->img_prof();
 ?>
 
-<div class="grid_5">
+<div class="grid_4">
 	<div class="basic">
 		<div id="pr_thumb">
 			<?php echo '<img src="vdl-media/vdl-images/' . $photo . '.jpg">'; ?>
@@ -22,29 +22,9 @@
 		</div>
 	</div>			
 </div>
-<div class="grid_11"> 
-	<div class="basic">
-		<div class="home_titles">
-			Cuadro vacio...
-		</div>
-		<p><h1>PROXIMAMENTE...</h1></p>
-	</div>
+<div class="grid_12"> 
+	<div id="home_titles"> Actividad Reciente </div>
+	<div class="home_breadcumbs"> Amigos | redes | menciones | Titulares</div>
+	<div class="home_update"> ejemplo de update</div>
 </div>
 <div class="clear"></div>
-<div class="grid_8"> 
-	<div class="basic2">
-		<div class="home_titles">
-			Actualizaciones amigos
-		</div>
-			<br/><h2>No implementado</h2>
-	</div>
-</div>
-<div class="grid_8"> 
-	<div class="basic2">
-		<div class="home_titles">
-			Actualizaciones redes
-		</div>
-		<br/><h2>No implementado</h2>
-	</div>
-</div>			
-	<div class="clear"></div>
