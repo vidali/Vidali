@@ -17,7 +17,8 @@
 ?>
 
 /*====================TEXT====================*/
-a{ color:<?php echo $COLOR_TEXT_LINK;?>; text-decoration: none}
+a{ color: #fff; text-decoration: none}
+a:hover{ color: #fff; text-decoration: underline}
 header .grid_6 a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 #reg_button a { color: <?php echo $COLOR_TEXT_HEADER;?>; text-decoration: none}
 h1{ font-size:18px; margin:0px; }
@@ -29,20 +30,24 @@ h6{ font-size:8px; }
 
 /*====================BODY====================*/
 body{
-	background: rgb(175,210,100);
+	background-color: #0A0A0A;
+	background-image: url("../vdl-media/vdl-images/earth_bg.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: right bottom;
 	font-family: verdana,arial,sans-serif;
 	font-size: 16px;
-	color:#000;
+	color:#fff;
 	padding: 0px;
 	margin: 0px;
 }
 
 /*====================HEADER====================*/
 #line{
-	background-color: #2D2D2D;
 	min-height:100px;
 	width: 100%;
-	border-bottom: 5px solid #434343;
+	border-bottom: 2px solid #434343;
+	margin-top: 100px; 	
 }
 
 header{
@@ -50,33 +55,112 @@ header{
 	<?php echo $HEIGHT_HEADER;?>;
 }
 
-#vdl-form ul{
-	font-size: 12px;
+
+#login-form{
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+}
+
+#logo{
+	text-align: center;
+}
+
+#links{
+	text-align: center;
+	height: 100%;
+	font-size: 18px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #999;
 	list-style: none;
 	padding: 0px;
 	margin: 0px;
 }
-#vdl-form ul li{
-	margin: 0px 5px 0px 5px;
+
+#links li{
+	margin-left: 25px;
+	margin-top: 6px;
+	padding: 2px 5px 2px 5px;
 	float: left;
-	color: #111;
+	background-color:  #aacc7e;
+	border: 1px solid #434343;
 }
 
-label{
-	font-size: 12px;
+
+
+textarea{
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	padding:5px;
+	font-size: 14px;
+	resize: none;
+	border: 1px solid #afafaf;
+}
+
+input[type=text]{
+	text-align: center;
+	font_size: 20px;
+	color: #fff;
+	padding: 10px;
+	background: #333;
+	border: 1px solid #666;
+	width: 150px;
+	margin:0px;
+}
+
+input[type=password]{
+	text-align: center;
+	font_size: 20px;
+	color: #fff;
+	padding: 10px;
+	background: #333;
+	border: 1px solid #666;
+	width: 150px;
+	margin:0px;
+}
+
+input[type=submit]{
+	text-align: center;
+	font_size: 20px;
+	color: #fff;
+	padding: 10px;
+	background: #333;
+	border: 1px solid #666;
+	width: 150px;
+	margin:0px;
+	cursor: pointer;
+}
+
+
+#login-form ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+#login-form ul li{
+	margin: 0px 5px 0px 5px;
+	padding: 0px;
+	float: left;
+	width: 150px;
+}
+
+.sub{
+	font-size: 10px;
+	color: #f8f9f9;
 	display: inline-block;
 	min-width: 100px;
 }
+
 /*====================CONTENT====================*/
-#line-cont{
-background: rgb(175,210,100);
-}
-	
+
 #info{
 	display: block;
 	text-align: center;
 	padding-top: 50px;
-	height: 465px;
+	padding-bottom: 50px;
+	color: #F8F9F9;
+	text-shadow: 1px 1px 0px #333;
 }
 
 #line-login{
@@ -97,7 +181,6 @@ background: rgb(175,210,100);
 /*====================FOOTER====================*/
 
 #line-footer{
-	background-color: #2D2D2D;
 	min-height:40px;
 	width: 100%;
 	position: absolute;
@@ -105,7 +188,9 @@ background: rgb(175,210,100);
 }
 
 #about{
-	padding-top: 10px;
+	padding-top: 20px;
+	color: #DCDCDC;
+	font-size: 10px;
 }
 
 footer{

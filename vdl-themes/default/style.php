@@ -108,7 +108,7 @@ body{
 */
 /*====================HEADER====================*/
 #line{
-	background-color: #94978E;
+	background-color: #2D2D2D;
 	min-height:40px;
 	width: 100%;
 }

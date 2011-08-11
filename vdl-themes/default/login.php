@@ -8,32 +8,52 @@
 	<link rel="stylesheet" type="text/javascript" href="js/jquery.js" />
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
 	<link rel="stylesheet" type="text/css" href="style/style-login.php" />
-	<link rel="stylesheet" type="text/css" href="style/form.css" ></link>
 </head>
 <body>
 	
 <header>
 <div id="line">
 	<div class="container_16">
-		<div class="grid_9 suffix_1">
+		<div id="logo" class="grid_6">
 			<img src="vdl-media/vdl-images/logo-grande.png">
 			<div class="clear"></div>
 		</div>
-		<form id="vdl-form" class="grid_5" action="vdl-includes/session_start.php" method="post">
-			<ul>
-				<li>
-					<label>Usuario:</label><input id ="user" name="user" size="15" type="text" />
-				</li>
-				<li>
-					<label>Contraseña:</label><input id ="passwd" name="passwd" size="15" type="password" />
-				</li>
-				<li>
-					<label>Recordarme</label><input id="remember" name="remember" type="checkbox" value="1">
-				</li>
-				<input type="submit" name="send" value="Iniciar sesion">
-				<div class="clear"></div>
-			</ul>
-		</form>
+		<div class="grid_10">
+			<form id="login-form" action="vdl-includes/session_start.php" method="post">
+				<ul>
+					<li>
+						<input id ="user" name="user" type="text" placeholder="Nombre de Usuario" />
+					</li>
+					<li>
+						<input id ="passwd" name="passwd" type="password" placeholder="Password" />
+					</li>
+					<li>
+						<input type="submit" name="send" value="Iniciar sesion">
+					</li>
+					<li>
+						<input id="remember" name="remember" type="checkbox" value="1"><label class="sub">Recordarme</label>
+					</li>
+					<li>
+						<label class="sub">He perdido mi Password</label>
+					</li>
+					<div class="clear"></div>
+				</ul>
+			</form>
+		</div>
+		<ul id="links" class="grid_10">
+			<li>
+				<a href="http://vdli.wordpress.com" >Blog</a>
+			</li>
+			<li>
+				<a href="http://github.com/vidali/Vidali" >Github</a>
+			</li>
+			<li>
+				<a href="http://github.com/vidali/Vidali/wiki" >Wiki</a>
+			</li>
+			<li>
+				<a href="http://www.twitter.com/VidaliSN" >@VidaliSN</a>
+			</li>
+		</ul>
 	</div>
 </div>
 </header>
@@ -59,7 +79,7 @@
 	<div id="line-footer">
 			<div class="container_16">
 				<div id="about" class="grid_3 suffix_3">
-					Vidali Team, 2011.
+					Powered by Vidali.
 				</div>
 				<div id="reg_button" class="grid_3">
 					<a href="register.php"><h1>Regístrate</h1></a>
@@ -70,6 +90,7 @@
 				</div>
 			</div>
 	</div>
+	<div class="clear"></div>
 </footer>
 
 </body>
