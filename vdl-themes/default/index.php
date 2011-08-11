@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<title>
@@ -19,8 +19,17 @@
 	<script type="text/javascript" src="js/jquery.imgareaselect.min.js"></script>
 	<link rel="stylesheet" href="js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
-	<link rel="stylesheet" type="text/css" href="vdl-themes/default/style.php" />
-	<link rel="stylesheet" type="text/css" href="vdl-themes/default/form.css" />
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/style.less" />
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/home.less" />
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/prof.less" />
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/net.less" />
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/not.less" />
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/head.less" />
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/body.less" />
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/foot.less" />
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/other.less" />
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/form.less" />
+	<script type="text/javascript" src="js/less.js"></script>
 	<?php
 		include_once("vdl-themes/default/scripts/script1.html");
 	?>

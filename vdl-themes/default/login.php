@@ -7,7 +7,8 @@
 	</title>
 	<link rel="stylesheet" type="text/javascript" href="js/jquery.js" />
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
-	<link rel="stylesheet" type="text/css" href="style/style-login.php" />
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/login.less" />
+	<script type="text/javascript" src="js/less.js"></script>
 </head>
 <body>
 	
