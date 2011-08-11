@@ -30,13 +30,9 @@ h6{ font-size:8px; }
 
 /*====================BODY====================*/
 body{
-	background-color: #0A0A0A;
-	background-image: url("../vdl-media/vdl-images/earth_bg.png");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: right bottom;
+	background-color: #F1F1F1;
 	font-family: verdana,arial,sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	color:#fff;
 	padding: 0px;
 	margin: 0px;
@@ -44,10 +40,11 @@ body{
 
 /*====================HEADER====================*/
 #line{
+	background-color: #303030;
 	min-height:100px;
 	width: 100%;
 	border-bottom: 2px solid #434343;
-	margin-top: 100px; 	
+	padding-top: 25px; 	
 }
 
 header{
@@ -101,7 +98,7 @@ input[type=text]{
 	text-align: center;
 	font_size: 20px;
 	color: #fff;
-	padding: 10px;
+	padding: 5px;
 	background: #333;
 	border: 1px solid #666;
 	width: 150px;
@@ -112,7 +109,7 @@ input[type=password]{
 	text-align: center;
 	font_size: 20px;
 	color: #fff;
-	padding: 10px;
+	padding: 5px;
 	background: #333;
 	border: 1px solid #666;
 	width: 150px;
@@ -123,7 +120,7 @@ input[type=submit]{
 	text-align: center;
 	font_size: 20px;
 	color: #fff;
-	padding: 10px;
+	padding: 5px;
 	background: #333;
 	border: 1px solid #666;
 	width: 150px;
@@ -156,11 +153,10 @@ input[type=submit]{
 
 #info{
 	display: block;
-	text-align: center;
-	padding-top: 50px;
+	padding-top: 100px;
 	padding-bottom: 50px;
-	color: #F8F9F9;
-	text-shadow: 1px 1px 0px #333;
+	color: #0e0e0e;
+	text-shadow: 1px 1px 0px #fff;
 }
 
 #line-login{
@@ -168,6 +164,15 @@ input[type=submit]{
 	min-height:95px;
 	width: 100%;
 	height: 140px;
+}
+
+#alert-area{
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: #FFF7DA;
+	margin: 10px;
+	
 }
 
 #reg_button{
@@ -189,7 +194,7 @@ input[type=submit]{
 
 #about{
 	padding-top: 20px;
-	color: #DCDCDC;
+	color: #000;
 	font-size: 10px;
 }
 

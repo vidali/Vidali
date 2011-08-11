@@ -59,20 +59,49 @@
 </header>
 <section id="line-cont">
 	<div id="info" class="container_16">
-		<div class="grid_4 prefix_2">
-			<img src="vdl-media/vdl-images/c1.png">
-			Controla tu información. ¡Elige que hacer con tus datos!
+		<div class="grid_4 prefix_1">
+			<h1>&iquest;Que es Vidali?</h1>
+			<p>Vidali es una Red social Libre licenciada bajo la AGPLv3, 
+			en la que puedes compartir tus fotos, enlaces, videos, musica y archivos con tus amigos, 
+			con total libertad de ser el propietario de tus datos.Sabras en todo momento que tus datos no se usan para otros fines 
+			y que podras eliminarlos con total facilidad!</p>
 		</div>
-		<div class="grid_4">
-			<img src="vdl-media/vdl-images/c2.png">
-			Conectate con todas las redes. ¡Comunicate facilmente!
+		<div class="grid_10 prefix_1">
+			<div class="grid_2">
+				<img src="vdl-media/vdl-images/world.png" >
+			</div>
+			<div class="grid_6">
+				<h2>Comparte:</h2>
+				<p>Con tus amigos y tus grupos lo que quieras!</p>
+			</div>
 		</div>
-		<div class="grid_4 suffix_2">
-			<img src="vdl-media/vdl-images/c3.png">
-			Comparte tus ideas, disfruta de una red actualizada.
+		<div class="grid_10 prefix_1">
+			<div class="grid_2">
+				<img src="vdl-media/vdl-images/users.png" >
+			</div>
+			<div class="grid_6">
+				<h2>Comunicate:</h2>
+				<p>Conoce gente con gustos afines, o simplemente manten conversaciones entre grupos!</p>
+			</div>
 		</div>
-		<div class="clear"></div>
+		<div class="grid_10 prefix_1">
+			<div class="grid_2">
+				<img src="vdl-media/vdl-images/www.png" >
+			</div>
+			<div class="grid_6">
+				<h2>Control:</h2>
+				<p> Sabras en todo momento quien, donde y como ven tu informacion, ademas de poder aplicar filtros
+				para mejorar tu privacidad.</p>
+			</div>
+		</div>
 	</div>
+	<?php if(isset($_GET["alert"])){?>
+	<div id="info" class="container_16">
+		<div id="alert-area" class="grid_16">
+				Bienvenido a Vidali, por favor, inicia sesion para continuar.
+		</div>
+	</div>
+	<?php }?>
 </section>
 
 <footer>
