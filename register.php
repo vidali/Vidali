@@ -79,7 +79,8 @@
 		}
 		if(elque == "email")
 		{
-			if(document.vdlreg.email.value != 0 && document.vdlreg.email.value.match("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"))
+			var val = /^([a-zA-Z0-9._-]+\@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})$/
+			if(val.test(document.vdlreg.email.value))
 			{
 			xmlHttp = new XMLHttpRequest();
 
