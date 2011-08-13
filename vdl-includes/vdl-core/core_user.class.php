@@ -135,6 +135,38 @@ class CORE_USER extends CORE_MAIN{
 	public function set_user(){
 		
 	}
+	
+	public function exist_user($user){
+		$connection = parent::connect();
+		$user = htmlspecialchars($user);
+		$query = sprintf("SELECT * FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+		$result=mysql_query($query,$connection);
+		$exist = mysql_num_rows($result);
+		if($exist == 1)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	
+	public function exist_email($email){
+		$connection = parent::connect();
+		$email = htmlspecialchars($email);
+		$query = sprintf("SELECT * FROM vdl_users WHERE vdl_users.email='%s'", $email);
+		$result=mysql_query($query,$connection);
+		$exist = mysql_num_rows($result);
+		if($exist == 1)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 
 	public function get_home($_user){
 		$connection = parent::connect();
