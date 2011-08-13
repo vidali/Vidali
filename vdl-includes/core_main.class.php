@@ -50,8 +50,7 @@ class CORE_MAIN extends CORE_DB{
 	}
 
 	public function __destruct(){
-		parent::close();
-		unset($this->_connection);
+		unset($this->_conection);
 	}
 	
 	public function load (){
@@ -61,6 +60,7 @@ class CORE_MAIN extends CORE_DB{
 		while($row = mysql_fetch_assoc($result)){
 			define ($row["config_name"],$row["config_value"]);
 		}
+		mysql_close($this->_connection);
 		if(!$result)
 			return false;
 		else

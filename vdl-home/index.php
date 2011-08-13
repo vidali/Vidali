@@ -9,19 +9,20 @@
 	$photo = $prof->img_prof();
 ?>
 
-<div class="grid_4">
-	<div class="basic">
-		<div id="pr_thumb">
+<aside id="left" class="grid_4">
+	<section class="p_resume">
+		<div id="p_thumb">
 			<?php echo '<img src="vdl-media/vdl-images/' . $photo . '.jpg">'; ?>
 		</div>
-		<div id="pr_card">
+		<div id="p_info">
 			<?php echo $nick;?><br/>
 			<?php echo $p_visits;?> visitas <br/>
 			<?php echo $p_friends;?> Amigos<br/>
 			<?php echo $p_nets;?> Redes<br/>
 		</div>
-	</div>			
-</div>
+	</section>			
+</aside>
+
 <div class="grid_12"> 
 	<div id="home_titles"> Actividad Reciente </div>
 	<div class="home_breadcumbs"> Amigos | redes | menciones | Titulares</div>

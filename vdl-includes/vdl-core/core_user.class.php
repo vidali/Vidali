@@ -74,20 +74,6 @@ class CORE_USER extends CORE_MAIN{
 		$this->_user_prof_nets = $_value;
 	}
 	
-	protected function is_friend($_user1,$_user2){
-		$connection = parent::connect();
-		$query = sprintf("SELECT vdl_users.id FROM vdl_users WHERE vdl_users.user_id='%s'", $_user1);
-		$result=mysql_query($query,$connection);
-		$id1 = mysql_fetch_assoc($result);
-		$query = sprintf("SELECT vdl_users.id FROM vdl_users WHERE vdl_users.user_id='%s'", $_user2);
-		$result=mysql_query($query,$connection);
-		$id2 = mysql_fetch_assoc($result);
-		$query = sprintf("SELECT rg FROM  `vdl_friends` WHERE  `id_main` ='%s' AND  `id_friend` ='%s'",$user1,$_user2);
-		$result=mysql_query($query,$connection);
-		$rg = mysql_fetch_assoc($result);
-		return $rg;
-	}
-
 	/*Public*/
 	public function __construct (){
 		parent::__construct();
@@ -225,6 +211,24 @@ class CORE_USER extends CORE_MAIN{
 		else
 			return true;
 	}
+	
+	public function is_friend($_user1,$_user2){
+		$connection = parent::connect();
+		$query = sprintf("SELECT rg FROM  `vdl_friends` WHERE  `id_main` ='%s' AND  `id_friend` ='%s'",$_user1,$_user2);
+		$result=mysql_query($query,$connection);
+		if(!$result){
+			$query = sprintf("SELECT rg FROM  `vdl_friends` WHERE  `id_main` ='%s' AND  `id_friend` ='%s'",$_user2,$_user1);
+			$result=mysql_query($query,$connection);
+			if(!$result)
+				$rg = '6';
+			else
+			$rg = mysql_fetch_assoc($result);
+		}
+		else
+			$rg = mysql_fetch_assoc($result);
+		return $rg;
+	}
+	
 }
 
 ?>

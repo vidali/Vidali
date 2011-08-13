@@ -3,7 +3,50 @@ require_once 'core_user.class.php';
 
 class CORE_PROFILE extends CORE_USER{
 	/*Private*/
+	private function add_friend($_main,$_candidate,$_range){
+		$connection = parent::connect();
+		$query = ("INSERT INTO vdl_friends (id_main,id_friend,rg,status) VALUES ('$_main','$_candidate','$_range','0')");
+		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+		parent::close($connection);
+		if(!result)
+		return false;
+		else
+		return true;
+	}
+	
+	private function delete_friend($_main,$_friend){
+		$connection = parent::connect();
+		$query = ("DELETE FROM vdl_friends WHERE vdl_friends.id ='$_main' AND vdl_friends='$_friend'");
+		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+		parent::close($connection);
+		if(!result)
+		return false;
+		else
+		return true;
+	}
 
+	private function accept_friend($_main,$_friend){
+		$connection = parent::connect();
+		$query = ("UPDATE vdl_friends SET status='1' WHERE vdl_friends.id ='$_main' AND vdl_friends='$_friend'");
+		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+		parent::close($connection);
+		if(!result)
+		return false;
+		else
+		return true;
+	}
+
+	private function block_enemy($_main,$_friend){
+		$connection = parent::connect();
+		$query = ("UPDATE vdl_friends SET rg='7',status='0' WHERE vdl_friends.id ='$_main' AND vdl_friends='$_friend'");
+		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+		parent::close($connection);
+		if(!result)
+		return false;
+		else
+		return true;
+	}
+	
 	/*Public*/
 
 	public function __construct (){
@@ -125,13 +168,26 @@ class CORE_PROFILE extends CORE_USER{
 	
 	}
 	
-	public function add_friend(){
-	
+	public function manage_friend($_req,$_main,$_candidate,$_range){
+		$connection = parent::connect();
+		if($_req == "add"){
+			$sucess = $this->add_friend($_main, $_candidate, $_range);
+		}
+		if($_req == "delete" || $_req == "reject"){
+			$sucess = $this->delete_friend($_main, $_candidate);
+		}
+		if($_req == "accept"){
+			$sucess = $this->accept_friend($_main, $_candidate);
+		}
+		if($_req == "block"){
+			$sucess = $this->block_enemy($_main, $_candidate);
+		}
+		if ($sucess == true)
+			return true;
+		else
+			return false;
 	}
 	
-	public function delete_friend(){
-	
-	}
 	
 	public function add_note(){
 	

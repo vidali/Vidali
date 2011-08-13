@@ -1,7 +1,6 @@
 <?php 
 class CORE_DB{
 	/*Private*/
-	private $_con; // We store the MySQL connection here 
 
 	/*Public*/
 
@@ -30,12 +29,12 @@ class CORE_DB{
 	
 	/**
 	*
-	* We close MySQL connection here.
+	* We close mysql connection here.
 	*/
-	public function close(){
-		$connection = $this->_con; 
-		mysql_close($connection);
+	public function close($_con){
+		mysql_close($_con);
 	}
+	
 	
 	/**
 	 * 
@@ -45,7 +44,6 @@ class CORE_DB{
 		$connection = mysql_connect(DBDIR, DBUSR , DBPSW) or die ("Error: No conecta. Usuario/contraseña erroneo o direccion incorrecta.");
 		$database = DBASE;
 		mysql_select_db($database, $connection) or die ("Error: No conecta a la base de datos.");
-		$this->_con = $connection;
 		return $connection;
 	}
 

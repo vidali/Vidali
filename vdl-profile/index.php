@@ -70,7 +70,16 @@
 				echo '<a href="mailto:'.$email.'">'.$email.'</a><br/>';
 				echo '<a href="http://'.$website.'">'.$website.'</a><br/>';
 				echo $bio . '</br>';
-		echo '<div class="clear"></div>';
+				if($_SESSION["nickname"] == $nickname)
+					echo "eres tu!";
+				else{
+					if($prof->is_friend($_SESSION["nickname"],$nickname) != '6')
+						echo '<a class="modal" href="vdl-includes/manage_friend.php?action=delete">Eliminar amigo</a>';
+					else
+						echo '<a class="modal" href="vdl-includes/manage_friend.php?action=add">Añadir como...</a>';
+					echo '<a class="modal" href="vdl-includes/manage_friend.php?action=block">Bloquear usuario</a>';
+				}
+			echo '<div class="clear"></div>';
 	echo "</article>";
 ?>
 		</div>
