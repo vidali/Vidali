@@ -230,7 +230,8 @@ class CORE_USER extends CORE_MAIN{
 	}
 	
 	public function add_user($_user_id,$_passwd,$_nickname,$_name,$_location,$_genre,$_bday,$_email,$_bio){
-		$connection= $this->bd_connect();
+		$connection = parent::connect();
+		$_passwd = mysql_real_escape_string(sha1(md5(trim($_passwd))));
 		$query = ("INSERT INTO vdl_users (user_id,passwd,nickname,name,location,genre,bday,email,bio,img_prof) VALUES
 					 ('$_user_id','$_passwd','$_nickname','$_name','$_location','$_genre','$_bday','$_email','$_bio','prof_def')");
 		$result = mysql_query($query,$connection);

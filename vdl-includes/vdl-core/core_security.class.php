@@ -52,7 +52,7 @@ class CORE_SECURITY extends CORE_MAIN{
 			$s_id = session_id();
 			$query = sprintf("UPDATE  `vidali`.`vdl_users` SET  `session_id` =  '%s' WHERE  `vdl_users`.`id` =%s;",$s_id,$array["id"]);
 			$result=mysql_query($query,$connection);
-			//Agregamos los datos basicos a la sesion y redirigimos a la página principal
+			//Agregamos los datos basicos a la sesion y redirigimos a la pï¿½gina principal
 			$_SESSION["id"]=$array["id"];
 			$_SESSION["user_id"]=$array["user_id"];
 			$_SESSION["nickname"]=$array["nickname"];
@@ -94,44 +94,6 @@ class CORE_SECURITY extends CORE_MAIN{
 		}
 		foreach( $_POST as $variable => $valor ){
 			$_POST [ $variable ] = str_replace ( "'" , '\'' , $_POST [ $variable ]);
-		}
-	}
-
-	public function exist_user($user){
-		//conectar a base de datos
-		$core= new CORE_SECURITY();
-		$connection= $core->load_dbconf();
-		$connection= $core->bd_connect();
-		$user = htmlspecialchars($user);
-		$query = sprintf("SELECT * FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
-		$result=mysql_query($query,$connection);
-		$exist = mysql_num_rows($result);
-		if($exist == 1)
-		{
-			return 1;
-		}
-		else
-		{
-			return 0;
-		}
-	}
-	
-	public function exist_email($email){
-		//conectar a base de datos
-		$core= new CORE_SECURITY();
-		$connection= $core->load_dbconf();
-		$connection= $core->bd_connect();
-		$email = htmlspecialchars($email);
-		$query = sprintf("SELECT * FROM vdl_users WHERE vdl_users.email='%s'", $email);
-		$result=mysql_query($query,$connection);
-		$exist = mysql_num_rows($result);
-		if($exist == 1)
-		{
-			return 1;
-		}
-		else
-		{
-			return 0;
 		}
 	}
 }
