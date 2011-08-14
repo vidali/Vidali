@@ -76,7 +76,7 @@
 					if($prof->is_friend($_SESSION["nickname"],$nickname) != '6')
 						echo '<a class="modal" href="vdl-includes/manage_friend.php?action=delete">Eliminar amigo</a>';
 					else
-						echo '<a class="modal" href="vdl-includes/manage_friend.php?action=add">Añadir como...</a>';
+						echo '<a class="modal" href="vdl-includes/manage_friend.php?action=add">Aï¿½adir como...</a>';
 					echo '<a class="modal" href="vdl-includes/manage_friend.php?action=block">Bloquear usuario</a>';
 				}
 			echo '<div class="clear"></div>';
@@ -90,7 +90,7 @@
 	<div class="basic_tb">
 		<?php 
 		if($frs = 0)
-			echo "No has agregado ningún amigo todavia...";
+			echo "No has agregado ningï¿½n amigo todavia...";
 		foreach ($friends as $f){
 			echo '<article id="net">';
 				echo '<a href="?pg=p&nick='. $f["nickname"] .'">';
@@ -131,7 +131,7 @@
 </div>
 
 <div class="grid_11 prefix_1"> 
-	<div class="basic3">
+	<div id="actv" class="basic3">
 		<div class="pr_titles">
 			Actividad Reciente:
 		</div>

@@ -1,7 +1,8 @@
 <script type="text/javascript"> 
 <!--Jquery animacion//-->
+var si;
 $(document).ready(function(){ 
-var si = 1;
+si = 1;
 	$('#pulsa').click(function() {
 		if(si){
 			$('#globo').animate({
@@ -28,12 +29,30 @@ if (mensaje=="")
   } 
 	xmlHttp = new XMLHttpRequest();
 
-    xmlHttp.open("POST", "<?php echo "vdl-includes/set_update.php?sender=".$_SESSION["nickname"];  ?>", true);
+    xmlHttp.open("POST", "<?php echo "vdl-includes/set_update.php?sender=".$_SESSION['nickname'];  ?>", true);
     xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=ISO-8859-1');
-    xmlHttp.send("update="+mensaje+"&sender=<?php echo $_SESSION["nickname"].'&session_id='.session_id(); ?>");
+    xmlHttp.send("update="+mensaje+"&sender=<?php echo $_SESSION['nickname'].'&session_id='.session_id(); ?>");
     $('#globo').animate({
 			opacity: 0
-			}, 600, function() {location.href = location.href});
+			}, 600, function() {
+
+			xmlhttp=new XMLHttpRequest();
+			xmlhttp.onreadystatechange=function()
+			  {
+			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			    {
+			    var pagina = xmlhttp.responseText;
+			    var queiro = pagina.split('<!--B -->');
+			    document.getElementById("actv").innerHTML= queiro[2];
+			    document.getElementById("mensaje").value = "";
+			    document.getElementById('contador').innerHTML = "";	
+			    si = 1;		    
+			    }
+			  }
+			xmlhttp.open("GET","index.php?pg=a&nick=<?php echo $_SESSION['nickname'];?>",true);
+			xmlhttp.send();
+				
+			});
 }
 
 function cuenta()

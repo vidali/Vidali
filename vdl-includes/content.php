@@ -12,6 +12,10 @@ else{
 	if ($pg == 'p'){
 		include("vdl-profile/index.php");
 }
+///===>Go to Actividad Reciente.
+	if ($pg == 'a'){
+		include("vdl-profile/act.php");
+}
 ///===>Go to Profile page.
 	if ($pg == 'n'){
 		include("vdl-net/index.php");
