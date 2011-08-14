@@ -132,6 +132,8 @@
 
 <div class="grid_11 prefix_1"> 
 	<div id="actv" class="basic3">
+<!--NO QUITAR LA LINEA DE ABAJO - SISTEMA DINAMICO DE ACTUALIZACION -->
+<!--B -->
 		<div class="pr_titles">
 			Actividad Reciente:
 		</div>
@@ -162,6 +164,8 @@
 		<?php $upd_cont--;
 		}
 		?>
+<!--NO QUITAR LA LINEA DE ABAJO - SISTEMA DINAMICO DE ACTUALIZACION -->
+<!--B -->
 		</div> 
 	</div> 
 </div> 
