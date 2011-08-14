@@ -73,7 +73,13 @@ class CORE_NETWORK extends CORE_MAIN{
 				 $message = 'Whole query: ' . $query;
 				 die($message);			 
 		}
-
+		$query = ("UPDATE vdl_users SET prof_nets=prof_nets+1 WHERE id=".$_user);
+		$result = mysql_query($query,$connection);
+		if (!$result) {
+				 $message  = 'Invalid query: ' . mysql_error() . "\n";
+				 $message = 'Whole query: ' . $query;
+				 die($message);			 
+		}
 		header("Location:../index.php?alert=joined_net");
 	}
 }
