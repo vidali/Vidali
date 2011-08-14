@@ -8,8 +8,10 @@
 	$core= new CORE_SECURITY();
 	$sucess= $core->login($_POST['user'], $_POST['passwd']);
 	if($sucess == true)
-		header("Location:../index.php?pg=home");
+		echo "1";
+		//header("Location:../index.php?pg=home");
 	else
-		header("Location:../index.php?msg=loginf");
+		echo "0";
+		//header("Location:../index.php?msg=loginf");
 	
 ?>
