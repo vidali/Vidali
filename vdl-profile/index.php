@@ -34,6 +34,7 @@
 		$author = $prof->get_profile($_GET["nick"],$visitor);
 	else
 		$author = $prof->get_profile($_SESSION["user_id"],$visitor);
+	$id = $author[2]['id'];
 	$website = $prof->site();
 	$name = $prof->name();
 	$nickname = $prof->nickname();
@@ -72,8 +73,8 @@
 				echo $bio . '</br>';
 				if($_SESSION["nickname"] == $nickname)
 					echo "eres tu!";
-				else{
-					if($prof->is_friend($_SESSION["nickname"],$nickname) != '6')
+				else{//antes eran nickname pero sin embargo la funcion va con id --> ya esta cambiado pero rg no tengo ni idea de que es...
+					if($prof->is_friend($_SESSION["id"],$id) != '6')
 						echo '<a class="modal" href="vdl-includes/manage_friend.php?action=delete">Eliminar amigo</a>';
 					else
 						echo '<a class="modal" href="vdl-includes/manage_friend.php?action=add">A�adir como...</a>';

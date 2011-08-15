@@ -5,13 +5,75 @@
 	<title>
 	<?php echo TITLE; ?>
 	</title>
-	<link rel="stylesheet" type="text/javascript" href="js/jquery.js" />
+	<script src="js/jquery.js"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/login.less" />
 	<script type="text/javascript" src="js/less.js"></script>
+<style>
+#fondo{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background-color: #fff;
+  	display:none;
+}
+#carga_vidali{
+	position:fixed;
+	width:268px;
+	height:200px;
+	left:50%;
+	top:50%;
+	margin-left:-134px;
+	margin-top:-200px;
+	display:none;
+}
+</style>
+<script>
+$(document).ready(function()
+{
+	$("#send").click(function () 
+	{
+		$("#fondo").fadeIn(2000);
+		$("#footer").fadeOut(2000, function () 
+		{
+			$("#carga_vidali").fadeIn(300, function () 
+			{
+				xmlhttp=new XMLHttpRequest();
+				xmlhttp.onreadystatechange=function()
+				  {
+				  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+				    {
+				    if(xmlhttp.responseText == 1)
+				    {
+				    	$("#carga_vidali").fadeOut(500, function () 
+				    			{window.location='index.php?pg=home';});
+				    }
+				    else
+				    {
+				    	$("#carga_vidali").fadeOut(500);
+				    	$("#footer").fadeIn(500);
+				    	$("#fondo").fadeOut(500);
+				    }
+				    
+				    }
+				  }
+				xmlhttp.open("POST","vdl-includes/session_start.php",true);
+				xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=ISO-8859-1');
+				xmlhttp.send("user="+document.getElementById('user').value+"&passwd="+document.getElementById('passwd').value);
+	        });
+        });
+	});
+}); 
+</script>
 </head>
 <body>
-	
+<div id="fondo"></div>
+<div id="carga_vidali">
+<img src="vdl-media/vdl-images/logo-login.png">
+<p align="center"><img src="vdl-media/vdl-images/loading.gif"></p>
+</div>
 <header>
 <div id="line">
 	<div class="container_16">
@@ -29,7 +91,7 @@
 						<input id ="passwd" name="passwd" type="password" placeholder="Password" />
 					</li>
 					<li>
-						<input type="submit" name="send" value="Iniciar sesion">
+						<input id = "send" type="button" name="send" value="Iniciar sesion">
 					</li>
 					<li>
 						<input id="remember" name="remember" type="checkbox" value="1"><label class="sub">Recordarme</label>
@@ -105,7 +167,7 @@
 	<?php }?>
 </section>
 
-<footer>
+<footer id="footer">
 	<div id="line-footer">
 			<div class="container_16">
 				<div id="about" class="grid_3 suffix_3">
