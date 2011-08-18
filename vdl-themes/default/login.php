@@ -35,10 +35,10 @@ $(document).ready(function()
 {
 	$("#send").click(function () 
 	{
-		$("#fondo").fadeIn(2000);
-		$("#footer").fadeOut(2000, function () 
+		$("#fondo").fadeIn(1000);
+		$("#footer").fadeOut(1000, function () 
 		{
-			$("#carga_vidali").fadeIn(300, function () 
+			$("#carga_vidali").fadeIn(100, function () 
 			{
 				xmlhttp=new XMLHttpRequest();
 				xmlhttp.onreadystatechange=function()
@@ -71,14 +71,14 @@ $(document).ready(function()
 <body>
 <div id="fondo"></div>
 <div id="carga_vidali">
-<img src="vdl-media/vdl-images/logo-login.png">
+<img src="vdl-media/vdl-images/logo_big_i.png">
 <p align="center"><img src="vdl-media/vdl-images/loading.gif"></p>
 </div>
 <header>
 <div id="line">
 	<div class="container_16">
 		<div id="logo" class="grid_6">
-			<img src="vdl-media/vdl-images/logo-grande.png">
+			<img src="vdl-media/vdl-images/logo_big.png">
 			<div class="clear"></div>
 		</div>
 		<div class="grid_10">
