@@ -16,13 +16,27 @@ class CORE_PROFILE extends CORE_USER{
 	
 	private function delete_friend($_main,$_friend){
 		$connection = parent::connect();
-		$query = ("DELETE FROM vdl_friends WHERE vdl_friends.id ='$_main' AND vdl_friends='$_friend'");
-		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
-		parent::close($connection);
-		if(!result)
-		return false;
+		$query = ("SELECT id FROM  vdl_friends WHERE vdl_friends.id_main ='$_main' AND vdl_friends.id_friend='$_friend'");
+		$result = mysql_query($query,$connection);
+		if(!$result) {
+			$query = ("SELECT id FROM  vdl_friends WHERE vdl_friends.id_main ='$_friend' AND vdl_friends.id_friend='$_main'");
+			$result = mysql_query($query,$connection);
+			$fid=mysql_fetch_assoc($result);	
+		}
 		else
-		return true;
+			$fid=mysql_fetch_assoc($result);
+		$query = ("DELETE FROM vdl_friends WHERE vdl_friends.id ='".$fid["id"]."'");
+		$result = mysql_query($query,$connection);
+		if (!$result) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message = 'Whole query: ' . $query;
+			die($message);
+		}
+		parent::close($connection);
+		if(!$result)
+			return false;
+		else
+			return true;
 	}
 
 	private function accept_friend($_main,$_friend){
@@ -81,7 +95,7 @@ class CORE_PROFILE extends CORE_USER{
 			}
 		}
 		$a_result2 = array();
-		$query = ("SELECT id_friend,id_main FROM vdl_friends WHERE vdl_friends.id_main='".$id["id"]."' OR vdl_friends.id_friend='".$id["id"]."'");
+		$query = ("SELECT id_friend,id_main FROM vdl_friends WHERE (vdl_friends.id_main='".$id["id"]."' OR vdl_friends.id_friend='".$id["id"]."') AND vdl_friends.status != 0");
 		$result = mysql_query($query,$connection);
 		while ($rowa = mysql_fetch_assoc($result)){
 			if($rowa["id_main"] == $id["id"])

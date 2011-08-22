@@ -71,14 +71,32 @@
 				echo '<a href="mailto:'.$email.'">'.$email.'</a><br/>';
 				echo '<a href="http://'.$website.'">'.$website.'</a><br/>';
 				echo $bio . '</br>';
-				if($_SESSION["nickname"] == $nickname)
-					echo "eres tu!";
-				else{//antes eran nickname pero sin embargo la funcion va con id --> ya esta cambiado pero rg no tengo ni idea de que es...
-					if($prof->is_friend($_SESSION["id"],$id) != '6')
-						echo '<a class="modal" href="vdl-includes/manage_friend.php?action=delete">Eliminar amigo</a>';
-					else
-						echo '<a class="modal" href="vdl-includes/manage_friend.php?action=add">A�adir como...</a>';
-					echo '<a class="modal" href="vdl-includes/manage_friend.php?action=block">Bloquear usuario</a>';
+				if($_SESSION["nickname"] != $nickname){
+					if($prof->is_friend($_SESSION["id"],$id) != '6'){
+						?>
+						<form action="vdl-includes/manage_friend.php?action=delete" method="post">
+						<input id="id_main" name="id_main" type="hidden" value="<?php echo $_SESSION["id"] ?>"><br/>
+						<input id="id_friend" name="id_friend" type="hidden" value="<?php echo $id ?>"><br/>
+						<input type="submit" value="Eliminar Amigo">
+						</form>
+						<?php 
+					}
+					else{
+						?>
+						<form action="vdl-includes/manage_friend.php?action=add" method="post">
+						<input id="id_main" name="id_main" type="hidden" value="<?php echo $_SESSION["id"] ?>"><br/>
+						<input id="id_friend" name="id_friend" type="hidden" value="<?php echo $id ?>"><br/>
+						<input type="submit" value="Agregar Contacto">
+						</form>
+						<?php 
+					}
+					?>
+					<form action="vdl-includes/manage_friend.php?action=block" method="post">
+					<input id="id_main" name="id_main" type="hidden" value="<?php echo $_SESSION["id"] ?>"><br/>
+					<input id="id_user" name="id_user" type="hidden" value="<?php echo $id ?>"><br/>
+					<input type="submit" value="Bloquear usuario">
+					</form>
+					<?php
 				}
 			echo '<div class="clear"></div>';
 	echo "</article>";
@@ -96,7 +114,7 @@
 			echo '<article id="net">';
 				echo '<a href="?pg=p&nick='. $f["nickname"] .'">';
 				echo '<div id="net_photo"><img src="vdl-media/vdl-images/'.$f["img_prof"].'_tb.jpg"></div>';
-				echo '<div id="net_id_p">'.$f["nickname"].'</div>';
+				echo '<div id="net_id_p">'.$f["nickname"].'</div></a>';
 				echo '<div class="clear"></div>';
 			echo '</article>';
 		}

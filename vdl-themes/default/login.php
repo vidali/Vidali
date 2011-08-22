@@ -79,6 +79,20 @@ $(document).ready(function()
 	<div class="container_16">
 		<div id="logo" class="grid_6">
 			<img src="vdl-media/vdl-images/logo_big.png">
+			<ul id="links">
+				<li>
+					<a href="http://vdli.wordpress.com" >Blog</a>
+				</li>
+				<li>
+					<a href="http://github.com/vidali/Vidali" >Github</a>
+				</li>
+				<li>
+					<a href="http://github.com/vidali/Vidali/wiki" >Wiki</a>
+				</li>
+				<li>
+					<a href="http://www.twitter.com/VidaliSN" >@VidaliSN</a>
+				</li>
+			</ul>
 			<div class="clear"></div>
 		</div>
 		<div class="grid_10">
@@ -103,20 +117,9 @@ $(document).ready(function()
 				</ul>
 			</form>
 		</div>
-		<ul id="links" class="grid_10">
-			<li>
-				<a href="http://vdli.wordpress.com" >Blog</a>
-			</li>
-			<li>
-				<a href="http://github.com/vidali/Vidali" >Github</a>
-			</li>
-			<li>
-				<a href="http://github.com/vidali/Vidali/wiki" >Wiki</a>
-			</li>
-			<li>
-				<a href="http://www.twitter.com/VidaliSN" >@VidaliSN</a>
-			</li>
-		</ul>
+		<div class="grid_10">
+			<p>Registro cerrado,inf&oacutermate desde nuestros sitios para pr&oacuteximas invitaciones.</p>
+		</div>	
 	</div>
 </div>
 </header>
@@ -126,32 +129,32 @@ $(document).ready(function()
 			<h1>&iquest;Que es Vidali?</h1>
 			<p>Vidali es una Red social Libre licenciada bajo la AGPLv3, 
 			en la que puedes compartir tus fotos, enlaces, videos, musica y archivos con tus amigos, 
-			con total libertad de ser el propietario de tus datos.Sabras en todo momento que tus datos no se usan para otros fines 
+			con total libertad de ser el propietario de tus datos. Sabras en todo momento que tus datos no se usan para otros fines 
 			y que podras eliminarlos con total facilidad!</p>
 		</div>
 		<div class="grid_10 prefix_1">
-			<div class="grid_2">
+			<div class="grid_2 omega">
 				<img src="vdl-media/vdl-images/world.png" >
 			</div>
-			<div class="grid_6">
+			<div class="grid_6 alpha">
 				<h2>Comparte:</h2>
 				<p>Con tus amigos y tus grupos lo que quieras!</p>
 			</div>
 		</div>
 		<div class="grid_10 prefix_1">
-			<div class="grid_2">
+			<div class="grid_2 omega">
 				<img src="vdl-media/vdl-images/users.png" >
 			</div>
-			<div class="grid_6">
+			<div class="grid_6 alpha">
 				<h2>Comunicate:</h2>
 				<p>Conoce gente con gustos afines, o simplemente manten conversaciones entre grupos!</p>
 			</div>
 		</div>
 		<div class="grid_10 prefix_1">
-			<div class="grid_2">
+			<div class="grid_2 omega">
 				<img src="vdl-media/vdl-images/www.png" >
 			</div>
-			<div class="grid_6">
+			<div class="grid_6 alpha">
 				<h2>Control:</h2>
 				<p> Sabras en todo momento quien, donde y como ven tu informacion, ademas de poder aplicar filtros
 				para mejorar tu privacidad.</p>
@@ -173,10 +176,10 @@ $(document).ready(function()
 				<div id="about" class="grid_3 suffix_3">
 					Powered by Vidali.
 				</div>
-				<div id="reg_button" class="grid_3">
+			<?php /*	<div id="reg_button" class="grid_3">
 					<a href="register.php"><h1>Regístrate</h1></a>
-				</div>
-				<div class="grid_3 prefix_3">
+				</div>*/ ?>
+				<div class="grid_3 prefix_6">
 					<img src="vdl-media/vdl-images/agpl.png">
 					<img src="vdl-media/vdl-images/html5.png">
 				</div>

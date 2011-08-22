@@ -247,18 +247,25 @@ class CORE_USER extends CORE_MAIN{
 	
 	public function is_friend($_user1,$_user2){
 		$connection = parent::connect();
-		$query = sprintf("SELECT rg FROM  `vdl_friends` WHERE  `id_main` ='%s' AND  `id_friend` ='%s'",$_user1,$_user2);
+		$rg = 6;
+		$query = sprintf("SELECT rg FROM  vdl_friends WHERE  id_main ='%s' AND  id_friend ='%s'",$_user1,$_user2);
 		$result=mysql_query($query,$connection);
-		if(!$result){
-			$query = sprintf("SELECT rg FROM  `vdl_friends` WHERE  `id_main` ='%s' AND  `id_friend` ='%s'",$_user2,$_user1);
+		$rescount = mysql_num_rows($result);
+		if($rescount == 0){
+			$query = sprintf("SELECT rg FROM  vdl_friends WHERE  id_main ='%s' AND  id_friend ='%s'",$_user2,$_user1);
 			$result=mysql_query($query,$connection);
-			if(!$result)
-				$rg = '6';
-			else
-			$rg = mysql_fetch_assoc($result);
+			$rescount = mysql_num_rows($result);
+			if($rescount == 0)
+				$rg = 6;
+			else{
+				$ra = mysql_fetch_assoc($result);
+				$rg = $ra["rg"];
+			}
 		}
-		else
-			$rg = mysql_fetch_assoc($result);
+		else{
+			$ra = mysql_fetch_assoc($result);
+			$rg = $ra["rg"];
+		}
 		return $rg;
 	}
 	
