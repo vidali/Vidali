@@ -1,4 +1,20 @@
 <?php
+/*	Vidali, Social Network Open Source.
+This file is part of Vidali.
+
+Vidali is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Vidali is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
+
 /*
  * ¿Que hay que hacer aqui?
  * 
@@ -28,10 +44,9 @@
  */
  
 //Carga de datos...
-	include("vdl-includes/vdl-core/core_profile.class.php");
 	$prof = new CORE_PROFILE();
-	if(isset($_GET["nick"]))
-		$author = $prof->get_profile($_GET["nick"],$visitor);
+	if(isset($_GET["@"]))
+		$author = $prof->get_profile($_GET["@"],$visitor);
 	else
 		$author = $prof->get_profile($_SESSION["user_id"],$visitor);
 	$id = $author[2]['id'];
@@ -158,7 +173,7 @@
 		</div>
 		<?php
 		//mostramos las actualizaciones del usuario
-		$updates = $prof -> get_updates($_GET["nick"],$visitor);
+		$updates = $prof -> get_updates($_GET["@"],$visitor);
 		$upd_cont = count($updates);
 		foreach($updates as $upd){
 			if($upd_cont == count($updates))

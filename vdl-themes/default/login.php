@@ -48,7 +48,7 @@ $(document).ready(function()
 				    if(xmlhttp.responseText == 1)
 				    {
 				    	$("#carga_vidali").fadeOut(500, function () 
-				    			{window.location='index.php?pg=home';});
+				    			{window.location='index.php?pg=home&n=!all';});
 				    }
 				    else
 				    {

@@ -130,6 +130,25 @@ class CORE_PROFILE extends CORE_USER{
 		return $result;
 	}
 
+	public function get_networks($_user){
+		$connection = parent::connect();
+		$query = sprintf("SELECT vdl_users.id FROM vdl_users WHERE vdl_users.user_id='%s'", $_user);
+		$result=mysql_query($query,$connection);
+		$id = mysql_fetch_assoc($result);
+		$a_result1 = array();
+		$query = sprintf("SELECT vdl_user_net.id_net FROM vdl_user_net WHERE vdl_user_net.id_user='%s'", $id["id"]);
+		$result=mysql_query($query,$connection);
+		while ($rowa = mysql_fetch_assoc($result)){
+			$query1 = ("SELECT net_name FROM vdl_net WHERE vdl_net.id='".$rowa["id_net"]."'");
+			$result1 = mysql_query($query1,$connection);
+			while ($row = mysql_fetch_assoc($result1)){
+				array_push($a_result1,$row);
+			}
+		}
+		return $a_result1;
+	}
+	
+	
 	public function get_updates($_user){
 		$connection = parent::connect();
 		$query = sprintf("SELECT * FROM vdl_updates WHERE user_id = '%s' ORDER BY id DESC LIMIT 0, 30", $_user);

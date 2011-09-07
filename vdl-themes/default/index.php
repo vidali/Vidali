@@ -71,32 +71,33 @@
 			<div id = "logo" class="grid_4">
 					<a href="index.php"><img src="vdl-media/vdl-images/logo.png" border="0"></a>
 			</div>
-			<div id="menu" class="grid_7 prefix_5">
+			<div id="stream_chooser" class="grid_5">
+				<?php require_once 'vdl-includes/stream_sel.php';?>
+			</div>
+			<div id="menu" class="grid_7">
 				<nav>
 					<ul>
 						<?php $pg=""; if(isset($_GET['pg'])) $pg=$_GET['pg']; ?>
-						<?php /*
 						<?php if( $pg == "media") 
 							echo '<li class="active">';
 						else
 							echo '<li>';?>
 							<a href="?pg=media"><?php echo M_MED; ?></a></li>
-						<?php if($pg == "notes") 
-							echo '<li class="active">';
-						else
-							echo '<li>';?>
-							<a href="?pg=notes"><?php echo M_NOT; ?></a></li>*/
-						?>
 						<?php if($pg == "n") 
 							echo '<li class="active">';
 						else
 							echo '<li>';?>
 							<a href="?pg=n">Redes</a></li>
+						<?php if($pg == "g") 
+							echo '<li class="active">';
+						else
+							echo '<li>';?>
+							<a href="?pg=g"><?php echo "Grupos"; ?></a></li>
 						<?php if($pg == "p") 
 							echo '<li class="active">';
 						else
 							echo '<li>';?>							
-							<a href="?pg=p&nick=<?php echo $_SESSION["nickname"] ?>"><?php echo M_PRF; ?></a></li>
+							<a href="?pg=p&!=all&@=<?php echo $_SESSION["nickname"] ?>"><?php echo M_PRF; ?></a></li>
 						<?php if($pg == "") 
 							echo '<li class="active">';
 						else
@@ -117,10 +118,12 @@
 				<?php
 					if (!isset($_GET['pg']))
 						echo "Home";
-					else if ($_GET['pg'] == "p")
-						echo "Home > Perfil";
-					else if ($_GET['pg'] == "notes")
-						echo "Home > Notas";
+					else if ($_GET['pg'] == "p"){
+						echo $_GET["!"];
+						echo " > Perfil";
+					}
+					else if ($_GET['pg'] == "g")
+						echo "Home > Grupos";
 					else if ($_GET['pg'] == "media")
 						echo "Home > Archivos";
 					else if ($_GET['pg'] == "n")

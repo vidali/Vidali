@@ -17,6 +17,9 @@
 
 //Cargamos las funciones basicas
 include_once 'vdl-includes/core_main.class.php';
+include_once 'vdl-includes/vdl-core/core_profile.class.php';
+include_once 'vdl-includes/vdl-core/core_network.class.php';
+include_once 'vdl-includes/vdl-core/core_security.class.php';
 $MAIN = new CORE_MAIN();
 $MAIN->load();
 //Cargamos las funciones de complementos
