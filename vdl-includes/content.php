@@ -37,8 +37,8 @@ else{
 		include("vdl-groups/index.php");
 }
 ///===>Go to inbox.
-	if ($pg == 'notes')
-		include("vdl-includes/notes.php");
+	if ($pg == 'media')
+		include("vdl-includes/media.php");
 ///===>Go to Configuration page.
 	if ($pg == 'conf')
 		include("vdl-includes/conf.php");

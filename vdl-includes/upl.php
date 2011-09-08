@@ -15,10 +15,11 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 ?>
-<form action="vdl-functions/upload.php" method="post" enctype="multipart/form-data"> 
-   	 <b>Enviar un nuevo archivo: </b> 
+<form action="vdl-includes/upload.php" method="post" enctype="multipart/form-data"> 
+   	 <h1>Cambiar Foto de Perfil</h1>
    	 <br> 
    	 <input name="userfile" type="file"> 
+   	 <input name="usersession" type="hidden" value="<?php echo session_id(); ?>"> 
    	 <br> 
    	 <input type="submit" value="Enviar"> 
 </form>

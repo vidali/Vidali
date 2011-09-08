@@ -69,7 +69,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 <div class="grid_4">
 	<div class="basic_photo">
-		<?php echo '<img src="vdl-media/vdl-images/'. $photo . '_big.jpg">'; ?>
+		<?php echo '<a class="modal" href="vdl-includes/upl.php" title="Cambiar Avatar"><img src="vdl-media/vdl-images/'. $photo . '_big.jpg"></a>'; ?>
 	</div> 
 		<div class="basic3">
 			<div class="pr_titles">

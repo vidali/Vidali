@@ -16,10 +16,10 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 //===> Media URL controler
-if (!isset($_GET['media'])) {
+// if (!isset($_GET['media'])) {
     include("vdl-media/index.php");
-}
-else{
-	include("vdl-media/".$_GET['media'].".php");
-}
+// }
+// else{
+// 	include("vdl-media/".$_GET['media'].".php");
+// }
 ?>

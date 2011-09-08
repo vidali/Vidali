@@ -123,10 +123,16 @@ class CORE_PROFILE extends CORE_USER{
 				}
 			}
 		}*/
+		if($_user != $_refer){
+			$query = ("UPDATE vdl_users SET prof_visits = prof_visits + 1 WHERE vdl_users.user_id ='$_user'");
+			$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+		}		
 		$result = array();
 		array_push($result,$a_result1);
 		array_push($result,$a_result2);
 		array_push($result,$id);
+
+		
 		return $result;
 	}
 
