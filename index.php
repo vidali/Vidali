@@ -37,6 +37,10 @@ if(isset($_SESSION['loged'])){
 	$loged = $_SESSION['loged'];
 	$visitor = $_SESSION['nickname'];
 }
+//Llamamos a core_security para realizar rutinas de seguridad.
+$SEC = new CORE_SECURITY();
+$SEC->clear_url_nav(); //Limpiamos la URL
+
 //Cargamos página correspondiente
 if ($loged == 0)
 	include("vdl-themes/".THEME."/login.php");

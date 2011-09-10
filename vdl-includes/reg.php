@@ -39,8 +39,12 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 	
 	if($_POST["pass1"]==$_POST["pass2"])
 	{
+		$SEC = new CORE_SECURITY();
 		$date = date($_POST["birthdate"]);
-		$core-> add_user($_POST["nick"],$_POST["pass1"],$_POST["nick"],$_POST["name"],$_POST["location"],$_POST["sex"],$date,$_POST["email"],$_POST["bio"]);
+		$name = $SEC->clear_text_strict($_POST["name"]);
+		$location = $SEC->clear_text_strict($_POST["location"]);
+		$bio = $SEC->clear_text_strict($_POST["bio"]);
+		$core-> add_user($_POST["nick"],$_POST["pass1"],$_POST["nick"],$name,$location,$_POST["sex"],$date,$_POST["email"],$bio);
 		header("Location:../index.php?pg=home&wellcome=true");
 	}
 	else 

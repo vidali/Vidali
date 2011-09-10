@@ -15,19 +15,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 ?>
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<title>
-		Vidali - Registro de usuarios
+	<?php echo TITLE; ?>
 	</title>
-	<script type="text/javascript" src="js/jquery.js" ></script>
-	<script type="text/javascript" src="js/jquery-ui.js" ></script>
-	<link type="text/css" href="js/css/ui-lightness/jquery-ui-1.8.13.custom.css" rel="stylesheet" />	
+	<script src="js/jquery.js"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
-	<link rel="stylesheet" type="text/css" href="vdl-themes/default/style.php" />
-	<link rel="stylesheet" type="text/css" href="style/form.css" ></link>
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/login.less" />
+	<script type="text/javascript" src="js/less.js"></script>
 <!--Script para el uso de Datepicker de JQquery UI -->	
 	<script>
 	$(function() {
@@ -178,7 +176,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 <div id="line">
 	<div class="container_16">
 		<div class="grid_16">
-			<img src="vdl-media/vdl-images/logo-grande.png">Alpha 0.5
+			<img src="vdl-media/vdl-images/logo_big.png">
 		</div>
 			<div class="clear"></div>
 	</div>

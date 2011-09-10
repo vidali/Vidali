@@ -49,7 +49,7 @@ if (mensaje=="")
 			    si = 1;		    
 			    }
 			  }
-			xmlhttp.open("GET","index.php?pg=p&nick=<?php echo $_SESSION['nickname'];?>",true);
+			xmlhttp.open("GET","index.php?pg=p&!=all&@=<?php echo $_SESSION['nickname'];?>",true);
 			xmlhttp.send();
 				
 			});

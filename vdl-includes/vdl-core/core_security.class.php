@@ -82,19 +82,31 @@ class CORE_SECURITY extends CORE_MAIN{
 			return false;
 	}
 
-	public function clear_text($source){
+	public function clear_text_strict($source){
 		$db_words=array("UNION","DELETE","DROP","SELECT","INSERT","UPDATE","CREATE","TRUNCATE","ALTER","INTO","DISTINCT","GROUP BY",
 							 "WHERE","RENAME","DEFINE","UNDEFINE","PROMPT","AND","+","OR","ACCEPT","VIEW","COUNT","HAVING");
 		$url_words=array('//','www','http:','.com',"MIME-Version:","Content-Transfer-Encoding:","Return-path:","Subject:","From:",
 							 "Envelope-to:","To:","bcc:","cc:");
 		$script_words=array("<>","SCRIPT","AND","ALERT");
-		$banned_words=array("polla","marica","mierda","puta","mamon");
 		$aux=htmlentities($source,ENT_QUOTES);
-		$aux=str_ireplace($banned_words,"...",$aux);
 		$aux=str_ireplace($db_words,"...",$aux);
+		$aux=str_ireplace($url_words,"...",$aux);
+		$aux=str_ireplace($script_words,"...",$aux);
 		return $aux;
 	}
 
+	public function clear_text($source){
+		$url_words=array('//',"MIME-Version:","Content-Transfer-Encoding:","Return-path:","Subject:","From:",
+								 "Envelope-to:","To:","bcc:","cc:");
+		$script_words=array("onload(","alert(",");","&lt;script&gt;","&lt;/script&gt;");
+		$banned_sites=array("www.4chan.org");
+		$aux=htmlentities($source,ENT_QUOTES);
+		$aux=str_ireplace($db_words," ",$aux);
+		$aux=str_ireplace($url_words," ",$aux);
+		$aux=str_ireplace($script_words," ",$aux);
+		return $aux;
+	}
+	
 	public function email_val($source){
 		if (preg_match
 		('/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/', $source)){
@@ -107,10 +119,10 @@ class CORE_SECURITY extends CORE_MAIN{
 
 	function clear_url_nav(){
 		foreach( $_GET as $variable => $valor ){
-			$_GET [ $variable ] = str_replace ( "'" , '\'' , $_GET [ $variable ]);
+			$_GET [ $variable ] = str_replace ( "'" , '' , $_GET [ $variable ]);
 		}
 		foreach( $_POST as $variable => $valor ){
-			$_POST [ $variable ] = str_replace ( "'" , '\'' , $_POST [ $variable ]);
+			$_POST [ $variable ] = str_replace ( "'" , '' , $_POST [ $variable ]);
 		}
 	}
 }

@@ -17,8 +17,13 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 include("core_main.class.php");
 	include("vdl-core/core_profile.class.php");
-	$message=htmlspecialchars($_POST['update']);
+	include("vdl-core/core_security.class.php");
+	//	$message=htmlspecialchars($_POST['update']);
 	//conectar a base de datos
 	$core= new CORE_PROFILE();
+	//AQUI SE COMPROBARÁ SI EL ESTADO CONTIENE ALGUN @REPLY, #HASTAG, !RED, @>MENSAJE, #> MENSAJE, SE SEPARARÁ LOS LINKS DEL MENSAJE Y
+	// SE PODRÁ FILTRAR 1 LINK, 1 VIDEO Y/O 1 IMAGEN
+	$SEC = new CORE_SECURITY();
+	$message = $SEC->clear_text($_POST['update']);
 	$core->update($_GET['sender'],$message,$_POST["session_id"]);
 ?>
