@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.10
+-- version 3.3.9.2
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 15-05-2011 a las 12:04:49
--- Versión del servidor: 5.5.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 22-09-2011 a las 00:20:14
+-- Versión del servidor: 5.5.10
 -- Versión de PHP: 5.3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `vdl_config` (
   `config_name` varchar(50) COLLATE utf8_bin NOT NULL,
   `config_value` varchar(255) COLLATE utf8_bin NOT NULL,
   KEY `config_id` (`config_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=6 ;
 
 --
 -- Volcar la base de datos para la tabla `vdl_config`
@@ -48,10 +48,14 @@ INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `vdl_friends` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_main` int(11) NOT NULL,
   `id_friend` int(11) NOT NULL,
+  `rg` int(11) NOT NULL,
+  `status` int(1) NOT NULL,
+  PRIMARY KEY (`id`),
   KEY `id_main` (`id_main`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
 --
 -- Volcar la base de datos para la tabla `vdl_friends`
@@ -73,12 +77,14 @@ CREATE TABLE IF NOT EXISTS `vdl_net` (
   `net_privacy` int(11) NOT NULL DEFAULT '0',
   `net_img` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `vdl_net`
 --
 
+INSERT INTO `vdl_net` (`id`, `net_name`, `net_sdesc`, `net_desc`, `net_admin`, `net_privacy`, `net_img`) VALUES
+(1, 'Vidali', 'Comunidad Vidali', 'Comunidad donde puedes comunicarte con otros usuarios del servicio.', 0, 0, 'prof_def');
 
 -- --------------------------------------------------------
 
@@ -127,6 +133,38 @@ CREATE TABLE IF NOT EXISTS `vdl_notes_com` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `vdl_notify`
+--
+
+CREATE TABLE IF NOT EXISTS `vdl_notify` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `vdl_notify`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vdl_notify_rel`
+--
+
+CREATE TABLE IF NOT EXISTS `vdl_notify_rel` (
+  `id_notify` int(11) NOT NULL,
+  `id_receptor` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcar la base de datos para la tabla `vdl_notify_rel`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `vdl_updates`
 --
 
@@ -135,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `vdl_updates` (
   `user_id` varchar(255) NOT NULL,
   `upd_type` int(3) NOT NULL,
   `upd_title` varchar(255) NOT NULL,
-  `upd_msg` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `upd_msg` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -169,6 +207,8 @@ CREATE TABLE IF NOT EXISTS `vdl_users` (
   `prof_visits` int(11) NOT NULL,
   `prof_friends` int(11) NOT NULL,
   `prof_nets` int(11) NOT NULL,
+  `log_keytime` int(6) NOT NULL,
+  `session_id` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
