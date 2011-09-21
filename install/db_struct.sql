@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `vdl_net` (
 --
 
 INSERT INTO `vdl_net` (`id`, `net_name`, `net_sdesc`, `net_desc`, `net_admin`, `net_privacy`, `net_img`) VALUES
-(1, 'Vidali', 'Comunidad Vidali', 'Comunidad donde puedes comunicarte con otros usuarios del servicio.', 0, 0, 'prof_def');
+(1, 'Vidali', 'Comunidad Vidali', 'Comunidad donde puedes comunicarte con otros usuarios del servicio.', 1, 0, 'prof_def');
 
 -- --------------------------------------------------------
 
@@ -232,4 +232,4 @@ CREATE TABLE IF NOT EXISTS `vdl_user_net` (
 --
 -- Volcar la base de datos para la tabla `vdl_user_net`
 --
-
+INSERT INTO `vdl_user_net` (`id_user`, `id_net`) VALUES (1, 1);
