@@ -37,8 +37,17 @@ else{
 		include("vdl-groups/index.php");
 }
 ///===>Go to inbox.
-	if ($pg == 'media')
-		include("vdl-includes/media.php");
+	if ($pg == 'media'){
+		if (!isset($_GET['action']))
+			include("vdl-includes/media.php");
+		else{
+			$func = $_GET['action'];
+			if($func == 'setprim')
+				include("vdl-media/set_img.php");
+		}
+		
+		
+	}
 ///===>Go to Configuration page.
 	if ($pg == 'conf')
 		include("vdl-includes/conf.php");

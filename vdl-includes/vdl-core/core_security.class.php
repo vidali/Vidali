@@ -87,12 +87,12 @@ class CORE_SECURITY extends CORE_MAIN{
 							 "WHERE","RENAME","DEFINE","UNDEFINE","PROMPT","AND","+","OR","ACCEPT","VIEW","COUNT","HAVING");
 		$url_words=array('//','www','http:','.com',"MIME-Version:","Content-Transfer-Encoding:","Return-path:","Subject:","From:",
 							 "Envelope-to:","To:","bcc:","cc:");
-		$script_words=array("<>","SCRIPT","AND","ALERT");
+		$script_words=array("onload(","alert(",");","&lt;script&gt;","&lt;/script&gt;","&quot;","&#39;");
 		$aux=htmlentities($source,ENT_QUOTES);
-		$aux=str_ireplace($db_words,"...",$aux);
-		$aux=str_ireplace($url_words,"...",$aux);
-		$aux=str_ireplace($script_words,"...",$aux);
-		return $aux;
+		$aux=str_ireplace($db_words,"",$aux);
+		$aux=str_ireplace($url_words,"",$aux);
+		$aux=str_ireplace($script_words,"",$aux);
+				return $aux;
 	}
 
 	public function clear_text($source){
@@ -101,9 +101,9 @@ class CORE_SECURITY extends CORE_MAIN{
 		$script_words=array("onload(","alert(",");","&lt;script&gt;","&lt;/script&gt;");
 		$banned_sites=array("www.4chan.org");
 		$aux=htmlentities($source,ENT_QUOTES);
-		$aux=str_ireplace($db_words," ",$aux);
-		$aux=str_ireplace($url_words," ",$aux);
-		$aux=str_ireplace($script_words," ",$aux);
+		$aux=str_ireplace($db_words,"",$aux);
+		$aux=str_ireplace($url_words,"",$aux);
+		$aux=str_ireplace($script_words,"",$aux);
 		return $aux;
 	}
 	

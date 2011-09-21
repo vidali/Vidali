@@ -17,6 +17,11 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 	include ("core_main.class.php");
 	include ("vdl-core/core_network.class.php");
+	include ("vdl-core/core_security.class.php");
+	$SEC = new CORE_SECURITY();
 	$core = new CORE_NETWORK();
-	$core -> add_net($_POST["net_name"],$_POST["net_sdesc"],$_POST["net_desc"],$_POST["net_admin"]);
+	$n_name = $SEC->clear_text_strict($_POST["net_name"]);
+	$n_sdesc = $SEC->clear_text_strict($_POST["net_sdesc"]);
+	$n_desc = $SEC->clear_text_strict($_POST["net_desc"]);
+	$core -> add_net($n_name,$n_sdesc,$n_desc,$_POST["net_admin"]);
 ?>

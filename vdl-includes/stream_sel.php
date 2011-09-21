@@ -19,7 +19,7 @@ if(!isset($_SESSION["net_active"]))
 		$stream = "all";
 	else
 		$stream = $_SESSION["net_active"];
-	echo "Red actual: $stream";
+	//echo "Red actual: $stream";
 	//1º Obtener listado de redes
 	$event = new CORE_PROFILE();
 	$streams = $event->get_networks($_SESSION["user_id"]);

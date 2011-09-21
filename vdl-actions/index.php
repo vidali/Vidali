@@ -25,13 +25,34 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 		$stream="all";
 ?>
 
-<aside id="left" class="grid_4">
-	sugerencias y demas...
+<aside class="grid_4">
+	<section class="p_resume">
+		<div id="p_thumb">
+			<?php echo '<img src="vdl-media/vdl-images/' . $photo . '.jpg">'; ?>
+		</div>
+		<div id="p_info">
+			<?php echo $nick;?><br/>
+			<?php echo $p_visits;?> visitas <br/>
+			<?php echo $p_friends;?> Amigos<br/>
+			<?php echo $p_nets;?> Redes<br/>
+		</div>
+	</section>			
 </aside>
 
-<div class="grid_12"> 
-	<div id="home_titles"> Actividad Reciente </div>
-	<div class="home_breadcumbs"> Amigos | redes | menciones | Titulares</div>
-	<div class="home_update"> ejemplo de update</div>
+<div class="grid_7 prefix_1"> 
+	<div id="set_status">
+		<span>Actualiza tu estado:</span><br>
+		<textarea id="mensaje" style="width:388px;" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea><br>
+		<span style="float:right;"><span id="contador"></span>
+			<input type="submit" value="Actualiza!" OnClick="actualiza(document.getElementById('mensaje').value)">
+		</span>
+	</div>
+</div>
+
+<div class="grid_4"> 
+	<article id="alerts">
+		<h1>Aviso:</h1>
+		<p>Version 0.6 alfa.<br/> Proyecto semiparalizado hasta nuevo aviso.</p>
+	</article>
 </div>
 <div class="clear"></div>

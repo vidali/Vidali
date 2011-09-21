@@ -65,8 +65,9 @@
 
 </head>
 <body>
-<header id="line">
-		<div id="header_elements" class="container_16">
+<header>
+	<div id="line">
+		<div class="container_16">
 			<div id = "logo" class="grid_4">
 					<a href="index.php"><img src="vdl-media/vdl-images/logo.png" border="0"></a>
 			</div>
@@ -110,10 +111,9 @@
 	</div>
 </header>
 
-<section id="cont">
-	<div id="container-line" class="container_16">
-<?php
-/*
+<section id="container">
+	<div id="container-line">
+		<div class="container_16">
 			<div id ="page_name" class="grid_16">
 				<?php
 					if (!isset($_GET['pg']))
@@ -130,17 +130,25 @@
 						echo "Home > Redes";
 				?>
 			</div>
-*/?>
-<?php		require_once("vdl-actions/index.php"); ?>
+			<?php include("vdl-includes/content.php");?>
+		</div>	
 	</div>
 </section>
 
-<section id="container" class="container_16">
-			<?php include("vdl-includes/content.php");?>
-</section>
+<?php
+	include_once("footer.php");
+?>
+
+<div id="globo">
+<span>Actualiza tu estado:</span><br>
+<textarea id="mensaje" style="width:388px;" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea><br>
+<span style="float:right;"><span id="contador"></span>
+<input type="button" value="Actualiza!" OnClick="actualiza(document.getElementById('mensaje').value)">
+</span>
+</div>
 
 <?php 
-	include_once("footer.php");
+	include_once("taskbar.php");
 ?>
 
 <script type="text/javascript">
