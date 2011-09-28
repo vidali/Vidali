@@ -60,6 +60,7 @@ class CORE_SECURITY extends CORE_MAIN{
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message .= 'Whole query: ' . $query;
 			die($message);
+			return false;
 		}
 		if(mysql_num_rows($result)){
 			// nos devuelve 1 si encontro el usuario y el password

@@ -16,6 +16,9 @@
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 //Cargamos las funciones basicas
+if(!file_exists("vdl-includes/vdl-core/db.ini"))
+	header("location: install/index.php"); 
+
 include_once 'vdl-includes/core_main.class.php';
 include_once 'vdl-includes/vdl-core/core_profile.class.php';
 include_once 'vdl-includes/vdl-core/core_network.class.php';
