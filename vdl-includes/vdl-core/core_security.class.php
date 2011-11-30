@@ -40,13 +40,19 @@ class CORE_SECURITY extends CORE_MAIN{
 		return $this->session_key;
 	}
 	
-	public function login($_USER,$_PASS){
+	public function login($_USER,$_PASS,$_REM){
 		//Iniciamos sesion y conectamos a la base de datos
-		session_start();
 		$connection = parent::connect();
 		//Extraemos el user y la pass
-		$usr = mysql_real_escape_string($_USER);
-		$pwd = mysql_real_escape_string(sha1(md5(trim($_PASS))));
+		if ($_REM == 2){
+			$usr = $_USER;
+			$pwd = $_PASS;
+		}
+		else{
+			session_start();
+			$usr = mysql_real_escape_string($_USER);
+			$pwd = mysql_real_escape_string(sha1(md5(trim($_PASS))));
+		}
 		$query = sprintf("SELECT
 							vdl_users.id,
 							vdl_users.user_id,
@@ -67,8 +73,14 @@ class CORE_SECURITY extends CORE_MAIN{
 			$array=mysql_fetch_array($result);
 			//generamos id de la sesion
 			$s_id = session_id();
-			$query = sprintf("UPDATE  `vidali`.`vdl_users` SET  `session_id` =  '%s' WHERE  `vdl_users`.`id` =%s;",$s_id,$array["id"]);
+			$query = sprintf("UPDATE  vdl_users SET  `session_id` =  '%s' WHERE  `vdl_users`.`id` =%s;",$s_id,$array["id"]);
 			$result=mysql_query($query,$connection);
+			 if (!$result) {
+				$message  = 'Invalid query: ' . mysql_error() . "\n";
+				$message .= 'Whole query: ' . $query;
+				die($message);
+				return false;
+			}
 			//Agregamos los datos basicos a la sesion y redirigimos a la p�gina principal
 			$_SESSION["id"]=$array["id"];
 			$_SESSION["user_id"]=$array["user_id"];
@@ -77,6 +89,10 @@ class CORE_SECURITY extends CORE_MAIN{
 			$_SESSION["mail"]=$array["email"];
 			$_SESSION['loged'] = 1;
 			$_SESSION['net_active'] = "all";
+			if ($_REM == "checked"){
+				setcookie ('nick_c', $usr, time() + 604800, "/");
+				setcookie ('pass_c', $pwd, time() + 604800, "/");
+			}
 			return true;
 		}
 		else
@@ -97,12 +113,11 @@ class CORE_SECURITY extends CORE_MAIN{
 	}
 
 	public function clear_text($source){
-		$url_words=array('//',"MIME-Version:","Content-Transfer-Encoding:","Return-path:","Subject:","From:",
+		$url_words=array("MIME-Version:","Content-Transfer-Encoding:","Return-path:","Subject:","From:",
 								 "Envelope-to:","To:","bcc:","cc:");
-		$script_words=array("onload(","alert(",");","&lt;script&gt;","&lt;/script&gt;");
+		$script_words=array("onload(","alert(",");","&lt;script&gt;","&lt;/script&gt;","&quot;","&#39;");
 		$banned_sites=array("www.4chan.org");
 		$aux=htmlentities($source,ENT_QUOTES);
-		$aux=str_ireplace($db_words,"",$aux);
 		$aux=str_ireplace($url_words,"",$aux);
 		$aux=str_ireplace($script_words,"",$aux);
 		return $aux;

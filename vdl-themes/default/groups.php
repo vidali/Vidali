@@ -14,11 +14,22 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
-	$prof = new CORE_PROFILE();
-	$author = $prof->get_home($_SESSION["user_id"]);
-	$nick = $prof->nickname();
-	$p_visits = $prof->prof_visits();
-	$p_friends = $prof->prof_friends();
-	$p_nets = $prof->prof_nets();
-	$photo = $prof->img_prof();
-?>
+
+if ($group == "empty"){
+	echo "hola pagina de grupos";
+}
+else{
+	foreach ($group as $upd){?>
+			<article id="upd">	
+					<section class="upd-info">
+					<?php echo '@'.$upd["user_id"];?>
+					<?php echo $upd["date"];?>
+					</section>
+				<section class ="upd_tb span1">
+				</section>
+				<section class="upd-msg span8">
+					<?php echo $upd["upd_msg"];?>
+				</section>
+			</article>
+<?php 	}
+}?>

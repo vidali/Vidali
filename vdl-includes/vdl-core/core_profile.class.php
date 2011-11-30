@@ -60,7 +60,7 @@ class CORE_PROFILE extends CORE_USER{
 		else
 		return true;
 	}
-	
+	 
 	/*Public*/
 
 	public function __construct (){
@@ -189,19 +189,30 @@ class CORE_PROFILE extends CORE_USER{
 		$connection = parent::connect();
 		date_default_timezone_set('Europe/London');
 		$date = date("Y-m-d G:i:s");
+		$text = $_message;
+//		$text = htmlentities($_message,ENT_QUOTES,"UTF-8");
 		$query = ("SELECT user_id FROM  `vdl_users` WHERE  `session_id` =  '".$_s_id."'");
-		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+		$result = mysql_query($query,$connection);
+		if (!$result) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		
 		$user = mysql_fetch_assoc($result);
 		if( $user["user_id"] == $_user)
-			$query = ("INSERT INTO vdl_updates (user_id,upd_msg,date) VALUES ('$_user','$_message', '$date')");
+			$query = ("INSERT INTO vdl_updates (user_id,upd_msg,date) VALUES ('$_user','$text', '$date')");
 		else
-			$query = ("INSERT INTO vdl_updates (user_id,upd_msg,date) VALUES ('".$user["user_id"]."','$_message', '$date')");
+			$query = ("INSERT INTO vdl_updates (user_id,upd_msg,date) VALUES ('".$user["user_id"]."','$_text', '$date')");
 		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));	
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message .= 'Whole query: ' . $query;
 			die($message);
+			return false;
 		}
+		return true;
 	}
 	
 	public function join_network(){
@@ -237,6 +248,89 @@ class CORE_PROFILE extends CORE_USER{
 	
 	}
 	
+	public function meta_text($text){
+		$text = html_entity_decode($text);
+		//Comprobamos las Menciones 
+		preg_match_all ("/[@]+([A-Za-z0-9-_]+)/",$text, $users); 
+		foreach($users[1]  as $key => $user){ 
+			$find = '@'.$user; 
+			$replace = '<b><a href="?pg=p&!=all&@='.$user.'" >@'.$user.'</a></b>'; 
+			$text = str_replace($find, $replace, $text); 
+		} 
+		 
+		//Comprobamos los Hashtag 
+		preg_match_all('/[#]+([A-Za-z0-9-_]+)/',$text, $hash); 
+		$hashtag = $hash[1]; 
+		 
+		foreach($hashtag  as $key => $hash){ 
+			//Aqui podemos hacer que lo agrege a la database 
+			$find = '#'.$hash;
+			$replace = '<b><a href="?pg=g&!=all&q=%23'.$hash.'" >#'.$hash.'</a></b> '; 
+			$text = str_replace($find, $replace, $text); 
+		} 
+
+		//Comprobamos las redes
+		preg_match_all('/[!]+([A-Za-z0-9-_]+)/',$text, $ntag);
+		foreach($ntag[1]  as $key => $net){
+			//Aqui podemos hacer que lo agrege a la database
+			$find = '!'.$net;
+			$replace = '<b><a href="?pg=n&name='.$net.'" >!'.$net.'</a></b>';
+			$text = str_replace($find, $replace, $text);
+		}
+
+		//Comprobamos los t�tulos
+		preg_match_all ("/>\*([A-Za-z0-9-_\s]+)\*</",$text, $blacks);
+		foreach($blacks[1]  as $key => $black){
+			$find = '>*'.$black.'*<';
+			$replace = '<u><h1>'.$black.'</h1></u>';
+			$text = str_replace($find, $replace, $text);
+		}
+		
+		
+		//Comprobamos las Negritas
+		preg_match_all ("/\*([A-Za-z0-9-_\s]+)\*/",$text, $blacks);
+		foreach($blacks[1]  as $key => $black){
+			$find = '*'.$black.'*';
+			$replace = '<b>'.$black.'</b>';
+			$text = str_replace($find, $replace, $text);
+		}
+
+		//Comprobamos las cursivas
+		preg_match_all ("/_([A-Za-z0-9-_\s]+)_/",$text, $blacks);
+		foreach($blacks[1]  as $key => $black){
+			$find = '_'.$black.'_';
+			$replace = '<i>'.$black.'</i>';
+			$text = str_replace($find, $replace, $text);
+		}
+		
+		//Comprobamos los tachados
+		preg_match_all ("/-([A-Za-z0-9-_\s]+)-/",$text, $blacks);
+		foreach($blacks[1]  as $key => $black){
+			$find = '-'.$black.'-';
+			$replace = '<strike>'.$black.'</strike>';
+			$text = str_replace($find, $replace, $text);
+		}
+
+		//Comprobamos los links youtube
+		preg_match_all ("/http:\/\/www\.youtube\.com\/watch\?v=([A-Za-z0-9-_]+)/",$text, $blacks);
+		foreach($blacks[1]  as $key => $black){
+			$find = 'http://www.youtube.com/watch?v='.$black;
+			$replace = '<br/><iframe width="420" height="315" src="http://www.youtube.com/embed/'.$black.'?wmode=transparent"  frameborder="0" allowfullscreen></iframe><br/>';
+			$text = str_replace($find, $replace, $text);
+		}
+		//http://img.youtube.com/vi/sEhy-RXkNo0/default.jpg para la vista previa de la imagen
+
+		//Comprobamos los links youtube https
+		preg_match_all ("/https:\/\/www\.youtube\.com\/watch\?v=([A-Za-z0-9-_]+)/",$text, $blacks);
+		foreach($blacks[1]  as $key => $black){
+			$find = 'https://www.youtube.com/watch?v='.$black;
+			$replace = '<br/><iframe width="420" height="315" src="http://www.youtube.com/embed/'.$black.'?wmode=transparent"  frameborder="0" allowfullscreen></iframe><br/>';
+			$text = str_replace($find, $replace, $text);
+		}
+		//http://img.youtube.com/vi/sEhy-RXkNo0/default.jpg para la vista previa de la imagen
+		
+		return $text;
+	}
 }
 
 ?>

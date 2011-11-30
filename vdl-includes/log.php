@@ -34,6 +34,8 @@ else{
 	{
     	$params = session_get_cookie_params();
     	setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
+		setcookie ('nick_c', "", time () - 604800, "/");
+		setcookie ('pass_c', "", time () - 604800, "/");	
 	}
 	session_destroy();
 	header("location: ../index.php");

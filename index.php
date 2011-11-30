@@ -16,6 +16,7 @@
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 //Cargamos las funciones basicas
+ini_set('mssql.charset', 'UTF-8');
 if(!file_exists("vdl-includes/vdl-core/db.ini"))
 	header("location: install/index.php"); 
 
@@ -23,6 +24,7 @@ include_once 'vdl-includes/core_main.class.php';
 include_once 'vdl-includes/vdl-core/core_profile.class.php';
 include_once 'vdl-includes/vdl-core/core_network.class.php';
 include_once 'vdl-includes/vdl-core/core_security.class.php';
+include_once 'vdl-includes/vdl-core/core_groups.class.php';
 $MAIN = new CORE_MAIN();
 $MAIN->load();
 //Cargamos las funciones de complementos
@@ -32,19 +34,21 @@ $MAIN->load_lang();
 //detectamos compatibilidad html5 en el navegador
 $MAIN->get_interface();
 //comprobamos estado de la sesion
+//Llamamos a core_security para realizar rutinas de seguridad.
+$SEC = new CORE_SECURITY();
+$SEC->clear_url_nav(); //Limpiamos la URL
 ///===>Start session var and check if we are loged, in other case,we block private info.
 session_start();
 $loged = 0;
 $visitor = " ";
+if(isset($_COOKIE['pass_c'])){
+	$SEC->login($_COOKIE['nick_c'],$_COOKIE['pass_c'],2);
+}
 if(isset($_SESSION['loged'])){
 	$loged = $_SESSION['loged'];
 	$visitor = $_SESSION['nickname'];
 }
-//Llamamos a core_security para realizar rutinas de seguridad.
-$SEC = new CORE_SECURITY();
-$SEC->clear_url_nav(); //Limpiamos la URL
-
-//Cargamos página correspondiente
+//Cargamos pï¿½gina correspondiente
 if ($loged == 0)
 	include("vdl-themes/".THEME."/login.php");
 else

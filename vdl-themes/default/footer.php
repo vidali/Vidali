@@ -1,13 +1,11 @@
 <footer>
-	<div id="line-footer">
-			<div class="container_16">
-				<div class="grid_10">
-					<?php include("taskbar.php"); ?>
-				</div>
-				<div class="grid_3 prefix_3">
-					<img src="vdl-media/vdl-images/agpl.png">
-					<img src="vdl-media/vdl-images/html5.png">
-				</div>
-			</div>
+	<div class="row">
+		<div class="span6">
+			Powered by Vidali. 2011.
+		</div>
+		<div class="span6">
+			<img src="vdl-media/vdl-images/agpl.png">
+			<img src="vdl-media/vdl-images/html5.png">
+		</div>
 	</div>
 </footer>

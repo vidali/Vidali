@@ -39,6 +39,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 	
 	if($_POST["pass1"]==$_POST["pass2"])
 	{
+		include_once "vdl-core/core_security.class.php";
 		$SEC = new CORE_SECURITY();
 		$date = date($_POST["birthdate"]);
 		$name = $SEC->clear_text_strict($_POST["name"]);

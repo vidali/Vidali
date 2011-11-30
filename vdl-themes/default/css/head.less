@@ -1,31 +1,15 @@
 @import "style";
 /*====================HEADER====================*/
-#line{
-/*	border-top-image: url(vdl-themes/default/images/border-top.png) 10px round;*/
-	border-top: 5px solid #8EAB69;
-	background-color: #aacc7e;
-	min-height: 50px;
-	width: 100%;
-	border-bottom: 2px solid @gray3;
+.brand{
+	padding-top: 4px !important;
+	padding-bottom: 2px !important;
 }
-
 #header_elements{
-	padding-top: 10px;
 	margin-bottom: 0px;
 }
 
-header #logo a { color: #fff; text-decoration: none}
-
-#logo{
-	padding: 0px;
-	height: 40px;
-	color: #f8f9f9;
-	font-size: 16px;
-}
-
-
 #stream_chooser{
-	padding: 5px 0px 5px 0px;
+	padding-top: 5px;
 	height: 25px;
 	color: #fff;
 	font-size: 12px;
@@ -33,38 +17,21 @@ header #logo a { color: #fff; text-decoration: none}
 
 #box1{
 	padding: 5px 0px 5px 0px;
-	height: 25px;
+	height: 20px;
 }
 
-#menu ul{
-	margin: 0px;
-	padding: 0px;
+ul li{
+	border-top: 5px solid #5A5A5A;
+	a{
+		padding: 2px !important;
+		margin: 0px !important;	
+	}
 }
 
-#menu ul li{
-	background: #2D2D2D;
-	text-align: center;
-	min-width:60px;
-	height: 15px;
-	float:right;
-	margin-left: 1px;
-	border-top: 5px solid #5A5A5A;	
-	padding: 10px 5px 10px 5px;
-	display:block;
-}
-
-#menu ul li.active{
+ul li.active{
 	border-top: 5px solid #F1BA4D;	
 }
 
-#menu ul li:hover{
-	text-align: center;
-	min-width:60px;
-	height: 15px;
-	float:right;
-	margin: 0px;
-	padding: 10px 5px 10px 5px;
-	display:block;
-	margin-left: 1px;
+ul li:hover{
 	border-top: 5px solid #F1BA4D;	
 }

@@ -52,16 +52,15 @@ $(document).ready(function()
 				    }
 				    else
 				    {
-				    	$("#carga_vidali").fadeOut(500);
-				    	$("#footer").fadeIn(500);
-				    	$("#fondo").fadeOut(500);
+				    	$("#carga_vidali").fadeOut(500, function () 
+				    			{window.location='index.php?alert=loginf';});
 				    }
 				    
 				    }
 				  }
 				xmlhttp.open("POST","vdl-includes/session_start.php",true);
 				xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=ISO-8859-1');
-				xmlhttp.send("user="+document.getElementById('user').value+"&passwd="+document.getElementById('passwd').value);
+				xmlhttp.send("user="+document.getElementById('user').value+"&passwd="+document.getElementById('passwd').value+"&remember="+$('#remember').attr('checked'));
 	        });
         });
 	});

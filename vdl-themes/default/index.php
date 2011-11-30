@@ -11,14 +11,26 @@
 		echo "Vidali";
 	?>
 	</title>
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../1.3.0/bootstrap.css" rel="stylesheet">
+
+    
 	<link rel="shortcut icon" href="style/favicon.ico" type="image/x-icon" />
 	<script type="text/javascript" src="js/jquery.js" ></script>
-	<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<script type="text/javascript" src="js/jquery_scroller.js" ></script>
+<?php /*<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script> 	
 	<script type="text/javascript" src="js/fancybox/jquery.easing-1.4.pack.js"></script>
 	<script type="text/javascript" src="js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
 	<script type="text/javascript" src="js/jquery.imgareaselect.min.js"></script>
+*/?>
+	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
 	<link rel="stylesheet" href="js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
-	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/style.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/home.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/prof.less" />
@@ -29,6 +41,8 @@
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/foot.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/other.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/form.less" />
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" id="theme">
+	<link rel="stylesheet" href="js/jquery_file_upload/jquery.fileupload-ui.css">
 	<script type="text/javascript" src="js/less.js"></script>
 	<?php
 		include_once("vdl-themes/default/scripts/script1.html");
@@ -65,84 +79,87 @@
 
 </head>
 <body>
-<header id="line">
-		<div id="header_elements" class="container_16">
-			<div id = "logo" class="grid_4">
-					<a href="index.php"><img src="vdl-media/vdl-images/logo.png" border="0"></a>
-			</div>
-			<div id="stream_chooser" class="grid_5">
-				<?php require_once 'vdl-includes/stream_sel.php';?>
-			</div>
-			<div id="menu" class="grid_7">
-				<nav>
-					<ul>
+
+<header class="topbar">
+	<div class="topbar-inner">
+		<div class="container-fluid">
+			<div class="row">
+				<div id="tittle" class="span4">
+					<a class="brand" href="index.php"><img src="vdl-media/vdl-images/logo.png" border="0"></a>
+				</div>
+				<div class="pull-right">
+					<ul class="nav">
 						<?php $pg=""; if(isset($_GET['pg'])) $pg=$_GET['pg']; ?>
-						<?php if( $pg == "media") 
-							echo '<li class="active">';
-						else
-							echo '<li>';?>
-							<a href="?pg=media"><?php echo M_MED; ?></a></li>
-						<?php if($pg == "n") 
-							echo '<li class="active">';
-						else
-							echo '<li>';?>
-							<a href="?pg=n">Redes</a></li>
-						<?php if($pg == "g") 
-							echo '<li class="active">';
-						else
-							echo '<li>';?>
-							<a href="?pg=g"><?php echo "Grupos"; ?></a></li>
-						<?php if($pg == "p") 
-							echo '<li class="active">';
-						else
-							echo '<li>';?>							
-							<a href="?pg=p&!=all&@=<?php echo $_SESSION["nickname"] ?>"><?php echo M_PRF; ?></a></li>
 						<?php if($pg == "") 
 							echo '<li class="active">';
 						else
 							echo '<li>';?>
-							<a href="index.php">Home</a></li>
+							<a href="index.php"><img src="vdl-media/vdl-images/home.png"></a></li>
+						<?php if($pg == "p")
+							echo '<li class="active">';
+							else
+							echo '<li>';?>
+							<a href="?pg=p&!=all&@=<?php echo $_SESSION["nickname"] ?>"><img src="vdl-media/vdl-images/profile.png"></a></li>
+						<?php if($pg == "g")
+							echo '<li class="active">';
+							else
+							echo '<li>';?>
+							<a href="?pg=g"><img src="vdl-media/vdl-images/groups.png"></a></li>
+						<?php if($pg == "n")
+							echo '<li class="active">';
+							else
+							echo '<li>';?>
+							<a href="?pg=n"><img src="vdl-media/vdl-images/networks.png"></a></li>
+						<?php if( $pg == "media") 
+							echo '<li class="active">';
+						else
+							echo '<li>';?>
+							<a href="?pg=media"><img src="vdl-media/vdl-images/files.png"></a></li>
+							<li>
+								<img src="style/icons/mail.png">
+							</li>
+							<li>
+								<?php echo'<a href="vdl-includes/log.php?func=logout" title="'.M_LOU.'"><img src="style/icons/lock.png"></a>';?>
+							</li>
 					</ul>
-				</nav>
+				</div>
+
 			</div>
-			<div class="clear"></div>
 		</div>
 	</div>
 </header>
 
-<section id="cont">
-	<div id="container-line" class="container_16">
-<?php
-/*
-			<div id ="page_name" class="grid_16">
-				<?php
-					if (!isset($_GET['pg']))
-						echo "Home";
-					else if ($_GET['pg'] == "p"){
-						echo $_GET["!"];
-						echo " > Perfil";
-					}
-					else if ($_GET['pg'] == "g")
-						echo "Home > Grupos";
-					else if ($_GET['pg'] == "media")
-						echo "Home > Archivos";
-					else if ($_GET['pg'] == "n")
-						echo "Home > Redes";
-				?>
-			</div>
-*/?>
-<?php		require_once("vdl-actions/index.php"); ?>
-	</div>
-</section>
+<?php include("vdl-includes/content.php"); ?>
 
-<section id="container" class="container_16">
-			<?php include("vdl-includes/content.php");?>
-</section>
+<div id="din" class="container-fluid">
+	<aside class="sidebar">
+		<?php		require_once("vdl-actions/index.php"); ?>
+	</aside>
+	<div class="content">
+       	<div class="hero-unit">
+       		<?php 
+       		if($pg == "")
+				include("vdl-themes/default/home.php");
+       		if($pg == "p")
+				include("vdl-themes/default/prof.php");
+       		if($pg == "g")
+				include("vdl-themes/default/groups.php");
+       		if($pg == "n")
+				include("vdl-themes/default/nets.php");
+       		?>
+		</div>
+		<?php //<a href="#"  onclick="javascript:recargar('grupos'); click('grupos');">recargar</a>?>
+		<a href="#"  onclick="javascript:recargar('grupos');">recargar</a>
+		<?php include_once("footer.php");?>
+	</div>
+</div>
+
+
+
 
 <?php 
-	include_once("footer.php");
+	include_once("staticbar.php");
 ?>
-
 <script type="text/javascript">
 reformal_wdg_domain    = "vidali";
 reformal_wdg_mode    = 0;

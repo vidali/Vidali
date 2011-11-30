@@ -14,7 +14,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
-
+session_start();
 include("core_main.class.php");
 	include("vdl-core/core_profile.class.php");
 	include("vdl-core/core_security.class.php");
@@ -25,5 +25,8 @@ include("core_main.class.php");
 	// SE PODRÁ FILTRAR 1 LINK, 1 VIDEO Y/O 1 IMAGEN
 	$SEC = new CORE_SECURITY();
 	$message = $SEC->clear_text($_POST['update']);
-	$core->update($_GET['sender'],$message,$_POST["session_id"]);
+	$message =  nl2br ($message);
+	$core->update($_POST['sender'],$message,session_id());
+//	$core->update($_GET['sender'],$message,$_POST["session_id"]);
+	header("Location:".$_SERVER['HTTP_REFERER']);
 ?>
