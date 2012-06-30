@@ -1,0 +1,63 @@
+<script type="text/javascript"> 
+<!--Jquery animacion//-->
+var si;
+$(document).ready(function(){ 
+si = 1;
+	$('#pulsa').click(function() {
+		if(si){
+			$('#globo').animate({
+			opacity: 1
+			}, 300, function() {});
+			si = 0;
+		}
+		else
+		{
+			$('#globo').animate({
+			opacity: 0
+			}, 300, function() {});
+			si = 1;
+		}
+});
+});
+<!--Envio de update por AJAX//-->
+function actualiza(mensaje)
+{
+if (mensaje=="")
+  {
+  alert('Update vacio!');
+  return;
+  } 
+	xmlHttp = new XMLHttpRequest();
+
+    xmlHttp.open("POST", "<?php echo "vdl-includes/set_update.php?sender=".$_SESSION['nickname'];  ?>", true);
+    xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=ISO-8859-1');
+    xmlHttp.send("update="+mensaje+"&sender=<?php echo $_SESSION['nickname'].'&session_id='.session_id(); ?>");
+    $('#globo').animate({
+			opacity: 0
+			}, 600, function() {
+
+			xmlhttp=new XMLHttpRequest();
+			xmlhttp.onreadystatechange=function()
+			  {
+			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			    {
+			    var pagina = xmlhttp.responseText;
+			    var queiro = pagina.split('<!--B -->');
+			    document.getElementById("actv").innerHTML= queiro[2];
+			    document.getElementById("mensaje").value = "";
+			    document.getElementById('contador').innerHTML = "";	
+			    si = 1;		    
+			    }
+			  }
+			xmlhttp.open("GET","index.php?pg=p&!=all&@=<?php echo $_SESSION['nickname'];?>",true);
+			xmlhttp.send();
+				
+			});
+}
+
+function cuenta()
+{
+document.getElementById('contador').innerHTML = document.getElementById('mensaje').value.length;
+}
+</script>
+
