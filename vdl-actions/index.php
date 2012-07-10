@@ -17,10 +17,10 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 	if(isset($_GET['!']))
 		$stream='all';
 ?>
-<form id="set_status" action="vdl-includes/set_update.php" method="post">
+<form id="set_status" action="vdl-include/set_update.php" method="post">
 	<span>Actualiza tu estado:</span>
 	<span>
-		<input type="hidden" id="sender" name="sender" value="<?php echo $_SESSION['nickname']?>">
+		<input type="hidden" id="sender" name="sender" value="<?php echo $_SESSION['nick']?>">
 		<textarea id="update" name="update" style="width:180px;" maxlength="512" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea><br>
 		<input class="btn primary" type="submit" value="Actualiza!">
 		<span id="contador"></span><br>
@@ -67,10 +67,10 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 				echo '<a href="mailto:'.$email.'">'.$email.'</a><br/>';
 				echo '<a href="http://'.$website.'">'.$website.'</a><br/>';
 				echo $bio . '</br>';
-				if($_SESSION["nickname"] != $nickname){
+				if($_SESSION["nick"] != $nickname){
 					if($prof->is_friend($_SESSION["id"],$id) != '6'){
 						?>
-						<form action="vdl-includes/manage_friend.php?action=delete" method="post">
+						<form action="vdl-include/manage_friend.php?action=delete" method="post">
 						<input id="id_main" name="id_main" type="hidden" value="<?php echo $_SESSION["id"] ?>"><br/>
 						<input id="id_friend" name="id_friend" type="hidden" value="<?php echo $id ?>"><br/>
 						<input type="submit" value="Eliminar Amigo">
@@ -79,7 +79,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 					}
 					else{
 						?>
-						<form action="vdl-includes/manage_friend.php?action=add" method="post">
+						<form action="vdl-include/manage_friend.php?action=add" method="post">
 						<input id="id_main" name="id_main" type="hidden" value="<?php echo $_SESSION["id"] ?>"><br/>
 						<input id="id_friend" name="id_friend" type="hidden" value="<?php echo $id ?>"><br/>
 						<input type="submit" value="Agregar Contacto">
@@ -87,7 +87,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 						<?php 
 					}
 					?>
-					<form action="vdl-includes/manage_friend.php?action=block" method="post">
+					<form action="vdl-include/manage_friend.php?action=block" method="post">
 					<input id="id_main" name="id_main" type="hidden" value="<?php echo $_SESSION["id"] ?>"><br/>
 					<input id="id_user" name="id_user" type="hidden" value="<?php echo $id ?>"><br/>
 					<input type="submit" value="Bloquear usuario">
@@ -107,12 +107,14 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 		if($frs = 0)
 			echo "No has agregado ning�n amigo todavia...";
 		foreach ($friends as $f){
-			echo '<article id="net">';
-				echo '<a href="?pg=p&nick='. $f["nickname"] .'">';
-				echo '<div id="net_photo"><img src="vdl-media/vdl-images/'.$f["img_prof"].'_tb.jpg"></div>';
-				echo '<div id="net_id_p">'.$f["nickname"].'</div></a>';
-				echo '<div class="clear"></div>';
-			echo '</article>';
+			if($f["status"] == 1){
+				echo '<article id="net">';
+					echo '<a href="?pg=p&@='. $f["nick"] .'">';
+					echo '<div id="net_photo"><img src="vdl-media/vdl-images/'.$f["avatar_id"].'_tb.jpg"></div>';
+					echo '<div id="net_id_p">'.$f["nick"].'</div></a>';
+					echo '<div class="clear"></div>';
+				echo '</article>';
+			}
 		}
 		?>
 			<?php /*if()

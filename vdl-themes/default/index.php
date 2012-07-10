@@ -19,18 +19,19 @@
 
     <!-- Le styles -->
  
+	<link rel="shortcut icon" href="vdl-themes/default/img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/bootstrap-responsive.css" />
+	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/style.css" />
+	<script type="text/javascript" src="vdl-themes/default/js/jquery.js" ></script>
+	<script type="text/javascript" src="vdl-themes/default/js/bootstrap.js" ></script>
+	<script type="text/javascript" src="vdl-themes/default/js/bootstrap-dropdown.js" ></script>
+	<link rel="stylesheet" href="vdl-themes/default/js/jquery-ui.css" id="theme" />
+	<link rel="stylesheet" type="text/less" href="vdl-themes/default/css/head.less" />	
+	<link rel="stylesheet" type="text/less" href="vdl-themes/default/css/static.less" />	
+	<script type="text/javascript" src="vdl-themes/default/js/less.js"></script>
     
-	<link rel="shortcut icon" href="style/favicon.ico" type="image/x-icon" />
-	<script type="text/javascript" src="js/jquery.js" ></script>
-	<script type="text/javascript" src="js/jquery_scroller.js" ></script>
-<?php /*<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script> 	
-	<script type="text/javascript" src="js/fancybox/jquery.easing-1.4.pack.js"></script>
-	<script type="text/javascript" src="js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-	<script type="text/javascript" src="js/jquery.imgareaselect.min.js"></script>
-*/?>
-	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
-	<link rel="stylesheet" href="js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
-	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/style.less" />
+<!--
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/home.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/prof.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/net.less" />
@@ -40,51 +41,16 @@
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/foot.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/other.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/form.less" />
-	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" id="theme">
-	<link rel="stylesheet" href="js/jquery_file_upload/jquery.fileupload-ui.css">
-	<script type="text/javascript" src="js/less.js"></script>
-	<?php
-		include_once("vdl-themes/default/scripts/script1.html");
-	?>
-<script>
-	$(document).ready(function() {
-
-	/* This is basic - uses default settings */
-	
-	$("a.modal").fancybox({
-	'padding' : 0,
-	'type' : 'ajax',
-	'titleShow' : false
-	});
-	
-	/* Using custom settings */
-	
-	$("a#inline").fancybox({
-		'hideOnContentClick': true
-	});
-
-	/* Apply fancybox to multiple items */
-	
-	$("a.group").fancybox({
-		'transitionIn'	:	'elastic',
-		'transitionOut'	:	'elastic',
-		'speedIn'		:	600, 
-		'speedOut'		:	200, 
-		'overlayShow'	:	false
-	});
-	
-});
-</script>
-
+-->
 </head>
 <body>
 
-<header class="topbar">
-	<div class="topbar-inner">
+<header class="navbar">
+	<div class="navbar-inner">
 		<div class="container-fluid">
 			<div class="row">
 				<div id="tittle" class="span4">
-					<a class="brand" href="index.php"><img src="vdl-media/vdl-images/logo.png" border="0"></a>
+					<a class="brand" href="index.php"><img src="vdl-themes/default/img/logo.png" border="0"></a>
 				</div>
 				<div class="pull-right">
 					<ul class="nav">
@@ -93,32 +59,24 @@
 							echo '<li class="active">';
 						else
 							echo '<li>';?>
-							<a href="index.php"><img src="vdl-media/vdl-images/home.png"></a></li>
+							<a href="index.php"><img src="vdl-themes/default/img/home.png"></a></li>
 						<?php if($pg == "p")
 							echo '<li class="active">';
 							else
 							echo '<li>';?>
-							<a href="?pg=p&!=all&@=<?php echo $_SESSION["nickname"] ?>"><img src="vdl-media/vdl-images/profile.png"></a></li>
+							<a href="?pg=p&@=<?php echo $_SESSION["nick"] ?>"><img src="vdl-themes/default/img/profile.png"></a></li>
 						<?php if($pg == "g")
 							echo '<li class="active">';
 							else
 							echo '<li>';?>
-							<a href="?pg=g"><img src="vdl-media/vdl-images/groups.png"></a></li>
-						<?php if($pg == "n")
-							echo '<li class="active">';
-							else
-							echo '<li>';?>
-							<a href="?pg=n"><img src="vdl-media/vdl-images/networks.png"></a></li>
+							<a href="?pg=g"><img src="vdl-themes/default/img/groups.png"></a></li>
 						<?php if( $pg == "media") 
 							echo '<li class="active">';
 						else
 							echo '<li>';?>
-							<a href="?pg=media"><img src="vdl-media/vdl-images/files.png"></a></li>
+							<a href="?pg=media"><img src="vdl-themes/default/img/files.png"></a></li>
 							<li>
-								<img src="style/icons/mail.png">
-							</li>
-							<li>
-								<?php echo'<a href="vdl-includes/log.php?func=logout" title="'.M_LOU.'"><img src="style/icons/lock.png"></a>';?>
+								<?php echo'<a href="vdl-include/log.php?func=logout" title="'.M_LOU.'"><img src="vdl-themes/default/img/lock.png"></a>';?>
 							</li>
 					</ul>
 				</div>
@@ -128,29 +86,36 @@
 	</div>
 </header>
 
-<?php include("vdl-includes/content.php"); ?>
+<?php include("vdl-include/content.php"); ?>
 
 <div id="din" class="container-fluid">
-	<aside class="sidebar">
-		<?php		require_once("vdl-actions/index.php"); ?>
-	</aside>
-	<div class="content">
-       	<div class="hero-unit">
-       		<?php 
-       		if($pg == "")
-				include("vdl-themes/default/home.php");
-       		if($pg == "p")
-				include("vdl-themes/default/prof.php");
-       		if($pg == "g")
-				include("vdl-themes/default/groups.php");
-       		if($pg == "n")
-				include("vdl-themes/default/nets.php");
-       		?>
+	<div class="row-fluid">
+		<aside class="span3">
+			<div class="well sidebar">
+				<?php		require_once("vdl-actions/index.php"); ?>
+			</div>
+		</aside>
+		<div class="span6">
+			<div class="hero-unit">
+				<?php 
+				if($pg == "")
+					include("vdl-themes/default/home.php");
+				if($pg == "p")
+					include("vdl-themes/default/prof.php");
+				if($pg == "g")
+					include("vdl-themes/default/groups.php");
+				if($pg == "n")
+					include("vdl-themes/default/nets.php");
+				?>
+			</div>
 		</div>
-		<?php //<a href="#"  onclick="javascript:recargar('grupos'); click('grupos');">recargar</a>?>
-		<a href="#"  onclick="javascript:recargar('grupos');">recargar</a>
-		<?php include_once("footer.php");?>
+		<aside class="span3">
+			<div class="well sidebar">
+				NOVEDADES:
+			</div>
+		</aside>
 	</div>
+		<?php include_once("footer.php");?>
 </div>
 
 

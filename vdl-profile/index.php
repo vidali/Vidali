@@ -20,7 +20,7 @@ $prof = new CORE_PROFILE();
 if(isset($_GET["@"]))
 $author = $prof->get_profile($_GET["@"],$visitor);
 else
-$author = $prof->get_profile($_SESSION["user_id"],$visitor);
+$author = $prof->get_profile($_SESSION["nick"],$visitor);
 $id = $author[2]['id'];
 $website = $prof->site();
 $name = $prof->name();

@@ -53,7 +53,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 <section>
 <div class="container-fluid">
 	<div class="row-fluid">
-		<form class="span4" action="install.php" method="post">
+		<form id="vdl-form" class="span4" action="install.php" method="post">
 			<h2>Base de datos:</h2><br/>
 				Direccion de la BD:<br/>
 				<input id ="db_dir" name="db_dir" type="text" autofocus /><br/>

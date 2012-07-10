@@ -16,13 +16,19 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 ?>
-<aside id="left" class="grid_4">
-sugerencias y demas...
-</aside>
-
-<div class="grid_12">
-<div id="home_titles"> Actividad Reciente </div>
-<div class="home_breadcumbs"> Amigos | redes | menciones | Titulares</div>
-<div class="home_update"> ejemplo de update</div>
-</div>
-<div class="clear"></div>
+<div id="home_titles" class="row"> Actividad Reciente </div>
+	<?php $upd_cont = count($home_upd);
+	foreach($home_upd as $upd){ ?>
+		<article id="upd">
+			<section class="upd-info span12">
+				<?php echo '<img src="vdl-media/vdl-images/'. $upd["avatar_id"] . '_tb.jpg">';?>
+				<?php echo '@'.$upd["nick"].'<br/>';?>
+				<?php echo $upd["date_published"];?>
+			</section>
+			
+			<section class="upd-msg span6">
+				<?php echo $prof->meta_text($upd["text"]);?>
+			</section>
+		</article>
+	<?php $upd_cont--;
+	}?>

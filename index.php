@@ -1,57 +1,61 @@
 <?php
-/*	Vidali, Social Network Open Source.
-	This file is part of Vidali.
+//~ echo dirname(__file__);
 
-    Vidali is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+//~ if(file_exists($inc = dirname(__file__).'/dir/include.php'))
+ //~ inlclude($inc); // evita el @ para un error_reporting mas flexible
+//~ else
+//~ echo 'Falta la inclusión';
+ 
+//Comprobar si no esta instalado y cargar elementos base
+include_once 'vdl-include/vdl-core/core_main.class.php';
+include_once 'vdl-include/vdl-core/core_security.class.php';
 
-    Vidali is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
-
-//Cargamos las funciones basicas
 ini_set('mssql.charset', 'UTF-8');
-if(!file_exists("vdl-includes/vdl-core/db.ini"))
+if(!file_exists("vdl-include/vdl-core/db.ini"))
 	header("location: install/index.php"); 
+if(!isset($_GET['action']))
+	$action=null;
+else
+	$action=$_GET['action'];
 
-include_once 'vdl-includes/core_main.class.php';
-include_once 'vdl-includes/vdl-core/core_profile.class.php';
-include_once 'vdl-includes/vdl-core/core_network.class.php';
-include_once 'vdl-includes/vdl-core/core_security.class.php';
-include_once 'vdl-includes/vdl-core/core_groups.class.php';
+$SEC = new CORE_SECURITY();
+$SEC->clear_url_nav(); //Limpiamos la URL
+
 $MAIN = new CORE_MAIN();
 $MAIN->load();
 //Cargamos las funciones de complementos
-//Proximamente...
+
 //Cargamos el idioma
 $MAIN->load_lang();
 //detectamos compatibilidad html5 en el navegador
 $MAIN->get_interface();
-//comprobamos estado de la sesion
-//Llamamos a core_security para realizar rutinas de seguridad.
-$SEC = new CORE_SECURITY();
-$SEC->clear_url_nav(); //Limpiamos la URL
-///===>Start session var and check if we are loged, in other case,we block private info.
-session_start();
+
+
+//Comprobar si no hay sesion iniciada
 $loged = 0;
 $visitor = " ";
 if(isset($_COOKIE['pass_c'])){
 	$SEC->login($_COOKIE['nick_c'],$_COOKIE['pass_c'],2);
 }
+else{
+	session_start();
+}
 if(isset($_SESSION['loged'])){
 	$loged = $_SESSION['loged'];
-	$visitor = $_SESSION['nickname'];
+	$visitor = $_SESSION['nick'];
+	include_once 'vdl-include/vdl-core/core_profile.class.php';
+	include_once 'vdl-include/vdl-core/core_groups.class.php';
 }
-//Cargamos p�gina correspondiente
-if ($loged == 0)
-	include("vdl-themes/".THEME."/login.php");
-else
-//Cargamos el tema
-include_once("vdl-themes/".THEME."/index.php");
+
+if($loged){
+	include_once("vdl-themes/".THEME."/index.php");	
+}
+else{
+	if($action == 'register'){
+		include_once("vdl-themes/".THEME."/register.php");		
+	}
+	else{
+		include_once("vdl-themes/".THEME."/index.html");
+	}
+}
 ?>

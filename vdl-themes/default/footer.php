@@ -1,11 +1,6 @@
-<footer>
-	<div class="row">
-		<div class="span6">
-			Powered by Vidali. 2011.
-		</div>
-		<div class="span6">
-			<img src="vdl-media/vdl-images/agpl.png">
-			<img src="vdl-media/vdl-images/html5.png">
-		</div>
-	</div>
-</footer>
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><img src="vdl-themes/default/img/html5.png"><img src="vdl-themes/default/img/agpl.png"></p>
+        <p>Powered by Vidali.</p>
+      </div>
+    </footer>

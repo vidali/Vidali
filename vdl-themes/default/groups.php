@@ -14,22 +14,25 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
+$prof = new CORE_PROFILE();
 
 if ($group == "empty"){
 	echo "hola pagina de grupos";
 }
 else{
+	echo '<h2>'.$_GET["q"].'</h2>';
 	foreach ($group as $upd){?>
-			<article id="upd">	
-					<section class="upd-info">
-					<?php echo '@'.$upd["user_id"];?>
-					<?php echo $upd["date"];?>
-					</section>
-				<section class ="upd_tb span1">
+		<article id="upd">	
+				<section class="upd-info">
+				<?php echo '@'.$upd["nick"];?>
+				<?php echo $upd["date_published"];?>
 				</section>
-				<section class="upd-msg span8">
-					<?php echo $upd["upd_msg"];?>
-				</section>
-			</article>
+			<section class ="upd_tb span1">
+				<?php echo '<img src="vdl-media/vdl-images/'. $upd["avatar_id"] . '_tb.jpg">';?>
+			</section>
+			<section class="upd-msg span8">
+				<?php echo $prof->meta_text($upd["text"]);?>
+			</section>
+		</article>
 <?php 	}
 }?>

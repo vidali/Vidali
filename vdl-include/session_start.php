@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*	Vidali, Social Network Open Source.
 This file is part of Vidali.
 
@@ -14,12 +14,22 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
-	$prof = new CORE_PROFILE();
-	$author = $prof->get_home($_SESSION["nick"]);
-	$nick = $prof->nickname();
-	$p_visits = $prof->prof_visits();
-	$p_friends = $prof->prof_friends();
-	$p_nets = $prof->prof_nets();
-	$photo = $prof->img_prof();
-	$home_upd = $prof->get_home_wall($_SESSION["nick"]);
+
+include_once 'vdl-core/core_main.class.php';
+	$MAIN = new CORE_MAIN();
+	$MAIN->load();
+
+//invocamos a la clase login para iniciar la sesion
+	include("vdl-core/core_security.class.php");
+	$core= new CORE_SECURITY();
+	if(!isset($_POST['remember']))
+		$rem=0;
+	else{
+		$rem=$_POST['remember'];
+	}
+	$sucess= $core->login($_POST['user'], $_POST['password'],$rem);
+	if($sucess == true)
+		echo "1";
+	else
+		echo "0";	
 ?>
