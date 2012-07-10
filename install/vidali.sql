@@ -15,6 +15,9 @@ CREATE  TABLE IF NOT EXISTS `vidali`.`vdl_user` (
   `password` VARCHAR(45) NOT NULL ,
   `name` VARCHAR(45) NOT NULL ,
   `birthdate` DATE NOT NULL ,
+  `age` VARCHAR(45) NULL ,
+  `sex` ENUM('male','female') NOT NULL ,
+  `location` VARCHAR(75) NOT NULL ,
   `website` VARCHAR(50) NOT NULL ,
   `description` VARCHAR(140) NOT NULL ,
   `avatar_id` VARCHAR(45) NULL ,
@@ -81,6 +84,7 @@ COLLATE = utf8_bin;
 CREATE  TABLE IF NOT EXISTS `vidali`.`vdl_friend_of` (
   `user1` INT NOT NULL ,
   `user2` INT NOT NULL ,
+  `status` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`user1`, `user2`) ,
   INDEX `fk_vdl_friend_of_vdl_user1` (`user1` ASC) ,
   INDEX `fk_vdl_friend_of_vdl_user2` (`user2` ASC) ,
@@ -113,31 +117,31 @@ COLLATE = utf8_bin;
 
 
 -- -----------------------------------------------------
--- Table `vidali`.`vdl_pubish`
+-- Table `vidali`.`vdl_publish`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `vidali`.`vdl_pubish` (
+CREATE  TABLE IF NOT EXISTS `vidali`.`vdl_publish` (
   `id_user` INT NOT NULL ,
   `id_msg` INT NOT NULL ,
   `id_group` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id_msg`, `id_user`, `id_group`) ,
-  INDEX `fk_vdl_pubish_vdl_user1` (`id_user` ASC) ,
-  INDEX `fk_vdl_pubish_vdl_msg1` (`id_msg` ASC) ,
-  INDEX `fk_vdl_pubish_vdl_group1` (`id_group` ASC) ,
-  CONSTRAINT `fk_vdl_pubish_vdl_user1`
+  INDEX `fk_vdl_publish_vdl_user1` (`id_user` ASC) ,
+  INDEX `fk_vdl_publish_vdl_group1` (`id_group` ASC) ,
+  INDEX `fk_vdl_publish_vdl_msg1` (`id_msg` ASC) ,
+  CONSTRAINT `fk_vdl_publish_vdl_user1`
     FOREIGN KEY (`id_user` )
     REFERENCES `vidali`.`vdl_user` (`id` )
     ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_vdl_pubish_vdl_msg1`
-    FOREIGN KEY (`id_msg` )
-    REFERENCES `vidali`.`vdl_msg` (`id_msg` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_vdl_pubish_vdl_group1`
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_vdl_publish_vdl_group1`
     FOREIGN KEY (`id_group` )
     REFERENCES `vidali`.`vdl_group` (`group_name` )
     ON DELETE NO ACTION
-    ON UPDATE CASCADE)
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_vdl_publish_vdl_msg1`
+    FOREIGN KEY (`id_msg` )
+    REFERENCES `vidali`.`vdl_msg` (`id_msg` )
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
@@ -149,8 +153,8 @@ COLLATE = utf8_bin;
 CREATE  TABLE IF NOT EXISTS `vidali`.`vdl_comment` (
   `id_user` INT NOT NULL ,
   `id_msg_ref` INT NOT NULL ,
-  `reply` VARCHAR(140) NULL ,
-  `date_reply` DATETIME NULL ,
+  `reply` VARCHAR(140) NOT NULL ,
+  `date_reply` DATETIME NOT NULL ,
   PRIMARY KEY (`id_user`, `id_msg_ref`) ,
   INDEX `fk_vdl_comment_vdl_msg1` (`id_msg_ref` ASC) ,
   INDEX `fk_vdl_comment_vdl_user1` (`id_user` ASC) ,
@@ -173,12 +177,17 @@ COLLATE = utf8_bin;
 -- Table `vidali`.`vdl_file`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `vidali`.`vdl_file` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `id_file` INT NOT NULL ,
-  `name` VARCHAR(45) NULL ,
-  `type` SET('image','audio','video','other') NULL ,
+  `id` VARCHAR(50) NOT NULL ,
+  `id_msg` INT NOT NULL ,
+  `name` VARCHAR(45) NOT NULL ,
+  `type` SET('image','audio','video','other') NOT NULL ,
   PRIMARY KEY (`id`) ,
-  UNIQUE INDEX `id_file_UNIQUE` (`id_file` ASC) )
+  INDEX `fk_vdl_file_vdl_msg1` (`id_msg` ASC) ,
+  CONSTRAINT `fk_vdl_file_vdl_msg1`
+    FOREIGN KEY (`id_msg` )
+    REFERENCES `vidali`.`vdl_msg` (`id_msg` )
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
@@ -188,12 +197,19 @@ COLLATE = utf8_bin;
 -- Table `vidali`.`vdl_place`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `vidali`.`vdl_place` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
+  `id` VARCHAR(50) NOT NULL ,
+  `id_msg` INT NOT NULL ,
   `name_place` VARCHAR(75) NOT NULL ,
   `location_coord` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `name_place_UNIQUE` (`name_place` ASC) ,
-  UNIQUE INDEX `location_coord_UNIQUE` (`location_coord` ASC) )
+  UNIQUE INDEX `location_coord_UNIQUE` (`location_coord` ASC) ,
+  INDEX `fk_vdl_place_vdl_msg1` (`id_msg` ASC) ,
+  CONSTRAINT `fk_vdl_place_vdl_msg1`
+    FOREIGN KEY (`id_msg` )
+    REFERENCES `vidali`.`vdl_msg` (`id_msg` )
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
@@ -203,44 +219,17 @@ COLLATE = utf8_bin;
 -- Table `vidali`.`vdl_event`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `vidali`.`vdl_event` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
+  `id` VARCHAR(50) NOT NULL ,
+  `id_msg` INT NOT NULL ,
   `event_tittle` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id`) ,
-  UNIQUE INDEX `event_tittle_UNIQUE` (`event_tittle` ASC) )
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_bin;
-
-
--- -----------------------------------------------------
--- Table `vidali`.`vdl_attach`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `vidali`.`vdl_attach` (
-  `id_msg` INT NOT NULL ,
-  `id_cont` INT NOT NULL ,
-  PRIMARY KEY (`id_msg`, `id_cont`) ,
-  INDEX `fk_vdl_attach_vdl_file1` (`id_cont` ASC) ,
-  INDEX `fk_vdl_attach_vdl_msg1` (`id_msg` ASC) ,
-  CONSTRAINT `fk_vdl_attach_vdl_file1`
-    FOREIGN KEY (`id_cont` )
-    REFERENCES `vidali`.`vdl_file` (`id` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_vdl_attach_vdl_place1`
-    FOREIGN KEY (`id_cont` )
-    REFERENCES `vidali`.`vdl_place` (`id` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_vdl_attach_vdl_event1`
-    FOREIGN KEY (`id_cont` )
-    REFERENCES `vidali`.`vdl_event` (`id` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_vdl_attach_vdl_msg1`
+  UNIQUE INDEX `event_tittle_UNIQUE` (`event_tittle` ASC) ,
+  INDEX `fk_vdl_event_vdl_msg1` (`id_msg` ASC) ,
+  CONSTRAINT `fk_vdl_event_vdl_msg1`
     FOREIGN KEY (`id_msg` )
     REFERENCES `vidali`.`vdl_msg` (`id_msg` )
     ON DELETE CASCADE
-    ON UPDATE CASCADE)
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
