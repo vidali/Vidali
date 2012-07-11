@@ -12,17 +12,21 @@
 	<link rel="shortcut icon" href="vdl-themes/default/img/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/bootstrap-responsive.css" />
+	<link rel="Stylesheet" type="text/css" href="vdl-themes/default/css/smoothness/jquery-ui-1.8.21.custom.css" />	
 	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/style.css" />
 	<script type="text/javascript" src="vdl-themes/default/js/jquery.js" ></script>
+	<script type="text/javascript" src="vdl-themes/default/js/jquery-ui.js" ></script>
 	<script type="text/javascript" src="vdl-themes/default/js/bootstrap.js" ></script>
 	<script type="text/javascript" src="vdl-themes/default/js/bootstrap-dropdown.js" ></script>
-	<link rel="stylesheet" href="vdl-themes/default/js/jquery-ui.css" id="theme" />
 	<script type="text/javascript" src="vdl-themes/default/js/less.js"></script>
 	<script type="text/javascript" src="vdl-themes/default/js/script_default.js"></script>
 	<script>
 	$(function() {
-		$( "#datepicker" ).datepicker({
+		$( "#date" ).datepicker({
+			changeMonth: true,
 			changeYear: true,
+			dateFormat: "yy-mm-dd",
+			yearRange: "1950:1998"
 		});
 	});
 	</script>
@@ -35,7 +39,7 @@
 			var Exp = /(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/;
 			if ((document.vdlreg.pass1.value.match(Exp)) && (document.vdlreg.pass1.value!='')) 
 			{  
-				document.getElementById('confirm1').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/icons/tick.png' alt='Ok'>"; 
+				document.getElementById('confirm1').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/img/icons/tick.png' alt='Ok'>"; 
 			}
 			else
 			{
@@ -45,7 +49,7 @@
 	
 			if ((document.vdlreg.pass1.value!='') && (document.vdlreg.pass2.value!='') && (document.vdlreg.pass2.value==document.vdlreg.pass1.value)) 
 			{  
-				document.getElementById('confirm2').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/icons/tick.png' alt='Ok'>"; 
+				document.getElementById('confirm2').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/img/icons/tick.png' alt='Ok'>"; 
 			}
 			else
 			{
@@ -53,7 +57,7 @@
 			}
 		}
 		
-		if(elque == "user")
+		if(elque == "nick")
 		{
 			if(document.vdlreg.nick.value != 0)
 			{
@@ -68,11 +72,11 @@
 			{
 				if(xmlHttp.responseText == 0)
 				{
-					document.getElementById('confirm3').innerHTML = "<img style='padding-left: 5px;' src='style/icons/tick.png' alt='Ok'>";
+					document.getElementById('confirm3').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/img/icons/tick.png' alt='Ok'>";
 				}
 				else
 				{
-					document.getElementById('confirm3').innerHTML = "<img style='padding-left: 5px;' src='style/icons/mal.png' alt='Incorrecto'>";
+					document.getElementById('confirm3').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/img/icons/mal.png' alt='Incorrecto'>";
 				}
 			}
 			}
@@ -99,11 +103,11 @@
 			{
 				if(xmlHttp.responseText == 0)
 				{
-					document.getElementById('confirm4').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/icons/tick.png' alt='Ok'>";
+					document.getElementById('confirm4').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/img/icons/tick.png' alt='Ok'>";
 				}
 				else
 				{
-					document.getElementById('confirm4').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/icons/mal.png' alt='Incorrecto'>";
+					document.getElementById('confirm4').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/img/icons/mal.png' alt='Incorrecto'>";
 				}
 			}
 			}
@@ -113,11 +117,11 @@
 				document.getElementById('confirm4').innerHTML = "";
 			}
 		}		
-		if(elque == "fecha")
+		if(elque == "date")
 		{
 			if(document.vdlreg.birthdate.value != 0 && document.vdlreg.birthdate.value.match("[0-9]{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])"))
 			{
-				document.getElementById('confirm5').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/icons/tick.png' alt='Ok'>";
+				document.getElementById('confirm5').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/img/icons/tick.png' alt='Ok'>";
 			}
 			else
 			{
@@ -128,7 +132,7 @@
 		{
 			if(document.vdlreg.name.value != 0)
 			{
-				document.getElementById('confirm6').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/icons/tick.png' alt='Ok'>";
+				document.getElementById('confirm6').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/img/icons/tick.png' alt='Ok'>";
 			}
 			else
 			{
@@ -139,26 +143,13 @@
 		{
 			if(document.vdlreg.location.value != 0)
 			{
-				document.getElementById('confirm7').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/icons/tick.png' alt='Ok'>";
+				document.getElementById('confirm7').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/img/icons/tick.png' alt='Ok'>";
 			}
 			else
 			{
 				document.getElementById('confirm7').innerHTML = "";
 			}
 		}
-		if(elque == "sex")
-		{
-			if(document.vdlreg.sex.value != 0)
-			{
-				document.getElementById('confirm8').innerHTML = "<img style='padding-left: 5px;' src='vdl-themes/default/icons/tick.png' alt='Ok'>";
-			}
-			else
-			{
-				document.getElementById('confirm8').innerHTML = "";
-			}
-		}
-		
-		
 }
 	</script>
 </head>
@@ -180,37 +171,54 @@
 <section class="container-fluid">
 	<div class="row-fluid">
 		<div class="span6">
-			<form class="form-horizontal">
+			<form class="form-horizontal" name="vdlreg" action="vdl-include/reg.php">
 				<fieldset>
 					<div class="control-group">
-						<label class="control-label" for="input07">Ubicación</label>
+						<label class="control-label" for="input01">Nick</label>
 						<div class="controls">
-							<input name="nick" type="text" class="input-xlarge" id="input07" onkeyup="valida('nick')">
-							<span id="confirm7"></span>
-							<p class="help-block">Ej: Tenerife</p>
+							<input name="nick" type="text" class="input-xlarge" id="input01" onkeyup="valida('nick')">
+							<span id="confirm3"></span>
+							<p class="help-block">Introduce tu nombre de usuario</p>
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="input07">Ubicación</label>
+						<label class="control-label" for="input02">Contraseña</label>
 						<div class="controls">
-							<input name="password1" type="text" class="input-xlarge" id="input07" onkeyup="valida('location')">
-							<span id="confirm7"></span>
-							<p class="help-block">Ej: Tenerife</p>
+							<input name="pass1" type="password" class="input-xlarge" id="input02" onkeyup="valida('pass1')">
+							<span id="confirm1"></span>
+							<p class="help-block">Recomendado: 8 caracteres.</p>
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="input07">Ubicación</label>
+						<label class="control-label" for="input03">Repita contraseña</label>
 						<div class="controls">
-							<input name="password2" type="text" class="input-xlarge" id="input07" onkeyup="valida('location')">
-							<span id="confirm7"></span>
-							<p class="help-block">Ej: Tenerife</p>
+							<input name="pass2" type="password" class="input-xlarge" id="input03" onkeyup="valida('pass2')">
+							<span id="confirm2"></span>
+							<p class="help-block">Repita la contraseña anterior.</p>
 						</div>
 					</div>
 					<div class="control-group">
+						<label class="control-label" for="input04">Email</label>
 						<div class="controls">
-							<input name="birthdate" type="date" class="input-xlarge" id="input06" onkeyup="valida('fecha')">
+							<input name="email" type="email" class="input-xlarge" id="input04" onkeyup="valida('email')">
+							<span id="confirm4"></span>
+							<p class="help-block">Introduzca un email válido</p>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="input05">Nombre</label>
+						<div class="controls">
+							<input name="name" type="text" class="input-xlarge" id="input05" onkeyup="valida('name')">
+							<span id="confirm6"></span>
+							<p class="help-block">Introduzca un Nombre real</p>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="input06">Fecha de nacimiento:</label>
+						<div class="controls">
+							<input name="birthdate" type="text" class="input-xlarge" id="date" onkeyup="valida('date')">
 							<span id="confirm5"></span>
-							<p class="help-block">Introduce fecha tipo YYYY-MM-DD</p>
+							<p class="help-block">Selecciona tu fecha de nacimiento </p>
 						</div>
 					</div>
 					<div class="control-group">
@@ -222,7 +230,7 @@
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="input07">Sexo</label>
+						<label class="control-label" for="input08">Sexo</label>
 						<div class="controls">
 							<select name= "sex" id="sex">
 								<option value="male">Hombre</option>
