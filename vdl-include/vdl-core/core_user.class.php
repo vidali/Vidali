@@ -245,19 +245,32 @@ class CORE_USER extends CORE_MAIN{
 		return true;
 	}
 	
-	public function add_user($_user_id,$_passwd,$_nickname,$_name,$_location,$_genre,$_bday,$_email,$_bio){
+	public function add_user($_email,$_nick,$_password,$_name,$_bday,$_sex,$_location,$_bio){
 		$connection = parent::connect();
 		$_passwd = mysql_real_escape_string(sha1(md5(trim($_passwd))));
-		$query = ("INSERT INTO vdl_users (user_id,passwd,nickname,name,location,genre,bday,email,bio,img_prof) VALUES
-					 ('$_user_id','$_passwd','$_nickname','$_name','$_location','$_genre','$_bday','$_email','$_bio','prof_def')");
+		$query = ("INSERT INTO `vdl_user`(`email`,`nick`,`password`,`name`,`birthdate`,`sex`,`location`,`website`,`description`,
+										  `avatar_id`,`n_views`,`n_contacts`,`n_groups`,`session_key`,`session_id`,
+										  `privacy_level`,`mail_notify`,`color_theme`)
+				   VALUES('$_email','$_nick','$_password','$_name','$_bday','$_sex','$_location',' ','$_bio',
+						  'prof_def','0','0','0','0','0',
+						  'low', UNHEX(  '0' ) ,'white')");
 		$result = mysql_query($query,$connection);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
-			$message = 'Whole query: ' . $query;
+			$message = $message . ' Whole query: ' . $query;
 			die($message);
 			return false;
 		}
 		else
+			$id = mysql_insert_id($connection);			
+			$query = ("UPDATE `vdl_user` set= (YEAR(CURDATE())-YEAR(birthdate)) - (RIGHT(CURDATE(),5)<RIGHT(birthdate,5))");
+			$result = mysql_query($query,$connection);
+			if (!$result) {
+				$message  = 'Invalid query: ' . mysql_error() . "\n";
+				$message = $message . ' Whole query: ' . $query;
+				die($message);
+				return false;
+			}
 			return true;
 	}
 	
