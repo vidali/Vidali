@@ -42,67 +42,82 @@
 		<div class="span6">
 			<form class="form-horizontal">
 				<fieldset>
-					<div class="control-group">
-						<label class="control-label" for="input07">Ubicación</label>
-						<div class="controls">
-							<input name="nick" type="text" class="input-xlarge" id="input07" onkeyup="valida('nick')">
-							<span id="confirm7"></span>
-							<p class="help-block">Ej: Tenerife</p>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="input07">Ubicación</label>
-						<div class="controls">
-							<input name="password1" type="text" class="input-xlarge" id="input07" onkeyup="valida('location')">
-							<span id="confirm7"></span>
-							<p class="help-block">Ej: Tenerife</p>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="input07">Ubicación</label>
-						<div class="controls">
-							<input name="password2" type="text" class="input-xlarge" id="input07" onkeyup="valida('location')">
-							<span id="confirm7"></span>
-							<p class="help-block">Ej: Tenerife</p>
-						</div>
-					</div>
-					<div class="control-group">
-						<div class="controls">
-							<input name="birthdate" type="date" class="input-xlarge" id="input06" onkeyup="valida('fecha')">
-							<span id="confirm5"></span>
-							<p class="help-block">Introduce fecha tipo YYYY-MM-DD</p>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="input07">Ubicación</label>
-						<div class="controls">
-							<input name="location" type="text" class="input-xlarge" id="input07" onkeyup="valida('location')">
-							<span id="confirm7"></span>
-							<p class="help-block">Ej: Tenerife</p>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="input07">Sexo</label>
-						<div class="controls">
-							<select name= "sex" id="sex">
-								<option value="male">Hombre</option>
-								<option value="female">Mujer</option>
-							</select>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="textarea">Descripción</label>
-						<div class="controls">
-							<textarea class="input-xlarge" name="bio" id="textarea" rows="3" placeholder="Describete!"></textarea>
-						</div>
-					</div>
-					<div class="form-actions">
-						<button type="submit" class="btn btn-primary">!Comenzar!</button>
-					</div>
+					<h3> Instalador de Vidali </h3>
+						<dd><p> Bienvenido al instalador de Vidali para servidores. </p></dd>
+						<dd><p> Por favor, rellena los siguientes datos: </p></dd>
+						<dd><p><h4> Paso 1: Datos de servidor </h4></p></dd>
+							<div class="control-group">
+								<label class="control-label" for="input07">Direccion_BD</label>
+								<div class="controls">
+									<input name="Direccion_BD" type="text"  placeholder="example: localhost" class="input-xlarge" id="input07" onkeyup="valida('nick')">
+									<span id="confirm7"></span>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="input07">Nombre_BD</label>
+								<div class="controls">
+									<input name="password1" type="text" placeholder="example: Vidali" class="input-xlarge" id="input07" onkeyup="valida('location')">
+									<span id="confirm7"></span>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="input07">Usuario_BD</label>
+								<div class="controls">
+									<input name="password2" type="text" placeholder="User" class="input-xlarge" id="input07" onkeyup="valida('location')">
+									<span id="confirm7"></span>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="input07">Pass_BD</label>
+								<div class="controls">
+									<input name="location" type="text" placeholder="*****" class="input-xlarge" id="input07" onkeyup="valida('location')">
+									<span id="confirm7"></span>
+								</div>
+							</div>
+
+						<dd><p><h4> Paso 2: Configuración del nodo </h4></p></dd>
+							<div class="control-group">
+								<label class="control-label">Tipo de registro</label>
+								<div class="controls">
+									<label class="radio">
+        				                <input name="optionsRadios" id="optionsRadios1" value="option1" checked="checked" type="radio">
+		        					    Público
+                                	</label>
+						            <label class="radio">	
+						                <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+							            Invitación
+                                    </label>
+						            <label class="radio">	
+						                <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+							            Privado
+                                    </label>
+                                </div>
+							</div>
+                            <div class="control-group">
+								<label class="control-label">Privacidad por defecto</label>
+								<div class="controls">
+									<label class="radio">
+        				                <input name="optionsRadios" id="optionsRadios1" value="option1" checked="checked" type="radio">
+		        					    Alta
+                                	</label>
+						            <label class="radio">	
+						                <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+							            Media
+                                    </label>
+						            <label class="radio">	
+						                <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+							            Baja
+                                    </label>
+                                </div>
+                            </div>
+
+							<div class="form-actions">
+								<button type="submit" class="btn btn-primary">!Comenzar!</button>
+							</div>
 				</fieldset>
 
 			</form>
-		</div>
+		</div> <!-- FIN span6 -->
 		<div class="span6">
 			<h2>Bienvenido a Vidali</h2>
 			<p>Gracias por registrarte en nuestra red. Por favor lee las siguientes recomendaciones para usar nuestro sitio.</p>
