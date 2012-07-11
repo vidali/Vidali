@@ -171,7 +171,7 @@
 <section class="container-fluid">
 	<div class="row-fluid">
 		<div class="span6">
-			<form class="form-horizontal" name="vdlreg" action="vdl-include/reg.php">
+			<form class="form-horizontal" name="vdlreg" action="vdl-include/reg.php" method="post">
 				<fieldset>
 					<div class="control-group">
 						<label class="control-label" for="input01">Nick</label>

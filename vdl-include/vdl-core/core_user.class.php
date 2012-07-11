@@ -154,8 +154,8 @@ class CORE_USER extends CORE_MAIN{
 	
 	public function exist_user($user){
 		$connection = parent::connect();
-		$user = htmlspecialchars($user);
-		$query = sprintf("SELECT * FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+//		$user = htmlspecialchars($user);
+		$query = sprintf("SELECT * FROM vdl_user WHERE vdl_user.nick='%s'", $user);
 		$result=mysql_query($query,$connection);
 		$exist = mysql_num_rows($result);
 		if($exist == 1)
@@ -171,7 +171,7 @@ class CORE_USER extends CORE_MAIN{
 	public function exist_email($email){
 		$connection = parent::connect();
 		$email = htmlspecialchars($email);
-		$query = sprintf("SELECT * FROM vdl_users WHERE vdl_users.email='%s'", $email);
+		$query = sprintf("SELECT * FROM vdl_user WHERE vdl_user.email='%s'", $email);
 		$result=mysql_query($query,$connection);
 		$exist = mysql_num_rows($result);
 		if($exist == 1)
@@ -263,7 +263,7 @@ class CORE_USER extends CORE_MAIN{
 		}
 		else
 			$id = mysql_insert_id($connection);			
-			$query = ("UPDATE `vdl_user` set= (YEAR(CURDATE())-YEAR(birthdate)) - (RIGHT(CURDATE(),5)<RIGHT(birthdate,5))");
+			$query = ("UPDATE `vdl_user` set `age` = (YEAR(CURDATE())-YEAR(birthdate)) - (RIGHT(CURDATE(),5)<RIGHT(birthdate,5))");
 			$result = mysql_query($query,$connection);
 			if (!$result) {
 				$message  = 'Invalid query: ' . mysql_error() . "\n";

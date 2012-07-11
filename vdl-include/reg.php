@@ -46,7 +46,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 		$name = $SEC->clear_text_strict($_POST["name"]);
 		$location = $SEC->clear_text_strict($_POST["location"]);
 		$bio = $SEC->clear_text_strict($_POST["bio"]);
-		$core-> add_user($_POST["email"],$nick,$_POST["password"],$name,$date,$_POST["sex"],$location,$bio);
+		$core-> add_user($_POST["email"],$nick,$_POST["pass1"],$name,$date,$_POST["sex"],$location,$bio);
 		header("Location:../index.php?pg=home&wellcome=true");
 	}
 	else 
