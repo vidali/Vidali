@@ -251,7 +251,7 @@ class CORE_USER extends CORE_MAIN{
 		$query = ("INSERT INTO `vdl_user`(`email`,`nick`,`password`,`name`,`birthdate`,`sex`,`location`,`website`,`description`,
 										  `avatar_id`,`n_views`,`n_contacts`,`n_groups`,`session_key`,`session_id`,
 										  `privacy_level`,`mail_notify`,`color_theme`)
-				   VALUES('$_email','$_nick','$_password','$_name','$_bday','$_sex','$_location',' ','$_bio',
+				   VALUES('$_email','$_nick','$_passwd','$_name','$_bday','$_sex','$_location',' ','$_bio',
 						  'prof_def','0','0','0','0','0',
 						  'low', UNHEX(  '0' ) ,'white')");
 		$result = mysql_query($query,$connection);
