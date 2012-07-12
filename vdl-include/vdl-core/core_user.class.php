@@ -188,19 +188,19 @@ class CORE_USER extends CORE_MAIN{
 		$connection = parent::connect();
 		$user = htmlspecialchars(trim($_user));
 		$query = sprintf("SELECT
-							vdl_users.nickname,
-							vdl_users.img_prof,
-							vdl_users.prof_visits,
-							vdl_users.prof_friends,
-							vdl_users.prof_nets
-		FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+							vdl_user.nick,
+							vdl_user.avatar_id,
+							vdl_user.n_views,
+							vdl_user.n_contacts,
+							vdl_user.n_groups
+		FROM vdl_user WHERE vdl_user.nick='%s'", $user);
 		$result=mysql_query($query,$connection);
 		while ($row = mysql_fetch_assoc($result)){
-			$this->s_nickname($row["nickname"]);
-			$this->s_img_prof($row["img_prof"]);
-			$this->s_prof_visits($row["prof_visits"]);
-			$this->s_prof_friends($row["prof_friends"]);
-			$this->s_prof_nets($row["prof_nets"]);
+			$this->s_nickname($row["nick"]);
+			$this->s_img_prof($row["avatar_id"]);
+			$this->s_prof_visits($row["n_views"]);
+			$this->s_prof_friends($row["n_contacts"]);
+			$this->s_prof_nets($row["n_groups"]);
 		}
 		return true;
 	}
@@ -210,18 +210,18 @@ class CORE_USER extends CORE_MAIN{
 		$client = htmlspecialchars(trim($_refer));
 		$user = htmlspecialchars(trim($_user1));
 		$query = sprintf("SELECT
-									vdl_users.nickname,
-									vdl_users.name,
-									vdl_users.location,
-									vdl_users.genre,
-									vdl_users.bday,
-									vdl_users.bio,
-									vdl_users.email,
-									vdl_users.website,
-									vdl_users.img_prof,
-									vdl_users.prof_nets,
-									vdl_users.prof_friends
-						FROM vdl_users WHERE vdl_users.user_id='%s'", $user);
+									vdl_user.nick,
+									vdl_user.name,
+									vdl_user.location,
+									vdl_user.sex,
+									vdl_user.birthdate,
+									vdl_user.description,
+									vdl_user.email,
+									vdl_user.website,
+									vdl_user.avatar_id,
+									vdl_user.n_groups,
+									vdl_user.n_contacts
+						FROM vdl_user WHERE vdl_user.nick='%s'", $user);
 		$result=mysql_query($query,$connection);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
@@ -229,17 +229,17 @@ class CORE_USER extends CORE_MAIN{
 			die($message);
 		}
 		while ($row = mysql_fetch_assoc($result)){
-			$this->s_nickname($row["nickname"]);
+			$this->s_nickname($row["nick"]);
 			$this->s_name($row["name"]);
 			$this->s_location($row["location"]);
-			$this->s_sex($row["genre"]);
-			$this->s_bday($row["bday"]);
-			$this->s_bio($row["bio"]);
+			$this->s_sex($row["sex"]);
+			$this->s_bday($row["birthdate"]);
+			$this->s_bio($row["description"]);
 			$this->s_email($row["email"]);
 			$this->s_site($row["website"]);
-			$this->s_img_prof($row["img_prof"]);
-			$this->s_prof_nets($row["prof_nets"]);
-			$this->s_prof_friends($row["prof_friends"]);
+			$this->s_img_prof($row["avatar_id"]);
+			$this->s_prof_nets($row["n_groups"]);
+			$this->s_prof_friends($row["n_contacts"]);
 		}
 		
 		return true;
@@ -247,7 +247,7 @@ class CORE_USER extends CORE_MAIN{
 	
 	public function add_user($_email,$_nick,$_password,$_name,$_bday,$_sex,$_location,$_bio){
 		$connection = parent::connect();
-		$_passwd = mysql_real_escape_string(sha1(md5(trim($_passwd))));
+		$_passwd = mysql_real_escape_string(sha1(md5(trim($_password))));
 		$query = ("INSERT INTO `vdl_user`(`email`,`nick`,`password`,`name`,`birthdate`,`sex`,`location`,`website`,`description`,
 										  `avatar_id`,`n_views`,`n_contacts`,`n_groups`,`session_key`,`session_id`,
 										  `privacy_level`,`mail_notify`,`color_theme`)
