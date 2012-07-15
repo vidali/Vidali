@@ -5,7 +5,7 @@
 		</div>
 		<div class="scroller span8">
 			<marquee behavior="scroll" scrollamount="2" direction="left">
-					Fase alfa, Sistema de notificaciones no funcional, Subida de archivos defectuosa, Usen el botton de
+					Fase Pre-beta, No Informa de confirmaciones de amistad, No informa las replys, Subida de archivos defectuosa, Usen el botton de
 					"Feedback" para dejar sugerencias o reportar fallos. |
 					Actualizando a la 0.8... Desahibilitados algunos efectos.
 			</marquee>
