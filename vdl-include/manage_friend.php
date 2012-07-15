@@ -18,6 +18,12 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 include("vdl-core/core_main.class.php");
 include("vdl-core/core_profile.class.php");
 $contact = new CORE_PROFILE();
+if($_GET["action"] == "acept"){
+	echo $_POST["id_sender"].'\n';
+	$delete=$contact->manage_friend("acept", $_POST["id_main"], $_POST["id_sender"],'6');
+	if($delete)
+		header("location: ../index.php?alert=dftrue");
+}
 if($_GET["action"] == "delete"){
 	$delete=$contact->manage_friend("delete", $_POST["id_main"], $_POST["id_friend"],'6');
 	if($delete)

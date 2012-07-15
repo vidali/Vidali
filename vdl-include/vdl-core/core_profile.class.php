@@ -3,6 +3,20 @@ require_once 'core_user.class.php';
 
 class CORE_PROFILE extends CORE_USER{
 	/*Private*/
+	private function acept_friend($_id,$_idsender){
+		$connection = parent::connect();
+		$query = ("UPDATE vdl_friend_of SET status=1 WHERE user2=$_id AND user1=$_idsender AND status=0");
+		echo $query;
+		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+		if($result){
+//			$query = ("INSERT INTO vdl_notify (user_id,user_sender,type,checked) VALUES ('$_candidate','$_main','1','0')");
+//			$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));		
+			return true;
+		}
+		else
+			return false;		
+	}
+	
 	private function add_friend($_main,$_candidate,$_range){
 		$connection = parent::connect();
 		$query = ("INSERT INTO vdl_friend_of (user1,user2,status) VALUES ('$_main','$_candidate','0')");
@@ -30,17 +44,6 @@ class CORE_PROFILE extends CORE_USER{
 			return false;
 		}
 		return true;
-	}
-
-	private function accept_friend($_main,$_friend){
-		$connection = parent::connect();
-		$query = ("UPDATE vdl_friend_of SET status='1' WHERE vdl_friend_of.user1 ='$_main' AND vdl_friend_of.user2='$_friend'");
-		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
-		parent::close($connection);
-		if(!result)
-			return false;
-		else
-			return true;
 	}
 
 	private function block_enemy($_main,$_friend){
@@ -89,13 +92,13 @@ class CORE_PROFILE extends CORE_USER{
 		}
 		$a_result2 = array();
 		//consulta chachi aki, join para users y status
-		$query = "SELECT b.nick,c.nick,b.avatar_id,c.avatar_id,status
+/*		$query = "SELECT b.nick,c.nick,b.avatar_id,c.avatar_id,status
 						  FROM vdl_friend_of a
 						  JOIN vdl_user b ON b.id = a.user1
 						  JOIN vdl_user c ON c.id = a.user2
 						  WHERE (a.user1='".$id["id"]."' OR a.user2='".$id["id"]."')
-						  LIMIT 0 , 30";
-//		$query = ("SELECT user1,user2,status FROM vdl_friend_of WHERE (vdl_friend_of.user1='".$id["id"]."' OR vdl_friend_of.user2='".$id["id"]."')"); // AND vdl_friend_of.status != 0
+						  LIMIT 0 , 30";*/
+		$query = "SELECT * FROM vdl_friend_of WHERE (user1='".$id["id"]."' OR user2='".$id["id"]."') LIMIT 0,10";
 		$result = mysql_query($query,$connection);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
@@ -103,7 +106,18 @@ class CORE_PROFILE extends CORE_USER{
 			die($message);
 		}
 		while ($row = mysql_fetch_assoc($result)){
-			array_push($a_result2,$row);
+			if($row["status"] != 0){
+				if($row["user1"]==$id["id"]){
+					echo $query;
+					$result2 = mysql_query($query,$connection);	
+				}
+				else{
+					$query = "SELECT nick,avatar_id FROM vdl_user WHERE id='".$row["user1"]."'";
+					$result2 = mysql_query($query,$connection);	
+				}
+				while($row2 = mysql_fetch_assoc($result2))
+				array_push($a_result2,$row2);
+			}
 		}
 		if($_user != $_refer){
 			$query = ("UPDATE vdl_user a SET `n_views` = `n_views` + 1 WHERE a.nick ='$_user'");
@@ -268,8 +282,8 @@ class CORE_PROFILE extends CORE_USER{
 		if($_req == "delete" || $_req == "reject"){
 			$sucess = $this->delete_friend($_main, $_candidate);
 		}
-		if($_req == "accept"){
-			$sucess = $this->accept_friend($_main, $_candidate);
+		if($_req == "acept"){
+			$sucess = $this->acept_friend($_main, $_candidate);
 		}
 		if($_req == "block"){
 			$sucess = $this->block_enemy($_main, $_candidate);
@@ -293,7 +307,7 @@ class CORE_PROFILE extends CORE_USER{
 		$connection = parent::connect();
 		$query = "SELECT a.id,a.user_id,a.user_sender,a.type,a.checked 
 				  FROM vdl_notify a 
-				  JOIN vdl_user b ON a.user_id = b.id  WHERE b.nick = '$_user'";
+				  JOIN vdl_user b ON a.user_id = b.id  WHERE b.nick = '$_user' AND a.checked = 0";
 		$result=mysql_query($query,$connection);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";

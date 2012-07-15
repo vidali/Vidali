@@ -107,14 +107,12 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 		if($frs = 0)
 			echo "No has agregado ning�n amigo todavia...";
 		foreach ($friends as $f){
-			if($f["status"] == 1){
-				echo '<article id="net">';
-					echo '<a href="?pg=p&@='. $f["nick"] .'">';
-					echo '<div id="net_photo"><img src="vdl-media/vdl-images/'.$f["avatar_id"].'_tb.jpg"></div>';
-					echo '<div id="net_id_p">'.$f["nick"].'</div></a>';
-					echo '<div class="clear"></div>';
-				echo '</article>';
-			}
+			echo '<article id="net">';
+				echo '<a href="?pg=p&@='. $f["nick"] .'">';
+				echo '<div id="net_photo"><img src="vdl-media/vdl-images/'.$f["avatar_id"].'_tb.jpg"></div>';
+				echo '<div id="net_id_p">'.$f["nick"].'</div></a>';
+				echo '<div class="clear"></div>';
+			echo '</article>';
 		}
 		?>
 			<?php /*if()

@@ -17,8 +17,18 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 $val = $prof->get_notify($_SESSION["nick"]);
 foreach ($val as $not){
 	if($not["type"]== 1){
-		echo $not["user_sender"] . " te ha enviado una petición de amistad<br>Aceptar | Rechazar";
-		
+		echo $not["user_sender"] . " te ha enviado una petición de amistad<br>";?>
+		<form action="vdl-include/manage_friend.php?action=acept" method="post">
+		<input id="id_main" name="id_main" type="hidden" value="<?php echo $_SESSION["id"] ?>"><br/>
+		<input id="id_sender" name="id_sender" type="hidden" value="<?php echo $not["user_sender"] ?>"><br/>
+		<input type="submit" value="Aceptar">
+		</form>
+		<form action="vdl-include/manage_friend.php?action=delete" method="post">
+		<input id="id_main" name="id_main" type="hidden" value="<?php echo $_SESSION["id"] ?>"><br/>
+		<input id="id_friend" name="id_friend" type="hidden" value="<?php echo $id ?>"><br/>
+		<input type="submit" value="Denegar">
+		</form>
+	<?php
 	}
 }
 ?>
