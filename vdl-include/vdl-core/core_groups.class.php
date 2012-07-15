@@ -12,9 +12,22 @@ class CORE_GROUP extends CORE_MAIN{
 						  JOIN vdl_user b ON b.id = id_user
 						  JOIN vdl_group ON vdl_group.group_name = id_group
 						  JOIN vdl_msg ON vdl_msg.id_msg = a.id_msg
-						  WHERE vdl_msg.text  LIKE  '%".$_name."%'
+						  WHERE vdl_msg.text  REGEXP  '(.)*".$_name."([:space:](.))*'
 						  LIMIT 0 , 30";
-		//~ $query = "SELECT * FROM vdl_msg WHERE vdl_updates.upd_msg LIKE '%".$_name."%'";
+		$data=mysql_query($query,$connection);
+		$arresult=array();
+		while ($row = mysql_fetch_array($data)) {
+			array_push($arresult,$row);
+		}
+		return $arresult;
+	}
+	
+	public function get_trends(){
+		$connection = parent::connect();
+		$query = "SELECT * 
+					FROM  `vdl_trending` 
+					ORDER BY  `vdl_trending`.`count` DESC 
+					LIMIT 0 , 15";
 		$data=mysql_query($query,$connection);
 		$arresult=array();
 		while ($row = mysql_fetch_array($data)) {

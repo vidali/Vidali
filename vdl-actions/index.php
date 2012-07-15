@@ -44,7 +44,16 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 		</section>
 <?php	}
 		else{
-			echo "aqui va elementos para grupos/redes/archivos/etc";
+			if($_GET["pg"] == 'g'){
+				echo "Temas Destacados<br>";
+				foreach($trending as $trend){
+					$link = ucwords(strtolower($trend["topic"]));
+					echo '<h3><a href="?pg=g&!=all&q=%23'.$link.'">'.$trend["topic"]."</a></h3>";
+				}
+			}
+			if($_GET["pg"] == 'media'){
+				echo "MEDIA";
+			}			
 		}
 	}
 	else{

@@ -57,6 +57,32 @@ class CORE_PROFILE extends CORE_USER{
 		return true;
 	}
 	 
+	private function add_trend($text){
+		preg_match_all('/[#]+([A-Za-z0-9-_]+)/',$text, $hash); 
+		$hashtag = $hash[1]; 
+		foreach($hashtag  as $key => $hash){ 
+			$ht=ucwords(strtolower($hash));
+			$connection = parent::connect();
+			$query = ("SELECT topic FROM vdl_trending WHERE topic='$ht'");
+			echo $query;
+			$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+			if(!$result)
+				return false;
+			if(mysql_num_rows($result) == 0){
+				$query = ("INSERT INTO vdl_trending (topic,count) VALUES ('$ht',1)");
+				$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));			
+				if(!$result)
+					return false;
+			}
+			else{
+				$query = ("UPDATE vdl_trending SET count =count+1 WHERE topic='$ht'");
+				$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));					
+				if(!$result)
+					return false;
+			}
+		} 
+		return true;
+	}
 	/*Public*/
 
 	public function __construct (){
@@ -108,7 +134,7 @@ class CORE_PROFILE extends CORE_USER{
 		while ($row = mysql_fetch_assoc($result)){
 			if($row["status"] != 0){
 				if($row["user1"]==$id["id"]){
-					echo $query;
+					$query = "SELECT nick,avatar_id FROM vdl_user WHERE id='".$row["user2"]."'";
 					$result2 = mysql_query($query,$connection);	
 				}
 				else{
@@ -242,7 +268,15 @@ class CORE_PROFILE extends CORE_USER{
 			die($message);
 			return false;
 		}
-		
+		$this->add_trend($text);
+		preg_match_all('/[#]+([A-Za-z0-9-_]+)/',$text,$hash);
+		$hashtag = $hash[1];
+		foreach($hashtag  as $key => $hash){ 
+			//Aqui podemos hacer que lo agrege a la database 
+			$find = '#'.$hash;
+			$replace = '#'.ucwords(strtolower($hash)); 
+			$text = str_replace($find, $replace, $text); 
+		}
 		$user = mysql_fetch_assoc($result);
 		$query = ("INSERT INTO vdl_msg (date_published,text) VALUES ('$date', '$text')");
 		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));	
@@ -334,15 +368,18 @@ class CORE_PROFILE extends CORE_USER{
 		} 
 		 
 		//Comprobamos los Hashtag 
-		preg_match_all('/[#]+([A-Za-z0-9-_]+)/',$text, $hash); 
-		$hashtag = $hash[1]; 
-		 
+		$text = preg_replace('/[#]+([A-Za-z0-9-_]+)/',
+        '<b><a href="?pg=g&!=all&q=%23\1">#\1</a></b>',
+        $text);
+
+/*		preg_match_all('/[#]+([A-Za-z0-9-_]+)/',$text,$hash);
+		$hashtag = $hash[1];
 		foreach($hashtag  as $key => $hash){ 
 			//Aqui podemos hacer que lo agrege a la database 
 			$find = '#'.$hash;
-			$replace = '<b><a href="?pg=g&!=all&q=%23'.$hash.'" >#'.$hash.'</a></b> '; 
+			$replace = '<b><a href="?pg=g&!=all&q=%23'.$hash.'" >#'.$hash.'</a></b>'; 
 			$text = str_replace($find, $replace, $text); 
-		} 
+		} */
 
 		//Comprobamos las redes
 		preg_match_all('/[!]+([A-Za-z0-9-_]+)/',$text, $ntag);

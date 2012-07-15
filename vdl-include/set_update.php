@@ -26,7 +26,11 @@ session_start();
 	$SEC = new CORE_SECURITY();
 	$message = $SEC->clear_text($_POST['update']);
 	$message =  nl2br ($message);
-	$core->update($_POST['sender'],$message,session_id());
-//	$core->update($_GET['sender'],$message,$_POST["session_id"]);
-	header("Location:".$_SERVER['HTTP_REFERER']);
+	if(strlen($message)==0){
+		header("Location:".$_SERVER['HTTP_REFERER']);
+	}
+	else{
+		$core->update($_POST['sender'],$message,session_id());
+		header("Location:".$_SERVER['HTTP_REFERER']);
+	}
 ?>

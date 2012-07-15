@@ -20,5 +20,6 @@ if(isset($_GET["q"])){
 	$group = $c_group->get_group($_GET["q"]);
 }
 else
-	$group = "empty"
+	$group = "empty";
+$trending = $c_group->get_trends();
 ?>
