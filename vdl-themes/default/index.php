@@ -111,7 +111,8 @@
 		</div>
 		<aside class="span3">
 			<div class="well sidebar">
-				NOVEDADES:
+				Noticias:<br>
+					<?php include("vdl-actions/notify.php"); ?>
 			</div>
 		</aside>
 	</div>
