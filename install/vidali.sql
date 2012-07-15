@@ -273,3 +273,32 @@ ALTER TABLE `vdl_u_belong`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+-- Estructura de tabla para la tabla `vdl_trending`
+--
+
+
+CREATE TABLE IF NOT EXISTS `vdl_trending` (
+  `topic` varchar(140) COLLATE utf8_bin NOT NULL,
+  `count` int(10) NOT NULL,
+  UNIQUE KEY `topic` (`topic`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+--
+-- Estructura de tabla para la tabla `vdl_notify`
+--
+
+CREATE TABLE IF NOT EXISTS `vdl_notify` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `user_sender` int(11) NOT NULL,
+  `msg_related` int(11) DEFAULT NULL,
+  `type` int(10) unsigned NOT NULL,
+  `checked` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `user_sender` (`user_sender`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
