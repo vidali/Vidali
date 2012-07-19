@@ -7,7 +7,7 @@ class CORE_GROUP extends CORE_MAIN{
 
 	public function get_group($_name){
 		$connection = parent::connect();
-		$query = "SELECT id, nick, b.avatar_id, date_published,text
+		$query = "SELECT id, nick, b.avatar_id,email,date_published,text
 						  FROM vdl_publish a
 						  JOIN vdl_user b ON b.id = id_user
 						  JOIN vdl_group ON vdl_group.group_name = id_group

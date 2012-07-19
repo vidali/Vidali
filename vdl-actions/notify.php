@@ -21,6 +21,7 @@ foreach ($val as $not){
 		<form action="vdl-include/manage_friend.php?action=acept" method="post">
 		<input id="id_main" name="id_main" type="hidden" value="<?php echo $_SESSION["id"] ?>"><br/>
 		<input id="id_sender" name="id_sender" type="hidden" value="<?php echo $not["user_sender"] ?>"><br/>
+		<input id="id_not" name="id_not" type="hidden" value="<?php echo $not["id"] ?>"><br/>
 		<input type="submit" value="Aceptar">
 		</form>
 		<form action="vdl-include/manage_friend.php?action=delete" method="post">

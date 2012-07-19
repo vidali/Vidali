@@ -26,14 +26,16 @@
 	<script type="text/javascript" src="vdl-themes/default/js/jquery.js" ></script>
 	<script type="text/javascript" src="vdl-themes/default/js/bootstrap.js" ></script>
 	<script type="text/javascript" src="vdl-themes/default/js/bootstrap-dropdown.js" ></script>
+	<script type="text/javascript" src="vdl-themes/default/js/bootstrap-modal.js" ></script>
+	<script type="text/javascript" src="vdl-themes/default/js/script_default.js" ></script>
 	<link rel="stylesheet" href="vdl-themes/default/js/jquery-ui.css" id="theme" />
 	<link rel="stylesheet" type="text/less" href="vdl-themes/default/css/head.less" />	
 	<link rel="stylesheet" type="text/less" href="vdl-themes/default/css/static.less" />	
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/prof.less" />
 	<script type="text/javascript" src="vdl-themes/default/js/less.js"></script>
     
 <!--
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/home.less" />
-	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/prof.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/net.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/not.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/head.less" />

@@ -67,5 +67,5 @@ $(function() {
   $('.dropdown-menu input, .dropdown-menu label').click(function(e) {
     e.stopPropagation();
   });
-  
+  $('#grav_prof').modal(options);
 });

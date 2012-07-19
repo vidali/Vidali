@@ -16,23 +16,41 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 $prof = new CORE_PROFILE();
 
+?>
+<div class="row">
+	<section class="span12">
+		<div class="pr_titles">
+<?php
 if ($group == "empty"){
-	echo "hola pagina de grupos";
+	echo "hola pagina de grupos";?>
+		</div>	
+	</section>	
+<?php
 }
 else{
-	echo '<h2>'.$_GET["q"].'</h2>';
+	echo '<h2>'.$_GET["q"].'</h2>';?>
+		</div>	
+	</section>
+<?php
 	foreach ($group as $upd){?>
-		<article id="upd">	
-				<section class="upd-info">
-				<?php echo '@'.$upd["nick"];?>
-				<?php echo $upd["date_published"];?>
-				</section>
-			<section class ="upd_tb span1">
-				<?php echo '<img src="vdl-media/vdl-images/'. $upd["avatar_id"] . '_tb.jpg">';?>
+		<article id="upd" class="span12">
+			<section class="span12">
+				<div class="span1">
+				<?php //echo '<img src="vdl-media/vdl-images/'. $upd["avatar_id"] . '_tb.jpg">';
+					$size = 50;
+					$grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=".md5( strtolower($upd["email"]) )."&size=".$size;
+					echo '<img border="0" src="'.$grav_url.' class="thumbnail">';
+				?>				
+				</div>
+				<div class="upd-info span11">
+					<?php echo '<a href="?pg=p&!=all&@='.$upd["nick"].'">@'.$upd["nick"].'</a> - '.$upd["date_published"];?>
+				</div>
 			</section>
-			<section class="upd-msg span8">
+			<section class="upd-msg span12">
 				<?php echo $prof->meta_text($upd["text"]);?>
 			</section>
 		</article>
-<?php 	}
+	<?php
+	}
 }?>
+</div>

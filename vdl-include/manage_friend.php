@@ -20,7 +20,7 @@ include("vdl-core/core_profile.class.php");
 $contact = new CORE_PROFILE();
 if($_GET["action"] == "acept"){
 	echo $_POST["id_sender"].'\n';
-	$delete=$contact->manage_friend("acept", $_POST["id_main"], $_POST["id_sender"],'6');
+	$delete=$contact->manage_friend("acept", $_POST["id_main"], $_POST["id_sender"],$_POST["id_not"]);
 	if($delete)
 		header("location: ../index.php?alert=dftrue");
 }

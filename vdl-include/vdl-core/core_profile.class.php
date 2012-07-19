@@ -3,12 +3,13 @@ require_once 'core_user.class.php';
 
 class CORE_PROFILE extends CORE_USER{
 	/*Private*/
-	private function acept_friend($_id,$_idsender){
+	private function acept_friend($_id,$_idsender,$_not){
 		$connection = parent::connect();
 		$query = ("UPDATE vdl_friend_of SET status=1 WHERE user2=$_id AND user1=$_idsender AND status=0");
-		echo $query;
 		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
 		if($result){
+			$query = "UPDATE vdl_notify SET (checked) VALUES ('1') WHERE id= $_not";
+			$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
 //			$query = ("INSERT INTO vdl_notify (user_id,user_sender,type,checked) VALUES ('$_candidate','$_main','1','0')");
 //			$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));		
 			return true;
@@ -64,7 +65,7 @@ class CORE_PROFILE extends CORE_USER{
 			$ht=ucwords(strtolower($hash));
 			$connection = parent::connect();
 			$query = ("SELECT topic FROM vdl_trending WHERE topic='$ht'");
-			echo $query;
+			//echo $query;
 			$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
 			if(!$result)
 				return false;
@@ -134,11 +135,11 @@ class CORE_PROFILE extends CORE_USER{
 		while ($row = mysql_fetch_assoc($result)){
 			if($row["status"] != 0){
 				if($row["user1"]==$id["id"]){
-					$query = "SELECT nick,avatar_id FROM vdl_user WHERE id='".$row["user2"]."'";
+					$query = "SELECT nick,avatar_id,email FROM vdl_user WHERE id='".$row["user2"]."'";
 					$result2 = mysql_query($query,$connection);	
 				}
 				else{
-					$query = "SELECT nick,avatar_id FROM vdl_user WHERE id='".$row["user1"]."'";
+					$query = "SELECT nick,avatar_id,email FROM vdl_user WHERE id='".$row["user1"]."'";
 					$result2 = mysql_query($query,$connection);	
 				}
 				while($row2 = mysql_fetch_assoc($result2))
@@ -185,7 +186,7 @@ class CORE_PROFILE extends CORE_USER{
 	
 	public function get_updates($_user){
 		$connection = parent::connect();
-		$query = sprintf("SELECT id, nick, b.avatar_id, date_published,text
+		$query = sprintf("SELECT id, nick, b.avatar_id,email,date_published,text
 						  FROM vdl_publish a
 						  JOIN vdl_user b ON b.id = id_user
 						  JOIN vdl_group ON vdl_group.group_name = id_group
@@ -212,7 +213,7 @@ class CORE_PROFILE extends CORE_USER{
 		$query = "SELECT id from vdl_user WHERE nick = '$_user'";
 		$result=mysql_query($query,$connection);
 		$id = mysql_fetch_assoc($result);
-		$query = "SELECT id, nick, b.avatar_id, date_published,text
+		$query = "SELECT id, nick, b.avatar_id,email, date_published,text
 					FROM vdl_publish a
 					JOIN vdl_user b ON b.id = id_user
 					JOIN vdl_group ON vdl_group.group_name = id_group
@@ -317,7 +318,7 @@ class CORE_PROFILE extends CORE_USER{
 			$sucess = $this->delete_friend($_main, $_candidate);
 		}
 		if($_req == "acept"){
-			$sucess = $this->acept_friend($_main, $_candidate);
+			$sucess = $this->acept_friend($_main, $_candidate,$range);
 		}
 		if($_req == "block"){
 			$sucess = $this->block_enemy($_main, $_candidate);

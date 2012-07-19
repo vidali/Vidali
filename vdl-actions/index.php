@@ -33,10 +33,13 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 ?>
 		<section class="p_resume">
 			<div id="p_thumb">
-				<?php echo '<img src="vdl-media/vdl-images/' . $photo . '.jpg">'; ?>
+				<?php
+					  $size = 100;
+					  $grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=".md5( strtolower($_SESSION["mail"]) )."&size=".$size;
+					  echo '<a href="http://es.gravatar.com/site/signup/" target="_blank"><img src="'.$grav_url.'"></a>';?>
 			</div>
 			<div id="p_info">
-				<?php echo $nick; ?><br/>
+				<?php echo "@".$nick; ?><br/>
 				<?php echo $p_visits; ?> visitas <br/>
 				<?php echo $p_friends; ?> Amigos<br/>
 				<?php echo $p_nets; ?> Redes<br/>
