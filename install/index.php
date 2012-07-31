@@ -19,7 +19,9 @@
 	<link rel="stylesheet" href="../vdl-themes/default/js/jquery-ui.css" id="theme" />
 	<script type="text/javascript" src="../vdl-themes/default/js/less.js"></script>
 	<script type="text/javascript" src="../vdl-themes/default/js/script_default.js"></script>
+	<script>
 
+	</script>
 </head>
 <body>
     <div class="navbar">
@@ -39,6 +41,18 @@
     <!-- Desde aki -->
 <section class="container-fluid">
 	<div class="row-fluid show-grid">
+		<div class="span12">
+			<?php
+				if(isset($_GET["empty"])){
+					for($i=1;$i<=$_GET["empty"];$i++){
+						echo '<div class="alert">
+								<button type="button" class="close" data-dismiss="alert">×</button>
+								<strong>Advertencia!</strong> '.$_GET["emp$i"].' no ha sido rellenado.
+						</div>';
+					}
+				}
+			?>
+		</div>
 		<div class="span6">
 			<form class="form-horizontal" action="install.php" method="post">
 				<fieldset>
@@ -49,28 +63,28 @@
 							<div class="control-group">
 								<label class="control-label" for="input07">Direccion_BD</label>
 								<div class="controls">
-									<input name="Direccion_BD" type="text"  placeholder="example: localhost" class="input-xlarge" id="input07" onkeyup="valida('nick')">
+									<input name="DB_DIR" type="text"  placeholder="example: localhost" class="input-xlarge" id="BD_DIR">
 									<span id="confirm7"></span>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="input07">Nombre_BD</label>
 								<div class="controls">
-									<input name="password1" type="text" placeholder="example: Vidali" class="input-xlarge" id="input07" onkeyup="valida('location')">
+									<input name="DB_NAME" type="text" placeholder="example: Vidali" class="input-xlarge" id="BD_NAME">
 									<span id="confirm7"></span>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="input07">Usuario_BD</label>
 								<div class="controls">
-									<input name="password2" type="text" placeholder="User" class="input-xlarge" id="input07" onkeyup="valida('location')">
+									<input name="DB_USER" type="text" placeholder="User" class="input-xlarge" id="BD_USER">
 									<span id="confirm7"></span>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="input07">Pass_BD</label>
 								<div class="controls">
-									<input name="location" type="text" placeholder="*****" class="input-xlarge" id="input07" onkeyup="valida('location')">
+									<input name="DB_PASS" type="text" placeholder="*****" class="input-xlarge" id="BD_PASS">
 									<span id="confirm7"></span>
 								</div>
 							</div>
@@ -80,15 +94,15 @@
 								<label class="control-label">Tipo de registro</label>
 								<div class="controls">
 									<label class="radio inline">
-        				                <input name="optionsRadios" id="optionsRadios1" value="option1" checked="checked" type="radio">
+        				                <input name="optionsRadios" id="optionsRadios1" value="public" checked="checked" type="radio">
 		        					    Público
                                 	</label>
 						            <label class="radio inline">	
-						                <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+						                <input name="optionsRadios" id="optionsRadios2" value="request" type="radio">
 							            Invitación
                                     </label>
 						            <label class="radio inline">	
-						                <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+						                <input name="optionsRadios" id="optionsRadios3" value="private" type="radio">
 							            Privado
                                     </label>
                                 </div>
@@ -97,15 +111,15 @@
 								<label class="control-label">Privacidad por defecto</label>
 								<div class="controls">
 									<label class="radio inline">
-        				                <input name="optionsRadios2" id="optionsRadios1" value="option1" checked="checked" type="radio">
+        				                <input name="optionsRadios2" id="optionsRadios1" value="high" checked="checked" type="radio">
 		        					    Alta
                                 	</label>
 						            <label class="radio inline">	
-						                <input name="optionsRadios2" id="optionsRadios2" value="option2" type="radio">
+						                <input name="optionsRadios2" id="optionsRadios2" value="mid" type="radio">
 							            Media
                                     </label>
 						            <label class="radio inline">	
-						                <input name="optionsRadios2" id="optionsRadios2" value="option2" type="radio">
+						                <input name="optionsRadios2" id="optionsRadios2" value="low" type="radio">
 							            Baja
                                     </label>
                                 </div>
@@ -114,7 +128,7 @@
 								<label class="control-label" for="optionsCheckboxList">Indexado de buscadores</label>
 								<div class="controls">
 								  <label class="checkbox">
-									<input name="optionsCheckboxList1" value="option1" type="checkbox">
+									<input name="index_bots" value="yes" type="checkbox">
 									Activar
 								  </label>
 								</div>
@@ -123,7 +137,7 @@
 								<label class="control-label" for="optionsCheckboxList">Sincronizar con Onvidali</label>
 								<div class="controls">
 								  <label class="checkbox">
-									<input name="optionsCheckboxList1" value="option1" type="checkbox">
+									<input name="central_sync" value="yes" type="checkbox">
 									Activar
 								  </label>
 								</div>
@@ -132,15 +146,15 @@
 								<label class="control-label">Almacenamiento por defecto:</label>
 								<div class="controls">
 									<label class="radio inline">
-        				                <input name="optionsRadios3" id="optionsRadios1" value="option1" checked="checked" type="radio">
+        				                <input name="optionsRadios3" id="optionsRadios1" value="option1" checked="checked" type="radio" disabled>
 		        					    Servidor
                                 	</label>
 						            <label class="radio inline">	
-						                <input name="optionsRadios3" id="optionsRadios2" value="option2" type="radio">
+						                <input name="optionsRadios3" id="optionsRadios2" value="option2" type="radio" disabled>
 							            Dropbox
                                     </label>
 						            <label class="radio inline">	
-						                <input name="optionsRadios3" id="optionsRadios2" value="option2" type="radio">
+						                <input name="optionsRadios3" id="optionsRadios2" value="option2" type="radio" disabled>
 							            Google Services
                                     </label>
                                 </div>

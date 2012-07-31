@@ -58,7 +58,7 @@ class CORE_DB{
 	* @param $_dbase: Store new MySQL database.
 	*/
 	public function set($_dbdir,$_dbusr,$_dbpsw,$_dbase){
-		$file = fopen("../vdl-includes/vdl-core/db.ini","w");
+		$file = fopen("../vdl-include/vdl-core/db.ini","w");
 		$string="[DB]\n
 				 DBDIR=$_dbdir\n
 				 DBUSR=$_dbusr\n

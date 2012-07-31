@@ -22,35 +22,50 @@ $empty = "";
 foreach ($_POST as $id => $data){
 	if(empty($_POST[$id])){
 		$aux++;
-		$empty = $empty . "&emp=$id";
+		$empty = $empty . "&emp$aux=$id";
 		$error = true;
 	}
 }
 	if($error == true)
-		header("Location:index.php?empty=$aux"."$empty");
+		header('Location:' . getenv('HTTP_REFERER') . "?empty=$aux"."$empty");
 	else{
 		//crear el db.ini
-		$connection = mysql_connect($_POST["db_dir"], $_POST["db_uname"] , $_POST["db_upass"]) or die ("<p class='error'>Epic fail...no conecta al server.</p>");
-		mysql_select_db($_POST["db_name"], $connection) or die ("<p class='error'>La base de datos NO EXISTE.</p>");
-		include "../vdl-includes/vdl-core/core_db.class.php";
-		define ("DBDIR","NULL");
-		$core= new CORE_DB();
-		$config = $core->set($_POST["db_dir"],$_POST["db_uname"],$_POST["db_upass"],$_POST["db_name"]);
-		$nombre_archivo = 'db_struct.sql';
-		$sql = explode(";",file_get_contents($nombre_archivo));// 
-		foreach($sql as $query){
-			echo " Linea de la BD: $query";
-			if (!empty($query)){
-				$result = mysql_query($query,$connection);
-				if (!$result) {
-						 $message  = 'Invalid query: ' . mysql_error() . "\n";
-						 $message = 'Donde falla: ' . $query;
-						 die($message);			 
+		$con = new mysqli($_POST["DB_DIR"], $_POST["DB_USER"], $_POST["DB_PASS"],$_POST["DB_NAME"]);
+		if (mysqli_connect_errno()) {
+			printf("Connect failed: %s\n", mysqli_connect_error());
+		exit();
+		}
+		else{
+			include "../vdl-include/vdl-core/core_db.class.php";
+			define ("DBDIR","NULL");
+			$core= new CORE_DB();
+			$config = $core->set($_POST["DB_DIR"], $_POST["DB_USER"], $_POST["DB_PASS"],$_POST["DB_NAME"]);
+			$nombre_archivo = 'vidali.sql';
+			$sql = explode(";",file_get_contents($nombre_archivo)); 
+			$con->autocommit(FALSE);
+			foreach($sql as $query){
+//				echo " Linea de la BD: $query<br>";
+				if (!empty($query)){
+					if(!$con->query($query))
+						printf("Error: %s<br>", mysqli_error($con));
 				}
 			}
+			$con->autocommit(TRUE);
 		}
+		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (4, 'ADMIN', '1')"))
+			printf("Error: %s<br>", mysqli_error($con));
+		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (5, 'REGISTER', '".$_POST["optionsRadios"]."')"))
+			printf("Error: %s<br>", mysqli_error($con));
+		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (6, 'PRIVACY', '".$_POST["optionsRadios2"]."')"))
+			printf("Error: %s<br>", mysqli_error($con));
+		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (7, 'INDEX', '".$_POST["index_bots"]."')"))
+			printf("Error: %s<br>", mysqli_error($con));
+		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (8, 'SYNC', '".$_POST["central_sync"]."')"))
+			printf("Error: %s<br>", mysqli_error($con));
+		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (9, 'STORAGE', 'SERVER')"))
+			printf("Error: %s<br>", mysqli_error($con));
 		//Crear usuario
-		$admin = $_POST["nickname"];
+/*		$admin = $_POST["nickname"];
 		$password = mysql_real_escape_string(sha1(md5(trim($_POST["password"]))));
 		date_default_timezone_set("Europe/London");
 		$date = date($_POST["birthdate"]);
@@ -59,6 +74,8 @@ foreach ($_POST as $id => $data){
 		$result = mysql_query($query,$connection);
 		
 		$result = mysql_query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (4, 'ADMIN', '$admin')",$connection);
-		header("Location:../index.php?wellcome=true");
+		*/
+		header("Location:../index.php?action=register");
 	}
+	mysqli_close($con);
 ?>

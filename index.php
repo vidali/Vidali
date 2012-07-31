@@ -7,16 +7,17 @@
 //~ echo 'Falta la inclusión';
  
 //Comprobar si no esta instalado y cargar elementos base
-include_once 'vdl-include/vdl-core/core_main.class.php';
-include_once 'vdl-include/vdl-core/core_security.class.php';
-
 ini_set('mssql.charset', 'UTF-8');
-if(!file_exists("vdl-include/vdl-core/db.ini"))
+if(!file_exists("vdl-include/vdl-core/db.ini")){
 	header("location: install/index.php"); 
+	}
 if(!isset($_GET['action']))
 	$action=null;
 else
 	$action=$_GET['action'];
+
+include_once 'vdl-include/vdl-core/core_main.class.php';
+include_once 'vdl-include/vdl-core/core_security.class.php';
 
 $SEC = new CORE_SECURITY();
 $SEC->clear_url_nav(); //Limpiamos la URL
