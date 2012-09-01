@@ -1,0 +1,371 @@
+
+[21-Jul-2012 01:58:04] PHP Parse error:  syntax error, unexpected T_PUBLIC in /var/www/leafwork/leaf/modules/mod_iofile/class_iofile.php on line 18
+[21-Jul-2012 01:58:54] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:58:54] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:58:54] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:58:55] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:58:55] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:58:55] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:58:55] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:59:19] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:59:19] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:59:19] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:59:19] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:59:34] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:59:34] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:59:34] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[21-Jul-2012 01:59:34] PHP Notice:  Undefined variable: pene in /var/www/leafwork/leaf/modules/mod_debug/class_debug.php on line 82
+[07-Aug-2012 14:44:35 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /media/Datos/web/Vidali/leaf/core/lib/lib_html.php on line 31
+[07-Aug-2012 14:44:35 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /media/Datos/web/Vidali/leaf/core/lib/lib_html.php on line 31
+[07-Aug-2012 14:48:09 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /media/Datos/web/Vidali/leaf/core/lib/lib_html.php:127) in /media/Datos/web/Vidali/leaf/core/lib/lib_html.php on line 29
+[07-Aug-2012 14:48:09 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /media/Datos/web/Vidali/leaf/core/lib/lib_html.php:127) in /media/Datos/web/Vidali/leaf/core/lib/lib_html.php on line 30
+[07-Aug-2012 14:48:59 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /media/Datos/web/Vidali/leaf/core/lib/lib_html.php:127) in /media/Datos/web/Vidali/leaf/core/lib/lib_html.php on line 29
+[07-Aug-2012 14:48:59 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /media/Datos/web/Vidali/leaf/core/lib/lib_html.php:127) in /media/Datos/web/Vidali/leaf/core/lib/lib_html.php on line 30
+[07-Aug-2012 15:28:09 UTC] PHP Notice:  Use of undefined constant THEME2 - assumed 'THEME2' in /media/Datos/web/Vidali/leaf/config/leafwork.php on line 15
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant LANG already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant THEME already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant TITLE already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant ADMIN already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant REGISTER already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant PRIVACY already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant INDEX already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant SYNC already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant STORAGE already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant BASEDIR already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant M_UPD already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 18
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant M_PRF already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 19
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant M_NOT already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 20
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant M_MED already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 21
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant M_LIN already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 22
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant M_LOU already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 23
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant M_LMS already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 24
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant M_LUS already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 25
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant M_LPS already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 26
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_OWN already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 29
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_INF already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 30
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_CON already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 31
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_WEB already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 32
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_NET already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 33
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_RAN already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 34
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_NAM already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 35
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_LOC already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 36
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_SEX already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 37
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_STA already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 38
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_BIR already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 39
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_AG1 already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 40
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_AG2 already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 41
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant P_BIO already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 42
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant U_ASK already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 43
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant U_PPA already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 44
+[13-Aug-2012 12:11:30 UTC] PHP Notice:  Constant U_NPA already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 45
+[13-Aug-2012 12:12:01 UTC] PHP Notice:  Use of undefined constant THEME - assumed 'THEME' in D:\web\Vidali-beta\leaf\config\leafwork.php on line 15
+[13-Aug-2012 12:12:20 UTC] PHP Notice:  Use of undefined constant THEME - assumed 'THEME' in D:\web\Vidali-beta\leaf\config\leafwork.php on line 15
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant LANG already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant THEME already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant TITLE already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant ADMIN already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant REGISTER already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant PRIVACY already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant INDEX already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant SYNC already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant STORAGE already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant BASEDIR already defined in D:\web\Vidali-beta\vdl-include\vdl-core\core_main.class.php on line 81
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant M_UPD already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 18
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant M_PRF already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 19
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant M_NOT already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 20
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant M_MED already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 21
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant M_LIN already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 22
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant M_LOU already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 23
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant M_LMS already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 24
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant M_LUS already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 25
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant M_LPS already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 26
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_OWN already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 29
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_INF already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 30
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_CON already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 31
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_WEB already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 32
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_NET already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 33
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_RAN already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 34
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_NAM already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 35
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_LOC already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 36
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_SEX already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 37
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_STA already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 38
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_BIR already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 39
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_AG1 already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 40
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_AG2 already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 41
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant P_BIO already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 42
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant U_ASK already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 43
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant U_PPA already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 44
+[13-Aug-2012 12:12:49 UTC] PHP Notice:  Constant U_NPA already defined in D:\web\Vidali-beta\vdl-lang\lang_ES.conf.php on line 45
+[13-Aug-2012 12:13:39 UTC] PHP Notice:  Use of undefined constant THEME - assumed 'THEME' in D:\web\Vidali-beta\leaf\config\leafwork.php on line 15
+[13-Aug-2012 12:16:08 UTC] PHP Notice:  Use of undefined constant THEME - assumed 'THEME' in D:\web\Vidali-beta\leaf\config\leafwork.php on line 15
+[13-Aug-2012 12:18:06 UTC] PHP Notice:  Use of undefined constant THEME - assumed 'THEME' in D:\web\Vidali-beta\leaf\config\leafwork.php on line 15
+[13-Aug-2012 12:18:39 UTC] PHP Notice:  Undefined variable: MAIN in D:\web\Vidali-beta\index.php on line 19
+[13-Aug-2012 12:18:39 UTC] PHP Fatal error:  Call to a member function load() on a non-object in D:\web\Vidali-beta\index.php on line 19
+[13-Aug-2012 12:22:47 UTC] PHP Notice:  Undefined variable: loged in D:\web\Vidali-beta\index.php on line 20
+[13-Aug-2012 12:30:29 UTC] PHP Notice:  Undefined variable: loged in D:\web\Vidali-beta\index.php on line 19
+[13-Aug-2012 14:03:12 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in D:\web\Vidali-beta\leaf\core\lib\lib_html.php on line 74
+[13-Aug-2012 14:23:49 UTC] PHP Warning:  Illegal string offset 'load_template' in D:\web\Vidali-beta\leaf\modules\mod_config\class_config.php on line 59
+[13-Aug-2012 14:23:49 UTC] PHP Warning:  Illegal string offset 'template' in D:\web\Vidali-beta\leaf\modules\mod_config\class_config.php on line 59
+[13-Aug-2012 14:23:49 UTC] PHP Warning:  Illegal string offset 'template' in D:\web\Vidali-beta\leaf\modules\mod_config\class_config.php on line 59
+[13-Aug-2012 14:23:49 UTC] PHP Warning:  Illegal string offset 'template' in D:\web\Vidali-beta\leaf\modules\mod_config\class_config.php on line 59
+[13-Aug-2012 14:24:02 UTC] PHP Warning:  Illegal string offset 'load_template' in D:\web\Vidali-beta\leaf\modules\mod_config\class_config.php on line 59
+[13-Aug-2012 14:24:02 UTC] PHP Warning:  Illegal string offset 'template' in D:\web\Vidali-beta\leaf\modules\mod_config\class_config.php on line 59
+[13-Aug-2012 14:24:02 UTC] PHP Warning:  Illegal string offset 'template' in D:\web\Vidali-beta\leaf\modules\mod_config\class_config.php on line 59
+[13-Aug-2012 14:24:02 UTC] PHP Warning:  Illegal string offset 'template' in D:\web\Vidali-beta\leaf\modules\mod_config\class_config.php on line 59
+[15-Aug-2012 12:17:33 UTC] PHP Warning:  fopen(index.): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 86
+[15-Aug-2012 12:17:33 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 87
+[15-Aug-2012 12:17:33 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 88
+[15-Aug-2012 12:17:51 UTC] PHP Warning:  fopen(index.): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 86
+[15-Aug-2012 12:17:51 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 87
+[15-Aug-2012 12:17:51 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 88
+[15-Aug-2012 12:18:47 UTC] PHP Warning:  fopen(index.): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 86
+[15-Aug-2012 12:18:47 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 87
+[15-Aug-2012 12:18:47 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 88
+[15-Aug-2012 12:19:35 UTC] PHP Warning:  fopen(index.html.): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 86
+[15-Aug-2012 12:19:35 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 87
+[15-Aug-2012 12:19:35 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 88
+[15-Aug-2012 12:33:47 UTC] PHP Warning:  fopen(index.): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 86
+[15-Aug-2012 12:33:47 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 87
+[15-Aug-2012 12:33:47 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 88
+[15-Aug-2012 12:34:11 UTC] PHP Warning:  fopen(index.): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 86
+[15-Aug-2012 12:34:11 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 87
+[15-Aug-2012 12:34:11 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 88
+[26-Aug-2012 15:56:26 UTC] PHP Warning:  fopen(index.): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 86
+[26-Aug-2012 15:56:26 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 87
+[26-Aug-2012 15:56:26 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 88
+[26-Aug-2012 15:57:56 UTC] PHP Parse error:  syntax error, unexpected T_ELSEIF in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 70
+[26-Aug-2012 15:58:07 UTC] PHP Warning:  fopen(index.): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 90
+[26-Aug-2012 15:58:07 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 91
+[26-Aug-2012 15:58:07 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 92
+[26-Aug-2012 16:04:25 UTC] PHP Warning:  fopen(index.): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 91
+[26-Aug-2012 16:04:25 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 92
+[26-Aug-2012 16:04:25 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 93
+[26-Aug-2012 16:05:33 UTC] PHP Notice:  Use of undefined constant html - assumed 'html' in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 90
+[26-Aug-2012 16:05:33 UTC] PHP Warning:  fopen(vdl-themes/default/index.htmlindex.html): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 92
+[26-Aug-2012 16:05:33 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 93
+[26-Aug-2012 16:05:33 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 94
+[26-Aug-2012 16:05:43 UTC] PHP Warning:  fopen(vdl-themes/default/index.htmlindex.html): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 92
+[26-Aug-2012 16:05:43 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 93
+[26-Aug-2012 16:05:43 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 94
+[26-Aug-2012 16:06:29 UTC] PHP Warning:  fopen(vdl-themes/default/index.htmlindex.html): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 92
+[26-Aug-2012 16:06:29 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 93
+[26-Aug-2012 16:06:29 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 94
+[26-Aug-2012 21:10:36 UTC] PHP Notice:  Undefined index: pass_c in /media/Datos/web/Vidali-beta/vdl-include/preload.php on line 14
+[26-Aug-2012 21:13:15 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/preload.php on line 14
+[26-Aug-2012 21:13:15 UTC] PHP Notice:  Undefined index: pass_c in /media/Datos/web/Vidali-beta/vdl-include/preload.php on line 15
+[26-Aug-2012 21:14:34 UTC] PHP Notice:  Undefined offset: 4 in /media/Datos/web/Vidali-beta/vdl-include/preload.php on line 14
+[26-Aug-2012 21:17:11 UTC] PHP Fatal error:  Call to undefined function session_status() in /media/Datos/web/Vidali-beta/vdl-include/preload.php on line 14
+[26-Aug-2012 21:18:18 UTC] PHP Fatal error:  Call to undefined function session_status() in /media/Datos/web/Vidali-beta/vdl-include/preload.php on line 14
+[26-Aug-2012 21:24:04 UTC] PHP Parse error:  syntax error, unexpected ')', expecting T_PAAMAYIM_NEKUDOTAYIM in /media/Datos/web/Vidali-beta/vdl-include/preload.php on line 14
+[26-Aug-2012 21:24:54 UTC] PHP Notice:  Use of undefined constant PASS_C - assumed 'PASS_C' in /media/Datos/web/Vidali-beta/vdl-include/preload.php on line 14
+[28-Aug-2012 10:48:40 UTC] PHP Warning:  fopen(vdl-themes/default/admin.html): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 92
+[28-Aug-2012 10:48:40 UTC] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 93
+[28-Aug-2012 10:48:40 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /media/Datos/web/Vidali-beta/leaf/modules/mod_tpl/class_tpl.php on line 94
+[28-Aug-2012 11:12:16 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 42
+[28-Aug-2012 11:12:16 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 43
+[28-Aug-2012 11:12:16 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 44
+[28-Aug-2012 11:12:16 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 45
+[28-Aug-2012 13:12:17 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[28-Aug-2012 13:12:17 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 42
+[28-Aug-2012 13:12:17 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 43
+[28-Aug-2012 13:12:17 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 44
+[28-Aug-2012 13:12:17 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 45
+[28-Aug-2012 13:12:17 UTC] PHP Notice:  Undefined variable: prof in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[28-Aug-2012 13:12:17 UTC] PHP Fatal error:  Call to a member function get_notify() on a non-object in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[28-Aug-2012 13:12:32 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 42
+[28-Aug-2012 13:12:32 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 43
+[28-Aug-2012 13:12:32 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 44
+[28-Aug-2012 13:12:32 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 45
+[28-Aug-2012 13:37:22 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 13:37:22 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 13:37:22 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 13:37:22 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 13:59:24 UTC] PHP Notice:  Undefined variable: visitor in /media/Datos/web/Vidali-beta/vdl-profile/index.php on line 23
+[28-Aug-2012 13:59:24 UTC] PHP Notice:  Undefined index: @ in /media/Datos/web/Vidali-beta/vdl-themes/default/prof.php on line 8
+[28-Aug-2012 13:59:24 UTC] PHP Notice:  Undefined variable: visitor in /media/Datos/web/Vidali-beta/vdl-themes/default/prof.php on line 8
+[28-Aug-2012 13:59:31 UTC] PHP Notice:  Undefined variable: prof in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[28-Aug-2012 13:59:31 UTC] PHP Fatal error:  Call to a member function get_notify() on a non-object in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[28-Aug-2012 13:59:39 UTC] PHP Notice:  Undefined variable: prof in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[28-Aug-2012 13:59:39 UTC] PHP Fatal error:  Call to a member function get_notify() on a non-object in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[28-Aug-2012 13:59:48 UTC] PHP Notice:  Undefined variable: prof in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[28-Aug-2012 13:59:48 UTC] PHP Fatal error:  Call to a member function get_notify() on a non-object in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[28-Aug-2012 13:59:54 UTC] PHP Notice:  Undefined variable: prof in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[28-Aug-2012 13:59:54 UTC] PHP Fatal error:  Call to a member function get_notify() on a non-object in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[28-Aug-2012 14:02:28 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:02:28 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:02:28 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:02:28 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:02:31 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:02:31 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:02:31 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:02:31 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:02:58 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:02:58 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:02:58 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:02:58 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:02:59 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:02:59 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:02:59 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:02:59 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:03:00 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:03:00 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:03:00 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:03:00 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:03:03 UTC] PHP Warning:  include(vdl-net/index.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/vdl-include/content.php on line 33
+[28-Aug-2012 14:03:03 UTC] PHP Warning:  include(): Failed opening 'vdl-net/index.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali-beta/vdl-include/content.php on line 33
+[28-Aug-2012 14:03:03 UTC] PHP Notice:  Undefined variable: core_n in /media/Datos/web/Vidali-beta/vdl-themes/default/nets.php on line 45
+[28-Aug-2012 14:03:03 UTC] PHP Fatal error:  Call to a member function list_nets() on a non-object in /media/Datos/web/Vidali-beta/vdl-themes/default/nets.php on line 45
+[28-Aug-2012 14:03:26 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:03:26 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:03:26 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:03:26 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:14:13 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:14:13 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:14:13 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:14:13 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:15:03 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:15:03 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:15:03 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:15:03 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:16:32 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:16:32 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:16:32 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:16:32 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:16:45 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:16:45 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:16:45 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:16:45 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:17:01 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:17:01 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:17:01 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:17:01 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:17:42 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:17:42 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:17:42 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:17:42 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:17:53 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:17:53 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:17:53 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:17:53 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:17:58 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:17:58 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:17:58 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:17:58 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:18:31 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:18:31 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:18:31 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:18:31 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:19:00 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:19:00 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:19:00 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:19:00 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:19:07 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:19:07 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:19:07 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:19:07 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:19:19 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:19:19 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:19:19 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:19:19 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:20:15 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:20:15 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:20:15 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:20:15 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:20:26 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:20:26 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:20:26 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:20:26 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 14:20:48 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 2
+[28-Aug-2012 14:20:48 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 4
+[28-Aug-2012 14:20:48 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 6
+[28-Aug-2012 14:20:48 UTC] PHP Notice:  Undefined variable: pg in /media/Datos/web/Vidali-beta/leaf/parser/page.php on line 8
+[28-Aug-2012 16:15:59 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[28-Aug-2012 16:25:25 UTC] PHP Warning:  include(vdl-net/index.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/vdl-include/content.php on line 33
+[28-Aug-2012 16:25:25 UTC] PHP Warning:  include(): Failed opening 'vdl-net/index.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali-beta/vdl-include/content.php on line 33
+[28-Aug-2012 16:25:25 UTC] PHP Notice:  Undefined variable: core_n in /media/Datos/web/Vidali-beta/vdl-themes/default/nets.php on line 45
+[28-Aug-2012 16:25:25 UTC] PHP Fatal error:  Call to a member function list_nets() on a non-object in /media/Datos/web/Vidali-beta/vdl-themes/default/nets.php on line 45
+[28-Aug-2012 16:30:47 UTC] PHP Warning:  include(vdl-net/index.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/vdl-include/content.php on line 33
+[28-Aug-2012 16:30:47 UTC] PHP Warning:  include(): Failed opening 'vdl-net/index.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali-beta/vdl-include/content.php on line 33
+[28-Aug-2012 16:30:47 UTC] PHP Notice:  Undefined variable: core_n in /media/Datos/web/Vidali-beta/vdl-themes/default/nets.php on line 45
+[28-Aug-2012 16:30:47 UTC] PHP Fatal error:  Call to a member function list_nets() on a non-object in /media/Datos/web/Vidali-beta/vdl-themes/default/nets.php on line 45
+[01-Sep-2012 01:29:44 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 10:19:10 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 11:19:12 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 11:33:22 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 28
+[01-Sep-2012 11:33:22 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 29
+[01-Sep-2012 11:33:22 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 30
+[01-Sep-2012 11:33:22 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 31
+[01-Sep-2012 11:36:46 UTC] PHP Parse error:  syntax error, unexpected '}' in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 110
+[01-Sep-2012 11:37:43 UTC] PHP Parse error:  syntax error, unexpected '}' in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 110
+[01-Sep-2012 11:44:24 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 29
+[01-Sep-2012 11:44:24 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 30
+[01-Sep-2012 11:44:24 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 31
+[01-Sep-2012 11:44:24 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 32
+[01-Sep-2012 11:44:28 UTC] PHP Warning:  include(vdl-net/index.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/vdl-include/content.php on line 33
+[01-Sep-2012 11:44:28 UTC] PHP Warning:  include(): Failed opening 'vdl-net/index.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali-beta/vdl-include/content.php on line 33
+[01-Sep-2012 11:44:28 UTC] PHP Notice:  Undefined variable: core_n in /media/Datos/web/Vidali-beta/vdl-themes/default/nets.php on line 45
+[01-Sep-2012 11:44:28 UTC] PHP Fatal error:  Call to a member function list_nets() on a non-object in /media/Datos/web/Vidali-beta/vdl-themes/default/nets.php on line 45
+[01-Sep-2012 11:44:30 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 29
+[01-Sep-2012 11:44:30 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 30
+[01-Sep-2012 11:44:30 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 31
+[01-Sep-2012 11:44:30 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 32
+[01-Sep-2012 11:49:34 UTC] PHP Notice:  Undefined variable: frs in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 26
+[01-Sep-2012 11:49:34 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 11:49:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 11:51:44 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 11:51:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 11:58:09 UTC] PHP Warning:  include(vdl-net/index.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali-beta/vdl-include/content.php on line 33
+[01-Sep-2012 11:58:09 UTC] PHP Warning:  include(): Failed opening 'vdl-net/index.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali-beta/vdl-include/content.php on line 33
+[01-Sep-2012 11:58:09 UTC] PHP Notice:  Undefined variable: core_n in /media/Datos/web/Vidali-beta/vdl-themes/default/nets.php on line 45
+[01-Sep-2012 11:58:09 UTC] PHP Fatal error:  Call to a member function list_nets() on a non-object in /media/Datos/web/Vidali-beta/vdl-themes/default/nets.php on line 45
+[01-Sep-2012 11:58:11 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 11:58:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 11:58:12 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 29
+[01-Sep-2012 11:58:12 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 30
+[01-Sep-2012 11:58:12 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 31
+[01-Sep-2012 11:58:12 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 32
+[01-Sep-2012 11:58:17 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 11:58:17 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 13:31:17 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 13:31:17 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 13:31:17 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 13:35:37 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 13:35:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali-beta/vdl-actions/index.php on line 32
+[01-Sep-2012 13:36:00 UTC] PHP Notice:  Undefined variable: id in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_profile.class.php on line 107
+[01-Sep-2012 13:36:00 UTC] PHP Notice:  Undefined variable: id in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_profile.class.php on line 107
+[01-Sep-2012 15:11:23 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:12:17 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:32:22 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:32:32 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:32:37 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:33:04 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:33:08 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:33:20 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:41:12 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:44:06 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:44:13 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:44:46 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:44:46 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:44:58 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:45:32 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:45:32 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:45:34 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:45:34 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:46:45 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:46:45 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:49:06 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 15:50:07 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali-beta/vdl-include/vdl-core/core_security.class.php on line 54
+[01-Sep-2012 16:11:00 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 29
+[01-Sep-2012 16:11:00 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 30
+[01-Sep-2012 16:11:00 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 31
+[01-Sep-2012 16:11:00 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 32
+[01-Sep-2012 16:11:19 UTC] PHP Notice:  Undefined variable: prof in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[01-Sep-2012 16:11:19 UTC] PHP Fatal error:  Call to a member function get_notify() on a non-object in /media/Datos/web/Vidali-beta/vdl-actions/notify.php on line 17
+[01-Sep-2012 16:11:26 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 29
+[01-Sep-2012 16:11:26 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 30
+[01-Sep-2012 16:11:26 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 31
+[01-Sep-2012 16:11:26 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 32
+[01-Sep-2012 16:11:32 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 29
+[01-Sep-2012 16:11:32 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 30
+[01-Sep-2012 16:11:32 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 31
+[01-Sep-2012 16:11:32 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 32

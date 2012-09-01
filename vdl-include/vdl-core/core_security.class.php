@@ -83,8 +83,8 @@ class CORE_SECURITY extends CORE_MAIN{
 			$_SESSION["mail"]=$array["email"];
 			$_SESSION['loged'] = 1;
 			if ($_REM == 1){
-				setcookie ('nick_c', $usr, time() + (86400 *  365), "/vdl");
-				setcookie ('pass_c', $pwd, time() + (86400 *  365), "/vdl");
+				setcookie ('nick_c', $usr, time() + (86400 *  365),'/');
+				setcookie ('pass_c', $pwd, time() + (86400 *  365),'/');
 			}
 			return true;
 		}

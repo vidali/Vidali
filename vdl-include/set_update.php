@@ -27,10 +27,10 @@ session_start();
 	$message = $SEC->clear_text($_POST['update']);
 	$message =  nl2br ($message);
 	if(strlen($message)==0){
-		header("Location:".$_SERVER['HTTP_REFERER']);
+		header("Location:".$_SERVER['HTTP_REFERER']."?alert=false");
 	}
 	else{
-		$core->update($_POST['sender'],$message,session_id());
-		header("Location:".$_SERVER['HTTP_REFERER']);
+		$core->update($_SESSION['nick'],$message,session_id());
+		header("Location:".$_SERVER['HTTP_REFERER']."?alert=true");
 	}
 ?>

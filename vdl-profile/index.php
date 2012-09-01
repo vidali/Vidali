@@ -26,7 +26,10 @@ $website = $prof->site();
 $name = $prof->name();
 $nickname = $prof->nickname();
 $location = $prof->location();
-$genre = $prof->sex();
+if($prof->sex() == "male")
+	$genre = "Hombre";
+else
+	$genre = "Mujer";
 $bday = $prof->bday();
 $age = $prof->age();
 $bio = $prof->bio();

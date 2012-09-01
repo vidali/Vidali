@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `vdl_event` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 CREATE TABLE IF NOT EXISTS `vdl_file` (
   `id` varchar(50) COLLATE utf8_bin NOT NULL,
-  `id_msg` int(11) NOT NULL,
+  `id_msg` int(11) NULL,
   `name` varchar(45) COLLATE utf8_bin NOT NULL,
   `type` set('image','audio','video','other') COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`),

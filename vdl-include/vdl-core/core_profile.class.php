@@ -101,6 +101,36 @@ class CORE_PROFILE extends CORE_USER{
 		}
 	}
 	
+	public function get_friends($_user){
+		$connection = parent::connect();
+		$query = sprintf("SELECT vdl_user.id FROM vdl_user WHERE vdl_user.nick='%s'", $_user);
+		$result=mysql_query($query,$connection);
+		$id = mysql_fetch_assoc($result);
+		$a_result2 = array();
+		$query = "SELECT * FROM vdl_friend_of WHERE (user1='".$id["id"]."' OR user2='".$id["id"]."') LIMIT 0,10";
+		$result = mysql_query($query,$connection);
+		if (!$result) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message =  $message . ' Whole query: ' . $query;
+			die($message);
+		}
+		while ($row = mysql_fetch_assoc($result)){
+			if($row["status"] != 0){
+				if($row["user1"]==$id["id"]){
+					$query = "SELECT nick,avatar_id,email FROM vdl_user WHERE id='".$row["user2"]."'";
+					$result2 = mysql_query($query,$connection);	
+				}
+				else{
+					$query = "SELECT nick,avatar_id,email FROM vdl_user WHERE id='".$row["user1"]."'";
+					$result2 = mysql_query($query,$connection);	
+				}
+				while($row2 = mysql_fetch_assoc($result2))
+				array_push($a_result2,$row2);
+			}
+		}
+		return $a_result2;
+	}
+	
 	public function get_profile($_user,$_refer){
 		$connection = parent::connect();
 		$a_result1 = parent::get_user($_user, $_refer);
@@ -118,13 +148,6 @@ class CORE_PROFILE extends CORE_USER{
 			}
 		}
 		$a_result2 = array();
-		//consulta chachi aki, join para users y status
-/*		$query = "SELECT b.nick,c.nick,b.avatar_id,c.avatar_id,status
-						  FROM vdl_friend_of a
-						  JOIN vdl_user b ON b.id = a.user1
-						  JOIN vdl_user c ON c.id = a.user2
-						  WHERE (a.user1='".$id["id"]."' OR a.user2='".$id["id"]."')
-						  LIMIT 0 , 30";*/
 		$query = "SELECT * FROM vdl_friend_of WHERE (user1='".$id["id"]."' OR user2='".$id["id"]."') LIMIT 0,10";
 		$result = mysql_query($query,$connection);
 		if (!$result) {

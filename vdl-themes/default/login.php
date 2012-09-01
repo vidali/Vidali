@@ -1,191 +1,110 @@
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<html id="todo" xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>
-	<?php echo TITLE; ?>
-	</title>
-	<script src="js/jquery.js"></script>
-	<link rel="stylesheet" type="text/css" media="all" href="style/grid/code/css/960.css" />
-	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/login.less" />
-	<script type="text/javascript" src="js/less.js"></script>
-<style>
-#fondo{
-	position:absolute;
-	top:0px;
-	left:0px;
-	width:100%;
-	height:100%;
-	background-color: #fff;
-  	display:none;
-}
-#carga_vidali{
-	position:fixed;
-	width:268px;
-	height:200px;
-	left:50%;
-	top:50%;
-	margin-left:-134px;
-	margin-top:-200px;
-	display:none;
-}
-</style>
-<script>
-$(document).ready(function()
-{
-	$("#send").click(function () 
-	{
-		$("#fondo").fadeIn(1000);
-		$("#footer").fadeOut(1000, function () 
-		{
-			$("#carga_vidali").fadeIn(100, function () 
-			{
-				xmlhttp=new XMLHttpRequest();
-				xmlhttp.onreadystatechange=function()
-				  {
-				  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-				    {
-				    if(xmlhttp.responseText == 1)
-				    {
-				    	$("#carga_vidali").fadeOut(500, function () 
-				    			{window.location='index.php?pg=home&n=!all';});
-				    }
-				    else
-				    {
-				    	$("#carga_vidali").fadeOut(500, function () 
-				    			{window.location='index.php?alert=loginf';});
-				    }
-				    
-				    }
-				  }
-				xmlhttp.open("POST","vdl-includes/session_start.php",true);
-				xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=ISO-8859-1');
-				xmlhttp.send("user="+document.getElementById('user').value+"&passwd="+document.getElementById('passwd').value+"&remember="+$('#remember').attr('checked'));
-	        });
-        });
-	});
-}); 
-</script>
+	<title>Vidali</title>
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+	<link rel="shortcut icon" href="vdl-themes/default/img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/bootstrap-responsive.css" />
+	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/style.css" />
+	<script type="text/javascript" src="vdl-themes/default/js/jquery.js" ></script>
+	<script type="text/javascript" src="vdl-themes/default/js/bootstrap.js" ></script>
+	<script type="text/javascript" src="vdl-themes/default/js/bootstrap-dropdown.js" ></script>
+	<link rel="stylesheet" href="vdl-themes/default/js/jquery-ui.css" id="theme" />
+	<script type="text/javascript" src="vdl-themes/default/js/less.js"></script>
+	<script type="text/javascript" src="vdl-themes/default/js/script_default.js"></script>
 </head>
-<body>
-<div id="fondo"></div>
-<div id="carga_vidali">
-<img src="vdl-media/vdl-images/logo_big_i.png">
-<p align="center"><img src="vdl-media/vdl-images/loading.gif"></p>
-</div>
-<header>
-<div id="line">
-	<div class="container_16">
-		<div id="logo" class="grid_6">
-			<img src="vdl-media/vdl-images/logo_big.png">
-			<ul id="links">
-				<li>
-					<a href="http://vdli.wordpress.com" >Blog</a>
-				</li>
-				<li>
-					<a href="http://github.com/vidali/Vidali" >Github</a>
-				</li>
-				<li>
-					<a href="http://github.com/vidali/Vidali/wiki" >Wiki</a>
-				</li>
-				<li>
-					<a href="http://www.twitter.com/VidaliSN" >@VidaliSN</a>
-				</li>
-			</ul>
-			<div class="clear"></div>
-		</div>
-		<div class="grid_10">
-			<form id="login-form" action="vdl-includes/session_start.php" method="post">
-				<ul>
-					<li>
-						<input id ="user" name="user" type="text" placeholder="Nombre de Usuario" />
+ <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+			<div class="span2"><a class="brand" href="#"><img src="img/logo.png"></a></div>
+			<div class="pull-right">
+				<ul class="nav pull-right">
+					<li><a href="./register">Registrate</a></li>
+					<li class="divider-vertical"></li>
+					<li class="drop down">
+						<a class="dropdown-toggle" href="#" data-toggle="dropdown">Iniciar Sesion <strong class="caret"></strong></a>
+						<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+<!--
+							<form id="form_login" method="post" name="vdl-login" onsubmit="doLogin(); return false;">
+-->
+							<form method="post" action="/Vidali-beta/vdl-include/session_start.php">
+								<input id="user" name="user" class="input" type="text" placeholder="Email" autofocus="autofocus">
+								<input id="password" name="password" class="input" type="password" placeholder="Contrase&ntilde;a">
+								<label class="string optional" for="user_remember_me">
+									<input type="checkbox" id="remember" name="remember" value="1"> Recordar mi sesión
+								</label>
+								<label class="string optional" for="forgotten_password">
+									<a href="#"> He olvidado mi contraseña</a>
+								</label>
+								<button class="btn btn-large btn-success" style="clear: left; width: 100%; height: 32px; font-size: 13px;" value="ok" type="submit">Iniciar sesi&oacute;n</button>
+							</form>
+						</div>
 					</li>
-					<li>
-						<input id ="passwd" name="passwd" type="password" placeholder="Password" />
-					</li>
-					<li>
-						<input id = "send" type="button" name="send" value="Iniciar sesion">
-					</li>
-					<li>
-						<input id="remember" name="remember" type="checkbox" value="1"><label class="sub">Recordarme</label>
-					</li>
-					<li>
-						<label class="sub">He perdido mi Password</label>
-					</li>
-					<div class="clear"></div>
 				</ul>
-			</form>
-		</div>
-		<div class="grid_10">
-			<p>Registro cerrado,inf&oacutermate desde nuestros sitios para pr&oacuteximas invitaciones.</p>
-		</div>	
-	</div>
-</div>
-</header>
-<section id="line-cont">
-	<div id="info" class="container_16">
-		<div class="grid_4 prefix_1">
-			<h1>&iquest;Que es Vidali?</h1>
-			<p>Vidali es una Red social Libre licenciada bajo la AGPLv3, 
-			en la que puedes compartir tus fotos, enlaces, videos, musica y archivos con tus amigos, 
-			con total libertad de ser el propietario de tus datos. Sabras en todo momento que tus datos no se usan para otros fines 
-			y que podras eliminarlos con total facilidad!</p>
-		</div>
-		<div class="grid_10 prefix_1">
-			<div class="grid_2 omega">
-				<img src="vdl-media/vdl-images/world.png" >
 			</div>
-			<div class="grid_6 alpha">
-				<h2>Comparte:</h2>
-				<p>Con tus amigos y tus grupos lo que quieras!</p>
-			</div>
-		</div>
-		<div class="grid_10 prefix_1">
-			<div class="grid_2 omega">
-				<img src="vdl-media/vdl-images/users.png" >
-			</div>
-			<div class="grid_6 alpha">
-				<h2>Comunicate:</h2>
-				<p>Conoce gente con gustos afines, o simplemente manten conversaciones entre grupos!</p>
-			</div>
-		</div>
-		<div class="grid_10 prefix_1">
-			<div class="grid_2 omega">
-				<img src="vdl-media/vdl-images/www.png" >
-			</div>
-			<div class="grid_6 alpha">
-				<h2>Control:</h2>
-				<p> Sabras en todo momento quien, donde y como ven tu informacion, ademas de poder aplicar filtros
-				para mejorar tu privacidad.</p>
-			</div>
-		</div>
-	</div>
-	<?php if(isset($_GET["alert"])){?>
-	<div id="info" class="container_16">
-		<div id="alert-area" class="grid_16">
-				Bienvenido a Vidali, por favor, inicia sesion para continuar.
-		</div>
-	</div>
-	<?php }?>
-</section>
+			<ul class="nav pull-right">
+				<li><a href="http://vdli.wordpress.com/">Blog</a></li>
+				<li><a href="https://github.com/vidali/Vidali/wiki">Wiki</a></li>
+				<li><a href="https://github.com/vidali/Vidali">Github</a></li>
+				<li><a href="http://twitter.com/VidaliSN">Twitter</a></li>
+			</ul>
+        </div>
+      </div>
+    </div>
 
-<footer id="footer">
-	<div id="line-footer">
-			<div class="container_16">
-				<div id="about" class="grid_3 suffix_3">
-					Powered by Vidali.
+	<div id="container" class="container">
+		<div id="fondoC" class="hero-unit">
+			<div class="row">
+				<div class="span16">
+						<div id="alert" style="display:none;">
+							<strong>&iexcl;Error!</strong> <span></span>
+						</div>
+						<img src="img/skyline.jpg">
 				</div>
-			<?php /*	<div id="reg_button" class="grid_3">
-					<a href="register.php"><h1>Regístrate</h1></a>
-				</div>*/ ?>
-				<div class="grid_3 prefix_6">
-					<img src="vdl-media/vdl-images/agpl.png">
-					<img src="vdl-media/vdl-images/html5.png">
+				<div class="span16">
+					<div class="span3 offset1">
+						<h2><img src="img/world.png"> Comparte</h2>
+						Multimedia, historias, noticias, etc.
+					</div>
+					<div class="span3">
+						<h2><img src="img/users.png"> Comun&iacute;cate</h2>
+						Con tus amigos, grupos. Crea tus propias redes.
+					</div>
+					<div class="span3">
+						<h2><img src="img/www.png"> Control</h2>
+						M&aacute;s privacidad, m&aacute;s comodidad.
+					</div>
+				</div>
+				<div class="span15 offset1">
+					<h2>¿Vidali?</h2>
+					Una nueva red distribu&iacute;da con la que compartir contenidos con gente  
+					que comparte gustos y aficiones. Tu eres el due&ntilde;o de tus datos, &iexcl;usalos como quieras!
 				</div>
 			</div>
+		</div>
 	</div>
-	<div class="clear"></div>
-</footer>
 
-</body>
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><img src="img/html5.png"><img src="img/agpl.png"></p>
+        <p>Powered by Vidali.</p>
+      </div>
+    </footer>
+
+	<div id="background">
+		<div id="loading">
+				<img src="img/logo_black.png" width="100%">
+				<img src="img/loading.gif">
+		</div>
+	</div>
+
+  </body>
 </html>

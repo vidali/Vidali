@@ -1,15 +1,9 @@
 <!DOCTYPE HTML>
-<html id="todo" xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<title>
-	<?php
-	$pg = '';
-	if (!isset($_GET['pg']))
-		echo TITLE; 
-	else
-		echo "Vidali";
-	?>
+		Vidali
 	</title>
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -19,20 +13,20 @@
 
     <!-- Le styles -->
  
-	<link rel="shortcut icon" href="vdl-themes/default/img/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/bootstrap-responsive.css" />
-	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/style.css" />
-	<script type="text/javascript" src="vdl-themes/default/js/jquery.js" ></script>
-	<script type="text/javascript" src="vdl-themes/default/js/bootstrap.js" ></script>
-	<script type="text/javascript" src="vdl-themes/default/js/bootstrap-dropdown.js" ></script>
-	<script type="text/javascript" src="vdl-themes/default/js/bootstrap-modal.js" ></script>
-	<script type="text/javascript" src="vdl-themes/default/js/script_default.js" ></script>
-	<link rel="stylesheet" href="vdl-themes/default/js/jquery-ui.css" id="theme" />
-	<link rel="stylesheet" type="text/less" href="vdl-themes/default/css/head.less" />	
-	<link rel="stylesheet" type="text/less" href="vdl-themes/default/css/static.less" />	
-	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/prof.less" />
-	<script type="text/javascript" src="vdl-themes/default/js/less.js"></script>
+	<link rel="shortcut icon" href="/Vidali-beta/vdl-themes/default/img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="/Vidali-beta/vdl-themes/default/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="/Vidali-beta/vdl-themes/default/css/bootstrap-responsive.css" />
+	<link rel="stylesheet" type="text/css" href="/Vidali-beta/vdl-themes/default/css/style.css" />
+	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/jquery.js" ></script>
+	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/bootstrap.js" ></script>
+	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/bootstrap-dropdown.js" ></script>
+	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/bootstrap-modal.js" ></script>
+	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/script_default.js" ></script>
+	<link rel="stylesheet" href="/Vidali-beta/vdl-themes/default/js/jquery-ui.css" id="theme" />
+	<link rel="stylesheet" type="text/less" href="/Vidali-beta/vdl-themes/default/css/head.less" />	
+	<link rel="stylesheet" type="text/less" href="/Vidali-beta/vdl-themes/default/css/static.less" />	
+	<link rel="stylesheet/less" type="text/css" href="/Vidali-beta/vdl-themes/default/css/prof.less" />
+	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/less.js"></script>
     
 <!--
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/home.less" />
@@ -46,87 +40,93 @@
 -->
 </head>
 <body>
-
 <header class="navbar">
 	<div class="navbar-inner">
 		<div class="container-fluid">
 			<div class="row">
-				<div id="tittle" class="span4">
-					<a class="brand" href="index.php"><img src="vdl-themes/default/img/logo.png" border="0"></a>
+				<div id="tittle" class="span8 offset2">
+					<a class="brand" href="/Vidali-beta"><img src="img/logo.png" border="0"></a>
 				</div>
-				<div class="pull-right">
-					<ul class="nav">
-						<?php $pg=""; if(isset($_GET['pg'])) $pg=$_GET['pg']; ?>
-						<?php if($pg == "") 
-							echo '<li class="active">';
-						else
-							echo '<li>';?>
-							<a href="index.php"><img src="vdl-themes/default/img/home.png"></a></li>
-						<?php if($pg == "p")
-							echo '<li class="active">';
-							else
-							echo '<li>';?>
-							<a href="?pg=p&@=<?php echo $_SESSION["nick"] ?>"><img src="vdl-themes/default/img/profile.png"></a></li>
-						<?php if($pg == "g")
-							echo '<li class="active">';
-							else
-							echo '<li>';?>
-							<a href="?pg=g"><img src="vdl-themes/default/img/groups.png"></a></li>
-						<?php if( $pg == "media") 
-							echo '<li class="active">';
-						else
-							echo '<li>';?>
-							<a href="?pg=media"><img src="vdl-themes/default/img/files.png"></a></li>
-							<li>
-								<?php echo'<a href="vdl-include/log.php?func=logout" title="'.M_LOU.'"><img src="vdl-themes/default/img/lock.png"></a>';?>
-							</li>
-					</ul>
+				<div id="menu" class="span2">
+					<a href="/Vidali-beta/?action=logout" title="logout"><img src="img/lock.png"></a>
 				</div>
-
 			</div>
 		</div>
 	</div>
 </header>
 
-<?php include("vdl-include/content.php"); ?>
+	<div id="nav" class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav row">
+      <li class="active span2 offset1"><a href="/Vidali-beta"><i class="icon-home"></i> Home</a></li>
+      <li class="span2"><a href="/Vidali-beta"><i class="icon-envelope"></i> Mensajes</a></li>
+      <li class="span2"><a href="/Vidali-beta/?pg=g"><i class="icon-globe"></i> Grupos</a></li>
+      <li class="span2"><a href="/Vidali-beta/?pg=n"><i class="icon-folder-open"></i> Archivos</a></li>
+      <li class="span2"><a href="/Vidali-beta/"><i class="icon-wrench"></i> Ajustes</a></li>
+    </ul>
+  </div>
+</div>
+{{CONTENT}}
 
 <div id="din" class="container-fluid">
 	<div class="row-fluid">
 		<aside class="span3">
 			<div class="well sidebar">
-				<?php		require_once("vdl-actions/index.php"); ?>
+				{{ACTIONS}}
 			</div>
 		</aside>
 		<div class="span6">
 			<div class="hero-unit">
-				<?php 
-				if($pg == "")
-					include("vdl-themes/default/home.php");
-				if($pg == "p")
-					include("vdl-themes/default/prof.php");
-				if($pg == "g")
-					include("vdl-themes/default/groups.php");
-				if($pg == "n")
-					include("vdl-themes/default/nets.php");
-				?>
+				{{PAGE}}
 			</div>
 		</div>
 		<aside class="span3">
 			<div class="well sidebar">
 				Noticias:<br>
-					<?php include("vdl-actions/notify.php"); ?>
+					{{NOTIFY}}
 			</div>
 		</aside>
 	</div>
-		<?php include_once("footer.php");?>
+</div>
+		
+	<footer class="footer">
+		<div class="container">
+			<p class="pull-right"><img src="img/html5.png"><img src="img/agpl.png"></p>
+			<p>Powered by Vidali.</p>
+		</div>
+	</footer>
+
+<div id="feedbar">
+<div id="din" class="container-fluid">
+	<div class="row-fluid">
+		<aside class="span3">
+			<div id="invisible" class="well sidebar">
+				{{CARD}}
+			</div>
+		</aside>
+		<div class="span6">
+			<form class="form-inline row" action="/Vidali-beta/vdl-include/set_update.php" method="post">
+				<textarea id="update" name="update" class="span12" rows="2" placeholder="Actualiza tu estado"></textarea>
+				<button class="btn btn-inverse"><i class="icon-star icon-white"></i></button>
+				<button class="btn btn-inverse"><i class="icon-map-marker icon-white"></i></button>
+				<button class="btn btn-inverse"><i class="icon-upload icon-white"></i></button>
+				<button type="submit" class="btn btn-primary pull-right"><i class="icon-ok icon-white"></i></button>
+			</form>
+		</div>
+		<aside class="span3">
+			<div id="invisible" class="well sidebar">
+				<button class="btn btn-inverse"><i class="icon-book icon-white"></i></button>
+				<button class="btn btn-inverse"><i class="icon-picture icon-white"></i></button>
+				<button class="btn btn-inverse"><i class="icon-picture icon-white"></i></button>
+				<button class="btn btn-inverse"><i class="icon-picture icon-white"></i></button>
+				<button class="btn btn-inverse"><i class="icon-picture icon-white"></i></button>
+				<button class="btn btn-inverse"><i class="icon-plus icon-white"></i></button>
+			</div>
+		</aside>
+	</div>
+</div>
 </div>
 
-
-
-
-<?php 
-	include_once("staticbar.php");
-?>
 <script type="text/javascript">
 reformal_wdg_domain    = "vidali";
 reformal_wdg_mode    = 0;

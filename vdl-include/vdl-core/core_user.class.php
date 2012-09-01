@@ -214,6 +214,7 @@ class CORE_USER extends CORE_MAIN{
 									vdl_user.name,
 									vdl_user.location,
 									vdl_user.sex,
+									vdl_user.age,
 									vdl_user.birthdate,
 									vdl_user.description,
 									vdl_user.email,
@@ -233,6 +234,7 @@ class CORE_USER extends CORE_MAIN{
 			$this->s_name($row["name"]);
 			$this->s_location($row["location"]);
 			$this->s_sex($row["sex"]);
+			$this->s_age($row["age"]);
 			$this->s_bday($row["birthdate"]);
 			$this->s_bio($row["description"]);
 			$this->s_email($row["email"]);

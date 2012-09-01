@@ -21,5 +21,6 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 	$p_friends = $prof->prof_friends();
 	$p_nets = $prof->prof_nets();
 	$photo = $prof->img_prof();
+	$friends = $prof->get_friends($_SESSION["nick"]);
 	$home_upd = $prof->get_home_wall($_SESSION["nick"]);
 ?>

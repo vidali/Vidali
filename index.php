@@ -1,13 +1,6 @@
 <?php
-//~ echo dirname(__file__);
 
-//~ if(file_exists($inc = dirname(__file__).'/dir/include.php'))
- //~ inlclude($inc); // evita el @ para un error_reporting mas flexible
-//~ else
-//~ echo 'Falta la inclusión';
- 
 //Comprobar si no esta instalado y cargar elementos base
-ini_set('mssql.charset', 'UTF-8');
 if(!file_exists("vdl-include/vdl-core/db.ini")){
 	header("location: install/index.php"); 
 	}
@@ -15,48 +8,29 @@ if(!isset($_GET['action']))
 	$action=null;
 else
 	$action=$_GET['action'];
-
-include_once 'vdl-include/vdl-core/core_main.class.php';
-include_once 'vdl-include/vdl-core/core_security.class.php';
-
-$SEC = new CORE_SECURITY();
-$SEC->clear_url_nav(); //Limpiamos la URL
-
-$MAIN = new CORE_MAIN();
-$MAIN->load();
-//Cargamos las funciones de complementos
-
-//Cargamos el idioma
-$MAIN->load_lang();
-//detectamos compatibilidad html5 en el navegador
-$MAIN->get_interface();
-
-
-//Comprobar si no hay sesion iniciada
-$loged = 0;
-$visitor = " ";
+if($action == "logout")
+	include_once("vdl-include/log.php");
 if(isset($_COOKIE['pass_c'])){
-	$SEC->login($_COOKIE['nick_c'],$_COOKIE['pass_c'],2);
-}
-else{
-	session_start();
-}
-if(isset($_SESSION['loged'])){
-	$loged = $_SESSION['loged'];
-	$visitor = $_SESSION['nick'];
-	include_once 'vdl-include/vdl-core/core_profile.class.php';
-	include_once 'vdl-include/vdl-core/core_groups.class.php';
+	define("PASS_C",$_COOKIE['pass_c']);
+	define("NICK_C",$_COOKIE['nick_c']);	
 }
 
-if($loged){
-	include_once("vdl-themes/".THEME."/index.php");	
-}
-else{
-	if($action == 'register'){
-		include_once("vdl-themes/".THEME."/register.php");		
-	}
-	else{
-		include_once("vdl-themes/".THEME."/index.html");
-	}
-}
+//Cargamos el nucleo de leafwork
+include_once 'leaf/run.php';
+
+
+//~ $temp_var['BASEDIR'] = BASEDIR;
+//~ echo lw('tpl')->parse( 'index:basevalues' , $temp_var );
+//~ if($loged){
+	//~ include_once("./vdl-themes/".THEME."/index.php");	
+//~ }
+//~ else{
+	//~ if($action == 'register'){
+		//~ include_once("./vdl-themes/".THEME."/register.php");		
+	//~ }
+	//~ else{
+		//~ include_once("./vdl-themes/".THEME."/index.html");
+	//~ }
+//~ }
+	//lw('html')->init();
 ?>
