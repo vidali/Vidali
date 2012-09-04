@@ -26,9 +26,11 @@ foreach ($_POST as $id => $data){
 		$error = true;
 	}
 }
-	if($error == true)
-		header('Location:' . getenv('HTTP_REFERER') . "?empty=$aux"."$empty");
-	else{
+	if($error == true){
+		//header('Location:' . getenv('HTTP_REFERER') . "?empty=$aux"."$empty");
+		//TODO: Si no es un lio, devolver esto en JSON
+		echo $empty;
+	}else{
 		//crear el db.ini
 		$con = new mysqli($_POST["DB_DIR"], $_POST["DB_USER"], $_POST["DB_PASS"],$_POST["DB_NAME"]);
 		if (mysqli_connect_errno()) {
@@ -58,10 +60,12 @@ foreach ($_POST as $id => $data){
 			printf("Error: %s<br>", mysqli_error($con));
 		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (6, 'PRIVACY', '".$_POST["optionsRadios2"]."')"))
 			printf("Error: %s<br>", mysqli_error($con));
+		 /* TODO: Si index_bots o central_sync no estan marcados, no se envia el valor "yes" por POST  y por lo tanto deja $_POST["index_bots"] sin definir. Codigo comentado hasta que se solucione el bug para que el resto funcione.
 		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (7, 'INDEX', '".$_POST["index_bots"]."')"))
 			printf("Error: %s<br>", mysqli_error($con));
 		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (8, 'SYNC', '".$_POST["central_sync"]."')"))
 			printf("Error: %s<br>", mysqli_error($con));
+		*/
 		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (9, 'STORAGE', 'SERVER')"))
 			printf("Error: %s<br>", mysqli_error($con));
 		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (10, 'BASEDIR', 'Vidali')"))
@@ -77,7 +81,8 @@ foreach ($_POST as $id => $data){
 		
 		$result = mysql_query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (4, 'ADMIN', '$admin')",$connection);
 		*/
-		header("Location:../index.php?action=register");
+		//header("Location:../index.php?action=register");
+		echo "1";
 	}
 	mysqli_close($con);
 ?>

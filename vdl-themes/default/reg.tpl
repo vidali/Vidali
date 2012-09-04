@@ -17,7 +17,6 @@
 	<script type="text/javascript" src="vdl-themes/default/js/jquery.js" ></script>
 	<script type="text/javascript" src="vdl-themes/default/js/jquery-ui.js" ></script>
 	<script type="text/javascript" src="vdl-themes/default/js/bootstrap.js" ></script>
-	<script type="text/javascript" src="vdl-themes/default/js/bootstrap-dropdown.js" ></script>
 	<script type="text/javascript" src="vdl-themes/default/js/less.js"></script>
 	<script type="text/javascript" src="vdl-themes/default/js/script_default.js"></script>
 	<script>
@@ -154,7 +153,7 @@
 	</script>
 </head>
 <body>
-    <div class="navbar">
+    <div class="navbar navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
 			<div class="span2"><a class="brand" href="#"><img src="vdl-themes/default/img/logo.png"></a></div>

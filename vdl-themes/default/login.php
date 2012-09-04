@@ -15,19 +15,18 @@
 	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/style.css" />
 	<script type="text/javascript" src="vdl-themes/default/js/jquery.js" ></script>
 	<script type="text/javascript" src="vdl-themes/default/js/bootstrap.js" ></script>
-	<script type="text/javascript" src="vdl-themes/default/js/bootstrap-dropdown.js" ></script>
 	<link rel="stylesheet" href="vdl-themes/default/js/jquery-ui.css" id="theme" />
 	<script type="text/javascript" src="vdl-themes/default/js/less.js"></script>
 	<script type="text/javascript" src="vdl-themes/default/js/script_default.js"></script>
 </head>
  <body>
-    <div class="navbar">
+    <div class="navbar navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
 			<div class="span2"><a class="brand" href="#"><img src="img/logo.png"></a></div>
 			<div class="pull-right">
 				<ul class="nav pull-right">
-					<li><a href="./register">Registrate</a></li>
+					<li><a href="./register.html">Registrate</a></li>
 					<li class="divider-vertical"></li>
 					<li class="drop down">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown">Iniciar Sesion <strong class="caret"></strong></a>

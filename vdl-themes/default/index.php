@@ -7,11 +7,11 @@
 	</title>
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<!--[if lt IE 9]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 
-    <!-- Le styles -->
+	<!-- Le styles -->
  
 	<link rel="shortcut icon" href="/Vidali-beta/vdl-themes/default/img/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="/Vidali-beta/vdl-themes/default/css/bootstrap.css" />
@@ -19,15 +19,13 @@
 	<link rel="stylesheet" type="text/css" href="/Vidali-beta/vdl-themes/default/css/style.css" />
 	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/jquery.js" ></script>
 	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/bootstrap.js" ></script>
-	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/bootstrap-dropdown.js" ></script>
-	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/bootstrap-modal.js" ></script>
 	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/script_default.js" ></script>
 	<link rel="stylesheet" href="/Vidali-beta/vdl-themes/default/js/jquery-ui.css" id="theme" />
 	<link rel="stylesheet" type="text/less" href="/Vidali-beta/vdl-themes/default/css/head.less" />	
 	<link rel="stylesheet" type="text/less" href="/Vidali-beta/vdl-themes/default/css/static.less" />	
 	<link rel="stylesheet/less" type="text/css" href="/Vidali-beta/vdl-themes/default/css/prof.less" />
 	<script type="text/javascript" src="/Vidali-beta/vdl-themes/default/js/less.js"></script>
-    
+	
 <!--
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/home.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/default/css/net.less" />
@@ -40,7 +38,7 @@
 -->
 </head>
 <body>
-<header class="navbar">
+<header class="navbar navbar-inverse">
 	<div class="navbar-inner">
 		<div class="container-fluid">
 			<div class="row">
@@ -55,15 +53,15 @@
 	</div>
 </header>
 
-	<div id="nav" class="navbar">
+	<div id="nav" class="navbar navbar-inverse">
   <div class="navbar-inner">
-    <ul class="nav row">
-      <li class="active span2 offset1"><a href="/Vidali-beta"><i class="icon-home"></i> Home</a></li>
-      <li class="span2"><a href="/Vidali-beta"><i class="icon-envelope"></i> Mensajes</a></li>
-      <li class="span2"><a href="/Vidali-beta/?pg=g"><i class="icon-globe"></i> Grupos</a></li>
-      <li class="span2"><a href="/Vidali-beta/?pg=n"><i class="icon-folder-open"></i> Archivos</a></li>
-      <li class="span2"><a href="/Vidali-beta/"><i class="icon-wrench"></i> Ajustes</a></li>
-    </ul>
+	<ul class="nav row">
+	  <li class="active span2 offset1"><a href="/Vidali-beta"><i class="icon-home"></i> Home</a></li>
+	  <li class="span2"><a href="/Vidali-beta"><i class="icon-envelope"></i> Mensajes</a></li>
+	  <li class="span2"><a href="/Vidali-beta/?pg=g"><i class="icon-globe"></i> Grupos</a></li>
+	  <li class="span2"><a href="/Vidali-beta/?pg=n"><i class="icon-folder-open"></i> Archivos</a></li>
+	  <li class="span2"><a href="/Vidali-beta/"><i class="icon-wrench"></i> Ajustes</a></li>
+	</ul>
   </div>
 </div>
 {{CONTENT}}

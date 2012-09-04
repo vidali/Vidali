@@ -4,18 +4,17 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<title>Vidali</title>
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
+	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<![endif]-->
 
-    <!-- Le styles -->
+	<!-- Le styles -->
 	<link rel="shortcut icon" href="../vdl-themes/default/img/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="../vdl-themes/default/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="../vdl-themes/default/css/bootstrap-responsive.css" />
 	<link rel="stylesheet" type="text/css" href="../vdl-themes/default/css/style.css" />
 	<script type="text/javascript" src="../vdl-themes/default/js/jquery.js" ></script>
 	<script type="text/javascript" src="../vdl-themes/default/js/bootstrap.js" ></script>
-	<script type="text/javascript" src="../vdl-themes/default/js/bootstrap-dropdown.js" ></script>
 	<link rel="stylesheet" href="../vdl-themes/default/js/jquery-ui.css" id="theme" />
 	<script type="text/javascript" src="../vdl-themes/default/js/less.js"></script>
 	<script type="text/javascript" src="../vdl-themes/default/js/script_default.js"></script>
@@ -24,9 +23,9 @@
 	</script>
 </head>
 <body>
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
+	<div class="navbar navbar-inverse">
+	  <div class="navbar-inner">
+		<div class="container">
 			<div class="span2"><a class="brand" href="#"><img src="../vdl-themes/default/img/logo.png"></a></div>
 			<ul class="nav pull-right">
 				<li><a href="http://vdli.wordpress.com/">Blog</a></li>
@@ -34,11 +33,11 @@
 				<li><a href="https://github.com/vidali/Vidali">Github</a></li>
 				<li><a href="http://twitter.com/VidaliSN">Twitter</a></li>
 			</ul>
-        </div>
-      </div>
-    </div>
+		</div>
+	  </div>
+	</div>
 
-    <!-- Desde aki -->
+	<!-- Desde aki -->
 <section class="container-fluid">
 	<div class="row-fluid show-grid">
 		<div class="span12">
@@ -54,7 +53,7 @@
 			?>
 		</div>
 		<div class="span6">
-			<form class="form-horizontal" action="install.php" method="post">
+			<form id="installForm" class="form-horizontal" method="post" onsubmit="doInstall(); return false;">
 				<fieldset>
 					<h3> Instalador de Vidali </h3>
 						<dd><p> Bienvenido al instalador de Vidali para servidores. </p></dd>
@@ -84,7 +83,7 @@
 							<div class="control-group">
 								<label class="control-label" for="input07">Pass_BD</label>
 								<div class="controls">
-									<input name="DB_PASS" type="text" placeholder="*****" class="input-xlarge" id="BD_PASS">
+									<input name="DB_PASS" type="password" placeholder="●●●●●" class="input-xlarge" id="BD_PASS">
 									<span id="confirm7"></span>
 								</div>
 							</div>
@@ -94,36 +93,36 @@
 								<label class="control-label">Tipo de registro</label>
 								<div class="controls">
 									<label class="radio inline">
-        				                <input name="optionsRadios" id="optionsRadios1" value="public" checked="checked" type="radio">
-		        					    Público
-                                	</label>
-						            <label class="radio inline">	
-						                <input name="optionsRadios" id="optionsRadios2" value="request" type="radio">
-							            Invitación
-                                    </label>
-						            <label class="radio inline">	
-						                <input name="optionsRadios" id="optionsRadios3" value="private" type="radio">
-							            Privado
-                                    </label>
-                                </div>
+										<input name="optionsRadios" id="optionsRadios1" value="public" checked="checked" type="radio">
+										Público
+									</label>
+									<label class="radio inline">	
+										<input name="optionsRadios" id="optionsRadios2" value="request" type="radio">
+										Invitación
+									</label>
+									<label class="radio inline">	
+										<input name="optionsRadios" id="optionsRadios3" value="private" type="radio">
+										Privado
+									</label>
+								</div>
 							</div>
-                            <div class="control-group">
+							<div class="control-group">
 								<label class="control-label">Privacidad por defecto</label>
 								<div class="controls">
 									<label class="radio inline">
-        				                <input name="optionsRadios2" id="optionsRadios1" value="high" checked="checked" type="radio">
-		        					    Alta
-                                	</label>
-						            <label class="radio inline">	
-						                <input name="optionsRadios2" id="optionsRadios2" value="mid" type="radio">
-							            Media
-                                    </label>
-						            <label class="radio inline">	
-						                <input name="optionsRadios2" id="optionsRadios2" value="low" type="radio">
-							            Baja
-                                    </label>
-                                </div>
-                            </div>
+										<input name="optionsRadios2" id="optionsRadios1" value="high" checked="checked" type="radio">
+										Alta
+									</label>
+									<label class="radio inline">	
+										<input name="optionsRadios2" id="optionsRadios2" value="mid" type="radio">
+										Media
+									</label>
+									<label class="radio inline">	
+										<input name="optionsRadios2" id="optionsRadios2" value="low" type="radio">
+										Baja
+									</label>
+								</div>
+							</div>
 							<div class="control-group">
 								<label class="control-label" for="optionsCheckboxList">Indexado de buscadores</label>
 								<div class="controls">
@@ -146,19 +145,26 @@
 								<label class="control-label">Almacenamiento por defecto:</label>
 								<div class="controls">
 									<label class="radio inline">
-        				                <input name="optionsRadios3" id="optionsRadios1" value="option1" checked="checked" type="radio" disabled>
-		        					    Servidor
-                                	</label>
-						            <label class="radio inline">	
-						                <input name="optionsRadios3" id="optionsRadios2" value="option2" type="radio" disabled>
-							            Dropbox
-                                    </label>
-						            <label class="radio inline">	
-						                <input name="optionsRadios3" id="optionsRadios2" value="option2" type="radio" disabled>
-							            Google Services
-                                    </label>
-                                </div>
-                            </div>
+										<input name="optionsRadios3" id="optionsRadios1" value="option1" checked="checked" type="radio" disabled>
+										Servidor
+									</label>
+									<label class="radio inline">	
+										<input name="optionsRadios3" id="optionsRadios2" value="option2" type="radio" disabled>
+										Dropbox
+									</label>
+									<label class="radio inline">	
+										<input name="optionsRadios3" id="optionsRadios2" value="option2" type="radio" disabled>
+										Google Services
+									</label>
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<div id="alert" style="display:none;">
+									<strong>¡Error!</strong>
+									<span></span>
+								</div>
+							</div>
 							
 							<div class="form-actions">
 								<button type="submit" class="btn btn-primary">!Comenzar!</button>
@@ -187,12 +193,12 @@
 	</div>
 </section>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="pull-right"><img src="../vdl-themes/default/img/html5.png"><img src="../vdl-themes/default/img/agpl.png"></p>
-        <h6>Powered by Vidali.</h6>
-      </div>
-    </footer>
+	<footer class="footer">
+	  <div class="container">
+		<p class="pull-right"><img src="../vdl-themes/default/img/html5.png"><img src="../vdl-themes/default/img/agpl.png"></p>
+		<h6>Powered by Vidali.</h6>
+	  </div>
+	</footer>
 
 
 </body>
