@@ -16,6 +16,15 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 	if(isset($_GET['!']))
 		$stream='all';
+
+	$prof = new CORE_PROFILE(NICK,$_SESSION["nick"]);
+	$author = $prof->get_card($_SESSION["nick"]);
+	$nick = $prof->nickname();
+	$p_visits = $prof->prof_visits();
+	$p_friends = $prof->prof_friends();
+	$p_nets = $prof->prof_nets();
+	$photo = $prof->img_prof();
+
 ?>
 
 <section class="row-fluid">

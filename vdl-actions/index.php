@@ -14,14 +14,13 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
-	if(isset($_GET['!']))
-		$stream='all';
 ?>
 
 <?php
 
 //HOME
-if(!isset($_GET["pg"])){?>
+if(!isset($_GET["pg"])){
+	$p_friends = $prof->prof_friends();?>
 	<div class="pr_titles">
 		Amigos (<?php echo $p_friends; ?>)
 	</div>
@@ -43,10 +42,16 @@ if(!isset($_GET["pg"])){?>
 }
 //Mensajes
 elseif($_GET["pg"] == 'g'){
+	echo "Grupos<br>";
+	foreach($groups as $gr){
+		$link = ucwords(strtolower($gr["group_name"]));
+		echo '<h3><a href="/Vidali/?pg=g&q=%23'.$link.'">'.$gr["group_name"]."</a></h3>";
+	}
+	
 	echo "Temas Destacados<br>";
 	foreach($trending as $trend){
 		$link = ucwords(strtolower($trend["topic"]));
-		echo '<h3><a href="?pg=g&!=all&q=%23'.$link.'">'.$trend["topic"]."</a></h3>";
+		echo '<h3><a href="/Vidali/?pg=g&q=%23'.$link.'">'.$trend["topic"]."</a></h3>";
 	}
 }
 //Grupos

@@ -79,9 +79,9 @@ class CORE_SECURITY extends CORE_MAIN{
 			//Agregamos los datos basicos a la sesion y redirigimos a la p�gina principal
 			$_SESSION["id"]=$array["id"];
 			$_SESSION["nick"]=$array["nick"];
-			$_SESSION["nombre"]=$array["name"];
+			$_SESSION["name"]=$array["name"];
 			$_SESSION["mail"]=$array["email"];
-			$_SESSION['loged'] = 1;
+			$_SESSION['loged'] = true;
 			if ($_REM == 1){
 				setcookie ('nick_c', $usr, time() + (86400 *  365),'/');
 				setcookie ('pass_c', $pwd, time() + (86400 *  365),'/');

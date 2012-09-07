@@ -35,6 +35,21 @@ class CORE_GROUP extends CORE_MAIN{
 		}
 		return $arresult;
 	}
+
+	public function get_groups(){
+		$connection = parent::connect();
+		$query = "SELECT * 
+					FROM  `vdl_group` 
+					ORDER BY  `vdl_group`.`n_members` DESC 
+					LIMIT 0 , 10";
+		$data=mysql_query($query,$connection);
+		$arresult=array();
+		while ($row = mysql_fetch_array($data)) {
+			array_push($arresult,$row);
+		}
+		return $arresult;
+	}
+
 }
 
 ?>

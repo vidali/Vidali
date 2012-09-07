@@ -86,8 +86,11 @@ class CORE_PROFILE extends CORE_USER{
 	}
 	/*Public*/
 
-	public function __construct (){
-		parent::__construct();
+	public function __construct ($_USER,$_SUSER){
+		if($_USER == $_SUSER)
+			parent::__construct($_USER);
+		else
+			return false;
 	}
 
 	public function create($_user_id,$_passwd,$_nickname,$_name,$_location,$_genre,$_bday,$_email,$_bio){

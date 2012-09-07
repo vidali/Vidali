@@ -369,3 +369,114 @@
 [01-Sep-2012 16:11:32 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 30
 [01-Sep-2012 16:11:32 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 31
 [01-Sep-2012 16:11:32 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali-beta/vdl-actions/card.php on line 32
+[07-Sep-2012 10:09:43 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali/vdl-include/vdl-core/core_security.class.php on line 54
+[07-Sep-2012 10:15:11 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali/vdl-actions/card.php on line 29
+[07-Sep-2012 10:15:11 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali/vdl-actions/card.php on line 30
+[07-Sep-2012 10:15:11 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali/vdl-actions/card.php on line 31
+[07-Sep-2012 10:15:11 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali/vdl-actions/card.php on line 32
+[07-Sep-2012 10:15:16 UTC] PHP Notice:  Undefined variable: nick in /media/Datos/web/Vidali/vdl-actions/card.php on line 29
+[07-Sep-2012 10:15:16 UTC] PHP Notice:  Undefined variable: p_visits in /media/Datos/web/Vidali/vdl-actions/card.php on line 30
+[07-Sep-2012 10:15:16 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali/vdl-actions/card.php on line 31
+[07-Sep-2012 10:15:16 UTC] PHP Notice:  Undefined variable: p_nets in /media/Datos/web/Vidali/vdl-actions/card.php on line 32
+[07-Sep-2012 10:18:51 UTC] PHP Warning:  include(vdl-themes/default/inbox.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali/leaf/parser/page.php on line 7
+[07-Sep-2012 10:18:51 UTC] PHP Warning:  include(): Failed opening 'vdl-themes/default/inbox.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali/leaf/parser/page.php on line 7
+[07-Sep-2012 10:18:51 UTC] PHP Notice:  Undefined variable: prof in /media/Datos/web/Vidali/vdl-actions/notify.php on line 17
+[07-Sep-2012 10:18:51 UTC] PHP Fatal error:  Call to a member function get_notify() on a non-object in /media/Datos/web/Vidali/vdl-actions/notify.php on line 17
+[07-Sep-2012 10:22:39 UTC] PHP Notice:  Undefined variable: prof in /media/Datos/web/Vidali/vdl-home/index.php on line 17
+[07-Sep-2012 10:22:39 UTC] PHP Fatal error:  Call to a member function get_friends() on a non-object in /media/Datos/web/Vidali/vdl-home/index.php on line 17
+[07-Sep-2012 10:22:42 UTC] PHP Fatal error:  Call to undefined method CORE_GROUP::get_groups() in /media/Datos/web/Vidali/vdl-groups/index.php on line 24
+[07-Sep-2012 10:22:43 UTC] PHP Notice:  Undefined variable: prof in /media/Datos/web/Vidali/vdl-home/index.php on line 17
+[07-Sep-2012 10:22:43 UTC] PHP Fatal error:  Call to a member function get_friends() on a non-object in /media/Datos/web/Vidali/vdl-home/index.php on line 17
+[07-Sep-2012 10:23:00 UTC] PHP Notice:  Use of undefined constant NICK - assumed 'NICK' in /media/Datos/web/Vidali/vdl-include/content.php on line 18
+[07-Sep-2012 10:23:00 UTC] PHP Notice:  Use of undefined constant NICK - assumed 'NICK' in /media/Datos/web/Vidali/vdl-actions/card.php on line 20
+[07-Sep-2012 10:23:00 UTC] PHP Fatal error:  Call to undefined method CORE_PROFILE::get_card() in /media/Datos/web/Vidali/vdl-actions/card.php on line 21
+[07-Sep-2012 10:23:12 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:23:12 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:23:12 UTC] PHP Fatal error:  Call to undefined method CORE_PROFILE::get_card() in /media/Datos/web/Vidali/vdl-actions/card.php on line 21
+[07-Sep-2012 10:23:34 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:23:34 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:24:20 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:24:20 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:24:41 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:24:41 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:24:41 UTC] PHP Warning:  include(vdl-themes/default/inbox.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali/leaf/parser/page.php on line 7
+[07-Sep-2012 10:24:41 UTC] PHP Warning:  include(): Failed opening 'vdl-themes/default/inbox.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali/leaf/parser/page.php on line 7
+[07-Sep-2012 10:24:42 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:24:42 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:24:42 UTC] PHP Warning:  Missing argument 1 for CORE_PROFILE::__construct(), called in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 17 and defined in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 89
+[07-Sep-2012 10:24:42 UTC] PHP Warning:  Missing argument 2 for CORE_PROFILE::__construct(), called in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 17 and defined in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 89
+[07-Sep-2012 10:24:42 UTC] PHP Notice:  Undefined variable: _SUSER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 90
+[07-Sep-2012 10:24:42 UTC] PHP Notice:  Undefined variable: _USER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 90
+[07-Sep-2012 10:24:42 UTC] PHP Notice:  Undefined variable: _USER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 91
+[07-Sep-2012 10:24:44 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:24:44 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:24:44 UTC] PHP Warning:  include(vdl-themes/default/files.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali/leaf/parser/page.php on line 11
+[07-Sep-2012 10:24:44 UTC] PHP Warning:  include(): Failed opening 'vdl-themes/default/files.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali/leaf/parser/page.php on line 11
+[07-Sep-2012 10:24:45 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:24:45 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:24:45 UTC] PHP Warning:  include(vdl-settings/index.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali/vdl-include/content.php on line 52
+[07-Sep-2012 10:24:45 UTC] PHP Warning:  include(): Failed opening 'vdl-settings/index.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali/vdl-include/content.php on line 52
+[07-Sep-2012 10:24:45 UTC] PHP Warning:  include(vdl-themes/default/settings.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali/leaf/parser/page.php on line 13
+[07-Sep-2012 10:24:45 UTC] PHP Warning:  include(): Failed opening 'vdl-themes/default/settings.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali/leaf/parser/page.php on line 13
+[07-Sep-2012 10:24:47 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:24:47 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:25:08 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:25:08 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:25:53 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:25:53 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:25:56 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:25:56 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:25:56 UTC] PHP Warning:  include(vdl-themes/default/settings.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali/leaf/parser/page.php on line 13
+[07-Sep-2012 10:25:56 UTC] PHP Warning:  include(): Failed opening 'vdl-themes/default/settings.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali/leaf/parser/page.php on line 13
+[07-Sep-2012 10:25:59 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:25:59 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:25:59 UTC] PHP Warning:  include(vdl-themes/default/files.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali/leaf/parser/page.php on line 11
+[07-Sep-2012 10:25:59 UTC] PHP Warning:  include(): Failed opening 'vdl-themes/default/files.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali/leaf/parser/page.php on line 11
+[07-Sep-2012 10:26:04 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:26:04 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:26:04 UTC] PHP Warning:  Missing argument 1 for CORE_PROFILE::__construct(), called in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 17 and defined in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 89
+[07-Sep-2012 10:26:04 UTC] PHP Warning:  Missing argument 2 for CORE_PROFILE::__construct(), called in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 17 and defined in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 89
+[07-Sep-2012 10:26:04 UTC] PHP Notice:  Undefined variable: _SUSER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 90
+[07-Sep-2012 10:26:04 UTC] PHP Notice:  Undefined variable: _USER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 90
+[07-Sep-2012 10:26:04 UTC] PHP Notice:  Undefined variable: _USER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 91
+[07-Sep-2012 10:26:05 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:26:05 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:26:05 UTC] PHP Warning:  include(vdl-themes/default/inbox.php): failed to open stream: No such file or directory in /media/Datos/web/Vidali/leaf/parser/page.php on line 7
+[07-Sep-2012 10:26:05 UTC] PHP Warning:  include(): Failed opening 'vdl-themes/default/inbox.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/Datos/web/Vidali/leaf/parser/page.php on line 7
+[07-Sep-2012 10:26:06 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:26:06 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:26:39 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:26:39 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:26:43 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:26:43 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:26:43 UTC] PHP Notice:  Undefined variable: home_upd in /media/Datos/web/Vidali/vdl-themes/default/inbox.php on line 25
+[07-Sep-2012 10:26:43 UTC] PHP Notice:  Undefined variable: home_upd in /media/Datos/web/Vidali/vdl-themes/default/inbox.php on line 31
+[07-Sep-2012 10:26:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-themes/default/inbox.php on line 31
+[07-Sep-2012 10:26:44 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:26:44 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:26:46 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:26:46 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:26:46 UTC] PHP Notice:  Undefined variable: home_upd in /media/Datos/web/Vidali/vdl-themes/default/files.php on line 25
+[07-Sep-2012 10:26:46 UTC] PHP Notice:  Undefined variable: home_upd in /media/Datos/web/Vidali/vdl-themes/default/files.php on line 31
+[07-Sep-2012 10:26:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-themes/default/files.php on line 31
+[07-Sep-2012 10:26:58 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:26:58 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:26:58 UTC] PHP Notice:  Undefined variable: home_upd in /media/Datos/web/Vidali/vdl-themes/default/settings.php on line 25
+[07-Sep-2012 10:26:58 UTC] PHP Notice:  Undefined variable: home_upd in /media/Datos/web/Vidali/vdl-themes/default/settings.php on line 31
+[07-Sep-2012 10:26:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-themes/default/settings.php on line 31
+[07-Sep-2012 10:27:00 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:27:00 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:31:56 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:31:56 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:32:12 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:32:12 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:33:23 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:33:23 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:33:48 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:33:48 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:34:00 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:34:00 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:37:45 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:37:45 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[07-Sep-2012 10:38:04 UTC] PHP Notice:  Undefined index: name in /media/Datos/web/Vidali/vdl-include/preload.php on line 17
+[07-Sep-2012 10:38:04 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18

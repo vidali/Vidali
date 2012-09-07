@@ -17,135 +17,126 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 class CORE_USER extends CORE_MAIN{
 	/*Private*/
-	private $_user_user_id;
-	private $_user_password;
-	private $_user_nickname;
-	private $_user_name;
-	private $_user_location;
-	private $_user_sex;
-	private $_user_bday;
-	private $_user_age;
-	private $_user_email;
-	private $_user_site;
-	private $_user_bio;
-	private $_user_img_prof;
-	private $_user_prof_visits;
-	private $_user_prof_friends;
-	private $_user_prof_nets;
-	private $_user_session_id;
-	
-	/*Protected*/
-	protected function s_password($_value){
-		$this->_user_password = $_value;
-	} 
-
-	protected function s_nickname($_value){
-		$this->_user_nickname = $_value;
-	}
-	
-	protected function s_name($_value){
-		$this->_user_name = $_value;
-	}
-	
-	protected function s_location($_value){
-		$this->_user_location = $_value;
-	}
-	
-	protected function s_sex($_value){
-		$this->_user_sex = $_value;
-	}
-	protected function s_bday($_value){
-		$this->_user_bday = $_value;
-	}
-	
-	protected function s_age($_value){
-		$this->_user_age = $_value;
-	}
-	
-	protected function s_email($_value){
-		$this->_user_email = $_value;
-	}
-	
-	protected function s_site($_value){
-		$this->_user_site = $_value;
-	}
-
-	protected function s_bio($_value){
-		$this->_user_bio = $_value;
-	}
-	
-	protected function s_img_prof($_value){
-		$this->_user_img_prof = $_value;
-	}
-
-	protected function s_prof_visits($_value){
-		$this->_user_prof_visits = $_value;
-	}
-	
-	protected function s_prof_friends($_value){
-		$this->_user_prof_friends = $_value;
-	}
-	
-	protected function s_prof_nets($_value){
-		$this->_user_prof_nets = $_value;
-	}
-	
+	private $_id;
+	private $_nickname;
+	private $_name;
+	private $_location;
+	private $_sex;
+	private $_bday;
+	private $_age;
+	private $_email;
+	private $_site;
+	private $_bio;
+	private $_img_prof;
+	private $_prof_visits;
+	private $_prof_friends;
+	private $_prof_nets;
+	private $_session_id;
+		
 	/*Public*/
-	public function __construct (){
+
+	public function __construct ($_USER){
 		parent::__construct();
+		$connection = parent::connect();
+		$user = htmlspecialchars(trim($_USER));
+		$query = sprintf("SELECT
+									vdl_user.id,
+									vdl_user.nick,
+									vdl_user.name,
+									vdl_user.location,
+									vdl_user.sex,
+									vdl_user.age,
+									vdl_user.birthdate,
+									vdl_user.description,
+									vdl_user.email,
+									vdl_user.website,
+									vdl_user.avatar_id,
+									vdl_user.n_views,
+									vdl_user.n_groups,
+									vdl_user.n_contacts
+						FROM vdl_user WHERE vdl_user.nick='%s'", $user);
+		$result=mysql_query($query,$connection);
+		if (!$result) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		while ($row = mysql_fetch_assoc($result)){
+			$this->_id = $row["id"];
+			$this->_nickname = $row["nick"];
+			$this->_name = $row["name"];
+			$this->_location = $row["location"];
+			$this->_sex = $row["sex"];
+			$this->_age = $row["age"];
+			$this->_bday = $row["birthdate"];
+			$this->_bio = $row["description"];
+			$this->_email = $row["email"];
+			$this->_site = $row["website"];
+			$this->_img_prof = $row["avatar_id"];
+			$this->_prof_nets = $row["n_groups"];
+			$this->_prof_friends = $row["n_contacts"];
+		}
+		
+		return true;
+
+	}
+
+	public function id(){
+		return $this->_id;
 	}
 
 	public function nickname(){
-		return $this->_user_nickname;
+		return $this->_nickname;
 	}
 	
 	public function name(){
-		return $this->_user_name;
+		return $this->_name;
 	}
 	
 	public function location(){
-		return $this->_user_location;
+		return $this->_location;
 	}
 
 	public function sex(){
-		return $this->_user_sex;
+		return $this->_sex;
 	}
 
 	public function bday(){
-		return $this->_user_bday;
+		return $this->_bday;
 	}
 	
 	
 	public function age(){
-		return $this->_user_age;
+		return $this->_age;
 	}
 	
 	public function email(){
-		return $this->_user_email;
+		return $this->_email;
 	}
 	
 	public function site(){
-		return $this->_user_site;
+		return $this->_site;
 	}
 	
 	public function bio(){
-		return $this->_user_bio;
+		return $this->_bio;
 	}
 	
 	public function img_prof(){
-		return $this->_user_img_prof;
+		return $this->_img_prof;
 	}
 	
 	public function prof_visits(){
-		return $this->_user_prof_visits;
+		return $this->_prof_visits;
 	}
 	
 	public function prof_friends(){
-		return $this->_user_prof_friends;
+		return $this->_prof_friends;
 	}
 	
 	public function prof_nets(){
-		return $this->_user_prof_nets;
+		return $this->_prof_nets;
 	}
 	
 	public function set_user(){
@@ -184,7 +175,7 @@ class CORE_USER extends CORE_MAIN{
 		}
 	}
 
-	public function get_home($_user){
+	public function get_card($_user){
 		$connection = parent::connect();
 		$user = htmlspecialchars(trim($_user));
 		$query = sprintf("SELECT
@@ -196,54 +187,12 @@ class CORE_USER extends CORE_MAIN{
 		FROM vdl_user WHERE vdl_user.nick='%s'", $user);
 		$result=mysql_query($query,$connection);
 		while ($row = mysql_fetch_assoc($result)){
-			$this->s_nickname($row["nick"]);
-			$this->s_img_prof($row["avatar_id"]);
-			$this->s_prof_visits($row["n_views"]);
-			$this->s_prof_friends($row["n_contacts"]);
-			$this->s_prof_nets($row["n_groups"]);
+			$this->_nickname = $row["nick"];
+			$this->_img_prof = $row["avatar_id"];
+			$this->_prof_visits = $row["n_views"];
+			$this->_prof_friends = $row["n_contacts"];
+			$this->_prof_nets = $row["n_groups"];
 		}
-		return true;
-	}
-	
-	public function get_user($_user1,$_refer){
-		$connection = parent::connect();
-		$client = htmlspecialchars(trim($_refer));
-		$user = htmlspecialchars(trim($_user1));
-		$query = sprintf("SELECT
-									vdl_user.nick,
-									vdl_user.name,
-									vdl_user.location,
-									vdl_user.sex,
-									vdl_user.age,
-									vdl_user.birthdate,
-									vdl_user.description,
-									vdl_user.email,
-									vdl_user.website,
-									vdl_user.avatar_id,
-									vdl_user.n_groups,
-									vdl_user.n_contacts
-						FROM vdl_user WHERE vdl_user.nick='%s'", $user);
-		$result=mysql_query($query,$connection);
-		if (!$result) {
-			$message  = 'Invalid query: ' . mysql_error() . "\n";
-			$message .= 'Whole query: ' . $query;
-			die($message);
-		}
-		while ($row = mysql_fetch_assoc($result)){
-			$this->s_nickname($row["nick"]);
-			$this->s_name($row["name"]);
-			$this->s_location($row["location"]);
-			$this->s_sex($row["sex"]);
-			$this->s_age($row["age"]);
-			$this->s_bday($row["birthdate"]);
-			$this->s_bio($row["description"]);
-			$this->s_email($row["email"]);
-			$this->s_site($row["website"]);
-			$this->s_img_prof($row["avatar_id"]);
-			$this->s_prof_nets($row["n_groups"]);
-			$this->s_prof_friends($row["n_contacts"]);
-		}
-		
 		return true;
 	}
 	

@@ -15,31 +15,30 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
+$prof = new CORE_PROFILE(NICK,$_SESSION["nick"]);
+
 ///===>If "pg" var is empty, redirect to MAINPG set in config.php, in other case, link to the selected page.
 if (!isset($_GET['pg'])){
     include("vdl-home/index.php");
 }
 else{
 	$pg=$_GET['pg'];
-///===>Go to Update page.
-	if ($pg == 'home')
-		include("vdl-home/index.php");
 ///===>Go to Profile page.
 	if ($pg == 'p'){
 		include("vdl-profile/index.php");
 }
-///===>Go to Networks page.
-	if ($pg == 'n'){
-		include("vdl-net/index.php");
+///===>Go to inbox page.
+	if ($pg == 'm'){
+		include("vdl-inbox/index.php");
 }
 ///===>Go to Groups page.
 	if ($pg == 'g'){
 		include("vdl-groups/index.php");
 }
-///===>Go to inbox.
-	if ($pg == 'media'){
+///===>Go to files.
+	if ($pg == 'f'){
 		if (!isset($_GET['action']))
-			include("vdl-includes/media.php");
+			include("vdl-files/index.php");
 		else{
 			$func = $_GET['action'];
 			if($func == 'setprim')
@@ -49,8 +48,8 @@ else{
 		
 	}
 ///===>Go to Configuration page.
-	if ($pg == 'conf')
-		include("vdl-includes/conf.php");
+	if ($pg == 's')
+		include("vdl-settings/index.php");
 ///===>Go to Administration page.
 	if ($pg == 'admin')
 		include("vdl-admin/index.php");

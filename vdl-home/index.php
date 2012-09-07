@@ -14,13 +14,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
-	$prof = new CORE_PROFILE();
-	$author = $prof->get_home($_SESSION["nick"]);
-	$nick = $prof->nickname();
-	$p_visits = $prof->prof_visits();
-	$p_friends = $prof->prof_friends();
-	$p_nets = $prof->prof_nets();
-	$photo = $prof->img_prof();
 	$friends = $prof->get_friends($_SESSION["nick"]);
 	$home_upd = $prof->get_home_wall($_SESSION["nick"]);
 ?>

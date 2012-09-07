@@ -12,8 +12,11 @@ $MAIN->load_lang();
 $MAIN->get_interface();
 
 if(isset($_SESSION['loged'])){
+	define("ID",$_SESSION["id"]);
+	define("NICK",$_SESSION["nick"]);
+	define("NAME",$_SESSION["name"]);
+	define("MAIL",$_SESSION["email"]);
 	define("LOGED",$_SESSION['loged']);
-	define("USER",$_SESSION['nick']);
 	lw('config')->set( 'template' , 'vdl-themes/'.THEME.'/index.php');
 }
 elseif(defined('PASS_C')){
