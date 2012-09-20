@@ -10,9 +10,8 @@
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-
+//añadir bloque {{}}
 	<!-- Le styles -->
- 
 	<link rel="shortcut icon" href="/Vidali/vdl-themes/default/img/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="/Vidali/vdl-themes/default/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="/Vidali/vdl-themes/default/css/bootstrap-responsive.css" />
@@ -25,10 +24,9 @@
 	<link rel="stylesheet" type="text/less" href="/Vidali/vdl-themes/default/css/static.less" />	
 	<link rel="stylesheet/less" type="text/css" href="/Vidali/vdl-themes/default/css/prof.less" />
 	<script type="text/javascript" src="/Vidali/vdl-themes/default/js/less.js"></script>
-
 </head>
 <body>
-<header class="navbar">
+<header class="navbar navbar-inverse ">
 	<div class="navbar-inner">
 		<div class="container-fluid">
 			<div class="row">
@@ -44,7 +42,7 @@
 </header>
 
 
-<div id="nav" class="navbar">
+<div id="nav" class="navbar navbar-static-top">
   <div class="navbar-inner">
 	  {{MENU}}
   </div>
@@ -135,6 +133,5 @@ reformal_wdg_bimage = "bea4c2c8eb82d05891ddd71584881b56.png";
 <a href="http://idea.informer.com">
 <img src="http://widget.idea.informer.com/tmpl/images/widget_logo.jpg" /></a>
 </noscript>
-
 </body>
 </html>
