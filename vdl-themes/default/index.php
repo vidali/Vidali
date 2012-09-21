@@ -10,20 +10,8 @@
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-//añadir bloque {{}}
 	<!-- Le styles -->
-	<link rel="shortcut icon" href="/Vidali/vdl-themes/default/img/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="/Vidali/vdl-themes/default/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="/Vidali/vdl-themes/default/css/bootstrap-responsive.css" />
-	<link rel="stylesheet" type="text/css" href="/Vidali/vdl-themes/default/css/style.css" />
-	<script type="text/javascript" src="/Vidali/vdl-themes/default/js/jquery.js" ></script>
-	<script type="text/javascript" src="/Vidali/vdl-themes/default/js/bootstrap.js" ></script>
-	<script type="text/javascript" src="/Vidali/vdl-themes/default/js/script_default.js" ></script>
-	<link rel="stylesheet" href="/Vidali/vdl-themes/default/js/jquery-ui.css" id="theme" />
-	<link rel="stylesheet" type="text/less" href="/Vidali/vdl-themes/default/css/head.less" />	
-	<link rel="stylesheet" type="text/less" href="/Vidali/vdl-themes/default/css/static.less" />	
-	<link rel="stylesheet/less" type="text/css" href="/Vidali/vdl-themes/default/css/prof.less" />
-	<script type="text/javascript" src="/Vidali/vdl-themes/default/js/less.js"></script>
+	{{ROUTES}}
 </head>
 <body>
 <header class="navbar navbar-inverse ">
@@ -52,20 +40,13 @@
 <div id="din" class="container-fluid">
 	<div class="row-fluid">
 		<aside class="span3">
-			<div class="well sidebar">
 				{{ACTIONS}}
-			</div>
 		</aside>
 		<div class="span6">
-			<div class="hero-unit">
 				{{PAGE}}
-			</div>
 		</div>
 		<aside class="span3">
-			<div class="well sidebar">
-				Noticias:<br>
 					{{NOTIFY}}
-			</div>
 		</aside>
 	</div>
 </div>

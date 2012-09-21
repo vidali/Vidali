@@ -23,5 +23,5 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 	setcookie ('nick_c', "", time () - 604800, "/");
 	setcookie ('pass_c', "", time () - 604800, "/");	
 	session_destroy();
-	header("location: /Vidali-beta/");
+	header("location: " . getenv('HTTP_REFERER'));
 ?>

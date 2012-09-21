@@ -15,15 +15,23 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 ?>
-
 <?php
 
 //HOME
 if(!isset($_GET["pg"])){
-	$p_friends = $prof->prof_friends();?>
-	<div class="pr_titles">
-		Amigos (<?php echo $p_friends; ?>)
-	</div>
+	$p_friends = $user->prof_friends();
+	$p_groups = $user->prof_groups();?>
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#">Amigos (<?php echo $p_friends; ?>)</a>
+  </li>
+  <li>
+    <a href="<?php echo BASEDIR ."/?see=groups"; ?>">Grupos (<?php echo $p_friends; ?>)</a>
+  </li>
+  <li>
+    <a href="#">Perfil</a>
+  </li>
+</ul>
 	<div class="basic_tb">
 		<?php 
 		if($p_friends == 0)

@@ -1,1 +1,3 @@
-ajustes :S
+<?php
+
+?>

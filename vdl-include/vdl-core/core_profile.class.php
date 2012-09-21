@@ -470,6 +470,64 @@ class CORE_PROFILE extends CORE_USER{
 		
 		return $text;
 	}
+	
+		public function id(){
+		return $this->_id;
+	}
+
+	public function nickname(){
+		return $this->_nickname;
+	}
+	
+	public function name(){
+		return $this->_name;
+	}
+	
+	public function location(){
+		return $this->_location;
+	}
+
+	public function sex(){
+		return $this->_sex;
+	}
+
+	public function bday(){
+		return $this->_bday;
+	}
+	
+	
+	public function age(){
+		return $this->_age;
+	}
+	
+	public function email(){
+		return $this->_email;
+	}
+	
+	public function site(){
+		return $this->_site;
+	}
+	
+	public function bio(){
+		return $this->_bio;
+	}
+	
+	public function img_prof(){
+		return $this->_img_prof;
+	}
+	
+	public function prof_visits(){
+		return $this->_prof_visits;
+	}
+	
+	public function prof_friends(){
+		return $this->_prof_friends;
+	}
+	
+	public function prof_groups(){
+		return $this->_prof_groups;
+	}
+
 }
 
 ?>

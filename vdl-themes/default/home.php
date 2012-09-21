@@ -16,10 +16,28 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 ?>
-<div id="home_titles" class="row"> 
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#">Resumen</a>
+  </li>
+  <li>
+    <a href="#">Tu</a>
+  </li>
+  <li>
+    <a href="#">Eventos</a>
+  </li>
+  <li>
+    <a href="#">Red</a>
+  </li>
+  <li>
+    <a href="#">Fisgona</a>
+  </li>
+</ul>
+
+<div id="home_titles" class="row-fluid"> 
 	<section class="span12">
 		<div class="pr_titles">
-			<h3>Actividad Reciente</h3>
+			<h2>Actividad Reciente</h2>
 		</div>	
 	</section>
 	<?php $upd_cont = count($home_upd);

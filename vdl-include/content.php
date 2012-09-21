@@ -15,7 +15,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
-$prof = new CORE_PROFILE(NICK,$_SESSION["nick"]);
+// Load user's main data.
+$user = new CORE_PROFILE(NICK,$_SESSION["nick"]);
 
 ///===>If "pg" var is empty, redirect to MAINPG set in config.php, in other case, link to the selected page.
 if (!isset($_GET['pg'])){

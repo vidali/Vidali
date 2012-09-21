@@ -29,7 +29,7 @@ var doLogin = function(){
 	$("#background").fadeIn(1000);
 	
 	$.ajax({
-		url: "vdl-include/session_start.php",
+		url: basedir+"/vdl-include/session_start.php",
 		cache: false,
 		type: "POST",
 		data: {
@@ -40,7 +40,7 @@ var doLogin = function(){
 		success: function(data){
 			if(data == "1" || data == "true"){
 				$("#background").fadeIn(500, function (){
-					window.location='index.php';
+					window.location= basedir+"/index.php";
 				});
 			} else {
 				$("#background").fadeOut(500, function(){

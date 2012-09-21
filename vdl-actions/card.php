@@ -17,13 +17,12 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 	if(isset($_GET['!']))
 		$stream='all';
 
-	$prof = new CORE_PROFILE(NICK,$_SESSION["nick"]);
-	$author = $prof->get_card($_SESSION["nick"]);
-	$nick = $prof->nickname();
-	$p_visits = $prof->prof_visits();
-	$p_friends = $prof->prof_friends();
-	$p_nets = $prof->prof_nets();
-	$photo = $prof->img_prof();
+	$author = $user->get_card($_SESSION["nick"]);
+	$nick = $user->nickname();
+	$p_visits = $user->prof_visits();
+	$p_friends = $user->prof_friends();
+	$p_nets = $user->prof_groups();
+	$photo = $user->img_prof();
 
 ?>
 

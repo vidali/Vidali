@@ -16,3 +16,29 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 ?>
+
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#">General</a>
+  </li>
+  <li>
+    <a href="#">Perfil</a>
+  </li>
+  <li>
+    <a href="#">Privacidad</a>
+  </li>
+  <li>
+    <a href="#">Servicios</a>
+  </li>
+  <li>
+    <a href="#">Administrar</a>
+  </li>
+</ul>
+
+Idioma
+
+Color
+
+Estilo
+
+

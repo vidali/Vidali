@@ -9,15 +9,7 @@
     <![endif]-->
 
     <!-- Le styles -->
-	<link rel="shortcut icon" href="vdl-themes/default/img/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/bootstrap-responsive.css" />
-	<link rel="stylesheet" type="text/css" href="vdl-themes/default/css/style.css" />
-	<script type="text/javascript" src="vdl-themes/default/js/jquery.js" ></script>
-	<script type="text/javascript" src="vdl-themes/default/js/bootstrap.js" ></script>
-	<link rel="stylesheet" href="vdl-themes/default/js/jquery-ui.css" id="theme" />
-	<script type="text/javascript" src="vdl-themes/default/js/less.js"></script>
-	<script type="text/javascript" src="vdl-themes/default/js/script_default.js"></script>
+    {{LROUTES}}
 </head>
  <body>
     <div class="navbar navbar-inverse">
@@ -31,10 +23,7 @@
 					<li class="drop down">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown">Iniciar Sesion <strong class="caret"></strong></a>
 						<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-<!--
-							<form id="form_login" method="post" name="vdl-login" onsubmit="doLogin(); return false;">
--->
-							<form method="post" action="/Vidali-beta/vdl-include/session_start.php">
+								{{LOGIN}}
 								<input id="user" name="user" class="input" type="text" placeholder="Email" autofocus="autofocus">
 								<input id="password" name="password" class="input" type="password" placeholder="Contrase&ntilde;a">
 								<label class="string optional" for="user_remember_me">

@@ -16,26 +16,26 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 class CORE_USER extends CORE_MAIN{
-	/*Private*/
-	private $_id;
-	private $_nickname;
-	private $_name;
-	private $_location;
-	private $_sex;
-	private $_bday;
-	private $_age;
-	private $_email;
-	private $_site;
-	private $_bio;
-	private $_img_prof;
-	private $_prof_visits;
-	private $_prof_friends;
-	private $_prof_nets;
-	private $_session_id;
+	/*Protected*/
+	protected $_id;
+	protected $_nickname;
+	protected $_name;
+	protected $_location;
+	protected $_sex;
+	protected $_bday;
+	protected $_age;
+	protected $_email;
+	protected $_site;
+	protected $_bio;
+	protected $_img_prof;
+	protected $_prof_visits;
+	protected $_prof_friends;
+	protected $_prof_groups;
+	protected $_session_id;
 		
 	/*Public*/
 
-	public function __construct ($_USER){
+	public function __construct ($_USER='null'){
 		parent::__construct();
 		$connection = parent::connect();
 		$user = htmlspecialchars(trim($_USER));
@@ -74,69 +74,11 @@ class CORE_USER extends CORE_MAIN{
 			$this->_email = $row["email"];
 			$this->_site = $row["website"];
 			$this->_img_prof = $row["avatar_id"];
-			$this->_prof_nets = $row["n_groups"];
+			$this->_prof_groups = $row["n_groups"];
 			$this->_prof_friends = $row["n_contacts"];
 		}
-		
 		return true;
 
-	}
-
-	public function id(){
-		return $this->_id;
-	}
-
-	public function nickname(){
-		return $this->_nickname;
-	}
-	
-	public function name(){
-		return $this->_name;
-	}
-	
-	public function location(){
-		return $this->_location;
-	}
-
-	public function sex(){
-		return $this->_sex;
-	}
-
-	public function bday(){
-		return $this->_bday;
-	}
-	
-	
-	public function age(){
-		return $this->_age;
-	}
-	
-	public function email(){
-		return $this->_email;
-	}
-	
-	public function site(){
-		return $this->_site;
-	}
-	
-	public function bio(){
-		return $this->_bio;
-	}
-	
-	public function img_prof(){
-		return $this->_img_prof;
-	}
-	
-	public function prof_visits(){
-		return $this->_prof_visits;
-	}
-	
-	public function prof_friends(){
-		return $this->_prof_friends;
-	}
-	
-	public function prof_nets(){
-		return $this->_prof_nets;
 	}
 	
 	public function set_user(){
@@ -145,16 +87,13 @@ class CORE_USER extends CORE_MAIN{
 	
 	public function exist_user($user){
 		$connection = parent::connect();
-//		$user = htmlspecialchars($user);
 		$query = sprintf("SELECT * FROM vdl_user WHERE vdl_user.nick='%s'", $user);
 		$result=mysql_query($query,$connection);
 		$exist = mysql_num_rows($result);
-		if($exist == 1)
-		{
+		if($exist == 1){
 			return 1;
 		}
-		else
-		{
+		else{
 			return 0;
 		}
 	}
@@ -191,7 +130,7 @@ class CORE_USER extends CORE_MAIN{
 			$this->_img_prof = $row["avatar_id"];
 			$this->_prof_visits = $row["n_views"];
 			$this->_prof_friends = $row["n_contacts"];
-			$this->_prof_nets = $row["n_groups"];
+			$this->_prof_groups = $row["n_groups"];
 		}
 		return true;
 	}

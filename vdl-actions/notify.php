@@ -14,7 +14,20 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
-$val = $prof->get_notify($_SESSION["nick"]);
+?>
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#">Solicitudes</a>
+  </li>
+  <li>
+    <a href="#">Replys</a>
+  </li>
+  <li>
+    <a href="#">Eventos</a>
+  </li>
+</ul>
+<?
+$val = $user->get_notify($_SESSION["nick"]);
 foreach ($val as $not){
 	if($not["type"]== 1){
 		echo $not["user_sender"] . " te ha enviado una petición de amistad<br>";?>

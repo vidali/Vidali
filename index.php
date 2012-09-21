@@ -19,8 +19,8 @@ if(isset($_COOKIE['pass_c'])){
 include_once 'leaf/run.php';
 
 
-$temp_var['BASEDIR'] = BASEDIR;
-echo lw('tpl')->parse( 'index:basevalues' , $temp_var );
+//~ $temp_var['BASEDIR'] = BASEDIR;
+//~ echo lw('tpl')->parse( 'index:basevalues' , $temp_var );
 //~ if($loged){
 	//~ include_once("./vdl-themes/".THEME."/index.php");	
 //~ }
