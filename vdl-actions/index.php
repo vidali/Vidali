@@ -15,10 +15,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
-//~ $pg='';
-//~ if(isset($_GET['p1'])) 
-	//~ $pg=$_GET['p1'];
-
 function make_tabs($type){
 	$home_a = array("Amigos", "Grupos", "Perfil");
 	$inbox_a = array("Recibidos", "Enviados", "Otros");

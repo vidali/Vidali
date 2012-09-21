@@ -39,7 +39,7 @@
 
 <div id="din" class="container-fluid">
 	<div class="row-fluid">
-		<aside class="span3">
+		<aside class="span3"> 
 				{{ACTIONS}}
 		</aside>
 		<div class="span6">
@@ -51,12 +51,12 @@
 	</div>
 </div>
 		
-	<footer class="footer">
-		<div class="container">
-			<p class="pull-right"><img src="img/html5.png"><img src="img/agpl.png"></p>
-			<p>Powered by Vidali.</p>
-		</div>
-	</footer>
+<footer class="footer">
+	<div class="container">
+		<p class="pull-right"><img src="img/html5.png"><img src="img/agpl.png"></p>
+		<p>Powered by Vidali.</p>
+	</div>
+</footer>
 
 <div id="feedbar">
 <div id="din" class="container-fluid">

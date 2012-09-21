@@ -270,15 +270,15 @@ class CORE_PROFILE extends CORE_USER{
 	
 	
 	public function delete(){
-		
+		//eliminación de usuario...
 	}
 
 	public function modify(){
-	
+		//ajustes de perfil, cambio edad, nick, contraseña etc...
 	}
 	
 	public function set_privacy(){
-	
+		//ajustes de seguridad del usuario
 	}
 	
 	public function update($_user,$_message,$_s_id){
