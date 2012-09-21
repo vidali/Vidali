@@ -941,3 +941,283 @@
 [21-Sep-2012 13:48:13 UTC] PHP Fatal error:  Call to a member function get_notify() on a non-object in /media/Datos/web/Vidali/vdl-actions/notify.php on line 30
 [21-Sep-2012 13:48:34 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
 [21-Sep-2012 13:49:33 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:58:47 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:59:04 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:59:04 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 13:59:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 13:59:09 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:59:12 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:59:13 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:59:13 UTC] PHP Notice:  Undefined variable: groups in /media/Datos/web/Vidali/vdl-actions/index.php on line 54
+[21-Sep-2012 13:59:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 54
+[21-Sep-2012 13:59:13 UTC] PHP Notice:  Undefined variable: trending in /media/Datos/web/Vidali/vdl-actions/index.php on line 60
+[21-Sep-2012 13:59:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 60
+[21-Sep-2012 13:59:13 UTC] PHP Notice:  Undefined variable: group in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 24
+[21-Sep-2012 13:59:13 UTC] PHP Notice:  Undefined index: q in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 31
+[21-Sep-2012 13:59:13 UTC] PHP Notice:  Undefined variable: group in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 35
+[21-Sep-2012 13:59:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 35
+[21-Sep-2012 13:59:14 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:59:15 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:59:18 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:59:18 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:59:18 UTC] PHP Notice:  Undefined variable: groups in /media/Datos/web/Vidali/vdl-actions/index.php on line 54
+[21-Sep-2012 13:59:18 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 54
+[21-Sep-2012 13:59:18 UTC] PHP Notice:  Undefined variable: trending in /media/Datos/web/Vidali/vdl-actions/index.php on line 60
+[21-Sep-2012 13:59:18 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 60
+[21-Sep-2012 13:59:18 UTC] PHP Notice:  Undefined variable: group in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 24
+[21-Sep-2012 13:59:18 UTC] PHP Notice:  Undefined index: q in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 31
+[21-Sep-2012 13:59:18 UTC] PHP Notice:  Undefined variable: group in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 35
+[21-Sep-2012 13:59:18 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-themes/default/groups.php on line 35
+[21-Sep-2012 13:59:21 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:59:23 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 13:59:23 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 13:59:23 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:01:35 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:01:35 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:01:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:01:38 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:01:39 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:01:39 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:01:39 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:01:40 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:01:40 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:01:40 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:01:42 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:01:42 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:01:42 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:01:43 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:01:43 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:01:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:01:46 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:02:27 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:02:27 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:02:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:02:28 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:02:28 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:02:28 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:02:29 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:02:29 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:02:29 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:02:30 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:02:30 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:02:30 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:02:35 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:04:18 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:04:24 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:04:24 UTC] PHP Warning:  Missing argument 1 for CORE_PROFILE::__construct(), called in /media/Datos/web/Vidali/vdl-profile/index.php on line 19 and defined in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 89
+[21-Sep-2012 14:04:24 UTC] PHP Warning:  Missing argument 2 for CORE_PROFILE::__construct(), called in /media/Datos/web/Vidali/vdl-profile/index.php on line 19 and defined in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 89
+[21-Sep-2012 14:04:24 UTC] PHP Notice:  Undefined variable: _SUSER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 90
+[21-Sep-2012 14:04:24 UTC] PHP Notice:  Undefined variable: _USER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 90
+[21-Sep-2012 14:04:24 UTC] PHP Notice:  Undefined variable: _USER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 91
+[21-Sep-2012 14:04:24 UTC] PHP Notice:  Undefined variable: visitor in /media/Datos/web/Vidali/vdl-profile/index.php on line 21
+[21-Sep-2012 14:04:24 UTC] PHP Fatal error:  Call to undefined method CORE_USER::get_user() in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 139
+[21-Sep-2012 14:04:28 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:06:27 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:06:27 UTC] PHP Warning:  Missing argument 1 for CORE_PROFILE::__construct(), called in /media/Datos/web/Vidali/vdl-profile/index.php on line 19 and defined in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 89
+[21-Sep-2012 14:06:27 UTC] PHP Warning:  Missing argument 2 for CORE_PROFILE::__construct(), called in /media/Datos/web/Vidali/vdl-profile/index.php on line 19 and defined in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 89
+[21-Sep-2012 14:06:27 UTC] PHP Notice:  Undefined variable: _SUSER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 90
+[21-Sep-2012 14:06:27 UTC] PHP Notice:  Undefined variable: _USER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 90
+[21-Sep-2012 14:06:27 UTC] PHP Notice:  Undefined variable: _USER in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 91
+[21-Sep-2012 14:06:27 UTC] PHP Notice:  Undefined variable: visitor in /media/Datos/web/Vidali/vdl-profile/index.php on line 21
+[21-Sep-2012 14:06:27 UTC] PHP Fatal error:  Call to undefined method CORE_USER::get_user() in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 139
+[21-Sep-2012 14:07:27 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:07:27 UTC] PHP Parse error:  syntax error, unexpected T_ELSE in /media/Datos/web/Vidali/vdl-profile/index.php on line 22
+[21-Sep-2012 14:07:51 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:07:51 UTC] PHP Notice:  Undefined variable: visitor in /media/Datos/web/Vidali/vdl-profile/index.php on line 20
+[21-Sep-2012 14:07:51 UTC] PHP Notice:  Undefined variable: visitor in /media/Datos/web/Vidali/vdl-profile/index.php on line 21
+[21-Sep-2012 14:07:51 UTC] PHP Fatal error:  Call to undefined method CORE_USER::get_user() in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 139
+[21-Sep-2012 14:07:52 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:07:52 UTC] PHP Notice:  Undefined variable: visitor in /media/Datos/web/Vidali/vdl-profile/index.php on line 20
+[21-Sep-2012 14:07:52 UTC] PHP Notice:  Undefined variable: visitor in /media/Datos/web/Vidali/vdl-profile/index.php on line 21
+[21-Sep-2012 14:07:52 UTC] PHP Fatal error:  Call to undefined method CORE_USER::get_user() in /media/Datos/web/Vidali/vdl-include/vdl-core/core_profile.class.php on line 139
+[21-Sep-2012 14:08:42 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:08:46 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:08:46 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:08:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:08:47 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:08:47 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:08:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:08:48 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:08:48 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:08:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:12:40 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:12:41 UTC] PHP Notice:  Undefined variable: friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:12:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in /media/Datos/web/Vidali/vdl-actions/index.php on line 39
+[21-Sep-2012 14:14:04 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:22:34 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:22:37 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:22:37 UTC] PHP Notice:  Undefined index: pg in /media/Datos/web/Vidali/vdl-actions/index.php on line 52
+[21-Sep-2012 14:22:39 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:22:52 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:22:54 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:22:56 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:22:58 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:23:05 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:23:07 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:26:18 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:26:18 UTC] PHP Parse error:  syntax error, unexpected '}' in /media/Datos/web/Vidali/vdl-actions/index.php on line 54
+[21-Sep-2012 14:26:36 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:26:36 UTC] PHP Notice:  Undefined index: p1 in /media/Datos/web/Vidali/vdl-actions/index.php on line 55
+[21-Sep-2012 14:27:03 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:27:03 UTC] PHP Notice:  Use of undefined constant pg - assumed 'pg' in /media/Datos/web/Vidali/vdl-actions/index.php on line 55
+[21-Sep-2012 14:27:11 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:27:29 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:27:30 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:27:43 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:27:49 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:27:51 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:27:52 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:44:13 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:44:16 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:44:25 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:46:03 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:46:03 UTC] PHP Notice:  Undefined index: p1 in /media/Datos/web/Vidali/vdl-actions/index.php on line 55
+[21-Sep-2012 14:46:23 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:46:44 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:46:44 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:47:07 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:47:17 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:47:56 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:48:04 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:49:37 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:50:01 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:50:09 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:50:15 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:50:16 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:50:18 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:50:19 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:50:40 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:50:49 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:51:11 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:51:13 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:51:14 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:52:55 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:52:55 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 26
+[21-Sep-2012 14:52:55 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 29
+[21-Sep-2012 14:53:34 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:53:46 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:53:48 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:53:50 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:53:51 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:53:53 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:55:06 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:55:13 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:55:33 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:56:35 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:56:37 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:56:49 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:56:56 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:57:22 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:57:31 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:57:33 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:57:34 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:58:19 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:58:19 UTC] PHP Notice:  Undefined variable: p_friends in /media/Datos/web/Vidali/vdl-actions/index.php on line 37
+[21-Sep-2012 14:58:35 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:58:35 UTC] PHP Parse error:  syntax error, unexpected ';' in /media/Datos/web/Vidali/vdl-actions/index.php on line 37
+[21-Sep-2012 14:58:39 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:58:52 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:58:58 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:59:00 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:59:33 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:59:53 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:59:54 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 14:59:57 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:00:00 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:00:40 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:00:57 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:01:13 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:02:09 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:02:24 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:02:25 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:02:40 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:02:42 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:02:46 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:02:47 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:02:54 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:03:02 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:03:06 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:03:12 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:03:13 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:03:14 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:03:16 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:03:17 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:03:20 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:03:21 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:03:22 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:03:29 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:14:41 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:14:41 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:15:39 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:15:39 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:17:56 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:17:56 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 32
+[21-Sep-2012 15:18:09 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:18:09 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 36
+[21-Sep-2012 15:19:02 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:19:08 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:19:08 UTC] PHP Fatal error:  Call to undefined function home_a() in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:19:30 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:19:30 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:20:34 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:20:34 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:20:34 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:20:34 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:20:47 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:20:47 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:21:25 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:21:25 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:21:30 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:21:30 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 32
+[21-Sep-2012 15:21:38 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:21:38 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 36
+[21-Sep-2012 15:23:14 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:23:14 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:23:29 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:23:29 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:25:29 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:25:29 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:25:51 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:25:51 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:26:43 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:26:43 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 31
+[21-Sep-2012 15:28:15 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:28:15 UTC] PHP Parse error:  syntax error, unexpected '[', expecting ',' or ';' in /media/Datos/web/Vidali/vdl-actions/index.php on line 29
+[21-Sep-2012 15:28:42 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:28:42 UTC] PHP Parse error:  syntax error, unexpected '[' in /media/Datos/web/Vidali/vdl-actions/index.php on line 51
+[21-Sep-2012 15:28:51 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:29:45 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:29:47 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:29:49 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:29:50 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:29:51 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:29:51 UTC] PHP Notice:  Undefined variable: user in /media/Datos/web/Vidali/vdl-actions/index.php on line 58
+[21-Sep-2012 15:29:51 UTC] PHP Fatal error:  Call to a member function prof_friends() on a non-object in /media/Datos/web/Vidali/vdl-actions/index.php on line 58
+[21-Sep-2012 15:30:00 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:30:00 UTC] PHP Notice:  Undefined variable: user in /media/Datos/web/Vidali/vdl-actions/index.php on line 58
+[21-Sep-2012 15:30:00 UTC] PHP Fatal error:  Call to a member function prof_friends() on a non-object in /media/Datos/web/Vidali/vdl-actions/index.php on line 58
+[21-Sep-2012 15:30:01 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:30:01 UTC] PHP Notice:  Undefined variable: user in /media/Datos/web/Vidali/vdl-actions/index.php on line 58
+[21-Sep-2012 15:30:01 UTC] PHP Fatal error:  Call to a member function prof_friends() on a non-object in /media/Datos/web/Vidali/vdl-actions/index.php on line 58
+[21-Sep-2012 15:30:22 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:30:22 UTC] PHP Parse error:  syntax error, unexpected '.' in /media/Datos/web/Vidali/vdl-actions/index.php on line 58
+[21-Sep-2012 15:30:24 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:30:24 UTC] PHP Parse error:  syntax error, unexpected '.' in /media/Datos/web/Vidali/vdl-actions/index.php on line 58
+[21-Sep-2012 15:30:28 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:30:40 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:30:45 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:30:47 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:30:49 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:31:59 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:01 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:03 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:04 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:06 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:09 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:11 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:36 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:38 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:39 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:40 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:41 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[21-Sep-2012 15:32:42 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18

@@ -16,9 +16,10 @@ You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 //Carga de datos...
 
-$prof = new CORE_PROFILE();
-if(isset($_GET["@"]))
-$author = $prof->get_profile($_GET["@"],$visitor);
+if(isset($_GET["p2"])){
+	$prof = new CORE_PROFILE($_GET["p2"],$visitor);
+	$author = $prof->get_profile($_GET["p2"],$visitor);
+}
 else
 $author = $prof->get_profile($_SESSION["nick"],$visitor);
 $id = $author[2]['id'];

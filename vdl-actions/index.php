@@ -14,27 +14,65 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
-?>
-<?php
 
-//HOME
-if(!isset($_GET["pg"])){
-	$p_friends = $user->prof_friends();
-	$p_groups = $user->prof_groups();?>
-<ul class="nav nav-tabs">
-  <li class="active">
-    <a href="#">Amigos (<?php echo $p_friends; ?>)</a>
-  </li>
-  <li>
-    <a href="<?php echo BASEDIR ."/?see=groups"; ?>">Grupos (<?php echo $p_friends; ?>)</a>
-  </li>
-  <li>
-    <a href="#">Perfil</a>
-  </li>
-</ul>
+//~ $pg='';
+//~ if(isset($_GET['p1'])) 
+	//~ $pg=$_GET['p1'];
+
+function make_tabs($type){
+	$home_a = array("Amigos", "Grupos", "Perfil");
+	$inbox_a = array("Recibidos", "Enviados", "Otros");
+	$groups_a = array("Tendencias", "Grupos", "Mis grupos");
+	$files_a = array("Archivos", "Musica", "Vídeos");
+	$settings_a = array("Información", "Soporte", "Reportar");
+	
+	switch ($type) {
+    case 'home':
+		$a1=$home_a[0];
+		$a2=$home_a[1];
+		$a3=$home_a[2];
+        break;
+    case 'inbox':
+		$a1=$inbox_a[0];
+		$a2=$inbox_a[1];
+		$a3=$inbox_a[2];
+        break;
+    case 'groups':
+		$a1=$groups_a[0];
+		$a2=$groups_a[1];
+		$a3=$groups_a[2];
+        break;
+    case 'files':
+		$a1=$files_a[0];
+		$a2=$files_a[1];
+		$a3=$files_a[2];
+        break;
+    case 'settings':
+		$a1=$settings_a[0];
+		$a2=$settings_a[1];
+		$a3=$settings_a[2];
+        break;
+	}
+	echo '<ul class="nav nav-tabs">
+		<li class="active">
+			<a href="#">'.$a1.'</a>
+		</li>
+		<li>
+			<a href="#">'.$a2.'</a>
+		</li>
+		<li>
+			<a href="#">'.$a3.'</a>
+		</li>
+	</ul>';
+}
+
+
+if($pg==''){
+	make_tabs('home');
+	?>
 	<div class="basic_tb">
 		<?php 
-		if($p_friends == 0)
+		if($user->prof_friends() == 0)
 			echo "No has agregado ningún amigo todavia...";
 		foreach ($friends as $f){
 			echo '<article id="net">';
@@ -46,10 +84,13 @@ if(!isset($_GET["pg"])){
 		}
 		?>
 	</div>
-<?php 
+<?php
 }
-//Mensajes
-elseif($_GET["pg"] == 'g'){
+elseif($pg=='m'){
+	make_tabs('inbox');
+}
+elseif($pg=='g'){
+	make_tabs('groups');
 	echo "Grupos<br>";
 	foreach($groups as $gr){
 		$link = ucwords(strtolower($gr["group_name"]));
@@ -62,10 +103,11 @@ elseif($_GET["pg"] == 'g'){
 		echo '<h3><a href="/Vidali/?pg=g&q=%23'.$link.'">'.$trend["topic"]."</a></h3>";
 	}
 }
-//Grupos
-
-//Archivos
-
-//Ajustess
+elseif($pg=='f'){
+	make_tabs('files');
+}
+elseif($pg=='s'){
+	make_tabs('settings');
+}
 
 ?>

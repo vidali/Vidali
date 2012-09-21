@@ -19,13 +19,13 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 $user = new CORE_PROFILE(NICK,$_SESSION["nick"]);
 
 ///===>If "pg" var is empty, redirect to MAINPG set in config.php, in other case, link to the selected page.
-if (!isset($_GET['pg'])){
+if (!isset($_GET['p1'])){
     include("vdl-home/index.php");
 }
 else{
-	$pg=$_GET['pg'];
+	$pg=$_GET['p1'];
 ///===>Go to Profile page.
-	if ($pg == 'p'){
+	if ($pg == 'u'){
 		include("vdl-profile/index.php");
 }
 ///===>Go to inbox page.
