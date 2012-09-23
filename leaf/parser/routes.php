@@ -10,3 +10,4 @@
 	<link rel="stylesheet/less" type="text/css" href="<?php echo BASEDIR;?>/vdl-themes/default/css/prof.less" />
 	<link rel="stylesheet" type="text/css" href="<?php echo BASEDIR;?>/vdl-themes/default/css/footer.less" />
 	<script type="text/javascript" src="<?php echo BASEDIR;?>/vdl-themes/default/js/less.js"></script>
+	<script type="text/javascript"> var basedir="<?php echo BASEDIR; ?>"; </script>

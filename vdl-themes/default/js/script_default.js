@@ -1,4 +1,5 @@
 var msgTimeout;
+var basedir;
 var errMsg = function(msg, type){
 	clearTimeout(msgTimeout);
 	$("#alert").fadeOut("fast",function(){
@@ -82,14 +83,46 @@ var deserialize = function (value) {
 	}
 	return params;
 };
+
+//~ setInterval(function() {
+    //~ $("#home-wall").load(location.href+" #home-wall");
+//~ }, 50000);
 	
-$(function() {
-	// Setup drop down menu
-	$('.dropdown-toggle').dropdown();
-	// Fix input element click problem
-	$('.dropdown-menu input, .dropdown-menu label').click(function(e) {
-	e.stopPropagation();
+var link = function(value){
+	$('.main-menu li a').click(function(){
+		$('.main-menu li').removeClass('active');
+		$(this).parent().addClass('active');
 	});
-	//TODO: Esto esta causando un error, se aplica a todas las paginas ¿Es necesario?
-	if(typeof(options) != "undefined") $('#grav_prof').modal(options);
-});
+	if(value == "h"){
+		window.history.replaceState(" ", "Home", basedir);
+		document.title = "Home - Vidali";
+	}
+	if(value == "m"){
+		window.history.replaceState(" ", "Mensajes", basedir+"/m/");
+		document.title = "Mensajes - Vidali";
+	}
+	if(value == "g"){
+		window.history.replaceState(" ", "Grupos", basedir+"/g/");
+		document.title = "Grupos - Vidali";
+	}
+	if(value == "f"){
+		window.history.replaceState(" ", "Archivos", basedir+"/f/");
+		document.title = "Archivos - Vidali";
+	}
+	if(value == "s"){
+		window.history.replaceState(" ", "Ajustes", basedir+"/s/");
+		document.title = "Ajustes - Vidali";
+	}
+		$("#din").fadeOut(function(){ $("#din").load(location.href+" #din").fadeIn()});
+		return false;
+};
+
+$('#home-tab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+
+$('#side-tab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})

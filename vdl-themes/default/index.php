@@ -2,10 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>
-		Vidali
-	</title>
-
+		<title> Vidali </title>
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -14,7 +11,7 @@
 	{{ROUTES}}
 </head>
 <body>
-<header class="navbar navbar-inverse ">
+<header class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container-fluid">
 			<div class="row">
@@ -30,14 +27,16 @@
 </header>
 
 
-<div id="nav" class="navbar navbar-static-top">
+<div id="nav" class="navbar">
   <div class="navbar-inner">
 	  {{MENU}}
   </div>
 </div>
-{{CONTENT}}
+
+
 
 <div id="din" class="container-fluid">
+	{{CONTENT}}
 	<div class="row-fluid">
 		<aside class="span3"> 
 				{{ACTIONS}}
@@ -59,7 +58,7 @@
 </footer>
 
 <div id="feedbar">
-<div id="din" class="container-fluid">
+<div class="container-fluid">
 	<div class="row-fluid">
 		<aside class="span3">
 			<div id="invisible" class="well sidebar">
@@ -87,6 +86,7 @@
 	</div>
 </div>
 </div>
+
 
 <script type="text/javascript">
 reformal_wdg_domain    = "vidali";
