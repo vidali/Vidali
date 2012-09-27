@@ -49,13 +49,12 @@ class CORE_SECURITY extends CORE_MAIN{
 			$pwd = $_PASS;
 		}
 		else
-			$pwd = mysql_real_escape_string(sha1(md5(trim($_PASS))));
-		//~ echo $usr . " " . $pwd;
-		session_start();
+			$pwd = mysqli_real_escape_string($connection,sha1(md5(trim($_PASS))));
 		$query = sprintf("SELECT *
 						  FROM vdl_user 
 						  WHERE vdl_user.email='%s' && vdl_user.password = '%s'", $usr,$pwd);
-		$result=mysql_query($query,$connection);
+						  //LO DEJAMOS AQUI
+		$result= $connection->query($query);
 		//DEPURACION
 		 if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
@@ -63,13 +62,13 @@ class CORE_SECURITY extends CORE_MAIN{
 			die($message);
 			return false;
 		}
-		if(mysql_num_rows($result)){
+		if($result->num_rows){
 			// nos devuelve 1 si encontro el usuario y el password
-			$array=mysql_fetch_array($result);
+			$array= $result->fetch_array();
 			//generamos id de la sesion
 			$s_id = session_id();
 			$query = sprintf("UPDATE  vdl_user SET  `session_id` =  '%s' WHERE  `vdl_user`.`id` =%s;",$s_id,$array["id"]);
-			$result=mysql_query($query,$connection);
+			$result= $connection->query($query);
 			 if (!$result) {
 				$message  = 'Invalid query: ' . mysql_error() . "\n";
 				$message .= 'Whole query: ' . $query;

@@ -82,7 +82,6 @@ function make_tabs($type){
 	</ul>';
 }
 
-
 if($pg==''){
 	make_tabs('home');
 	?>
@@ -120,6 +119,43 @@ if($pg==''){
 </div>
 <?php
 }
+if($pg=='u'){
+	make_tabs('home');
+	?>
+<div id="" class="tab-content">
+	<div id="home-friends" class="friends-tab tab-pane fade">
+		<?php
+		if($user->prof_friends() == 0)
+			echo "No has agregado ningún amigo todavia...";
+		else{
+			foreach ($friends as $f){
+				echo '<article id="net">';
+					echo '<a href="?pg=p&@='. $f["nick"] .'">';
+					echo '<div id="net_photo"><img src="img/'.$f["avatar_id"].'_tb.jpg"></div>';
+					echo '<div id="net_id_p">'.$f["nick"].'</div></a>';
+					echo '<div class="clear"></div>';
+				echo '</article>';
+			}
+		}
+		?>
+	</div>
+	<div id="home-groups" class="groups-tab tab-pane fade">
+		<?php
+		if($user->prof_groups() == 0)
+			echo "No formas parte de ningún grupo...";
+		else{
+			echo "tienes grupos";
+		}
+		?>
+	</div>
+	<div id="home-profile" class="profile-tab tab-pane fade  active in">
+		<?php
+			echo "Aqui resumen de tu perfil o del perfil elegido";
+		?>
+	</div>
+</div>
+<?php
+}
 elseif($pg=='m'){
 	make_tabs('inbox');?>
 <div id="" class="tab-content">
@@ -150,18 +186,18 @@ elseif($pg=='g'){
 	<div id="groups-trends" class="trends-tab tab-pane fade active in">
 		<?php
 		echo "Tendencias";
-		foreach($groups as $gr){
-			$link = ucwords(strtolower($gr["group_name"]));
-			echo '<h3><a href="/Vidali/?pg=g&q=%23'.$link.'">'.$gr["group_name"]."</a></h3>";
+		foreach($trending as $trend){
+			$link = ucwords(strtolower($trend["topic"]));
+			echo '<h3><a href="/Vidali/?pg=g&q=%23'.$link.'">'.$trend["topic"]."</a></h3>";
 		}?>
 	</div>
 	
 	<div id="groups-allgroups" class="groups-tab tab-pane fade">
 		<?php
 		echo "Grupos patrocinados";
-		foreach($trending as $trend){
-			$link = ucwords(strtolower($trend["topic"]));
-			echo '<h3><a href="/Vidali/?pg=g&q=%23'.$link.'">'.$trend["topic"]."</a></h3>";
+		foreach($groups as $gr){
+			$link = ucwords(strtolower($gr["group_name"]));
+			echo '<h3><a href="/Vidali/?pg=g&q=%23'.$link.'">'.$gr["group_name"]."</a></h3>";
 		}?>
 	</div>
 

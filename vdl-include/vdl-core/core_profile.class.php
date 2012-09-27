@@ -6,10 +6,10 @@ class CORE_PROFILE extends CORE_USER{
 	private function acept_friend($_id,$_idsender,$_not){
 		$connection = parent::connect();
 		$query = ("UPDATE vdl_friend_of SET status=1 WHERE user2=$_id AND user1=$_idsender AND status=0");
-		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+		$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
 		if($result){
 			$query = "UPDATE vdl_notify SET (checked) VALUES ('1') WHERE id= $_not";
-			$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+			$result = $connection->query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
 //			$query = ("INSERT INTO vdl_notify (user_id,user_sender,type,checked) VALUES ('$_candidate','$_main','1','0')");
 //			$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));		
 			return true;
@@ -21,10 +21,10 @@ class CORE_PROFILE extends CORE_USER{
 	private function add_friend($_main,$_candidate,$_range){
 		$connection = parent::connect();
 		$query = ("INSERT INTO vdl_friend_of (user1,user2,status) VALUES ('$_main','$_candidate','0')");
-		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+		$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
 		if($result){
 			$query = ("INSERT INTO vdl_notify (user_id,user_sender,type,checked) VALUES ('$_candidate','$_main','1','0')");
-			$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));		
+			$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));		
 			return true;
 		}
 		else
@@ -36,8 +36,7 @@ class CORE_PROFILE extends CORE_USER{
 		$query = ("DELETE FROM  vdl_friend_of 
 				   WHERE (vdl_friend_of.user1 ='$_main' AND vdl_friend_of.user2='$_friend')
 				   OR (vdl_friend_of.user1 ='$_friend' AND vdl_friend_of.user2='$_main')");
-		$result = mysql_query($query,$connection);
-		$result = mysql_query($query,$connection);
+		$result = $connection->query($query);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message = $message.' Whole query: ' . $query;
@@ -50,7 +49,7 @@ class CORE_PROFILE extends CORE_USER{
 	private function block_enemy($_main,$_friend){
 		$connection = parent::connect();
 		$query = ("UPDATE vdl_friend_of SET status='2' WHERE vdl_friend_of.user1 ='$_main' AND vdl_friend_of.user2='$_friend'");
-		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+		$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
 		parent::close($connection);
 		if(!result)
 		return false;
@@ -65,19 +64,18 @@ class CORE_PROFILE extends CORE_USER{
 			$ht=ucwords(strtolower($hash));
 			$connection = parent::connect();
 			$query = ("SELECT topic FROM vdl_trending WHERE topic='$ht'");
-			//echo $query;
-			$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+			$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
 			if(!$result)
 				return false;
-			if(mysql_num_rows($result) == 0){
+			if($result->num_rows == 0){
 				$query = ("INSERT INTO vdl_trending (topic,count) VALUES ('$ht',1)");
-				$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));			
+				$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));			
 				if(!$result)
 					return false;
 			}
 			else{
 				$query = ("UPDATE vdl_trending SET count =count+1 WHERE topic='$ht'");
-				$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));					
+				$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));					
 				if(!$result)
 					return false;
 			}
@@ -96,7 +94,7 @@ class CORE_PROFILE extends CORE_USER{
 	public function create($_user_id,$_passwd,$_nickname,$_name,$_location,$_genre,$_bday,$_email,$_bio){
 		$query = ("INSERT INTO vdl_user (user_id,passwd,nickname,name,location,genre,bday,email,bio,img_prof) VALUES
 					 ('$_user_id','$_passwd','$_nickname','$_name','$_location','$_genre','$_bday','$_email','$_bio','prof_def')");
-		$result = mysql_query($query,$connection);
+		$result = $connection->query($query);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message = 'Whole query: ' . $query;
@@ -107,27 +105,27 @@ class CORE_PROFILE extends CORE_USER{
 	public function get_friends($_user){
 		$connection = parent::connect();
 		$query = sprintf("SELECT vdl_user.id FROM vdl_user WHERE vdl_user.nick='%s'", $_user);
-		$result=mysql_query($query,$connection);
-		$id = mysql_fetch_assoc($result);
+		$result= $connection->query($query);
+		$id = $result->fetch_assoc();
 		$a_result2 = array();
 		$query = "SELECT * FROM vdl_friend_of WHERE (user1='".$id["id"]."' OR user2='".$id["id"]."') LIMIT 0,10";
-		$result = mysql_query($query,$connection);
+		$result = $connection->query($query);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message =  $message . ' Whole query: ' . $query;
 			die($message);
 		}
-		while ($row = mysql_fetch_assoc($result)){
+		while ($row = $result->fetch_assoc()){
 			if($row["status"] != 0){
 				if($row["user1"]==$id["id"]){
 					$query = "SELECT nick,avatar_id,email FROM vdl_user WHERE id='".$row["user2"]."'";
-					$result2 = mysql_query($query,$connection);	
+					$result2 = $connection->query($query);	
 				}
 				else{
 					$query = "SELECT nick,avatar_id,email FROM vdl_user WHERE id='".$row["user1"]."'";
-					$result2 = mysql_query($query,$connection);	
+					$result2 = $connection->query($query);	
 				}
-				while($row2 = mysql_fetch_assoc($result2))
+				while($row2 = $result2->fetch_assoc())
 				array_push($a_result2,$row2);
 			}
 		}
@@ -136,45 +134,44 @@ class CORE_PROFILE extends CORE_USER{
 	
 	public function get_profile($_user,$_refer){
 		$connection = parent::connect();
-		$a_result1 = parent::get_user($_user, $_refer);
 		$query = sprintf("SELECT vdl_user.id FROM vdl_user WHERE vdl_user.nick='%s'", $_user);
-		$result=mysql_query($query,$connection);
-		$id = mysql_fetch_assoc($result);
+		$result= $connection->query($query);
+		$id = $result->fetch_assoc();
 		$a_result1 = array();
 		$query = sprintf("SELECT vdl_u_belong.group_id FROM vdl_u_belong WHERE vdl_u_belong.user_id='%s'", $id["id"]);
-		$result=mysql_query($query,$connection);
-		while ($rowa = mysql_fetch_assoc($result)){
-			$query1 = ("SELECT net_name,net_sdesc,net_img FROM vdl_net WHERE vdl_net.id='".$rowa["id_net"]."'");
-			$result1 = mysql_query($query1,$connection);
-			while ($row = mysql_fetch_assoc($result1)){
+		$result=$connection->query($query);
+		while ($rowa = $result->fetch_assoc()){
+			$query1 = ("SELECT group_name FROM vdl_group WHERE vdl_group.group_name='".$rowa["group_id"]."'");
+			$result1 = $connection->query($query1);
+			while ($row = $result1->fetch_assoc()){
 				array_push($a_result1,$row);
 			}
 		}
 		$a_result2 = array();
 		$query = "SELECT * FROM vdl_friend_of WHERE (user1='".$id["id"]."' OR user2='".$id["id"]."') LIMIT 0,10";
-		$result = mysql_query($query,$connection);
+		$result = $connection->query($query);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message =  $message . ' Whole query: ' . $query;
 			die($message);
 		}
-		while ($row = mysql_fetch_assoc($result)){
+		while ($row = $result->fetch_assoc()){
 			if($row["status"] != 0){
 				if($row["user1"]==$id["id"]){
 					$query = "SELECT nick,avatar_id,email FROM vdl_user WHERE id='".$row["user2"]."'";
-					$result2 = mysql_query($query,$connection);	
+					$result2 = $connection->query($query);	
 				}
 				else{
 					$query = "SELECT nick,avatar_id,email FROM vdl_user WHERE id='".$row["user1"]."'";
-					$result2 = mysql_query($query,$connection);	
+					$result2 = $connection->query($query);
 				}
-				while($row2 = mysql_fetch_assoc($result2))
+				while($row2 = $result2->fetch_assoc())
 				array_push($a_result2,$row2);
 			}
 		}
 		if($_user != $_refer){
 			$query = ("UPDATE vdl_user a SET `n_views` = `n_views` + 1 WHERE a.nick ='$_user'");
-			$result = mysql_query($query,$connection);
+			$result = $connection->query($query);
 			if (!$result) {
 				$message = 'Invalid query: ' . mysql_error() . "\n";
 				$message = $message. ' Whole query: ' . $query;
@@ -194,15 +191,15 @@ class CORE_PROFILE extends CORE_USER{
 	public function get_networks($_user){
 		$connection = parent::connect();
 		$query = sprintf("SELECT vdl_user.id FROM vdl_user WHERE vdl_user.user_id='%s'", $_user);
-		$result=mysql_query($query,$connection);
-		$id = mysql_fetch_assoc($result);
+		$result= $connection->query($query);
+		$id = $result->fetch_assoc();
 		$a_result1 = array();
 		$query = sprintf("SELECT vdl_u_belong.id_net FROM vdl_u_belong WHERE vdl_u_belong.id_user='%s'", $id["id"]);
-		$result=mysql_query($query,$connection);
-		while ($rowa = mysql_fetch_assoc($result)){
+		$result= $connection->query($query);
+		while ($rowa = $result->fetch_assoc()){
 			$query1 = ("SELECT net_name FROM vdl_net WHERE vdl_net.id='".$rowa["id_net"]."'");
-			$result1 = mysql_query($query1,$connection);
-			while ($row = mysql_fetch_assoc($result1)){
+			$result1 = $connection->query($query1);
+			while ($row = $result->fetch_assoc()){
 				array_push($a_result1,$row);
 			}
 		}
@@ -220,7 +217,7 @@ class CORE_PROFILE extends CORE_USER{
 						  WHERE b.nick =  '%s'
 						  ORDER BY  `vdl_msg`.`date_published` DESC 
 						  LIMIT 0 , 30", $_user);
-		$result=mysql_query($query,$connection);
+		$result=$connection->query($query);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message .= 'Whole query: ' . $query;
@@ -228,7 +225,7 @@ class CORE_PROFILE extends CORE_USER{
 		}
 		//mostrar resultado
 		$arresult=array();
-		while ($row = mysql_fetch_array($result)) {
+		while ($row = $result->fetch_array()) {
 			array_push($arresult,$row);
 		}
 		return $arresult;
@@ -237,8 +234,8 @@ class CORE_PROFILE extends CORE_USER{
 	public function get_home_wall($_user){
 		$connection = parent::connect();
 		$query = "SELECT id from vdl_user WHERE nick = '$_user'";
-		$result=mysql_query($query,$connection);
-		$id = mysql_fetch_assoc($result);
+		$result= $connection->query($query);
+		$id = $result->fetch_assoc();
 		$query = "SELECT id, nick, b.avatar_id,email, date_published,text
 					FROM vdl_publish a
 					JOIN vdl_user b ON b.id = id_user
@@ -254,7 +251,7 @@ class CORE_PROFILE extends CORE_USER{
 					)
 					ORDER BY  `vdl_msg`.`date_published` DESC 
 					LIMIT 0 , 30";
-		$result=mysql_query($query,$connection);
+		$result = $connection->query($query);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message .= 'Whole query: ' . $query;
@@ -262,7 +259,7 @@ class CORE_PROFILE extends CORE_USER{
 		}
 		//mostrar resultado
 		$arresult=array();
-		while ($row = mysql_fetch_array($result)) {
+		while ($row = $result->fetch_array()) {
 			array_push($arresult,$row);
 		}
 		return $arresult;
@@ -288,7 +285,7 @@ class CORE_PROFILE extends CORE_USER{
 		$text = $_message;
 //		$text = htmlentities($_message,ENT_QUOTES,"UTF-8");
 		$query = ("SELECT id,nick FROM  `vdl_user` WHERE  `session_id` =  '".$_s_id."'");
-		$result = mysql_query($query,$connection);
+		$result = $connection->query($query);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message .= 'Whole query: ' . $query;
@@ -304,9 +301,9 @@ class CORE_PROFILE extends CORE_USER{
 			$replace = '#'.ucwords(strtolower($hash)); 
 			$text = str_replace($find, $replace, $text); 
 		}
-		$user = mysql_fetch_assoc($result);
+		$user = $result->fetch_assoc();
 		$query = ("INSERT INTO vdl_msg (date_published,text) VALUES ('$date', '$text')");
-		$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));	
+		$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));	
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message .= 'Whole query: ' . $query;
@@ -315,9 +312,9 @@ class CORE_PROFILE extends CORE_USER{
 		}
 		if( $user["nick"] == $_user){
 			$user = $user["id"];
-			$msg_id = mysql_insert_id($connection);
+			$msg_id = $connection->insert_id();
 			$query = ("INSERT INTO vdl_publish (id_user,id_msg,id_group) VALUES ('$user', '$msg_id','Vidali')");
-			$result = mysql_query($query,$connection);	
+			$result = $connection->query($query);	
 			if (!$result) {
 				$message  = 'Invalid query: ' . mysql_error() . "\n";
 				$message .= 'Whole query: ' . $query;
@@ -369,7 +366,7 @@ class CORE_PROFILE extends CORE_USER{
 		$query = "SELECT a.id,a.user_id,a.user_sender,a.type,a.checked 
 				  FROM vdl_notify a 
 				  JOIN vdl_user b ON a.user_id = b.id  WHERE b.nick = '$_user' AND a.checked = 0";
-		$result=mysql_query($query,$connection);
+		$result=$connection->query($query);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message .= 'Whole query: ' . $query;
@@ -377,7 +374,7 @@ class CORE_PROFILE extends CORE_USER{
 		}
 		//mostrar resultado
 		$arresult=array();
-		while ($row = mysql_fetch_array($result)) {
+		while ($row = $result->fetch_array()) {
 			
 			array_push($arresult,$row);
 		}

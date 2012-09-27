@@ -55,14 +55,14 @@ class CORE_USER extends CORE_MAIN{
 									vdl_user.n_groups,
 									vdl_user.n_contacts
 						FROM vdl_user WHERE vdl_user.nick='%s'", $user);
-		$result=mysql_query($query,$connection);
+		$result= $connection->query($query);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message .= 'Whole query: ' . $query;
 			die($message);
 			return false;
 		}
-		while ($row = mysql_fetch_assoc($result)){
+		while ($row = $result->fetch_assoc()){
 			$this->_id = $row["id"];
 			$this->_nickname = $row["nick"];
 			$this->_name = $row["name"];
@@ -88,8 +88,8 @@ class CORE_USER extends CORE_MAIN{
 	public function exist_user($user){
 		$connection = parent::connect();
 		$query = sprintf("SELECT * FROM vdl_user WHERE vdl_user.nick='%s'", $user);
-		$result=mysql_query($query,$connection);
-		$exist = mysql_num_rows($result);
+		$result=$connection->query($query);
+		$exist = $result->num_rows();
 		if($exist == 1){
 			return 1;
 		}
@@ -102,8 +102,8 @@ class CORE_USER extends CORE_MAIN{
 		$connection = parent::connect();
 		$email = htmlspecialchars($email);
 		$query = sprintf("SELECT * FROM vdl_user WHERE vdl_user.email='%s'", $email);
-		$result=mysql_query($query,$connection);
-		$exist = mysql_num_rows($result);
+		$result= $connection->query($query);
+		$exist = $result->num_rows();
 		if($exist == 1)
 		{
 			return 1;
@@ -124,8 +124,8 @@ class CORE_USER extends CORE_MAIN{
 							vdl_user.n_contacts,
 							vdl_user.n_groups
 		FROM vdl_user WHERE vdl_user.nick='%s'", $user);
-		$result=mysql_query($query,$connection);
-		while ($row = mysql_fetch_assoc($result)){
+		$result= $connection->query($query);
+		while ($row = $result->fetch_assoc()){
 			$this->_nickname = $row["nick"];
 			$this->_img_prof = $row["avatar_id"];
 			$this->_prof_visits = $row["n_views"];
@@ -144,7 +144,7 @@ class CORE_USER extends CORE_MAIN{
 				   VALUES('$_email','$_nick','$_passwd','$_name','$_bday','$_sex','$_location',' ','$_bio',
 						  'prof_def','0','0','0','0','0',
 						  'low', UNHEX(  '0' ) ,'white')");
-		$result = mysql_query($query,$connection);
+		$result = $connection->query($query);
 		if (!$result) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
 			$message = $message . ' Whole query: ' . $query;
@@ -152,9 +152,9 @@ class CORE_USER extends CORE_MAIN{
 			return false;
 		}
 		else
-			$id = mysql_insert_id($connection);			
+			$id = mysqli_insert_id($connection);			
 			$query = ("UPDATE `vdl_user` set `age` = (YEAR(CURDATE())-YEAR(birthdate)) - (RIGHT(CURDATE(),5)<RIGHT(birthdate,5))");
-			$result = mysql_query($query,$connection);
+			$result = $connetion->query($query);
 			if (!$result) {
 				$message  = 'Invalid query: ' . mysql_error() . "\n";
 				$message = $message . ' Whole query: ' . $query;
@@ -168,21 +168,21 @@ class CORE_USER extends CORE_MAIN{
 		$connection = parent::connect();
 		$rg = 6;
 		$query = sprintf("SELECT status FROM  vdl_friend_of WHERE  user1 ='%s' AND  user2 ='%s'",$_user1,$_user2);
-		$result=mysql_query($query,$connection);
-		$rescount = mysql_num_rows($result);
+		$result=$connection->query($query);
+		$rescount = $result->num_rows();
 		if($rescount == 0){
 			$query = sprintf("SELECT status FROM  vdl_friend_of WHERE  user1 ='%s' AND  user2 ='%s'",$_user2,$_user1);
-			$result=mysql_query($query,$connection);
-			$rescount = mysql_num_rows($result);
+			$result= $connection->query($query);
+			$rescount = $result->num_rows();
 			if($rescount == 0)
 				$rg = 6;
 			else{
-				$ra = mysql_fetch_assoc($result);
+				$ra = $result->fetch_assoc();
 				$rg = $ra["status"];
 			}
 		}
 		else{
-			$ra = mysql_fetch_assoc($result);
+			$ra = $result->fetch_assoc();
 			$rg = $ra["status"];
 		}
 		return $rg;

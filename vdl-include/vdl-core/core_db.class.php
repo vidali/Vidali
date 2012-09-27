@@ -32,7 +32,7 @@ class CORE_DB{
 	* We close mysql connection here.
 	*/
 	public function close($_con){
-		mysql_close($_con);
+		$_con->close();
 	}
 	
 	
@@ -41,11 +41,12 @@ class CORE_DB{
 	 * We start the connection to MySQL server. Return the connection value and also saves in $_connection.
 	 */
 	public function connect (){
-		$connection = mysql_connect(DBDIR, DBUSR , DBPSW) 
-					  or die ('DB Error: connection/user/password doesn\'t match. Please review your config');
-		$database = DBASE;
-		mysql_select_db($database, $connection)
-					  or die ("DB Error: Missing database $database, Check your db.ini");
+		$connection = new mysqli(DBDIR, DBUSR, DBPSW, DBASE);
+		/* check connection */
+		if ($connection->connect_errno) {
+			printf("Connect failed: %s\n", $mysqli->connect_error);
+			exit();
+		}
 		return $connection;
 	}
 

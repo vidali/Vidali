@@ -14,9 +14,9 @@ class CORE_GROUP extends CORE_MAIN{
 						  JOIN vdl_msg ON vdl_msg.id_msg = a.id_msg
 						  WHERE vdl_msg.text  REGEXP  '(.)*".$_name."([:space:](.))*'
 						  LIMIT 0 , 30";
-		$data=mysql_query($query,$connection);
+		$data=$connection->query($query);
 		$arresult=array();
-		while ($row = mysql_fetch_array($data)) {
+		while ($row = $datam->fetch_array()) {
 			array_push($arresult,$row);
 		}
 		return $arresult;
@@ -28,9 +28,9 @@ class CORE_GROUP extends CORE_MAIN{
 					FROM  `vdl_trending` 
 					ORDER BY  `vdl_trending`.`count` DESC 
 					LIMIT 0 , 15";
-		$data=mysql_query($query,$connection);
+		$data=$connection->query($query);
 		$arresult=array();
-		while ($row = mysql_fetch_array($data)) {
+		while ($row = $data->fetch_array()) {
 			array_push($arresult,$row);
 		}
 		return $arresult;
@@ -42,9 +42,9 @@ class CORE_GROUP extends CORE_MAIN{
 					FROM  `vdl_group` 
 					ORDER BY  `vdl_group`.`n_members` DESC 
 					LIMIT 0 , 10";
-		$data=mysql_query($query,$connection);
+		$data=$connection->query($query);
 		$arresult=array();
-		while ($row = mysql_fetch_array($data)) {
+		while ($row = $data->fetch_array()) {
 			array_push($arresult,$row);
 		}
 		return $arresult;

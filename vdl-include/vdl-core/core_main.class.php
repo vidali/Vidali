@@ -72,12 +72,13 @@ class CORE_MAIN extends CORE_DB{
 	public function load (){
 		$this->_connection = parent::connect();
 		$query = "SELECT * FROM vdl_config ORDER BY config_id";
-		$result = mysql_query($query,$this->_connection);
+		if(!$result = $this->_connection->query($query))
+			printf("Error: %s\n", $mysqli->error); 
 		parent::close($this->_connection);
 		if(!$result)
 			return false;
 		else{
-			while($row = mysql_fetch_assoc($result)){
+			while($row = $result->fetch_assoc()){
 				define ($row["config_name"],$row["config_value"]);
 			}
 			return true;

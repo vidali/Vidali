@@ -17,11 +17,11 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 //Carga de datos...
 
 if(isset($_GET["p2"])){
-	$prof = new CORE_PROFILE($_GET["p2"],$visitor);
-	$author = $prof->get_profile($_GET["p2"],$visitor);
+	$prof = new CORE_PROFILE($_GET["p2"],NICK);
+	$author = $prof->get_profile($_GET["p2"],NICK);
 }
 else
-$author = $prof->get_profile($_SESSION["nick"],$visitor);
+$author = $user->get_profile($_SESSION["nick"],NICK);
 $id = $author[2]['id'];
 $website = $prof->site();
 $name = $prof->name();
@@ -36,7 +36,7 @@ $age = $prof->age();
 $bio = $prof->bio();
 $photo = $prof->img_prof();
 $email = $prof->email();
-$nets = $prof->prof_nets();
+$groups = $prof->prof_groups();
 $frs = $prof->prof_friends();
 $networks = array();
 $networks = $author[0];
@@ -44,4 +44,5 @@ $friends = $author[1];
 $size = 180;
 $grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=".md5( strtolower($email) )."&size=".$size;
 
+echo "hola";
 ?>

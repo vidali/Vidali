@@ -1,7 +1,7 @@
 <?php 
 if($pg == "")
 	include("vdl-themes/default/home.php");
-if($pg == "p")
+if($pg == "u")
 	include("vdl-themes/default/prof.php");
 if($pg == "m")
 	include("vdl-themes/default/inbox.php");
