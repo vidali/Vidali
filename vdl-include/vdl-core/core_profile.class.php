@@ -10,8 +10,6 @@ class CORE_PROFILE extends CORE_USER{
 		if($result){
 			$query = "UPDATE vdl_notify SET (checked) VALUES ('1') WHERE id= $_not";
 			$result = $connection->query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
-//			$query = ("INSERT INTO vdl_notify (user_id,user_sender,type,checked) VALUES ('$_candidate','$_main','1','0')");
-//			$result = mysql_query($query,$connection) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));		
 			return true;
 		}
 		else
