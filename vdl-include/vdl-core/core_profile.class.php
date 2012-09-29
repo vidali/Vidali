@@ -310,7 +310,7 @@ class CORE_PROFILE extends CORE_USER{
 		}
 		if( $user["nick"] == $_user){
 			$user = $user["id"];
-			$msg_id = $connection->insert_id();
+			$msg_id = $connection->insert_id;
 			$query = ("INSERT INTO vdl_publish (id_user,id_msg,id_group) VALUES ('$user', '$msg_id','Vidali')");
 			$result = $connection->query($query);	
 			if (!$result) {

@@ -94,7 +94,7 @@ var link = function(value){
 		$(this).parent().addClass('active');
 	});
 	if(value == "h"){
-		window.history.replaceState(" ", "Home", basedir);
+		window.history.replaceState(" ", "Home", basedir+"/h/");
 		document.title = "Home - Vidali";
 	}
 	if(value == "m"){

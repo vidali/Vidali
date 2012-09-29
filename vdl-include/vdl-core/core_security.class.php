@@ -64,6 +64,7 @@ class CORE_SECURITY extends CORE_MAIN{
 		}
 		if($result->num_rows){
 			// nos devuelve 1 si encontro el usuario y el password
+            session_start();
 			$array= $result->fetch_array();
 			//generamos id de la sesion
 			$s_id = session_id();

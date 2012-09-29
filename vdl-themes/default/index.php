@@ -14,12 +14,7 @@
 <header class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner container-fluid">
 		<div class="row">
-			<div id="tittle" class="span8 offset2">
-				<a class="brand" href="/Vidali"><img src="img/logo.png" border="0"></a>
-			</div>
-			<div id="menu" class="span2">
-				<a href="/Vidali/?action=logout" title="logout"><img src="img/lock.png"></a>
-			</div>
+            {{HEADER}}
 		</div>
 	</div>
 </header>
@@ -61,13 +56,7 @@
 				</div>
 			</aside>
 			<div class="span6">
-				<form class="form-inline" action="/Vidali/vdl-include/set_update.php" method="post">
-					<textarea id="update" name="update" class="span12" rows="2" placeholder="Actualiza tu estado"></textarea>
-					<button class="btn btn-inverse"><i class="icon-star icon-white"></i></button>
-					<button class="btn btn-inverse"><i class="icon-map-marker icon-white"></i></button>
-					<button class="btn btn-inverse"><i class="icon-upload icon-white"></i></button>
-					<button type="submit" class="btn btn-primary pull-right"><i class="icon-ok icon-white"></i></button>
-				</form>
+                {{UPDATE}}
 			</div>
 			<aside class="span3">
 				<div id="invisible" class="well sidebar">

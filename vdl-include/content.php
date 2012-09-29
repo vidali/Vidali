@@ -24,6 +24,10 @@ if (!isset($_GET['p1'])){
 }
 else{
 	$pg=$_GET['p1'];
+///===>Go to Home page.
+	if ($pg == 'h'){
+		include("vdl-home/index.php");
+}
 ///===>Go to Profile page.
 	if ($pg == 'u'){
 		include("vdl-profile/index.php");

@@ -20,20 +20,10 @@
 				<ul class="nav pull-right">
 					<li><a href="./register.html">Registrate</a></li>
 					<li class="divider-vertical"></li>
-					<li class="drop down">
+					<li class="dropdown">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown">Iniciar Sesion <strong class="caret"></strong></a>
 						<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
 								{{LOGIN}}
-								<input id="user" name="user" class="input" type="text" placeholder="Email" autofocus="autofocus">
-								<input id="password" name="password" class="input" type="password" placeholder="Contrase&ntilde;a">
-								<label class="string optional" for="user_remember_me">
-									<input type="checkbox" id="remember" name="remember" value="1"> Recordar mi sesión
-								</label>
-								<label class="string optional" for="forgotten_password">
-									<a href="#"> He olvidado mi contraseña</a>
-								</label>
-								<button class="btn btn-large btn-success" style="clear: left; width: 100%; height: 32px; font-size: 13px;" value="ok" type="submit">Iniciar sesi&oacute;n</button>
-							</form>
 						</div>
 					</li>
 				</ul>

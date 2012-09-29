@@ -20,7 +20,7 @@ session_start();
 	include("vdl-core/core_security.class.php");
 	//	$message=htmlspecialchars($_POST['update']);
 	//conectar a base de datos
-	$core= new CORE_PROFILE();
+	$core= new CORE_PROFILE($_POST["nick_s"],$_SESSION["nick"]);
 	//AQUI SE COMPROBARÁ SI EL ESTADO CONTIENE ALGUN @REPLY, #HASTAG, !RED, @>MENSAJE, #> MENSAJE, SE SEPARARÁ LOS LINKS DEL MENSAJE Y
 	// SE PODRÁ FILTRAR 1 LINK, 1 VIDEO Y/O 1 IMAGEN
 	$SEC = new CORE_SECURITY();

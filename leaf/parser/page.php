@@ -1,6 +1,8 @@
 <?php 
 if($pg == "")
 	include("vdl-themes/default/home.php");
+if($pg == "h")
+	include("vdl-themes/default/home.php");
 if($pg == "u")
 	include("vdl-themes/default/prof.php");
 if($pg == "m")

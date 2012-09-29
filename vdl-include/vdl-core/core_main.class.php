@@ -15,10 +15,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
-include_once 'core_db.class.php';
+require_once 'core_db.class.php';
 
 class CORE_MAIN extends CORE_DB{
-	/*Private*/
+
 	private $_connection;
 	private function gbversion(){
 		$Name="";
@@ -59,7 +59,6 @@ class CORE_MAIN extends CORE_DB{
 		return $ub;
 	}
 
-	/*Public*/
 	public function __construct (){
 		parent::__construct();
 		date_default_timezone_set("Europe/London");
@@ -72,11 +71,11 @@ class CORE_MAIN extends CORE_DB{
 	public function load (){
 		$this->_connection = parent::connect();
 		$query = "SELECT * FROM vdl_config ORDER BY config_id";
-		if(!$result = $this->_connection->query($query))
-			printf("Error: %s\n", $mysqli->error); 
-		parent::close($this->_connection);
-		if(!$result)
-			return false;
+		if(!$result = $this->_connection->query($query)){
+			printf("Error: %s\n", $this->_connection->error);
+			parent::close($this->_connection);
+            return false;
+        }
 		else{
 			while($row = $result->fetch_assoc()){
 				define ($row["config_name"],$row["config_value"]);
