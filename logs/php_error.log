@@ -2709,3 +2709,22 @@
 [29-Sep-2012 21:38:10 UTC] PHP Notice:  Undefined index: @ in /media/Datos/web/Vidali/vdl-themes/default/prof.php on line 8
 [29-Sep-2012 21:38:10 UTC] PHP Notice:  Undefined variable: visitor in /media/Datos/web/Vidali/vdl-themes/default/prof.php on line 8
 [29-Sep-2012 21:38:23 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[30-Sep-2012 13:23:26 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali/vdl-include/vdl-core/core_security.class.php on line 67
+[30-Sep-2012 13:23:29 UTC] PHP Notice:  Use of undefined constant NICK - assumed 'NICK' in /media/Datos/web/Vidali/vdl-include/content.php on line 19
+[30-Sep-2012 13:23:30 UTC] PHP Notice:  Use of undefined constant NICK - assumed 'NICK' in /media/Datos/web/Vidali/leaf/parser/update.php on line 2
+[01-Oct-2012 13:32:19 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali/vdl-include/vdl-core/core_security.class.php on line 67
+[01-Oct-2012 13:32:19 UTC] PHP Notice:  Use of undefined constant NICK - assumed 'NICK' in /media/Datos/web/Vidali/vdl-include/content.php on line 19
+[01-Oct-2012 13:32:19 UTC] PHP Notice:  Use of undefined constant NICK - assumed 'NICK' in /media/Datos/web/Vidali/leaf/parser/update.php on line 2
+[01-Oct-2012 13:32:22 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali/vdl-include/vdl-core/core_security.class.php on line 67
+[01-Oct-2012 13:32:22 UTC] PHP Notice:  Use of undefined constant NICK - assumed 'NICK' in /media/Datos/web/Vidali/vdl-include/content.php on line 19
+[01-Oct-2012 13:32:22 UTC] PHP Notice:  Use of undefined constant NICK - assumed 'NICK' in /media/Datos/web/Vidali/leaf/parser/update.php on line 2
+[01-Oct-2012 13:37:36 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[01-Oct-2012 13:37:56 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[01-Oct-2012 13:38:29 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[01-Oct-2012 13:40:15 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[01-Oct-2012 13:40:32 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[01-Oct-2012 13:47:13 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /media/Datos/web/Vidali/vdl-include/vdl-core/core_security.class.php on line 67
+[01-Oct-2012 13:47:13 UTC] PHP Notice:  Use of undefined constant NICK - assumed 'NICK' in /media/Datos/web/Vidali/vdl-include/content.php on line 19
+[01-Oct-2012 13:47:13 UTC] PHP Notice:  Use of undefined constant NICK - assumed 'NICK' in /media/Datos/web/Vidali/leaf/parser/update.php on line 2
+[01-Oct-2012 13:47:21 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18
+[01-Oct-2012 13:53:25 UTC] PHP Notice:  Undefined index: email in /media/Datos/web/Vidali/vdl-include/preload.php on line 18

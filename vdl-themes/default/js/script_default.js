@@ -14,6 +14,7 @@ var errMsg = function(msg, type){
 var doLogin = function(){
 	var user = $('#user').val();
 	var password = $('#password').val();
+    var dir;
 	
 	if(!user || !password){
 		errMsg('Debes rellenar todos los datos.');
@@ -26,11 +27,14 @@ var doLogin = function(){
 		errMsg('El correo introducido es incorrecto.');
 		return;
 	}
+	if(basedir.length == 0)
+        dir = "/vdl-include/session_start.php";
+    else
+        dir = basedir+"/vdl-include/session_start.php"; 
 	
 	$("#background").fadeIn(1000);
-	
 	$.ajax({
-		url: basedir+"/vdl-include/session_start.php",
+		url: dir,
 		cache: false,
 		type: "POST",
 		data: {
