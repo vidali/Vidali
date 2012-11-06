@@ -19,8 +19,9 @@ $c_group = new CORE_GROUP();
 if(isset($_GET["q"])){
 	$group = $c_group->get_group($_GET["q"]);
 }
-else
+else{
 	$group = "empty";
+}
 $groups = $c_group->get_groups();
 $trending = $c_group->get_trends();
 ?>

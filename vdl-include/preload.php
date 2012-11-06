@@ -9,7 +9,6 @@ $SEC = new CORE_SECURITY();
 $MAIN = new CORE_MAIN();
 $MAIN->load();
 $MAIN->load_lang();
-$MAIN->get_interface();
 
 if(isset($_SESSION['loged'])){
 	define("ID",$_SESSION["id"]);

@@ -50,12 +50,12 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 						$size = 50;
 						$grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=".md5( strtolower($upd["email"]) )."&size=".$size;
 						echo '<img border="0" src="'.$grav_url.' class="thumbnail">';
-					?>				
+					?>
 					</div>
 					<div class="upd-info span11">
 						<div class="row-fluid">
 							<div class="span11">
-								<?php echo '<a href="?pg=p&!=all&@='.$upd["nick"].'">@'.$upd["nick"].'</a> <br> '.$upd["date_published"];?>
+								<?php echo '<a href="'.BASEDIR.'/u/'.$upd["nick"].'/">@'.$upd["nick"].'</a> <br> '.$upd["date_published"];?>
 							</div>
 							<div class="upd-msg span11">
 								<?php echo $user->meta_text($upd["text"]);?>

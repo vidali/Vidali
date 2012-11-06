@@ -80,6 +80,34 @@ class CORE_PROFILE extends CORE_USER{
 		} 
 		return true;
 	}
+    
+    private function checkstyle($text){
+        //Comprobamos las Negritas
+		preg_match_all ("/\*([A-Za-z0-9-_\s]+)\*/",$text, $blacks);
+		foreach($blacks[1]  as $key => $black){
+			$find = '*'.$black.'*';
+			$replace = '<b>'.$black.'</b>';
+			$text = str_replace($find, $replace, $text);
+		}
+
+		//Comprobamos las cursivas
+		preg_match_all ("/_([A-Za-z0-9-_\s]+)_/",$text, $blacks);
+		foreach($blacks[1]  as $key => $black){
+			$find = '_'.$black.'_';
+			$replace = '<i>'.$black.'</i>';
+			$text = str_replace($find, $replace, $text);
+		}
+		
+		//Comprobamos los tachados
+		preg_match_all ("/-([A-Za-z0-9-_\s]+)-/",$text, $blacks);
+		foreach($blacks[1]  as $key => $black){
+			$find = '-'.$black.'-';
+			$replace = '<strike>'.$black.'</strike>';
+			$text = str_replace($find, $replace, $text);
+		}
+        return $text;
+    }
+    
 	/*Public*/
 
 	public function __construct ($_USER,$_SUSER){
@@ -143,28 +171,6 @@ class CORE_PROFILE extends CORE_USER{
 			$result1 = $connection->query($query1);
 			while ($row = $result1->fetch_assoc()){
 				array_push($a_result1,$row);
-			}
-		}
-		$a_result2 = array();
-		$query = "SELECT * FROM vdl_friend_of WHERE (user1='".$id["id"]."' OR user2='".$id["id"]."') LIMIT 0,10";
-		$result = $connection->query($query);
-		if (!$result) {
-			$message  = 'Invalid query: ' . mysql_error() . "\n";
-			$message =  $message . ' Whole query: ' . $query;
-			die($message);
-		}
-		while ($row = $result->fetch_assoc()){
-			if($row["status"] != 0){
-				if($row["user1"]==$id["id"]){
-					$query = "SELECT nick,avatar_id,email FROM vdl_user WHERE id='".$row["user2"]."'";
-					$result2 = $connection->query($query);	
-				}
-				else{
-					$query = "SELECT nick,avatar_id,email FROM vdl_user WHERE id='".$row["user1"]."'";
-					$result2 = $connection->query($query);
-				}
-				while($row2 = $result2->fetch_assoc())
-				array_push($a_result2,$row2);
 			}
 		}
 		if($_user != $_refer){
@@ -378,14 +384,14 @@ class CORE_PROFILE extends CORE_USER{
 		}
 		return $arresult;
 	}
-	
+    
 	public function meta_text($text){
 		$text = html_entity_decode($text);
 		//Comprobamos las Menciones 
 		preg_match_all ("/[@]+([A-Za-z0-9-_]+)/",$text, $users); 
 		foreach($users[1]  as $key => $user){ 
 			$find = '@'.$user; 
-			$replace = '<b><a href="?pg=p&!=all&@='.$user.'" >@'.$user.'</a></b>'; 
+			$replace = '<b><a href="'.BASEDIR.'/u/'.$user.'/" >@'.$user.'</a></b>'; 
 			$text = str_replace($find, $replace, $text); 
 		} 
 		 
@@ -394,21 +400,12 @@ class CORE_PROFILE extends CORE_USER{
         '<b><a href="?pg=g&!=all&q=%23\1">#\1</a></b>',
         $text);
 
-/*		preg_match_all('/[#]+([A-Za-z0-9-_]+)/',$text,$hash);
-		$hashtag = $hash[1];
-		foreach($hashtag  as $key => $hash){ 
-			//Aqui podemos hacer que lo agrege a la database 
-			$find = '#'.$hash;
-			$replace = '<b><a href="?pg=g&!=all&q=%23'.$hash.'" >#'.$hash.'</a></b>'; 
-			$text = str_replace($find, $replace, $text); 
-		} */
-
 		//Comprobamos las redes
 		preg_match_all('/[!]+([A-Za-z0-9-_]+)/',$text, $ntag);
 		foreach($ntag[1]  as $key => $net){
 			//Aqui podemos hacer que lo agrege a la database
 			$find = '!'.$net;
-			$replace = '<b><a href="?pg=n&name='.$net.'" >!'.$net.'</a></b>';
+			$replace = '<b><a href="'.BASEDIR.'/g/'.$net.'"/>!'.$net.'</a></b>';
 			$text = str_replace($find, $replace, $text);
 		}
 
@@ -420,30 +417,7 @@ class CORE_PROFILE extends CORE_USER{
 			$text = str_replace($find, $replace, $text);
 		}
 		
-		
-		//Comprobamos las Negritas
-		preg_match_all ("/\*([A-Za-z0-9-_\s]+)\*/",$text, $blacks);
-		foreach($blacks[1]  as $key => $black){
-			$find = '*'.$black.'*';
-			$replace = '<b>'.$black.'</b>';
-			$text = str_replace($find, $replace, $text);
-		}
-
-		//Comprobamos las cursivas
-		preg_match_all ("/_([A-Za-z0-9-_\s]+)_/",$text, $blacks);
-		foreach($blacks[1]  as $key => $black){
-			$find = '_'.$black.'_';
-			$replace = '<i>'.$black.'</i>';
-			$text = str_replace($find, $replace, $text);
-		}
-		
-		//Comprobamos los tachados
-		preg_match_all ("/-([A-Za-z0-9-_\s]+)-/",$text, $blacks);
-		foreach($blacks[1]  as $key => $black){
-			$find = '-'.$black.'-';
-			$replace = '<strike>'.$black.'</strike>';
-			$text = str_replace($find, $replace, $text);
-		}
+        $text = $this->checkstyle($text);
 
 		//Comprobamos los links youtube
 		preg_match_all ("/http:\/\/www\.youtube\.com\/watch\?v=([A-Za-z0-9-_]+)/",$text, $blacks);
