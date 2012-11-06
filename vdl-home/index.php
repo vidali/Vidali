@@ -14,6 +14,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
-	$friends = $user->get_friends($_SESSION["nick"]);
-	$home_upd = $user->get_home_wall($_SESSION["nick"]);
+		$friends = $user->get_friends($_SESSION["nick"]);
+		$home_upd = $user->get_home_wall($_SESSION["nick"]);
+
 ?>
