@@ -4,6 +4,7 @@ include_once 'vdl-core/core_main.class.php';
 include_once 'vdl-core/core_security.class.php';
 include_once 'vdl-core/core_profile.class.php';
 include_once 'vdl-core/core_groups.class.php';
+include_once 'vdl-core/core_message.class.php';
 
 $SEC = new CORE_SECURITY();
 $MAIN = new CORE_MAIN();

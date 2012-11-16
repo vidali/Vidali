@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*	Vidali, Social Network Open Source.
 This file is part of Vidali.
 
@@ -15,5 +15,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
- echo $variable;
+class CORE_MESSAGE extends CORE_MAIN{
+	public function get_test($sender,$dest,$cont){
+		return 'mensaje: '. $cont;
+	}
+}
+
 ?>
