@@ -154,7 +154,7 @@ class CORE_USER extends CORE_MAIN{
 		else
 			$id = mysqli_insert_id($connection);			
 			$query = ("UPDATE `vdl_user` set `age` = (YEAR(CURDATE())-YEAR(birthdate)) - (RIGHT(CURDATE(),5)<RIGHT(birthdate,5))");
-			$result = $connetion->query($query);
+			$result = $connection->query($query);
 			if (!$result) {
 				$message  = 'Invalid query: ' . mysql_error() . "\n";
 				$message = $message . ' Whole query: ' . $query;
