@@ -1,4 +1,5 @@
 <?php
-	$test = new CORE_MESSAGE();
-	$variable = $test->get_test('cristo','ira','Hola a todos');
+	$test = new CORE_CONVER();
+	$variable = "EEEEEEEEEEEEEEEEEY SEXY LADY!";
+	$variable2 = $test->get_convers(1);
 ?>
