@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*	Vidali, Social Network Open Source.
 This file is part of Vidali.
 
@@ -15,5 +15,25 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
- echo $variable." --- ".$variable2;
+class CORE_MSG_CONVER extends CORE_MAIN{
+
+	public function __construct (){
+		parent::__construct();
+	}
+
+	public function get_messages($id_conver){
+		$connection = parent::connect();
+		$query = "SELECT *
+					FROM vdl_msg_conver
+					WHERE vdl_msg_conver.conver_ref LIKE $id_conver";
+		$data=$connection->query($query);
+		$arresult=array();
+		while ($row = $data->fetch_array()) {
+			array_push($arresult,$row);
+		}
+		return $arresult;
+	}
+	
+}
+
 ?>
