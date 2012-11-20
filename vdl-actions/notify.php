@@ -29,7 +29,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 
 <div id="" class="tab-content">
 	<div id="Requests" class="inbox-tab tab-pane fade active in">
-	<?
+	<?php
 	$val = $user->get_notify($_SESSION["nick"]);
 	foreach ($val as $not){
 		if($not["type"]== 1){
