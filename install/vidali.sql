@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `vdl_config` (
   `config_id` int(11) NOT NULL AUTO_INCREMENT,
   `config_name` varchar(50) COLLATE utf8_bin NOT NULL,
   `config_value` varchar(255) COLLATE utf8_bin NOT NULL,
-  KEY `config_id` (`config_id`)
+  PRIMARY KEY `config_id` (`config_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=6;
 INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES
 (1, 'LANG', 'ES'),
@@ -151,3 +151,35 @@ CREATE TABLE IF NOT EXISTS `vdl_notify` (
   KEY `user_id` (`user_id`),
   KEY `user_sender` (`user_sender`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3;
+
+/* PARTE NUEVA */
+
+CREATE TABLE IF NOT EXISTS `vdl_conver` (
+  `id_conver` int(11) NOT NULL AUTO_INCREMENT,
+  `user1` int(11) NOT NULL,
+  `user2` int(11) NOT NULL,
+  `user3` int(11) DEFAULT NULL,
+  `user4` int(11) DEFAULT NULL,
+  `user5` int(11) DEFAULT NULL,
+  `user6` int(11) DEFAULT NULL,
+  `user7` int(11) DEFAULT NULL,
+  `user8` int(11) DEFAULT NULL,
+  `user9` int(11) DEFAULT NULL,
+  `user10` int(11) DEFAULT NULL,
+  `user11` int(11) DEFAULT NULL,
+  `user12` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_conver`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1;
+CREATE TABLE IF NOT EXISTS `vdl_msg_conver` (
+  `conver_ref` int(11) NOT NULL,
+  `user_ref` int(11) NOT NULL,
+  `date_published` datetime NOT NULL,
+  `text` varchar (140) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`conver_ref`,`user_ref`,`date_published`),
+  KEY `fk_vdl_msg_conver_vdl_conver1` (`conver_ref`),
+  KEY `fk_vdl_msg_conver_vdl_user1` (`user_ref`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+ALTER TABLE `vdl_msg_conver`
+  ADD CONSTRAINT `fk_vdl_msg_conver_vdl_conver1` FOREIGN KEY (`conver_ref`) REFERENCES `vdl_conver` (`id_conver`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_vdl_msg_conver_vdl_user1` FOREIGN KEY (`user_ref`) REFERENCES `vdl_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ 

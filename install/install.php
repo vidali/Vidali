@@ -68,7 +68,7 @@ foreach ($_POST as $id => $data){
 		*/
 		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (9, 'STORAGE', 'SERVER')"))
 			printf("Error: %s<br>", mysqli_error($con));
-		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (10, 'BASEDIR', 'Vidali')"))
+		if(!$con->query("INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (10, 'BASEDIR', '/Vidali')"))
 			printf("Error: %s<br>", mysqli_error($con));
 		//Crear usuario
 /*		$admin = $_POST["nickname"];
