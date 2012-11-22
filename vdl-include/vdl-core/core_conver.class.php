@@ -23,7 +23,7 @@ class CORE_CONVER extends CORE_MAIN{
 
 	public function get_convers($id_user){
 		$connection = parent::connect();
-		$query = "SELECT id_conver
+		$query = "SELECT *
 					FROM vdl_conver
 					WHERE (vdl_conver.user1 LIKE ".$id_user.")
 						OR (vdl_conver.user2 LIKE ".$id_user.")
