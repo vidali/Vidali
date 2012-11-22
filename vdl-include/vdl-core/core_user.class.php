@@ -188,6 +188,19 @@ class CORE_USER extends CORE_MAIN{
 		return $rg;
 	}
 	
+	public function get_nick($id_user){
+		$connection = parent::connect();
+		$query = "SELECT vdl_user.nick
+					FROM vdl_user
+					WHERE vdl_user.id LIKE ".$id_user;
+		$data=$connection->query($query);
+		$arresult=array();
+		while ($row = $data->fetch_array()) {
+			array_push($arresult,$row[0]);
+		}
+		return $arresult;
+	}
+	
 }
 
 ?>
