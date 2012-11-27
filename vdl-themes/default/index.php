@@ -28,7 +28,7 @@
 <div class="container-fluid">
 	{{CONTENT}}
 	<div class="row-fluid">
-		<div  id="din">
+		<div id="din">
 			<aside class="span3"> 
 				{{ACTIONS}}
 			</aside>
