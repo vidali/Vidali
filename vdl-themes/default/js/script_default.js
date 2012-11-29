@@ -94,8 +94,10 @@ var deserialize = function (value) {
 	
 var link = function(value){
 	$('.main-menu li a').click(function(){
-		$('.main-menu li').removeClass('active');
-		$(this).parent().addClass('active');
+		if (!$(this).hasClass("active")) {
+			$('.main-menu li').removeClass('active');
+			$(this).parent().addClass('active');
+		}
 	});
 	if(value == "h"){
 		window.history.replaceState(" ", "Home", basedir+"/h/");
@@ -117,8 +119,8 @@ var link = function(value){
 		window.history.replaceState(" ", "Ajustes", basedir+"/s/");
 		document.title = "Ajustes - Vidali";
 	}
-		$("#din").fadeOut(function(){ $("#din").load(location.href+" #din").fadeIn()});
-		return false;
+	$("#din").fadeOut(1000,function(){ $("#din").load(location.href+" #din").fadeIn(1500)});
+	return false;
 };
 
 $('#home-tab a').click(function (e) {
