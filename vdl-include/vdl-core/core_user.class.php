@@ -201,6 +201,40 @@ class CORE_USER extends CORE_MAIN{
 		return $arresult;
 	}
 	
+	public function get_img($id_user){
+		$connection = parent::connect();
+		$query = "SELECT vdl_user.avatar_id
+					FROM vdl_user
+					WHERE vdl_user.id LIKE ".$id_user;
+		$data=$connection->query($query);
+		$arresult=array();
+		while ($row = $data->fetch_array()) {
+			array_push($arresult,$row[0]);
+		}
+		return $arresult;
+	}
+	
+/*	public function get_card($_user){
+		$connection = parent::connect();
+		$user = htmlspecialchars(trim($_user));
+		$query = sprintf("SELECT
+							vdl_user.nick,
+							vdl_user.avatar_id,
+							vdl_user.n_views,
+							vdl_user.n_contacts,
+							vdl_user.n_groups
+		FROM vdl_user WHERE vdl_user.nick='%s'", $user);
+		$result= $connection->query($query);
+		while ($row = $result->fetch_assoc()){
+			$this->_nickname = $row["nick"];
+			$this->_img_prof = $row["avatar_id"];
+			$this->_prof_visits = $row["n_views"];
+			$this->_prof_friends = $row["n_contacts"];
+			$this->_prof_groups = $row["n_groups"];
+		}
+		return true;
+	}
+*/	
 }
 
 ?>
