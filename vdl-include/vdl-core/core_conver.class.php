@@ -45,6 +45,19 @@ class CORE_CONVER extends CORE_MAIN{
 		return $arresult;
 	}
 	
+		public function set_convers($id_conver,$usuarios){
+		$connection = parent::connect();
+		$query = "INSERT INTO `vdl_conver` (`id_conver`, `user1`, `user2`, `user3`, `user4`, `user5`, `user6`, `user7`, `user8`, `user9`, `user10`, `user11`, `user12`) 
+					VALUES ('$id_conver', '$usuarios[0]', '$usuarios[1]', '$usuarios[2]', '$usuarios[3]', '$usuarios[4]', '$usuarios[5]', '$usuarios[6]', '$usuarios[7]', '$usuarios[8]', '$usuarios[9]', '$usuarios[10]', '$usuarios[11]');";
+		$data=$connection->query($query);
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message = $message . ' Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		return true;
+	}
 }
 
 ?>

@@ -34,6 +34,20 @@ class CORE_MSG_CONVER extends CORE_MAIN{
 		return $arresult;
 	}
 	
+	public function set_messages($id_conver,$id_user,$text){
+		$connection = parent::connect();
+		$query = "INSERT INTO `vdl_msg_conver` (`conver_ref`, `user_ref`, `date_published`, `text`) 
+					VALUES ('$id_conver', '$id_user', 'now()', '$text')";
+		$data=$connection->query($query);
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message = $message . ' Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		return true;
+	}
+	
 }
 
 ?>
