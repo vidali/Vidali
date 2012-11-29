@@ -1,6 +1,6 @@
 <?php
-    //echo '<form id="form_login" method="post" name="vdl-login" onsubmit="doLogin(); return false;" autocomplete="on">';
-     echo '<form method="post" action="'.BASEDIR.'/vdl-include/session_start.php">';
+    echo '<form id="form_login" method="post" name="vdl-login" onsubmit="doLogin(); return false;" autocomplete="on">';
+    //echo '<form method="post" action="'.BASEDIR.'/vdl-include/session_start.php">';
 ?>
     <input id="user" name="user" class="input" type="text" placeholder="Email" autofocus="autofocus">
     <input id="password" name="password" class="input" type="password" placeholder="Contrase&ntilde;a">
