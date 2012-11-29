@@ -15,38 +15,50 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 ?>
-
-<div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span2">
-			<!--Sidebar content-->
-			<?php
-				foreach ($convers as $conv){
-					echo "Conver: " . $conv[0] . '<br>';
-					$cont = 1;
-					while ($conv[$cont] != null){
-						if (ID != $conv[$cont]) {
-							$userprueba = $c_user->get_nick($conv[$cont]);
-							$img = $c_user->get_img($conv[$cont]);
-							echo '<img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" >';
-							echo $userprueba[0] . '<br>';
-						}
-						$cont++;
-					}
+<div class="tabbable tabs-left">
+	<ul class="nav nav-tabs">
+		<?php
+			$active = 1;
+			foreach ($convers as $conv){
+				if ($active == 1) {
+					echo '<li class="active">';
+				} else {
+					echo '<li>';
 				}
-			?>
-		</div>
-		<div class="span10">
-			<!--Body content-->
-			<?php
-				foreach ($convers as $conv){
-					$messages = $c_msg->get_messages($conv[0]);
-					foreach ($messages as $mess){
-						$usermsg = $c_user->get_nick($mess[1]);
-						echo $usermsg[0].": ".$mess[3].'<br>'.$mess[2].'<br>';
+				echo '<a href="#A'.$active.'" data-toggle="tab">';
+				$cont = 1;
+				while ($conv[$cont] != null){
+					
+					if (ID != $conv[$cont]) {
+						$userprueba = $c_user->get_nick($conv[$cont]);
+						$img = $c_user->get_img($conv[$cont]);
+						echo '<img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >';
+						echo $userprueba[0] . '<br>';
 					}
+					$cont++;
 				}
-			?>
-		</div>
+				$active++;
+				echo '</a></li>';
+			}
+		?>
+	</ul>
+	<div class="tab-content">
+		<?php
+			$active = 1;
+			foreach ($convers as $conv){
+				$messages = $c_msg->get_messages($conv[0]);
+				echo '<div class="tab-pane';
+				if ($active == 1) {
+					echo ' active';
+				}
+				echo '" id="A'.$active.'">';
+				foreach ($messages as $mess){
+					$usermsg = $c_user->get_nick($mess[1]);
+					echo '<p>'.$usermsg[0].": ".$mess[3].'<br>'.$mess[2].'<br></p>';
+				}
+				echo '</div>';
+				$active++;
+			}
+		?>
 	</div>
 </div>
