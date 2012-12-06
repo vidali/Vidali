@@ -15,11 +15,35 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 ?>
+
+
+
 <div align="right">
-	<a class="btn btn-primary btn-large">
-		Nuevo mensaje
-	</a>
+	<a href="#myModal" role="button" data-toggle="modal" class="btn btn-primary btn-large">Nuevo mensaje</a>
 </div>
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+		<h3 id="myModalLabel">Nuevo Mensaje</h3>
+	</div>
+	<form id="send_m" method="post" action="/Vidali/vdl-include/send_msg.php">
+		<div class="modal-body">
+			<h4>Para: </h4>
+			<br>
+			<input type="text" name="remitte" class="span12"/>
+			<br>
+			<h4>Mensaje: </h4>
+			<br>
+			<textarea name="texto" class="span12" rows="10" cols="100" />
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+			<button type="submit" class="btn btn-primary">Enviar</button>
+		</div>
+	</form>
+</div>
+
 <div class="tabbable tabs-left">
 	<ul class="nav nav-tabs">
 		<?php
@@ -73,3 +97,5 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 		</form>
 	</div>
 </div>
+
+
