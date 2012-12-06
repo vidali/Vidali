@@ -18,6 +18,10 @@ session_start();
 	include("vdl-core/core_main.class.php");
 	include("vdl-core/core_profile.class.php");
 	include("vdl-core/core_security.class.php");
+	
+	$sender=$_POST[''];
+	$text=
+	
 	//	$message=htmlspecialchars($_POST['update']);
 	//conectar a base de datos
 	$core= new CORE_PROFILE($_POST["nick_s"],$_SESSION["nick"]);
