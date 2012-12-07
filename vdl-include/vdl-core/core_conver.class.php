@@ -39,13 +39,37 @@ class CORE_CONVER extends CORE_MAIN{
 						OR (vdl_conver.user12 LIKE ".$id_user.")";
 		$data=$connection->query($query);
 		$arresult=array();
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+			return false;
+		}
 		while ($row = $data->fetch_array()) {
 			array_push($arresult,$row);
 		}
 		return $arresult;
 	}
 	
-		public function set_convers($id_conver,$usuarios){
+	public function get_max_id(){
+		$connection = parent::connect();
+		$query = "SELECT MAX(vdl_conver.id_conver)
+					FROM vdl_conver";
+		$data=$connection->query($query);
+		$result;
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		while ($row = $data->fetch_array()) {
+			$result = $row[0];
+		}
+		return $result;
+	}
+	
+	public function set_convers($id_conver,$usuarios){
 		$connection = parent::connect();
 		$query = "INSERT INTO `vdl_conver` (`id_conver`, `user1`, `user2`, `user3`, `user4`, `user5`, `user6`, `user7`, `user8`, `user9`, `user10`, `user11`, `user12`) 
 					VALUES ('$id_conver', '$usuarios[0]', '$usuarios[1]', '$usuarios[2]', '$usuarios[3]', '$usuarios[4]', '$usuarios[5]', '$usuarios[6]', '$usuarios[7]', '$usuarios[8]', '$usuarios[9]', '$usuarios[10]', '$usuarios[11]');";

@@ -25,7 +25,8 @@ class CORE_MSG_CONVER extends CORE_MAIN{
 		$connection = parent::connect();
 		$query = "SELECT *
 					FROM vdl_msg_conver
-					WHERE vdl_msg_conver.conver_ref LIKE $id_conver";
+					WHERE vdl_msg_conver.conver_ref LIKE $id_conver
+					ORDER BY vdl_msg_conver.date_published";
 		$data=$connection->query($query);
 		$arresult=array();
 		while ($row = $data->fetch_array()) {
@@ -34,10 +35,10 @@ class CORE_MSG_CONVER extends CORE_MAIN{
 		return $arresult;
 	}
 	
-	public function set_messages($id_conver,$id_user,$text){
+	public function set_messages($id_conver,$id_user,$date,$text){
 		$connection = parent::connect();
 		$query = "INSERT INTO `vdl_msg_conver` (`conver_ref`, `user_ref`, `date_published`, `text`) 
-					VALUES ('$id_conver', '$id_user', 'now()', '$text')";
+					VALUES ('$id_conver', '$id_user', '$date', '$text')";
 		$data=$connection->query($query);
 		if (!$data) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";

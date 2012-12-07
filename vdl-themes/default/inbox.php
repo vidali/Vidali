@@ -36,6 +36,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 			<h4>Mensaje: </h4>
 			<br>
 			<textarea name="texto" class="span12" rows="10" cols="100" />
+			<input type="hidden" name="conver" value="<?= $ID ?>"/>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
