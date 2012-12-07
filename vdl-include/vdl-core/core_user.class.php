@@ -214,6 +214,25 @@ class CORE_USER extends CORE_MAIN{
 		return $arresult;
 	}
 	
+	public function get_id($user){
+		$connection = parent::connect();
+		$query = sprintf("SELECT vdl_user.id
+					FROM vdl_user
+					WHERE vdl_user.nick LIKE '%s'",$user);
+		$data=$connection->query($query);
+		$result;
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		while ($row = $data->fetch_array()) {
+			$result =$row[0];
+		}
+		return $result;
+	}
+	
 /*	public function get_card($_user){
 		$connection = parent::connect();
 		$user = htmlspecialchars(trim($_user));
