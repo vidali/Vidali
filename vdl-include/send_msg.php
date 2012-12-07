@@ -21,12 +21,12 @@ session_start();
 	include("vdl-core/core_msg_conver.class.php");
 	//	$message=htmlspecialchars($_POST['update']);
 	
-	// $send=$_POST['remitte'];
-	// $text=$_POST['texto'];
-	// $ID=$_POST['conver'];
-	$send = "test3";
-	$text="por fiiin!";
-	$ID=1;
+	$send=$_POST['remitte'];
+	$text=$_POST['texto'];
+	$ID=$_POST['conver'];
+	// $send = "test3";
+	// $text="por fiiin!";
+	// $ID=1;
 	
 	// echo $send.' '.$text.' - count:'.strlen($send).' - ID:'.$ID;
 	
@@ -107,7 +107,7 @@ session_start();
 		$count = 0;
 		print_r($checkusers);
 		while ($count < count($checkusers)){
-			$idusers[] = $c_user->get_id($checkusers[$count]);
+			$idusers[] = "'".$c_user->get_id($checkusers[$count])."'";
 			$count++;
 		}
 		$idusers[] = $ID;
@@ -118,7 +118,7 @@ session_start();
 		}
 		print_r($idusers);
 		$idconver = $c_conver->get_max_id() + 1;
-		$c_conver->set_convers($idconver, $checkusers);
+		$c_conver->set_convers($idconver, $idusers);
 		$c_msg->set_messages($idconver, $ID, date("Y-m-d H:i:s"), $text);
 	}
 	
