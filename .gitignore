@@ -1,5 +1,4 @@
 .sonar/
-sonar-project.properties
 logs/php_error.log
 vdl-include/vdl-core/db.ini
 .buildpath
