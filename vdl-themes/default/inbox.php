@@ -31,7 +31,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 		<div class="modal-body">
 			<h4>Para: </h4>
 			<br>
-			<input type="text" name="remitte" class="span12"/>
+			<input type="text" id="remitte" name="remitte" class="span12" style="margin: 0 auto;" />
 			<br>
 			<h4>Mensaje: </h4>
 			<br>

@@ -137,9 +137,3 @@ $('#notify-tab a').click(function (e) {
   e.preventDefault();
   $(this).tab('show');
 });
-
-$(function() {
-	$('#remitte').autocomplete({
-		source : ['jose','luis','maria']
-	});
-});
