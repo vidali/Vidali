@@ -45,7 +45,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 	</form>
 </div>
 
-<form class="navbar-form" action="/Vidali/vdl-include/send_msg_direct.php">
+<form id="send_m_direct" class="navbar-form" method="post" action="/Vidali/vdl-include/send_msg_direct.php">
 	<div class="tabbable tabs-left" >
 		<ul class="nav nav-tabs" >
 			<?php
@@ -95,9 +95,10 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 			?>
 		</div>
 		<div align="right">
-			<textarea name="textdirect" rows="3" style="width:65%"  />
+			<textarea name="textdirect" rows="3" style="width:60%"  />
 			<button type="submit" class="btn" style="height: 70px">Enviar</button>
 		</div>
 	</div>
+	<input type="hidden" name="usuario" value="<?= $ID ?>"/>
 </form>
 
