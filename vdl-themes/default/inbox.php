@@ -45,58 +45,59 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 	</form>
 </div>
 
-<div class="tabbable tabs-left">
-	<ul class="nav nav-tabs">
-		<?php
-			$active = 1;
-			foreach ($convers as $conv){
-				if ($active == 1) {
-					echo '<li class="active">';
-				} else {
-					echo '<li>';
-				}
-				echo '<a href="#A'.$active.'" data-toggle="tab">';
-				$cont = 1;
-				while ($conv[$cont] != null){
-					
-					if (ID != $conv[$cont]) {
-						$userprueba = $c_user->get_nick($conv[$cont]);
-						$img = $c_user->get_img($conv[$cont]);
-						echo '<img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >';
-						echo $userprueba[0] . '<br>';
+<form class="navbar-form" action="/Vidali/vdl-include/send_msg_direct.php">
+	<div class="tabbable tabs-left" >
+		<ul class="nav nav-tabs" >
+			<?php
+				$active = 1;
+				foreach ($convers as $conv){
+					if ($active == 1) {
+						echo '<li class="active">';
+					} else {
+						echo '<li>';
 					}
-					$cont++;
+					echo '<a href="#A'.$active.'" data-toggle="tab">';
+					$cont = 1;
+					while ($conv[$cont] != null){
+						
+						if (ID != $conv[$cont]) {
+							$userprueba = $c_user->get_nick($conv[$cont]);
+							$img = $c_user->get_img($conv[$cont]);
+							echo '<img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >';
+							echo $userprueba[0] . '<br>';
+						}
+						$cont++;
+					}
+					$active++;
+					echo '</a></li>';
 				}
-				$active++;
-				echo '</a></li>';
-			}
-		?>
-	</ul>
-	<div class="tab-content">
-		<?php
-			$active = 1;
-			foreach ($convers as $conv){
-				$messages = $c_msg->get_messages($conv[0]);
-				echo '<div class="tab-pane';
-				if ($active == 1) {
-					echo ' active';
+			?>
+		</ul>
+		<div id="ab" class="tab-content" style="overflow: auto; height: 400px;">
+			<?php
+				$active = 1;
+				foreach ($convers as $conv){
+					$messages = $c_msg->get_messages($conv[0]);
+					echo '<div class="tab-pane';
+					if ($active == 1) {
+						echo ' active';
+					}
+					echo '" id="A'.$active.'">';
+					foreach ($messages as $mess){
+						$img = $c_user->get_img($mess[1]);
+						echo '<p><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="30" height="30" >';
+						$usermsg = $c_user->get_nick($mess[1]);
+						echo '<font color = "blue">'.$usermsg[0].'</font><br>'.$mess[3].'<br><font color = "grey">'.$mess[2].'</font><br></p>';
+					}
+					echo '</div>';
+					$active++;
 				}
-				echo '" id="A'.$active.'">';
-				foreach ($messages as $mess){
-					$img = $c_user->get_img($mess[1]);
-					echo '<p><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="30" height="30" >';
-					$usermsg = $c_user->get_nick($mess[1]);
-					echo '<font color = "blue">'.$usermsg[0].'</font><br>'.$mess[3].'<br><font color = "grey">'.$mess[2].'</font><br></p>';
-				}
-				echo '</div>';
-				$active++;
-			}
-		?>
-		<form class="navbar-form">
-			<input type="text" class="span6">
-			<button type="submit" class="btn">Enviar</button>
-		</form>
+			?>
+		</div>
+		<div align="right">
+			<textarea name="textdirect" rows="3" style="width:65%"  />
+			<button type="submit" class="btn" style="height: 70px">Enviar</button>
+		</div>
 	</div>
-</div>
-
+</form>
 
