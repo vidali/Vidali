@@ -2,6 +2,10 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo BASEDIR;?>/vdl-themes/default/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo BASEDIR;?>/vdl-themes/default/css/bootstrap-responsive.css" />
 	<script type="text/javascript" src="<?php echo BASEDIR;?>/vdl-themes/default/js/jquery.js" ></script>
+	<script type="text/javascript" src="<?php echo BASEDIR;?>/vdl-themes/default/js/jquery-1.8.3.js" ></script>
+	<script type="text/javascript" src="<?php echo BASEDIR;?>/vdl-themes/default/js/jquery-ui-1.9.2.custom.js" ></script>
+	<script type="text/javascript" src="<?php echo BASEDIR;?>/vdl-themes/default/js/jquery-ui-1.9.2.custom.min.js" ></script>
+	<script type="text/javascript" src="<?php echo BASEDIR;?>/vdl-themes/default/js/jquery-ui.js" ></script>
 	<script type="text/javascript" src="<?php echo BASEDIR;?>/vdl-themes/default/js/bootstrap.js" ></script>
 	<script type="text/javascript" src="<?php echo BASEDIR;?>/vdl-themes/default/js/script_default.js" ></script>
 	<link rel="stylesheet" href="<?php echo BASEDIR;?>/vdl-themes/default/css/jquery-ui.css" id="theme" />

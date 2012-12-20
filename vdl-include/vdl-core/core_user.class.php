@@ -201,6 +201,52 @@ class CORE_USER extends CORE_MAIN{
 		return $arresult;
 	}
 	
+	public function get_friends_commas($id_user){
+		$connection = parent::connect();
+		$query = "SELECT vdl_user.nick
+					FROM vdl_user
+					WHERE vdl_user.id IN (SELECT vdl_friend_of.user2
+					FROM vdl_friend_of
+					WHERE vdl_friend_of.user1 LIKE ".$id_user." UNION SELECT vdl_friend_of.user1
+																		FROM vdl_friend_of
+																		WHERE vdl_friend_of.user2 LIKE ".$id_user.")";
+		$data=$connection->query($query);
+		$arresult=array();
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		while ($row = $data->fetch_array()) {
+			array_push($arresult,"&quot;".$row[0]."&quot;");
+		}
+		return $arresult;
+	}
+	
+	public function get_friends($id_user){
+		$connection = parent::connect();
+		$query = "SELECT vdl_user.nick
+					FROM vdl_user
+					WHERE vdl_user.id IN (SELECT vdl_friend_of.user2
+					FROM vdl_friend_of
+					WHERE vdl_friend_of.user1 LIKE ".$id_user." UNION SELECT vdl_friend_of.user1
+																		FROM vdl_friend_of
+																		WHERE vdl_friend_of.user2 LIKE ".$id_user.")";
+		$data=$connection->query($query);
+		$arresult=array();
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		while ($row = $data->fetch_array()) {
+			array_push($arresult,$row[0]);
+		}
+		return $arresult;
+	}
+	
 	public function get_img($id_user){
 		$connection = parent::connect();
 		$query = "SELECT vdl_user.avatar_id
