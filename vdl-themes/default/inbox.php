@@ -93,10 +93,10 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 					$active++;
 				}
 			?>
+			<div align="right">
+				<textarea name="textdirect" rows="3" style="width:82%"  />
+			<button type="submit" class="btn" style="height: 70px" autofocus>Enviar</button>
 		</div>
-		<div align="right">
-			<textarea name="textdirect" rows="3" style="width:60%"  />
-			<button type="submit" class="btn" style="height: 70px">Enviar</button>
 		</div>
 	</div>
 	<input type="hidden" name="usuario" value="<?= $ID ?>"/>
