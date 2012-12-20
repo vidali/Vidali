@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="<?php echo BASEDIR;?>/vdl-themes/default/js/jquery-ui-1.9.2.custom.min.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('#buscar_usuario').autocomplete({
+			$('#remitte678').autocomplete({
 			   source : ['jose','luis','maria']
 			});
 		});
