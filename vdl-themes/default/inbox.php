@@ -76,6 +76,49 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 		source: ['jose','luis','andres','pedro']
 	});
 </script>
+
+<script>
+	$('#remitte678').bind ('keyup', function(){
+		alert("KEY UP!!!!")
+	});
+</script>
+-->
+
+<?php
+	$user_friends = $c_user->get_friends_commas(ID);
+	$user_friends2 = $c_user->get_friends(ID);
+	print_r($user_friends);
+	echo '<BR>';
+	function htmlspecialchars_deep($mixed, $quote_style = ENT_QUOTES, $charset = 'UTF-8') { 
+		if (is_array($mixed)) { 
+			foreach($mixed as $key => $value) { 
+				$mixed[$key] = htmlspecialchars_deep($value, $quote_style, $charset); 
+			} 
+		} elseif (is_string($mixed)) { 
+			$mixed = htmlspecialchars(htmlspecialchars($mixed, $quote_style), $quote_style, $charset); 
+		} 
+		return $mixed; 
+	}
+	$user_ff = htmlspecialchars_deep($user_friends);
+	$userss = "[" . implode(",", $user_ff) . "]";
+	echo $userss . '<BR>';
+	print_r($user_ff);
+?>
+
+<!--
+
+<script>
+	function myFunctiioon()	{
+		var x=document.getElementById("remitte678");
+		var usuarios = <?= $user_friends2 ?>;
+		for (i = 0; i < usuarios.length; i++){
+			for (j = 0; j < usuarios[i].length; j++){
+				
+			}
+		}
+		x.value
+	}
+</script>
 -->
 
 <div align="right">
@@ -91,7 +134,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 		<div class="modal-body">
 			<h4>Para: </h4>
 			<br>
-			<input type="text" id="remitte678" name="remitte" class="span12" style="margin: 0 auto;" />
+			<input type="text" id="remitte678" name="remitte" class="span12" style="margin: 0 auto;" data-provide="typeahead" onkeyup="myFunctiioon()" />
 			<br>
 			<h4>Mensaje: </h4>
 			<br>
@@ -154,7 +197,7 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 				}
 			?>
 			<div align="right">
-				<textarea name="textdirect" rows="3" style="width:82%"  />
+				<textarea id="textdirect" name="textdirect" rows="3" style="width:82%" />
 			<button type="submit" class="btn" style="height: 70px" autofocus>Enviar</button>
 		</div>
 		</div>
