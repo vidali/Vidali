@@ -219,7 +219,7 @@ class CORE_USER extends CORE_MAIN{
 			return false;
 		}
 		while ($row = $data->fetch_array()) {
-			array_push($arresult,"&quot;".$row[0]."&quot;");
+			array_push($arresult,"\"".$row[0]."\"");
 		}
 		return $arresult;
 	}
