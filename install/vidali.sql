@@ -168,6 +168,7 @@ CREATE TABLE IF NOT EXISTS `vdl_conver` (
   `user10` int(11) DEFAULT NULL,
   `user11` int(11) DEFAULT NULL,
   `user12` int(11) DEFAULT NULL,
+  `hide` varchar(140) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id_conver`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1;
 CREATE TABLE IF NOT EXISTS `vdl_msg_conver` (
@@ -175,6 +176,7 @@ CREATE TABLE IF NOT EXISTS `vdl_msg_conver` (
   `user_ref` int(11) NOT NULL,
   `date_published` datetime NOT NULL,
   `text` varchar (140) COLLATE utf8_bin NOT NULL,
+  `hide` varchar(140) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`conver_ref`,`user_ref`,`date_published`),
   KEY `fk_vdl_msg_conver_vdl_conver1` (`conver_ref`),
   KEY `fk_vdl_msg_conver_vdl_user1` (`user_ref`)
