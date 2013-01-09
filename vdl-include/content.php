@@ -40,6 +40,10 @@ else{
 	if ($pg == 'g'){
 		include("vdl-groups/index.php");
 }
+///===>Go to search page.
+	if ($pg == 'g'){
+		include("vdl-search/index.php");
+}
 ///===>Go to files.
 	if ($pg == 'f'){
 		if (!isset($_GET['action']))

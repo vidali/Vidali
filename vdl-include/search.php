@@ -9,5 +9,5 @@
 	for ($i = 0; $i < count($found_users); $i++){
 		print_r($found_users[$i]);
 	}
-	header("Location:".$_SERVER['HTTP_REFERER']."?action=search");
+	header("Location: /Vidali/search/tes");
 ?>

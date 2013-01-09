@@ -13,4 +13,6 @@ if($pg == "f")
 	include("vdl-themes/default/files.php");
 if($pg == "s")
 	include("vdl-themes/default/settings.php");
+if($pg == "search")
+	include("vdl-themes/default/search.php");
 ?>
