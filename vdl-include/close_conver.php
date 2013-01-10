@@ -24,6 +24,9 @@ session_start();
 	$IDC=$_POST['conversacion'];
 	$IDU=$_POST['usuario'];
 	
-	echo $IDC;
-	echo $IDU;
+	$c_msg = new CORE_MSG_CONVER();
+	$c_msg->set_conver_hide($IDC,$IDU);
+	
+	header("Location:".$_SERVER['HTTP_REFERER']);
+	
 ?>
