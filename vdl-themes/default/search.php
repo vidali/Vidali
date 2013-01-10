@@ -6,7 +6,7 @@
 ?>
 
 <div>
-	<ul>
+	<ul class="unstyled">
 		<?php
 			foreach ($found_users as $found){
 				echo '<li><form id="agregar_amigo" class="navbar-form" method="post" action="/Vidali/vdl-include/add_friend.php">';
