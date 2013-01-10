@@ -194,6 +194,12 @@ class CORE_USER extends CORE_MAIN{
 					FROM vdl_user
 					WHERE vdl_user.id LIKE ".$id_user;
 		$data=$connection->query($query);
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+			return false;
+		}
 		$arresult=array();
 		while ($row = $data->fetch_array()) {
 			array_push($arresult,$row[0]);
@@ -316,8 +322,7 @@ class CORE_USER extends CORE_MAIN{
 		$connection = parent::connect();
 		$query = "UPDATE `vdl_friend_of`
 					SET `status` = '$status'
-					WHERE (`user1` = '$id_user1' AND `user2` = '$id_user2')
-						OR (`user1` = '$id_user2' AND `user2` = '$id_user1')";
+					WHERE ((`user1` = '$id_user1') AND (`user2` = '$id_user2'))";
 		$data = $connection->query($query);
 		if (!$data) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
@@ -333,6 +338,26 @@ class CORE_USER extends CORE_MAIN{
 		$query = "SELECT * FROM `vdl_friend_of`
 					WHERE `user1` = '$id_user1' UNION (SELECT * FROM `vdl_friend_of`
 					WHERE `user2` = '$id_user1')";
+					/*WHERE ((user1 = '$id_user1' AND user2 = '%id_user2')
+						OR (user1 = '$id_user2' AND user2 = '%id_user1'))";*/
+		$data = $connection->query($query);
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message = $message . ' Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		$arresult=array();
+		while ($row = $data->fetch_array()) {
+			array_push($arresult,$row);
+		}
+		return $arresult;
+	}
+	
+	public function check_request($id_user1){
+		$connection = parent::connect();
+		$query = "SELECT * FROM `vdl_friend_of`
+					WHERE ((`user2` = '$id_user1') AND (`status` = 0))";
 					/*WHERE ((user1 = '$id_user1' AND user2 = '%id_user2')
 						OR (user1 = '$id_user2' AND user2 = '%id_user1'))";*/
 		$data = $connection->query($query);

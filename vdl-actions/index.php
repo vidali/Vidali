@@ -87,46 +87,48 @@ if($pg==''){
 	?>
 <div id="" class="tab-content">
 	<div id="home-friends" class="friends-tab tab-pane fade active in">
-		<?php
-		//AMIGOS AQUIIIIIIIIII
-		$c_user = NEW CORE_USER();
-		$myfriends = $c_user->check_friends(ID);
-		if (count($myfriends) == 0)
-			echo "No has agregado ningún amigo todavia...";
-		else{
-			foreach($myfriends as $friend){
-				$nick = '';
-				$img = '';
-				if ($friend[1] == ID){
-					$nick = $c_user->get_nick($friend[0]);
-					$img = $c_user->get_img($friend[0]);
+		<ul class="unstyled">
+			<?php
+			$c_user = NEW CORE_USER();
+			$myfriends = $c_user->check_friends(ID);
+			if (count($myfriends) == 0)
+				echo "No has agregado ningún amigo todavia...";
+			else{
+				foreach($myfriends as $friend){
+					$nick = '';
+					$img = '';
+					if ($friend[1] == ID){
+						$nick = $c_user->get_nick($friend[0]);
+						$img = $c_user->get_img($friend[0]);
+					}
+					else{
+						$nick = $c_user->get_nick($friend[1]);
+						$img = $c_user->get_img($friend[1]);
+					}
+					if ($friend[2] == 1)
+						echo '<pre><li><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >'." ".$nick[0].'<br></li></pre>';
+					/*echo '<article id="net">';
+						echo '<a href="?pg=p&@='. $nick[0] .'">';
+						echo '<div id="net_photo"><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" ></div>';
+						echo '<div id="net_id_p">'.$nick[0].'</div></a>';
+						echo '<div class="clear"></div>';
+					echo '</article>';*/
 				}
-				else{
-					$nick = $c_user->get_nick($friend[1]);
-					$img = $c_user->get_img($friend[1]);
+			}
+			/*if($user->prof_friends() == 0)
+				echo "No has agregado ningún amigo todavia...";
+			else{
+				foreach ($friends as $f){
+					echo '<article id="net">';
+						echo '<a href="?pg=p&@='. $f["nick"] .'">';
+						echo '<div id="net_photo"><img src="img/'.$f["avatar_id"].'_tb.jpg"></div>';
+						echo '<div id="net_id_p">'.$f["nick"].'</div></a>';
+						echo '<div class="clear"></div>';
+					echo '</article>';
 				}
-				echo '<img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >'." - ".$nick[0].'<br>';
-				/*echo '<article id="net">';
-					echo '<a href="?pg=p&@='. $nick[0] .'">';
-					echo '<div id="net_photo"><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" ></div>';
-					echo '<div id="net_id_p">'.$nick[0].'</div></a>';
-					echo '<div class="clear"></div>';
-				echo '</article>';*/
-			}
-		}
-		/*if($user->prof_friends() == 0)
-			echo "No has agregado ningún amigo todavia...";
-		else{
-			foreach ($friends as $f){
-				echo '<article id="net">';
-					echo '<a href="?pg=p&@='. $f["nick"] .'">';
-					echo '<div id="net_photo"><img src="img/'.$f["avatar_id"].'_tb.jpg"></div>';
-					echo '<div id="net_id_p">'.$f["nick"].'</div></a>';
-					echo '<div class="clear"></div>';
-				echo '</article>';
-			}
-		}*/
-		?>
+			}*/
+			?>
+		</ul>
 	</div>
 	<div id="home-groups" class="groups-tab tab-pane fade">
 		<?php
@@ -149,34 +151,37 @@ if($pg=='u'){
 	make_tabs('home');
 	?>
 <div id="" class="tab-content">
-	<div id="home-friends" class="friends-tab tab-pane fade">
-		<?php
-		$c_user = NEW CORE_USER();
-		$myfriends = $c_user->check_friends(ID);
-		if (count($myfriends) == 0)
-			echo "No has agregado ningún amigo todavia...";
-		else{
-			foreach($myfriends as $friend){
-				$nick = '';
-				$img = '';
-				if ($friend[1] == ID){
-					$nick = $c_user->get_nick($friend[0]);
-					$img = $c_user->get_img($friend[0]);
+	<div id="home-friends" class="friends-tab tab-pane fade active in">
+		<ul class="unstyled">
+			<?php
+			$c_user = NEW CORE_USER();
+			$myfriends = $c_user->check_friends(ID);
+			if (count($myfriends) == 0)
+				echo "No has agregado ningún amigo todavia...";
+			else{
+				foreach($myfriends as $friend){
+					$nick = '';
+					$img = '';
+					if ($friend[1] == ID){
+						$nick = $c_user->get_nick($friend[0]);
+						$img = $c_user->get_img($friend[0]);
+					}
+					else{
+						$nick = $c_user->get_nick($friend[1]);
+						$img = $c_user->get_img($friend[1]);
+					}
+					if ($friend[2] == 1)
+						echo '<pre><li><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >'." ".$nick[0].'<br></li></pre>';
+					/*echo '<article id="net">';
+						echo '<a href="?pg=p&@='. $nick[0] .'">';
+						echo '<div id="net_photo"><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" ></div>';
+						echo '<div id="net_id_p">'.$nick[0].'</div></a>';
+						echo '<div class="clear"></div>';
+					echo '</article>';*/
 				}
-				else{
-					$nick = $c_user->get_nick($friend[1]);
-					$img = $c_user->get_img($friend[1]);
-				}
-				echo '<img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >'." - ".$nick[0].'<br>';
-				/*echo '<article id="net">';
-					echo '<a href="?pg=p&@='. $nick[0] .'">';
-					echo '<div id="net_photo"><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" ></div>';
-					echo '<div id="net_id_p">'.$nick[0].'</div></a>';
-					echo '<div class="clear"></div>';
-				echo '</article>';*/
 			}
-		}
-		?>
+			?>
+		</ul>
 	</div>
 	<div id="home-groups" class="groups-tab tab-pane fade">
 		<?php
@@ -187,7 +192,7 @@ if($pg=='u'){
 		}
 		?>
 	</div>
-	<div id="home-profile" class="profile-tab tab-pane fade  active in">
+	<div id="home-profile" class="profile-tab tab-pane fade">
 		<?php
 			echo "Aqui resumen de tu perfil o del perfil elegido";
 		?>
@@ -199,34 +204,37 @@ if($pg=='h'){
 	make_tabs('home');
 	?>
 <div id="" class="tab-content">
-	<div id="home-friends" class="friends-tab tab-pane fade">
-		<?php
-		$c_user = NEW CORE_USER();
-		$myfriends = $c_user->check_friends(ID);
-		if (count($myfriends) == 0)
-			echo "No has agregado ningún amigo todavia...";
-		else{
-			foreach($myfriends as $friend){
-				$nick = '';
-				$img = '';
-				if ($friend[1] == ID){
-					$nick = $c_user->get_nick($friend[0]);
-					$img = $c_user->get_img($friend[0]);
+	<div id="home-friends" class="friends-tab tab-pane fade active in">
+		<ul class="unstyled">
+			<?php
+			$c_user = NEW CORE_USER();
+			$myfriends = $c_user->check_friends(ID);
+			if (count($myfriends) == 0)
+				echo "No has agregado ningún amigo todavia...";
+			else{
+				foreach($myfriends as $friend){
+					$nick = '';
+					$img = '';
+					if ($friend[1] == ID){
+						$nick = $c_user->get_nick($friend[0]);
+						$img = $c_user->get_img($friend[0]);
+					}
+					else{
+						$nick = $c_user->get_nick($friend[1]);
+						$img = $c_user->get_img($friend[1]);
+					}
+					if ($friend[2] == 1)
+						echo '<pre><li><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >'." ".$nick[0].'<br></li></pre>';
+					/*echo '<article id="net">';
+						echo '<a href="?pg=p&@='. $nick[0] .'">';
+						echo '<div id="net_photo"><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" ></div>';
+						echo '<div id="net_id_p">'.$nick[0].'</div></a>';
+						echo '<div class="clear"></div>';
+					echo '</article>';*/
 				}
-				else{
-					$nick = $c_user->get_nick($friend[1]);
-					$img = $c_user->get_img($friend[1]);
-				}
-				echo '<img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >'." - ".$nick[0].'<br>';
-				/*echo '<article id="net">';
-					echo '<a href="?pg=p&@='. $nick[0] .'">';
-					echo '<div id="net_photo"><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" ></div>';
-					echo '<div id="net_id_p">'.$nick[0].'</div></a>';
-					echo '<div class="clear"></div>';
-				echo '</article>';*/
 			}
-		}
-		?>
+			?>
+		</ul>
 	</div>
 	<div id="home-groups" class="groups-tab tab-pane fade">
 		<?php
@@ -237,7 +245,7 @@ if($pg=='h'){
 		}
 		?>
 	</div>
-	<div id="home-profile" class="profile-tab tab-pane fade  active in">
+	<div id="home-profile" class="profile-tab tab-pane fade">
 		<?php
 			echo "Aqui resumen de tu perfil o del perfil elegido";
 		?>
@@ -246,23 +254,72 @@ if($pg=='h'){
 <?php
 }
 elseif($pg=='m'){
-	make_tabs('inbox');?>
-<div id="" class="tab-content">
+	//make_tabs('inbox');
+	make_tabs('home');?>
+<!--<div id="" class="tab-content">
 	<div id="inbox-in" class="inbox-tab tab-pane fade active in">
-		<?php
+		<php
 			echo "Inbox";
 		?>
 	</div>
 
 	<div id="inbox-out" class="sended-tab tab-pane fade">
-		<?php
+		<php
 			echo "Salida";
 		?>
 	</div>
 
 	<div id="inbox-others" class="othermsg-tab tab-pane fade">
-		<?php
+		<php
 			echo "Otros mensajes";
+		?>
+	</div>
+</div>-->
+<div id="" class="tab-content">
+	<div id="home-friends" class="friends-tab tab-pane fade active in">
+		<ul class="unstyled">
+			<?php
+			$c_user = NEW CORE_USER();
+			$myfriends = $c_user->check_friends(ID);
+			if (count($myfriends) == 0)
+				echo "No has agregado ningún amigo todavia...";
+			else{
+				foreach($myfriends as $friend){
+					$nick = '';
+					$img = '';
+					if ($friend[1] == ID){
+						$nick = $c_user->get_nick($friend[0]);
+						$img = $c_user->get_img($friend[0]);
+					}
+					else{
+						$nick = $c_user->get_nick($friend[1]);
+						$img = $c_user->get_img($friend[1]);
+					}
+					if ($friend[2] == 1)
+						echo '<pre><li><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >'." ".$nick[0].'<br></li></pre>';
+					/*echo '<article id="net">';
+						echo '<a href="?pg=p&@='. $nick[0] .'">';
+						echo '<div id="net_photo"><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" ></div>';
+						echo '<div id="net_id_p">'.$nick[0].'</div></a>';
+						echo '<div class="clear"></div>';
+					echo '</article>';*/
+				}
+			}
+			?>
+		</ul>
+	</div>
+	<div id="home-groups" class="groups-tab tab-pane fade">
+		<?php
+		if($user->prof_groups() == 0)
+			echo "No formas parte de ningún grupo...";
+		else{
+			echo "tienes grupos";
+		}
+		?>
+	</div>
+	<div id="home-profile" class="profile-tab tab-pane fade">
+		<?php
+			echo "Aqui resumen de tu perfil o del perfil elegido";
 		?>
 	</div>
 </div>
