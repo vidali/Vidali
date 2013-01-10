@@ -149,122 +149,117 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 </div>
 
 <div class="tabbable tabs-left" >
-	
-		<ul class="nav nav-tabs" >
-		
-				<?php
-					$active = 1;
-					$delete = array();
-					foreach ($convers as $conv){
-						$messages = $c_msg->get_messages($conv[0]);
-						$count_mess = 0;
-						foreach ($messages as $mess){
-							$hide = '';
-							$users_hide = array();
-							$count = 0;
-							for ($i = 0; $i < strlen($mess[4]); $i++){
-								if ($mess[4][$i] == ';'){
-									if ($hide != ''){
-										$users_hide[$count] = $hide;
-										$count++;
-										$hide = '';
-									}
-								}
-								else{
-									$hide += $mess[4][$i];
-								}
-							}
-							$bool = false;
-							foreach ($users_hide as $uhide){
-								if ($ID == $uhide){
-									$bool = true;
-									break;
-								}
-							}
-							if (!$bool)
-								$count_mess++;
-						}
-						if ($count_mess > 0){
-							if ($active == 1) {
-								echo '<li class="active">';
-							} else {
-								echo '<li>';
-							}
-							echo '<form id="close_conver" method="post" action="/Vidali/vdl-include/close_conver.php"> <button type="submit" class="close">x</button> <a href="#A'.$active.'" data-toggle="tab">';
-							$cont = 1;
-							while ($conv[$cont] != null){
-								
-								if (ID != $conv[$cont]) {
-									$userprueba = $c_user->get_nick($conv[$cont]);
-									$img = $c_user->get_img($conv[$cont]);
-									echo '<img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >';
-									echo $userprueba[0] . '<br>';
-								}
-								$cont++;
-							}
-							$active++;
-							echo '<input type="hidden" name="conversacion" value="'.$conv[0].'"/> <input type="hidden" name="usuario" value="'.$ID.'"/></a></form></li>';
-						}
-						else
-							array_push($delete, $conv);
-					}
-					foreach($delete as $del)
-						unset($convers['$del']);
-				?>
-				
-		</ul>
-	
-	<form id="send_m_direct" class="navbar-form" method="post" action="/Vidali/vdl-include/send_msg_direct.php">
-		<div id="ab" class="tab-content" style="overflow: auto; height: 400px;">
-			<?php
-				$active = 1;
-				foreach ($convers as $conv){
-					$messages = $c_msg->get_messages($conv[0]);
-					echo '<div class="tab-pane';
-					if ($active == 1) {
-						echo ' active';
-					}
-					echo '" id="A'.$active.'">';
-					foreach ($messages as $mess){
-						$hide = '';
-						$users_hide = array();
-						$count = 0;
-						for ($i = 0; $i < strlen($mess[4]); $i++){
-							if ($mess[4][$i] == ';'){
-								if ($hide != ''){
-									$users_hide[$count] = $hide;
-									$count++;
-									$hide = '';
-								}
-							}
-							else{
-								$hide += $mess[4][$i];
+	<ul class="nav nav-tabs" >
+		<?php
+			$active = 1;
+			$delete = array();
+			foreach ($convers as $conv){
+				$messages = $c_msg->get_messages($conv[0]);
+				$count_mess = 0;
+				foreach ($messages as $mess){
+					$hide = '';
+					$users_hide = array();
+					$count = 0;
+					for ($i = 0; $i < strlen($mess[4]); $i++){
+						if ($mess[4][$i] == ';'){
+							if ($hide != ''){
+								$users_hide[$count] = $hide;
+								$count++;
+								$hide = '';
 							}
 						}
-						$bool = false;
-						foreach ($users_hide as $uhide){
-							if ($ID == $uhide){
-								$bool = true;
-								break;
-							}
-						}
-						if (!$bool){
-							$img = $c_user->get_img($mess[1]);
-							echo '<p><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="30" height="30" >';
-							$usermsg = $c_user->get_nick($mess[1]);
-							echo '<font color = "blue">'.$usermsg[0].'</font><br>'.$mess[3].'<br><font color = "grey">'.$mess[2].'</font><br></p>';
+						else{
+							$hide += $mess[4][$i];
 						}
 					}
-					echo '</div>';
-					$active++;
+					$bool = false;
+					foreach ($users_hide as $uhide){
+						if ($ID == $uhide){
+							$bool = true;
+							break;
+						}
+					}
+					if (!$bool)
+						$count_mess++;
 				}
-			?>
+				if ($count_mess > 0){
+					if ($active == 1) {
+						echo '<li class="active">';
+					} else {
+						echo '<li>';
+					}
+					echo '<form id="close_conver" method="post" action="/Vidali/vdl-include/close_conver.php"> <button type="submit" class="close">x</button> <a href="#A'.$active.'" data-toggle="tab">';
+					$cont = 1;
+					while ($conv[$cont] != null){
+						if (ID != $conv[$cont]) {
+							$userprueba = $c_user->get_nick($conv[$cont]);
+							$img = $c_user->get_img($conv[$cont]);
+							echo '<img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >';
+							echo $userprueba[0] . '<br>';
+						}
+						$cont++;
+					}
+					$active++;
+					echo '<input type="hidden" name="conversacion" value="'.$conv[0].'"/> <input type="hidden" name="usuario" value="'.$ID.'"/></a></form></li>';
+				}
+				else
+					array_push($delete, $conv);
+			}
+			foreach($delete as $del)
+				unset($convers['$del']);
+		?>	
+	</ul>
+	<div id="ab" class="tab-content" style="overflow: auto; height: 400px;">
+		<?php
+			$active = 1;
+			foreach ($convers as $conv){
+				$messages = $c_msg->get_messages($conv[0]);
+				echo '<div class="tab-pane';
+				if ($active == 1) {
+					echo ' active';
+				}
+				echo '" id="A'.$active.'">';
+				foreach ($messages as $mess){
+					$hide = '';
+					$users_hide = array();
+					$count = 0;
+					for ($i = 0; $i < strlen($mess[4]); $i++){
+						if ($mess[4][$i] == ';'){
+							if ($hide != ''){
+								$users_hide[$count] = $hide;
+								$count++;
+								$hide = '';
+							}
+						}
+						else{
+							$hide += $mess[4][$i];
+						}
+					}
+					$bool = false;
+					foreach ($users_hide as $uhide){
+						if ($ID == $uhide){
+							$bool = true;
+							break;
+						}
+					}
+					if (!$bool){
+						$img = $c_user->get_img($mess[1]);
+						echo '<form id="delete_msg" class="navbar-form" method="post" action="/Vidali/vdl-include/delete_msg.php"><button type="submit" class="close">x</button> <p><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="30" height="30" >';
+						$usermsg = $c_user->get_nick($mess[1]);
+						echo '<font color = "blue">'.$usermsg[0].'</font><br>'.$mess[3].'<br><font color = "grey">'.$mess[2].'</font><br></p><input type="hidden" name="usu_msg" value="'.$mess[1].'"/><input type="hidden" name="usuario" value="'.$ID.'"/><input type="hidden" name="conversacion" value="'.$conv[0].'"/><input type="hidden" name="fecha" value="'.$mess[2].'"/></form>';
+					}
+				}
+				echo '</div>';
+				$active++;
+			}
+		?>
+		<form id="send_m_direct" class="navbar-form" method="post" action="/Vidali/vdl-include/send_msg_direct.php">
 			<div align="right">
 				<textarea id="textdirect" name="textdirect" rows="3" style="width:82%" />
 				<button type="submit" class="btn" style="height: 70px" autofocus>Enviar</button>
 			</div>
-		</div>
-		<input type="hidden" name="usuario" value="<?= $ID ?>"/>
-	</form>
+			<input type="hidden" name="usuario" value="<?= $ID ?>"/>
+		</form>
+	</div>
 </div>
 
