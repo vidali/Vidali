@@ -51,11 +51,11 @@ class CORE_MSG_CONVER extends CORE_MAIN{
 	
 	public function set_hide($id_conver,$id_user,$date,$id_userp){
 		$connection = parent::connect();
-		$query = "UPDATE vdl_msg_conver 
-					SET vdl_msg_conver.hide = vdl_msg_conver.hide + '$id_userp' + ';'
-					WHERE vdl_msg_conver.id_conver = '$id_conver' 
-					AND vdl_msg_conver.id_user = '$id_user'
-					AND vdl_msg_conver.date = '$date'";
+		$query = "UPDATE `vdl_msg_conver` 
+					SET `hide` = CONCAT(COALESCE(`hide`, \"\"), CONCAT ('$id_userp', ';'))
+					WHERE ((`conver_ref` = '$id_conver') 
+					AND (`user_ref` = '$id_user')
+					AND (`date_published` = '$date'))";
 		$data=$connection->query($query);
 		if (!$data) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
@@ -68,14 +68,6 @@ class CORE_MSG_CONVER extends CORE_MAIN{
 	
 	public function set_conver_hide($id_conver,$id_userp){
 		$connection = parent::connect();
-		/*$query_null = "SET CONCAT_NULL_YIELDS_NULL OFF";
-		$data_null=$connection->query($query_null);
-		if (!$data_null) {
-			$message  = 'Invalid query: ' . mysql_error() . "\n";
-			$message = $message . ' Whole query: ' . $query_null;
-			die($message);
-			return false;
-		}*/
 		$query = "UPDATE `vdl_msg_conver` 
 					SET `hide` = CONCAT(COALESCE(`hide`,\"\"), CONCAT ('$id_userp', ';'))
 					WHERE `conver_ref` = '$id_conver'";

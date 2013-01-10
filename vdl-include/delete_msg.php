@@ -26,8 +26,10 @@ session_start();
 	$IDUM=$_POST['usu_msg'];
 	$FECHA=$_POST['fecha'];
 	
-	echo $IDC.'<BR>';
-	echo $IDU.'<BR>';
-	echo $FECHA.'<BR>';
-	echo $IDUM.'<BR>';
+	$c_msg = new CORE_MSG_CONVER();
+	
+	$c_msg->set_hide($IDC,$IDUM,$FECHA,$IDU);
+	
+	header("Location:".$_SERVER['HTTP_REFERER']);
+	
 ?>
