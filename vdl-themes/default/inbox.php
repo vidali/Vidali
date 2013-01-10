@@ -87,8 +87,8 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 <?php
 	$user_friends = $c_user->get_friends_commas(ID);
 	$user_friends2 = $c_user->get_friends(ID);
-	print_r($user_friends);
-	echo '<BR>';
+	//print_r($user_friends);
+	//echo '<BR>';
 	function htmlspecialchars_deep($mixed, $quote_style = ENT_QUOTES, $charset = 'UTF-8') { 
 		if (is_array($mixed)) { 
 			foreach($mixed as $key => $value) { 
@@ -101,8 +101,8 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 	}
 	$user_ff = htmlspecialchars_deep($user_friends);
 	$userss = "[" . implode(",", $user_ff) . "]";
-	echo $userss . '<BR>';
-	print_r($user_ff);
+	//echo $userss . '<BR>';
+	//print_r($user_ff);
 ?>
 
 <!--
