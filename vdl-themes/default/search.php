@@ -2,8 +2,7 @@
 <?php
 	//aqui encajar todo lo visual, y comprueben como se envian las cosas
 	$c_user = new CORE_USER();
-	$found_users = $c_user->search_users("tes");
-	print_r($_POST);
+	$found_users = $c_user->search_users($_GET['p2']);
 ?>
 
 <div>

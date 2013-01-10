@@ -41,7 +41,7 @@ else{
 		include("vdl-groups/index.php");
 }
 ///===>Go to search page.
-	if ($pg == 'g'){
+	if ($pg == 'search'){
 		include("vdl-search/index.php");
 }
 ///===>Go to files.
