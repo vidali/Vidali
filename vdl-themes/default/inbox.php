@@ -244,9 +244,9 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 					}
 					if (!$bool){
 						$img = $c_user->get_img($mess[1]);
-						echo '<form id="delete_msg" class="navbar-form" method="post" action="/Vidali/vdl-include/delete_msg.php"><button type="submit" class="close">x</button> <p><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="30" height="30" >';
+						echo '<pre><form id="delete_msg" class="navbar-form" method="post" action="/Vidali/vdl-include/delete_msg.php"><button type="submit" class="close">x</button> <p><img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="30" height="30" >';
 						$usermsg = $c_user->get_nick($mess[1]);
-						echo '<font color = "blue">'.$usermsg[0].'</font><br>'.$mess[3].'<br><font color = "grey">'.$mess[2].'</font><br></p><input type="hidden" name="usu_msg" value="'.$mess[1].'"/><input type="hidden" name="usuario" value="'.$ID.'"/><input type="hidden" name="conversacion" value="'.$conv[0].'"/><input type="hidden" name="fecha" value="'.$mess[2].'"/></form>';
+						echo '<font color = "blue">'.$usermsg[0].'</font><br>'.$mess[3].'<br><font color = "grey">'.$mess[2].'</font><br></p><input type="hidden" name="usu_msg" value="'.$mess[1].'"/><input type="hidden" name="usuario" value="'.$ID.'"/><input type="hidden" name="conversacion" value="'.$conv[0].'"/><input type="hidden" name="fecha" value="'.$mess[2].'"/></form></pre>';
 					}
 				}
 				echo '</div>';

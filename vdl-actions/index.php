@@ -88,6 +88,7 @@ if($pg==''){
 <div id="" class="tab-content">
 	<div id="home-friends" class="friends-tab tab-pane fade active in">
 		<?php
+		//AMIGOS AQUIIIIIIIIII
 		if($user->prof_friends() == 0)
 			echo "No has agregado ningún amigo todavia...";
 		else{

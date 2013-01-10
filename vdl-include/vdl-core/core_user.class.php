@@ -300,8 +300,41 @@ class CORE_USER extends CORE_MAIN{
 	
 	public function set_friends($id_user1, $id_user2){
 		$connection = parent::connect();
-		$query = "INSERT INTO `vdl_friend_of` (`user1`, `user2`)
-					VALUES ('$id_user1', '$id_user2')";
+		$query = "INSERT INTO `vdl_friend_of` (`user1`, `user2`, `status`)
+					VALUES ('$id_user1', '$id_user2', '0')";
+		$data = $connection->query($query);
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message = $message . ' Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		return true;
+	}
+	
+	public function update_friends($id_user1, $id_user2, $status){
+		$connection = parent::connect();
+		$query = "UPDATE `vdl_friend_of`
+					SET `status` = '$status'
+					WHERE (`user1` = '$id_user1' AND `user2` = '$id_user2')
+						OR (`user1` = '$id_user2' AND `user2` = '$id_user1')";
+		$data = $connection->query($query);
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message = $message . ' Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		return true;
+	}
+	
+	public function check_friends($id_user1){
+		$connection = parent::connect();
+		$query = "SELECT * FROM `vdl_friend_of`
+					WHERE `user1` = '$id_user1' UNION (SELECT * FROM `vdl_friend_of`
+					WHERE `user2` = '$id_user1')";
+					/*WHERE ((user1 = '$id_user1' AND user2 = '%id_user2')
+						OR (user1 = '$id_user2' AND user2 = '%id_user1'))";*/
 		$data = $connection->query($query);
 		if (!$data) {
 			$message  = 'Invalid query: ' . mysql_error() . "\n";
