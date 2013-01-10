@@ -285,6 +285,30 @@ class CORE_USER extends CORE_MAIN{
 					FROM vdl_user
 					WHERE vdl_user.nick LIKE \"%".$user_text."%\"";
 		$data=$connection->query($query);
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message = $message . ' Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		$arresult=array();
+		while ($row = $data->fetch_array()) {
+			array_push($arresult,$row);
+		}
+		return $arresult;
+	}
+	
+	public function set_friends($id_user1, $id_user2){
+		$connection = parent::connect();
+		$query = "INSERT INTO `vdl_friend_of` (`user1`, `user2`)
+					VALUES ('$id_user1', '$id_user2')";
+		$data = $connection->query($query);
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message = $message . ' Whole query: ' . $query;
+			die($message);
+			return false;
+		}
 		$arresult=array();
 		while ($row = $data->fetch_array()) {
 			array_push($arresult,$row);

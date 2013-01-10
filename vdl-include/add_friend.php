@@ -20,11 +20,8 @@ session_start();
 	include("vdl-core/core_user.class.php");
 	include("vdl-core/core_msg_conver.class.php");
 	
-	$IDC=$_POST['conversacion'];
+	$IDA=$_POST['amigo'];
 	$IDU=$_POST['usuario'];
-	
-	$c_msg = new CORE_MSG_CONVER();
-	$c_msg->set_conver_hide($IDC,$IDU);
 	
 	header("Location:".$_SERVER['HTTP_REFERER']);
 	
