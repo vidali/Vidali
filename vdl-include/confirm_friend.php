@@ -20,12 +20,11 @@ session_start();
 	include("vdl-core/core_user.class.php");
 	include("vdl-core/core_msg_conver.class.php");
 	
-	$NICKA=$_POST['amigo'];
+	$IDA=$_POST['amigo'];
 	$IDU=$_POST['usuario'];
 	$STATUS=$_POST['action'];
 	
 	$c_user = NEW CORE_USER();
-	$IDA = $c_user->get_id($NICKA);
 	$c_user->update_friends($IDA,$IDU,$STATUS);
 	
 	header("Location:".$_SERVER['HTTP_REFERER']);

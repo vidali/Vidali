@@ -37,12 +37,12 @@ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 					echo "No hay ninguna solicitud...";
 				else{
 					foreach($myrequest as $req){
-						$nick = $c_user->get_nick($friend[0]);
-						$img = $c_user->get_img($friend[0]);
+						$nick = $c_user->get_nick($req[0]);
+						$img = $c_user->get_img($req[0]);
 						echo '<pre><li><form id="confirmar_amigo" class="navbar-form" method="post" action="/Vidali/vdl-include/confirm_friend.php">';
 						echo '<img src="'.BASEDIR."/vdl-files/".$img[0].'.jpg" width="60" height="60" >'." ".$nick[0];
-						echo '<br><button type="submit" name="action" value="1" class="btn btn-link"> Aceptar</button><input type="hidden" name="usuario" value="'.ID.'"/><input type="hidden" name="amigo" value="'.$nick[0].'"/>';
-						echo '<button type="submit" name="action" value="2" class="btn btn-link"> Rechazar</button><input type="hidden" name="usuario" value="'.ID.'"/><input type="hidden" name="amigo" value="'.$nick[0].'"/></form></li></pre>';
+						echo '<br><button type="submit" name="action" value="1" class="btn btn-link"> Aceptar</button><input type="hidden" name="usuario" value="'.ID.'"/><input type="hidden" name="amigo" value="'.$req[0][0].'"/>';
+						echo '<button type="submit" name="action" value="2" class="btn btn-link"> Rechazar</button><input type="hidden" name="usuario" value="'.ID.'"/><input type="hidden" name="amigo" value="'.$req[0][0].'"/></form></li></pre>';
 					}
 				}
 			

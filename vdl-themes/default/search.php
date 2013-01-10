@@ -27,7 +27,7 @@
 					elseif ($friend == 0)
 						echo '     Esperando confirmación</pre>';
 					else
-						echo '<button type="submit" class="btn btn-link">+ Agregar como amigo</button><input type="hidden" name="usuario" value="'.$ID.'"/><input type="hidden" name="amigo" value="'.$found[0].'"/></form></li></pre>';
+						echo '<button type="submit" class="btn btn-link">+ Agregar como amigo</button><input type="hidden" name="usuario" value="'.$ID.'"/><input type="hidden" name="amigo" value="'.$id_user.'"/></form></li></pre>';
 				}
 			}
 		?>
