@@ -168,7 +168,6 @@ CREATE TABLE IF NOT EXISTS `vdl_conver` (
   `user10` int(11) DEFAULT NULL,
   `user11` int(11) DEFAULT NULL,
   `user12` int(11) DEFAULT NULL,
-  `hide` varchar(140) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id_conver`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1;
 CREATE TABLE IF NOT EXISTS `vdl_msg_conver` (

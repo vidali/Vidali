@@ -49,6 +49,38 @@ class CORE_MSG_CONVER extends CORE_MAIN{
 		return true;
 	}
 	
+	public function set_hide($id_conver,$id_user,$date,$id_userp){
+		$connection = parent::connect();
+		$query = "UPDATE vdl_msg_conver 
+					SET vdl_msg_conver.hide = vdl_msg_conver.hide + '$id_userp' + ';'
+					WHERE vdl_msg_conver.id_conver = '$id_conver' 
+					AND vdl_msg_conver.id_user = '$id_user'
+					AND vdl_msg_conver.date = '$date'";
+		$data=$connection->query($query);
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message = $message . ' Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		return true;
+	}
+	
+	public function set_conver_hide($id_conver,$id_userp){
+		$connection = parent::connect();
+		$query = "UPDATE vdl_msg_conver 
+					SET vdl_msg_conver.hide = vdl_msg_conver.hide + '$id_userp' + ';'
+					WHERE vdl_msg_conver.id_conver = '$id_conver'";
+		$data=$connection->query($query);
+		if (!$data) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message = $message . ' Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		return true;
+	}
+	
 }
 
 ?>
