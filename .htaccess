@@ -1,0 +1,31 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule (.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?p1=$1&p2=$2&p3=$3&p4=$4&p5=$5&p6=$6&p7=$7&p8=$8&p9=$9&p10=$10 [L]
+RewriteRule (.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?p1=$1&p2=$2&p3=$3&p4=$4&p5=$5&p6=$6&p7=$7&p8=$8&p9=$9 [L]
+RewriteRule (.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?p1=$1&p2=$2&p3=$3&p4=$4&p5=$5&p6=$6&p7=$7&p8=$8 [L]
+RewriteRule (.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?p1=$1&p2=$2&p3=$3&p4=$4&p5=$5&p6=$6&p7=$7 [L]
+RewriteRule (.*)/(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?p1=$1&p2=$2&p3=$3&p4=$4&p5=$5&p6=$6 [L]
+RewriteRule (.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?p1=$1&p2=$2&p3=$3&p4=$4&p5=$5 [L]
+RewriteRule (.*)/(.*)/(.*)/(.*)/$ index.php?p1=$1&p2=$2&p3=$3&p4=$4 [L]
+RewriteRule (.*)/(.*)/(.*)/$ index.php?p1=$1&p2=$2&p3=$3 [L]
+RewriteRule (.*)/(.*)/$ index.php?p1=$1&p2=$2 [L]
+RewriteRule (.*)/$ index.php?p1=$1 [NC]
+
+<IfModule mod_security.c>
+        SecFilterEngine Off
+        SecFilterScanPOST On
+</IfModule>
+
+# evitar que los errores se muestren al usuario
+#php_flag display_startup_errors off
+#php_flag display_errors off
+#php_flag html_errors off
+# registrar errores en la bítacora
+#php_flag log_errors on
+#php_value error_log ./logs/php_error.log
+
+<Files db.ini>
+Order allow,deny
+Deny from all
+</Files>
