@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="#"><img width="60" height="60"  src="/Vidali1/vdl-themes/Default/img/logo.png"></a>
+				<a class="brand" href="#"><img width="60" height="60"  src="/Vidali/vdl-themes/Default/img/logo.png"></a>
 				<form class="form-search span4" style=" margin-top: 5px; margin-bottom: 0px;">
 				  <div class="input-append">
 					<input type="text" class="span4 search-query">

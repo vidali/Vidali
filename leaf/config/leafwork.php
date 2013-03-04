@@ -18,7 +18,7 @@
    $config['basic']['dynamic_template'] = true; // Establece si el template será dinámico intentando cargar templates mediante URL
 	$config['basic']['page_extensions'] = 'htm , html , php'; // Extensiones posibles para páginas
 	$config['basic']['url'] = 'http://127.0.0.1'; // URL completa donde se encuentra la web SIN barra al final
-	$config['basic']['base_url'] = '/Vidali1/'; // Carpeta donde se encuentra el root del framework.
+	$config['basic']['base_url'] = '/Vidali/'; // Carpeta donde se encuentra el root del framework.
    $config['basic']['adminpass'] = '123456';
    
    // Errores
