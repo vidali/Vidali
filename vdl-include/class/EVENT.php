@@ -1,6 +1,4 @@
 <?php
-require_once 'UPDATE.php';
-
 
 /**
  * class EVENT
