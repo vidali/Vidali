@@ -4,7 +4,7 @@
  * class EVENT
  * 
  */
-class EVENT extends UPDATE
+class EVENT
 {
 
   /** Aggregations: */
@@ -31,7 +31,7 @@ class EVENT extends UPDATE
    */
    	public $_event_tittle;
 
-	__construct($id,$id_msg,$event_tittle){
+	public function __construct($id,$id_msg,$event_tittle){
 		$_id = $id;
 		$_id_msg = $id_msg;
 		$_event_tittle = $event_tittle;

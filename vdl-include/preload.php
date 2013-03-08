@@ -40,6 +40,6 @@ elseif(defined('PASS_C')){
 	lw('config')->set( 'template' , 'vdl-themes/'.THEME.'/index.php');
 }
 else{
-	lw('config')->set( 'template' , 'vdl-themes/'.THEME.'/login.php');
+	lw('config')->set( 'template' , 'vdl-themes/'.THEME.'/login.html');
  }
 ?>

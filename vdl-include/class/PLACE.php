@@ -4,7 +4,7 @@
  * class PLACE
  * 
  */
-class PLACE extends UPDATE
+class PLACE
 {
 
   /** Aggregations: */
@@ -34,7 +34,7 @@ class PLACE extends UPDATE
    */
    	public $_location_coord;
 
-	__construct($id,$id_msg,$name_place,$location_coord){
+	public function __construct($id,$id_msg,$name_place,$location_coord){
 		$_id = $id;
 		$_id_msg = $id_msg;
 		$_name_place = $name_place;

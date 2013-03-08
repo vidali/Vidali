@@ -9,15 +9,15 @@
 	<![endif]-->
 
 	<!-- Le styles -->
-	<link rel="shortcut icon" href="../vdl-themes/default/img/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="../vdl-themes/default/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="../vdl-themes/default/css/bootstrap-responsive.css" />
-	<link rel="stylesheet" type="text/css" href="../vdl-themes/default/css/style.css" />
-	<script type="text/javascript" src="../vdl-themes/default/js/jquery.js" ></script>
-	<script type="text/javascript" src="../vdl-themes/default/js/bootstrap.js" ></script>
-	<link rel="stylesheet" href="../vdl-themes/default/js/jquery-ui.css" id="theme" />
-	<script type="text/javascript" src="../vdl-themes/default/js/less.js"></script>
-	<script type="text/javascript" src="../vdl-themes/default/js/script_default.js"></script>
+	<link rel="shortcut icon" href="../vdl-themes/Default/img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../vdl-themes/Default/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="../vdl-themes/Default/css/bootstrap-responsive.css" />
+	<link rel="stylesheet" type="text/css" href="../vdl-themes/Default/css/style.css" />
+	<script type="text/javascript" src="../vdl-themes/Default/js/jquery.js" ></script>
+	<script type="text/javascript" src="../vdl-themes/Default/js/bootstrap.js" ></script>
+	<link rel="stylesheet" href="../vdl-themes/Default/js/jquery-ui.css" id="theme" />
+	<script type="text/javascript" src="../vdl-themes/Default/js/less.js"></script>
+	<script type="text/javascript" src="../vdl-themes/Default/js/script_default.js"></script>
 	<script>
 
 	</script>
@@ -26,7 +26,7 @@
 	<div class="navbar navbar-inverse">
 	  <div class="navbar-inner">
 		<div class="container">
-			<div class="span2"><a class="brand" href="#"><img src="../vdl-themes/default/img/logo.png"></a></div>
+			<div class="span2"><a class="brand" href="#"><img src="../vdl-themes/Default/img/logo.png"></a></div>
 			<ul class="nav pull-right">
 				<li><a href="http://vdli.wordpress.com/">Blog</a></li>
 				<li><a href="https://github.com/vidali/Vidali/wiki">Wiki</a></li>
@@ -195,7 +195,7 @@
 
 	<footer class="footer">
 	  <div class="container">
-		<p class="pull-right"><img src="../vdl-themes/default/img/html5.png"><img src="../vdl-themes/default/img/agpl.png"></p>
+		<p class="pull-right"><img src="../vdl-themes/Default/img/html5.png"><img src="../vdl-themes/Default/img/agpl.png"></p>
 		<h6>Powered by Vidali.</h6>
 	  </div>
 	</footer>

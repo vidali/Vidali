@@ -4,7 +4,7 @@
  * class UFILE
  * 
  */
-class UFILE extends UPDATE
+class UFILE
 {
 
   /** Aggregations: */
@@ -35,7 +35,7 @@ class UFILE extends UPDATE
    	private $_type;
 
 
-	__construct($id,$id_msg,$name,$type){
+	public function __construct($id,$id_msg,$name,$type){
 		$_id = $id;
 		$_id_msg = $id_msg;
 		$_name = $name;

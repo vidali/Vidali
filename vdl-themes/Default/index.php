@@ -9,6 +9,20 @@
 	<![endif]-->
 	<!-- Le styles -->
 	{{ROUTES}}
+	<link rel="shortcut icon" href="vdl-themes/Default/img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap-responsive.css" />
+	<script type="text/javascript" src="vdl-themes/Default/js/jquery.js" ></script>
+	<script type="text/javascript" src="vdl-themes/Default/js/bootstrap.js" ></script>
+	<script type="text/javascript" src="vdl-themes/Default/js/main.js" ></script>
+	<script type="text/javascript" src="vdl-themes/Default/js/script_default.js" ></script>
+	<script type="text/javascript" src="vdl-themes/Default/js/gettext.js" ></script>
+	<link rel="stylesheet" href="vdl-themes/Default/css/jquery-ui.css" id="theme" />
+	<link rel="stylesheet" type="text/less" href="vdl-themes/Default/css/head.less" />	
+	<link rel="stylesheet" type="text/less" href="vdl-themes/Default/css/static.less" />	
+	<link rel="stylesheet/less" type="text/css" href="vdl-themes/Default/css/prof.less" />
+	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/footer.less" />
+	<script type="text/javascript" src="vdl-themes/Default/js/less.js"></script>
 </head>
 <body>
 
@@ -36,7 +50,7 @@
 						  <li><a class="pointer" onclick="link('g');"><i class="icon-globe"></i></a></li>
 						  <li><a class="pointer" onclick="link('f');"><i class="icon-folder-open"></i></a></li>
 						  <li><a  class="pointer" onclick="link('s');"><i class="icon-cog"></i></a></li>
-						  <li><a  class="pointer" onclick="link('s');"><i class="icon-off"></i></a></li>
+						  <li><a  href="/Vidali/?action=logout"><i class="icon-off"></i></a></li>
 						</ul>
 					</nav>
 			</div><!-- /.nav-collapse -->
@@ -45,16 +59,13 @@
 	</header>
 
 	<div class="container-fluid">
-		{{CONTENT}}
 		<div class="row-fluid">
-			<div id="din">
-				<aside class="span3"> 
-					{{ACTIONS}}
-				</aside>
-				<div class="span6">
-					{{PAGE}}
+			<div id="din" class="span9 tabbable tabs-left">
+					<ul id="home-tab" class="nav nav-tabs no-bot-margin span2">
+					</ul>
+					<div id="view" class="tab-content">
+					</div>
 				</div>
-			</div>
 			<aside class="span3">
 				{{NOTIFY}}
 			</aside>
@@ -62,11 +73,11 @@
 	</div>
 			
 	<footer class="footer container">
-			<p class="pull-right"><img src="img/html5.png"><img src="img/agpl.png"></p>
+			<p class="pull-right"><img src="vdl-themes/Default/img/html5.png"><img src="vdl-themes/Default/img/agpl.png"></p>
 			<p class="pull-left">Powered by Vidali.</p>
 	</footer>
-
 </div>
+
 <div id="feedbar">
 	<div class="container-fluid">
 		<div class="row-fluid">
@@ -88,6 +99,13 @@
 				</div>
 			</aside>
 		</div>
+	</div>
+</div>
+
+<div id="background">
+	<div id="loading">
+			<img src="vdl-themes/Default/img/logo-big.png" width="100%">
+			<img src="vdl-themes/Default/img/loading.gif">
 	</div>
 </div>
 

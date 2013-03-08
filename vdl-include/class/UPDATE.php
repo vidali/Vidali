@@ -64,7 +64,7 @@ class UPDATE extends GROUP_ACTORS
 	 * 
 	 * 
 	 */
-	__construct($id_msg,$id_user,$id_group,$date_published,$text,$file=null,$event=null,$place=null){
+	public function __construct($id_msg,$id_user,$id_group,$date_published,$text,$file=null,$event=null,$place=null){
 		$_id_msg = $id_msg;
 		$_id_user = $id_user;
 		$_id_group = $id_group;

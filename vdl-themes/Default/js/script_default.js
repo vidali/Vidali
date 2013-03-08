@@ -1,5 +1,7 @@
 var msgTimeout;
 var basedir;
+var _GET = window.location.href.replace(basedir+'/', '').split('/');
+
 var errMsg = function(msg, type){
 	clearTimeout(msgTimeout);
 	$("#alert").fadeOut("fast",function(){
@@ -8,52 +10,6 @@ var errMsg = function(msg, type){
 		
 		$("#alert").fadeIn("fast");
 		msgTimeout = setTimeout(function(){$('#alert').fadeOut();},4000);
-	});
-}
-
-var doLogin = function(){
-	var user = $('#user').val();
-	var password = $('#password').val();
-    var dir;
-	
-	if(!user || !password){
-		errMsg('Debes rellenar todos los datos.');
-		return;
-	}
-	
-	var a = user.indexOf('@');
-	var b = user.indexOf('.',a);
-	if(a == -1 || a == 0 || b == -1 || a+1 == b || b+1 == user.length){
-		errMsg('El correo introducido es incorrecto.');
-		return;
-	}
-	if(basedir.length == 0)
-        dir = "/vdl-include/session_start.php";
-    else
-        dir = basedir+"/vdl-include/session_start.php"; 
-	
-	$("#background").fadeIn(1000);
-	$.ajax({
-		url: dir,
-		cache: false,
-		type: "POST",
-		data: {
-			user: user,
-			password: password,
-			remember: $('#remember').prop('checked') ? 1 : 0
-		},
-		success: function(data){
-			if(data == "1" || data == "true"){
-				$("#background").fadeIn(500, function (){
-					window.location= basedir+"/index.php";
-				});
-			} else {
-				$("#background").fadeOut(500, function(){
-					errMsg('Usuario o contrase&ntilde;a incorrectos.',"error");
-				});
-				
-			}
-		}
 	});
 }
 
@@ -87,12 +43,9 @@ var deserialize = function (value) {
 	}
 	return params;
 };
-
-//~ setInterval(function() {
-    //~ $("#home-wall").load(location.href+" #home-wall");
-//~ }, 50000);
 	
 var link = function(value){
+	$("#din").hide();
 	$('.main-menu li a').click(function(){
 		if (!$(this).hasClass("active")) {
 			$('.main-menu li').removeClass('active');
@@ -101,25 +54,36 @@ var link = function(value){
 	});
 	if(value == "h"){
 		window.history.replaceState(" ", "Home", basedir+"/h/");
+		get_page('h');
+		load_info();
 		document.title = "Home - Vidali";
 	}
 	if(value == "m"){
 		window.history.replaceState(" ", "Mensajes", basedir+"/m/");
+		get_page('m');
+		load_info();
 		document.title = "Mensajes - Vidali";
 	}
 	if(value == "g"){
 		window.history.replaceState(" ", "Grupos", basedir+"/g/");
+		get_page('g');
+		load_info();
 		document.title = "Grupos - Vidali";
 	}
 	if(value == "f"){
 		window.history.replaceState(" ", "Archivos", basedir+"/f/");
+		get_page('f');
+		load_info();
 		document.title = "Archivos - Vidali";
 	}
 	if(value == "s"){
 		window.history.replaceState(" ", "Ajustes", basedir+"/s/");
+		get_page('s');
+		load_info();
 		document.title = "Ajustes - Vidali";
 	}
-	$("#din").fadeOut(1000,function(){ $("#din").load(location.href+" #din").fadeIn(1500)});
+	$("#din").fadeIn(1000);
+	//$("#din").fadeOut(1000,function(){ $("#din").load(location.href+" #din").fadeIn(1500)});
 	return false;
 };
 
