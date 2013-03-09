@@ -31,7 +31,7 @@ if(isset($_SESSION['loged'])){
 	define("ID",$_SESSION["id"]);
 	define("NICK",$_SESSION["nick"]);
 	define("NAME",$_SESSION["name"]);
-	define("MAIL",$_SESSION["email"]);
+	define("MAIL",$_SESSION["mail"]);
 	define("LOGED",$_SESSION['loged']);
 	lw('config')->set( 'template' , 'vdl-themes/'.THEME.'/index.php');
 }

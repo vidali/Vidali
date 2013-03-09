@@ -1,3 +1,14 @@
+var errMsg = function(msg, type){
+	clearTimeout(msgTimeout);
+	$("#alert").fadeOut("fast",function(){
+		$("#alert span").html(msg);
+		$("#alert").attr("class","alert " + (type ? "alert-"+type : "alert-message"));
+		
+		$("#alert").fadeIn("fast");
+		msgTimeout = setTimeout(function(){$('#alert').fadeOut();},4000);
+	});
+}
+
 var doLogin = function(){
 	var user = $('#user').val();
 	var password = $('#password').val();

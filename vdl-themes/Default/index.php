@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<title>Vidali</title>
+	<title>Vidali</title>
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
 	  <script src="js/html5.js"></script>
@@ -13,10 +13,6 @@
 	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap-responsive.css" />
 	<script type="text/javascript" src="vdl-themes/Default/js/jquery.js" ></script>
-	<script type="text/javascript" src="vdl-themes/Default/js/bootstrap.js" ></script>
-	<script type="text/javascript" src="vdl-themes/Default/js/main.js" ></script>
-	<script type="text/javascript" src="vdl-themes/Default/js/script_default.js" ></script>
-	<script type="text/javascript" src="vdl-themes/Default/js/gettext.js" ></script>
 	<link rel="stylesheet" href="vdl-themes/Default/css/jquery-ui.css" id="theme" />
 	<link rel="stylesheet" type="text/less" href="vdl-themes/Default/css/head.less" />	
 	<link rel="stylesheet" type="text/less" href="vdl-themes/Default/css/static.less" />	
@@ -45,11 +41,11 @@
 				<div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
 					<nav class="nav pull-right">
 						<ul class="nav main-menu">
-						  <li><a class="pointer" onclick="link('h');"><i class="icon-home"></i></a></li>
-						  <li><a class="pointer" onclick="link('m');"><i class="icon-envelope"></i></a></li>
-						  <li><a class="pointer" onclick="link('g');"><i class="icon-globe"></i></a></li>
-						  <li><a class="pointer" onclick="link('f');"><i class="icon-folder-open"></i></a></li>
-						  <li><a  class="pointer" onclick="link('s');"><i class="icon-cog"></i></a></li>
+						  <li class="active"><a  onclick="link('h');"><i class="icon-home"></i></a></li>
+						  <li><a  onclick="link('m');"><i class="icon-envelope"></i></a></li>
+						  <li><a onclick="link('g');"><i class="icon-globe"></i></a></li>
+						  <li><a onclick="link('f');"><i class="icon-folder-open"></i></a></li>
+						  <li><a onclick="link('s');"><i class="icon-cog"></i></a></li>
 						  <li><a  href="/Vidali/?action=logout"><i class="icon-off"></i></a></li>
 						</ul>
 					</nav>
@@ -60,8 +56,8 @@
 
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<div id="din" class="span9 tabbable tabs-left">
-					<ul id="home-tab" class="nav nav-tabs no-bot-margin span2">
+			<div id="din" class="span9">
+					<ul id="home-tab" class="nav nav-tabs no-bot-margin">
 					</ul>
 					<div id="view" class="tab-content">
 					</div>
@@ -132,6 +128,9 @@
 	<a href="http://idea.informer.com">
 	<img src="http://widget.idea.informer.com/tmpl/images/widget_logo.jpg" /></a>
 </noscript>
+<script type="text/javascript" src="vdl-themes/Default/js/bootstrap.js" ></script>
+<script type="text/javascript" src="vdl-themes/Default/js/main.js" ></script>
+<script type="text/javascript" src="vdl-themes/Default/js/gettext.js" ></script>
 
 </body>
 </html>

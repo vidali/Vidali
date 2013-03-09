@@ -29,9 +29,9 @@ abstract class USER extends CORE_MAIN
 
   /**
    * 
-   * @access protected
+   * @access public
    */
-  protected $_name;
+  public $_name;
 
   /**
    * 

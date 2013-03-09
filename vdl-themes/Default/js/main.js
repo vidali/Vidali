@@ -1,3 +1,62 @@
+var msgTimeout;
+var basedir;
+var _GET = window.location.href.replace(basedir+'/', '').split('/');
+
+var link = function(value){
+	$("#din").hide();
+	$('.main-menu li a').click(function(){
+		if (!($(this).hasClass("active")))
+			$('.main-menu li').removeClass('active');
+		$(this).parent().addClass('active');
+	});
+	if(value == "h"){
+		window.history.replaceState(" ", "Home", basedir+"/h/");
+		get_page('h');
+		load_info('wall');
+		document.title = "Home - Vidali";
+	}
+	if(value == "m"){
+		window.history.replaceState(" ", "Mensajes", basedir+"/m/");
+		get_page('m');
+		load_info();
+		document.title = "Mensajes - Vidali";
+	}
+	if(value == "g"){
+		window.history.replaceState(" ", "Grupos", basedir+"/g/");
+		get_page('g');
+		load_info();
+		document.title = "Grupos - Vidali";
+	}
+	if(value == "f"){
+		window.history.replaceState(" ", "Archivos", basedir+"/f/");
+		get_page('f');
+		load_info();
+		document.title = "Archivos - Vidali";
+	}
+	if(value == "s"){
+		window.history.replaceState(" ", "Ajustes", basedir+"/s/");
+		get_page('s');
+		load_info();
+		document.title = "Ajustes - Vidali";
+	}
+	$("#din").fadeIn(1000);
+	return false;
+};
+
+$('#home-tab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+
+$('#side-tab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+
+$('#notify-tab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
 
 var get_page = function (value){
 	if(value == 'h'){
@@ -48,26 +107,32 @@ var get_page = function (value){
 	}
 }
 
-var wall = function(){
+var set_data = function(value){
 	var result;
 	$.ajax({
 		url: basedir+'/vdl-include/query.php',
 		cache: false,
 		type: "POST",
 		data: {
-			query: 'wall',
+			query: value,
 		},
 		success: function(data){
-			result = '<div class="object">'+data+'</div>';
-			$("#view").append(result);
+	        data = JSON.parse(data);
+			console.log(data);
+		    for(var i=0;i<data.length;i++){
+				$("#view").append('<article id="obj-'+i+'" class="obj"></article>');
+				$("#obj-"+i).append('<img src="vdl-files/'+data[i].avatar_id+'_tb.jpg">');
+				$("#obj-"+i).append('<div class="upd-info">'+data[i].nick+' '+data[i].date_published+'</div>');
+				$("#obj-"+i).append('<div class="upd-msg">'+data[i].text+'</div>');
+			}
 		}
 	});
 }
 
-var load_info = function(){
+var load_info = function(category){
 	$("#view").hide();
 	$("#view").empty();
-	wall();
+	set_data(category);
 	$("#view").fadeIn(300);
 	return false;
 }
@@ -76,7 +141,7 @@ $(document).ready(function(){
 	if(_GET[0] == '' || _GET[0] == '#')
 		get_page('h');
 	get_page(_GET[0]);
-	load_info();
+	load_info('wall');
 	$('#background').fadeOut(500);
 	return false;
 });

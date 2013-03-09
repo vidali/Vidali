@@ -46,11 +46,10 @@ class USER_ACTIVE extends USER
 		$query = "SELECT id from vdl_user WHERE nick = '$_user'";
 		$result= $connection->query($query);
 		$id = $result->fetch_assoc();
-		$query = "SELECT id, nick, b.avatar_id,email, date_published,text
-					FROM vdl_publish a
+		$query = "SELECT id, nick, b.avatar_id,email, a.date_published, text
+					FROM vdl_msg a
 					JOIN vdl_user b ON b.id = id_user
 					JOIN vdl_group ON vdl_group.group_name = id_group
-					JOIN vdl_msg ON vdl_msg.id_msg = a.id_msg
 					WHERE b.id
 					IN ( SELECT a.id
 						 FROM vdl_user a
@@ -59,19 +58,21 @@ class USER_ACTIVE extends USER
 						 AND ( b.user1 ='".$id["id"]."' OR b.user2 ='".$id["id"]."')
 						 AND ( b.status != 0)
 					)
-					ORDER BY  `vdl_msg`.`date_published` DESC 
+					ORDER BY  a.date_published DESC 
 					LIMIT 0 , 30";
 		$result = $connection->query($query);
 		if (!$result) {
-			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message  = 'Invalid query: ' . $connection->error . "\n";
 			$message .= 'Whole query: ' . $query;
 			die($message);
 		}
 		//mostrar resultado
 		$arresult=array();
 		while ($row = $result->fetch_array()) {
+			//array_push($arresult,$row);
 			array_push($arresult,$row);
 		}
+		$arresult = json_encode($arresult);
 		return $arresult;
 	}
 } // end of USER_ACTIVE
