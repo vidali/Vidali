@@ -264,7 +264,31 @@ class CORE_ACTIONS extends CORE_MAIN{
 	}// end of member function login
 
 
-
+static public function add_trend($text){
+		preg_match_all('/[#]+([A-Za-z0-9-_]+)/',$text, $hash); 
+		$hashtag = $hash[1]; 
+		foreach($hashtag  as $key => $hash){ 
+			$ht=ucwords(strtolower($hash));
+			$connection = parent::connect();
+			$query = ("SELECT topic FROM vdl_trending WHERE topic='$ht'");
+			$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));
+			if(!$result)
+				return false;
+			if($result->num_rows == 0){
+				$query = ("INSERT INTO vdl_trending (topic,count) VALUES ('$ht',1)");
+				$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));			
+				if(!$result)
+					return false;
+			}
+			else{
+				$query = ("UPDATE vdl_trending SET count =count+1 WHERE topic='$ht'");
+				$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));					
+				if(!$result)
+					return false;
+			}
+		} 
+		return true;
+	}
 
 
 } // end of CORE_ACTIONS

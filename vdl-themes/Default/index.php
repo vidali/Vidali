@@ -41,11 +41,11 @@
 				<div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
 					<nav class="nav pull-right">
 						<ul class="nav main-menu">
-						  <li class="active"><a  onclick="link('h');"><i class="icon-home"></i></a></li>
-						  <li><a  onclick="link('m');"><i class="icon-envelope"></i></a></li>
-						  <li><a onclick="link('g');"><i class="icon-globe"></i></a></li>
-						  <li><a onclick="link('f');"><i class="icon-folder-open"></i></a></li>
-						  <li><a onclick="link('s');"><i class="icon-cog"></i></a></li>
+						  <li id="m-home" class="active"><a  onclick="link('h');"><i class="icon-home"></i></a></li>
+						  <li id="m-msg"><a  onclick="link('m');"><i class="icon-envelope"></i></a></li>
+						  <li id="m-group"><a onclick="link('g');"><i class="icon-globe"></i></a></li>
+						  <li id="m-files"><a onclick="link('f');"><i class="icon-folder-open"></i></a></li>
+						  <li id="m-set"><a onclick="link('s');"><i class="icon-cog"></i></a></li>
 						  <li><a  href="/Vidali/?action=logout"><i class="icon-off"></i></a></li>
 						</ul>
 					</nav>
@@ -54,7 +54,7 @@
 	  </div><!-- /navbar-inner -->
 	</header>
 
-	<div class="container-fluid">
+	<div id='container' class="container-fluid">
 		<div class="row-fluid">
 			<div id="din" class="span9">
 					<ul id="home-tab" class="nav nav-tabs no-bot-margin">
@@ -63,7 +63,29 @@
 					</div>
 				</div>
 			<aside class="span3">
-				{{NOTIFY}}
+				<ul id="notify-tab" class="nav nav-tabs">
+				  <li class="active">
+				    <a href="#Requests" data-toggle="tab">Solicitudes</a>
+				  </li>
+				  <li>
+				    <a href="#Replies" data-toggle="tab">Replys</a>
+				  </li>
+				  <li>
+				    <a href="#Events" data-toggle="tab">Eventos</a>
+				  </li>
+				</ul>
+
+				<div id="" class="tab-content">
+					<div id="Requests" class="inbox-tab tab-pane fade active in">
+						Solicitudes
+					</div>
+					<div id="Replies" class="inbox-tab tab-pane fade">
+						Respuestas
+					</div>
+					<div id="Events" class="inbox-tab tab-pane fade">
+						Eventos
+					</div>
+				</div>
 			</aside>
 		</div>
 	</div>
@@ -83,7 +105,13 @@
 				</div>
 			</aside>
 			<div class="span6">
-                {{UPDATE}}
+				<form class="form-inline" onSubmit="update_status(); return false;" method="post">
+				    <textarea id="update" name="update" class="span12" rows="2" placeholder="Actualiza tu estado"></textarea>
+				    <button class="btn btn-inverse"><i class="icon-star icon-white"></i></button>
+				    <button class="btn btn-inverse"><i class="icon-map-marker icon-white"></i></button>
+				    <button class="btn btn-inverse"><i class="icon-upload icon-white"></i></button>
+				    <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok icon-white"></i></button>
+				</form>
 			</div>
 			<aside class="span3">
 				<div id="invisible" class="well sidebar">

@@ -15,22 +15,48 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
 session_start();
-	include("vdl-core/core_main.class.php");
-	include("vdl-core/core_profile.class.php");
-	include("vdl-core/core_security.class.php");
-	//	$message=htmlspecialchars($_POST['update']);
-	//conectar a base de datos
-	$core= new CORE_PROFILE($_POST["nick_s"],$_SESSION["nick"]);
+ini_set('mssql.charset', 'UTF-8');
+include_once 'class/CORE_DB.php';
+include_once 'class/CORE_MAIN.php';
+include_once 'class/CORE_SECURITY.php';
+include_once 'class/CORE_ELEMENTS.php';
+include_once 'class/CORE_ACTIONS.php';
+include_once 'class/CORE_ADMIN.php';
+include_once 'class/CORE_OBJECTS.php';
+include_once 'class/CORE_PLUGINS.php';
+include_once 'class/GROUP.php';
+include_once 'class/USER.php';
+include_once 'class/PROFILE.php';
+include_once 'class/USER_ACTIVE.php';
+include_once 'class/GROUP_ACTORS.php';
+include_once 'class/USER_ACTORS.php';
+include_once 'class/UFILE.php';
+include_once 'class/EVENT.php';
+include_once 'class/PLACE.php';
+include_once 'class/UPDATE.php';
+include_once 'class/PRIVATE_TALK.php';
+include_once 'class/PRIVATE_MSG.php';
+$ACT = new CORE_ACTIONS();
+$SEC = new CORE_SECURITY();
+$MAIN = new CORE_MAIN();
+$MAIN->load();
+define("ID",$_SESSION["id"]);
+define("NICK",$_SESSION["nick"]);
+define("NAME",$_SESSION["name"]);
+define("MAIL",$_SESSION["mail"]);
+define("LOGED",$_SESSION['loged']);
+
+$USER_ACTIVE = new USER_ACTIVE(NICK,$_SESSION["nick"]);
 	//AQUI SE COMPROBARÁ SI EL ESTADO CONTIENE ALGUN @REPLY, #HASTAG, !RED, @>MENSAJE, #> MENSAJE, SE SEPARARÁ LOS LINKS DEL MENSAJE Y
 	// SE PODRÁ FILTRAR 1 LINK, 1 VIDEO Y/O 1 IMAGEN
-	$SEC = new CORE_SECURITY();
-	$message = $SEC->clear_text($_POST['update']);
-	$message =  nl2br ($message);
-	if(strlen($message)==0){
-		header("Location:".$_SERVER['HTTP_REFERER']."?alert=false");
-	}
-	else{
-		$core->update($_SESSION['nick'],$message,session_id());
-		header("Location:".$_SERVER['HTTP_REFERER']."?alert=true");
-	}
+$SEC = new CORE_SECURITY();
+$message = $SEC->clear_text($_POST['update']);
+$message =  nl2br($message);
+if(strlen($message)==0){
+	echo $message . ' no ha sido entregado';
+}
+else{
+	$USER_ACTIVE->update(NICK,$message,session_id());
+	echo 'done';
+}
 ?>

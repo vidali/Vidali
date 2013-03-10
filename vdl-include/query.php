@@ -40,7 +40,5 @@ if(isset($_POST['query'])){
 		//}
 	}
 }
-else{
-	echo "FUUU";
-}
+
 ?>

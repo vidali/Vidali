@@ -76,6 +76,14 @@ class CORE_SECURITY{
    * @access public
    */
   public function clear_text( $_source ) {
+    $url_words=array("MIME-Version:","Content-Transfer-Encoding:","Return-path:","Subject:","From:",
+                 "Envelope-to:","To:","bcc:","cc:");
+    $script_words=array("onload(","alert(",");","&lt;script&gt;","&lt;/script&gt;","&quot;","&#39;");
+    $banned_sites=array("www.4chan.org");
+    $aux=htmlentities($_source,ENT_QUOTES);
+    $aux=str_ireplace($url_words,"",$aux);
+    $aux=str_ireplace($script_words,"",$aux);
+    return $aux;
   } // end of member function clear_text
 
   /**

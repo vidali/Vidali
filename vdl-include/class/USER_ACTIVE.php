@@ -19,7 +19,6 @@ class USER_ACTIVE extends USER
    * 
    *
    * @param string __USER 
-
    * @return void
    * @access public
    */
@@ -74,6 +73,44 @@ class USER_ACTIVE extends USER
 		}
 		$arresult = json_encode($arresult);
 		return $arresult;
+	}
+
+	public function update($_user,$_message,$_s_id){
+		$connection = parent::connect();
+		date_default_timezone_set('Europe/London');
+		$date = date("Y-m-d G:i:s");
+		$text = $_message;
+//		$text = htmlentities($_message,ENT_QUOTES,"UTF-8");
+		$query = ("SELECT id,nick FROM  `vdl_user` WHERE  `session_id` =  '".$_s_id."'");
+		$result = $connection->query($query);
+		if (!$result) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		CORE_ACTIONS::add_trend($text);
+		preg_match_all('/[#]+([A-Za-z0-9-_]+)/',$text,$hash);
+		$hashtag = $hash[1];
+		foreach($hashtag  as $key => $hash){ 
+			//Aqui podemos hacer que lo agrege a la database 
+			$find = '#'.$hash;
+			$replace = '#'.ucwords(strtolower($hash)); 
+			$text = str_replace($find, $replace, $text); 
+		}
+		$user = $result->fetch_assoc();
+		if( $user["nick"] == $_user){
+			$user = $user["id"];
+		}
+		$query = ("INSERT INTO vdl_msg (id_user,id_group,date_published,text) VALUES ('$user','Vidali','$date', '$text')");
+		$result = $connection->query($query) or die(mysql_error('Ups, algo falla a la hora de postear...prueba luego.'));	
+		if (!$result) {
+			$message  = 'Invalid query: ' . mysql_error() . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+			return false;
+		}
+		return true;
 	}
 } // end of USER_ACTIVE
 ?>
