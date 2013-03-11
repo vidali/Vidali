@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"USER",
+				"USER_ACTIVE"
+			],
+			[
+				"CORE",
+				"CORE_PROFILE"
+			],
+			[
+				"CORE_",
+				"CORE_SECURITY"
+			],
+			[
 				"back",
 				"background-color"
 			],
@@ -31,7 +43,7 @@
 			"file": "vdl-themes/Default/index.php",
 			"settings":
 			{
-				"buffer_size": 5349,
+				"buffer_size": 6595,
 				"line_ending": "Windows"
 			}
 		},
@@ -39,7 +51,7 @@
 			"file": "vdl-themes/Default/js/main.js",
 			"settings":
 			{
-				"buffer_size": 5994,
+				"buffer_size": 7356,
 				"line_ending": "Windows"
 			}
 		},
@@ -47,51 +59,16 @@
 			"file": "vdl-include/query.php",
 			"settings":
 			{
-				"buffer_size": 1264,
+				"buffer_size": 1392,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vdl-include/set_update.php",
-			"settings":
-			{
-				"buffer_size": 1475,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vdl-include/content.php",
-			"settings":
-			{
-				"buffer_size": 1669,
-				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "vdl-include/class/USER_ACTIVE.php",
 			"settings":
 			{
-				"buffer_size": 1719,
+				"buffer_size": 3067,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "@import \"style\";\n/*=========Profile========*/\n\n#info-pr{\n   margin: 10px;\n}\n\n.basic_photo{\n	margin: 0px;\n	padding: 0px;\n}\n\n.basic3{\n	display: block;\n	margin: 0px;\n	padding: 0px;\n	min-height: 210px;\n}\n\n\n.basic_tb{\n	display: block;\n	border-radius: 7px;\n	-moz-border-radius: 7px;\n	-webkit-border-radius: 7px;\n	margin: 0px;\n	padding: 0px;\n	min-height: 100px;\n	text-align: center;\n}\n\n.id_sender{\n	font-size: 10px;\n	color: #505050;\n/*	border-bottom:1px solid #DDDpero ;*/\n}\n\n\n\n.obj{\n	display: block;\n	height-min: 75px;\n	margin-left: 0px !important;\n	padding: 10px;\n	border-bottom: 1px solid #D1D1D1;\n	border-left: 1px solid #D1D1D1;\n	border-right: 1px solid #D1D1D1;\n	background-color: #fff;\n\n	.upd-info{\n		float: left;\n		color: #A9A9A9;\n		font-size: 12px;\n	}\n	.upd_tb{\n		height: 100%;\n	}\n	.upd-msg{\n		color: #444;\n		font-size: 14px;\n		margin-top: 10px;\n		margin-bot: 20px;\n		margin-left: 0px !important;\n	}\n}\n",
-			"file": "vdl-themes/Default/css/prof.less",
-			"file_size": 953,
-			"file_write_time": 1362847502000000,
-			"settings":
-			{
-				"buffer_size": 904,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "vdl-themes/Default/css/style.less",
-			"settings":
-			{
-				"buffer_size": 627,
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -127,7 +104,17 @@
 	},
 	"file_history":
 	[
+		"/media/Datos/web/Vidali/vdl-include/set_update.php",
+		"/media/Datos/web/Vidali/vdl-include/content.php",
+		"/media/Datos/web/Vidali/vdl-include/class/USER_ACTIVE.php",
+		"/media/Datos/web/Vidali/vdl-include/class/CORE_SECURITY.php",
+		"/media/Datos/web/Vidali/vdl-include/class/CORE_ACTIONS.php",
+		"/media/Datos/web/Vidali/vdl-themes/Default/js/login.js",
+		"/media/Datos/web/Vidali/vdl-actions/notify.php",
+		"/media/Datos/web/Vidali/leaf/parser/notify.php",
 		"/media/Datos/web/Vidali/vdl-themes/Default/css/style.less",
+		"/media/Datos/web/Vidali/vdl-themes/Default/css/prof.less",
+		"/media/Datos/web/Vidali/leaf/parser/update.php",
 		"/media/Datos/web/Vidali/vdl-themes/Default/lwpanel/pages/admin.tpl",
 		"/media/Datos/web/Vidali/vdl-themes/Default/home.php",
 		"/media/Datos/web/Vidali/vdl-themes/Default/css/head.less",
@@ -135,7 +122,6 @@
 		"/media/Datos/web/Vidali/vdl-include/class/CORE_MAIN.php",
 		"/media/Datos/web/Vidali/vdl-include/class/USER.php",
 		"/media/Datos/web/Vidali/vdl-include/session_start.php",
-		"/media/Datos/web/Vidali/vdl-themes/Default/js/login.js",
 		"/media/Datos/web/Vidali/leaf/config/leafwork.php",
 		"/media/Datos/web/Vidali/vdl-themes/Default/js/script_default.js",
 		"/media/Datos/web/Vidali/leaf/parser/routes.php",
@@ -150,7 +136,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 		]
@@ -187,7 +173,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -195,15 +181,15 @@
 					"file": "vdl-themes/Default/index.php",
 					"settings":
 					{
-						"buffer_size": 5349,
+						"buffer_size": 6595,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3386,
-								3386
+								2940,
+								2940
 							]
 						],
 						"settings":
@@ -214,7 +200,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1199.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -224,15 +210,15 @@
 					"file": "vdl-themes/Default/js/main.js",
 					"settings":
 					{
-						"buffer_size": 5994,
+						"buffer_size": 7356,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5665,
-								5665
+								2449,
+								2449
 							]
 						],
 						"settings":
@@ -241,7 +227,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1836.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -251,15 +237,15 @@
 					"file": "vdl-include/query.php",
 					"settings":
 					{
-						"buffer_size": 1264,
+						"buffer_size": 1392,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1242,
-								1242
+								1330,
+								1330
 							]
 						],
 						"settings":
@@ -267,79 +253,25 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 408.0,
+						"translation.y": 204.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "vdl-include/set_update.php",
-					"settings":
-					{
-						"buffer_size": 1475,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								959,
-								959
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML5/Syntaxes/HTML 5.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "vdl-include/content.php",
-					"settings":
-					{
-						"buffer_size": 1669,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								753,
-								753
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML5/Syntaxes/HTML 5.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "vdl-include/class/USER_ACTIVE.php",
 					"settings":
 					{
-						"buffer_size": 1719,
+						"buffer_size": 3067,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								409,
-								409
+								332,
+								332
 							]
 						],
 						"settings":
@@ -348,61 +280,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 459.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "vdl-themes/Default/css/prof.less",
-					"settings":
-					{
-						"buffer_size": 904,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								493,
-								493
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 463.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "vdl-themes/Default/css/style.less",
-					"settings":
-					{
-						"buffer_size": 627,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 306.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -466,6 +344,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 174.0,
 	"status_bar_visible": true
 }

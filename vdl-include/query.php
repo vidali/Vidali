@@ -35,9 +35,17 @@ $USER_ACTIVE = new USER_ACTIVE(NICK,$_SESSION["nick"]);
 if(isset($_POST['query'])){
 	if($_POST['query'] == 'wall'){
 		$data = $USER_ACTIVE->get_home_wall(NICK);
-		//foreach ($data as $row) {
-			echo $data;
-		//}
+		echo $data;
+	}
+	if($_POST['query'] == 'profile'){
+		if(!isset($_POST['extra'])){
+			$data = $USER_ACTIVE->get_profile();
+		}
+		else{
+			$user = new USER($_POST['extra']);
+			$data = $USER_ACTIVE->get_profile();			
+		}
+		echo $data;
 	}
 }
 

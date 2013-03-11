@@ -64,6 +64,7 @@ var set_data = function(value){
 		type: "POST",
 		data: {
 			query: value,
+			extra: _GET[1],
 		},
 		success: function(data){
 			if(data == ''){
@@ -73,11 +74,32 @@ var set_data = function(value){
 				console.log(data);
 				data = JSON.parse(data);
 				console.log(data);
-			    for(var i=0;i<data.length;i++){
-					$("#view").append('<article id="obj-'+i+'" class="obj"></article>');
-					$("#obj-"+i).append('<img src="vdl-files/'+data[i].avatar_id+'_tb.jpg">');
-					$("#obj-"+i).append('<div class="upd-info">'+data[i].nick+' '+data[i].date_published+'</div>');
-					$("#obj-"+i).append('<div class="upd-msg">'+data[i].text+'</div>');
+		    	if(value == 'wall'){
+				    for(var i=0;i<data.length;i++){
+						$("#view").append('<article id="obj-'+i+'" class="obj"></article>');
+						$("#obj-"+i).append('<img src="vdl-files/'+data[i].avatar_id+'_tb.jpg">');
+						$("#obj-"+i).append('<div class="upd-info">'+data[i].nick+' '+data[i].date_published+'</div>');
+						$("#obj-"+i).append('<div class="upd-msg">'+data[i].text+'</div>');
+					}
+				}
+				if (value == 'profile'){
+						var sex;
+						if(data.sex == 'male')
+							sex = 'Hombre';
+						else
+							sex = 'Mujer';
+						$("#view").append('<article id="profile-info" class="obj"></article>');
+						$("#profile-info").append('<img src="vdl-files/'+data.avatar_id+'.jpg">');
+						$("#profile-info").append('<div>'+data.nick+'</div>');
+						$("#profile-info").append('<div>'+data.name+'</div>');
+						$("#profile-info").append('<div>'+sex+', '+data.age+' años.</div>');
+						$("#profile-info").append('<div>'+data.description+'</div>');
+				}
+				if (value == 'inbox'){
+					alert('cargando inbox '+_GET[0]);
+				}
+				if (value == 'set-profile'){
+					alert('cargando ajustes de perfil '+_GET[0]);
 				}
 			}
 		}
@@ -86,13 +108,10 @@ var set_data = function(value){
 }
 
 var load_info = function(category){
-	$("#view").hide();
+	$("#container").fadeOut(100);
 	$("#view").empty();
-	if(category == 'profile'){
-		window.history.replaceState(" ", "Perfil", basedir+"/u/");
-	}
 	set_data(category);
-	$("#view").fadeIn(300);
+	$("#container").fadeIn(100);
 	return false;
 }
 

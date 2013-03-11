@@ -27,12 +27,19 @@ class USER_ACTIVE extends USER
 
 	} // end of member function __construct
 
-	public function get_basic_data(){
-		$result = [ "n_friends" => $this->_prof_friends,
-					"n_groups" => $this->_prof_groups,
-					"n_views" => $this->_prof_visits,
-				  ];
-		return $result;
+	public function get_profile(){
+		$result=array();
+		$connection = parent::connect();
+		$query = "SELECT id,nick,name,age,sex,website,description,avatar_id from vdl_user WHERE id = '$this->_id'";
+		$result= $connection->query($query);
+		if (!$result) {
+			$message  = 'Invalid query: ' . $connection->error . "\n";
+			$message .= 'Whole query: ' . $query;
+			die($message);
+		}
+		$result = $result->fetch_array();
+		$result = json_encode($result);
+		echo $result;
 	}
 	/**
 	 * 
