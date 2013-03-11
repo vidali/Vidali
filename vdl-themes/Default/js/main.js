@@ -98,7 +98,7 @@ var set_data = function(value){
 				if (value == 'inbox'){
 					alert('cargando inbox '+_GET[0]);
 				}
-				if (value == 'set-profile'){
+				if (value == 'main'){
 					alert('cargando ajustes de perfil '+_GET[0]);
 				}
 			}

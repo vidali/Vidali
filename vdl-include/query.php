@@ -38,7 +38,7 @@ if(isset($_POST['query'])){
 		echo $data;
 	}
 	if($_POST['query'] == 'profile'){
-		if(!isset($_POST['extra'])){
+		if((!isset($_POST['extra'])) || ($_POST['extra'] == '')){
 			$data = $USER_ACTIVE->get_profile();
 		}
 		else{
@@ -46,6 +46,12 @@ if(isset($_POST['query'])){
 			$data = $USER_ACTIVE->get_profile();			
 		}
 		echo $data;
+	}
+	if($_POST['query'] == 'inbox'){
+		echo json_encode('a:1');
+	}
+	if($_POST['query'] == 'main'){
+		echo json_encode('a:1');
 	}
 }
 

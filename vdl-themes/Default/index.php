@@ -10,9 +10,11 @@
 	<!-- Le styles -->
 	{{ROUTES}}
 	<link rel="shortcut icon" href="vdl-themes/Default/img/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap-responsive.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" media="only screen and (max-width:780px)" />
 	<script type="text/javascript" src="vdl-themes/Default/js/jquery.js" ></script>
+	<script type="text/javascript" src="vdl-themes/Default/js/jquery.mobile.js" ></script>
+	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap-responsive.css"/>
 	<link rel="stylesheet" href="vdl-themes/Default/css/jquery-ui.css" id="theme" />
 	<link rel="stylesheet" type="text/less" href="vdl-themes/Default/css/head.less" />	
 	<link rel="stylesheet" type="text/less" href="vdl-themes/Default/css/static.less" />	
@@ -34,8 +36,8 @@
 				<a class="brand" href="#"><img width="60" height="60"  src="/Vidali/vdl-themes/Default/img/logo.png"></a>
 				<form class="form-search span4" style=" margin-top: 5px; margin-bottom: 0px;">
 				  <div class="input-append">
-					<input type="text" class="span4 search-query">
-					<button type="submit" class="btn">Search</button>
+					<input type="text" class="span3 search-query">
+					<button type="submit" class="btn search-button">Search</button>
 				  </div>
 				</form>
 				<div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
