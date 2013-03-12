@@ -10,9 +10,7 @@
 	<!-- Le styles -->
 	{{ROUTES}}
 	<link rel="shortcut icon" href="vdl-themes/Default/img/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" media="only screen and (max-width:780px)" />
 	<script type="text/javascript" src="vdl-themes/Default/js/jquery.js" ></script>
-	<script type="text/javascript" src="vdl-themes/Default/js/jquery.mobile.js" ></script>
 	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap-responsive.css"/>
 	<link rel="stylesheet" href="vdl-themes/Default/css/jquery-ui.css" id="theme" />

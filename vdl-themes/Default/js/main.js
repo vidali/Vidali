@@ -152,10 +152,10 @@ var set_data = function(value){
 
 var load_info = function(category){
 	console.log("Loading new info for "+category);
-	$("#view").fadeOut(100);
+	$("#container").fadeOut(100);
 	$("#view").empty();
 	set_data(category);
-	$("#view").fadeIn(100);
+	$("#container").fadeIn(100);
 	return false;
 }
 
