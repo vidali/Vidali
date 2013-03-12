@@ -22,6 +22,9 @@ $('#notify-tab a').click(function (e) {
 /*Menu link actions*/
 var link = function(value){
 	$("#din").hide();
+	$("#side-menu").animate({
+   			marginLeft: "-165px",
+ 		}, 300, function(){menuStatus = false});
 	if(value == "h"){
 		window.history.replaceState(" ", "Home", basedir+"/h/");
 		get_page('h');
@@ -47,6 +50,26 @@ var link = function(value){
 		get_page('s');
 		document.title = "Ajustes - Vidali";
 	}
+	if(value == "l"){
+		if(basedir.length == 0)
+	        dir = "/vdl-include/log.php";
+	    else
+	        dir = basedir+"/vdl-include/log.php"; 
+		
+		$("#background").fadeIn(500);
+		$.ajax({
+			url: dir,
+			cache: false,
+			type: "POST",
+			success: function(data){
+				if(data == "done"){
+					$("#background").fadeOut(300, function (){
+						window.location= basedir;
+					});
+				}
+			}
+		});
+	}
 	$("#din").fadeIn(500);
 	return false;
 };
@@ -68,7 +91,7 @@ var set_data = function(value){
 		},
 		success: function(data){
 			if(data == ''){
-				$("#view").append('<article id="obj-'+i+'" class="obj">No hay nada :3</article>');
+				$("#view").append('<article id="object" class="obj">En construcción</article>');
 			}
 			else{
 				console.log(data);
@@ -96,10 +119,30 @@ var set_data = function(value){
 						$("#profile-info").append('<div>'+data.description+'</div>');
 				}
 				if (value == 'inbox'){
-					alert('cargando inbox '+_GET[0]);
+					alert('En construccion ;) '+_GET[0]);
 				}
-				if (value == 'main'){
-					alert('cargando ajustes de perfil '+_GET[0]);
+				if (value == 'set_profile'){
+					$("#view").append('<form id="settings" class="obj form-horizontal"></form>');
+					$("#settings").append('<div id="c0" class="control-group"></div>');
+					$("#c0").append(' <label class="control-label" for="inputEmail">Foto de perfil</label>');
+					$("#c0").append(' <div class="controls"><img src="vdl-files/'+data.avatar_id+'.jpg">');
+					$("#settings").append('<div id="c1" class="control-group"></div>');
+					$("#c1").append(' <label class="control-label" for="inputEmail">Nick</label>');
+					$("#c1").append(' <div class="controls"><input type="text" id="inputEmail" value="'+data.nick+'" placeholder="Escribe tu nuevo nick"></div>');
+					$("#settings").append('<div id="c2" class="control-group"></div>');
+					$("#c2").append(' <label class="control-label" for="inputEmail">Nick</label>');
+					$("#c2").append(' <div class="controls"><input type="text" id="inputEmail" value="'+data.nick+'" placeholder="Escribe tu nuevo nick"></div>');
+					$("#settings").append('<div id="c3" class="control-group"></div>');
+					$("#c3").append(' <label class="control-label" for="inputEmail">Nick</label>');
+					$("#c3").append(' <div class="controls"><input type="text" id="inputEmail" value="'+data.nick+'" placeholder="Escribe tu nuevo nick"></div>');
+					$("#settings").append('<div id="c4" class="control-group"></div>');
+					$("#c4").append(' <label class="control-label" for="inputEmail">Nick</label>');
+					$("#c4").append(' <div class="controls"><input type="text" id="inputEmail" value="'+data.nick+'" placeholder="Escribe tu nuevo nick"></div>');
+					$("#settings").append('<div id="c5" class="control-group"></div>');
+					$("#c5").append(' <div class="controls"><button type="submit" class="btn">Actualizar</button></div>');
+					$("#settings").append('<div>Editar nombre '+data.name+'</div>');
+					$("#settings").append('<div>Editar sexo '+sex+', '+data.age+' años.</div>');
+					$("#settings").append('<div>Editar descripción '+data.description+'</div>');
 				}
 			}
 		}
@@ -108,10 +151,11 @@ var set_data = function(value){
 }
 
 var load_info = function(category){
-	$("#container").fadeOut(100);
+	console.log("Loading new info for "+category);
+	$("#view").fadeOut(100);
 	$("#view").empty();
 	set_data(category);
-	$("#container").fadeIn(100);
+	$("#view").fadeIn(100);
 	return false;
 }
 
@@ -122,7 +166,7 @@ var load_info = function(category){
 	*/
 var get_page = function (value){
 	if(value == 'h' || value == 'u'){
-		$('.main-menu li').removeClass('active');
+		$('#side-menu ul li').removeClass('active');
 		$('#m-home').addClass('active');
 		$("#din ul").empty();
 		if(value == 'h'){
@@ -140,7 +184,7 @@ var get_page = function (value){
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'net\');" data-toggle="tab">Red</a></li>');
 	}
 	if (value == 'm'){
-		$('.main-menu li').removeClass('active');
+		$('#side-menu ul li').removeClass('active');
 		$('#m-msg').addClass('active');
 		$("#din ul").empty();
 		$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'inbox\');" data-toggle="tab">Recibidos</a></li>');
@@ -151,7 +195,7 @@ var get_page = function (value){
 		load_info('inbox');
 	}
 	if (value == 'g'){
-		$('.main-menu li').removeClass('active');
+		$('#side-menu ul li').removeClass('active');
 		$('#m-group').addClass('active');
 		$("#din ul").empty();
 		$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'all\');" data-toggle="tab">Todo</a></li>');
@@ -162,7 +206,7 @@ var get_page = function (value){
 		load_info('all');
 	}
 	if (value == 'f'){
-		$('.main-menu li').removeClass('active');
+		$('#side-menu ul li').removeClass('active');
 		$('#m-files').addClass('active');
 		$("#din ul").empty();
 		$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'file\');" data-toggle="tab">Archivos</a></li>');
@@ -172,15 +216,15 @@ var get_page = function (value){
 		load_info('file');
 	}
 	if (value == 's'){
-		$('.main-menu li').removeClass('active');
+		$('#side-menu ul li').removeClass('active');
 		$('#m-set').addClass('active');
 		$("#din ul").empty();
-		$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'main\');" data-toggle="tab">General</a></li>');
-		$("#din ul").append('<li><a href="#" onClick="load_info(\'set_profile\');" data-toggle="tab">Perfil</a></li>');
+		$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'set_profile\');" data-toggle="tab">Perfil</a></li>');
+		$("#din ul").append('<li><a href="#" onClick="load_info(\'main\');" data-toggle="tab">General</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'privacy\');" data-toggle="tab">Privacidad</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'addons\');"data-toggle="tab">Complementos</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'service\');" data-toggle="tab">Servicio</a></li>');
-		load_info('main');
+		load_info('set_profile');
 	}
 	return false;
 }
@@ -219,5 +263,23 @@ $(document).ready(function(){
 		get_page(_GET[0]);
 	}
 	$('#background').fadeOut(300);
+//	$('#side-menu').hide();
 	return false;
+});
+
+var menuStatus;
+ 
+$("a.showMenu").click(function(){
+    if(menuStatus != true){
+        $("#side-menu").animate({
+            marginLeft: "0px",
+          }, 300, function(){menuStatus = true});
+    	return false;
+	} 
+	else{
+		$("#side-menu").animate({
+   			marginLeft: "-165px",
+ 		}, 300, function(){menuStatus = false});
+     	return false;
+  	}
 });

@@ -43,7 +43,7 @@ var doLogin = function(){
 		success: function(data){
 			if(data == "1" || data == "true"){
 				$("#background").fadeIn(500, function (){
-					window.location= basedir+"/index.php";
+					window.location= basedir+"/h/";
 				});
 			} else {
 				$("#background").fadeOut(500, function(){

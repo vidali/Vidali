@@ -50,7 +50,7 @@ if(isset($_POST['query'])){
 	if($_POST['query'] == 'inbox'){
 		echo json_encode('a:1');
 	}
-	if($_POST['query'] == 'main'){
+	if($_POST['query'] == 'set_profile'){
 		echo json_encode('a:1');
 	}
 }

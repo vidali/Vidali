@@ -23,37 +23,38 @@
 	<script type="text/javascript" src="vdl-themes/Default/js/less.js"></script>
 </head>
 <body>
+<nav id="side-menu">
+	<h3><a href="#"class="btn btn-inverse showMenu"><i class="icon-th-list icon-white"></i> Ocultar</a></h3>
+	<form class="form-search" style="margin: 5px !important; margin-bottom: 0px;">
+	  <div class="input-append">
+		<input type="text" class="search-query" style="width: 110px; padding: 4px 0px !important;">
+		<button type="submit" class="btn search-button"><i class="icon-search"></i></button>
+	  </div>
+	</form>
+	<ul>
+		<li id="m-home" class="active"><a onclick="link('h');" class="contentLink"><i class="icon-home icon-white"></i> Home </a></li>
+		<li id="m-msg"><a onclick="link('m');" class="contentLink"><i class="icon-envelope icon-white"></i> Mensajes </a></li>
+		<li id="m-group"><a onclick="link('g');" class="contentLink"><i class="icon-globe icon-white"></i> Grupos</a></li>
+		<li id="m-files"><a onclick="link('f');" class="contentLink"><i class="icon-folder-close icon-white"></i> Archivos</a></li>
+		<li id="m-set"><a onclick="link('s');" class="contentLink"><i class="icon-wrench icon-white"></i> Ajustes</a></li>
+		<li><a onclick="link('l');"><i class="icon-off icon-white"></i> Salir</a></li>
+	</ul>
+</nav>
 
 <div class="container">
 	<header id="nav" class="navbar">
 		<div class="navbar-inner">
 			<div class="container">
-				<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-					<span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="#"><img width="60" height="60"  src="/Vidali/vdl-themes/Default/img/logo.png"></a>
-				<form class="form-search span4" style=" margin-top: 5px; margin-bottom: 0px;">
-				  <div class="input-append">
-					<input type="text" class="span3 search-query">
-					<button type="submit" class="btn search-button">Search</button>
-				  </div>
-				</form>
-				<div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
-					<nav class="nav pull-right">
-						<ul class="nav main-menu">
-						  <li id="m-home" class="active"><a  onclick="link('h');"><i class="icon-home"></i></a></li>
-						  <li id="m-msg"><a  onclick="link('m');"><i class="icon-envelope"></i></a></li>
-						  <li id="m-group"><a onclick="link('g');"><i class="icon-globe"></i></a></li>
-						  <li id="m-files"><a onclick="link('f');"><i class="icon-folder-open"></i></a></li>
-						  <li id="m-set"><a onclick="link('s');"><i class="icon-cog"></i></a></li>
-						  <li><a  href="/Vidali/?action=logout"><i class="icon-off"></i></a></li>
-						</ul>
-					</nav>
-			</div><!-- /.nav-collapse -->
-		</div>
-	  </div><!-- /navbar-inner -->
+				<div class="row-fluid">
+					<div class="span5">
+						<a class="btn btn-inverse showMenu"><i class="icon-th-list icon-white"></i> Menu</a>
+					</div>
+					<div class="span3" style=" margin-top: 5px; margin-bottom: 0px;">
+						<img src="/Vidali/vdl-themes/Default/img/logo.png">
+					</div>
+				</div>
+			</div>
+	  	</div><!-- /navbar-inner -->
 	</header>
 
 	<div id='container' class="container-fluid">
