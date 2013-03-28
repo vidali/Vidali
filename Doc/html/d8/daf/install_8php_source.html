@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Vidali: Fichero Fuente install/install.php</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../vidali-mini.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Vidali
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.1.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="../../globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_e3a4aa6ae53c85312025264fe419cff9.html">install</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">install.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/daf/install_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*      Vidali, Social Network Open Source.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">This file is part of Vidali.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">Vidali is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">(at your option) any later version.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">Vidali is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">along with Foobar.  If not, see &lt;http://www.gnu.org/licenses/&gt;.*/</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//Comprobar la integridad de los datos</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="../../d8/daf/install_8php.html#aeba2ab722cedda53dbb7ec1a59f45550">   19</a></span>&#160;<a class="code" href="../../d8/daf/install_8php.html#aeba2ab722cedda53dbb7ec1a59f45550">$error</a>= <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="../../d8/daf/install_8php.html#a2ae48a97125d8c11d0a54961282b5a5b">   20</a></span>&#160;<a class="code" href="../../d8/daf/install_8php.html#a2ae48a97125d8c11d0a54961282b5a5b">$aux</a> = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="../../d8/daf/install_8php.html#a93eb7b714bc974fda90f7c51cff07173">   21</a></span>&#160;<a class="code" href="../../d8/daf/install_8php.html#a93eb7b714bc974fda90f7c51cff07173">$empty</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordflow">foreach</span> ($_POST as <a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a> =&gt; <a class="code" href="../../dc/d32/vdl-home_2index_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>){</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span>(empty($_POST[<a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a>])){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <a class="code" href="../../d8/daf/install_8php.html#a2ae48a97125d8c11d0a54961282b5a5b">$aux</a>++;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="../../d8/daf/install_8php.html#a93eb7b714bc974fda90f7c51cff07173">$empty</a> = <a class="code" href="../../d8/daf/install_8php.html#a93eb7b714bc974fda90f7c51cff07173">$empty</a> . <span class="stringliteral">&quot;&amp;emp$aux=$id&quot;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <a class="code" href="../../d8/daf/install_8php.html#aeba2ab722cedda53dbb7ec1a59f45550">$error</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="../../d8/daf/install_8php.html#aeba2ab722cedda53dbb7ec1a59f45550">$error</a> == <span class="keyword">true</span>){</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="comment">//header(&#39;Location:&#39; . getenv(&#39;HTTP_REFERER&#39;) . &quot;?empty=$aux&quot;.&quot;$empty&quot;);</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="comment">//TODO: Si no es un lio, devolver esto en JSON</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                echo <a class="code" href="../../d8/daf/install_8php.html#a93eb7b714bc974fda90f7c51cff07173">$empty</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="comment">//crear el db.ini</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                $con = <span class="keyword">new</span> mysqli($_POST[<span class="stringliteral">&quot;DB_DIR&quot;</span>], $_POST[<span class="stringliteral">&quot;DB_USER&quot;</span>], $_POST[<span class="stringliteral">&quot;DB_PASS&quot;</span>],$_POST[<span class="stringliteral">&quot;DB_NAME&quot;</span>]);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">if</span> (mysqli_connect_errno()) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        printf(<span class="stringliteral">&quot;Connect failed: %s\n&quot;</span>, mysqli_connect_error());</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                exit();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        include <span class="stringliteral">&quot;../vdl-include/vdl-core/core_db.class.php&quot;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        define (<span class="stringliteral">&quot;DBDIR&quot;</span>,<span class="stringliteral">&quot;NULL&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <a class="code" href="../../d6/de2/reg_8php.html#aa432de3bacb7ced3632fa0ee0269ada3">$core</a>= <span class="keyword">new</span> <a class="code" href="../../dc/d7f/classCORE__DB.html">CORE_DB</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        <a class="code" href="../../d7/d96/config_2leafwork_8php.html#a075b975d77f5da88d2feb10378a147c5">$config</a> = <a class="code" href="../../d6/de2/reg_8php.html#aa432de3bacb7ced3632fa0ee0269ada3">$core</a>-&gt;set($_POST[<span class="stringliteral">&quot;DB_DIR&quot;</span>], $_POST[<span class="stringliteral">&quot;DB_USER&quot;</span>], $_POST[<span class="stringliteral">&quot;DB_PASS&quot;</span>],$_POST[<span class="stringliteral">&quot;DB_NAME&quot;</span>]);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        $nombre_archivo = <span class="stringliteral">&#39;vidali.sql&#39;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        $sql = explode(<span class="stringliteral">&quot;;&quot;</span>,file_get_contents($nombre_archivo)); </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        $con-&gt;autocommit(FALSE);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        <span class="keywordflow">foreach</span>($sql as $query){</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//                              echo &quot; Linea de la BD: $query&lt;br&gt;&quot;;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                <span class="keywordflow">if</span> (!empty($query)){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                        <span class="keywordflow">if</span>(!$con-&gt;query($query))</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                printf(<span class="stringliteral">&quot;Error: %s&lt;br&gt;&quot;</span>, mysqli_error($con));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        $con-&gt;autocommit(TRUE);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">if</span>(!$con-&gt;query(<span class="stringliteral">&quot;INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (4, &#39;ADMIN&#39;, &#39;1&#39;)&quot;</span>))</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        printf(<span class="stringliteral">&quot;Error: %s&lt;br&gt;&quot;</span>, mysqli_error($con));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">if</span>(!$con-&gt;query(<span class="stringliteral">&quot;INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (5, &#39;REGISTER&#39;, &#39;&quot;</span>.$_POST[<span class="stringliteral">&quot;optionsRadios&quot;</span>].<span class="stringliteral">&quot;&#39;)&quot;</span>))</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        printf(<span class="stringliteral">&quot;Error: %s&lt;br&gt;&quot;</span>, mysqli_error($con));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span>(!$con-&gt;query(<span class="stringliteral">&quot;INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (6, &#39;PRIVACY&#39;, &#39;&quot;</span>.$_POST[<span class="stringliteral">&quot;optionsRadios2&quot;</span>].<span class="stringliteral">&quot;&#39;)&quot;</span>))</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        printf(<span class="stringliteral">&quot;Error: %s&lt;br&gt;&quot;</span>, mysqli_error($con));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                 <span class="comment">/* TODO: Si index_bots o central_sync no estan marcados, no se envia el valor &quot;yes&quot; por POST  y por lo tanto deja $_POST[&quot;index_bots&quot;] sin definir. Codigo comentado hasta que se solucione el bug para que el resto funcione.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">                if(!$con-&gt;query(&quot;INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (7, &#39;INDEX&#39;, &#39;&quot;.$_POST[&quot;index_bots&quot;].&quot;&#39;)&quot;))</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">                        printf(&quot;Error: %s&lt;br&gt;&quot;, mysqli_error($con));</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">                if(!$con-&gt;query(&quot;INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (8, &#39;SYNC&#39;, &#39;&quot;.$_POST[&quot;central_sync&quot;].&quot;&#39;)&quot;))</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">                        printf(&quot;Error: %s&lt;br&gt;&quot;, mysqli_error($con));</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">                */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">if</span>(!$con-&gt;query(<span class="stringliteral">&quot;INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (9, &#39;STORAGE&#39;, &#39;SERVER&#39;)&quot;</span>))</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        printf(<span class="stringliteral">&quot;Error: %s&lt;br&gt;&quot;</span>, mysqli_error($con));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">if</span>(!$con-&gt;query(<span class="stringliteral">&quot;INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (10, &#39;BASEDIR&#39;, &#39;/Vidali&#39;)&quot;</span>))</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        printf(<span class="stringliteral">&quot;Error: %s&lt;br&gt;&quot;</span>, mysqli_error($con));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="comment">//Crear usuario</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/*              $admin = $_POST[&quot;nickname&quot;];</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">                $password = mysql_real_escape_string(sha1(md5(trim($_POST[&quot;password&quot;]))));</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">                date_default_timezone_set(&quot;Europe/London&quot;);</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">                $date = date($_POST[&quot;birthdate&quot;]);</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">                $query = (&quot;INSERT INTO vdl_users (user_id,passwd,nickname,name,location,genre,bday,email,bio,img_prof,prof_nets) VALUES</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">                                                         (&#39;$admin&#39;,&#39;$password&#39;,&#39;&quot;.$_POST[&quot;nickname&quot;].&quot;&#39;,&#39;&quot;.$_POST[&quot;name&quot;].&quot;&#39;,&#39;&quot;.$_POST[&quot;location&quot;].&quot;&#39;,&#39;&quot;.$_POST[&quot;sex&quot;].&quot;&#39;,&#39;$date&#39;,&#39;&quot;.$_POST[&quot;email&quot;].&quot;&#39;,&#39;&quot;.$_POST[&quot;bio&quot;].&quot;&#39;,&#39;prof_def&#39;,1)&quot;);</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">                $result = mysql_query($query,$connection);</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">                </span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">                $result = mysql_query(&quot;INSERT INTO `vdl_config` (`config_id`, `config_name`, `config_value`) VALUES (4, &#39;ADMIN&#39;, &#39;$admin&#39;)&quot;,$connection);</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">                */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="comment">//header(&quot;Location:../index.php?action=register&quot;);</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                echo <span class="stringliteral">&quot;1&quot;</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        mysqli_close($con);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;?&gt;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

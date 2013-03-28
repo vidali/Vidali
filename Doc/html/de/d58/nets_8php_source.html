@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Vidali: Fichero Fuente vdl-themes/Default/nets.php</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../vidali-mini.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Vidali
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.1.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="../../globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_13d6c1022eac80c27dcd9b9bf339b1a0.html">vdl-themes</a></li><li class="navelem"><a class="el" href="../../dir_28817f047308138de86a55220264c13f.html">Default</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">nets.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/d58/nets_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keywordflow">if</span>(isset($_GET[<span class="stringliteral">&quot;name&quot;</span>])){</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        <span class="comment">//falta mostrar la página de una red de manera correcta, con imagen para la red, descripcion, comentarios e hilos.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        <a class="code" href="../../d7/d44/edit__profile_8php.html#ae336a3421718672a7844ecae525804cb">$nets</a> = $core_n-&gt;get_network_page($_GET[<span class="stringliteral">&quot;name&quot;</span>]);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        echo <span class="stringliteral">&#39;&lt;div class=&quot;grid_10&quot;&gt;&#39;</span>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        echo <span class="stringliteral">&#39;&lt;div id=&quot;net_photo&quot;&gt;&lt;img src=&quot;vdl-media/vdl-images/&#39;</span>.$nets[<span class="stringliteral">&quot;net_img&quot;</span>].<span class="stringliteral">&#39;.jpg&quot;&gt;&lt;/div&gt;&#39;</span>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        echo <span class="stringliteral">&#39;&lt;h1&gt;&#39;</span> . <a class="code" href="../../d7/d44/edit__profile_8php.html#ae336a3421718672a7844ecae525804cb">$nets</a>[<span class="stringliteral">&quot;net_name&quot;</span>] . <span class="stringliteral">&#39;&lt;/h1&gt;&#39;</span>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        echo <span class="stringliteral">&#39;&lt;h2&gt;&#39;</span> . <a class="code" href="../../d7/d44/edit__profile_8php.html#ae336a3421718672a7844ecae525804cb">$nets</a>[<span class="stringliteral">&quot;net_sdesc&quot;</span>] . <span class="stringliteral">&#39;&lt;/h2&gt;&#39;</span>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        echo <a class="code" href="../../d7/d44/edit__profile_8php.html#ae336a3421718672a7844ecae525804cb">$nets</a>[<span class="stringliteral">&quot;net_desc&quot;</span>];</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        echo <span class="stringliteral">&#39;&lt;/div&gt;&#39;</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        echo <span class="stringliteral">&#39;&lt;div class=&quot;grid_5 prefix_1&quot;&gt;&#39;</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        echo <span class="stringliteral">&#39;&lt;h1&gt;Usuarios:&lt;/h1&gt;&#39;</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        $joined = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        $users = $core_n-&gt;get_users_net($nets[<span class="stringliteral">&quot;id&quot;</span>]);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">foreach</span> ($users as $user){</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="keywordflow">if</span> ($user[<span class="stringliteral">&quot;user_id&quot;</span>] == <a class="code" href="../../dc/dca/log_8php.html#a5f545b9684799a00f7a14442205b98e3">$_SESSION</a>[<span class="stringliteral">&quot;nickname&quot;</span>])</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                $joined = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                echo <span class="stringliteral">&#39;&lt;div id=&quot;user&quot;&gt;&#39;</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                echo <span class="stringliteral">&#39;&lt;a href=?pg=p&amp;!=&#39;</span>.$nets[<span class="stringliteral">&quot;net_name&quot;</span>].<span class="stringliteral">&#39;&amp;@=&#39;</span>.$user[<span class="stringliteral">&quot;user_id&quot;</span>].<span class="charliteral">&#39;&gt;&#39;</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                echo <span class="stringliteral">&#39;&lt;img src=&quot;vdl-media/vdl-images/&#39;</span>.$user[<span class="stringliteral">&quot;img_prof&quot;</span>].<span class="stringliteral">&#39;_tb.jpg&quot;&gt;&#39;</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                echo $user[<span class="stringliteral">&quot;nickname&quot;</span>];</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                echo <span class="stringliteral">&#39;&lt;/a&gt;&lt;/div&gt;&#39;</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> ($joined == <span class="keyword">false</span>)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        echo <span class="stringliteral">&#39;&lt;div id=&quot;button&quot;&gt;&lt;a href=&quot;vdl-includes/join_net.php?net=&#39;</span>.$nets[<span class="stringliteral">&quot;id&quot;</span>].<span class="stringliteral">&#39;&amp;user=&#39;</span>. <a class="code" href="../../dc/dca/log_8php.html#a5f545b9684799a00f7a14442205b98e3">$_SESSION</a>[<span class="stringliteral">&quot;id&quot;</span>] .<span class="stringliteral">&#39;&quot;&gt;Unirse&lt;/a&gt;&lt;/div&gt;&lt;br/&gt;&#39;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        echo <span class="stringliteral">&#39;&lt;/div&gt;&#39;</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        ?&gt;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;&lt;form <span class="keywordtype">id</span>=<span class="stringliteral">&quot;vdl-form&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;grid_4&quot;</span> action=<span class="stringliteral">&quot;vdl-includes/add_net.php&quot;</span> method=<span class="stringliteral">&quot;post&quot;</span>&gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        &lt;h1&gt;Crear Red nueva:&lt;/h1&gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        Nombre de la red:&lt;br/&gt; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        &lt;input <span class="keywordtype">id</span>=<span class="stringliteral">&quot;net_name&quot;</span> name=<span class="stringliteral">&quot;net_name&quot;</span> type=<span class="stringliteral">&quot;text&quot;</span>&gt;&lt;br/&gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        Descripción:&lt;br/&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        &lt;input <span class="keywordtype">id</span>=<span class="stringliteral">&quot;net_sdesc&quot;</span> name=<span class="stringliteral">&quot;net_sdesc&quot;</span> type=<span class="stringliteral">&quot;text&quot;</span> placeholder=<span class="stringliteral">&quot;Descripción corta...&quot;</span>&gt;&lt;br/&gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        &lt;textarea <span class="keywordtype">id</span>=<span class="stringliteral">&quot;net_desc&quot;</span> name=<span class="stringliteral">&quot;net_desc&quot;</span> rows=<span class="stringliteral">&quot;5&quot;</span> cols=<span class="stringliteral">&quot;20&quot;</span> placeholder=<span class="stringliteral">&quot;Descripción completa!&quot;</span> &gt;&lt;/textarea&gt;&lt;br/&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        &lt;input <span class="keywordtype">id</span>=<span class="stringliteral">&quot;net_admin&quot;</span> name=<span class="stringliteral">&quot;net_admin&quot;</span> type=<span class="stringliteral">&quot;hidden&quot;</span> value=<span class="stringliteral">&quot;&lt;?php echo $_SESSION[&quot;</span><span class="keywordtype">id</span><span class="stringliteral">&quot;] ?&gt;&quot;</span>&gt;&lt;br/&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        &lt;input type=<span class="stringliteral">&quot;submit&quot;</span> value=<span class="stringliteral">&quot;Enviar&quot;</span>&gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;&lt;/form&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;&lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;network&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;grid_10 prefix_1&quot;</span>&gt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        &lt;h1&gt;Lista de redes existentes:&lt;/h1&gt;&lt;br/&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//Carga de datos...</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        $nets = $core_n-&gt;list_nets();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">foreach</span> ($nets as $n){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                echo <span class="stringliteral">&#39;&lt;article id=&quot;net&quot;&gt;&#39;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        echo <span class="stringliteral">&#39;&lt;a href=&quot;?pg=n&amp;name=&#39;</span>. $n[<span class="stringliteral">&quot;net_name&quot;</span>] .<span class="stringliteral">&#39;&quot;&gt;&#39;</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        echo <span class="stringliteral">&#39;&lt;div id=&quot;net_photo&quot;&gt;&lt;img src=&quot;vdl-media/vdl-images/&#39;</span>.$n[<span class="stringliteral">&quot;net_img&quot;</span>].<span class="stringliteral">&#39;_tb.jpg&quot;&gt;&lt;/div&gt;&#39;</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        echo <span class="stringliteral">&#39;&lt;div id=&quot;net_id&quot;&gt;&#39;</span>.$n[<span class="stringliteral">&quot;net_name&quot;</span>].<span class="stringliteral">&#39;&lt;/div&gt;&#39;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        echo <span class="stringliteral">&#39;&lt;div id=&quot;net_info&quot;&gt;&#39;</span>.$n[<span class="stringliteral">&quot;net_sdesc&quot;</span>].<span class="stringliteral">&#39;&lt;/div&gt;&lt;/a&gt;&#39;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        echo <span class="stringliteral">&#39;&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;&#39;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                echo <span class="stringliteral">&#39;&lt;/article&gt;&#39;</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;?&gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;&lt;/div&gt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;&lt;?php }?&gt;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

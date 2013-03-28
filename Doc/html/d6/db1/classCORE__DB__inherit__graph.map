@@ -1,0 +1,9 @@
+<map id="CORE_DB" name="CORE_DB">
+<area shape="rect" id="node3" href="$de/d34/classCORE__ADMIN.html" title="CORE_ADMIN" alt="" coords="5,83,117,112"/>
+<area shape="rect" id="node5" href="$dd/dd8/classCORE__MAIN.html" title="CORE_MAIN" alt="" coords="141,83,243,112"/>
+<area shape="rect" id="node7" href="$da/d66/classCORE__ACTIONS.html" title="CORE_ACTIONS" alt="" coords="5,160,133,189"/>
+<area shape="rect" id="node9" href="$d2/dfa/classGROUP.html" title="GROUP" alt="" coords="157,160,227,189"/>
+<area shape="rect" id="node11" href="$da/d3b/classUSER.html" title="USER" alt="" coords="251,160,309,189"/>
+<area shape="rect" id="node13" href="$d1/dd5/classPROFILE.html" title="PROFILE" alt="" coords="181,237,259,267"/>
+<area shape="rect" id="node15" href="$de/d0c/classUSER__ACTIVE.html" title="USER_ACTIVE" alt="" coords="283,237,397,267"/>
+</map>

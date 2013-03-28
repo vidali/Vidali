@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Vidali: Fichero Fuente vdl-include/class/CORE_DB.php</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../vidali-mini.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Vidali
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.1.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="../../globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_72d7bd7e83e80557cce091006c7e9fd7.html">vdl-include</a></li><li class="navelem"><a class="el" href="../../dir_f2a403dc81371975765174e1ded0c05d.html">class</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CORE_DB.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/d61/CORE__DB_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="../../dc/d7f/classCORE__DB.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d7f/classCORE__DB.html">CORE_DB</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;   <span class="comment">/*** Attributes: ***/</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="../../dc/d7f/classCORE__DB.html#af6c28ecd5ca882aab9eda5f800403028">   24</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dc/d7f/classCORE__DB.html#af6c28ecd5ca882aab9eda5f800403028">__construct</a> (){</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;DBDIR&#39;</span>)){</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="../../d7/d96/config_2leafwork_8php.html#a075b975d77f5da88d2feb10378a147c5">$config</a>=parse_ini_file(<span class="stringliteral">&quot;db.ini&quot;</span>,<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        define (<span class="stringliteral">&quot;DBDIR&quot;</span>,<a class="code" href="../../d7/d96/config_2leafwork_8php.html#a075b975d77f5da88d2feb10378a147c5">$config</a>[<span class="stringliteral">&quot;DB&quot;</span>][<span class="stringliteral">&quot;DBDIR&quot;</span>]);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        define (<span class="stringliteral">&quot;DBUSR&quot;</span>,<a class="code" href="../../d7/d96/config_2leafwork_8php.html#a075b975d77f5da88d2feb10378a147c5">$config</a>[<span class="stringliteral">&quot;DB&quot;</span>][<span class="stringliteral">&quot;DBUSR&quot;</span>]);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        define (<span class="stringliteral">&quot;DBPSW&quot;</span>,<a class="code" href="../../d7/d96/config_2leafwork_8php.html#a075b975d77f5da88d2feb10378a147c5">$config</a>[<span class="stringliteral">&quot;DB&quot;</span>][<span class="stringliteral">&quot;DBPSW&quot;</span>]);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        define (<span class="stringliteral">&quot;DBASE&quot;</span>,<a class="code" href="../../d7/d96/config_2leafwork_8php.html#a075b975d77f5da88d2feb10378a147c5">$config</a>[<span class="stringliteral">&quot;DB&quot;</span>][<span class="stringliteral">&quot;DBASE&quot;</span>]);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    } <span class="comment">// end of member function __construct</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="../../dc/d7f/classCORE__DB.html#af22f67fc94dc53cc7f4b23603ed997d0">   40</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dc/d7f/classCORE__DB.html#af22f67fc94dc53cc7f4b23603ed997d0">__destruct</a>( ) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  } <span class="comment">// end of member function __destruct</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="../../dc/d7f/classCORE__DB.html#a633cbbe56480acf50dc585101f817a6f">   51</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dc/d7f/classCORE__DB.html#a633cbbe56480acf50dc585101f817a6f">close</a>($_con){</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        $_con-&gt;close();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    } <span class="comment">// end of member function close</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="../../dc/d7f/classCORE__DB.html#ad7f9c3daf802f502e2b3515805d79977">   61</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dc/d7f/classCORE__DB.html#ad7f9c3daf802f502e2b3515805d79977">connect</a> (){</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        $connection = <span class="keyword">new</span> mysqli(DBDIR, DBUSR, DBPSW, DBASE);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">/* check connection */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> ($connection-&gt;connect_errno) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            printf(<span class="stringliteral">&quot;Connect failed: %s\n&quot;</span>, $connection-&gt;connect_error);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            exit();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> $connection;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    } <span class="comment">// end of member function connect</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="../../dc/d7f/classCORE__DB.html#ab4931e2862c908e08280ce5fce33a7d3">   85</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">set</span>($_dbdir,$_dbusr,$_dbpsw,$_dbase){</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        $file = fopen(<span class="stringliteral">&quot;../vdl-include/vdl-core/db.ini&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        $string=<span class="stringliteral">&quot;[DB]\n</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="stringliteral">                DBDIR=$_dbdir\n</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="stringliteral">                DBUSR=$_dbusr\n</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="stringliteral">                DBPSW=$_dbpsw\n</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="stringliteral">                DBASE=$_dbase&quot;</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        fputs($file,$string);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        fclose($file);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }<span class="comment">// end of member function set</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <span class="comment">// end of CORE_DB</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;?&gt;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

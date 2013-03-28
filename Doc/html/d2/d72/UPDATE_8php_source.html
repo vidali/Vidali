@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Vidali: Fichero Fuente vdl-include/class/UPDATE.php</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../vidali-mini.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Vidali
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.1.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="../../globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_72d7bd7e83e80557cce091006c7e9fd7.html">vdl-include</a></li><li class="navelem"><a class="el" href="../../dir_f2a403dc81371975765174e1ded0c05d.html">class</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">UPDATE.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d72/UPDATE_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;require_once <span class="stringliteral">&#39;GROUP_ACTORS.php&#39;</span>;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;require_once <span class="stringliteral">&#39;UFILE.php&#39;</span>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;require_once <span class="stringliteral">&#39;EVENT.php&#39;</span>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;require_once <span class="stringliteral">&#39;PLACE.php&#39;</span>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="../../d6/da8/classUPDATE.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/da8/classUPDATE.html">UPDATE</a> <span class="keyword">extends</span> <a class="code" href="../../d2/dd9/classGROUP__ACTORS.html">GROUP_ACTORS</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;   <span class="comment">/*** Attributes: ***/</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;   </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="../../d6/da8/classUPDATE.html#a679ecd38a298809325f4e6e9be94d7ff">   25</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="../../d6/da8/classUPDATE.html#a679ecd38a298809325f4e6e9be94d7ff">$_id_msg</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="../../d6/da8/classUPDATE.html#a6e9f8f1173a923acbb08013e25bfbbe0">   30</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="../../d6/da8/classUPDATE.html#a6e9f8f1173a923acbb08013e25bfbbe0">$_id_user</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="../../d6/da8/classUPDATE.html#a8e23fb609466c799be4ed35426494712">   35</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="../../d6/da8/classUPDATE.html#a8e23fb609466c799be4ed35426494712">$_id_group</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="../../d6/da8/classUPDATE.html#ae3fd8ee67b14f1300f2f8291cc1e3522">   40</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="../../d6/da8/classUPDATE.html#ae3fd8ee67b14f1300f2f8291cc1e3522">$_date_published</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="../../d6/da8/classUPDATE.html#a3cea2e1aff2067573d1c0896b3742760">   45</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="../../d6/da8/classUPDATE.html#a3cea2e1aff2067573d1c0896b3742760">$_text</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="../../d6/da8/classUPDATE.html#adfcbd77a122c856a6b7504ec22690d73">   50</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="../../d6/da8/classUPDATE.html#adfcbd77a122c856a6b7504ec22690d73">$_file</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="../../d6/da8/classUPDATE.html#ad5c57f6f154a6afb644c45f5e40333d6">   55</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="../../d6/da8/classUPDATE.html#ad5c57f6f154a6afb644c45f5e40333d6">$_event</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="../../d6/da8/classUPDATE.html#a99c78adf776989c53e8945f9433584d7">   60</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="../../d6/da8/classUPDATE.html#a99c78adf776989c53e8945f9433584d7">$_place</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">         * </span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../d6/da8/classUPDATE.html#a8021466fb18f49d57dc571041f1c8a46">   67</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d6/da8/classUPDATE.html#a8021466fb18f49d57dc571041f1c8a46">__construct</a>($id_msg,$id_user,$id_group,$date_published,$text,$file=null,$event=null,$place=null){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="../../d6/da8/classUPDATE.html#a679ecd38a298809325f4e6e9be94d7ff">$_id_msg</a> = $id_msg;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <a class="code" href="../../d6/da8/classUPDATE.html#a6e9f8f1173a923acbb08013e25bfbbe0">$_id_user</a> = $id_user;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="../../d6/da8/classUPDATE.html#a8e23fb609466c799be4ed35426494712">$_id_group</a> = $id_group;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="../../d6/da8/classUPDATE.html#ae3fd8ee67b14f1300f2f8291cc1e3522">$_date_published</a> = $date_published;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <a class="code" href="../../d6/da8/classUPDATE.html#adfcbd77a122c856a6b7504ec22690d73">$_file</a> = $file;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <a class="code" href="../../d6/da8/classUPDATE.html#ad5c57f6f154a6afb644c45f5e40333d6">$_event</a> = $event;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <a class="code" href="../../d6/da8/classUPDATE.html#a99c78adf776989c53e8945f9433584d7">$_place</a> = $place;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;} <span class="comment">// end of UPDATE</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;?&gt;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

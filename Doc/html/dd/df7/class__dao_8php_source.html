@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Vidali: Fichero Fuente leaf/modules/mod_dao/class_dao.php</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../vidali-mini.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Vidali
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.1.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="../../globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_dbc6478988376181cf4f4d2f7a8591f9.html">leaf</a></li><li class="navelem"><a class="el" href="../../dir_071e6ab1f7f132df524d1bfe2744eaf2.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_85c00045bfcfe7ecd71d3afe7b806f2b.html">mod_dao</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">class_dao.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/df7/class__dao_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html">    4</a></span>&#160;        <span class="keyword">class </span><a class="code" href="../../d9/d70/classdao.html">dao</a> {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#a9d8e3559fba2859b3ab7dc95a24d8021">    6</a></span>&#160;                <span class="keyword">public</span> <a class="code" href="../../d9/d70/classdao.html#a9d8e3559fba2859b3ab7dc95a24d8021">$instance</a> = null;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#ac8de07c73a8b1f64089a3bc4187906a1">    7</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">protected</span> <a class="code" href="../../d9/d70/classdao.html#ac8de07c73a8b1f64089a3bc4187906a1">$conexion</a> = null;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#ab567f5460773548db1b8b0185486ab18">    9</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#ab567f5460773548db1b8b0185486ab18">__construct</a>(){</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                        </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                        $tipo = <a class="code" href="../../d1/de5/classlw.html#a58b461baa0a1346bfd64452e082daad6">lw::gi</a>(<span class="stringliteral">&#39;config&#39;</span>)-&gt;get(<span class="stringliteral">&#39;dao&#39;</span>,<span class="stringliteral">&#39;type&#39;</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                        <span class="comment">//echo &#39;DAO_CON&#39;;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                        $this-&gt;instance = <a class="code" href="../../d1/de5/classlw.html#a58b461baa0a1346bfd64452e082daad6">lw::gi</a>( $tipo );</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                        </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#a6e2c76749ccc66998dd6a55983320acd">   17</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#a6e2c76749ccc66998dd6a55983320acd">getConexion</a>(){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                        $memory_id = <a class="code" href="../../d9/d70/classdao.html#ac8de07c73a8b1f64089a3bc4187906a1">self::$conexion</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                        <span class="keywordflow">return</span> $memory_id;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">   23</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">query</a>( <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">$params</a> , $print = <span class="keyword">false</span> ){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                        </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                        <span class="keywordflow">if</span>( $print )</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                <span class="keywordflow">return</span> $this-&gt;instance-&gt;query( <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">$params</a> , <span class="keyword">true</span> );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                <span class="keywordflow">return</span> $this-&gt;instance-&gt;query( <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">$params</a> );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#a2545418226b77adb11a9260832d6c079">   31</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#a2545418226b77adb11a9260832d6c079">q</a>( <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">$params</a> ){</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">self::query</a>( <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">$params</a> );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#ab6087c5baba8c23b796493c2103379d6">   35</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#ab6087c5baba8c23b796493c2103379d6">query_rows</a>( $query ){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        <span class="keywordflow">return</span> $this-&gt;instance-&gt;query_rows( $query );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#a9dcfe2ea7d7a9926c66446b95916eed2">   39</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#a9dcfe2ea7d7a9926c66446b95916eed2">num</a>( $query ){</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="../../d9/d70/classdao.html#ab6087c5baba8c23b796493c2103379d6">self::query_rows</a>( $query );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#ab2afcd943834d8b4a7d86c30c7183da6">   43</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#ab2afcd943834d8b4a7d86c30c7183da6">qr</a>( $query ){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="../../d9/d70/classdao.html#ab6087c5baba8c23b796493c2103379d6">self::query_rows</a>( $query );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#ac0950c5358097f02bebce24acc4463df">   47</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#ac0950c5358097f02bebce24acc4463df">rows</a>( $query ){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="../../d9/d70/classdao.html#ab6087c5baba8c23b796493c2103379d6">self::query_rows</a>( $query );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#aa052df468d4fb5aac383752459d3e42c">   51</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#aa052df468d4fb5aac383752459d3e42c">lastId</a>(){</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        <span class="keywordflow">return</span> $this-&gt;instance-&gt;lastId();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#a8581cbec13230192ad45f37767122498">   55</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#a8581cbec13230192ad45f37767122498">query_exe</a>( $query , $param = <span class="stringliteral">&#39;&#39;</span> ){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">return</span> $this-&gt;instance-&gt;query_exe( $query , $param );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#abac817591edd650c287180abf5114fbd">   59</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#abac817591edd650c287180abf5114fbd">qe</a>( $query , $param = <span class="stringliteral">&#39;&#39;</span> ){</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="../../d9/d70/classdao.html#a8581cbec13230192ad45f37767122498">self::query_exe</a>( $query , $param );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#ae9da42a44599ae17f92161e036ee8159">   63</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#ae9da42a44599ae17f92161e036ee8159">query_array</a>( $query ){</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        <span class="keywordflow">return</span> $this-&gt;instance-&gt;query_array( $query );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#ae2d0b52a65842c2ec0d8183fa1806f88">   67</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#ae2d0b52a65842c2ec0d8183fa1806f88">qa</a>( $query ){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="../../d9/d70/classdao.html#ae9da42a44599ae17f92161e036ee8159">self::query_array</a>( $query );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="../../d9/d70/classdao.html#a12233fed1ec71006f7b0f02ea908e545">   71</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d9/d70/classdao.html#a12233fed1ec71006f7b0f02ea908e545">__destruct</a>(){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="comment">//      lw::gi(&#39;utils&#39;)-&gt;print_array( lw::gi()-&gt;getSingleton() );</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <span class="keywordflow">return</span> $this-&gt;instance-&gt;__destruct();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;?&gt;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>

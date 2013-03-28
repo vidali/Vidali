@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Vidali: Fichero Fuente leaf/modules/mod_mysql/class_mysql.php</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../vidali-mini.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Vidali
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.1.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="../../globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_dbc6478988376181cf4f4d2f7a8591f9.html">leaf</a></li><li class="navelem"><a class="el" href="../../dir_071e6ab1f7f132df524d1bfe2744eaf2.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_13e54affad6b97f4812b2ef74e72dce0.html">mod_mysql</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">class_mysql.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/d97/mod__mysql_2class__mysql_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        <span class="keyword">class </span><a class="code" href="../../dd/d55/classmysql.html">mysql</a> <span class="keyword">extends</span> <a class="code" href="../../d9/d70/classdao.html">dao</a> {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                <span class="keyword">static</span> <span class="keyword">private</span> <a class="code" href="../../dd/d55/classmysql.html#a3b1997127b8fac178c93237cd82dce07">$md5query</a> = <span class="stringliteral">&#39;&#39;</span>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                <span class="keyword">static</span> <span class="keyword">private</span> <a class="code" href="../../dd/d55/classmysql.html#a99ea8a358932b0002001add83de2365c">$numquerys</a> = 0;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="../../dd/d55/classmysql.html#a3aa61849434943cd07aefbfe606e4d11">   10</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/d55/classmysql.html#a3aa61849434943cd07aefbfe606e4d11">getNumQuery</a>(){</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="../../dd/d55/classmysql.html#a99ea8a358932b0002001add83de2365c">self::$numquerys</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="../../dd/d55/classmysql.html#a6ce75b8d2aef1e67733d9c8b20cfd7c0">   14</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/d55/classmysql.html#a6ce75b8d2aef1e67733d9c8b20cfd7c0">__construct</a>(){</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                        <span class="keywordflow">if</span>( parent::$conexion = mysql_connect( <a class="code" href="../../d1/de5/classlw.html#a58b461baa0a1346bfd64452e082daad6">lw::gi</a>(<span class="stringliteral">&#39;config&#39;</span>)-&gt;<span class="keyword">get</span>(<span class="stringliteral">&#39;mysql&#39;</span>,<span class="stringliteral">&#39;host&#39;</span>) ,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                                                                    <a class="code" href="../../d1/de5/classlw.html#a58b461baa0a1346bfd64452e082daad6">lw::gi</a>(<span class="stringliteral">&#39;config&#39;</span>)-&gt;<span class="keyword">get</span>(<span class="stringliteral">&#39;mysql&#39;</span>,<span class="stringliteral">&#39;user&#39;</span>) , </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                                                    <a class="code" href="../../d1/de5/classlw.html#a58b461baa0a1346bfd64452e082daad6">lw::gi</a>(<span class="stringliteral">&#39;config&#39;</span>)-&gt;<span class="keyword">get</span>(<span class="stringliteral">&#39;mysql&#39;</span>,<span class="stringliteral">&#39;pass&#39;</span>) )){</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                           </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                <span class="keywordflow">if</span>( mysql_select_db( <a class="code" href="../../d1/de5/classlw.html#a58b461baa0a1346bfd64452e082daad6">lw::gi</a>(<span class="stringliteral">&#39;config&#39;</span>)-&gt;<span class="keyword">get</span>(<span class="stringliteral">&#39;mysql&#39;</span>,<span class="stringliteral">&#39;bdda&#39;</span>) , parent::$conexion ))</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                        echo <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                        </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        }<span class="keywordflow">else</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                echo <span class="stringliteral">&#39;Error conexion MySQL&#39;</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="../../dd/d55/classmysql.html#a079be0f8a9f4c9087d24aeb17473a8da">   32</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/d55/classmysql.html#a079be0f8a9f4c9087d24aeb17473a8da">query_rows</a>( $query ){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        <span class="keywordflow">return</span> mysql_num_rows( $this-&gt;<a class="code" href="../../dd/d55/classmysql.html#a40ac1805d04615cff14ae3916ffd336a">query</a>( $query ) );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="../../dd/d55/classmysql.html#a0124a2f12f7c68b2bcbd3ecc0802d387">   36</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/d55/classmysql.html#a0124a2f12f7c68b2bcbd3ecc0802d387">rows</a>( $query ){</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="../../dd/d55/classmysql.html#a079be0f8a9f4c9087d24aeb17473a8da">self::query_rows</a>( $query );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="../../dd/d55/classmysql.html#a424a6819c87c9d6a1b70e016cb986fed">   40</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/d55/classmysql.html#a424a6819c87c9d6a1b70e016cb986fed">lastId</a>(){</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        <span class="keywordflow">return</span> mysql_insert_id( parent::$conexion );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="../../dd/d55/classmysql.html#a40ac1805d04615cff14ae3916ffd336a">   46</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/d55/classmysql.html#a40ac1805d04615cff14ae3916ffd336a">query</a>( $param , $print = <span class="keyword">false</span> ){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        self::$numquerys++;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        <span class="keywordflow">if</span>( md5( $param ) != self::$md5query <span class="comment">/*|| (( self::$numquerys-( self::$numquerys-1 )) &gt; 1 )*/</span> ){</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                self::$md5query = md5( $param );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                $value = mysql_query( $param , parent::$conexion );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                <span class="keywordflow">if</span>( $print )</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                        <span class="keywordflow">return</span> $param;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                        <span class="keywordflow">return</span> $value;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                <span class="comment">//lw::gi(&#39;utils&#39;)-&gt;backtrace().&quot;\n&quot;.$param.&quot;\n\n&quot;;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="../../dd/d55/classmysql.html#a8274f70e9ce86f0542696aeb39fef401">   65</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/d55/classmysql.html#a8274f70e9ce86f0542696aeb39fef401">query_exe</a>( $query , $param = <span class="stringliteral">&#39;&#39;</span> ){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        <span class="keywordflow">if</span>( $ret = mysql_fetch_assoc( self::query( $query )))</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                <span class="keywordflow">if</span>( $param != <span class="stringliteral">&#39;&#39;</span> )</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                        <span class="keywordflow">return</span> $ret[$param];</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                        <span class="keywordflow">return</span> $ret;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                <span class="keywordflow">return</span> null;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="../../dd/d55/classmysql.html#afb9ccc42d2c4a5457064bcb6f7f953a2">   83</a></span>&#160;                  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/d55/classmysql.html#afb9ccc42d2c4a5457064bcb6f7f953a2">query_array</a>( $q ){</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                         $consulta = <a class="code" href="../../dd/d55/classmysql.html#a40ac1805d04615cff14ae3916ffd336a">self::query</a>( $q );</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                         </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                <span class="comment">//if( !$consulta )</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                <span class="comment">//      LeafWork::Init()-&gt;error(&#39;Error en query: &lt;strong&gt;&#39;.$q.&#39;&lt;/strong&gt; ( &#39;.mysql_error().&#39; )&#39;);</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        $retornar = array();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        <span class="keywordflow">while</span>( $sql = mysql_fetch_array( $consulta )) array_push( $retornar , $sql );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        <span class="keywordflow">return</span> $retornar;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                         </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                  }     </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../dd/d55/classmysql.html#a9b8046821338b46acf17325e1d2e078e">   95</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/d55/classmysql.html#a9b8046821338b46acf17325e1d2e078e">__destruct</a>(){</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        @mysql_close( parent::$conexion );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;?&gt;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
+</body>
+</html>
