@@ -100,9 +100,10 @@ var set_data = function(value){
 		    	if(value == 'wall'){
 				    for(var i=0;i<data.length;i++){
 						$("#view").append('<article id="obj-'+i+'" class="obj"></article>');
-						$("#obj-"+i).append('<img src="vdl-files/'+data[i].avatar_id+'_tb.jpg">');
-						$("#obj-"+i).append('<div class="upd-info">'+data[i].nick+' '+data[i].date_published+'</div>');
+						$("#obj-"+i).append('<img class="upd-img" src="vdl-files/'+data[i].avatar_id+'_tb.jpg">');
+						$("#obj-"+i).append('<div class="upd-info"><a href="#" onClick="load_info(\'profile\');">'+data[i].nick+'</a> '+data[i].date_published+'</div>');
 						$("#obj-"+i).append('<div class="upd-msg">'+data[i].text+'</div>');
+						//SOBRECARGA o MODIFICAR SET_DATA y LOAD_INFO para poder enviar nick del usuario
 					}
 				}
 				if (value == 'profile'){
