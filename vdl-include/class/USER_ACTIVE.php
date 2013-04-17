@@ -30,7 +30,7 @@ class USER_ACTIVE extends USER
 	public function get_profile(){
 		$result=array();
 		$connection = parent::connect();
-		$query = "SELECT id,nick,name,age,sex,website,description,avatar_id from vdl_user WHERE id = '$this->_id'";
+		$query = "SELECT id,nick,name,age,sex,website,description,avatar_id,email,location from vdl_user WHERE id = '$this->_id'";
 		$result= $connection->query($query);
 		if (!$result) {
 			$message  = 'Invalid query: ' . $connection->error . "\n";

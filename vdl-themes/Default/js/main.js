@@ -125,25 +125,35 @@ var set_data = function(value){
 				if (value == 'set_profile'){
 					$("#view").append('<form id="settings" class="obj form-horizontal"></form>');
 					$("#settings").append('<div id="c0" class="control-group"></div>');
-					$("#c0").append(' <label class="control-label" for="inputEmail">Foto de perfil</label>');
-					$("#c0").append(' <div class="controls"><img src="vdl-files/'+data.avatar_id+'.jpg">');
+					$("#c0").append(' <label class="control-label" for="SetAvatar">Foto de perfil</label>');
+					$("#c0").append(' <div class="controls"><img id="SetAvatar" src="vdl-files/'+data.avatar_id+'.jpg">');
 					$("#settings").append('<div id="c1" class="control-group"></div>');
-					$("#c1").append(' <label class="control-label" for="inputEmail">Nick</label>');
-					$("#c1").append(' <div class="controls"><input type="text" id="inputEmail" value="'+data.nick+'" placeholder="Escribe tu nuevo nick"></div>');
+					$("#c1").append(' <label class="control-label" for="SetNick">Nick</label>');
+					$("#c1").append(' <div class="controls"><input type="text" id="SetNick" value="'+data.nick+'"></div>');
 					$("#settings").append('<div id="c2" class="control-group"></div>');
-					$("#c2").append(' <label class="control-label" for="inputEmail">Nick</label>');
-					$("#c2").append(' <div class="controls"><input type="text" id="inputEmail" value="'+data.nick+'" placeholder="Escribe tu nuevo nick"></div>');
+					$("#c2").append(' <label class="control-label" for="ProfName">Nombre</label>');
+					$("#c2").append(' <div class="controls"><input type="text" id="ProfName" value="'+data.name+'"></div>');
 					$("#settings").append('<div id="c3" class="control-group"></div>');
-					$("#c3").append(' <label class="control-label" for="inputEmail">Nick</label>');
-					$("#c3").append(' <div class="controls"><input type="text" id="inputEmail" value="'+data.nick+'" placeholder="Escribe tu nuevo nick"></div>');
+					$("#c3").append(' <label class="control-label" for="ProfAge">Edad</label>');
+					$("#c3").append(' <div class="controls"><input type="text" id="ProfAge" value="'+data.age+'"></div>');
 					$("#settings").append('<div id="c4" class="control-group"></div>');
-					$("#c4").append(' <label class="control-label" for="inputEmail">Nick</label>');
-					$("#c4").append(' <div class="controls"><input type="text" id="inputEmail" value="'+data.nick+'" placeholder="Escribe tu nuevo nick"></div>');
+					$("#c4").append(' <label class="control-label" for="ProfEmail">Email</label>');
+					$("#c4").append(' <div class="controls"><input type="text" id="ProfEmail" value="'+data.email+'"></div>');
 					$("#settings").append('<div id="c5" class="control-group"></div>');
-					$("#c5").append(' <div class="controls"><button type="submit" class="btn">Actualizar</button></div>');
-					$("#settings").append('<div>Editar nombre '+data.name+'</div>');
-					$("#settings").append('<div>Editar sexo '+sex+', '+data.age+' años.</div>');
-					$("#settings").append('<div>Editar descripción '+data.description+'</div>');
+					$("#c5").append(' <label class="control-label" for="ProfSex">Sexo</label>');
+					$("#c5").append(' <div class="controls"><input type="text" id="ProfSex" value="'+data.sex+'"></div>');
+					$("#settings").append('<div id="c6" class="control-group"></div>');
+					$("#c6").append(' <label class="control-label" for="ProfLoc">Localización</label>');
+					$("#c6").append(' <div class="controls"><input type="text" id="ProfLoc" value="'+data.location+'"></div>');
+					$("#settings").append('<div id="c7" class="control-group"></div>');
+					$("#c7").append(' <label class="control-label" for="ProfWeb">WebSite</label>');
+					$("#c7").append(' <div class="controls"><input type="text" id="ProfWeb" value="'+data.website+'"></div>');
+					$("#settings").append('<div id="c8" class="control-group"></div>');
+					$("#c8").append(' <label class="control-label" for="ProfDes">Descripción</label>');
+					$("#c8").append(' <div class="controls"><input type="text" id="ProfDes" value="'+data.description+'"></div>');
+					$("#settings").append('<div id="c9" class="control-group"></div>');
+					$("#c9").append(' <div class="controls"><button type="submit" class="btn">Actualizar</button></div>');
+		
 				}
 			}
 		}

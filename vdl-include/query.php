@@ -51,7 +51,8 @@ if(isset($_POST['query'])){
 		echo json_encode('a:1');
 	}
 	if($_POST['query'] == 'set_profile'){
-		echo json_encode('a:1');
+		$data = $USER_ACTIVE->get_profile();
+		echo $data;
 	}
 }
 
