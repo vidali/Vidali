@@ -34,6 +34,7 @@
 		<li id="m-home" class="active"><a onclick="link('h');" class="contentLink"><i class="icon-home icon-white"></i> Home </a></li>
 		<li id="m-msg"><a onclick="link('m');" class="contentLink"><i class="icon-envelope icon-white"></i> Mensajes </a></li>
 		<li id="m-group"><a onclick="link('g');" class="contentLink"><i class="icon-globe icon-white"></i> Grupos</a></li>
+		<li id="m-routes"><a onclick="link('r');" class="contentLink"><i class="icon-road icon-white"></i> Rutas</a></li>
 		<li id="m-files"><a onclick="link('f');" class="contentLink"><i class="icon-folder-close icon-white"></i> Archivos</a></li>
 		<li id="m-set"><a onclick="link('s');" class="contentLink"><i class="icon-wrench icon-white"></i> Ajustes</a></li>
 		<li><a onclick="link('l');"><i class="icon-off icon-white"></i> Salir</a></li>

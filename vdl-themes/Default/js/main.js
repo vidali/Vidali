@@ -40,6 +40,11 @@ var link = function(value){
 		get_page('g');
 		document.title = "Grupos - Vidali";
 	}
+	if(value == "r"){
+		window.history.replaceState(" ", "Rutas", basedir+"/r/");
+		get_page('r');
+		document.title = "Rutas - Vidali";
+	}
 	if(value == "f"){
 		window.history.replaceState(" ", "Archivos", basedir+"/f/");
 		get_page('f');
@@ -121,6 +126,10 @@ var set_data = function(value){
 				}
 				if (value == 'inbox'){
 					alert('En construccion ;) '+_GET[0]);
+				}
+				if (value == 'routes'){
+					$("#view").append('<article id="obj-map" class="obj"></article>');
+					$("#obj-map").append('<object type="text/html" data="http://tranviaonline.metrotenerife.com/#mapa" width="900" height="400"> </object>');
 				}
 				if (value == 'set_profile'){
 					$("#view").append('<form id="settings" class="obj form-horizontal"></form>');
@@ -225,6 +234,17 @@ var get_page = function (value){
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'video\');" data-toggle="tab">Video</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'image\');" data-toggle="tab">Imagenes</a></li>');
 		load_info('file');
+	}
+	if (value == 'r'){
+		$('#side-menu ul li').removeClass('active');
+		$('#m-routes').addClass('active');
+		$("#din ul").empty();
+		$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'routes\');" data-toggle="tab">Rutas</a></li>');
+		$("#din ul").append('<li><a href="#" onClick="load_info(\'public\');" data-toggle="tab">Transporte Público</a></li>');
+		//$("#din ul").append('<li><a href="#" onClick="load_info(\'privacy\');" data-toggle="tab">Privacidad</a></li>');
+		//$("#din ul").append('<li><a href="#" onClick="load_info(\'addons\');"data-toggle="tab">Complementos</a></li>');
+		//$("#din ul").append('<li><a href="#" onClick="load_info(\'service\');" data-toggle="tab">Servicio</a></li>');
+		load_info('routes');
 	}
 	if (value == 's'){
 		$('#side-menu ul li').removeClass('active');

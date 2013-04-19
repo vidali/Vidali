@@ -50,6 +50,9 @@ if(isset($_POST['query'])){
 	if($_POST['query'] == 'inbox'){
 		echo json_encode('a:1');
 	}
+	if($_POST['query'] == 'routes'){
+		echo json_encode('a:1');
+	}
 	if($_POST['query'] == 'set_profile'){
 		$data = $USER_ACTIVE->get_profile();
 		echo $data;
