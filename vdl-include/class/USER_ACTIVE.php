@@ -96,7 +96,7 @@ class USER_ACTIVE extends USER
 			die($message);
 			return false;
 		}
-		CORE_ACTIONS::add_trend($text);
+		//CORE_ACTIONS::add_trend($text);
 		preg_match_all('/[#]+([A-Za-z0-9-_]+)/',$text,$hash);
 		$hashtag = $hash[1];
 		foreach($hashtag  as $key => $hash){ 

@@ -275,6 +275,7 @@ var update_status = function(){
 			update: update_val,
 		},
 		success: function(data){
+			console.log(data);
 			$('#update').val('');
 			if(data == 'done'){
 				$('#container').prepend('<div class="alert alert-success fade in"><button type="button" class="close" data-dismiss="alert">×</button><strong>Holy guacamole!</strong> Estado Actualizado ;)</div>');

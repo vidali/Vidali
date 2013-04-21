@@ -11,7 +11,7 @@ class CORE_ACTIONS extends CORE_MAIN{
   /** Compositions: */
 
    /*** Attributes: ***/
-    private function checkstyle($text){
+    public function checkstyle($text){
         //Comprobamos las Negritas
 		preg_match_all ("/\*([A-Za-z0-9-_\s]+)\*/",$text, $blacks);
 		foreach($blacks[1]  as $key => $black){
@@ -122,7 +122,7 @@ class CORE_ACTIONS extends CORE_MAIN{
 		 
 		//Comprobamos los Hashtag 
 		$text = preg_replace('/[#]+([A-Za-z0-9-_]+)/',
-        '<b><a href="?pg=g&!=all&q=%23\1">#\1</a></b>',
+        '<b><a href="'.BASEDIR.'/g/\1/">#\1</a></b>',
         $text);
 
 		//Comprobamos las redes
@@ -162,14 +162,14 @@ class CORE_ACTIONS extends CORE_MAIN{
 		}
 		//http://img.youtube.com/vi/sEhy-RXkNo0/default.jpg para la vista previa de la imagen
 
-		//Comprobamos los links vimeo
-		preg_match_all ("/http:\/\/www\.vimeo\.com\/([A-Za-z0-9-_]+)/",$text, $blacks);
+		//Comprobamos los links vimeo numericos
+		preg_match_all ("/http:\/\/vimeo\.com\/([A-Za-z0-9-_]+)/",$text, $blacks);
 		foreach($blacks[1]  as $key => $black){
-			$find = 'http://www.vimeo.com/'.$black;
-			$replace = '<br/><iframe width="420" height="315" src="http://player.vimeo.com/video/'.$black.'?color=ffffff" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><br/>';
+			$find = 'http://vimeo.com/'.$black;
+			$replace = '<iframe width="420" height="315" src="http://player.vimeo.com/video/'.$black.'" frameborder="0" allowFullScreen></iframe>';
 			$text = str_replace($find, $replace, $text);
 		}
-		
+
 		return $text;
 	} // end of member function meta_text
 
