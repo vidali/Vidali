@@ -31,6 +31,7 @@
 	  </div>
 	</form>
 	<ul>
+		<li id="m-status" class="active"><a onclick="link('st');" class="contentLink"><i class="icon-edit icon-white"></i> Mi Estado </a></li>
 		<li id="m-home" class="active"><a onclick="link('h');" class="contentLink"><i class="icon-home icon-white"></i> Home </a></li>
 		<li id="m-msg"><a onclick="link('m');" class="contentLink"><i class="icon-envelope icon-white"></i> Mensajes </a></li>
 		<li id="m-group"><a onclick="link('g');" class="contentLink"><i class="icon-globe icon-white"></i> Grupos</a></li>
@@ -78,7 +79,7 @@
 				  </li>
 				</ul>
 
-				<div id="" class="tab-content">
+				<div id="notify-side" class="tab-content">
 					<div id="Requests" class="inbox-tab tab-pane fade active in">
 						Solicitudes
 					</div>
@@ -102,12 +103,7 @@
 <div id="feedbar">
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<aside class="span3">
-				<div id="invisible" class="well sidebar">
-					{{CARD}}
-				</div>
-			</aside>
-			<div class="span6">
+			<div class="span9">
 				<form class="form-inline" onSubmit="update_status(); return false;" method="post">
 				    <textarea id="update" name="update" class="span12" rows="2" placeholder="Actualiza tu estado"></textarea>
 				    <button class="btn btn-inverse"><i class="icon-star icon-white"></i></button>
@@ -116,15 +112,6 @@
 				    <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok icon-white"></i></button>
 				</form>
 			</div>
-			<aside class="span3">
-				<div id="invisible" class="well sidebar">
-					<button class="btn btn-inverse"><i class="icon-book icon-white"></i></button>
-					<button class="btn btn-inverse"><i class="icon-picture icon-white"></i></button>
-					<button class="btn btn-inverse"><i class="icon-picture icon-white"></i></button>
-					<button class="btn btn-inverse"><i class="icon-picture icon-white"></i></button>
-					<button class="btn btn-inverse"><i class="icon-plus icon-white"></i></button>
-				</div>
-			</aside>
 		</div>
 	</div>
 </div>
