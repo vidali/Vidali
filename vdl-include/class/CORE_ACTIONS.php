@@ -161,6 +161,14 @@ class CORE_ACTIONS extends CORE_MAIN{
 			$text = str_replace($find, $replace, $text);
 		}
 		//http://img.youtube.com/vi/sEhy-RXkNo0/default.jpg para la vista previa de la imagen
+
+		//Comprobamos los links vimeo
+		preg_match_all ("/http:\/\/www\.vimeo\.com\/([A-Za-z0-9-_]+)/",$text, $blacks);
+		foreach($blacks[1]  as $key => $black){
+			$find = 'http://www.vimeo.com/'.$black;
+			$replace = '<br/><iframe width="420" height="315" src="http://player.vimeo.com/video/'.$black.'?color=ffffff" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><br/>';
+			$text = str_replace($find, $replace, $text);
+		}
 		
 		return $text;
 	} // end of member function meta_text

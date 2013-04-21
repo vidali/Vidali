@@ -23,7 +23,7 @@ $('#notify-tab a').click(function (e) {
 var link = function(value){
 	$("#din").hide();
 	$("#side-menu").animate({
-   			marginLeft: "-165px",
+   			marginLeft: "-220px",
  		}, 300, function(){menuStatus = false});
 	if(value == "h"){
 		window.history.replaceState(" ", "Home", basedir+"/h/");
@@ -103,8 +103,9 @@ var set_data = function(value){
 				data = JSON.parse(data);
 				console.log(data);
 		    	if(value == 'wall'){
+					$("#view").append('<ul id="updates" class="obj thumbnails"></ul>');
 				    for(var i=0;i<data.length;i++){
-						$("#view").append('<article id="obj-'+i+'" class="obj"></article>');
+						$("#updates").append('<li id="obj-'+i+'" class="upd thumbnail"></article>');
 						$("#obj-"+i).append('<img class="upd-img" src="vdl-files/'+data[i].avatar_id+'_tb.jpg">');
 						$("#obj-"+i).append('<div class="upd-info"><a href="#" onClick="load_info(\'profile\');">'+data[i].nick+'</a> '+data[i].date_published+'</div>');
 						$("#obj-"+i).append('<div class="upd-msg">'+data[i].text+'</div>');
@@ -129,7 +130,7 @@ var set_data = function(value){
 				}
 				if (value == 'routes'){
 					$("#view").append('<article id="obj-map" class="obj"></article>');
-					$("#obj-map").append('<object type="text/html" data="http://tranviaonline.metrotenerife.com/#mapa" width="900" height="400"> </object>');
+					$("#obj-map").append('<object type="text/html" data="http://tranviaonline.metrotenerife.com/#mapa" width="690" height="400"> </object>');
 				}
 				if (value == 'set_profile'){
 					$("#view").append('<form id="settings" class="obj form-horizontal"></form>');

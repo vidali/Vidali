@@ -47,10 +47,12 @@ define("MAIL",$_SESSION["mail"]);
 define("LOGED",$_SESSION['loged']);
 
 $USER_ACTIVE = new USER_ACTIVE(NICK,$_SESSION["nick"]);
+$ACTIONS = new CORE_ACTIONS();
 	//AQUI SE COMPROBARÁ SI EL ESTADO CONTIENE ALGUN @REPLY, #HASTAG, !RED, @>MENSAJE, #> MENSAJE, SE SEPARARÁ LOS LINKS DEL MENSAJE Y
 	// SE PODRÁ FILTRAR 1 LINK, 1 VIDEO Y/O 1 IMAGEN
 $SEC = new CORE_SECURITY();
 $message = $SEC->clear_text($_POST['update']);
+$message = $ACTIONS->meta_text($message);
 $message =  nl2br($message);
 if(strlen($message)==0){
 	echo $message . ' no ha sido entregado';

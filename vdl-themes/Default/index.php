@@ -38,7 +38,6 @@
 	  </div>
 	</form>
 	<ul>
-		<li id="m-status" class="active"><a class="contentLink showBar"><i class="icon-edit icon-white"></i> Mi Estado </a></li>
 		<li id="m-home" class="active"><a onclick="link('h');" class="contentLink"><i class="icon-home icon-white"></i> Home </a></li>
 		<li id="m-msg"><a onclick="link('m');" class="contentLink"><i class="icon-envelope icon-white"></i> Mensajes </a></li>
 		<li id="m-group"><a onclick="link('g');" class="contentLink"><i class="icon-globe icon-white"></i> Grupos</a></li>
@@ -67,7 +66,7 @@
 
 	<div id='container' class="container-fluid">
 		<div class="row-fluid">
-			<div id="din" class="span9">
+			<div id="din" class="span7 offset2">
 					<ul id="home-tab" class="nav nav-tabs no-bot-margin">
 					</ul>
 					<div id="view" class="tab-content">
