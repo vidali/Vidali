@@ -277,7 +277,10 @@ var update_status = function(){
 			$('#update').val('');
 			if(data == 'done'){
 				$('#container').prepend('<div class="alert alert-success fade in"><button type="button" class="close" data-dismiss="alert">×</button><strong>Holy guacamole!</strong> Estado Actualizado ;)</div>');
-				get_page('h');
+				$("#side-menu").animate({
+		   			marginLeft: "-220px",
+		 		}, 300, function(){menuStatus = false});
+ 				get_page('h');
 			}
 			else{
 				$('#container').prepend('<div class="alert alert-error fade in"><button type="button" class="close" data-dismiss="alert">×</button><strong>Grr!</strong> Algo Falla. Intenltalo de nuevo :(</div>');				
@@ -309,7 +312,7 @@ $("a.showMenu").click(function(){
 	} 
 	else{
 		$("#side-menu").animate({
-   			marginLeft: "-165px",
+   			marginLeft: "-220px",
  		}, 300, function(){menuStatus = false});
      	return false;
   	}

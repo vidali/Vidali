@@ -24,14 +24,21 @@
 <body>
 <nav id="side-menu">
 	<h3><a href="#"class="btn btn-inverse showMenu"><i class="icon-th-list icon-white"></i> Ocultar</a></h3>
+	<form class="form-inline" onSubmit="update_status(); return false;" method="post">
+	    <textarea id="update" name="update" rows="2" placeholder="Actualiza tu estado"></textarea>
+	    <button class="btn btn-inverse"><i class="icon-star icon-white"></i></button>
+	    <button class="btn btn-inverse"><i class="icon-map-marker icon-white"></i></button>
+	    <button class="btn btn-inverse"><i class="icon-upload icon-white"></i></button>
+	    <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok icon-white"></i></button>
+	</form>
 	<form class="form-search" style="margin: 5px !important; margin-bottom: 0px;">
 	  <div class="input-append">
-		<input type="text" class="search-query" style="width: 110px; padding: 4px 0px !important;">
+		<input type="text" class="search-query" style="width: 170px; padding: 4px 0px !important;" placeholder="Buscar...">
 		<button type="submit" class="btn search-button"><i class="icon-search"></i></button>
 	  </div>
 	</form>
 	<ul>
-		<li id="m-status" class="active"><a onclick="link('st');" class="contentLink"><i class="icon-edit icon-white"></i> Mi Estado </a></li>
+		<li id="m-status" class="active"><a class="contentLink showBar"><i class="icon-edit icon-white"></i> Mi Estado </a></li>
 		<li id="m-home" class="active"><a onclick="link('h');" class="contentLink"><i class="icon-home icon-white"></i> Home </a></li>
 		<li id="m-msg"><a onclick="link('m');" class="contentLink"><i class="icon-envelope icon-white"></i> Mensajes </a></li>
 		<li id="m-group"><a onclick="link('g');" class="contentLink"><i class="icon-globe icon-white"></i> Grupos</a></li>
@@ -98,22 +105,6 @@
 			<p class="pull-right"><img src="vdl-themes/Default/img/html5.png"><img src="vdl-themes/Default/img/agpl.png"></p>
 			<p class="pull-left">Powered by Vidali.</p>
 	</footer>
-</div>
-
-<div id="feedbar">
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span9">
-				<form class="form-inline" onSubmit="update_status(); return false;" method="post">
-				    <textarea id="update" name="update" class="span12" rows="2" placeholder="Actualiza tu estado"></textarea>
-				    <button class="btn btn-inverse"><i class="icon-star icon-white"></i></button>
-				    <button class="btn btn-inverse"><i class="icon-map-marker icon-white"></i></button>
-				    <button class="btn btn-inverse"><i class="icon-upload icon-white"></i></button>
-				    <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok icon-white"></i></button>
-				</form>
-			</div>
-		</div>
-	</div>
 </div>
 
 <div id="background">
