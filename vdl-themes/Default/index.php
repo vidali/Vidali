@@ -66,7 +66,7 @@
 
 	<div id='container' class="container-fluid">
 		<div class="row-fluid">
-			<div id="din" class="span7 offset2">
+			<div id="din" class="span9">
 					<ul id="home-tab" class="nav nav-tabs no-bot-margin">
 					</ul>
 					<div id="view" class="tab-content">

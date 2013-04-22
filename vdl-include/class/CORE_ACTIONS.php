@@ -148,7 +148,7 @@ class CORE_ACTIONS extends CORE_MAIN{
 		preg_match_all ("/http:\/\/www\.youtube\.com\/watch\?v=([A-Za-z0-9-_]+)/",$text, $blacks);
 		foreach($blacks[1]  as $key => $black){
 			$find = 'http://www.youtube.com/watch?v='.$black;
-			$replace = '<br/><iframe width="420" height="315" src="http://www.youtube.com/embed/'.$black.'?wmode=transparent"  frameborder="0" allowfullscreen></iframe><br/>';
+			$replace = '<iframe width="250" height="225" src="http://www.youtube.com/embed/'.$black.'?wmode=transparent"  frameborder="0" allowfullscreen></iframe>';
 			$text = str_replace($find, $replace, $text);
 		}
 		//http://img.youtube.com/vi/sEhy-RXkNo0/default.jpg para la vista previa de la imagen
@@ -157,7 +157,7 @@ class CORE_ACTIONS extends CORE_MAIN{
 		preg_match_all ("/https:\/\/www\.youtube\.com\/watch\?v=([A-Za-z0-9-_]+)/",$text, $blacks);
 		foreach($blacks[1]  as $key => $black){
 			$find = 'https://www.youtube.com/watch?v='.$black;
-			$replace = '<br/><iframe width="420" height="315" src="http://www.youtube.com/embed/'.$black.'?wmode=transparent"  frameborder="0" allowfullscreen></iframe><br/>';
+			$replace = '<iframe width="250" height="225" src="http://www.youtube.com/embed/'.$black.'?wmode=transparent"  frameborder="0" allowfullscreen></iframe>';
 			$text = str_replace($find, $replace, $text);
 		}
 		//http://img.youtube.com/vi/sEhy-RXkNo0/default.jpg para la vista previa de la imagen
@@ -166,7 +166,7 @@ class CORE_ACTIONS extends CORE_MAIN{
 		preg_match_all ("/http:\/\/vimeo\.com\/([A-Za-z0-9-_]+)/",$text, $blacks);
 		foreach($blacks[1]  as $key => $black){
 			$find = 'http://vimeo.com/'.$black;
-			$replace = '<iframe width="420" height="315" src="http://player.vimeo.com/video/'.$black.'" frameborder="0" allowFullScreen></iframe>';
+			$replace = '<iframe width="250" height="225" src="http://player.vimeo.com/video/'.$black.'" frameborder="0" allowFullScreen></iframe>';
 			$text = str_replace($find, $replace, $text);
 		}
 

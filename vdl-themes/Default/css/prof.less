@@ -37,7 +37,7 @@
 
 .obj{
 	display: block;
-	min-height: 75px;
+	min-height: 100px;
 	margin-left: 0px !important;
 	padding: 10px;
 	border-bottom: 1px solid #D1D1D1;
@@ -47,10 +47,6 @@
 }
 
 .upd{
-	min-height: 100px;
-	min-width: 175px;
-	word-wrap: break-word;
-
 	.upd-info{
 		color: #A9A9A9;
 		font-size: 12px;
@@ -68,5 +64,22 @@
 		margin-top: 10px;
 		margin-bot: 20px;
 		margin-left: 0px !important;
+	}
+}
+
+@media screen and (min-width: 250px) and (max-width: 640px) {
+	.upd{
+		min-height: 100px;
+		min-width: 250px;
+		word-wrap: break-word;
+	}
+}
+
+@media screen and (min-width: 640px) and (max-width: 1280px) {
+	.upd{
+		min-height: 100px;
+		min-width: 250px;
+		width: 250px;
+		word-wrap: break-word;
 	}
 }
