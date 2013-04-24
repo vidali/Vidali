@@ -24,6 +24,7 @@
 <body>
 <nav id="side-menu">
 	<h3><a href="#"class="btn btn-inverse showMenu"><i class="icon-th-list icon-white"></i> Ocultar</a></h3>
+	<hr>
 	<form class="form-inline" onSubmit="update_status(); return false;" method="post">
 	    <textarea id="update" name="update" rows="2" placeholder="Actualiza tu estado"></textarea>
 	    <button class="btn btn-inverse"><i class="icon-star icon-white"></i></button>
@@ -31,12 +32,14 @@
 	    <button class="btn btn-inverse"><i class="icon-upload icon-white"></i></button>
 	    <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok icon-white"></i></button>
 	</form>
+	<hr>
 	<form class="form-search" style="margin: 5px !important; margin-bottom: 0px;">
 	  <div class="input-append">
 		<input type="text" class="search-query" style="width: 170px; padding: 4px 0px !important;" placeholder="Buscar...">
 		<button type="submit" class="btn search-button"><i class="icon-search"></i></button>
 	  </div>
 	</form>
+	<hr>
 	<ul>
 		<li id="m-home" class="active"><a onclick="link('h');" class="contentLink"><i class="icon-home icon-white"></i> Home </a></li>
 		<li id="m-msg"><a onclick="link('m');" class="contentLink"><i class="icon-envelope icon-white"></i> Mensajes </a></li>
@@ -139,6 +142,7 @@
 <script type="text/javascript" src="vdl-themes/Default/js/bootstrap.js" ></script>
 <script type="text/javascript" src="vdl-themes/Default/js/main.js" ></script>
 <script type="text/javascript" src="vdl-themes/Default/js/gettext.js" ></script>
+<script type="text/javascript" src="vdl-themes/Default/js/masonry.js" ></script>
 
 </body>
 </html>

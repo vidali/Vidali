@@ -103,11 +103,13 @@ var set_data = function(value){
 				data = JSON.parse(data);
 				console.log(data);
 		    	if(value == 'wall'){
-					$("#view").append('<ul id="updates" class="obj thumbnails"></ul>');
+					$("#view").append('<div id="updates" class="obj"></div>');
 				    for(var i=0;i<data.length;i++){
-						$("#updates").append('<li id="obj-'+i+'" class="upd thumbnail"></article>');
-						$("#obj-"+i).append('<img class="upd-img" src="vdl-files/'+data[i].avatar_id+'_tb.jpg">');
-						$("#obj-"+i).append('<div class="upd-info"><a href="#" onClick="load_info(\'profile\');">'+data[i].nick+'</a> '+data[i].date_published+'</div>');
+						$("#updates").append('<article id="obj-'+i+'" class="upd"></article>');
+						$("#obj-"+i).append('<div id="uthumb-'+i+'" class="upd-img"></div>');
+						$("#obj-"+i).append('<div id="uinfo-'+i+'" class="upd-info"></div>');
+						$("#uthumb-"+i).append('<img src="vdl-files/'+data[i].avatar_id+'_tb.jpg">');
+						$("#uinfo-"+i).append('<div class="nick"><a href="#" onClick="load_info(\'profile\');">'+data[i].nick+'</a></div><div class="date_published">'+data[i].date_published+'</div>');
 						$("#obj-"+i).append('<div class="upd-msg">'+data[i].text+'</div>');
 						//SOBRECARGA o MODIFICAR SET_DATA y LOAD_INFO para poder enviar nick del usuario
 					}
@@ -126,7 +128,7 @@ var set_data = function(value){
 						$("#profile-info").append('<div>'+data.description+'</div>');
 				}
 				if (value == 'inbox'){
-					alert('En construccion ;) '+_GET[0]);
+					$("#view").append('<article id="object" class="obj">En construcción</article>');					
 				}
 				if (value == 'routes'){
 					$("#view").append('<article id="obj-map" class="obj"></article>');
@@ -291,6 +293,7 @@ var update_status = function(){
 	});
 }
 
+
 $(document).ready(function(){
 	if(_GET[0] == '' || _GET[0] == '#' || _GET[0] == 'h'){
 		get_page('h');
@@ -298,6 +301,9 @@ $(document).ready(function(){
 	else{
 		get_page(_GET[0]);
 	}
+//	$('#updates').masonry({
+//  		itemSelector: '.upd'
+//	});
 	$('#background').fadeOut(300);
 //	$('#side-menu').hide();
 	return false;
