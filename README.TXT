@@ -1,4 +1,4 @@
-Vidali - Red Social Open Source, 2012.
+Vidali - Red Social Open Source, 2013.
 
 Equipo:
 
