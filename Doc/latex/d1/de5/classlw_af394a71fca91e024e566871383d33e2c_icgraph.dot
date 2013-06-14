@@ -1,0 +1,40 @@
+digraph "getConfig"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="getConfig",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="gi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/de5/classlw.html#a2a82141a13e0594d6ebd540801a927b7"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="pageExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/de5/classlw.html#a373d0d56d75bed4f27708430d94c1895"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="lw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/dfd/core_2leafwork_8php.html#a471b391fa50a15b9d3e9d63d0a3dac27"];
+  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="mod_exists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/de5/classlw.html#aba61508ddf1137390531f5df811276a4"];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="needs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/dfd/core_2leafwork_8php.html#adcaf2d4b67f681ea3e30f0dc753ffc3d"];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="config\\__construct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/dd1/classconfig.html#a095c5d389db211932136b53f25f39685"];
+  Node4 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="html\\__construct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d2a/classhtml.html#a095c5d389db211932136b53f25f39685"];
+  Node4 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="localizar_imagenes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dfb/css__compressor_8php.html#a038ed1c66ff65337c153d206e6258fe8"];
+  Node4 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="debug\\zebra",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d16/classdebug.html#a6472998e0c4b13f59a2b00473032dc15"];
+  Node4 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="tpl\\get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d1b/classtpl.html#aa894a674f303f1f4d88d86b3e2dae068"];
+  Node4 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="tpl\\getPath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d1b/classtpl.html#a30c5c67b2bf8e2e2ccc7e361faa20afe"];
+  Node4 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="twitter\\__construct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d38/classtwitter.html#a095c5d389db211932136b53f25f39685"];
+  Node4 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="twitter\\publicar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d38/classtwitter.html#a03152964b365754fcf7e76902762da37"];
+  Node2 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="compress",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dfb/css__compressor_8php.html#aa258b37cddeda5e6637303fe9acd0604"];
+  Node2 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="dao\\__construct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d70/classdao.html#a095c5d389db211932136b53f25f39685"];
+  Node2 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="mysql\\__construct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d55/classmysql.html#a095c5d389db211932136b53f25f39685"];
+}

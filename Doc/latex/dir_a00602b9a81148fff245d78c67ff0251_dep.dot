@@ -1,0 +1,6 @@
+digraph "vdl-lang" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_a00602b9a81148fff245d78c67ff0251 [shape=box, label="vdl-lang", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_a00602b9a81148fff245d78c67ff0251.html"];
+}

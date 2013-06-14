@@ -1,0 +1,9 @@
+digraph "leaf/core/autoload" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_930ef13eaadc44ce3a6c7815fd36bdbc {
+    graph [ bgcolor="#ddddee", pencolor="black", label="core" fontname="Helvetica", fontsize="10", URL="dir_930ef13eaadc44ce3a6c7815fd36bdbc.html"]
+  dir_4ba1eef6c3754e6aea3baf3569d8f9f8 [shape=box, label="autoload", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_4ba1eef6c3754e6aea3baf3569d8f9f8.html"];
+  }
+}

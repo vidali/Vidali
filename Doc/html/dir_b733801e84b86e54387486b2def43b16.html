@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Vidali: Referencia del directorio leaf/parser/</title>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Vidali: Referencia del directorio leaf/parser</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -31,14 +39,14 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.8.1.2 -->
+<!-- Generado por Doxygen 1.8.4 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Página&#160;principal</span></a></li>
-      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
       <li><a href="files.html"><span>Archivos</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -58,12 +66,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
       </li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dir_b733801e84b86e54387486b2def43b16.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Estructuras de Datos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -72,47 +95,60 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_dbc6478988376181cf4f4d2f7a8591f9.html">leaf</a></li><li class="navelem"><a class="el" href="dir_b733801e84b86e54387486b2def43b16.html">parser</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Referencia del directorio parser</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Gráfico de dependencias de directorios para leaf/parser/:</div>
+Gráfico de dependencias de directorios para parser:</div>
 <div class="dyncontent">
-<div class="center"><img src="dir_b733801e84b86e54387486b2def43b16_dep.png" border="0" usemap="#dir__b733801e84b86e54387486b2def43b16__dep" alt="leaf/parser/"/></div>
+<div class="center"><img src="dir_b733801e84b86e54387486b2def43b16_dep.png" border="0" usemap="#dir__b733801e84b86e54387486b2def43b16__dep" alt="leaf/parser"/></div>
 <map name="dir__b733801e84b86e54387486b2def43b16__dep" id="dir__b733801e84b86e54387486b2def43b16__dep">
 <area shape="rect" id="node2" href="dir_b733801e84b86e54387486b2def43b16.html" title="parser" alt="" coords="27,55,99,103"/><area shape="rect" id="graph2" href="dir_dbc6478988376181cf4f4d2f7a8591f9.html" title="leaf" alt="" coords="16,16,109,113"/></map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="files"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Archivos</h2></td></tr>
 <tr class="memitem:d7/d86/actions_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d7/d86/actions_8php.html">actions.php</a> <a href="d7/d86/actions_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:dc/dff/admin__panel_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dc/dff/admin__panel_8php.html">admin_panel.php</a> <a href="dc/dff/admin__panel_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:de/ddd/leaf_2parser_2card_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="de/ddd/leaf_2parser_2card_8php.html">card.php</a> <a href="de/ddd/leaf_2parser_2card_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:da/dd2/leaf_2parser_2content_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="da/dd2/leaf_2parser_2content_8php.html">content.php</a> <a href="da/dd2/leaf_2parser_2content_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d6/d59/header_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d6/d59/header_8php.html">header.php</a> <a href="d6/d59/header_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d3/d1a/login_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d3/d1a/login_8php.html">login.php</a> <a href="d3/d1a/login_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:df/dd9/lroutes_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="df/dd9/lroutes_8php.html">lroutes.php</a> <a href="df/dd9/lroutes_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:df/daa/menu_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="df/daa/menu_8php.html">menu.php</a> <a href="df/daa/menu_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d4/db2/leaf_2parser_2notify_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d4/db2/leaf_2parser_2notify_8php.html">notify.php</a> <a href="d4/db2/leaf_2parser_2notify_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:db/d70/page_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="db/d70/page_8php.html">page.php</a> <a href="db/d70/page_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:da/ddc/panelmenu_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="da/ddc/panelmenu_8php.html">panelmenu.php</a> <a href="da/ddc/panelmenu_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:de/de7/panelppal_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="de/de7/panelppal_8php.html">panelppal.php</a> <a href="de/de7/panelppal_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:df/d2e/routes_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="df/d2e/routes_8php.html">routes.php</a> <a href="df/d2e/routes_8php_source.html">[código]</a></td></tr>
-<tr class="memitem:d9/da8/update_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d9/da8/update_8php.html">update.php</a> <a href="d9/da8/update_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d7/dfc/leaf_2parser_2update_8php"><td class="memItemLeft" align="right" valign="top">archivo &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d7/dfc/leaf_2parser_2update_8php.html">update.php</a> <a href="d7/dfc/leaf_2parser_2update_8php_source.html">[código]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_dbc6478988376181cf4f4d2f7a8591f9.html">leaf</a></li><li class="navelem"><a class="el" href="dir_b733801e84b86e54387486b2def43b16.html">parser</a></li>
+    <li class="footer">Generado el Miércoles, 12 de Junio de 2013 11:10:59 para Vidali por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
 </body>
 </html>

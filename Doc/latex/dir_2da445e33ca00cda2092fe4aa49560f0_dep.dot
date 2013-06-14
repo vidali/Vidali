@@ -1,0 +1,9 @@
+digraph "leaf/pages" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_dbc6478988376181cf4f4d2f7a8591f9 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="leaf" fontname="Helvetica", fontsize="10", URL="dir_dbc6478988376181cf4f4d2f7a8591f9.html"]
+  dir_2da445e33ca00cda2092fe4aa49560f0 [shape=box, label="pages", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_2da445e33ca00cda2092fe4aa49560f0.html"];
+  }
+}

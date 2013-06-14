@@ -1,0 +1,9 @@
+digraph "leaf/modules/mod_server" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_071e6ab1f7f132df524d1bfe2744eaf2 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="modules" fontname="Helvetica", fontsize="10", URL="dir_071e6ab1f7f132df524d1bfe2744eaf2.html"]
+  dir_dcec11b763a6a10178f4f3b0226e2e70 [shape=box, label="mod_server", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_dcec11b763a6a10178f4f3b0226e2e70.html"];
+  }
+}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['join_5fgroup',['join_group',['../da/d3b/classUSER.html#a73f73f8b9571e8f50bea59bd1091cff1',1,'USER']]]
+  ['join_5fgroup',['join_group',['../da/d3b/classUSER.html#ab2863ad83c3399cd62a792e226b64697',1,'USER']]]
 ];

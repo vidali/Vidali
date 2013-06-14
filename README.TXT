@@ -5,29 +5,27 @@ Equipo:
 - CEO/Creador:
 	Cristopher Caamana Gomez (cristo.c.mc@gmail.com | www.twitter.com/cristomc | www.vdli.wordpress.com)
 
-- Backend Developing:
+- Backend/Middleware Development:
 	Iradiel García Perez
 	José Isaac Hernandez Quintero
 
 - Security:
 	Moisés Lodeiro Santiago
 
-- Middleware & Front-end:
+- Front-end:
 	Cristopher Caamana Gómez
 	Moisés Lodeiro Santiago
 	Haridian Rodriguez Pérez
 
 - Design & js developing:
-	Nicolás Gonzalez
-	Haridian Rodriguez Pérez
+	Cristopher Caamana Gómez
 	Pablo Maceda García
 	
 - Networking/Desktop & mobile developing
 	Pablo Maceda García
 
 
-Gracias por utilizar Vidali!
-*ESTADO ACTUAL DEL PROYECTO: Pre-Beta, No recomendado en entornos de uso cotidiano (de momento...).*
+*ESTADO ACTUAL DEL PROYECTO: Beta Interna, No recomendado en entornos de uso cotidiano (de momento...).*
 
 Vidali es un proyecto protegido bajo la licencia GPLv3. Puedes leer mas sobre la licencia en el archivo LICENSE.txt adjunto.
 
@@ -49,19 +47,19 @@ Tabla de contenidos:
 |=======================
 	2.1 Requisitos:
 		Plataforma: Cualquiera.
-		Servidor web: Apache 2.x, PHP 5+, MySQL.
+		Servidor web: Apache 2.x, PHP 5.2+, MySQL.
 	2.2 Instalacion:
 		Para instalar Vidali web server (ya sea de modo local o en un servidor en internet):
-		-Colocar la carpeta "vidali" en la carpeta pública de tu servidor (p.ej: http://localhost/vidali).
+		-Colocar la carpeta "Vidali" en la carpeta pública de tu servidor (p.ej: http://localhost/Vidali).
 		-Accede a /vidali/install y seguir las instrucciones.
 		-¡Listo!, una vez acabes la instalacion elimina la carpeta install por motivos de seguridad.
 
-3- Consejos.
+3- Bugs actuales.
 |=======================
-	Da a conocer tu nodo!, de esta manera conseguiras mas usuarios con gustos afines.
-	juega con el código de Vidali, puedes cambiar lo que quieras!.
-	Si enlazas tu servidor al nodo central tendrás mas facilidad de comunicarte con mas personas.
-	
+	- No permite modificar perfil.
+	- No permite crear grupos.
+	- Deshabilitados mensajes privados.
+	- Bastanes elementos deshabilitados durante actualización del sistema.
 
 4- Mejorar el código.
 |=======================
@@ -74,4 +72,4 @@ Blog
 http://vdli.wordpress.com
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
-AGPLv3 - Vidali, 2010-2012.
+AGPLv3 - Vidali, 2010-2013.

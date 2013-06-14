@@ -1,0 +1,14 @@
+digraph "leaf" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_dbc6478988376181cf4f4d2f7a8591f9 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_dbc6478988376181cf4f4d2f7a8591f9.html"];
+    dir_dbc6478988376181cf4f4d2f7a8591f9 [shape=plaintext label="leaf"];
+    dir_1dca36c908dd4b5fabaad1f3155d6cca [shape=box label="config" color="black" fillcolor="white" style="filled" URL="dir_1dca36c908dd4b5fabaad1f3155d6cca.html"];
+    dir_930ef13eaadc44ce3a6c7815fd36bdbc [shape=box label="core" color="red" fillcolor="white" style="filled" URL="dir_930ef13eaadc44ce3a6c7815fd36bdbc.html"];
+    dir_071e6ab1f7f132df524d1bfe2744eaf2 [shape=box label="modules" color="red" fillcolor="white" style="filled" URL="dir_071e6ab1f7f132df524d1bfe2744eaf2.html"];
+    dir_2da445e33ca00cda2092fe4aa49560f0 [shape=box label="pages" color="black" fillcolor="white" style="filled" URL="dir_2da445e33ca00cda2092fe4aa49560f0.html"];
+    dir_b733801e84b86e54387486b2def43b16 [shape=box label="parser" color="black" fillcolor="white" style="filled" URL="dir_b733801e84b86e54387486b2def43b16.html"];
+  }
+}

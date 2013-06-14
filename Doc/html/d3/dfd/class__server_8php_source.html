@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
 <title>Vidali: Fichero Fuente leaf/modules/mod_server/class_server.php</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -31,14 +39,14 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.8.1.2 -->
+<!-- Generado por Doxygen 1.8.4 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
-      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
       <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -61,15 +69,30 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
-      <li><a href="../../globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+      <li><a href="../../globals.html"><span>Globales</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d3/dfd/class__server_8php_source.html','../../');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Estructuras de Datos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -78,11 +101,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../dir_dbc6478988376181cf4f4d2f7a8591f9.html">leaf</a></li><li class="navelem"><a class="el" href="../../dir_071e6ab1f7f132df524d1bfe2744eaf2.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_dcec11b763a6a10178f4f3b0226e2e70.html">mod_server</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">class_server.php</div>  </div>
@@ -104,18 +122,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="../../d1/d53/classserver.html">   15</a></span>&#160;        <span class="keyword">class </span><a class="code" href="../../d1/d53/classserver.html">server</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="../../d1/d53/classserver.html#a55f5f6612735a876d19d163a1bbc7a56">   17</a></span>&#160;      <span class="keyword">static</span> <span class="keyword">private</span> <a class="code" href="../../d1/d53/classserver.html#a55f5f6612735a876d19d163a1bbc7a56">$server</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="../../d1/d53/classserver.html#ad135cc8a47e55f0829949cf62214170f">   17</a></span>&#160;      <span class="keyword">static</span> <span class="keyword">private</span> <a class="code" href="../../d1/d53/classserver.html#ad135cc8a47e55f0829949cf62214170f">$server</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="../../d1/d53/classserver.html#abbcfd13c2dc3204d6edfa0d56519d821">   19</a></span>&#160;      <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d1/d53/classserver.html#abbcfd13c2dc3204d6edfa0d56519d821">__construct</a>(){</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="../../d1/d53/classserver.html#a095c5d389db211932136b53f25f39685">   19</a></span>&#160;      <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d1/d53/classserver.html#a095c5d389db211932136b53f25f39685">__construct</a>(){</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;         self::$server = $_SERVER;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="../../d1/d53/classserver.html#af9b55a7650adc3c2977cd10c53668389">   23</a></span>&#160;      <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d1/d53/classserver.html#af9b55a7650adc3c2977cd10c53668389">agent</a>(){</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="../../d1/d53/classserver.html#a77f6a261d70e66c7b7273774832482dc">   23</a></span>&#160;      <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d1/d53/classserver.html#a77f6a261d70e66c7b7273774832482dc">agent</a>(){</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         <span class="keywordflow">return</span> self::$server[<span class="stringliteral">&#39;HTTP_USER_AGENT&#39;</span>];</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="../../d1/d53/classserver.html#a5d0ec81b1c6d065ddf66e5bd1c5745e8">   28</a></span>&#160;      <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">get</span>(){</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="../../d1/d53/classserver.html#ac33ee765f5ad9f134540bac393721cfe">   28</a></span>&#160;      <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">get</span>(){</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;         <span class="keywordflow">if</span>( func_num_args() == 0 )</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">return</span> self::$server;</div>
@@ -125,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="../../d1/d53/classserver.html#abfa25202b05cdae4d4f0f6f07d8029fd">   38</a></span>&#160;      <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">set</span>(){</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="../../d1/d53/classserver.html#a89f017a6c12e98acec0d6833ea9c8994">   38</a></span>&#160;      <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../d1/d53/classserver.html#a89f017a6c12e98acec0d6833ea9c8994">set</a>(){</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;         <span class="keywordflow">if</span>( func_num_args() == 1 )</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            self::$server = func_get_arg(0);</div>
@@ -138,11 +156,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_dbc6478988376181cf4f4d2f7a8591f9.html">leaf</a></li><li class="navelem"><a class="el" href="../../dir_071e6ab1f7f132df524d1bfe2744eaf2.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_dcec11b763a6a10178f4f3b0226e2e70.html">mod_server</a></li><li class="navelem"><a class="el" href="../../d3/dfd/class__server_8php.html">class_server.php</a></li>
+    <li class="footer">Generado el Miércoles, 12 de Junio de 2013 11:10:56 para Vidali por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
 </body>
 </html>

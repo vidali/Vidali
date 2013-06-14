@@ -1,0 +1,28 @@
+var class_u_s_e_r =
+[
+    [ "__construct", "class_u_s_e_r.html#a15892f146e6b2027d102f45066962756", null ],
+    [ "add_update", "class_u_s_e_r.html#a08eee4c38fa6195185760f885c3184a6", null ],
+    [ "check_friends", "class_u_s_e_r.html#a1ed467f3e4b822d4e18c12542ea7be41", null ],
+    [ "check_request", "class_u_s_e_r.html#a90fc06b83a1b3db2837ec1c7c8b14d34", null ],
+    [ "get_friends", "class_u_s_e_r.html#a6dc3b26d0815f3e58f04026461a24e3d", null ],
+    [ "get_nick", "class_u_s_e_r.html#ab27eae3cc546c0d1cca53dd8258df2ca", null ],
+    [ "join_group", "class_u_s_e_r.html#ab2863ad83c3399cd62a792e226b64697", null ],
+    [ "set_friends", "class_u_s_e_r.html#a51af8580bd838eadf87f1d2a34815f60", null ],
+    [ "set_privacy", "class_u_s_e_r.html#a91094b4a3203c555d956b8452d61ce3b", null ],
+    [ "update_friends", "class_u_s_e_r.html#ad71576bbcc6b8a74764136e23a64cc43", null ],
+    [ "$__bday", "class_u_s_e_r.html#a45989f84816f9c5b99cc3b18dc23ba48", null ],
+    [ "$_age", "class_u_s_e_r.html#a9c749fcfc61978947fbbffcb09e713c6", null ],
+    [ "$_bio", "class_u_s_e_r.html#a4df3a432bdd1a0da13ee36bae6db0147", null ],
+    [ "$_email", "class_u_s_e_r.html#a945b9b37db6c8c42e784df999c9ae416", null ],
+    [ "$_id", "class_u_s_e_r.html#a64da16c4a1c7b2dc6784f6ef26341ed7", null ],
+    [ "$_img_prof", "class_u_s_e_r.html#a348c29ec19b54ee09130d6b2f8cb1408", null ],
+    [ "$_location", "class_u_s_e_r.html#a8d591c38603c12640c6e3a6be8ad125d", null ],
+    [ "$_name", "class_u_s_e_r.html#a1c89defaf5aa7ac8e526065e8572f580", null ],
+    [ "$_nickname", "class_u_s_e_r.html#a0791a0cc4f4f4676e8f4f94ba0516731", null ],
+    [ "$_prof_friends", "class_u_s_e_r.html#aaa568e34fed9cc0bbd396dd4e5bb5958", null ],
+    [ "$_prof_groups", "class_u_s_e_r.html#a5f31de3c7150ec160bd0cee74d71bb0a", null ],
+    [ "$_prof_visits", "class_u_s_e_r.html#a8386ebedb107e6834cad8da7d83a8328", null ],
+    [ "$_session_id", "class_u_s_e_r.html#a92023c94926d17b1f6705c8b1d35a103", null ],
+    [ "$_sex", "class_u_s_e_r.html#a0daa294c691b0e2ab4878e2fc06b6706", null ],
+    [ "$_site", "class_u_s_e_r.html#a67945a9e82178c5ceac503d9b26f39b5", null ]
+];

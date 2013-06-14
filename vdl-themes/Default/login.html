@@ -71,15 +71,9 @@
           <p><img src="img/www.png"> Tu controlas tu información. ¡Son tus datos!</p>
         </div>
 
-
-        <div class="span4 semi-transparent">
-			<ul id="option" class="nav nav-tabs">
-			  <li class="active"><a href="#register">Registrarse</a></li>
-			  <li><a href="#login">Iniciar sesión</a></li>
-			</ul>
-			<div class="tab-content">
-				<div id="register" class="tab-pane fade active in">
-					<form id="form_login" method="post">
+		<div class="row-fluid">
+			<div class="span6">
+				<form id="form_login" method="post">
 						<input id="nick" class="pad"  name="nick" class="input" type="text" placeholder="Elije tu nick" autofocus="autofocus">
 						<input id="email" class="pad"  name="email" class="input" type="email" placeholder="Email" autofocus="autofocus">
 						<input id="email2" class="pad"  name="email2" class="input" type="email" placeholder="Repetir Email" autofocus="autofocus">
@@ -97,9 +91,9 @@
 						</label>
 						<button class="btn btn-success pad" value="ok" type="submit">Registrarse</button>
 					</form>
-				</div>
-				<div id="login" class="tab-pane fade">
-					<form method="post" name="vdl-login" onSubmit="doLogin(); return false;" autocomplete="on">
+			</div>
+			<div class="span6">
+				<form method="post" name="vdl-login" onSubmit="doLogin(); return false;" autocomplete="on">
 						<input id="user" class="pad"  name="user" type="text" placeholder="Email" autofocus="autofocus">
 						<input id="password" class="pad"  name="password" type="password" placeholder="Contrase&ntilde;a">
 						<label class="string optional" for="user_remember_me">
@@ -110,11 +104,9 @@
 						</label>
 						<button class="btn btn-success pad" value="ok" type="submit">Iniciar sesi&oacute;n</button>
 					</form>
-				</div>
 			</div>
 		</div>
 
-          
 	</div>
         
 	<br>

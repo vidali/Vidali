@@ -13,9 +13,9 @@ var searchData=
   ['make_5ftabs',['make_tabs',['../d1/dd6/vdl-actions_2index_8php.html#a839c083e99c7093ae114495b2c1e47b0',1,'index.php']]],
   ['manage_5ffriend_2ephp',['manage_friend.php',['../df/dbb/manage__friend_8php.html',1,'']]],
   ['menu_2ephp',['menu.php',['../df/daa/menu_8php.html',1,'']]],
-  ['meta_5ftext',['meta_text',['../da/d66/classCORE__ACTIONS.html#a71c9ca34c4d8389e3ac39772a3ce7949',1,'CORE_ACTIONS']]],
-  ['mod_5fexists',['mod_exists',['../d1/de5/classlw.html#a89a13dd019a860fd43052ccfff2687e1',1,'lw']]],
-  ['moduleexists',['moduleExists',['../d1/de5/classlw.html#a2378917f73d9ed3f451f75eb236a1469',1,'lw']]],
+  ['meta_5ftext',['meta_text',['../da/d66/classCORE__ACTIONS.html#ae9627d43dbd27db363e9798a228d0455',1,'CORE_ACTIONS']]],
+  ['mod_5fexists',['mod_exists',['../d1/de5/classlw.html#aba61508ddf1137390531f5df811276a4',1,'lw']]],
+  ['moduleexists',['moduleExists',['../d1/de5/classlw.html#abcf9b188696b4d63cb90218064e076c3',1,'lw']]],
   ['mysql',['mysql',['../dd/d55/classmysql.html',1,'']]],
   ['mysql_2ephp',['mysql.php',['../dc/de8/mysql_8php.html',1,'']]],
   ['mysqli_2ephp',['mysqli.php',['../dd/d0c/mysqli_8php.html',1,'']]]

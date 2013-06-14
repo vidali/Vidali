@@ -1,0 +1,118 @@
+\hypertarget{css__compressor_8php}{\section{Referencia del Archivo leaf/modules/css\-\_\-compressor.php}
+\label{css__compressor_8php}\index{leaf/modules/css\-\_\-compressor.\-php@{leaf/modules/css\-\_\-compressor.\-php}}
+}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{css__compressor_8php_a54d76b1d86d3cee78632e8de8e8d120b}{reducir\-\_\-color} (\$matches)
+\item 
+\hyperlink{css__compressor_8php_a038ed1c66ff65337c153d206e6258fe8}{localizar\-\_\-imagenes} (\$matches)
+\item 
+\hyperlink{css__compressor_8php_aa258b37cddeda5e6637303fe9acd0604}{compress} (\$buffer)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{css__compressor_8php_a78324224a8b7bd09b0fad9bd556122df}{\$imagenes\-\_\-localizadas} = array()
+\item 
+\hyperlink{css__compressor_8php_aea9b3a9631ff4b34c48b0298669718d0}{\$revalidar} = 60$\ast$60
+\item 
+\hyperlink{css__compressor_8php_a5d0f068533ab8205b0e7cb0d19ad03d7}{\$expire} = 'expires\-: '.gmdate( 'D, d M Y H\-:i\-:s' , time()+\$revalidar ) . ' G\-M\-T'
+\item 
+\hyperlink{css__compressor_8php_a1659f0a629d408e0f849dbe4ee061e62}{\$dir} = \hyperlink{classlw_a2a82141a13e0594d6ebd540801a927b7}{lw\-::gi}('\hyperlink{classconfig}{config}')-\/$>$\hyperlink{classget}{get}('css','dir')
+\item 
+\hyperlink{css__compressor_8php_a9590b15215a21e9b42eb546aeef79704}{\$files} = array\-\_\-unique( \hyperlink{classlw}{lw}('finder')-\/$>$regfinder( \$buscar , '/\textbackslash{}.css\$/' , \$dir , R\-E\-C\-U\-R\-S\-I\-V\-E ))
+\item 
+\hyperlink{css__compressor_8php_ac40c8d54c9efc86d64e63bcc60447734}{\$lista} = \hyperlink{classlw}{lw}('\hyperlink{classconfig}{config}')-\/$>$\hyperlink{classget}{get}('css','list')
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación de las funciones}
+\hypertarget{css__compressor_8php_aa258b37cddeda5e6637303fe9acd0604}{\index{css\-\_\-compressor.\-php@{css\-\_\-compressor.\-php}!compress@{compress}}
+\index{compress@{compress}!css_compressor.php@{css\-\_\-compressor.\-php}}
+\subsubsection[{compress}]{\setlength{\rightskip}{0pt plus 5cm}compress (
+\begin{DoxyParamCaption}
+\item[{}]{\$buffer}
+\end{DoxyParamCaption}
+)}}\label{css__compressor_8php_aa258b37cddeda5e6637303fe9acd0604}
+
+
+Definición en la línea 37 del archivo css\-\_\-compressor.\-php.
+
+
+
+Gráfico de llamadas para esta función\-:
+
+
+\hypertarget{css__compressor_8php_a038ed1c66ff65337c153d206e6258fe8}{\index{css\-\_\-compressor.\-php@{css\-\_\-compressor.\-php}!localizar\-\_\-imagenes@{localizar\-\_\-imagenes}}
+\index{localizar\-\_\-imagenes@{localizar\-\_\-imagenes}!css_compressor.php@{css\-\_\-compressor.\-php}}
+\subsubsection[{localizar\-\_\-imagenes}]{\setlength{\rightskip}{0pt plus 5cm}localizar\-\_\-imagenes (
+\begin{DoxyParamCaption}
+\item[{}]{\$matches}
+\end{DoxyParamCaption}
+)}}\label{css__compressor_8php_a038ed1c66ff65337c153d206e6258fe8}
+
+
+Definición en la línea 19 del archivo css\-\_\-compressor.\-php.
+
+
+
+Gráfico de llamadas para esta función\-:
+
+
+\hypertarget{css__compressor_8php_a54d76b1d86d3cee78632e8de8e8d120b}{\index{css\-\_\-compressor.\-php@{css\-\_\-compressor.\-php}!reducir\-\_\-color@{reducir\-\_\-color}}
+\index{reducir\-\_\-color@{reducir\-\_\-color}!css_compressor.php@{css\-\_\-compressor.\-php}}
+\subsubsection[{reducir\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}reducir\-\_\-color (
+\begin{DoxyParamCaption}
+\item[{}]{\$matches}
+\end{DoxyParamCaption}
+)}}\label{css__compressor_8php_a54d76b1d86d3cee78632e8de8e8d120b}
+
+
+Definición en la línea 8 del archivo css\-\_\-compressor.\-php.
+
+
+
+\subsection{Documentación de las variables}
+\hypertarget{css__compressor_8php_a1659f0a629d408e0f849dbe4ee061e62}{\index{css\-\_\-compressor.\-php@{css\-\_\-compressor.\-php}!\$dir@{\$dir}}
+\index{\$dir@{\$dir}!css_compressor.php@{css\-\_\-compressor.\-php}}
+\subsubsection[{\$dir}]{\setlength{\rightskip}{0pt plus 5cm}\$dir = {\bf lw\-::gi}('{\bf config}')-\/$>${\bf get}('css','dir')}}\label{css__compressor_8php_a1659f0a629d408e0f849dbe4ee061e62}
+
+
+Definición en la línea 96 del archivo css\-\_\-compressor.\-php.
+
+\hypertarget{css__compressor_8php_a5d0f068533ab8205b0e7cb0d19ad03d7}{\index{css\-\_\-compressor.\-php@{css\-\_\-compressor.\-php}!\$expire@{\$expire}}
+\index{\$expire@{\$expire}!css_compressor.php@{css\-\_\-compressor.\-php}}
+\subsubsection[{\$expire}]{\setlength{\rightskip}{0pt plus 5cm}\$expire = 'expires\-: '.gmdate( 'D, d M Y H\-:i\-:s' , time()+\$revalidar ) . ' G\-M\-T'}}\label{css__compressor_8php_a5d0f068533ab8205b0e7cb0d19ad03d7}
+
+
+Definición en la línea 86 del archivo css\-\_\-compressor.\-php.
+
+\hypertarget{css__compressor_8php_a9590b15215a21e9b42eb546aeef79704}{\index{css\-\_\-compressor.\-php@{css\-\_\-compressor.\-php}!\$files@{\$files}}
+\index{\$files@{\$files}!css_compressor.php@{css\-\_\-compressor.\-php}}
+\subsubsection[{\$files}]{\setlength{\rightskip}{0pt plus 5cm}\$files = array\-\_\-unique( {\bf lw}('finder')-\/$>$regfinder( \$buscar , '/\textbackslash{}.css\$/' , \$dir , R\-E\-C\-U\-R\-S\-I\-V\-E ))}}\label{css__compressor_8php_a9590b15215a21e9b42eb546aeef79704}
+
+
+Definición en la línea 97 del archivo css\-\_\-compressor.\-php.
+
+\hypertarget{css__compressor_8php_a78324224a8b7bd09b0fad9bd556122df}{\index{css\-\_\-compressor.\-php@{css\-\_\-compressor.\-php}!\$imagenes\-\_\-localizadas@{\$imagenes\-\_\-localizadas}}
+\index{\$imagenes\-\_\-localizadas@{\$imagenes\-\_\-localizadas}!css_compressor.php@{css\-\_\-compressor.\-php}}
+\subsubsection[{\$imagenes\-\_\-localizadas}]{\setlength{\rightskip}{0pt plus 5cm}\$imagenes\-\_\-localizadas = array()}}\label{css__compressor_8php_a78324224a8b7bd09b0fad9bd556122df}
+
+
+Definición en la línea 18 del archivo css\-\_\-compressor.\-php.
+
+\hypertarget{css__compressor_8php_ac40c8d54c9efc86d64e63bcc60447734}{\index{css\-\_\-compressor.\-php@{css\-\_\-compressor.\-php}!\$lista@{\$lista}}
+\index{\$lista@{\$lista}!css_compressor.php@{css\-\_\-compressor.\-php}}
+\subsubsection[{\$lista}]{\setlength{\rightskip}{0pt plus 5cm}\$lista = {\bf lw}('{\bf config}')-\/$>${\bf get}('css','list')}}\label{css__compressor_8php_ac40c8d54c9efc86d64e63bcc60447734}
+
+
+Definición en la línea 99 del archivo css\-\_\-compressor.\-php.
+
+\hypertarget{css__compressor_8php_aea9b3a9631ff4b34c48b0298669718d0}{\index{css\-\_\-compressor.\-php@{css\-\_\-compressor.\-php}!\$revalidar@{\$revalidar}}
+\index{\$revalidar@{\$revalidar}!css_compressor.php@{css\-\_\-compressor.\-php}}
+\subsubsection[{\$revalidar}]{\setlength{\rightskip}{0pt plus 5cm}\$revalidar = 60$\ast$60}}\label{css__compressor_8php_aea9b3a9631ff4b34c48b0298669718d0}
+
+
+Definición en la línea 85 del archivo css\-\_\-compressor.\-php.
+

@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
 <title>Vidali: Referencia de la Clase dao</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -31,14 +39,14 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.8.1.2 -->
+<!-- Generado por Doxygen 1.8.4 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
-      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
       <li><a href="../../files.html"><span>Archivos</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -60,18 +68,33 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
-      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../annotated.html"><span>Estructura&#160;de&#160;datos</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;estructura&#160;de&#160;datos</span></a></li>
       <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
-      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+      <li><a href="../../functions.html"><span>Campos&#160;de&#160;datos</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d9/d70/classdao.html','../../');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Estructuras de Datos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,13 +103,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Métodos públicos</a> &#124;
-<a href="#pub-attribs">Atributos públicos</a> &#124;
-<a href="#pro-static-attribs">Atributos protegidos estáticos</a> &#124;
-<a href="../../dd/d8e/classdao-members.html">Lista de todos los miembros</a>  </div>
+<a href="#pub-attribs">Campos de datos</a> &#124;
+<a href="#pro-static-attribs">Atributos protegidos estáticos</a>  </div>
   <div class="headertitle">
 <div class="title">Referencia de la Clase dao</div>  </div>
 </div><!--header-->
@@ -97,84 +118,105 @@ Diagrama de herencias de dao</div>
 <div class="center"><img src="../../d8/d5f/classdao__inherit__graph.png" border="0" usemap="#dao_inherit__map" alt="Inheritance graph"/></div>
 <map name="dao_inherit__map" id="dao_inherit__map">
 <area shape="rect" id="node3" href="../../dd/d55/classmysql.html" title="mysql" alt="" coords="5,83,61,112"/></map>
-<center><span class="legend">[<a href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr class="memitem:ab567f5460773548db1b8b0185486ab18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#ab567f5460773548db1b8b0185486ab18">__construct</a> ()</td></tr>
-<tr class="memitem:a6e2c76749ccc66998dd6a55983320acd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a6e2c76749ccc66998dd6a55983320acd">getConexion</a> ()</td></tr>
-<tr class="memitem:a0b7b23383f3185fcc6fc550fbf0ae239"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">query</a> ($params, $print=false)</td></tr>
-<tr class="memitem:a2545418226b77adb11a9260832d6c079"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a2545418226b77adb11a9260832d6c079">q</a> ($params)</td></tr>
-<tr class="memitem:ab6087c5baba8c23b796493c2103379d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#ab6087c5baba8c23b796493c2103379d6">query_rows</a> ($<a class="el" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">query</a>)</td></tr>
-<tr class="memitem:a9dcfe2ea7d7a9926c66446b95916eed2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a9dcfe2ea7d7a9926c66446b95916eed2">num</a> ($<a class="el" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">query</a>)</td></tr>
-<tr class="memitem:ab2afcd943834d8b4a7d86c30c7183da6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#ab2afcd943834d8b4a7d86c30c7183da6">qr</a> ($<a class="el" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">query</a>)</td></tr>
-<tr class="memitem:ac0950c5358097f02bebce24acc4463df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#ac0950c5358097f02bebce24acc4463df">rows</a> ($<a class="el" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">query</a>)</td></tr>
-<tr class="memitem:aa052df468d4fb5aac383752459d3e42c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#aa052df468d4fb5aac383752459d3e42c">lastId</a> ()</td></tr>
-<tr class="memitem:a8581cbec13230192ad45f37767122498"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a8581cbec13230192ad45f37767122498">query_exe</a> ($<a class="el" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">query</a>, $param= '')</td></tr>
-<tr class="memitem:abac817591edd650c287180abf5114fbd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#abac817591edd650c287180abf5114fbd">qe</a> ($<a class="el" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">query</a>, $param= '')</td></tr>
-<tr class="memitem:ae9da42a44599ae17f92161e036ee8159"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#ae9da42a44599ae17f92161e036ee8159">query_array</a> ($<a class="el" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">query</a>)</td></tr>
-<tr class="memitem:ae2d0b52a65842c2ec0d8183fa1806f88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#ae2d0b52a65842c2ec0d8183fa1806f88">qa</a> ($<a class="el" href="../../d9/d70/classdao.html#a0b7b23383f3185fcc6fc550fbf0ae239">query</a>)</td></tr>
-<tr class="memitem:a12233fed1ec71006f7b0f02ea908e545"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a12233fed1ec71006f7b0f02ea908e545">__destruct</a> ()</td></tr>
+<tr class="memitem:a095c5d389db211932136b53f25f39685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
+<tr class="separator:a095c5d389db211932136b53f25f39685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1281a83961eb5b3154684661b7bb64fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a1281a83961eb5b3154684661b7bb64fd">getConexion</a> ()</td></tr>
+<tr class="separator:a1281a83961eb5b3154684661b7bb64fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a575ab1ea1c3c8d291f679d66732577f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a575ab1ea1c3c8d291f679d66732577f2">query</a> ($params, $print=false)</td></tr>
+<tr class="separator:a575ab1ea1c3c8d291f679d66732577f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57b42422089be85e61d4482406f050eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a57b42422089be85e61d4482406f050eb">q</a> ($params)</td></tr>
+<tr class="separator:a57b42422089be85e61d4482406f050eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c50ed902c43f3060cefae287fe9bc42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a1c50ed902c43f3060cefae287fe9bc42">query_rows</a> ($<a class="el" href="../../d9/d70/classdao.html#a575ab1ea1c3c8d291f679d66732577f2">query</a>)</td></tr>
+<tr class="separator:a1c50ed902c43f3060cefae287fe9bc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce03691b97623e06038faa287e869e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a9ce03691b97623e06038faa287e869e0">num</a> ($<a class="el" href="../../d9/d70/classdao.html#a575ab1ea1c3c8d291f679d66732577f2">query</a>)</td></tr>
+<tr class="separator:a9ce03691b97623e06038faa287e869e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab56bd29d6b4b00cbf3e95edf875603a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#ab56bd29d6b4b00cbf3e95edf875603a5">qr</a> ($<a class="el" href="../../d9/d70/classdao.html#a575ab1ea1c3c8d291f679d66732577f2">query</a>)</td></tr>
+<tr class="separator:ab56bd29d6b4b00cbf3e95edf875603a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94c38578a427fe7ded34c092005265f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#ae94c38578a427fe7ded34c092005265f">rows</a> ($<a class="el" href="../../d9/d70/classdao.html#a575ab1ea1c3c8d291f679d66732577f2">query</a>)</td></tr>
+<tr class="separator:ae94c38578a427fe7ded34c092005265f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27993b901efcccbdbb2738ffdec18f16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a27993b901efcccbdbb2738ffdec18f16">lastId</a> ()</td></tr>
+<tr class="separator:a27993b901efcccbdbb2738ffdec18f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f03bc98b3a3ca0dc3a946f626ba04bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a3f03bc98b3a3ca0dc3a946f626ba04bc">query_exe</a> ($<a class="el" href="../../d9/d70/classdao.html#a575ab1ea1c3c8d291f679d66732577f2">query</a>, $param= '')</td></tr>
+<tr class="separator:a3f03bc98b3a3ca0dc3a946f626ba04bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b58b1e4fcc51e778fe856562614812f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a1b58b1e4fcc51e778fe856562614812f">qe</a> ($<a class="el" href="../../d9/d70/classdao.html#a575ab1ea1c3c8d291f679d66732577f2">query</a>, $param= '')</td></tr>
+<tr class="separator:a1b58b1e4fcc51e778fe856562614812f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a983bd3dcad79de7a17c4acf584c714"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a4a983bd3dcad79de7a17c4acf584c714">query_array</a> ($<a class="el" href="../../d9/d70/classdao.html#a575ab1ea1c3c8d291f679d66732577f2">query</a>)</td></tr>
+<tr class="separator:a4a983bd3dcad79de7a17c4acf584c714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ae085281d4bd36561f9786dd48be1b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a9ae085281d4bd36561f9786dd48be1b1">qa</a> ($<a class="el" href="../../d9/d70/classdao.html#a575ab1ea1c3c8d291f679d66732577f2">query</a>)</td></tr>
+<tr class="separator:a9ae085281d4bd36561f9786dd48be1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a421831a265621325e1fdd19aace0c758"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
+<tr class="separator:a421831a265621325e1fdd19aace0c758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="pub-attribs"></a>
-Atributos públicos</h2></td></tr>
-<tr class="memitem:a9d8e3559fba2859b3ab7dc95a24d8021"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a9d8e3559fba2859b3ab7dc95a24d8021">$instance</a> = null</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Campos de datos</h2></td></tr>
+<tr class="memitem:ad9d7ce33ebb142b70e58b68052ca0ea8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#ad9d7ce33ebb142b70e58b68052ca0ea8">$instance</a> = null</td></tr>
+<tr class="separator:ad9d7ce33ebb142b70e58b68052ca0ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="pro-static-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Atributos protegidos estáticos</h2></td></tr>
-<tr class="memitem:ac8de07c73a8b1f64089a3bc4187906a1"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#ac8de07c73a8b1f64089a3bc4187906a1">$conexion</a> = null</td></tr>
+<tr class="memitem:a881924afaecbe8ee5c0d26174a1e8081"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d70/classdao.html#a881924afaecbe8ee5c0d26174a1e8081">$conexion</a> = null</td></tr>
+<tr class="separator:a881924afaecbe8ee5c0d26174a1e8081"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2>Descripción detallada</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock">
 <p>Definición en la línea <a class="el" href="../../dd/df7/class__dao_8php_source.html#l00004">4</a> del archivo <a class="el" href="../../dd/df7/class__dao_8php_source.html">class_dao.php</a>.</p>
-</div><h2>Documentación del constructor y destructor</h2>
-<a class="anchor" id="ab567f5460773548db1b8b0185486ab18"></a>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a095c5d389db211932136b53f25f39685"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::__construct </td>
+          <td class="memname">__construct </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">)</td><td></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Reimplementado en <a class="el" href="../../dd/d55/classmysql.html#a6ce75b8d2aef1e67733d9c8b20cfd7c0">mysql</a>, <a class="el" href="../../dd/d55/classmysql.html#a6ce75b8d2aef1e67733d9c8b20cfd7c0">mysql</a> y <a class="el" href="../../dd/d55/classmysql.html#a6ce75b8d2aef1e67733d9c8b20cfd7c0">mysql</a>.</p>
 
 <p>Definición en la línea <a class="el" href="../../dd/df7/class__dao_8php_source.html#l00009">9</a> del archivo <a class="el" href="../../dd/df7/class__dao_8php_source.html">class_dao.php</a>.</p>
 
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d70/classdao_a095c5d389db211932136b53f25f39685_cgraph.png" border="0" usemap="#d9/d70/classdao_a095c5d389db211932136b53f25f39685_cgraph" alt=""/></div>
+<map name="d9/d70/classdao_a095c5d389db211932136b53f25f39685_cgraph" id="d9/d70/classdao_a095c5d389db211932136b53f25f39685_cgraph">
+</map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="a12233fed1ec71006f7b0f02ea908e545"></a>
+<a class="anchor" id="a421831a265621325e1fdd19aace0c758"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::__destruct </td>
+          <td class="memname">__destruct </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">)</td><td></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Reimplementado en <a class="el" href="../../dd/d55/classmysql.html#a9b8046821338b46acf17325e1d2e078e">mysql</a>, <a class="el" href="../../dd/d55/classmysql.html#a9b8046821338b46acf17325e1d2e078e">mysql</a> y <a class="el" href="../../dd/d55/classmysql.html#a9b8046821338b46acf17325e1d2e078e">mysql</a>.</p>
 
 <p>Definición en la línea <a class="el" href="../../dd/df7/class__dao_8php_source.html#l00071">71</a> del archivo <a class="el" href="../../dd/df7/class__dao_8php_source.html">class_dao.php</a>.</p>
 
 </div>
 </div>
-<h2>Documentación de las funciones miembro</h2>
-<a class="anchor" id="a6e2c76749ccc66998dd6a55983320acd"></a>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a1281a83961eb5b3154684661b7bb64fd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::getConexion </td>
+          <td class="memname">getConexion </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">)</td><td></td>
           <td></td>
         </tr>
       </table>
@@ -184,34 +226,32 @@ Atributos protegidos estáticos</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa052df468d4fb5aac383752459d3e42c"></a>
+<a class="anchor" id="a27993b901efcccbdbb2738ffdec18f16"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::lastId </td>
+          <td class="memname">lastId </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">)</td><td></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reimplementado en <a class="el" href="../../dd/d55/classmysql.html#a424a6819c87c9d6a1b70e016cb986fed">mysql</a>, <a class="el" href="../../dd/d55/classmysql.html#a424a6819c87c9d6a1b70e016cb986fed">mysql</a> y <a class="el" href="../../dd/d55/classmysql.html#a424a6819c87c9d6a1b70e016cb986fed">mysql</a>.</p>
-
 <p>Definición en la línea <a class="el" href="../../dd/df7/class__dao_8php_source.html#l00051">51</a> del archivo <a class="el" href="../../dd/df7/class__dao_8php_source.html">class_dao.php</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9dcfe2ea7d7a9926c66446b95916eed2"></a>
+<a class="anchor" id="a9ce03691b97623e06038faa287e869e0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::num </td>
+          <td class="memname">num </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$query</em></td><td>)</td>
+          <td class="paramname"><em>$query</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
@@ -221,15 +261,15 @@ Atributos protegidos estáticos</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2545418226b77adb11a9260832d6c079"></a>
+<a class="anchor" id="a57b42422089be85e61d4482406f050eb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::q </td>
+          <td class="memname">q </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$params</em></td><td>)</td>
+          <td class="paramname"><em>$params</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
@@ -239,15 +279,15 @@ Atributos protegidos estáticos</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae2d0b52a65842c2ec0d8183fa1806f88"></a>
+<a class="anchor" id="a9ae085281d4bd36561f9786dd48be1b1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::qa </td>
+          <td class="memname">qa </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$query</em></td><td>)</td>
+          <td class="paramname"><em>$query</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
@@ -257,12 +297,12 @@ Atributos protegidos estáticos</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abac817591edd650c287180abf5114fbd"></a>
+<a class="anchor" id="a1b58b1e4fcc51e778fe856562614812f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::qe </td>
+          <td class="memname">qe </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$query</em>, </td>
@@ -285,15 +325,15 @@ Atributos protegidos estáticos</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab2afcd943834d8b4a7d86c30c7183da6"></a>
+<a class="anchor" id="ab56bd29d6b4b00cbf3e95edf875603a5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::qr </td>
+          <td class="memname">qr </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$query</em></td><td>)</td>
+          <td class="paramname"><em>$query</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
@@ -303,12 +343,12 @@ Atributos protegidos estáticos</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0b7b23383f3185fcc6fc550fbf0ae239"></a>
+<a class="anchor" id="a575ab1ea1c3c8d291f679d66732577f2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::query </td>
+          <td class="memname">query </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$params</em>, </td>
@@ -327,38 +367,34 @@ Atributos protegidos estáticos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reimplementado en <a class="el" href="../../dd/d55/classmysql.html#a40ac1805d04615cff14ae3916ffd336a">mysql</a>, <a class="el" href="../../dd/d55/classmysql.html#a40ac1805d04615cff14ae3916ffd336a">mysql</a> y <a class="el" href="../../dd/d55/classmysql.html#a40ac1805d04615cff14ae3916ffd336a">mysql</a>.</p>
-
 <p>Definición en la línea <a class="el" href="../../dd/df7/class__dao_8php_source.html#l00023">23</a> del archivo <a class="el" href="../../dd/df7/class__dao_8php_source.html">class_dao.php</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae9da42a44599ae17f92161e036ee8159"></a>
+<a class="anchor" id="a4a983bd3dcad79de7a17c4acf584c714"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::query_array </td>
+          <td class="memname">query_array </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$query</em></td><td>)</td>
+          <td class="paramname"><em>$query</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reimplementado en <a class="el" href="../../dd/d55/classmysql.html#afb9ccc42d2c4a5457064bcb6f7f953a2">mysql</a>, <a class="el" href="../../dd/d55/classmysql.html#afb9ccc42d2c4a5457064bcb6f7f953a2">mysql</a> y <a class="el" href="../../dd/d55/classmysql.html#afb9ccc42d2c4a5457064bcb6f7f953a2">mysql</a>.</p>
-
 <p>Definición en la línea <a class="el" href="../../dd/df7/class__dao_8php_source.html#l00063">63</a> del archivo <a class="el" href="../../dd/df7/class__dao_8php_source.html">class_dao.php</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a8581cbec13230192ad45f37767122498"></a>
+<a class="anchor" id="a3f03bc98b3a3ca0dc3a946f626ba04bc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::query_exe </td>
+          <td class="memname">query_exe </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$query</em>, </td>
@@ -377,54 +413,48 @@ Atributos protegidos estáticos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reimplementado en <a class="el" href="../../dd/d55/classmysql.html#a8274f70e9ce86f0542696aeb39fef401">mysql</a>, <a class="el" href="../../dd/d55/classmysql.html#a8274f70e9ce86f0542696aeb39fef401">mysql</a> y <a class="el" href="../../dd/d55/classmysql.html#a8274f70e9ce86f0542696aeb39fef401">mysql</a>.</p>
-
 <p>Definición en la línea <a class="el" href="../../dd/df7/class__dao_8php_source.html#l00055">55</a> del archivo <a class="el" href="../../dd/df7/class__dao_8php_source.html">class_dao.php</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab6087c5baba8c23b796493c2103379d6"></a>
+<a class="anchor" id="a1c50ed902c43f3060cefae287fe9bc42"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::query_rows </td>
+          <td class="memname">query_rows </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$query</em></td><td>)</td>
+          <td class="paramname"><em>$query</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Reimplementado en <a class="el" href="../../dd/d55/classmysql.html#a079be0f8a9f4c9087d24aeb17473a8da">mysql</a>, <a class="el" href="../../dd/d55/classmysql.html#a079be0f8a9f4c9087d24aeb17473a8da">mysql</a> y <a class="el" href="../../dd/d55/classmysql.html#a079be0f8a9f4c9087d24aeb17473a8da">mysql</a>.</p>
 
 <p>Definición en la línea <a class="el" href="../../dd/df7/class__dao_8php_source.html#l00035">35</a> del archivo <a class="el" href="../../dd/df7/class__dao_8php_source.html">class_dao.php</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac0950c5358097f02bebce24acc4463df"></a>
+<a class="anchor" id="ae94c38578a427fe7ded34c092005265f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::rows </td>
+          <td class="memname">rows </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$query</em></td><td>)</td>
+          <td class="paramname"><em>$query</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reimplementado en <a class="el" href="../../dd/d55/classmysql.html#a0124a2f12f7c68b2bcbd3ecc0802d387">mysql</a>, <a class="el" href="../../dd/d55/classmysql.html#a0124a2f12f7c68b2bcbd3ecc0802d387">mysql</a> y <a class="el" href="../../dd/d55/classmysql.html#a0124a2f12f7c68b2bcbd3ecc0802d387">mysql</a>.</p>
-
 <p>Definición en la línea <a class="el" href="../../dd/df7/class__dao_8php_source.html#l00047">47</a> del archivo <a class="el" href="../../dd/df7/class__dao_8php_source.html">class_dao.php</a>.</p>
 
 </div>
 </div>
-<h2>Documentación de los datos miembro</h2>
-<a class="anchor" id="ac8de07c73a8b1f64089a3bc4187906a1"></a>
+<h2 class="groupheader">Documentación de los campos</h2>
+<a class="anchor" id="a881924afaecbe8ee5c0d26174a1e8081"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -432,7 +462,7 @@ Atributos protegidos estáticos</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">dao::$conexion = null</td>
+          <td class="memname">$conexion = null</td>
         </tr>
       </table>
   </td>
@@ -446,12 +476,12 @@ Atributos protegidos estáticos</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9d8e3559fba2859b3ab7dc95a24d8021"></a>
+<a class="anchor" id="ad9d7ce33ebb142b70e58b68052ca0ea8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dao::$instance = null</td>
+          <td class="memname">$instance = null</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -464,11 +494,15 @@ Atributos protegidos estáticos</h2></td></tr>
 <li>leaf/modules/mod_dao/<a class="el" href="../../dd/df7/class__dao_8php_source.html">class_dao.php</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d9/d70/classdao.html">dao</a></li>
+    <li class="footer">Generado el Miércoles, 12 de Junio de 2013 11:10:58 para Vidali por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
 </body>
 </html>

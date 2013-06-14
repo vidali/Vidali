@@ -1,0 +1,16 @@
+digraph "publicar"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="publicar",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="lw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/dfd/core_2leafwork_8php.html#a471b391fa50a15b9d3e9d63d0a3dac27"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="lw\\gi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/de5/classlw.html#a2a82141a13e0594d6ebd540801a927b7"];
+  Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="lw\\getConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/de5/classlw.html#af394a71fca91e024e566871383d33e2c"];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="lw\\moduleExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/de5/classlw.html#abcf9b188696b4d63cb90218064e076c3"];
+}

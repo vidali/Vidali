@@ -1,0 +1,9 @@
+digraph "vdl-themes/Default" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_13d6c1022eac80c27dcd9b9bf339b1a0 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="vdl-themes" fontname="Helvetica", fontsize="10", URL="dir_13d6c1022eac80c27dcd9b9bf339b1a0.html"]
+  dir_28817f047308138de86a55220264c13f [shape=box, label="Default", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_28817f047308138de86a55220264c13f.html"];
+  }
+}

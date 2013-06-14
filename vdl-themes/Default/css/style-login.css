@@ -1,5 +1,5 @@
 html {
-    background: url('../img/wood.jpg') no-repeat center center fixed;
+    background: #212121;
 	-webkit-background-size: cover; /*for webKit*/
 	-moz-background-size: cover; /*Mozilla*/
 	-o-background-size: cover; /*opera*/
@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    background: url('../img/wood.jpg') no-repeat center center fixed;
+    background: #212121;
 	-webkit-background-size: cover; /*for webKit*/
 	-moz-background-size: cover; /*Mozilla*/
 	-o-background-size: cover; /*opera*/

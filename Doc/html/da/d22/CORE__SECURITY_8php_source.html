@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
 <title>Vidali: Fichero Fuente vdl-include/class/CORE_SECURITY.php</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -31,14 +39,14 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.8.1.2 -->
+<!-- Generado por Doxygen 1.8.4 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
-      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
       <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -61,15 +69,30 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
-      <li><a href="../../globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+      <li><a href="../../globals.html"><span>Globales</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('da/d22/CORE__SECURITY_8php_source.html','../../');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Estructuras de Datos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -78,11 +101,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../dir_72d7bd7e83e80557cce091006c7e9fd7.html">vdl-include</a></li><li class="navelem"><a class="el" href="../../dir_f2a403dc81371975765174e1ded0c05d.html">class</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">CORE_SECURITY.php</div>  </div>
@@ -93,25 +111,25 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   <span class="comment">/*** Attributes: ***/</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a001c15a8e498ad29ee4574f45e7e7539">   18</a></span>&#160;  <span class="keyword">private</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a001c15a8e498ad29ee4574f45e7e7539">$_session_key</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a093ad82604ccd677f715e79ebe4b7b78">   18</a></span>&#160;  <span class="keyword">private</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a093ad82604ccd677f715e79ebe4b7b78">$_session_key</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#ad44686e5e445e52b0db67ba9b9fda099">   27</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#ad44686e5e445e52b0db67ba9b9fda099">__construct</a>( ) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a095c5d389db211932136b53f25f39685">   27</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a095c5d389db211932136b53f25f39685">__construct</a>( ) {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  } <span class="comment">// end of member function __construct</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a967d4a689265af185e1f4aae083ec2c2">   36</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a967d4a689265af185e1f4aae083ec2c2">__destruct</a>( ) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a421831a265621325e1fdd19aace0c758">   36</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a421831a265621325e1fdd19aace0c758">__destruct</a>( ) {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  } <span class="comment">// end of member function __destruct</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a0b68b5f3db4267176a6d63459e2db47e">   47</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a0b68b5f3db4267176a6d63459e2db47e">encrypt</a>( $__string ) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a5260703d06813a9a9fc8e5dd95ada8ba">   47</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a5260703d06813a9a9fc8e5dd95ada8ba">encrypt</a>( $__string ) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  } <span class="comment">// end of member function encrypt</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a43b3fc40a7ef37d3b0f17bcb16477b10">   56</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a43b3fc40a7ef37d3b0f17bcb16477b10">get_key</a>( ) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a0395526ae8329a45cfee884e817bcaf4">   56</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a0395526ae8329a45cfee884e817bcaf4">get_key</a>( ) {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  } <span class="comment">// end of member function get_key</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a194553d6a805082bc56f87169f221833">   67</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a194553d6a805082bc56f87169f221833">clear_text_strict</a>( $_source ) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a32f3868e35b4c69308f50424c1dec05f">   67</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a32f3868e35b4c69308f50424c1dec05f">clear_text_strict</a>( $_source ) {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  } <span class="comment">// end of member function clear_text_strict</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#aabe552d154eb94a61f6800cc5aa1afcf">   78</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#aabe552d154eb94a61f6800cc5aa1afcf">clear_text</a>( $_source ) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#acedcf5bb123cedc39c507da2530af795">   78</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#acedcf5bb123cedc39c507da2530af795">clear_text</a>( $_source ) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    $url_words=array(<span class="stringliteral">&quot;MIME-Version:&quot;</span>,<span class="stringliteral">&quot;Content-Transfer-Encoding:&quot;</span>,<span class="stringliteral">&quot;Return-path:&quot;</span>,<span class="stringliteral">&quot;Subject:&quot;</span>,<span class="stringliteral">&quot;From:&quot;</span>,</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                 <span class="stringliteral">&quot;Envelope-to:&quot;</span>,<span class="stringliteral">&quot;To:&quot;</span>,<span class="stringliteral">&quot;bcc:&quot;</span>,<span class="stringliteral">&quot;cc:&quot;</span>);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    $script_words=array(<span class="stringliteral">&quot;onload(&quot;</span>,<span class="stringliteral">&quot;alert(&quot;</span>,<span class="stringliteral">&quot;);&quot;</span>,<span class="stringliteral">&quot;&amp;lt;script&amp;gt;&quot;</span>,<span class="stringliteral">&quot;&amp;lt;/script&amp;gt;&quot;</span>,<span class="stringliteral">&quot;&amp;quot;&quot;</span>,<span class="stringliteral">&quot;&amp;#39;&quot;</span>);</div>
@@ -122,10 +140,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d8/daf/install_8php.html#a2ae48a97125d8c11d0a54961282b5a5b">$aux</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  } <span class="comment">// end of member function clear_text</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#afdc357c479eb0dd59e8ce63fac8ccee4">   97</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#afdc357c479eb0dd59e8ce63fac8ccee4">email_val</a>( $_source ) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#ac36c94a68d7893be80e01fb117256af1">   97</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#ac36c94a68d7893be80e01fb117256af1">email_val</a>( $_source ) {</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  } <span class="comment">// end of member function email_val</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a4c8633e674633006cc22bfdca2028cd0">  106</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a4c8633e674633006cc22bfdca2028cd0">clear_url_nav</a>( ) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="../../dd/df9/classCORE__SECURITY.html#a92c19f2316b297b6cbc98520bf93e865">  106</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../dd/df9/classCORE__SECURITY.html#a92c19f2316b297b6cbc98520bf93e865">clear_url_nav</a>( ) {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  } <span class="comment">// end of member function clear_url_nav</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
@@ -135,11 +153,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;} <span class="comment">// end of CORE_SECURITY</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_72d7bd7e83e80557cce091006c7e9fd7.html">vdl-include</a></li><li class="navelem"><a class="el" href="../../dir_f2a403dc81371975765174e1ded0c05d.html">class</a></li><li class="navelem"><a class="el" href="../../da/d22/CORE__SECURITY_8php.html">CORE_SECURITY.php</a></li>
+    <li class="footer">Generado el Miércoles, 12 de Junio de 2013 11:10:56 para Vidali por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
 <title>Vidali: Fichero Fuente vdl-actions/index.php</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -31,14 +39,14 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.8.1.2 -->
+<!-- Generado por Doxygen 1.8.4 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
-      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
       <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -61,15 +69,30 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
-      <li><a href="../../globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+      <li><a href="../../globals.html"><span>Globales</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d1/dd6/vdl-actions_2index_8php_source.html','../../');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Estructuras de Datos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -78,11 +101,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../dir_67b9e2f2fe84188ba20f355265d6130e.html">vdl-actions</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">index.php</div>  </div>
@@ -180,11 +198,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;&lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;tab-content&quot;</span>&gt;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        &lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;home-friends&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;friends-tab tab-pane fade active in&quot;</span>&gt;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                &lt;?php</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="../../dc/d32/vdl-home_2index_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&quot;n_friends&quot;</span>] == 0){</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">if</span>($data[<span class="stringliteral">&quot;n_friends&quot;</span>] == 0){</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                        echo <span class="stringliteral">&quot;No has agregado ningún amigo todavia...&quot;</span>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                        <span class="keywordflow">foreach</span> (<a class="code" href="../../dc/d32/vdl-home_2index_8php.html#afb66104a0d5a5b286634a265d216b8d6">$friends</a> as $f){</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                        <span class="keywordflow">foreach</span> ($friends as $f){</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                echo <span class="stringliteral">&#39;&lt;article id=&quot;net&quot;&gt;&#39;</span>;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                        echo <span class="stringliteral">&#39;&lt;a href=&quot;?pg=p&amp;@=&#39;</span>. $f[<span class="stringliteral">&quot;nick&quot;</span>] .<span class="stringliteral">&#39;&quot;&gt;&#39;</span>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                        echo <span class="stringliteral">&#39;&lt;div id=&quot;net_photo&quot;&gt;&lt;img src=&quot;img/&#39;</span>.$f[<span class="stringliteral">&quot;avatar_id&quot;</span>].<span class="stringliteral">&#39;_tb.jpg&quot;&gt;&lt;/div&gt;&#39;</span>;</div>
@@ -197,7 +215,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        &lt;/div&gt;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        &lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;home-groups&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;groups-tab tab-pane fade&quot;</span>&gt;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                &lt;?php</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="../../dc/d32/vdl-home_2index_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&quot;n_views&quot;</span>] == 0)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">if</span>($data[<span class="stringliteral">&quot;n_views&quot;</span>] == 0)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        echo <span class="stringliteral">&quot;No formas parte de ningún grupo...&quot;</span>;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">else</span>{</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        echo <span class="stringliteral">&quot;tienes grupos&quot;</span>;</div>
@@ -221,7 +239,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">if</span>($user-&gt;prof_friends() == 0)</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        echo <span class="stringliteral">&quot;No has agregado ningún amigo todavia...&quot;</span>;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                        <span class="keywordflow">foreach</span> (<a class="code" href="../../dc/d32/vdl-home_2index_8php.html#afb66104a0d5a5b286634a265d216b8d6">$friends</a> as $f){</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                        <span class="keywordflow">foreach</span> ($friends as $f){</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                                echo <span class="stringliteral">&#39;&lt;article id=&quot;net&quot;&gt;&#39;</span>;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                        echo <span class="stringliteral">&#39;&lt;a href=&quot;?pg=p&amp;@=&#39;</span>. $f[<span class="stringliteral">&quot;nick&quot;</span>] .<span class="stringliteral">&#39;&quot;&gt;&#39;</span>;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                        echo <span class="stringliteral">&#39;&lt;div id=&quot;net_photo&quot;&gt;&lt;img src=&quot;img/&#39;</span>.$f[<span class="stringliteral">&quot;avatar_id&quot;</span>].<span class="stringliteral">&#39;_tb.jpg&quot;&gt;&lt;/div&gt;&#39;</span>;</div>
@@ -258,7 +276,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="keywordflow">if</span>($user-&gt;prof_friends() == 0)</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                        echo <span class="stringliteral">&quot;No has agregado ningún amigo todavia...&quot;</span>;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                        <span class="keywordflow">foreach</span> (<a class="code" href="../../dc/d32/vdl-home_2index_8php.html#afb66104a0d5a5b286634a265d216b8d6">$friends</a> as $f){</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                        <span class="keywordflow">foreach</span> ($friends as $f){</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                echo <span class="stringliteral">&#39;&lt;article id=&quot;net&quot;&gt;&#39;</span>;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                        echo <span class="stringliteral">&#39;&lt;a href=&quot;?pg=p&amp;@=&#39;</span>. $f[<span class="stringliteral">&quot;nick&quot;</span>] .<span class="stringliteral">&#39;&quot;&gt;&#39;</span>;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                                        echo <span class="stringliteral">&#39;&lt;div id=&quot;net_photo&quot;&gt;&lt;img src=&quot;img/&#39;</span>.$f[<span class="stringliteral">&quot;avatar_id&quot;</span>].<span class="stringliteral">&#39;_tb.jpg&quot;&gt;&lt;/div&gt;&#39;</span>;</div>
@@ -316,7 +334,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        &lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;groups-trends&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;trends-tab tab-pane fade active in&quot;</span>&gt;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                &lt;?php</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                echo <span class="stringliteral">&quot;Tendencias&quot;</span>;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="keywordflow">foreach</span>(<a class="code" href="../../d5/d59/vdl-groups_2index_8php.html#a453aade10b9dbfd1e33fa2d0e0cbd2c9">$trending</a> as $trend){</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="keywordflow">foreach</span>($trending as $trend){</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        $link = ucwords(strtolower($trend[<span class="stringliteral">&quot;topic&quot;</span>]));</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                        echo <span class="stringliteral">&#39;&lt;h3&gt;&lt;a href=&quot;/Vidali/?pg=g&amp;q=%23&#39;</span>.$link.<span class="stringliteral">&#39;&quot;&gt;&#39;</span>.$trend[<span class="stringliteral">&quot;topic&quot;</span>].<span class="stringliteral">&quot;&lt;/a&gt;&lt;/h3&gt;&quot;</span>;</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                }?&gt;</div>
@@ -325,7 +343,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        &lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;groups-allgroups&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;groups-tab tab-pane fade&quot;</span>&gt;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                &lt;?php</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                echo <span class="stringliteral">&quot;Grupos patrocinados&quot;</span>;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="keywordflow">foreach</span>(<a class="code" href="../../de/d94/vdl-profile_2index_8php.html#a1af3c911abb4f6414a86954705266327">$groups</a> as $gr){</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="keywordflow">foreach</span>($groups as $gr){</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                        $link = ucwords(strtolower($gr[<span class="stringliteral">&quot;group_name&quot;</span>]));</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                        echo <span class="stringliteral">&#39;&lt;h3&gt;&lt;a href=&quot;/Vidali/?pg=g&amp;q=%23&#39;</span>.$link.<span class="stringliteral">&#39;&quot;&gt;&#39;</span>.$gr[<span class="stringliteral">&quot;group_name&quot;</span>].<span class="stringliteral">&quot;&lt;/a&gt;&lt;/h3&gt;&quot;</span>;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                }?&gt;</div>
@@ -359,7 +377,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                Disclaimer:&lt;br&gt;</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                Aqui va sobre el uso de Vidali.&lt;br&gt;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                Añadir guia de informacion (modal)&lt;br&gt;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                Enlazar a webs de la applicación&lt;br&gt;           </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                Enlazar a webs de la applicación&lt;br&gt;            </div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        &lt;/div&gt;</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        &lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;set-support&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;support-tab tab-pane fade&quot;</span>&gt;</div>
@@ -389,11 +407,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_67b9e2f2fe84188ba20f355265d6130e.html">vdl-actions</a></li><li class="navelem"><a class="el" href="../../d1/dd6/vdl-actions_2index_8php.html">index.php</a></li>
+    <li class="footer">Generado el Miércoles, 12 de Junio de 2013 11:10:56 para Vidali por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
 <title>Vidali: Fichero Fuente leaf/modules/mod_get/class_get.php</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -31,14 +39,14 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.8.1.2 -->
+<!-- Generado por Doxygen 1.8.4 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
-      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
       <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -61,15 +69,30 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
-      <li><a href="../../globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+      <li><a href="../../globals.html"><span>Globales</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d5/d95/class__get_8php_source.html','../../');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Estructuras de Datos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -78,11 +101,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../dir_dbc6478988376181cf4f4d2f7a8591f9.html">leaf</a></li><li class="navelem"><a class="el" href="../../dir_071e6ab1f7f132df524d1bfe2744eaf2.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_08822547b3f00b7553e658752bd563cb.html">mod_get</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">class_get.php</div>  </div>
@@ -113,39 +131,39 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html">   24</a></span>&#160;        <span class="keyword">class </span><a class="code" href="../../db/d5d/classget.html">get</a> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#a1588c583848fd0cce020929db0566955">   26</a></span>&#160;                <span class="keyword">private</span> <span class="keyword">static</span> <a class="code" href="../../db/d5d/classget.html#a1588c583848fd0cce020929db0566955">$params</a> = array();</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#afe68e6fbe7acfbffc0af0c84a1996466">   26</a></span>&#160;                <span class="keyword">private</span> <span class="keyword">static</span> <a class="code" href="../../db/d5d/classget.html#afe68e6fbe7acfbffc0af0c84a1996466">$params</a> = array();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#ac476e46b4ea10ab05b803e5677666135">   28</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#ac476e46b4ea10ab05b803e5677666135">__construct</a>(){</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#a095c5d389db211932136b53f25f39685">   28</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#a095c5d389db211932136b53f25f39685">__construct</a>(){</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">self::$params</a> = $_GET;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#a2758e344b4b622ec98202906789ceb96">   34</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#a2758e344b4b622ec98202906789ceb96">getParams</a>(){</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#ae32cd7c32721b02d676bb63b4b1366db">   34</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#ae32cd7c32721b02d676bb63b4b1366db">getParams</a>(){</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="../../db/d5d/classget.html#a1588c583848fd0cce020929db0566955">self::$params</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">self::$params</a>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#aa502d2a5c0d51276a4453d1105754869">   40</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#aa502d2a5c0d51276a4453d1105754869">setParams</a>( <a class="code" href="../../db/d5d/classget.html#a1588c583848fd0cce020929db0566955">$params</a> ){</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#a99452a2ee9dfa3243a205c61d8f728cc">   40</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#a99452a2ee9dfa3243a205c61d8f728cc">setParams</a>( <a class="code" href="../../db/d5d/classget.html#afe68e6fbe7acfbffc0af0c84a1996466">$params</a> ){</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">self::$params</a> = <a class="code" href="../../db/d5d/classget.html#a1588c583848fd0cce020929db0566955">$params</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">self::$params</a> = <a class="code" href="../../db/d5d/classget.html#afe68e6fbe7acfbffc0af0c84a1996466">$params</a>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#abb0411a32b271af260ff9234285539b8">   46</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#abb0411a32b271af260ff9234285539b8">getParamById</a>( <a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a> ){</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#a5be10227323f78fb348e88459777bcb0">   46</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#a5be10227323f78fb348e88459777bcb0">getParamById</a>( $id ){</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;         </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;         <span class="keywordflow">if</span>( is_null( <a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a> ))</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../db/d5d/classget.html#a2758e344b4b622ec98202906789ceb96">self::getParams</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;         <span class="keywordflow">if</span>( is_null( $id ))</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> self::getParams();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;         </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        $count = 0;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        <span class="keywordflow">if</span>( count( <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">self::$params</a> ) &lt; <a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a> )</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        <span class="keywordflow">if</span>( count( <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">self::$params</a> ) &lt; $id )</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                <span class="keywordflow">return</span> null;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">foreach</span>( <a class="code" href="../../dc/dca/log_8php.html#afe68e6fbe7acfbffc0af0c84a1996466">self::$params</a> as $param )</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                <span class="keywordflow">if</span>( <a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a> == $count )</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                <span class="keywordflow">if</span>( $id == $count )</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                        <span class="keywordflow">return</span> $param;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                        $count++;</div>
@@ -153,21 +171,25 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="comment">// --[ Alias ]--------------------------------------------------</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#ae55be68001727567b71b926df9be2442">   66</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#ae55be68001727567b71b926df9be2442">param</a>( <a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a> = null ){ <span class="keywordflow">return</span> <a class="code" href="../../db/d5d/classget.html#abb0411a32b271af260ff9234285539b8">self::getParamById</a>( <a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a> );  } </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#aa16a5c11d49b7890d3880edd48aefe01">   67</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#aa16a5c11d49b7890d3880edd48aefe01">url</a>( <a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a> = null ){ <span class="keywordflow">return</span> <a class="code" href="../../db/d5d/classget.html#abb0411a32b271af260ff9234285539b8">self::getParamById</a>( <a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a> ); }</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#a3e0ddbc8cf647d8444c0772d457f874c">   68</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">get</span>( <a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a> = null ){ <span class="keywordflow">return</span> <a class="code" href="../../db/d5d/classget.html#abb0411a32b271af260ff9234285539b8">self::getParamById</a>( <a class="code" href="../../d7/d44/edit__profile_8php.html#ae97941710d863131c700f069b109991e">$id</a> ); }</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#a0494ca614158e440e356b730d3f9cb7e">   69</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">set</span>( $pa = null ){ <span class="keywordflow">return</span> <a class="code" href="../../db/d5d/classget.html#aa502d2a5c0d51276a4453d1105754869">self::setParams</a>( $pa ); }</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#ae9982f3498cde486a2f9542693e5898b">   66</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#ae9982f3498cde486a2f9542693e5898b">param</a>( $id = null ){ <span class="keywordflow">return</span> self::getParamById( $id );  } </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#adc9e1f04da050dcdc6bc9e4ca7e8aa6b">   67</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#adc9e1f04da050dcdc6bc9e4ca7e8aa6b">url</a>( $id = null ){ <span class="keywordflow">return</span> self::getParamById( $id ); }</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#aa2349c4188f0c5af9109ec85e7991538">   68</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">get</span>( $id = null ){ <span class="keywordflow">return</span> self::getParamById( $id ); }</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="../../db/d5d/classget.html#a5aadd030742b383ddcdf4374f4dd3dd2">   69</a></span>&#160;                <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="../../db/d5d/classget.html#a5aadd030742b383ddcdf4374f4dd3dd2">set</a>( $pa = null ){ <span class="keywordflow">return</span> self::setParams( $pa ); }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_dbc6478988376181cf4f4d2f7a8591f9.html">leaf</a></li><li class="navelem"><a class="el" href="../../dir_071e6ab1f7f132df524d1bfe2744eaf2.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_08822547b3f00b7553e658752bd563cb.html">mod_get</a></li><li class="navelem"><a class="el" href="../../d5/d95/class__get_8php.html">class_get.php</a></li>
+    <li class="footer">Generado el Miércoles, 12 de Junio de 2013 11:10:56 para Vidali por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
 </body>
 </html>

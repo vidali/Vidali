@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
 <title>Vidali: Referencia de la Clase CORE_MAIN</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -31,14 +39,14 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.8.1.2 -->
+<!-- Generado por Doxygen 1.8.4 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
-      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
       <li><a href="../../files.html"><span>Archivos</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -60,18 +68,33 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
-      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../annotated.html"><span>Estructura&#160;de&#160;datos</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;estructura&#160;de&#160;datos</span></a></li>
       <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
-      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+      <li><a href="../../functions.html"><span>Campos&#160;de&#160;datos</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dd/dd8/classCORE__MAIN.html','../../');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Estructuras de Datos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,12 +103,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Métodos públicos</a> &#124;
-<a href="#pri-attribs">Atributos privados</a> &#124;
-<a href="../../dd/d09/classCORE__MAIN-members.html">Lista de todos los miembros</a>  </div>
+<a href="#pri-attribs">Atributos privados</a>  </div>
   <div class="headertitle">
 <div class="title">Referencia de la Clase CORE_MAIN</div>  </div>
 </div><!--header-->
@@ -96,86 +117,92 @@ Diagrama de herencias de CORE_MAIN</div>
 <div class="center"><img src="../../d4/d95/classCORE__MAIN__inherit__graph.png" border="0" usemap="#CORE__MAIN_inherit__map" alt="Inheritance graph"/></div>
 <map name="CORE__MAIN_inherit__map" id="CORE__MAIN_inherit__map">
 <area shape="rect" id="node5" href="../../da/d66/classCORE__ACTIONS.html" title="CORE_ACTIONS" alt="" coords="5,160,133,189"/><area shape="rect" id="node7" href="../../d2/dfa/classGROUP.html" title="GROUP" alt="" coords="157,160,227,189"/><area shape="rect" id="node9" href="../../da/d3b/classUSER.html" title="USER" alt="" coords="251,160,309,189"/><area shape="rect" id="node2" href="../../dc/d7f/classCORE__DB.html" title="CORE_DB" alt="" coords="149,5,235,35"/><area shape="rect" id="node11" href="../../d1/dd5/classPROFILE.html" title="PROFILE" alt="" coords="181,237,259,267"/><area shape="rect" id="node13" href="../../de/d0c/classUSER__ACTIVE.html" title="USER_ACTIVE" alt="" coords="283,237,397,267"/></map>
-<center><span class="legend">[<a href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
 <div class="dynheader">
 Diagrama de colaboración para CORE_MAIN:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d1/d2a/classCORE__MAIN__coll__graph.png" border="0" usemap="#CORE__MAIN_coll__map" alt="Collaboration graph"/></div>
 <map name="CORE__MAIN_coll__map" id="CORE__MAIN_coll__map">
 <area shape="rect" id="node2" href="../../dc/d7f/classCORE__DB.html" title="CORE_DB" alt="" coords="13,5,99,35"/></map>
-<center><span class="legend">[<a href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr class="memitem:a6d9a9ebda29cab21ef557af91a2c9ddd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/classCORE__MAIN.html#a6d9a9ebda29cab21ef557af91a2c9ddd">__construct</a> ()</td></tr>
-<tr class="memitem:a9ed678416cc616e8b72cde64a904473e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/classCORE__MAIN.html#a9ed678416cc616e8b72cde64a904473e">__destruct</a> ()</td></tr>
-<tr class="memitem:acc690119f96d8481342cbe7495b6239b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/classCORE__MAIN.html#acc690119f96d8481342cbe7495b6239b">load</a> ()</td></tr>
-<tr class="memitem:ac5e297ca6caa395054e81603a956da43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/classCORE__MAIN.html#ac5e297ca6caa395054e81603a956da43">load_lang</a> ()</td></tr>
-<tr class="inherit_header pub_methods_classCORE__DB"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCORE__DB')"><img src="../../closed.png" alt="-"/>&nbsp;Métodos públicos heredados desde <a class="el" href="../../dc/d7f/classCORE__DB.html">CORE_DB</a></td></tr>
-<tr class="memitem:a633cbbe56480acf50dc585101f817a6f inherit pub_methods_classCORE__DB"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d7f/classCORE__DB.html#a633cbbe56480acf50dc585101f817a6f">close</a> ($_con)</td></tr>
-<tr class="memitem:ad7f9c3daf802f502e2b3515805d79977 inherit pub_methods_classCORE__DB"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d7f/classCORE__DB.html#ad7f9c3daf802f502e2b3515805d79977">connect</a> ()</td></tr>
-<tr class="memitem:ab4931e2862c908e08280ce5fce33a7d3 inherit pub_methods_classCORE__DB"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d7f/classCORE__DB.html#ab4931e2862c908e08280ce5fce33a7d3">set</a> ($_dbdir, $_dbusr, $_dbpsw, $_dbase)</td></tr>
+<tr class="memitem:a095c5d389db211932136b53f25f39685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/classCORE__MAIN.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
+<tr class="separator:a095c5d389db211932136b53f25f39685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a421831a265621325e1fdd19aace0c758"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/classCORE__MAIN.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
+<tr class="separator:a421831a265621325e1fdd19aace0c758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dcaa8f72c8423d4de25a9e87fa6f3e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/classCORE__MAIN.html#a4dcaa8f72c8423d4de25a9e87fa6f3e4">load</a> ()</td></tr>
+<tr class="separator:a4dcaa8f72c8423d4de25a9e87fa6f3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d64f5070060eb620b056287d2fcf74a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/classCORE__MAIN.html#a1d64f5070060eb620b056287d2fcf74a">load_lang</a> ()</td></tr>
+<tr class="separator:a1d64f5070060eb620b056287d2fcf74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classCORE__DB"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCORE__DB')"><img src="../../closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="../../dc/d7f/classCORE__DB.html">CORE_DB</a></td></tr>
+<tr class="memitem:a095c5d389db211932136b53f25f39685 inherit pub_methods_classCORE__DB"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d7f/classCORE__DB.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
+<tr class="separator:a095c5d389db211932136b53f25f39685 inherit pub_methods_classCORE__DB"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a421831a265621325e1fdd19aace0c758 inherit pub_methods_classCORE__DB"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d7f/classCORE__DB.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
+<tr class="separator:a421831a265621325e1fdd19aace0c758 inherit pub_methods_classCORE__DB"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8de545c00c0b84d081bc22fed5a058bb inherit pub_methods_classCORE__DB"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d7f/classCORE__DB.html#a8de545c00c0b84d081bc22fed5a058bb">close</a> ($_con)</td></tr>
+<tr class="separator:a8de545c00c0b84d081bc22fed5a058bb inherit pub_methods_classCORE__DB"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78572828d11dcdf2a498497d9001d557 inherit pub_methods_classCORE__DB"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d7f/classCORE__DB.html#a78572828d11dcdf2a498497d9001d557">connect</a> ()</td></tr>
+<tr class="separator:a78572828d11dcdf2a498497d9001d557 inherit pub_methods_classCORE__DB"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67de8c77337c9e0144980b5bf49da334 inherit pub_methods_classCORE__DB"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d7f/classCORE__DB.html#a67de8c77337c9e0144980b5bf49da334">set</a> ($_dbdir, $_dbusr, $_dbpsw, $_dbase)</td></tr>
+<tr class="separator:a67de8c77337c9e0144980b5bf49da334 inherit pub_methods_classCORE__DB"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atributos privados</h2></td></tr>
-<tr class="memitem:adcf73cc2a0b4afd9c2c5d1b8f87bf0ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/classCORE__MAIN.html#adcf73cc2a0b4afd9c2c5d1b8f87bf0ed">$__connection</a></td></tr>
+<tr class="memitem:abd5f7a732ba4cb0bfaa73c41f179cffd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/classCORE__MAIN.html#abd5f7a732ba4cb0bfaa73c41f179cffd">$__connection</a></td></tr>
+<tr class="separator:abd5f7a732ba4cb0bfaa73c41f179cffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2>Descripción detallada</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>class <a class="el" href="../../dd/dd8/classCORE__MAIN.html">CORE_MAIN</a> </p>
 
 <p>Definición en la línea <a class="el" href="../../d4/d5c/CORE__MAIN_8php_source.html#l00007">7</a> del archivo <a class="el" href="../../d4/d5c/CORE__MAIN_8php_source.html">CORE_MAIN.php</a>.</p>
-</div><h2>Documentación del constructor y destructor</h2>
-<a class="anchor" id="a6d9a9ebda29cab21ef557af91a2c9ddd"></a>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a095c5d389db211932136b53f25f39685"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">CORE_MAIN::__construct </td>
+          <td class="memname">__construct </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">)</td><td></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Devuelve</dt><dd>void  public </dd></dl>
-
-<p>Reimplementado de <a class="el" href="../../dc/d7f/classCORE__DB.html#af6c28ecd5ca882aab9eda5f800403028">CORE_DB</a>.</p>
-
-<p>Reimplementado en <a class="el" href="../../d2/dfa/classGROUP.html#aedaf83d16dc1d52e3133711f5aeb2a42">GROUP</a>.</p>
 
 <p>Definición en la línea <a class="el" href="../../d4/d5c/CORE__MAIN_8php_source.html#l00029">29</a> del archivo <a class="el" href="../../d4/d5c/CORE__MAIN_8php_source.html">CORE_MAIN.php</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9ed678416cc616e8b72cde64a904473e"></a>
+<a class="anchor" id="a421831a265621325e1fdd19aace0c758"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">CORE_MAIN::__destruct </td>
+          <td class="memname">__destruct </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">)</td><td></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Devuelve</dt><dd>void  public </dd></dl>
 
-<p>Reimplementado de <a class="el" href="../../dc/d7f/classCORE__DB.html#af22f67fc94dc53cc7f4b23603ed997d0">CORE_DB</a>.</p>
-
 <p>Definición en la línea <a class="el" href="../../d4/d5c/CORE__MAIN_8php_source.html#l00040">40</a> del archivo <a class="el" href="../../d4/d5c/CORE__MAIN_8php_source.html">CORE_MAIN.php</a>.</p>
 
 </div>
 </div>
-<h2>Documentación de las funciones miembro</h2>
-<a class="anchor" id="acc690119f96d8481342cbe7495b6239b"></a>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a4dcaa8f72c8423d4de25a9e87fa6f3e4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">CORE_MAIN::load </td>
+          <td class="memname">load </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">)</td><td></td>
           <td></td>
         </tr>
       </table>
@@ -186,14 +213,14 @@ Atributos privados</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac5e297ca6caa395054e81603a956da43"></a>
+<a class="anchor" id="a1d64f5070060eb620b056287d2fcf74a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">CORE_MAIN::load_lang </td>
+          <td class="memname">load_lang </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">)</td><td></td>
           <td></td>
         </tr>
       </table>
@@ -204,8 +231,8 @@ Atributos privados</h2></td></tr>
 
 </div>
 </div>
-<h2>Documentación de los datos miembro</h2>
-<a class="anchor" id="adcf73cc2a0b4afd9c2c5d1b8f87bf0ed"></a>
+<h2 class="groupheader">Documentación de los campos</h2>
+<a class="anchor" id="abd5f7a732ba4cb0bfaa73c41f179cffd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -213,7 +240,7 @@ Atributos privados</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CORE_MAIN::$__connection</td>
+          <td class="memname">$__connection</td>
         </tr>
       </table>
   </td>
@@ -233,11 +260,15 @@ Atributos privados</h2></td></tr>
 <li>vdl-include/class/<a class="el" href="../../d4/d5c/CORE__MAIN_8php_source.html">CORE_MAIN.php</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 28 de Marzo de 2013 22:52:41 para Vidali por &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dd/dd8/classCORE__MAIN.html">CORE_MAIN</a></li>
+    <li class="footer">Generado el Miércoles, 12 de Junio de 2013 11:10:58 para Vidali por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
 </body>
 </html>

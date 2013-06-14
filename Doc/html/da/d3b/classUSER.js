@@ -1,0 +1,28 @@
+var classUSER =
+[
+    [ "__construct", "da/d3b/classUSER.html#a15892f146e6b2027d102f45066962756", null ],
+    [ "add_update", "da/d3b/classUSER.html#a08eee4c38fa6195185760f885c3184a6", null ],
+    [ "check_friends", "da/d3b/classUSER.html#a1ed467f3e4b822d4e18c12542ea7be41", null ],
+    [ "check_request", "da/d3b/classUSER.html#a90fc06b83a1b3db2837ec1c7c8b14d34", null ],
+    [ "get_friends", "da/d3b/classUSER.html#a6dc3b26d0815f3e58f04026461a24e3d", null ],
+    [ "get_nick", "da/d3b/classUSER.html#ab27eae3cc546c0d1cca53dd8258df2ca", null ],
+    [ "join_group", "da/d3b/classUSER.html#ab2863ad83c3399cd62a792e226b64697", null ],
+    [ "set_friends", "da/d3b/classUSER.html#a51af8580bd838eadf87f1d2a34815f60", null ],
+    [ "set_privacy", "da/d3b/classUSER.html#a91094b4a3203c555d956b8452d61ce3b", null ],
+    [ "update_friends", "da/d3b/classUSER.html#ad71576bbcc6b8a74764136e23a64cc43", null ],
+    [ "$__bday", "da/d3b/classUSER.html#a45989f84816f9c5b99cc3b18dc23ba48", null ],
+    [ "$_age", "da/d3b/classUSER.html#a9c749fcfc61978947fbbffcb09e713c6", null ],
+    [ "$_bio", "da/d3b/classUSER.html#a4df3a432bdd1a0da13ee36bae6db0147", null ],
+    [ "$_email", "da/d3b/classUSER.html#a945b9b37db6c8c42e784df999c9ae416", null ],
+    [ "$_id", "da/d3b/classUSER.html#a64da16c4a1c7b2dc6784f6ef26341ed7", null ],
+    [ "$_img_prof", "da/d3b/classUSER.html#a348c29ec19b54ee09130d6b2f8cb1408", null ],
+    [ "$_location", "da/d3b/classUSER.html#a8d591c38603c12640c6e3a6be8ad125d", null ],
+    [ "$_name", "da/d3b/classUSER.html#a1c89defaf5aa7ac8e526065e8572f580", null ],
+    [ "$_nickname", "da/d3b/classUSER.html#a0791a0cc4f4f4676e8f4f94ba0516731", null ],
+    [ "$_prof_friends", "da/d3b/classUSER.html#aaa568e34fed9cc0bbd396dd4e5bb5958", null ],
+    [ "$_prof_groups", "da/d3b/classUSER.html#a5f31de3c7150ec160bd0cee74d71bb0a", null ],
+    [ "$_prof_visits", "da/d3b/classUSER.html#a8386ebedb107e6834cad8da7d83a8328", null ],
+    [ "$_session_id", "da/d3b/classUSER.html#a92023c94926d17b1f6705c8b1d35a103", null ],
+    [ "$_sex", "da/d3b/classUSER.html#a0daa294c691b0e2ab4878e2fc06b6706", null ],
+    [ "$_site", "da/d3b/classUSER.html#a67945a9e82178c5ceac503d9b26f39b5", null ]
+];
