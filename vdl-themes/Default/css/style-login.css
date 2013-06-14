@@ -46,25 +46,3 @@ body {
 	height: 40px !important;
 }
 
-#background {
-	background-color: #333;
-	display: none;
-	height: 100%;
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 99999;
-}
-
-#loading{
-	position:fixed;
-	width:268px;
-	left:40%;
-	top:40%;
-} 
-
-#loading img{
-	margin: auto;
-	display: block;
-}
