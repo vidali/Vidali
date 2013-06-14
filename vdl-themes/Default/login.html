@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html id="todo" xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<html id="todo">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<title>Vidali</title>
@@ -15,7 +15,11 @@
 	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap-login.css" />
 	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap-responsive-login.css" />
 	<link rel="stylesheet" href="vdl-themes/Default/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/login.less" />
+	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/login.css" />
+	<script type="text/javascript" src="vdl-themes/Default/js/jquery.js" ></script>
+	<script type="text/javascript" src="vdl-themes/Default/js/bootstrap-login.min.js" ></script>
+	<script type="text/javascript" src="vdl-themes/Default/js/script_default.js"></script>
+	<script type="text/javascript" src="vdl-themes/Default/js/login.js"></script>
 	<script type="text/javascript" src="vdl-themes/Default/js/less.js"></script>
 </head>
         <body>
@@ -23,19 +27,18 @@
                 <div class="row-fluid">
                     <div class="span6">
                         <div class="hero-unit" style="text-align: center;">
-                            <img class="image" src="http://www.onvidali.com/Vidali/vdl-themes/Default/img/vidali-icon.png"
+                            <img class="image" src="img/vidali-icon.png"
                             alt="placeholder image" height="200" width="200">
                              <h2>Vidali</h2>
 
-                            <p>Vidali es una nueva red social con la que compartir contenidos con
-                                gente que comparte gustos y aficiones. Tu eres el dueño de tus datos, ¡usalos
-                                como quieras!</p>
+                            <p>Vidali is an open-source social network. You can share and meet people with your sames hobbies.
+                            	Keep your data safe, you are the only owner of your personal life!</p>
                         </div>
                     </div>
                     <div class="span6">
                          <h2>Login</h2>
 
-                        <form method="post" name="vdl-login" onSubmit="doLogin(); return false;" autocomplete="on">
+                        <form method="post" onSubmit="doLogin(); return false;" autocomplete="on">
                             <label class="">Email</label>
                             <input id="user" name="user" type="email" placeholder="Email" autofocus="autofocus" class="pad span12">
                             <label class="">Password</label>
@@ -57,28 +60,28 @@
                                 <div class="btn-group" data-toggle="buttons-checkbox">
                                     <button type="button" class="btn"><i class="icon-ok"> </i>
                                     </button>
-                                </div> Acepto los Términos y condiciones de uso.</label>
+                                </div> I agree Vidali's TOS</label>
                             <label class="string optional"
                             for="user_remember_me">
                                 <div class="btn-group" data-toggle="buttons-checkbox">
                                     <button type="button" class="btn"><i class="icon-ok"> </i>
                                     </button>
-                                </div> Colaboro aceptando publicidad en el sitio.</label>
+                                </div> I want to help Vidali accepting ads on my wall.</label>
                         </form>
                     </div>
                 </div>
                 <ul class="nav nav-pills">
                     <li class="active">
-                        <a href="#">Get involved</a>
+                        <a href="https://github.com/vidali/Vidali">Get involved</a>
                     </li>
                     <li>
-                        <a href="#">Blog</a>
+                        <a href="http://www.onvidali.com/blog">Blog</a>
                     </li>
                     <li>
-                        <a href="#">Wiki</a>
+                        <a href="https://github.com/vidali/Vidali/wiki">Wiki</a>
                     </li>
                     <li>
-                        <a href="#">@Vidalisn</a>
+                        <a href="http://www.twitter.com/vidalisn">@Vidalisn</a>
                     </li>
                 </ul>
             </div>
@@ -88,13 +91,6 @@
 						<img src="img/loading.gif">
 				</div>
 			</div>
-            <!-- Placed at the end of the document so the pages load faster -->
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-            <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="js/jquery.js" ></script>
-			<script type="text/javascript" src="js/bootstrap-login.min.js" ></script>
-			<script type="text/javascript" src="js/script_default.js"></script>
-			<script type="text/javascript" src="js/login.js"></script>
 		<script>
 			$('#option a').click(function (e) {
 			  e.preventDefault();
