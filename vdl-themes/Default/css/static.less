@@ -1,43 +1,59 @@
 @import "style";
 /*====================FOOTER====================*/
 
-#feedbar{
-	background-color: #2D2D2D;
-	background: url('../img/debut_dark.png') repeat;
-	min-width: 300px;
-	max-width: 900px;
-	width: 900px;
-	bottom: -80px;
-	position: fixed;
-	color: #fff;
-	font-size: 14px;
-	padding-top: 5px;
-	padding-left: 100px;
-	height: 80px;
-	.icon{
-		float: left;
-		width: 40px;
-	}
-	.horizontal_scroller, div.vertical_scroller{
-		padding-top: 5px;
-		padding-bottom: 25px;
-		color: #fff;
-		font-size: 16px;
-		text-shadow: 1px 1px 0px #111;
-		text-align: justify;
-		height: 100%;
-		position:relative;
-		display:block;
-		overflow:hidden;
-		height-min: 25px;
-		min-width: 900px;
-	}
-	.scrollingtext{
-		position:absolute;
-		white-space:nowrap;
-	}
-	#invisible{
-		background-color: rgba(0,0,0,0);
-		border: 0px;
-	}
+#side-menu {
+  width: 38px;
+  height: 100%;
+  margin-left: 0px;
+  padding-top: 20px;
+  position: fixed;
+  float: left;
+  z-index: 1;
+  background: #555;
+  font-size: 18px !important;
+}
+#side-menu h3{
+  font-family:arial;
+  font-size:12px;
+  color:#fff;
+  margin:0;
+  background-color:#5a5959;
+  padding: 0px 0 0px 15px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,rgba(90,89,89,1)), color-stop(85%,rgba(66,65,65,1)));
+  border-top:solid #6b6b6b 1px;
+  border-bottom:solid #3d3d3d 1px;
+  text-shadow: 0px -1px 1px #333;
+}
+#side-menu ul {
+  margin: 0;
+  padding: 0;
+  width: inherit;
+}
+#side-menu ul li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 6px;
+}
+#side-menu ul li a:link, #side-menu ul li a:visited {
+  border-bottom: solid #333 1px;
+  box-shadow: 0 1px 0 #727272;
+  color: #fff !important;
+  font-size: 14px;
+  font-family: arial;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  padding: 10px 0px 10px 10px;
+  text-shadow: 0px 1px 1px #000000 !important;
+}
+#side-menu ul li:hover, #side-menu ul li:active {
+  background-color: #716f6f;
+}
+#side-menu .active {
+  background-color: #383737;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1e1d1d), color-stop(21%, #383737));
+}
+
+.ui-body-c #side-menu li a, .ui-overlay-c #side-menu  li a{
+  text-shadow: 0px 1px 1px #000000 !important;
 }

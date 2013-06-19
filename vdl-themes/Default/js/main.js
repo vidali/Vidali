@@ -22,9 +22,9 @@ $('#notify-tab a').click(function (e) {
 /*Menu link actions*/
 var link = function(value){
 	$("#din").hide();
-	$("#side-menu").animate({
-   			marginLeft: "-220px",
- 		}, 300, function(){menuStatus = false});
+	//$("#side-menu").animate({
+   	//		marginLeft: "-220px",
+ 	//	}, 300, function(){menuStatus = false});
 	if(value == "h"){
 		window.history.replaceState(" ", "Home", basedir+"/h/");
 		get_page('h');
@@ -268,7 +268,8 @@ var refresh = function(){
 }
 
 var update_status = function(){
-	var update_val = $('#update').val();
+	var update_val = $('#update_box').val();
+	console.log(update_val);
 	$.ajax({
 		url: basedir+'/vdl-include/set_update.php',
 		cache: false,
@@ -278,13 +279,15 @@ var update_status = function(){
 		},
 		success: function(data){
 			console.log(data);
-			$('#update').val('');
 			if(data == 'done'){
 				$('#container').prepend('<div class="alert alert-success fade in"><button type="button" class="close" data-dismiss="alert">×</button><strong>Holy guacamole!</strong> Estado Actualizado ;)</div>');
-				$("#side-menu").animate({
-		   			marginLeft: "-220px",
-		 		}, 300, function(){menuStatus = false});
+				//$("#side-menu").animate({
+		   		//	marginLeft: "-220px",
+		 		//}, 300, function(){menuStatus = false});
  				get_page('h');
+ 				$('#update').val('');
+ 				$('#updater').fadeOut(100);	
+				updaterStatus = "disabled";
 			}
 			else{
 				$('#container').prepend('<div class="alert alert-error fade in"><button type="button" class="close" data-dismiss="alert">×</button><strong>Grr!</strong> Algo Falla. Intenltalo de nuevo :(</div>');				
@@ -293,24 +296,61 @@ var update_status = function(){
 	});
 }
 
+function success(position) {
+	map = new OpenLayers.Map("map");
+    map.addLayer(new OpenLayers.Layer.OSM());
+ 
+    var lonLat = new OpenLayers.LonLat(position.coords.longitude,position.coords.latitude)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+ 
+    var zoom=16;
+    map.setCenter (lonLat, zoom);
+   	console.log("You are here! (at least within a "+position.coords.accuracy+" meter radius)");
+}
+
+function error(msg) {
+  var s = document.querySelector('#status');
+  s.innerHTML = typeof msg == 'string' ? msg : "failed";
+  s.className = 'fail';
+  
+  // console.log(arguments);
+}
+
 
 $(document).ready(function(){
+	if (navigator.geolocation) {
+  		navigator.geolocation.getCurrentPosition(success, error);
+	} else {
+  		error('not supported');
+	}
+ 
 	if(_GET[0] == '' || _GET[0] == '#' || _GET[0] == 'h'){
 		get_page('h');
 	}
 	else{
 		get_page(_GET[0]);
 	}
-//	$('#updates').masonry({
-//  		itemSelector: '.upd'
-//	});
 	$('#background').fadeOut(300);
-//	$('#side-menu').hide();
 	return false;
 });
 
-var menuStatus;
- 
+var updaterStatus = "disabled";
+
+var show_updater = function(){
+	if(updaterStatus == "disabled"){
+		$('#updater').fadeIn(100);
+		updaterStatus = "enabled";
+	}
+	else{
+		$('#updater').fadeOut(100);	
+		updaterStatus = "disabled";	
+	}
+}
+
+/* 
 $("a.showMenu").click(function(){
     if(menuStatus != true){
         $("#side-menu").animate({
@@ -325,3 +365,4 @@ $("a.showMenu").click(function(){
      	return false;
   	}
 });
+*/

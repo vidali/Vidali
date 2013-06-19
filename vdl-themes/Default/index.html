@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="vdl-themes/Default/js/jquery.js" ></script>
 	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/bootstrap-responsive.min.css"/>
+	<link rel="stylesheet" href="vdl-themes/Default/css/font-awesome.min.css">
 	<link rel="stylesheet" href="vdl-themes/Default/css/jquery-ui.css" id="theme" />
 	<link rel="stylesheet" type="text/less" href="vdl-themes/Default/css/head.less" />	
 	<link rel="stylesheet" type="text/less" href="vdl-themes/Default/css/static.less" />	
@@ -23,100 +24,93 @@
 	<script type="text/javascript" src="vdl-themes/Default/js/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="vdl-themes/Default/js/main.js" ></script>
 	<script type="text/javascript" src="vdl-themes/Default/js/less.js"></script>
-
+	<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 </head>
 <body>
 <nav id="side-menu">
-	<h3><a href="#"class="btn btn-inverse showMenu"><i class="icon-th-list icon-white"></i> Ocultar</a></h3>
-	<hr>
-	<form class="form-inline" onSubmit="update_status(); return false;" method="post">
-	    <textarea id="update" name="update" rows="2" placeholder="Actualiza tu estado"></textarea>
-	    <button class="btn btn-inverse"><i class="icon-star icon-white"></i></button>
-	    <button class="btn btn-inverse"><i class="icon-map-marker icon-white"></i></button>
-	    <button class="btn btn-inverse"><i class="icon-upload icon-white"></i></button>
-	    <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok icon-white"></i></button>
-	</form>
-	<hr>
-	<form class="form-search" style="margin: 5px !important; margin-bottom: 0px;">
-	  <div class="input-append">
-		<input type="text" class="search-query" style="width: 170px; padding: 4px 0px !important;" placeholder="Buscar...">
-		<button type="submit" class="btn search-button"><i class="icon-search"></i></button>
-	  </div>
-	</form>
-	<hr>
 	<ul>
-		<li id="m-home" class="active"><a onclick="link('h');" class="contentLink"><i class="icon-home icon-white"></i> Home </a></li>
-		<li id="m-msg"><a onclick="link('m');" class="contentLink"><i class="icon-envelope icon-white"></i> Mensajes </a></li>
-		<li id="m-group"><a onclick="link('g');" class="contentLink"><i class="icon-globe icon-white"></i> Grupos</a></li>
-		<li id="m-routes"><a onclick="link('r');" class="contentLink"><i class="icon-road icon-white"></i> Rutas</a></li>
-		<li id="m-files"><a onclick="link('f');" class="contentLink"><i class="icon-folder-close icon-white"></i> Archivos</a></li>
-		<li id="m-set"><a onclick="link('s');" class="contentLink"><i class="icon-wrench icon-white"></i> Ajustes</a></li>
-		<li><a onclick="link('l');"><i class="icon-off icon-white"></i> Salir</a></li>
+		<li><a onclick="link('l');"><i class="icon-off icon-white  icon-large"></i></a></li>
+		<hr>
+		<li id="m-update" class="active"><a onclick="show_updater(); return false;" class="contentLink"><i class="icon-edit icon-large"></i></a></li>
+		<li id="m-home" class="active"><a onclick="link('h');" class="contentLink"><i class="icon-home icon-large"></i></a></li>
+		<li id="m-msg"><a onclick="link('m');" class="contentLink"><i class="icon-envelope icon-white  icon-large"></i></a></li>
+		<li id="m-group"><a onclick="link('g');" class="contentLink"><i class="icon-globe icon-white  icon-large"></i></a></li>
+		<li id="m-routes"><a onclick="link('r');" class="contentLink"><i class="icon-road icon-white  icon-large"></i></a></li>
+		<li id="m-files"><a onclick="link('f');" class="contentLink"><i class="icon-folder-close icon-white  icon-large"></i></a></li>
+		<li id="m-set"><a onclick="link('s');" class="contentLink"><i class="icon-wrench icon-white  icon-large"></i></a></li>
 	</ul>
 </nav>
+<header id="nav" class="navbar no-bot-margin">
+	<div class="navbar-inner">
+		<div class="container">
+			<div class="row-fluid" style="text-align: center;">
+					<img src="/Vidali/vdl-themes/Default/img/logo.png">
+			</div>
+		</div>
+  	</div><!-- /navbar-inner -->
+</header>
+<div id="map"></div>
 
-<div class="container">
-	<header id="nav" class="navbar">
-		<div class="navbar-inner">
-			<div class="container">
-				<div class="row-fluid">
-					<div class="span5">
-						<a class="btn btn-inverse showMenu"><i class="icon-th-list icon-white"></i> Menu</a>
-					</div>
-					<div class="span3" style=" margin-top: 5px; margin-bottom: 0px;">
-						<img src="/Vidali/vdl-themes/Default/img/logo.png">
-					</div>
+<div id='container' class="container-fluid">
+	<div class="row-fluid">
+		<div id="din" class="span9">
+				<ul id="home-tab" class="nav nav-tabs no-bot-margin">
+				</ul>
+				<div id="view" class="tab-content">
 				</div>
 			</div>
-	  	</div><!-- /navbar-inner -->
-	</header>
+		<aside class="span3">
+			<form class="form-search">
+	 		 	<div class="input-append">
+					<input type="text" class="search-query" placeholder="Buscar...">
+					<button type="submit" class="btn search-button"><i class="icon-search"></i></button>
+			  	</div>
+			</form>
+			<hr>
+			<ul id="notify-tab" class="nav nav-tabs">
+			  <li class="active">
+			    <a href="#Requests" data-toggle="tab">Solicitudes</a>
+			  </li>
+			  <li>
+			    <a href="#Replies" data-toggle="tab">Replys</a>
+			  </li>
+			  <li>
+			    <a href="#Events" data-toggle="tab">Eventos</a>
+			  </li>
+			</ul>
 
-	<div id='container' class="container-fluid">
-		<div class="row-fluid">
-			<div id="din" class="span9">
-					<ul id="home-tab" class="nav nav-tabs no-bot-margin">
-					</ul>
-					<div id="view" class="tab-content">
-					</div>
+			<div id="notify-side" class="tab-content">
+				<div id="Requests" class="inbox-tab tab-pane fade active in">
+					Solicitudes
 				</div>
-			<aside class="span3">
-				<ul id="notify-tab" class="nav nav-tabs">
-				  <li class="active">
-				    <a href="#Requests" data-toggle="tab">Solicitudes</a>
-				  </li>
-				  <li>
-				    <a href="#Replies" data-toggle="tab">Replys</a>
-				  </li>
-				  <li>
-				    <a href="#Events" data-toggle="tab">Eventos</a>
-				  </li>
-				</ul>
-
-				<div id="notify-side" class="tab-content">
-					<div id="Requests" class="inbox-tab tab-pane fade active in">
-						Solicitudes
-					</div>
-					<div id="Replies" class="inbox-tab tab-pane fade">
-						Respuestas
-					</div>
-					<div id="Events" class="inbox-tab tab-pane fade">
-						Eventos
-					</div>
+				<div id="Replies" class="inbox-tab tab-pane fade">
+					Respuestas
 				</div>
-			</aside>
-		</div>
+				<div id="Events" class="inbox-tab tab-pane fade">
+					Eventos
+				</div>
+			</div>
+		</aside>
 	</div>
-			
-	<footer class="footer container">
-			<p class="pull-right"><img src="vdl-themes/Default/img/html5.png"><img src="vdl-themes/Default/img/agpl.png"></p>
-			<p class="pull-left">Powered by Vidali.</p>
-	</footer>
 </div>
+
+<footer class="footer container">
+	<p class="pull-right"><img src="vdl-themes/Default/img/html5.png"><img src="vdl-themes/Default/img/agpl.png"></p>
+	<p class="pull-left">Powered by Vidali.</p>
+</footer>
+
+<form id="updater" class="hide form-inline" onSubmit="update_status(); return false;" method="post">
+    <textarea id="update_box" name="update" rows="2" placeholder="Actualiza tu estado"></textarea>
+    <button class="btn btn-inverse"><i class="icon-star icon-white"></i></button>
+    <button class="btn btn-inverse"><i class="icon-map-marker icon-white"></i></button>
+    <button class="btn btn-inverse"><i class="icon-upload icon-white"></i></button>
+    <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok icon-white"></i></button>
+</form>
 
 <div id="background">
 	<div id="loading">
-			<img src="img/logo-big.png" width="100%">
-			<img src="img/loading.gif">
+			<img src="vdl-themes/Default/img/logo-big.png" width="100%">
+			<img src="vdl-themes/Default/img/loading.gif">
 	</div>
 </div>
 
