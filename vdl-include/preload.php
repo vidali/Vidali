@@ -33,11 +33,11 @@ if(isset($_SESSION['loged'])){
 	define("NAME",$_SESSION["name"]);
 	define("MAIL",$_SESSION["mail"]);
 	define("LOGED",$_SESSION['loged']);
-	lw('config')->set( 'template' , 'vdl-themes/'.THEME.'/index.php');
+	lw('config')->set( 'template' , 'vdl-themes/'.THEME.'/index.html');
 }
 elseif(defined('PASS_C')){
 	$ACT->login(NICK_C,PASS_C,2);
-	lw('config')->set( 'template' , 'vdl-themes/'.THEME.'/index.php');
+	lw('config')->set( 'template' , 'vdl-themes/'.THEME.'/index.html');
 }
 else{
 	lw('config')->set( 'template' , 'vdl-themes/'.THEME.'/login.html');
