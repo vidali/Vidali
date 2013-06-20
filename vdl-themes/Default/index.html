@@ -26,18 +26,18 @@
 	<script type="text/javascript" src="vdl-themes/Default/js/less.js"></script>
 	<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 </head>
-<body>
+<body onload="init();">
 <nav id="side-menu">
 	<ul>
-		<li><a onclick="link('l');"><i class="icon-off icon-white  icon-large"></i></a></li>
+		<li><a onclick="link('l');" rel="tooltip" data-placement="right" title="Logout"><i class="icon-off icon-white  icon-large"></i></a></li>
 		<hr>
-		<li id="m-update" class="active"><a onclick="show_updater(); return false;" class="contentLink"><i class="icon-edit icon-large"></i></a></li>
-		<li id="m-home" class="active"><a onclick="link('h');" class="contentLink"><i class="icon-home icon-large"></i></a></li>
-		<li id="m-msg"><a onclick="link('m');" class="contentLink"><i class="icon-envelope icon-white  icon-large"></i></a></li>
-		<li id="m-group"><a onclick="link('g');" class="contentLink"><i class="icon-globe icon-white  icon-large"></i></a></li>
-		<li id="m-routes"><a onclick="link('r');" class="contentLink"><i class="icon-road icon-white  icon-large"></i></a></li>
-		<li id="m-files"><a onclick="link('f');" class="contentLink"><i class="icon-folder-close icon-white  icon-large"></i></a></li>
-		<li id="m-set"><a onclick="link('s');" class="contentLink"><i class="icon-wrench icon-white  icon-large"></i></a></li>
+		<li id="m-update" class="active"><a onclick="show_updater(); return false;" rel="tooltip" data-placement="right" title="Update Status" class="contentLink"><i class="icon-edit icon-large"></i></a></li>
+		<li id="m-home" class="active"><a onclick="link('h');" rel="tooltip" data-placement="right" title="Home Page" class="contentLink"><i class="icon-home icon-large"></i></a></li>
+		<li id="m-msg"><a onclick="link('m');" rel="tooltip" data-placement="right" title="Messages" class="contentLink"><i class="icon-envelope icon-white  icon-large"></i></a></li>
+		<li id="m-group"><a onclick="link('g');" rel="tooltip" data-placement="right" title="Groups" class="contentLink"><i class="icon-globe icon-white  icon-large"></i></a></li>
+		<li id="m-routes"><a onclick="link('r');" rel="tooltip" data-placement="right" title="Routes" class="contentLink"><i class="icon-road icon-white  icon-large"></i></a></li>
+		<li id="m-files"><a onclick="link('f');" rel="tooltip" data-placement="right" title="Files" class="contentLink"><i class="icon-folder-close icon-white  icon-large"></i></a></li>
+		<li id="m-set"><a onclick="link('s');" rel="tooltip" data-placement="right" title="Settings" class="contentLink"><i class="icon-wrench icon-white  icon-large"></i></a></li>
 	</ul>
 </nav>
 <header id="nav" class="navbar no-bot-margin">

@@ -47,6 +47,7 @@ body {
   height: 400px;
   margin:0 !important;
   margin-left: 38px !important;
+  z-index: -1;
 }
 
 #background {
@@ -106,11 +107,11 @@ body {
 
 #updater{
   width: 400px;
-  height: 80px;
+  height: auto;
   background: #555;
   margin-left: 38px;
   position: fixed;
-  padding: 10px;
+  padding: 5px;
   top: 0px;
   margin-top: 100px;
   z-index: 99999;
@@ -118,5 +119,13 @@ body {
 }
 
 #update_box{
-  width: calc(100% - 5px);
+  width: 390px;
+  padding: 5px;
+  margin: 0px;
+  border: 0px;
+  resize: none; 
+}
+
+#OpenLayers_Map_2_OpenLayers_ViewPort{
+  z-index: 0 !important;
 }

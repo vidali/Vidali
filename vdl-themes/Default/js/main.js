@@ -333,6 +333,7 @@ $(document).ready(function(){
 	else{
 		get_page(_GET[0]);
 	}
+	$("a").tooltip();
 	$('#background').fadeOut(300);
 	return false;
 });
@@ -350,19 +351,34 @@ var show_updater = function(){
 	}
 }
 
-/* 
-$("a.showMenu").click(function(){
-    if(menuStatus != true){
-        $("#side-menu").animate({
-            marginLeft: "0px",
-          }, 300, function(){menuStatus = true});
-    	return false;
-	} 
-	else{
-		$("#side-menu").animate({
-   			marginLeft: "-220px",
- 		}, 300, function(){menuStatus = false});
-     	return false;
-  	}
-});
-*/
+var observe;
+if (window.attachEvent) {
+    observe = function (element, event, handler) {
+        element.attachEvent('on'+event, handler);
+    };
+}
+else {
+    observe = function (element, event, handler) {
+        element.addEventListener(event, handler, false);
+    };
+}
+function init () {
+    var text = document.getElementById('update_box');
+    function resize () {
+        text.style.height = 'auto';
+        text.style.height = text.scrollHeight+'px';
+    }
+    /* 0-timeout to get the already changed text */
+    function delayedResize () {
+        window.setTimeout(resize, 0);
+    }
+    observe(text, 'change',  resize);
+    observe(text, 'cut',     delayedResize);
+    observe(text, 'paste',   delayedResize);
+    observe(text, 'drop',    delayedResize);
+    observe(text, 'keydown', delayedResize);
+
+    text.focus();
+    text.select();
+    resize();
+}
