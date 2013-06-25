@@ -1,0 +1,13 @@
+{
+  "name": "Vidali",
+  "description": "Red social libre",
+  "launch_path": "/",
+  "icons": {
+    "128": "vdl-themes/Default/img/128.png"
+  },
+  "developer": {
+    "name": "Cristopher David Caamana Gómez",
+    "url": "http://www.startdevs.com"
+  },
+  "default_locale": "en"
+}

@@ -29,3 +29,5 @@ RewriteRule (.*)/$ index.php?p1=$1 [NC]
 Order allow,deny
 Deny from all
 </Files>
+
+AddType application/x-web-app-manifest+json .webapp

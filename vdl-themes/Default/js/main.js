@@ -297,18 +297,32 @@ var update_status = function(){
 }
 
 function success(position) {
-	map = new OpenLayers.Map("map");
-    map.addLayer(new OpenLayers.Layer.OSM());
- 
-    var lonLat = new OpenLayers.LonLat(position.coords.longitude,position.coords.latitude)
-          .transform(
-            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-            map.getProjectionObject() // to Spherical Mercator Projection
-          );
- 
-    var zoom=16;
-    map.setCenter (lonLat, zoom);
    	console.log("You are here! (at least within a "+position.coords.accuracy+" meter radius)");
+    var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+    var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+    var position       = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude).transform( fromProjection, toProjection);
+ 
+    map = new OpenLayers.Map("map");
+    map.addLayer(new OpenLayers.Layer.OSM());
+    
+  	var hybrid = new OpenLayers.Layer.Google(
+    	"Google Hybrid",
+    	{type: google.maps.MapTypeId.HYBRID}
+  	);
+	map.addLayer(hybrid);
+
+ 	var transportmap = new  OpenLayers.Layer.OSM.TransportMap("OpenTransportMap"); 
+  	map.addLayer(transportmap);
+
+ 	var layCycleMap = new OpenLayers.Layer.OSM.CycleMap("CycleMap");
+ 	map.addLayer(layCycleMap);
+     
+
+    var markers = new OpenLayers.Layer.Markers( "Markers" );
+    map.addLayer(markers);
+    markers.addMarker(new OpenLayers.Marker(position));
+    map.addControl( new OpenLayers.Control.LayerSwitcher() );
+    map.setCenter(position, 16);
 }
 
 function error(msg) {
@@ -318,7 +332,6 @@ function error(msg) {
   
   // console.log(arguments);
 }
-
 
 $(document).ready(function(){
 	if (navigator.geolocation) {
