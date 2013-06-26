@@ -378,7 +378,7 @@ else {
 function init () {
     var text = document.getElementById('update_box');
     function resize () {
-        text.style.height = 'auto';
+        text.style.height = 'auto'; //aki para corregir fallo de tamaño update?
         text.style.height = text.scrollHeight+'px';
     }
     /* 0-timeout to get the already changed text */
