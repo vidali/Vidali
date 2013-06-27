@@ -45,9 +45,11 @@ body {
 }
 
 #map{
-  width: auto;
-  height: 500px; 
-  z-index: -1;
+  top: 42px;
+  width: 100%;
+  height: 50%; 
+  position: fixed;
+  z-index: 0;
 }
 
 #background {
@@ -60,14 +62,14 @@ body {
 	left: 0;
 	top: 0;
 	width: 100%;
-	z-index: 99999;
+	z-index: 999999;
 }
 
 #loading{
 	position:fixed;
 	width:268px;
-	left:40%;
-	top:40%;
+	left:25px;
+	top:25px;
 } 
 
 #loading img{
@@ -77,11 +79,6 @@ body {
 
 #container{
 	width: auto !important;
-  margin-left: 38px !important;
-}
-
-#din{
-
 }
 
 .ui-input-text{
@@ -106,7 +103,7 @@ body {
 }	
 
 #updater{
-  width: 400px;
+  width: 350px;
   height: auto;
   background: #555;
   margin-left: 38px;
@@ -119,11 +116,31 @@ body {
 }
 
 #update_box{
-  width: 390px;
+  width: 340px;
+  height: 30px !important;
   padding: 5px;
   margin: 0px;
   border: 0px;
   resize: none; 
+}
+
+.feedback{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+
+  background-image: linear-gradient(bottom, rgb(187,204,169) 0%, rgb(187,204,169) 100%) !important;
+  background-image: -o-linear-gradient(bottom, rgb(187,204,169) 0%, rgb(187,204,169) 100%) !important;
+  background-image: -moz-linear-gradient(bottom, rgb(187,204,169) 0%, rgb(187,204,169) 100%) !important;
+  background-image: -webkit-linear-gradient(bottom, rgb(187,204,169) 0%, rgb(187,204,169) 100%) !important;
+  background-image: -ms-linear-gradient(bottom, rgb(187,204,169) 0%, rgb(187,204,169) 100%) !important;
+  
+  padding: 10px;
+  
+  a:active, a:hover, a:visited{
+    color: #fff;
+  }
+  
 }
 
 #OpenLayers_Map_2_OpenLayers_ViewPort{
