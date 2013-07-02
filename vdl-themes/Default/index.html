@@ -22,19 +22,19 @@
 	<link rel="stylesheet" type="text/css" href="vdl-themes/Default/css/footer.less" />
 	<link rel="stylesheet/less" type="text/css" href="vdl-themes/Default/css/style.less" />
 	<script type="text/javascript" src="vdl-themes/Default/js/bootstrap.min.js" ></script>
-	<script type="text/javascript" src="vdl-themes/Default/js/main.js" ></script>
 	<script type="text/javascript" src="vdl-themes/Default/js/less.js"></script>
 	<script src="http://www.openlayers.org/api/OpenLayers.mobile.js"></script>
 	<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script src="http://www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
+	<script type="text/javascript" src="vdl-themes/Default/js/main.js" ></script>
 </head>
 <body onload="init();">
 <nav id="side-menu">
 	<ul>
 		<li><a onclick="link('l');" rel="tooltip" data-placement="right" title="Logout"><i class="icon-off icon-white  icon-large"></i></a></li>
 		<hr>
-		<li id="m-update" class="active"><a onclick="show_updater(); return false;" rel="tooltip" data-placement="right" title="Update Status" class="contentLink"><i class="icon-edit icon-large"></i></a></li>
+		<li id="m-update"><a onclick="show_updater(); return false;" rel="tooltip" data-placement="right" title="Update Status" class="contentLink"><i class="icon-edit icon-large"></i></a></li>
 		<li id="m-home" class="active"><a onclick="link('h');" rel="tooltip" data-placement="right" title="Home Page" class="contentLink"><i class="icon-home icon-large"></i></a></li>
 		<li id="m-msg"><a onclick="link('m');" rel="tooltip" data-placement="right" title="Messages" class="contentLink"><i class="icon-envelope icon-white  icon-large"></i></a></li>
 		<li id="m-group"><a onclick="link('g');" rel="tooltip" data-placement="right" title="Groups" class="contentLink"><i class="icon-globe icon-white  icon-large"></i></a></li>
@@ -51,47 +51,27 @@
 
 <div id="map"></div>
 
-<div id='container' class="container-fluid">
-	<div class="row-fluid">
-		<div id="din" class="span9">
-				<ul id="home-tab" class="nav nav-tabs no-bot-margin">
+<div id='container'>
+		<div id="din" class="span4">
+				<ul id="home-tab" class="nav nav-pills no-bot-margin">
 				</ul>
 				<div id="view" class="tab-content">
 				</div>
-			</div>
-		<aside class="span3">
-			<form class="form-search">
-	 		 	<div class="input-append">
-					<input type="text" class="search-query" placeholder="Buscar...">
-					<button type="submit" class="btn search-button"><i class="icon-search"></i></button>
-			  	</div>
-			</form>
-			<hr>
-			<ul id="notify-tab" class="nav nav-tabs">
-			  <li class="active">
-			    <a href="#Requests" data-toggle="tab">Solicitudes</a>
-			  </li>
-			  <li>
-			    <a href="#Replies" data-toggle="tab">Replys</a>
-			  </li>
-			  <li>
-			    <a href="#Events" data-toggle="tab">Eventos</a>
-			  </li>
-			</ul>
+		</div>
+</div>
 
-			<div id="notify-side" class="tab-content">
-				<div id="Requests" class="inbox-tab tab-pane fade active in">
-					Solicitudes
-				</div>
-				<div id="Replies" class="inbox-tab tab-pane fade">
-					Respuestas
-				</div>
-				<div id="Events" class="inbox-tab tab-pane fade">
-					Eventos
-				</div>
-			</div>
-		</aside>
-	</div>
+<aside class="span3">
+	<form class="form-search">
+	 	<div class="input-append">
+			<input type="text" class="search-query" placeholder="Buscar...">
+			<button type="submit" class="btn search-button"><i class="icon-search"></i></button>
+	  	</div>
+	</form>
+</aside>
+
+
+<div id="notify-side">
+		Notificaciones aqui
 </div>
 
 <footer class="footer container">

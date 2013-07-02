@@ -77,7 +77,7 @@ var doRegister = function(){
 	if(basedir.length == 0)
         dir = "/vdl-include/reg.php";
     else
-        dir = basedir+"/vdl-include/reg.php"; 
+        dir = basedir+"/vdl-include/reg.php";
 	
 	$("#background").fadeIn(500);
 	$.ajax({
@@ -90,11 +90,8 @@ var doRegister = function(){
 			remember: $('#allow_ads').prop('checked') ? 1 : 0
 		},
 		success: function(data){
-			if(data == "1" || data == "true"){
-				$("#background").fadeIn(500, function (){
-					window.location= basedir;
-					errMsg('Wellcome to Onvidali. Please log in.',"sucess");
-				});
+			if(data == "Done"){
+				errMsg('Wellcome to Onvidali. Please log in.',"sucess");
 			} else {
 				$("#background").fadeOut(500, function(){
 					errMsg('Register is unavailable at this moment, please try again later.',"error");

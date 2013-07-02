@@ -2,6 +2,7 @@
 var msgTimeout;
 var basedir;
 var _GET = window.location.href.replace(basedir+'/', '').split('/');
+var map;
 
 /*Bootstrap*/
 $('#home-tab a').click(function (e) {
@@ -22,9 +23,6 @@ $('#notify-tab a').click(function (e) {
 /*Menu link actions*/
 var link = function(value){
 	$("#din").hide();
-	//$("#side-menu").animate({
-   	//		marginLeft: "-220px",
- 	//	}, 300, function(){menuStatus = false});
 	if(value == "h"){
 		window.history.replaceState(" ", "Home", basedir+"/h/");
 		get_page('h');
@@ -68,9 +66,7 @@ var link = function(value){
 			type: "POST",
 			success: function(data){
 				if(data == "done"){
-					$("#background").fadeOut(300, function (){
-						window.location= basedir;
-					});
+					window.location= basedir;
 				}
 			}
 		});
@@ -103,6 +99,7 @@ var set_data = function(value){
 				data = JSON.parse(data);
 				console.log(data);
 		    	if(value == 'wall'){
+		    		
 					$("#view").append('<div id="updates" class="obj"></div>');
 				    for(var i=0;i<data.length;i++){
 						$("#updates").append('<article id="obj-'+i+'" class="upd"></article>');
@@ -195,12 +192,12 @@ var get_page = function (value){
 		if(value == 'h'){
 			$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'wall\');" data-toggle="tab">Resumen</a></li>');
 			$("#din ul").append('<li><a href="#" onClick="load_info(\'profile\');" data-toggle="tab">Perfil</a></li>');			
-			load_info('wall');
+			//load_info('wall');
 		}
 		if(value == 'u'){
 			$("#din ul").append('<li><a href="#" onClick="load_info(\'wall\');" data-toggle="tab">Resumen</a></li>');
 			$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'profile\');" data-toggle="tab">Perfil</a></li>');			
-			load_info('profile');
+			//load_info('profile');
 		}
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'global\');" data-toggle="tab">Global</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'informer\');" data-toggle="tab">Informer</a></li>');
@@ -215,7 +212,7 @@ var get_page = function (value){
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'drafts\');" data-toggle="tab">Borradores</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'trash\');" data-toggle="tab">Papelera</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'other\');" data-toggle="tab">Otros</a></li>');
-		load_info('inbox');
+		//load_info('inbox');
 	}
 	if (value == 'g'){
 		$('#side-menu ul li').removeClass('active');
@@ -226,7 +223,7 @@ var get_page = function (value){
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'top_groups\');" data-toggle="tab">Top Grupos</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'trends\');" data-toggle="tab">Tendencias</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'admin\');" data-toggle="tab">Administracion</a></li>');
-		load_info('all');
+		//load_info('all');
 	}
 	if (value == 'f'){
 		$('#side-menu ul li').removeClass('active');
@@ -236,7 +233,7 @@ var get_page = function (value){
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'audio\');" data-toggle="tab">Audio</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'video\');" data-toggle="tab">Video</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'image\');" data-toggle="tab">Imagenes</a></li>');
-		load_info('file');
+		//load_info('file');
 	}
 	if (value == 'r'){
 		$('#side-menu ul li').removeClass('active');
@@ -247,7 +244,7 @@ var get_page = function (value){
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'privacy\');" data-toggle="tab">Privacidad</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'addons\');"data-toggle="tab">Complementos</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'service\');" data-toggle="tab">Servicio</a></li>');
-		load_info('routes');
+		//load_info('routes');
 	}
 	if (value == 's'){
 		$('#side-menu ul li').removeClass('active');
@@ -258,13 +255,9 @@ var get_page = function (value){
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'privacy\');" data-toggle="tab">Privacidad</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'addons\');"data-toggle="tab">Complementos</a></li>');
 		//$("#din ul").append('<li><a href="#" onClick="load_info(\'service\');" data-toggle="tab">Servicio</a></li>');
-		load_info('set_profile');
+		//load_info('set_profile');
 	}
 	return false;
-}
-
-var refresh = function(){
-
 }
 
 var update_status = function(){
@@ -281,9 +274,6 @@ var update_status = function(){
 			console.log(data);
 			if(data == 'done'){
 				$('#container').prepend('<div class="alert alert-success fade in"><button type="button" class="close" data-dismiss="alert">×</button><strong>Holy guacamole!</strong> Estado Actualizado ;)</div>');
-				//$("#side-menu").animate({
-		   		//	marginLeft: "-220px",
-		 		//}, 300, function(){menuStatus = false});
  				get_page('h');
  				$('#update').val('');
  				$('#updater').fadeOut(100);	
@@ -297,12 +287,12 @@ var update_status = function(){
 }
 
 function success(position) {
+	map = new OpenLayers.Map("map");
    	console.log("You are here! (at least within a "+position.coords.accuracy+" meter radius)");
     var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
     var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
     var position       = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude).transform( fromProjection, toProjection);
  
-    map = new OpenLayers.Map("map");
     map.addLayer(new OpenLayers.Layer.OSM());
     
   	var hybrid = new OpenLayers.Layer.Google(
@@ -316,36 +306,38 @@ function success(position) {
 
  	var layCycleMap = new OpenLayers.Layer.OSM.CycleMap("CycleMap");
  	map.addLayer(layCycleMap);
-     
+ 	
+ 	 //var size = new OpenLayers.Size(21,25);
+ 	 //var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
+     //var icon = new OpenLayers.Icon('http://www.openlayers.org/dev/img/marker.png',size,offset);
+	var marker2 = new OpenLayers.Marker(position/*,icon.clone()*/);
+    marker2.events.register('mousedown', marker2, function(evt) { alert("test"); OpenLayers.Event.stop(evt); });
 
     var markers = new OpenLayers.Layer.Markers( "Markers" );
+            markers.addMarker(marker2); 
     map.addLayer(markers);
-    markers.addMarker(new OpenLayers.Marker(position));
+    //markers.addMarker(new OpenLayers.Marker(position));
     map.addControl( new OpenLayers.Control.LayerSwitcher() );
     map.setCenter(position, 16);
 }
 
 function error(msg) {
-  var s = document.querySelector('#status');
-  s.innerHTML = typeof msg == 'string' ? msg : "failed";
-  s.className = 'fail';
-  
-  // console.log(arguments);
+  	console.log(msg);
 }
 
-$(document).ready(function(){
-	if (navigator.geolocation) {
-  		navigator.geolocation.getCurrentPosition(success, error);
-	} else {
-  		error('not supported');
-	}
- 
+$(document).ready(function(){ 
 	if(_GET[0] == '' || _GET[0] == '#' || _GET[0] == 'h'){
 		get_page('h');
 	}
 	else{
 		get_page(_GET[0]);
 	}
+	if (navigator.geolocation) {
+  		navigator.geolocation.getCurrentPosition(success, error);
+	} else {
+  		console.log('Location not accesible');
+	}
+
 	$("a").tooltip();
 	$('#background').fadeOut(300);
 	return false;

@@ -14,43 +14,38 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar.  If not, see <http://www.gnu.org/licenses/>.*/
-
-	include ("vdl-core/core_main.class.php");
-	include ("vdl-core/core_user.class.php");
-	$core = new CORE_USER();
-
-	function popup($vMsg,$vDestination) {
-	echo("<html>\n");
-	echo("<head>\n");
-	echo("<title>System Message</title>\n");
-	echo("<meta http-equiv=\"Content-Type\" content=\"text/html;
-	charset=iso-8859-1\">\n");
-
-	echo("<script language=\"JavaScript\" type=\"text/JavaScript\">\n");
-	echo("alert('$vMsg');\n");
-	echo("window.location = ('$vDestination');\n");
-	echo("</script>\n");
-	echo("</head>\n");
-	echo("<body>\n");
-	echo("</body>\n");
-	echo("</html>\n");
-	exit;
-	}
-	
-	if($_POST["pass1"]==$_POST["pass2"])
-	{
-		include_once "vdl-core/core_security.class.php";
-		$SEC = new CORE_SECURITY();
-		$date = date($_POST["birthdate"]);
-		$nick = $SEC->clear_text_strict($_POST["nick"]);
-		$name = $SEC->clear_text_strict($_POST["name"]);
-		$location = $SEC->clear_text_strict($_POST["location"]);
-		$bio = $SEC->clear_text_strict($_POST["bio"]);
-		$core-> add_user($_POST["email"],$nick,$_POST["pass1"],$name,$date,$_POST["sex"],$location,$bio);
-		header("Location:../index.php?pg=home&wellcome=true");
-	}
-	else 
-	{
-		popup('El password no coincide, se le devuelve a la pagina anterior',$_SERVER['HTTP_REFERER']);
-	}
+ini_set('mssql.charset', 'UTF-8');
+include_once 'class/CORE_DB.php';
+include_once 'class/CORE_MAIN.php';
+include_once 'class/CORE_SECURITY.php';
+include_once 'class/CORE_ELEMENTS.php';
+include_once 'class/CORE_ACTIONS.php';
+include_once 'class/CORE_ADMIN.php';
+include_once 'class/CORE_OBJECTS.php';
+include_once 'class/CORE_PLUGINS.php';
+include_once 'class/GROUP.php';
+include_once 'class/USER.php';
+include_once 'class/PROFILE.php';
+include_once 'class/USER_ACTIVE.php';
+include_once 'class/GROUP_ACTORS.php';
+include_once 'class/USER_ACTORS.php';
+include_once 'class/UFILE.php';
+include_once 'class/EVENT.php';
+include_once 'class/PLACE.php';
+include_once 'class/UPDATE.php';
+include_once 'class/PRIVATE_TALK.php';
+include_once 'class/PRIVATE_MSG.php';
+$ACT = new CORE_ACTIONS();
+$SEC = new CORE_SECURITY();
+$SEC = new CORE_SECURITY();
+$MAIN = new CORE_MAIN();
+$MAIN->load();
+$nick = $SEC->clear_text_strict($_POST["r_nick"]);
+$date = getdate();
+$password = mysqli_real_escape_string($connection,sha1(md5(trim($_POST["r_pass"]))));
+if($core-> add_user($_POST["r_email"],$nick,$password,"Your name",$date,"male","Your location","Your description") == true)
+	echo "Done";
+else {
+	echo "Fail";
+}
 ?>
