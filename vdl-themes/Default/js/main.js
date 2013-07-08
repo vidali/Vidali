@@ -80,7 +80,7 @@ var link = function(value){
 	*We connect with server-side and request specific data to put it into view div.
 	*return: false
 	*/
-var set_data = function(value){
+var set_data = function(value){ //debe cambiar: aqui debe crearse todos los puntos para el mapa, donde incluímos las updates, etc etc
 	var result;
 	$.ajax({
 		url: basedir+'/vdl-include/query.php',
@@ -199,9 +199,6 @@ var get_page = function (value){
 			$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'profile\');" data-toggle="tab">Perfil</a></li>');			
 			//load_info('profile');
 		}
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'global\');" data-toggle="tab">Global</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'informer\');" data-toggle="tab">Informer</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'net\');" data-toggle="tab">Red</a></li>');
 	}
 	if (value == 'm'){
 		$('#side-menu ul li').removeClass('active');
@@ -209,9 +206,6 @@ var get_page = function (value){
 		$("#din ul").empty();
 		$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'inbox\');" data-toggle="tab">Recibidos</a></li>');
 		$("#din ul").append('<li><a href="#" onClick="load_info(\'sended\');" data-toggle="tab">Enviados</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'drafts\');" data-toggle="tab">Borradores</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'trash\');" data-toggle="tab">Papelera</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'other\');" data-toggle="tab">Otros</a></li>');
 		//load_info('inbox');
 	}
 	if (value == 'g'){
@@ -220,9 +214,6 @@ var get_page = function (value){
 		$("#din ul").empty();
 		$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'all\');" data-toggle="tab">Todo</a></li>');
 		$("#din ul").append('<li><a href="#" onClick="load_info(\'my_groups\');" data-toggle="tab">Mis grupos</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'top_groups\');" data-toggle="tab">Top Grupos</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'trends\');" data-toggle="tab">Tendencias</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'admin\');" data-toggle="tab">Administracion</a></li>');
 		//load_info('all');
 	}
 	if (value == 'f'){
@@ -230,9 +221,6 @@ var get_page = function (value){
 		$('#m-files').addClass('active');
 		$("#din ul").empty();
 		$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'file\');" data-toggle="tab">Archivos</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'audio\');" data-toggle="tab">Audio</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'video\');" data-toggle="tab">Video</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'image\');" data-toggle="tab">Imagenes</a></li>');
 		//load_info('file');
 	}
 	if (value == 'r'){
@@ -241,9 +229,6 @@ var get_page = function (value){
 		$("#din ul").empty();
 		$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'routes\');" data-toggle="tab">Rutas</a></li>');
 		$("#din ul").append('<li><a href="#" onClick="load_info(\'public\');" data-toggle="tab">Transporte Público</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'privacy\');" data-toggle="tab">Privacidad</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'addons\');"data-toggle="tab">Complementos</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'service\');" data-toggle="tab">Servicio</a></li>');
 		//load_info('routes');
 	}
 	if (value == 's'){
@@ -252,9 +237,6 @@ var get_page = function (value){
 		$("#din ul").empty();
 		$("#din ul").append('<li class="active"><a href="#" onClick="load_info(\'set_profile\');" data-toggle="tab">Perfil</a></li>');
 		$("#din ul").append('<li><a href="#" onClick="load_info(\'main\');" data-toggle="tab">General</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'privacy\');" data-toggle="tab">Privacidad</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'addons\');"data-toggle="tab">Complementos</a></li>');
-		//$("#din ul").append('<li><a href="#" onClick="load_info(\'service\');" data-toggle="tab">Servicio</a></li>');
 		//load_info('set_profile');
 	}
 	return false;
@@ -286,6 +268,22 @@ var update_status = function(){
 	});
 }
 
+function load_ref(refer){
+	//aqui debería cargar los datos
+	return '<article id="profile-info" class="obj"><img src="vdl-files/prof_def.jpg"><div>cristomc</div><div>Cristo</div><div>Hombre, 22 años.</div><div>Hola!</div></article>';
+}
+
+function draw_box(position,refer){
+	var data = load_ref(refer);
+	var popup = new OpenLayers.Popup("chicken",
+                   position,
+                   new OpenLayers.Size(200,270),
+                   data,
+                   true);
+
+	map.addPopup(popup);
+}
+
 function success(position) {
 	map = new OpenLayers.Map("map");
    	console.log("You are here! (at least within a "+position.coords.accuracy+" meter radius)");
@@ -311,7 +309,7 @@ function success(position) {
  	 //var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
      //var icon = new OpenLayers.Icon('http://www.openlayers.org/dev/img/marker.png',size,offset);
 	var marker2 = new OpenLayers.Marker(position/*,icon.clone()*/);
-    marker2.events.register('mousedown', marker2, function(evt) { alert("test"); OpenLayers.Event.stop(evt); });
+    marker2.events.register('mousedown', marker2, function(evt) { draw_box(position,"main_user"); OpenLayers.Event.stop(evt); });
 
     var markers = new OpenLayers.Layer.Markers( "Markers" );
             markers.addMarker(marker2); 
@@ -340,6 +338,7 @@ $(document).ready(function(){
 
 	$("a").tooltip();
 	$('#background').fadeOut(300);
+	
 	return false;
 });
 
