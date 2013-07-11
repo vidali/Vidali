@@ -320,7 +320,7 @@ function success(position) {
 }
 
 function error(msg) {
-  	console.log(msg);
+  	console.log("VDL_ERROR:"+msg);
 }
 
 $(document).ready(function(){ 
