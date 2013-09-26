@@ -16,5 +16,6 @@ if(isset($_COOKIE['pass_c'])){
 }
 
 //Cargamos el nucleo de leafwork
+require 'vendor/autoload.php';
 include_once 'leaf/run.php';
 ?>

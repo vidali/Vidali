@@ -8,17 +8,17 @@ var map;
 $('#home-tab a').click(function (e) {
   e.preventDefault();
   $(this).tab('show');
-})
+});
 
 $('#side-tab a').click(function (e) {
   e.preventDefault();
   $(this).tab('show');
-})
+});
 
 $('#notify-tab a').click(function (e) {
   e.preventDefault();
   $(this).tab('show');
-})
+});
 
 /*Menu link actions*/
 var link = function(value){
@@ -80,7 +80,8 @@ var link = function(value){
 	*We connect with server-side and request specific data to put it into view div.
 	*return: false
 	*/
-var set_data = function(value){ //debe cambiar: aqui debe crearse todos los puntos para el mapa, donde incluímos las updates, etc etc
+	//debe cambiar: aqui debe crearse todos los puntos para el mapa, donde incluímos las updates, etc etc
+var set_data = function(value){ 
 	var result;
 	$.ajax({
 		url: basedir+'/vdl-include/query.php',
@@ -168,7 +169,7 @@ var set_data = function(value){ //debe cambiar: aqui debe crearse todos los punt
 		}
 	});
 	return false;
-}
+};
 
 var load_info = function(category){
 	console.log("Loading new info for "+category);
@@ -177,7 +178,7 @@ var load_info = function(category){
 	set_data(category);
 	$("#container").fadeIn(100);
 	return false;
-}
+};
 
 /****
 	*get_page (value to load)
@@ -240,7 +241,7 @@ var get_page = function (value){
 		//load_info('set_profile');
 	}
 	return false;
-}
+};
 
 var update_status = function(){
 	var update_val = $('#update_box').val();
@@ -266,7 +267,7 @@ var update_status = function(){
 			}
 		}
 	});
-}
+};
 
 function load_ref(refer){
 	//aqui debería cargar los datos
@@ -353,7 +354,7 @@ var show_updater = function(){
 		$('#updater').fadeOut(100);	
 		updaterStatus = "disabled";	
 	}
-}
+};
 
 var observe;
 if (window.attachEvent) {
