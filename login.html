@@ -1,0 +1,61 @@
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li class="active">
+                <a href="https://github.com/vidali/Vidali">Get involved</a>
+            </li>
+            <li>
+                <a href="http://www.onvidali.com/blog">Blog</a>
+            </li>
+            <li>
+                <a href="https://github.com/vidali/Vidali/wiki">Wiki</a>
+            </li>
+            <li>
+                <a href="http://www.twitter.com/vidalisn">@Vidalisn</a>
+            </li>
+        </ul>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div style="text-align: center; color: #fff">
+                    <img class="image" src="img/vidali-icon.png" alt="placeholder image" height="200" width="200">
+                     <h2>Vidali</h2>
+                    <p>Vidali is an open-source social network. You can share and meet people with your sames hobbies.
+                    	Keep your data safe, you are the only owner of your personal life!</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6" style="color: #fff;">
+                 <h2>Login</h2>
+
+                <form class="form-horizontal" method="post" onSubmit="doLogin(); return false;" autocomplete="on">
+                    <div class="form-group">
+                        <label for="user" class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-10">
+                            <input id="user" name="user" type="email" class="form-control input-lg" placeholder="Email" autofocus="autofocus">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-lg-2 control-label">Password</label>
+                        <div class="col-lg-10">
+                            <input id="password" name="password" type="password" class="form-control input-lg" placeholder="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <div class="btn-group pull-left" data-toggle="buttons">
+                                <label class="btn btn-primary">
+                                    <input type="checkbox" id="remember" name="remember"> Remember me
+                                </label>
+                            </div>
+                            <a href="#" type="button" class="btn btn-warning pull-right"> Forgoten password?</a><br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button class="btn btn-success btn-lg btn-block" value="ok" type="submit">Login</button>
+                        </div>
+                    </div>
+                </form>
+                <a href="#" type="button" class="disabled btn btn-primary btn-lg btn-block">Register</a><br>
+            </div>
+        </div>
+    </div>
