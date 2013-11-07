@@ -26,7 +26,7 @@
             <div class="col-xs-12 col-md-6" style="color: #fff;">
                  <h2>Login</h2>
 
-                <form class="form-horizontal" method="post" onSubmit="doLogin(); return false;" autocomplete="on">
+                <form id="login-form" class="form-horizontal" method="post" autocomplete="on">
                     <div class="form-group">
                         <label for="user" class="col-lg-2 control-label">Email</label>
                         <div class="col-lg-10">
@@ -43,15 +43,15 @@
                         <div class="col-lg-offset-2 col-lg-10">
                             <div class="btn-group pull-left" data-toggle="buttons">
                                 <label class="btn btn-primary">
-                                    <input type="checkbox" id="remember" name="remember"> Remember me
+                                    <input type="checkbox" class="remember" name="remember"> Remember me
                                 </label>
                             </div>
-                            <a href="#" type="button" class="btn btn-warning pull-right"> Forgoten password?</a><br>
+                            <button href="#" type="button" class="forgot btn btn-warning pull-right"> Forgoten password?
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
-                            <button class="btn btn-success btn-lg btn-block" value="ok" type="submit">Login</button>
+                            <button href="#" type="button" class="login btn btn-success btn-lg btn-block">Login</button>
                         </div>
                     </div>
                 </form>
