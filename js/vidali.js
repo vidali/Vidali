@@ -1,19 +1,12 @@
-// Create a model for the services
-var vidaliModel = Backbone.Model.extend({
-    defaults:{
-        view: null,
-        map: null,
-    },
-});
-
 // The main view of the application
 var Vidali = Backbone.View.extend({
-    model: new vidaliModel(),
+    view: null,
+    map: null,
 	load_map: function(){
 		var latitude = parseFloat(localStorage.getItem('latitude'));
 		var longitude = parseFloat(localStorage.getItem('longitude'));
 		setTimeout( function (){
-			vdl.map = new ol.Map({
+			this.map = new ol.Map({
 		        target: 'map',
 		        layers: [
 				    new ol.layer.Tile({
@@ -32,7 +25,7 @@ var Vidali = Backbone.View.extend({
     // Base the view on an existing element
     el: $('#container'),
     render: function(){
-        this.model.get("view").render();
+        this.view.render();
     },
     initialize: function(){
     	//Detect compatibility browser
@@ -52,14 +45,20 @@ var Vidali = Backbone.View.extend({
 		});
     	//Check login status
 		if(!this.isLoged()){
-            var viewObj = new loginView();
-            this.model.set({"view" : viewObj});
+            this.view = new loginView();
         }
         else{
-            var viewObj = new mainView();
-            this.model.set({"view" : viewObj});
+            this.view = new mainView();
         }
+        this.listenTo(this.view.model,'sync',this.change);
         this.render();
+    },
+    change: function(){
+        console.log("entra");
+        if(sessionStorage.getItem("session_auth")){
+            this.view = new mainView();
+            this.render();
+        }
     },
 	saveposition : function(position){
 	  localStorage['latitude'] = position.coords.latitude;
@@ -73,9 +72,9 @@ var Vidali = Backbone.View.extend({
     },
 
     isLoged: function(){
-        if(localStorage.getItem('nick'))
-            sessionStorage.setItem('nick',localStorage.getItem('nick'));
-        return sessionStorage.getItem('nick')? 1 : 0;
+        if(localStorage.getItem('session_auth'))
+            sessionStorage.setItem('session_auth',localStorage.getItem('session_auth'));
+        return sessionStorage.getItem('session_auth')? 1 : 0;
     },
     drawPage: function(page){
         $('#container').empty();

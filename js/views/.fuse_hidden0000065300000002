@@ -31,13 +31,24 @@ var loginView = Backbone.View.extend({
             }),
             error: (function(model){
                 model.set({LoginFailed : true});//aki
-                model.errorMsg('Wrong user or password, please try again.',"warning");
+                this.errorMsg('Wrong user or password, please try again.',"warning");
                 $('#background').fadeOut(500);
             })
         });
     },
     recoverPassword: function(){
     	console.log("recover");
+    },
+    errorMsg: function(msg,type){
+        clearTimeout(msgTimeout);
+        $("#alert").empty();
+        $("#alert").append("<strong>Ops!</strong>");
+        $("#alert").fadeOut("fast",function(){
+            $("#alert").attr("class","alert " + (type ? "alert-"+type : "alert-message"));
+            $("#alert").append(" "+msg);
+            $("#alert").fadeIn("fast");
+            msgTimeout = setTimeout(function(){$('#alert').fadeOut();},4000);
+        });
     },
     render: function(){
         $('#container').empty();

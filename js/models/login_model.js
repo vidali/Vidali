@@ -1,25 +1,22 @@
+var msgTimeout;
 var loginModel = Backbone.Model.extend({
     defaults: {
-        Username: "",
+        Email: "",
         Password: "",
-        RememberMe: false,
+        Remember: false,
         LoginFailed: false,
         LoginAccepted: false
     },
-});
-
-var loginList = Backbone.Collection.extend({
-  url:"/Vidali.server/api.php/login/",
-
-  parse: function (response) {
-		return response.items;
-
-	},
-	initialize: function () {
-		this.bind("reset", function (model, options) {
-			console.log("Inside event");
-			console.log(model);
-			
-		});
-	}	
+	url:"/Vidali.server/api.php/login/",
+	errorMsg: function(msg,type){
+        clearTimeout(msgTimeout);
+        $("#alert").empty();
+        $("#alert").append("<strong>Ops!</strong>");
+        $("#alert").fadeOut("fast",function(){
+            $("#alert").attr("class","alert " + (type ? "alert-"+type : "alert-message"));
+            $("#alert").append(" "+msg);
+            $("#alert").fadeIn("fast");
+            msgTimeout = setTimeout(function(){$('#alert').fadeOut();},4000);
+        });
+    }
 });
