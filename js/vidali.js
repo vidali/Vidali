@@ -1,7 +1,6 @@
 // The main view of the application
 var Vidali = Backbone.View.extend({
     view: null,
-    map: null,
 	load_map: function(){
 		var latitude = parseFloat(localStorage.getItem('latitude'));
 		var longitude = parseFloat(localStorage.getItem('longitude'));
@@ -46,11 +45,11 @@ var Vidali = Backbone.View.extend({
     	//Check login status
 		if(!this.isLoged()){
             this.view = new loginView();
+            this.listenTo(this.view.model,'sync',this.change);
         }
         else{
             this.view = new mainView();
         }
-        this.listenTo(this.view.model,'sync',this.change);
         this.render();
     },
     change: function(){
@@ -76,21 +75,6 @@ var Vidali = Backbone.View.extend({
             sessionStorage.setItem('session_auth',localStorage.getItem('session_auth'));
         return sessionStorage.getItem('session_auth')? 1 : 0;
     },
-    drawPage: function(page){
-        $('#container').empty();
-        $('#container').load(page+'.html');
-        console.log('loaded '+page);
-    },
-    loadScreen: function(page){
-        console.log('loadingScreen '+page);
-        if(page == 'login')
-            this.drawPage(page);
-        else{
-            this.drawPage('main');
-            navigator.geolocation.getCurrentPosition(this.saveposition);
-            this.load_map();
-        }
-    }  
 });
 
 var vdl;

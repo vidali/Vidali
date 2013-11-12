@@ -1,11 +1,13 @@
-var tokenView = Backbone.View.extend({
+var mainView = Backbone.View.extend({
   initialize: function () {
-    _.bindAll(this, 'render');
-    this.collection = new tokenList();                   
-    this.model.fetch();
-    this.render();
+ 
   },
   render: function () {
-    console.log('render: '+ this.collection);
+  	console.log("lol");
+    $('#container').empty();
+        $.when($('#container').load('main.html'))
+               .done(function() {
+                $('#background').fadeOut(500);
+        });
   }
 });
