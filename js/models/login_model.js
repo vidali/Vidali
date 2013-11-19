@@ -7,7 +7,7 @@ var loginModel = Backbone.Model.extend({
         LoginFailed: false,
         LoginAccepted: false
     },
-	url:"/Vidali.server/api.php/login/",
+	url: baseurl+"/Vidali.server/api.php/login/",
 	errorMsg: function(msg,type){
         clearTimeout(msgTimeout);
         $("#alert").empty();

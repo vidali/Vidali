@@ -1,13 +1,18 @@
 var mainView = Backbone.View.extend({
-  initialize: function () {
- 
-  },
-  render: function () {
-  	console.log("lol");
-    $('#container').empty();
-        $.when($('#container').load('main.html'))
-               .done(function() {
-                $('#background').fadeOut(500);
-        });
-  }
+	model: new mainModel(),
+    el: $("#container"),
+    display: new mapView(),
+	saveposition : function(position){
+	  localStorage['latitude'] = position.coords.latitude;
+	  localStorage['longitude'] = position.coords.longitude;
+	},
+	initialize: function () {
+		navigator.geolocation.getCurrentPosition(this.saveposition);	
+	},
+	render: function () {
+		template = _.template(main);
+        this.$el.html(template);
+    	this.display.render();
+	    $('#background').fadeOut(500);
+  	}
 });

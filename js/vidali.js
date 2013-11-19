@@ -1,28 +1,7 @@
 // The main view of the application
 var Vidali = Backbone.View.extend({
     view: null,
-	load_map: function(){
-		var latitude = parseFloat(localStorage.getItem('latitude'));
-		var longitude = parseFloat(localStorage.getItem('longitude'));
-		setTimeout( function (){
-			this.map = new ol.Map({
-		        target: 'map',
-		        layers: [
-				    new ol.layer.Tile({
-		      		source: new ol.source.OSM()
-			    	})
-			  	],
-		        renderers: ol.RendererHints.createFromQueryData(),
-		        view: new ol.View2D({
-		            center: ol.proj.transform([longitude,latitude], 'EPSG:4326', 'EPSG:3857'),
-		            zoom: 16
-		        }),
-  			})
-		},
-		500);
-	},
     // Base the view on an existing element
-    el: $('#container'),
     render: function(){
         this.view.render();
     },
@@ -53,16 +32,11 @@ var Vidali = Backbone.View.extend({
         this.render();
     },
     change: function(){
-        console.log("entra");
         if(sessionStorage.getItem("session_auth")){
             this.view = new mainView();
             this.render();
         }
     },
-	saveposition : function(position){
-	  localStorage['latitude'] = position.coords.latitude;
-	  localStorage['longitude'] = position.coords.longitude;
-	},
     isCompatible : function(){
 		return localStorage && navigator.geolocation;
     },
@@ -81,7 +55,10 @@ var vdl;
 
 $(document).ready(function(){
     $("#background").fadeIn(500);
-	vdl = new Vidali();
-    $('#background').fadeOut(100);
+	$.when(vdl = new Vidali())
+           .done(function() {
+//                console.log(vdl);
+                $('#background').fadeOut(500);
+            });
     return false;
 });

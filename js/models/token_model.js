@@ -1,7 +1,6 @@
-var tokenModel = Backbone.Model.extend();
-
+var tokenModel = Backbone.Model.extend(); //FIX THIS
 var tokenList = Backbone.Collection.extend({
-  url:"/Vidali.server/api.php/tokens/",
+  url: baseurl+"/Vidali.server/api.php/tokens/",
 
   parse: function (response) {
 		return response.items;

@@ -1,13 +1,25 @@
 {
   "name": "Vidali",
-  "description": "Red social libre",
+  "description": "Social Network Open Source, Based on Geolocation",
   "launch_path": "/",
   "icons": {
-    "128": "vdl-themes/Default/img/128.png"
+    "256": "img/256.png",
+    "196": "img/196.png",
+    "128": "img/128.png",
+    "120": "img/120.png",
+    "90": "img/90.png",
+    "60": "img/60.png",
+    "32": "img/32.png",
+    "30": "img/30.png"
   },
   "developer": {
-    "name": "Cristopher David Caamana Gómez",
+    "name": "Cristopher Caamana Gómez",
     "url": "http://www.startdevs.com"
   },
-  "default_locale": "en"
+  "default_locale": "en",
+  "appcache_path": "/cache.manifest",
+  "fullscreen": "true",
+  "installs_allowed_from": [
+    "https://marketplace.firefox.com"
+  ]
 }

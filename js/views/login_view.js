@@ -2,15 +2,12 @@ var loginView = Backbone.View.extend({
     model: new loginModel(),
     el: $("#container"),
 	events:{
-        "click .forgot": "recoverPassword", //no avanza de aqui
+        "click .forgot": "recoverPassword",
         "click .remember" : "setRemember",
         "click .login": "doLogin"
     },
     doLogin: function(){
         $("#background").fadeIn(500);
-        event.preventDefault();
-    	console.log("login");
-
         this.model.set({Email: $('#email').val()});
         this.model.set({Password: $('#password').val()});
         if($('#remember').prop('checked'))
@@ -24,13 +21,12 @@ var loginView = Backbone.View.extend({
             type: 'POST',
             success: (function(model){
                 model.set({LoginAcepted : true});
-                console.log("VDL: "+ model.attributes.session_auth);
                 sessionStorage.setItem('session_auth',model.attributes.session_auth);
                 if(remember == true)
                     localStorage.setItem('session_auth',model.attributes.session_auth);
             }),
             error: (function(model){
-                model.set({LoginFailed : true});//aki
+                model.set({LoginFailed : true});
                 model.errorMsg('Wrong user or password, please try again.',"warning");
                 $('#background').fadeOut(500);
             })
@@ -38,13 +34,11 @@ var loginView = Backbone.View.extend({
     },
     recoverPassword: function(){
     	console.log("recover");
+
     },
     render: function(){
-        $('#container').empty();
-        $.when($('#container').load('login.html'))
-               .done(function() {
-                $('#background').fadeOut(500);
-        });
+        template = _.template(login);
+        this.$el.html(template);
     },
     initialize: function(){
     }
