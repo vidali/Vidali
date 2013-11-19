@@ -53,7 +53,7 @@ var login=' <div class="container"> \
                         </div> \
                     </div> \
                 </form> \
-                <a href="#" type="button" class="disabled btn btn-primary btn-lg btn-block">Register</a><br> \
+                <a href="#" type="button" class="disabled btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModalRegister">Register</a><br> \
             </div> \
         </div> \
     </div> \
@@ -80,7 +80,7 @@ var login=' <div class="container"> \
           </div> \
         </div><!-- /.modal-content --> \
       </div><!-- /.modal-dialog --> \
-    </div><!-- /.modal -->
+    </div><!-- /.modal --> \
     <div class="modal fade" id="myModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> \
       <div class="modal-dialog"> \
         <div class="modal-content"> \
@@ -102,11 +102,33 @@ var login=' <div class="container"> \
                   <input type="email" class="form-control" id="inputEmail3" placeholder="Email"> \
                 </div> \
               </div> \
+              <div class="form-group"> \
+                <label for="inputEmail3" class="col-sm-2 control-label">Password</label> \
+                <div class="col-sm-10"> \
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Password"> \
+                </div> \
+              </div> \
+              <div class="form-group"> \
+                <label for="inputEmail3" class="col-sm-2 control-label">Repeat Password</label> \
+                <div class="col-sm-10"> \
+                  <input type="email2" class="form-control" id="inputEmail3" placeholder="Repeat Password"> \
+                </div> \
+              </div> \
+              <div class="form-group"> \
+                <div class="col-sm-10"> \
+                    <input type="checkbox" id="tos" name="tos"> \
+                    I agree <a href="#myModal" role="button" class="btn" data-toggle="modal">Vidali\'s TOS</a><br> \
+                </div> \
+                <div class="col-sm-10"> \
+                    <input type="checkbox" id="allow_ads" name="allow_ads"> \
+                    I accept ads on my wall and sending stadistic data of my usage. \
+                </div> \
+              </div> \
             </form> \
           </div> \
           <div class="modal-footer"> \
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> \
-            <button type="button" class="forgot btn btn-primary">Recover</button> \
+            <button type="button" class="register btn btn-primary">Recover</button> \
           </div> \
         </div><!-- /.modal-content --> \
       </div><!-- /.modal-dialog --> \

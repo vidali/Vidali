@@ -4,7 +4,8 @@ var loginView = Backbone.View.extend({
 	events:{
         "click .forgot": "recoverPassword",
         "click .remember" : "setRemember",
-        "click .login": "doLogin"
+        "click .login": "doLogin",
+        "click .register": "doRegister"
     },
     doLogin: function(){
         $("#background").fadeIn(500);
@@ -31,6 +32,9 @@ var loginView = Backbone.View.extend({
                 $('#background').fadeOut(500);
             })
         });
+    },
+    doRegister:function(){
+        console.log("register");
     },
     recoverPassword: function(){
     	console.log("recover");
