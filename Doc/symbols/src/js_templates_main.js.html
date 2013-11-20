@@ -1,0 +1,88 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">main</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'&lt;header class="navbar navbar-inverse navbar-fixed-top" role="navigation"> \
+<span class='line'>  2</span> 	&lt;div style="float: left;"> \
+<span class='line'>  3</span> 		&lt;img src="img/v-mini.png"> \
+<span class='line'>  4</span> 	&lt;/div> \
+<span class='line'>  5</span> 	&lt;ul class="nav nav-pills"> \
+<span class='line'>  6</span> 		&lt;li id="m-update"> \
+<span class='line'>  7</span> 			&lt;a onclick="show_updater(); return false;" rel="tooltip" data-placement="bottom" title="Update Status" class="contentLink"> \
+<span class='line'>  8</span> 				&lt;span class="glyphicon glyphicon-edit">&lt;/span> \
+<span class='line'>  9</span> 			&lt;/a> \
+<span class='line'> 10</span> 		&lt;/li> \
+<span class='line'> 11</span> 		&lt;li id="m-msg"> \
+<span class='line'> 12</span> 			&lt;a onclick="link(\'m\');" rel="tooltip" data-placement="bottom" title="Messages" class="contentLink"> \
+<span class='line'> 13</span> 				&lt;span class="glyphicon glyphicon-envelope">&lt;/span> \
+<span class='line'> 14</span> 			&lt;/a> \
+<span class='line'> 15</span> 		&lt;/li> \
+<span class='line'> 16</span> 		&lt;li id="m-set" class="dropdown pull-right"> \
+<span class='line'> 17</span> 			&lt;a id="drop" href="#" rel="tooltip" data-toggle="dropdown" data-placement="bottom" title="Settings" class="contentLink"> \
+<span class='line'> 18</span> 				&lt;span class="glyphicon glyphicon-plus">&lt;/span> \
+<span class='line'> 19</span> 				&lt;b class="caret">&lt;/b> \
+<span class='line'> 20</span> 			&lt;/a> \
+<span class='line'> 21</span> 			&lt;ul id="menu" class="dropdown-menu" role="menu" aria-labelledby="drop"> \
+<span class='line'> 22</span> 				&lt;li> \
+<span class='line'> 23</span> 					&lt;a href="#" onclick="link(\'l\');" rel="tooltip" data-placement="bottom" title="Mode"> \
+<span class='line'> 24</span> 						&lt;span class="glyphicon glyphicon-th">&lt;/span> \
+<span class='line'> 25</span> 						Clasic Mode \
+<span class='line'> 26</span> 					&lt;/a> \
+<span class='line'> 27</span> 				&lt;/li> \
+<span class='line'> 28</span> 				&lt;li> \
+<span class='line'> 29</span> 					&lt;a href="#" onclick="link(\'sec\');" rel="tooltip" data-placement="bottom" title="Secure Mode"> \
+<span class='line'> 30</span> 						&lt;span class="glyphicon glyphicon-eye-close">&lt;/span> \
+<span class='line'> 31</span> 						Invisible Mode \
+<span class='line'> 32</span> 					&lt;/a> \
+<span class='line'> 33</span> 				&lt;/li> \
+<span class='line'> 34</span> 				&lt;li id="m-set"> \
+<span class='line'> 35</span> 					&lt;a href="#" onclick="link(\'s\');" rel="tooltip" data-placement="bottom" title="Settings" class="contentLink"> \
+<span class='line'> 36</span> 						&lt;span class="glyphicon glyphicon-wrench">&lt;/span> \
+<span class='line'> 37</span> 						Settings \
+<span class='line'> 38</span> 					&lt;/a> \
+<span class='line'> 39</span> 				&lt;/li> \
+<span class='line'> 40</span> 				&lt;li> \
+<span class='line'> 41</span> 					&lt;a href="#" onclick="vdl.doLogout();" rel="tooltip" data-placement="bottom" title="Logout"> \
+<span class='line'> 42</span> 						&lt;span class="glyphicon glyphicon-off">&lt;/span> \
+<span class='line'> 43</span> 						Logout \
+<span class='line'> 44</span> 					&lt;/a> \
+<span class='line'> 45</span> 				&lt;/li> \
+<span class='line'> 46</span> 			&lt;/ul> \
+<span class='line'> 47</span> 		&lt;/li> \
+<span class='line'> 48</span> 	&lt;/ul> \
+<span class='line'> 49</span> &lt;/header> \
+<span class='line'> 50</span> &lt;ul id="submenu" class="navbar-inner2">&lt;/ul> \
+<span class='line'> 51</span> &lt;div id="position">&lt;span class="glyphicon glyphicon-map-marker">&lt;/span>&lt;/div> \
+<span class='line'> 52</span> &lt;div id="map">&lt;/div> \
+<span class='line'> 53</span> &lt;div id="container2">&lt;/div> \
+<span class='line'> 54</span> &lt;nav id="apps" class="navbar navbar-inverse navbar-default navbar-fixed-bottom" role="navigation"> \
+<span class='line'> 55</span> 	&lt;ul class="nav nav-pills"> \
+<span class='line'> 56</span> 		&lt;li id="m-home"> \
+<span class='line'> 57</span> 			&lt;a id="" onclick="vdl.loadScreen(\'home\');" data-toggle="tooltip" data-placement="top" title="Home Page"> \
+<span class='line'> 58</span> 				&lt;span class="glyphicon glyphicon-home">&lt;/span> \
+<span class='line'> 59</span> 			&lt;/a> \
+<span class='line'> 60</span> 		&lt;/li> \
+<span class='line'> 61</span> 		&lt;li id="m-group"> \
+<span class='line'> 62</span> 			&lt;a onclick="vdl.loadScreen(\'groups\');" data-toggle="tooltip" data-placement="top" title="Groups"> \
+<span class='line'> 63</span> 				&lt;span class="glyphicon glyphicon-globe">&lt;/span> \
+<span class='line'> 64</span> 			&lt;/a> \
+<span class='line'> 65</span> 		&lt;/li> \
+<span class='line'> 66</span> 		&lt;li id="m-routes"> \
+<span class='line'> 67</span> 			&lt;a onclick="vdl.loadScreen(\'routes\');" data-toggle="tooltip" data-placement="top" title="Routes"> \
+<span class='line'> 68</span> 				&lt;span class="glyphicon glyphicon-road">&lt;/span> \
+<span class='line'> 69</span> 			&lt;/a> \
+<span class='line'> 70</span> 		&lt;/li> \
+<span class='line'> 71</span> 		&lt;li id="m-files"> \
+<span class='line'> 72</span> 			&lt;a onclick="vdl.loadScreen(\'files\');" data-toggle="tooltip" data-placement="top" title="Files"> \
+<span class='line'> 73</span> 				&lt;span class="glyphicon glyphicon-folder-close">&lt;/span> \
+<span class='line'> 74</span> 			&lt;/a> \
+<span class='line'> 75</span> 		&lt;/li> \
+<span class='line'> 76</span> 	&lt;/ul> \
+<span class='line'> 77</span> &lt;/nav> \
+<span class='line'> 78</span> &lt;footer class="footer"> \
+<span class='line'> 79</span> 	&lt;p class="pull-right">&lt;img src="img/html5.png">&lt;img src="img/agpl.png">&lt;/p> \
+<span class='line'> 80</span> 	&lt;p class="pull-left">Powered by Vidali.&lt;/p> \
+<span class='line'> 81</span> &lt;/footer>'</span><span class="PUNC">;</span></pre></body></html>

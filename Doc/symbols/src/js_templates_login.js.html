@@ -1,0 +1,142 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">login</span><span class="PUNC">=</span><span class="STRN">' &lt;div class="container"> \
+<span class='line'>  2</span>         &lt;ul class="nav nav-pills"> \
+<span class='line'>  3</span>             &lt;li class="active"> \
+<span class='line'>  4</span>                 &lt;a href="https://github.com/vidali/Vidali">Get involved&lt;/a> \
+<span class='line'>  5</span>             &lt;/li> \
+<span class='line'>  6</span>             &lt;li> \
+<span class='line'>  7</span>                 &lt;a href="http://www.onvidali.com/blog">Blog&lt;/a> \
+<span class='line'>  8</span>             &lt;/li> \
+<span class='line'>  9</span>             &lt;li> \
+<span class='line'> 10</span>                 &lt;a href="https://github.com/vidali/Vidali/wiki">Wiki&lt;/a> \
+<span class='line'> 11</span>             &lt;/li> \
+<span class='line'> 12</span>             &lt;li> \
+<span class='line'> 13</span>                 &lt;a href="http://www.twitter.com/vidalisn">@Vidalisn&lt;/a> \
+<span class='line'> 14</span>             &lt;/li> \
+<span class='line'> 15</span>         &lt;/ul> \
+<span class='line'> 16</span>         &lt;div class="row"> \
+<span class='line'> 17</span>             &lt;div class="col-xs-12 col-md-6"> \
+<span class='line'> 18</span>                 &lt;div style="text-align: center; color: #fff"> \
+<span class='line'> 19</span>                     &lt;img class="image" src="img/vidali-icon.png" alt="placeholder image" height="200" width="200"> \
+<span class='line'> 20</span>                      &lt;h2>Vidali&lt;/h2> \
+<span class='line'> 21</span>                     &lt;p>Vidali is an open-source social network. You can share and meet people with your sames hobbies. \
+<span class='line'> 22</span>                     	Keep your data safe, you are the only owner of your personal life!&lt;/p> \
+<span class='line'> 23</span>                 &lt;/div> \
+<span class='line'> 24</span>             &lt;/div> \
+<span class='line'> 25</span>             &lt;div class="col-xs-12 col-md-6" style="color: #fff;"> \
+<span class='line'> 26</span>                 &lt;h2>Login&lt;/h2> \
+<span class='line'> 27</span>                 &lt;form id="login-form" class="form-horizontal" method="post" autocomplete="on"> \
+<span class='line'> 28</span>                     &lt;div class="form-group"> \
+<span class='line'> 29</span>                         &lt;label for="email" class="col-lg-2 control-label">Email&lt;/label> \
+<span class='line'> 30</span>                         &lt;div class="col-lg-10"> \
+<span class='line'> 31</span>                             &lt;input id="email" name="email" type="email" class="form-control input-lg" placeholder="Email" autofocus="autofocus" required> \
+<span class='line'> 32</span>                         &lt;/div> \
+<span class='line'> 33</span>                     &lt;/div> \
+<span class='line'> 34</span>                     &lt;div class="form-group"> \
+<span class='line'> 35</span>                         &lt;label for="password" class="col-lg-2 control-label">Password&lt;/label> \
+<span class='line'> 36</span>                         &lt;div class="col-lg-10"> \
+<span class='line'> 37</span>                             &lt;input id="password" name="password" type="password" class="form-control input-lg" placeholder="password" required> \
+<span class='line'> 38</span>                         &lt;/div> \
+<span class='line'> 39</span>                     &lt;/div> \
+<span class='line'> 40</span>                     &lt;div class="form-group"> \
+<span class='line'> 41</span>                         &lt;div class="col-lg-offset-2 col-lg-10"> \
+<span class='line'> 42</span>                             &lt;div class="btn-group pull-left" data-toggle="buttons"> \
+<span class='line'> 43</span>                                 &lt;label class="btn btn-primary"> \
+<span class='line'> 44</span>                                     &lt;input type="checkbox" id="remember" name="remember"> Remember me \
+<span class='line'> 45</span>                                 &lt;/label> \
+<span class='line'> 46</span>                             &lt;/div> \
+<span class='line'> 47</span>                             &lt;button href="#" type="button" class="btn btn-warning pull-right" data-toggle="modal" data-target="#myModal"> Forgoten password? \
+<span class='line'> 48</span>                         &lt;/div> \
+<span class='line'> 49</span>                     &lt;/div> \
+<span class='line'> 50</span>                     &lt;div class="form-group"> \
+<span class='line'> 51</span>                         &lt;div class="col-lg-offset-2 col-lg-10"> \
+<span class='line'> 52</span>                             &lt;button href="#" type="button" class="login btn btn-success btn-lg btn-block">Login&lt;/button> \
+<span class='line'> 53</span>                         &lt;/div> \
+<span class='line'> 54</span>                     &lt;/div> \
+<span class='line'> 55</span>                 &lt;/form> \
+<span class='line'> 56</span>                 &lt;a href="#" type="button" class="disabled btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModalRegister">Register&lt;/a>&lt;br> \
+<span class='line'> 57</span>             &lt;/div> \
+<span class='line'> 58</span>         &lt;/div> \
+<span class='line'> 59</span>     &lt;/div> \
+<span class='line'> 60</span>     &lt;div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> \
+<span class='line'> 61</span>       &lt;div class="modal-dialog"> \
+<span class='line'> 62</span>         &lt;div class="modal-content"> \
+<span class='line'> 63</span>           &lt;div class="modal-header"> \
+<span class='line'> 64</span>             &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;&lt;/button> \
+<span class='line'> 65</span>             &lt;h4 class="modal-title" id="myModalLabel">Recover Password&lt;/h4> \
+<span class='line'> 66</span>           &lt;/div> \
+<span class='line'> 67</span>           &lt;div class="modal-body"> \
+<span class='line'> 68</span>             &lt;form class="form-horizontal" role="form"> \
+<span class='line'> 69</span>               &lt;div class="form-group"> \
+<span class='line'> 70</span>                 &lt;label for="inputEmail3" class="col-sm-2 control-label">Put your email&lt;/label> \
+<span class='line'> 71</span>                 &lt;div class="col-sm-10"> \
+<span class='line'> 72</span>                   &lt;input type="email" class="form-control" id="inputEmail3" placeholder="Email"> \
+<span class='line'> 73</span>                 &lt;/div> \
+<span class='line'> 74</span>               &lt;/div> \
+<span class='line'> 75</span>             &lt;/form> \
+<span class='line'> 76</span>           &lt;/div> \
+<span class='line'> 77</span>           &lt;div class="modal-footer"> \
+<span class='line'> 78</span>             &lt;button type="button" class="btn btn-default" data-dismiss="modal">Cancel&lt;/button> \
+<span class='line'> 79</span>             &lt;button type="button" class="forgot btn btn-primary">Recover&lt;/button> \
+<span class='line'> 80</span>           &lt;/div> \
+<span class='line'> 81</span>         &lt;/div>&lt;!-- /.modal-content --> \
+<span class='line'> 82</span>       &lt;/div>&lt;!-- /.modal-dialog --> \
+<span class='line'> 83</span>     &lt;/div>&lt;!-- /.modal --> \
+<span class='line'> 84</span>     &lt;div class="modal fade" id="myModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> \
+<span class='line'> 85</span>       &lt;div class="modal-dialog"> \
+<span class='line'> 86</span>         &lt;div class="modal-content"> \
+<span class='line'> 87</span>           &lt;div class="modal-header"> \
+<span class='line'> 88</span>             &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;&lt;/button> \
+<span class='line'> 89</span>             &lt;h4 class="modal-title" id="myModalLabel">Register&lt;/h4> \
+<span class='line'> 90</span>           &lt;/div> \
+<span class='line'> 91</span>           &lt;div class="modal-body"> \
+<span class='line'> 92</span>             &lt;form class="form-horizontal" role="form"> \
+<span class='line'> 93</span>               &lt;div class="form-group"> \
+<span class='line'> 94</span>                 &lt;label for="inputEmail3" class="col-sm-2 control-label">Name&lt;/label> \
+<span class='line'> 95</span>                 &lt;div class="col-sm-10"> \
+<span class='line'> 96</span>                   &lt;input type="email" class="form-control" id="inputEmail3" placeholder="Name"> \
+<span class='line'> 97</span>                 &lt;/div> \
+<span class='line'> 98</span>               &lt;/div> \
+<span class='line'> 99</span>               &lt;div class="form-group"> \
+<span class='line'>100</span>                 &lt;label for="inputEmail3" class="col-sm-2 control-label">Email&lt;/label> \
+<span class='line'>101</span>                 &lt;div class="col-sm-10"> \
+<span class='line'>102</span>                   &lt;input type="email" class="form-control" id="inputEmail3" placeholder="Email"> \
+<span class='line'>103</span>                 &lt;/div> \
+<span class='line'>104</span>               &lt;/div> \
+<span class='line'>105</span>               &lt;div class="form-group"> \
+<span class='line'>106</span>                 &lt;label for="inputEmail3" class="col-sm-2 control-label">Password&lt;/label> \
+<span class='line'>107</span>                 &lt;div class="col-sm-10"> \
+<span class='line'>108</span>                   &lt;input type="email" class="form-control" id="inputEmail3" placeholder="Password"> \
+<span class='line'>109</span>                 &lt;/div> \
+<span class='line'>110</span>               &lt;/div> \
+<span class='line'>111</span>               &lt;div class="form-group"> \
+<span class='line'>112</span>                 &lt;label for="inputEmail3" class="col-sm-2 control-label">Repeat Password&lt;/label> \
+<span class='line'>113</span>                 &lt;div class="col-sm-10"> \
+<span class='line'>114</span>                   &lt;input type="email2" class="form-control" id="inputEmail3" placeholder="Repeat Password"> \
+<span class='line'>115</span>                 &lt;/div> \
+<span class='line'>116</span>               &lt;/div> \
+<span class='line'>117</span>               &lt;div class="form-group"> \
+<span class='line'>118</span>                 &lt;div class="col-sm-10"> \
+<span class='line'>119</span>                     &lt;input type="checkbox" id="tos" name="tos"> \
+<span class='line'>120</span>                     I agree &lt;a href="#myModal" role="button" class="btn" data-toggle="modal">Vidali\'s TOS&lt;/a>&lt;br> \
+<span class='line'>121</span>                 &lt;/div> \
+<span class='line'>122</span>                 &lt;div class="col-sm-10"> \
+<span class='line'>123</span>                     &lt;input type="checkbox" id="allow_ads" name="allow_ads"> \
+<span class='line'>124</span>                     I accept ads on my wall and sending stadistic data of my usage. \
+<span class='line'>125</span>                 &lt;/div> \
+<span class='line'>126</span>               &lt;/div> \
+<span class='line'>127</span>             &lt;/form> \
+<span class='line'>128</span>           &lt;/div> \
+<span class='line'>129</span>           &lt;div class="modal-footer"> \
+<span class='line'>130</span>             &lt;button type="button" class="btn btn-default" data-dismiss="modal">Cancel&lt;/button> \
+<span class='line'>131</span>             &lt;button type="button" class="register btn btn-primary">Recover&lt;/button> \
+<span class='line'>132</span>           &lt;/div> \
+<span class='line'>133</span>         &lt;/div>&lt;!-- /.modal-content --> \
+<span class='line'>134</span>       &lt;/div>&lt;!-- /.modal-dialog --> \
+<span class='line'>135</span>     &lt;/div>&lt;!-- /.modal -->'</span><span class="PUNC">;</span></pre></body></html>
