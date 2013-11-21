@@ -28,6 +28,16 @@ var Vidali = Backbone.View.extend({
     	    alert('Navegador no soportado');
     	    document.location.href='http://www.firefox.com';
     	}
+
+    	//Check API Token status
+    	var user_token = new tokenModel({id: 'vidaliapp'});
+    	var tokens = new tokenList();
+    	tokens.add(user_token);
+    	user_token.fetch({                     // se genera GET /usuarios/1
+		    success:function(){
+		    	localStorage.setItem('vdl_utoken',user_token.attributes.vdl_utoken);
+			}		
+		});
     	//Check login status
 		if(!this.isLoged()){
             this.view = new loginView();
