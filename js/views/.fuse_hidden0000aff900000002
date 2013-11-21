@@ -64,15 +64,6 @@ var loginView = Backbone.View.extend({
             },
             type: 'POST',
             success: (function(model){
-                //Check API Token status
-                var user_token = new tokenModel({id: 'vidaliapp'});
-                var tokens = new tokenList();
-                tokens.add(user_token);
-                user_token.fetch({                     // se genera GET /usuarios/1
-                    success:function(){
-                        localStorage.setItem('vdl_utoken',user_token.attributes.vdl_utoken);
-                    }       
-                });
                 model.set({LoginAcepted : true});
                 sessionStorage.setItem('session_auth',model.attributes.session_auth);
                 if(remember == true)
