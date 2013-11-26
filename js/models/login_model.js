@@ -3,9 +3,7 @@ var loginModel = Backbone.Model.extend({
     defaults: {
         Email: "",
         Password: "",
-        Remember: false,
-        LoginFailed: false,
-        LoginAccepted: false
+        Remember: false
     },
 	url: baseurl+"/Vidali.server/api.php/login/",
 	errorMsg: function(msg,type){
