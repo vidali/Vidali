@@ -59,11 +59,20 @@
 <script>
 	//seting base url conection
 	var baseurl = 'http://127.0.0.1';
+	var user_ip;
+
+	var save_ip = function(ip){
+		user_ip = ip;
+	}
+	$.get('http://jsonip.com',function (res) {
+        save_ip(res.ip);
+    });
 </script>
 
 <script type="text/javascript" src="js/templates/login.js" ></script>
 <script type="text/javascript" src="js/templates/main.js" ></script>
 
+<script type="text/javascript" src="js/models/user_model.js" ></script>
 <script type="text/javascript" src="js/models/login_model.js" ></script>
 <script type="text/javascript" src="js/models/token_model.js" ></script>
 <script type="text/javascript" src="js/models/map_model.js" ></script>

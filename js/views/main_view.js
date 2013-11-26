@@ -48,7 +48,10 @@ var mainView = Backbone.View.extend({
     * @desc nothing at the moment...
     */
 	initialize: function () {
-		navigator.geolocation.getCurrentPosition(this.saveposition);	
+		navigator.geolocation.getCurrentPosition(this.saveposition);
+        var user_act = new userModel(jQuery.parseJSON(localStorage.getItem('user'))); 
+        console.log(user_act);
+        this.model.set('user_active',user_act);
 	},
 	/**
     * @public

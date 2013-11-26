@@ -60,23 +60,20 @@ var loginView = Backbone.View.extend({
         this.model.fetch({
             data: {
                 email: this.model.get("Email"),
-                password: this.model.get("Password")
+                password: this.model.get("Password"),
+                ip: user_ip
             },
             type: 'POST',
             success: (function(model){
-                //Check API Token status
-                var user_token = new tokenModel({id: 'vidaliapp'});
-                var tokens = new tokenList();
-                tokens.add(user_token);
-                user_token.fetch({                     // se genera GET /usuarios/1
-                    success:function(){
-                        localStorage.setItem('vdl_utoken',user_token.attributes.vdl_utoken);
-                    }       
-                });
-                model.set({LoginAcepted : true});
-                sessionStorage.setItem('session_auth',model.attributes.session_auth);
+                model.unset("Password");
+                model.unset("Remember");
+                model.unset("token");
+                localStorage.setItem('vdl_utoken',model.attributes.token);
+                console.log(model.attributes);
+                localStorage.setItem('user',JSON.stringify(model.attributes));
+                sessionStorage.setItem('session_auth',model.attributes.token);
                 if(remember == true)
-                    localStorage.setItem('session_auth',model.attributes.session_auth);
+                    localStorage.setItem('session_auth',model.attributes.token);
             }),
             error: (function(model){
                 model.set({LoginFailed : true});
