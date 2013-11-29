@@ -49,7 +49,7 @@
     
     
     <div class="description">
-        nothing at the moment...
+        Gets geolocation's position, Load new user model which will save user active data.
     </div>
     
 
@@ -82,7 +82,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line121">line 121</a>
+        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line53">line 53</a>
     </li></ul></dd>
     
     
@@ -133,7 +133,7 @@
 <dd>
     
     <div class="description">
-        Saves the map model.
+        <p>Saves a mapView object, which will draw the map on the UI.<p>
     </div>
     
     
@@ -172,7 +172,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line108">line 108</a>
+        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line24">line 24</a>
     </li></ul></dd>
     
     
@@ -197,7 +197,7 @@
 <dd>
     
     <div class="description">
-        Saves the main model.
+        <p>Saves a mainModel object, which will store basic data of the user and server url to make queries.<p>
     </div>
     
     
@@ -260,7 +260,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="render"><span class="type-signature"></span>render<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="doLogout"><span class="type-signature"></span>doLogout<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -268,7 +268,7 @@
     
     
     <div class="description">
-        Draw main template.
+        Clear sessionStorage and localStorage, and reload all UI, in order to show login screen.
     </div>
     
 
@@ -301,7 +301,352 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line134">line 134</a>
+        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line166">line 166</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="loadFiles"><span class="type-signature"></span>loadFiles<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Clear map view, and load default list and submenu, set html atributes active for files screen.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line149">line 149</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="loadGroup"><span class="type-signature"></span>loadGroup<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Clear map view, and load default map and submenu, set html atributes active for group screen.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line115">line 115</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="loadHome"><span class="type-signature"></span>loadHome<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Clear map view, and load default map and submenu, set html atributes active for home screen.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line97">line 97</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="loadRoutes"><span class="type-signature"></span>loadRoutes<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Clear map view, and load transport map and submenu, set html atributes active for routes screen.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line130">line 130</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="render"><span class="type-signature"></span>render<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Draw main template and loads Home screen.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line66">line 66</a>
     </li></ul></dd>
     
     
@@ -370,7 +715,76 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line109">line 109</a>
+        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line181">line 181</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="show_updater"><span class="type-signature"></span>show_updater<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Show/hide updater box, activated by listener.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main_view.js.html">views/main_view.js</a>, <a href="main_view.js.html#line80">line 80</a>
     </li></ul></dd>
     
     
@@ -417,7 +831,7 @@
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Nov 28 2013 22:12:16 GMT-0000 (WET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Fri Nov 29 2013 11:13:57 GMT-0000 (WET)
 </footer>
 
 <script> prettyPrint(); </script>

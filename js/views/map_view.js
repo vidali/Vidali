@@ -37,7 +37,7 @@ var mapView = Backbone.View.extend({
 	 * @name mapView
 	 * @classdesc Load the map on the screen.
 	 * @constructs
-	 * @desc nothing at the moment...
+	 * @desc Load data about what kind of map is required.
 	 */
   initialize: function (data) {
     if(data.maptype == "")
@@ -50,7 +50,7 @@ var mapView = Backbone.View.extend({
     * @function render
     * @memberof mapView
     * @instance
-    * @desc Draw map template.
+    * @desc Draw map template, checking what kind of map needs. It also load geolocation engine.
     */
   render: function () {
       var latitude = localStorage.getItem("latitude");

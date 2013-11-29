@@ -9,7 +9,8 @@ var Vidali = Backbone.View.extend({
     @lends Vidali.prototype
 */
     /**
-     * Saves the view actives.
+     * <p>Saves the active view of the app.</p>
+     * <p>In order to load properly the UI, view will store a object of loginView or mainView, that will draw the screen.</p>
      * @memberof Vidali
      * @instance
      * @type {object}
@@ -36,6 +37,7 @@ var Vidali = Backbone.View.extend({
         else{
             this.view = new mainView();
         }
+        //draw the screen
         this.render();
     },
     /**
@@ -43,7 +45,7 @@ var Vidali = Backbone.View.extend({
     * @function render
     * @memberof Vidali
     * @instance
-    * @desc Draws main screen. 
+    * @desc Draws the view in the current screen. 
     */
     render: function(){
         this.view.render();
@@ -53,7 +55,8 @@ var Vidali = Backbone.View.extend({
     * @function change
     * @memberof Vidali
     * @instance
-    * @desc Switch view if session is active. 
+    * @desc <p>Change function is triggered by a listener on the constructor.</p>
+            <p>This function will load mainView object if session is started. </p>
     */
     change: function(){
         if(sessionStorage.getItem("session_auth")){
