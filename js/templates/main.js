@@ -4,12 +4,12 @@ var main = '<header class="navbar navbar-inverse navbar-fixed-top" role="navigat
 	</div> \
 	<ul class="nav nav-pills"> \
 		<li id="m-update"> \
-			<a onclick="show_updater(); return false;" rel="tooltip" data-placement="bottom" title="Update Status" class="contentLink"> \
+			<a rel="tooltip" data-placement="bottom" title="Update Status" class="updater"> \
 				<span class="glyphicon glyphicon-edit"></span> \
 			</a> \
 		</li> \
 		<li id="m-msg"> \
-			<a onclick="link(\'m\');" rel="tooltip" data-placement="bottom" title="Messages" class="contentLink"> \
+			<a rel="tooltip" data-placement="bottom" title="Messages" class="contentLink" data-toggle="modal" data-target="#myModal"> \
 				<span class="glyphicon glyphicon-envelope"></span> \
 			</a> \
 		</li> \
@@ -38,7 +38,7 @@ var main = '<header class="navbar navbar-inverse navbar-fixed-top" role="navigat
 					</a> \
 				</li> \
 				<li> \
-					<a href="#" onclick="vdl.doLogout();" rel="tooltip" data-placement="bottom" title="Logout"> \
+					<a href="#" class="logout" rel="tooltip" data-placement="bottom" title="Logout"> \
 						<span class="glyphicon glyphicon-off"></span> \
 						Logout \
 					</a> \
@@ -54,22 +54,22 @@ var main = '<header class="navbar navbar-inverse navbar-fixed-top" role="navigat
 <nav id="apps" class="navbar navbar-inverse navbar-default navbar-fixed-bottom" role="navigation"> \
 	<ul class="nav nav-pills"> \
 		<li id="m-home"> \
-			<a id="" onclick="vdl.loadScreen(\'home\');" data-toggle="tooltip" data-placement="top" title="Home Page"> \
+			<a class="m-home" data-toggle="tooltip" data-placement="top" title="Home Page"> \
 				<span class="glyphicon glyphicon-home"></span> \
 			</a> \
 		</li> \
 		<li id="m-group"> \
-			<a onclick="vdl.loadScreen(\'groups\');" data-toggle="tooltip" data-placement="top" title="Groups"> \
+			<a class="m-group" data-toggle="tooltip" data-placement="top" title="Groups"> \
 				<span class="glyphicon glyphicon-globe"></span> \
 			</a> \
 		</li> \
 		<li id="m-routes"> \
-			<a onclick="vdl.loadScreen(\'routes\');" data-toggle="tooltip" data-placement="top" title="Routes"> \
+			<a class="m-routes" data-toggle="tooltip" data-placement="top" title="Routes"> \
 				<span class="glyphicon glyphicon-road"></span> \
 			</a> \
 		</li> \
 		<li id="m-files"> \
-			<a onclick="vdl.loadScreen(\'files\');" data-toggle="tooltip" data-placement="top" title="Files"> \
+			<a class="m-files" data-toggle="tooltip" data-placement="top" title="Files"> \
 				<span class="glyphicon glyphicon-folder-close"></span> \
 			</a> \
 		</li> \
@@ -78,4 +78,47 @@ var main = '<header class="navbar navbar-inverse navbar-fixed-top" role="navigat
 <footer class="footer"> \
 	<p class="pull-right"><img src="img/html5.png"><img src="img/agpl.png"></p> \
 	<p class="pull-left">Powered by Vidali.</p> \
-</footer>';
+</footer>\
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> \
+  <div class="modal-dialog"> \
+    <div class="modal-content"> \
+      <div class="modal-header"> \
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> \
+        <h4 class="modal-title" id="myModalLabel">Messages</h4> \
+      </div> \
+      <div class="modal-body"> \
+        <div class="row"> \
+        	<div class="col-xs-4 col-md-4"> \
+				<div class="col-xs-12 col-md-12 well"><a href="#">Haridian Rodriguez</a></div> \
+				<div class="col-xs-12 col-md-12 well"><a href="#">Iradiel García Pérez</a></div> \
+				<div class="col-xs-12 col-md-12 well"><a href="#">Jose Hernandez</a></div> \
+        	</div> \
+        	<div class="col-xs-8 col-md-8 well"> CHAT DIALOG<br><br><br><br><br><br><br><br><br></div> \
+        </div>\
+      </div> \
+      <div class="modal-footer"> \
+        <div class="row"> \
+        	<div class="col-xs-4 col-md-4"> \
+				<div class="col-xs-12 col-md-12 ">Attach files | Send file</div> \
+        	</div> \
+        	<div class="col-xs-8 col-md-8"> \
+        		<div class="row"> \
+		        	<div class="col-xs-9 col-md-9"> \
+						<input type="text" class="form-control" placeholder="Type your message..."> \
+					</div> \
+		        	<div class="col-xs-3 col-md-3"> \
+						<button type="button" class="btn btn-default btn-block">Send</button> \
+					</div> \
+				</div> \
+        	</div> \
+        </div>\
+      </div> \
+    </div><!-- /.modal-content --> \
+  </div><!-- /.modal-dialog --> \
+</div><!-- /.modal --> \
+<form id="updater" class="form-inline" onSubmit="update_status(); return false;" method="post" style="display: none;"> \
+    <textarea id="update_box" name="update" class="form-control" rows="3" placeholder="Actualiza tu estado"></textarea> \
+    <button class="btn btn-default"><span class="glyphicon glyphicon-star"></span></button> \
+    <button class="btn btn-default"><span class="glyphicon glyphicon-upload"></span></button> \
+    <button type="submit" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-ok"></span></button> \
+</form>';

@@ -32,7 +32,8 @@ var loginView = Backbone.View.extend({
         "click .forgot": "recoverPassword",
         "click .remember" : "setRemember",
         "click .login": "doLogin",
-        "click .register": "doRegister"
+        "click .register": "doRegister",
+        'keypress input[type=text]' : 'doLogin'
     },
     /**
     * @class 
@@ -43,6 +44,11 @@ var loginView = Backbone.View.extend({
     */
     initialize: function(){
     },
+    saveposition : function(position){
+      localStorage['latitude'] = position.coords.latitude;
+      localStorage['longitude'] = position.coords.longitude;
+      console.log(localStorage['latitude']);
+    },
     /**
     * @public
     * @function doLogin
@@ -51,6 +57,7 @@ var loginView = Backbone.View.extend({
     * @desc Start a new session.
     */
     doLogin: function(){
+        navigator.geolocation.getCurrentPosition(this.saveposition);
         $("#background").fadeIn(500);
         this.model.set({Email: $('#email').val()});
         this.model.set({Password: $('#password').val()});
@@ -65,15 +72,15 @@ var loginView = Backbone.View.extend({
             },
             type: 'POST',
             success: (function(model){
+                sessionStorage.setItem('session_auth',model.attributes.token);
+                if(remember == true)
+                    localStorage.setItem('session_auth',model.attributes.token);
                 model.unset("Password");
                 model.unset("Remember");
                 model.unset("token");
                 localStorage.setItem('vdl_utoken',model.attributes.token);
                 console.log(model.attributes);
                 localStorage.setItem('user',JSON.stringify(model.attributes));
-                sessionStorage.setItem('session_auth',model.attributes.token);
-                if(remember == true)
-                    localStorage.setItem('session_auth',model.attributes.token);
             }),
             error: (function(model){
                 model.set({LoginFailed : true});

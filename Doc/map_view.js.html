@@ -38,7 +38,7 @@ var mapView = Backbone.View.extend({
      * @instance
      * @type {HTML}
      */
-  el: $('#container'),
+  el: $('#map'),
     /** 
     @lends mapView.prototype
     */
@@ -66,7 +66,11 @@ var mapView = Backbone.View.extend({
 	 * @constructs
 	 * @desc nothing at the moment...
 	 */
-  initialize: function () {    
+  initialize: function (data) {
+    if(data.maptype == "")
+      this.model.set({map : "default"});
+    else
+      this.model.set({map : data.maptype});
   },
   /**
     * @public
@@ -76,35 +80,131 @@ var mapView = Backbone.View.extend({
     * @desc Draw map template.
     */
   render: function () {
-	var latitude = parseFloat(localStorage.getItem('latitude'));
-	var longitude = parseFloat(localStorage.getItem('longitude'));
-	if(this.model.get("map") == "default"){      
-		this.map = new ol.Map({
-			target: 'map',
-			layers: [
-			  new ol.layer.Tile({
-				source: new ol.source.OSM()
-			  })
-			],
-			renderers: ol.RendererHints.createFromQueryData(),
-			view: new ol.View2D({
-				center: ol.proj.transform([longitude,latitude], 'EPSG:4326', 'EPSG:3857'),
-				zoom: 16
-			})
-		});
-		var geolocation = new ol.Geolocation();
-		geolocation.bindTo('projection', this.map.getView());
-		geolocation.setTracking(true);
-		var marker = new ol.Overlay({
-		  element: document.getElementById('position'),
-		  position: ol.proj.transform([longitude,latitude], 'EPSG:4326', 'EPSG:3857'),
-		  positioning: ol.OverlayPositioning.CENTER_CENTER
-		});
-		this.map.addOverlay(marker);
-		// bind the marker position to the device location.
-		marker.bindTo('position', geolocation);
-		return true;
-	}
+
+    var view = new ol.View2D({
+      // the view's initial state
+      center: [0,0],
+      zoom: 4
+    });
+
+    var marker = new ol.Overlay({
+      element: document.getElementById('position'),
+      positioning: ol.OverlayPositioning.CENTER_CENTER
+    });
+
+
+  	if(this.model.get("map") == "default"){   
+
+      console.log("carga default");   
+
+      this.map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            preload: 4,
+            source: new ol.source.OSM()
+          })
+        ],
+        renderers: ol.RendererHints.createFromQueryData(),
+        target: 'map',
+        view: view
+      });
+
+  		var geolocation = new ol.Geolocation();
+  		geolocation.bindTo('projection', this.map.getView());
+  		geolocation.setTracking(true);
+
+  		this.map.addOverlay(marker);
+  		marker.bindTo('position', geolocation);
+
+      console.log(geolocation.getPosition());
+
+/*      geolocation.on('change', function() {
+        console.log("cambia");
+        var duration = 2000;
+        var start = +new Date();
+        var pan = ol.animation.pan({
+          duration: duration,
+          source: (view.getCenter()),
+          start: start
+        });
+        self.map.beforeRender(pan);
+        console.log(geolocation.getPosition());
+        view.setCenter(ol.proj.transform(geolocation.getPosition(), 'EPSG:4326', 'EPSG:3857'));
+      });
+*/
+
+      var hide = false;
+      var user_info = jQuery.parseJSON(localStorage.getItem('user'));
+      var label = '&lt;div style="width: 250px;">'+
+                    '&lt;div class="row">'+
+                      '&lt;div class="col-xs-4">'+
+                        '&lt;img src="/Vidali/img/jirafa.jpg" alt="..."  width=80 height=80 class="img-circle">'+
+                      '&lt;/div>'+
+                      '&lt;div class="col-xs-8">&lt;h4>'+
+                        user_info.name+
+                      '&lt;/h4>&lt;/div>'+
+                      '&lt;div class="col-xs-5">'+
+                        user_info.nick+
+                      '&lt;/div>'+
+                      '&lt;div class="col-xs-3">'+
+                        user_info.age+
+                      '&lt;/div>'+
+                      '&lt;div class="col-xs-6">'+
+                        user_info.description+
+                      '&lt;/div>'+
+                    '&lt;/div>'+ 
+                    '&lt;div class="row">'+
+                      '&lt;br>&lt;p align="center">&lt;i>Quiero que lleguen las esperadas navidades XD!!&lt;/i>&lt;/p>'+
+                    '&lt;/div>'+  
+                  '&lt;/div>'
+                  ;
+      $("#position").click(function() {
+        if(hide == false){
+          $(document.getElementById('position')).popover({
+            'placement': 'top',
+            'html': true,
+            'title': '&lt;b>'+user_info.nick+'&lt;/b>',
+            'content': label
+          });
+          console.log($(document.getElementById('position')).popover('show'));
+          hide = true;
+        }
+        else{
+          console.log($(document.getElementById('position')).popover('hide'));
+          hide = false;
+        }
+      });
+  	}
+    if(this.model.get("map") == "transport"){      
+      console.log("carga transport");
+      this.map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+              source: new ol.source.OSM({
+              attributions: [
+                new ol.Attribution({
+                html: 'All maps &copy; ' +
+                    '&lt;a href="http://www.opencyclemap.org/">OpenCycleMap&lt;/a>'
+                }),
+                ol.source.OSM.DATA_ATTRIBUTION
+            ],
+            url: 'http://{a-c}.tile.opencyclemap.org/transport/{z}/{x}/{y}.png'
+            })
+          })
+        ],
+        renderers: ol.RendererHints.createFromQueryData(),
+        view: view
+      });
+      console.log(this.map);
+      $("#container").append('&lt;div id="position">&lt;span class="glyphicon glyphicon-map-marker">&lt;/span>&lt;/div>');
+      var geolocation = new ol.Geolocation();
+      geolocation.bindTo('projection', this.map.getView());
+      geolocation.setTracking(true);
+
+      this.map.addOverlay(marker);
+      marker.bindTo('position', geolocation);
+    }
   }
 });
 </code></pre>
@@ -123,7 +223,7 @@ var mapView = Backbone.View.extend({
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Wed Nov 20 2013 22:16:21 GMT-0000 (WET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Nov 28 2013 22:12:15 GMT-0000 (WET)
 </footer>
 
 <script> prettyPrint(); </script>
