@@ -108,7 +108,6 @@ $(document).ready(function(){
     $("#background").fadeIn(500);
 	$.when(vdl = new Vidali())
            .done(function() {
-//                console.log(vdl);
                 $('#background').fadeOut(500);
             });
     return false;

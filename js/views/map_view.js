@@ -11,7 +11,7 @@ var mapView = Backbone.View.extend({
      * @instance
      * @type {HTML}
      */
-  el: $('#container'),
+  el: $('#map'),
     /** 
     @lends mapView.prototype
     */
@@ -39,7 +39,11 @@ var mapView = Backbone.View.extend({
 	 * @constructs
 	 * @desc nothing at the moment...
 	 */
-  initialize: function () {    
+  initialize: function (data) {
+    if(data.maptype == "")
+      this.model.set({map : "default"});
+    else
+      this.model.set({map : data.maptype});
   },
   /**
     * @public
@@ -49,92 +53,177 @@ var mapView = Backbone.View.extend({
     * @desc Draw map template.
     */
   render: function () {
-  	var latitude = parseFloat(localStorage.getItem('latitude'));
-  	var longitude = parseFloat(localStorage.getItem('longitude'));
-  	if(this.model.get("map") == "default"){      
-  		this.map = new ol.Map({
-  			target: 'map',
-  			layers: [
-  			  new ol.layer.Tile({
-  				source: new ol.source.OSM()
-  			  })
-  			],
-  			renderers: ol.RendererHints.createFromQueryData(),
-  			view: new ol.View2D({
-  				center: ol.proj.transform([longitude,latitude], 'EPSG:4326', 'EPSG:3857'),
-  				zoom: 16
-  			})
-  		});
+      var latitude = localStorage.getItem("latitude");
+      var longitude = localStorage.getItem("longitude");
+
+    var view = new ol.View2D({
+      // the view's initial state
+      center: [0,0],
+      zoom: 4
+    });
+
+    var marker = new ol.Overlay({
+      element: document.getElementById('position'),
+      positioning: ol.OverlayPositioning.CENTER_CENTER
+    });
+
+
+  	if(this.model.get("map") == "default"){   
+
+      console.log("carga default");   
+
+      this.map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            preload: 4,
+            source: new ol.source.OSM()
+          })
+        ],
+        renderers: ol.RendererHints.createFromQueryData(),
+        target: 'map',
+        view: view
+      });
+
   		var geolocation = new ol.Geolocation();
   		geolocation.bindTo('projection', this.map.getView());
   		geolocation.setTracking(true);
-  		var marker = new ol.Overlay({
-  		  element: document.getElementById('position'),
-  		  position: ol.proj.transform([longitude,latitude], 'EPSG:4326', 'EPSG:3857'),
-  		  positioning: ol.OverlayPositioning.CENTER_CENTER
-  		});
+
   		this.map.addOverlay(marker);
   		marker.bindTo('position', geolocation);
+      view.setCenter(ol.proj.transform([Number(longitude),Number(latitude)], 'EPSG:4326', 'EPSG:3857'));
+      view.setZoom(16);
 
-/*this.map.on('singleclick', function(evt) {
-  $(document.getElementById('position')).popover({
-    'placement': 'top',
-    'html': true,
-    'content': 'Roll your own popup!'
-  });
-  $(document.getElementById('position')).popover('show');
-});*/
-var hide = false;
-var user_info = jQuery.parseJSON(localStorage.getItem('user'));
-var label = '<div style="width: 250px;">'+
-              '<div class="row">'+
-                '<div class="col-xs-4">'+
-                  '<img src="/Vidali/img/jirafa.jpg" alt="..."  width=80 height=80 class="img-circle">'+
-                '</div>'+
-                '<div class="col-xs-8"><h4>'+
-                  user_info.name+
-                '</h4></div>'+
-                '<div class="col-xs-5">'+
-                  user_info.nick+
-                '</div>'+
-                '<div class="col-xs-3">'+
-                  user_info.age+
-                '</div>'+
-                '<div class="col-xs-6">'+
-                  user_info.description+
-                '</div>'+
-              '</div>'+ 
-              '<div class="row">'+
-                '<br><p align="center"><i>Quiero que lleguen las esperadas navidades XD!!</i></p>'+
-              '</div>'+  
-            '</div>'
-            ;
-$("#position").click(function() {
-  if(hide == false){
-    console.log("abre "+hide);
-    $(document.getElementById('position')).popover({
-      'placement': 'top',
-      'html': true,
-      'title': '<b>'+user_info.nick+'</b>',
-      'content': label
-    });
-    
-    console.log("aqui");
-    console.log($(document.getElementById('position')).popover('show'));
-    console.log("aqui2");
-    hide = true;
-  }
-  else{
-    console.log("cierra "+hide);
-    
-    console.log($(document.getElementById('position')).popover('hide'));
-
-    hide = false;
-  }
-});
+      geolocation.on('change', function() {
+        if(geolocation.getPosition() != null){
+          console.log("cambia");
+          console.log(geolocation.getPosition()[0]);
+        }
+      });
 
 
-  		return true;
+      var hide = false;
+      var user_info = jQuery.parseJSON(localStorage.getItem('user'));
+      var label = '<div style="width: 250px;">'+
+                    '<div class="row">'+
+                      '<div class="col-xs-4">'+
+                        '<img src="/Vidali/img/jirafa.jpg" alt="..."  width=80 height=80 class="img-circle">'+
+                      '</div>'+
+                      '<div class="col-xs-8"><h4>'+
+                        user_info.name+
+                      '</h4></div>'+
+                      '<div class="col-xs-5">'+
+                        user_info.nick+
+                      '</div>'+
+                      '<div class="col-xs-3">'+
+                        user_info.age+
+                      '</div>'+
+                      '<div class="col-xs-6">'+
+                        user_info.description+
+                      '</div>'+
+                    '</div>'+ 
+                    '<div class="row">'+
+                      '<br><p align="center"><i>Ejemplo de ultimo estado ;)</i></p>'+
+                    '</div>'+  
+                  '</div>'
+                  ;
+      $("#position").click(function() {
+        if(hide == false){
+          $(document.getElementById('position')).popover({
+            'placement': 'top',
+            'html': true,
+            'title': '<b>'+user_info.nick+'</b>',
+            'content': label
+          });
+          console.log($(document.getElementById('position')).popover('show'));
+          hide = true;
+        }
+        else{
+          console.log($(document.getElementById('position')).popover('hide'));
+          hide = false;
+        }
+      });
   	}
+    if(this.model.get("map") == "transport"){
+      $("#container").append('<div id="position"><span class="glyphicon glyphicon-map-marker"></span></div>');
+      console.log("carga transport");
+      this.map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+              source: new ol.source.OSM({
+              attributions: [
+                new ol.Attribution({
+                html: 'All maps &copy; ' +
+                    '<a href="http://www.opencyclemap.org/">OpenCycleMap</a>'
+                }),
+                ol.source.OSM.DATA_ATTRIBUTION
+            ],
+            url: 'http://{a-c}.tile.opencyclemap.org/transport/{z}/{x}/{y}.png'
+            })
+          })
+        ],
+        renderers: ol.RendererHints.createFromQueryData(),
+        view: view
+      });
+      console.log(this.map);
+      var geolocation = new ol.Geolocation();
+      geolocation.bindTo('projection', this.map.getView());
+      geolocation.setTracking(true);
+
+      this.map.addOverlay(marker);
+      marker.bindTo('position', geolocation);
+      view.setCenter(ol.proj.transform([Number(longitude),Number(latitude)], 'EPSG:4326', 'EPSG:3857'));
+      view.setZoom(16);
+
+      geolocation.on('change', function() {
+        if(geolocation.getPosition() != null){
+          console.log("cambia");
+          console.log(geolocation.getPosition()[0]);
+        }
+      });
+
+
+      var hide = false;
+      var user_info = jQuery.parseJSON(localStorage.getItem('user'));
+      var label = '<div style="width: 250px;">'+
+                    '<div class="row">'+
+                      '<div class="col-xs-4">'+
+                        '<img src="/Vidali/img/jirafa.jpg" alt="..."  width=80 height=80 class="img-circle">'+
+                      '</div>'+
+                      '<div class="col-xs-8"><h4>'+
+                        user_info.name+
+                      '</h4></div>'+
+                      '<div class="col-xs-5">'+
+                        user_info.nick+
+                      '</div>'+
+                      '<div class="col-xs-3">'+
+                        user_info.age+
+                      '</div>'+
+                      '<div class="col-xs-6">'+
+                        user_info.description+
+                      '</div>'+
+                    '</div>'+ 
+                    '<div class="row">'+
+                      '<br><p align="center"><i>Ejemplo de ultimo estado ;)</i></p>'+
+                    '</div>'+  
+                  '</div>'
+                  ;
+      $("#position").click(function() {
+        if(hide == false){
+          $(document.getElementById('position')).popover({
+            'placement': 'top',
+            'html': true,
+            'title': '<b>'+user_info.nick+'</b>',
+            'content': label
+          });
+          console.log($(document.getElementById('position')).popover('show'));
+          hide = true;
+        }
+        else{
+          console.log($(document.getElementById('position')).popover('hide'));
+          hide = false;
+        }
+      });
+    }
   }
 });
